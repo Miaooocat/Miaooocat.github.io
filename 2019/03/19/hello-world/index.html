@@ -56,10 +56,6 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
 
 
   <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
@@ -68,7 +64,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Shihao">
 
 
 
@@ -113,6 +109,13 @@
       indexName: '',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+    favicon: {
+      visibilitychange: true,
+      normal: '/images/favicon.ico',
+      hidden: '/images/failure.ico',
+      show_text: '(/≧▽≦/)咦！又好了！',
+      hide_text: '(●—●)喔哟，崩溃啦！'
     }
   };
 </script>
@@ -183,7 +186,7 @@
         <li class="menu-item menu-item-主页-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-empire"></i> <br>
             
             主页 home
           </a>
@@ -191,31 +194,31 @@
       
         
         <li class="menu-item menu-item-实验室-project">
-          <a href="/archives/" rel="section">
+          <a href="/project/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-flask"></i> <br>
             
             实验室 Project
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-讨赏-donation">
-          <a href="/donate/" rel="section">
+        <li class="menu-item menu-item-笔记本-notes">
+          <a href="/notes/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-cutlery"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-pencil"></i> <br>
             
-            讨赏 Donation
+            笔记本 Notes
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-友情链接-friend">
+        <li class="menu-item menu-item-友情链接-friends">
           <a href="/friends/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-mars"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-venus-mars"></i> <br>
             
-            友情链接 Friend
+            友情链接 Friends
           </a>
         </li>
       
@@ -223,7 +226,7 @@
         <li class="menu-item menu-item-留言板-message">
           <a href="/message/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-pencil"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-comment"></i> <br>
             
             留言板 Message
           </a>
@@ -233,7 +236,7 @@
         <li class="menu-item menu-item-关于我-about me">
           <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-rocket"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-rebel"></i> <br>
             
             关于我 about me
           </a>
@@ -563,6 +566,8 @@
   
 
 
+  
+
 
 
 
@@ -601,6 +606,11 @@
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
