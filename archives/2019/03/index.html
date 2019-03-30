@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang>
+<html class="theme-next muse use-motion" lang="zh-CN,default">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -77,7 +77,7 @@
     back2top_sidebar: false,
     fancybox: false,
     fastclick: false,
-    lazyload: false,
+    lazyload: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
@@ -100,7 +100,7 @@
 <meta property="og:title" content="Hi Simoncat">
 <meta property="og:url" content="http://yoursite.com/archives/2019/03/index.html">
 <meta property="og:site_name" content="Hi Simoncat">
-<meta property="og:locale" content="default">
+<meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hi Simoncat">
 
@@ -119,7 +119,7 @@
   };
 </script>
 
-  <title>Archive | Hi Simoncat</title>
+  <title>归档 | Hi Simoncat</title>
   
 
 
@@ -160,14 +160,14 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div id="pjax-container" class="container sidebar-position-left page-archive">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -187,7 +187,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -311,7 +311,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
         </li>
       
     </ul>
@@ -359,7 +359,7 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -410,6 +410,41 @@
           <div class="collection-title">
             <h1 class="archive-year" id="archive-year-2019">2019</h1>
           </div>
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+          <a class="post-title-link" href="/2019/03/25/Java-Programming-Principles-of-Software-Design copy/" itemprop="url">
+            
+              <span itemprop="name">Java Programming: Principles of Software Design</span>
+            
+          </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-03-25T14:06:52-07:00" content="2019-03-25">
+          03-25
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
+        
+        
+        
+
         
         
 
@@ -488,8 +523,8 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">1</span>
-                    <span class="site-state-item-name">posts</span>
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
               
@@ -510,7 +545,7 @@
                       
                     
                     <span class="site-state-item-count">2</span>
-                    <span class="site-state-item-name">categories</span>
+                    <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
               
@@ -529,7 +564,7 @@
                       
                     
                     <span class="site-state-item-count">1</span>
-                    <span class="site-state-item-name">tags</span>
+                    <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
               
@@ -645,6 +680,8 @@ setInterval("createtime()",250);
 
 
 
+  
+
 
 
 
@@ -666,6 +703,9 @@ setInterval("createtime()",250);
 
   
   <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
   
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
@@ -691,6 +731,9 @@ setInterval("createtime()",250);
 
 
 
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
   
 
   
@@ -699,6 +742,50 @@ setInterval("createtime()",250);
   <script src="/js/src/next-boot.js?v=7.0.1"></script>
 
 
+  <script src="//cdn.bootcss.com/jquery.pjax/1.9.6/jquery.pjax.js"></script>
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+<script type="text/javascript">
+$(document).on('pjax:start', NProgress.start).on('pjax:end', NProgress.done);
+$(document).pjax('a[target!="_blank"]', '#pjax-container', {timeout: 8000, fragment: '#pjax-container'});
+$(document).on('pjax:complete', function () {
+  NexT.motion.integrator.cursor = -1;
+
+  $(document).trigger('bootstrap:before');
+
+  NexT.utils.isMobile() && window.FastClick.attach(document.body);
+
+  NexT.utils.lazyLoadPostsImages();
+
+  NexT.utils.registerBackToTop();
+
+  $('.site-nav-toggle button').on('click', function () {
+    var $siteNav = $('.site-nav');
+    var ON_CLASS_NAME = 'site-nav-on';
+    var isSiteNavOn = $siteNav.hasClass(ON_CLASS_NAME);
+    var animateAction = isSiteNavOn ? 'slideUp' : 'slideDown';
+    var animateCallback = isSiteNavOn ? 'removeClass' : 'addClass';
+
+    $siteNav.stop()[animateAction]('fast', function () {
+      $siteNav[animateCallback](ON_CLASS_NAME);
+    });
+  });
+
+  CONFIG.fancybox && NexT.utils.wrapImageWithFancyBox();
+  NexT.utils.embeddedVideoTransformer();
+
+
+  $(document).trigger('motion:before');
+
+  NexT.motion.init();
+  if (CONFIG.motion) {
+    $('.archive-year').velocity('transition.slideLeftIn');
+    CONFIG.motion && NexT.motion.integrator.bootstrap();
+  }
+  NexT.postDetails.init();
+  $(document).trigger('bootstrap:after');
+});
+</script>
+  
   
 
   
@@ -1068,7 +1155,7 @@ setInterval("createtime()",250);
   $('.highlight').each(function(i, e) {
     var $wrap = $('<div>').addClass('highlight-wrap');
     $(e).after($wrap);
-    $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function(e) {
+    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
       var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
         return $(e).text();
       }).toArray().join('\n');
@@ -1090,7 +1177,7 @@ setInterval("createtime()",250);
     })).on('mouseleave', function(e) {
       var $b = $(this).find('.copy-btn');
       setTimeout(function() {
-        $b.text('Copy');
+        $b.text('复制');
       }, 300);
     }).append(e);
   })
@@ -1108,35 +1195,6 @@ setInterval("createtime()",250);
 <div id="aplayer"></div>
 <script type="text/javascript" src="/dist/APlayer.min.js"></script>
 <script type="text/javascript" src="/dist/music.js"></script>
-
-
-<div id="hexo-helper-live2d">
-  <canvas id="live2dcanvas" width="150" height="300"></canvas>
-</div>
-<style>
-  #live2dcanvas{
-    position: fixed;
-    width: 150px;
-    height: 300px;
-    opacity:0.7;
-    right: 0px;
-    z-index: 999;
-    pointer-events: none;
-    bottom: -20px;
-  }
-</style>
-<script type="text/javascript" src="/live2d/device.min.js"></script>
-<script type="text/javascript">
-const loadScript = function loadScript(c,b){var a=document.createElement("script");a.type="text/javascript";"undefined"!=typeof b&&(a.readyState?a.onreadystatechange=function(){if("loaded"==a.readyState||"complete"==a.readyState)a.onreadystatechange=null,b()}:a.onload=function(){b()});a.src=c;document.body.appendChild(a)};
-(function(){
-  if((typeof(device) != 'undefined') && (device.mobile())){
-    document.getElementById("live2dcanvas").style.width = '75px';
-    document.getElementById("live2dcanvas").style.height = '150px';
-  }else
-    if (typeof(device) === 'undefined') console.error('Cannot find current-device script.');
-  loadScript("/live2d/script.js", function(){loadlive2d("live2dcanvas", "/live2d/assets/z16.model.json", 0.5);});
-})();
-</script>
 
 </body>
 </html>

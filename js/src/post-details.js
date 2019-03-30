@@ -1,6 +1,7 @@
 /* global NexT, CONFIG */
 
-$(document).ready(function() {
+NexT.postDetails={};
+NexT.postDetails.init = function(){
 
   function initScrollSpy() {
     var tocSelector = '.post-toc';
@@ -28,9 +29,8 @@ $(document).ready(function() {
   }
 
   initScrollSpy();
-});
+};
 
-$(document).ready(function() {
   var html = $('html');
   var TAB_ANIMATE_DURATION = 200;
   var hasVelocity = $.isFunction(html.velocity);
@@ -100,5 +100,5 @@ $(document).ready(function() {
         NexT.utils.displaySidebar();
       }
       : NexT.utils.displaySidebar();
-  }
-});
+  };
+$(NexT.postDetails.init);
