@@ -440,7 +440,7 @@ const ap = new APlayer({
       {
         name: 'Riverside',
         artist: 'Agnes Obel',
-        url: 'http://dl.stream.qqmusic.qq.com/M500000fYyM44I1LwD.mp3?vkey=150DD59BDEE8DF14A218F5B52639B4523F19720C40726D7F5DD6C515E5E1846AB148414656B2B77D74AADB159AA0FDF8CACA01DF808B7A93&guid=5150825362&fromtag=1',
+        url: '//m128.xiami.net/941/78941/403444/1769780309_4269898_l.mp3?auth_key=1554606000-0-0-551a8982bc6b413293add8f6663b2ac7',
       },
       {
         name: 'Mad World',
