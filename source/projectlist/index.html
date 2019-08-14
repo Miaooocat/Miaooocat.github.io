@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Code Lab</title>
+  
+  <style>
+      * {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  box-sizing: border-box;
+}
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  background: white;
+  font: 14px 'Trebuchet MS', Helvetica, sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
+input[name=search] {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 5px 10px;
+  background: #262626;
+  color: white;
+  font-size: 14px;
+  border: 0px;
+  border-radius: 3px;
+}
+h1 {
+  margin: 0px;
+  padding: 20px 0px 5px 0px;
+  color: #222;
+  font-size: 20px;
+}
+.category-select {
+  display: inline-block;
+  position: relative;
+  list-style: none;
+}
+.category-select h1,
+.category-select li {
+  display: block;
+  margin: 0px;
+  padding: 5px 10px;
+  background: #262626;
+  color: white;
+  font-size: 14px;
+  text-align: left;
+  border: 0px;
+  width: 180px;
+  cursor: pointer;
+}
+.category-select h1:hover,
+.category-select li:hover {
+  color: white;
+}
+.category-select h1 {
+  position: relative;
+  border-radius: 3px;
+}
+.category-select h1:after {
+  content: '▼';
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+.category-select ul {
+  position: absolute;
+  top: 26px;
+  left: 0px;
+  height: 0px;
+  overflow: hidden;
+}
+.category-select li {
+  border-top: 1px #4d4d4d solid;
+  opacity: 0;
+  transition-property: all, text-color;
+  transition-duration: 0.2s, 0.1s;
+  transition-timing-function: linear;
+}
+.category-select li:last-child {
+  border-radius: 0px 0px 3px 3px;
+}
+.category-select:hover ul {
+  height: auto;
+  overflow: auto;
+}
+.category-select:hover li {
+  opacity: 1;
+}
+.table a {
+  display: block;
+  margin-bottom: 5px;
+  color: #6F201C;
+  text-decoration: none;
+}
+.table a:before {
+  content: '●';
+  padding-right: 10px;
+  color: #222;
+}
+.table a:hover {
+  color: #982c26;
+}
+.main {
+  margin: 0px auto;
+  width: 90%;
+  max-width: 960px;
+}
+</style>
+</head>
+
+<body>
+<div class="main">
+    <h1>Applied Machine Learning</h1>
+    <div class="table">
+        <a href="https://github.com/Miaooocat/McGill_Computer_Science/blob/master/COMP551_Applied_Machine_Learning/Lexicon-based%20Ensemble%20Sentiment%20Classification/COMP_551_Final_Project_Report.pdf">Lexicon-based Ensemble Sentiment Classification (Dec. 2018)</a>
+        <a href="https://github.com/Miaooocat/McGill_Computer_Science/blob/master/COMP551_Applied_Machine_Learning/MNIST%20Hand%20Drawing%20Image%20Recognition/COMP551_Machine_Learning_Kaggle_Competition.pdf">MNIST Hand Drawing Image Recognition (Nov. 2018)</a>
+    </div>
+    <h1>Data Structure and Algorithm</h1>
+    <div class="table">
+        <a href="https://github.com/Miaooocat/McGill_Computer_Science/tree/master/COMP250%26251_DataStructure_and_Algorithm">McGill Data Structure and Algorithm Course Work (Fall 2017)</a>
+    </div>
+    <h1>Operating System</h1>
+    <div class="table">
+        <a href="https://github.com/Miaooocat/McGill_Computer_Science/tree/master/COMP310_Operating%20System/P3">Deadlock Avoidance in Resource Allocation Simulation (April 2018)</a>
+        <a href="https://github.com/Miaooocat/McGill_Computer_Science/tree/master/COMP310_Operating%20System/P1">Shell Interface Emulation (Jan. 2018)</a>
+    </div>
+    <h1>Software Development</h1>
+    <div class="table">
+        <a href="https://github.com/Miaooocat/McGill_Computer_Science/tree/master/COMP206_Intro_to_Software_Systems">McGill Intro to Software Course Work (Fall 2017)</a>
+    </div>
+    <h1>Simulation</h1>
+    <div class="table">
+        <a href="https://github.com/Miaooocat/McGill_Computer_Science/blob/master/MIME473_Computational_Material/MIME_473_Final_Project/MIME473%20Final%20report.pdf">Atomistic Simulation of Copper Nano Wire Tensile Testing (April 2018)</a>
+    </div>
+    <h1>Web Development</h1>
+    <div class="table">
+        <a href="https://miaocat.me/project/freeCodeCamp_2/">Survey Page (April 2019)</a>
+        <a href="https://miaocat.me/project/freeCodeCamp_1/">Tribute Page for Clair Cameron Patterson (April 2019)</a>
+    </div>
+</div>
+</body>
+</html>

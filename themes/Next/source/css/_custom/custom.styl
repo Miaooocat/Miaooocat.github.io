@@ -1,1 +1,202 @@
 // Custom styles.
+// 主页文章添加阴影效果
+// 页面背景图
+body {
+    //background: url(https://hbimg.b0.upaiyun.com/fe7343d213869361a4428c581278d427e3d2b0aa9725-Os4lwD_fw658);
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-position:50% 100%;
+    background-size: cover;   
+}
+.menu {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+// 页面顶部行高
+.header {
+    line-height: 1.5;
+}
+// 页面留白更改
+
+.posts-expand {
+    padding-top: 10px;
+}
+.posts-expand .post-meta {
+    margin: 5px 0px 0px 0px;
+}
+.post-button {
+    margin-top: 0px;
+}
+// 站点名背景
+.brand{
+    background-color: rgba(255, 255, 255, 0);
+    margin-top: 20px;
+    padding: 40px;
+}
+// 站点名字体
+.site-title {
+    font-family: Times;
+    font-size: 38px;
+    font-weight: bold;
+    color: #222222;
+}
+// 站点子标题
+.site-subtitle{
+    padding-top: 11px;
+    padding-bottom: 5px;
+}
+// 去除页面底部页码上面的横线
+.pagination {
+    border: none;
+    margin: 0px;
+}
+// 去掉图片边框
+.posts-expand .post-body img {
+    border: none;
+    padding: 0px;
+}
+.post-gallery .post-gallery-img img {
+    padding: 3px;
+}
+.posts-expand .post-title {
+    font-family: Times;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+// 文章的描述description
+.posts-expand .post-meta {
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #666;
+}
+// [Read More]按钮样式
+.post-button .btn {
+    background-color: #3f3f3f;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-color: #7f7f7f;
+}
+.post-button .btn:hover {
+    border-color: #7f7f7f;
+    background-color: #ffffff;
+}
+// 去除在页面文章之间的分割线
+.posts-expand .post-eof {
+    margin: 0px;
+    background-color: rgba(255, 255, 255, 0);
+}
+// 去除页面底部页码上面的横线
+.pagination {
+    border: none;
+    margin: 0px;
+}
+// 右下角返回顶部按钮样式
+.back-to-top {
+    background-color: #373737;
+    border-radius: 5px;
+}
+.back-to-top.back-to-top-on {
+    bottom: 10px;
+}
+
+// 选中文字部分的样式
+::selection {
+    background-color: #132e50b8;
+    color: #132e50b8;
+}
+// 侧栏
+.sidebar {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding-left: 10px;
+}
+.sidebar-inner {
+    margin-top: 0px;
+}
+// 文章底部评论
+.comments {
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    margin: 80px 0px 40px 0px;
+    padding: 10px 20px 10px 20px;
+}
+.post-toc .nav .nav-child {
+    display: block;
+}
+// 侧栏
+.sidebar {
+    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.6);
+}
+.sidebar-inner {
+    margin-top: 30px;
+}
+// 侧栏顶部文字
+.sidebar-nav li {
+    font-size: 15px;
+    font-weight: bold;
+    color: #7f7f7f;
+}
+.sidebar-nav li:hover {
+    color: #222222;
+}
+.sidebar-nav .sidebar-nav-active {
+    color: #222222;
+    border-bottom-color: #7f7f7f;
+    border-bottom-width: 1.5px;
+}
+.sidebar-nav .sidebar-nav-active:hover {
+    color: #626262;
+}
+// 侧栏站点概况行高
+.site-overview {
+    line-height: 1;
+}
+// 侧栏头像（圆形以及旋转效果）
+.site-author-image {
+    border: 2px inset rgb(255, 255, 255);
+    border-radius: 100%;
+    transition: transform 1.0s ease-out;
+}
+img:hover {
+    transform: rotateZ(360deg);
+}
+.posts-expand .post-body img:hover {
+    transform: initial;
+}
+// 侧栏站点作者名
+.site-author-name {
+    padding: 25px;
+    font-size: 20px;
+    //font-family: Times;
+    color: #626262;
+}
+// 侧栏站点描述
+.site-description {
+    letter-spacing: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-left: 13px;
+    color: #656565;
+}
+// 侧栏站点文章、分类、标签
+.site-state {
+    line-height: 1.3;
+    margin-left: 12px;
+}
+.site-state-item {
+    padding: 0px 15px;
+    border-left: 1.5px solid #7f7f7f;
+}
+// 自定义的侧栏时间样式
+#days {
+    padding: 30px;
+    display: block;
+    color: #7f7f7f;
+    font-size: 13px;
+    margin-top: 15px;
+}

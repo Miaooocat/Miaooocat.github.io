@@ -37,9 +37,54 @@
   {% endif %}
 </div>
 
+<div>
+<span id="天数">载入天数...</span><span id="时间">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("03/20/2019 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("天数").innerHTML = "本站已经在各种报错下不安全的挣扎了 "+dnum+" 天 ";
+        document.getElementById("时间").innerHTML = hnum + " 小时 " + mnum + " 分钟 " + snum + " 秒" + ", 请对它好点.";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+<div>
+<span id="Data">Loading day...</span><span id="Time">Loading time...</span>
+<script>
+    var now = new Date();
+    function ctime() {
+        var grt= new Date("03/20/2019 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("Data").innerHTML = "This website has struggled in this dangerous world for "+dnum+" d ";
+        document.getElementById("Time").innerHTML = hnum + " h " + mnum + " min " + snum + " sec" +  ", Please be nice to it.";
+    }
+setInterval("ctime()",250);
+</script>
+</div>
+
+{% if theme.footer.powered.enable and theme.footer.theme.enable %}
+  <span class="post-meta-divider">|</span>
+{% endif %}
 
 {% if theme.footer.custom_text %}
   <div class="footer-custom">{#
   #}{{ theme.footer.custom_text }}{#
 #}</div>
 {% endif %}
+
+
