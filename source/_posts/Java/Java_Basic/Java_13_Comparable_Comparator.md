@@ -36,6 +36,8 @@ The Comparable interface has **only one method compareTo(T obj)**. This interfac
 
 In this method, it returns a negative, zero, or positive integer as the employee Id is less than, equal to or greater than the specified object.
 
+In **Comparable method**, value must need to know how to be order. We could not define the order logic.
+
 ```
 public class Employee {
     private int id;

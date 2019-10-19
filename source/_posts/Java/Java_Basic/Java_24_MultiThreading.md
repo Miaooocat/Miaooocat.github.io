@@ -43,7 +43,7 @@ In Java, every application has at least one thread - the main thread:
 We can create other threads
     - These will run concurrently with main thread 
     - Background system threads also compete with our threads for CPU time
-    - The JVM's thread scheduler decides which one runs when
+    - The JVM's thread scheduler decides which one runs
 
 # Thread States
 
@@ -92,10 +92,10 @@ Threads with higher priority are more important to a program and should be alloc
 # Solutions
 
 ## Re-entrant methods
-    A method is re-entrant if a program can be interrupted and safely be called again
+A method is re-entrant if a program can be interrupted and safely be called again
     - It does not depend on the state of the containing class
     - It does not depend on any non-final static data
-    - It does not depend on anydata that might be changed by other parts of the program
+    - It does not depend on any data that might be changed by other parts of the program
 
 ## Synchronization
     Synchronization is a mechanism by which we can control access to data shared by threads:
@@ -121,7 +121,11 @@ Threads with higher priority are more important to a program and should be alloc
 
 # Implementation
 
-## Create a Thread by Extending a Thread Class (IS-A)
+They are two methods of implement of multi-threading design in Java. 
+1. Extending the Thread class
+2. Implementing the Runnable Interface
+
+## Create a Thread by Extending a Thread Class
 
 1. To override run() method in Thread class
 2. Put the complete logic inside the run method
@@ -137,10 +141,11 @@ public class MyThread extends Thread {
 To call this thread is to create a thread object and call its method
 ```
 t = new MyThread ("Thread -1");
+t.start();
 ```
 
 ## Issue of IS-A
-This can lead to system design issue
+This can lead to system design issue. 
 
 ## Preferred method is HAS-A
 
@@ -171,3 +176,43 @@ The java.util.concurrent.atomic package:
 * Provides solutions for performing atomic operations
 * Deals with atomic primitive arithmetic
     - Caution: Atomic and non-atomic objects are not interchangeable
+
+
+
+## Interview Practice
+
+Is the following method thread-safe? How to make it thread-safe?
+
+```
+class MyCounter {
+	private static int counter = 0;
+	public static int getCount() {
+		return counter++;
+	}
+}
+```
+The method is not thread-safe. 
+First, the counter++ operation is not atomic, which means it consists more than one atomic operations. 
+
+Second, the counter is a static varable that belong to the class. This is really similar to global variable. Thus, it is not safe.
+
+Two solution to make it thread safe.
+1) Add synchronized key word:
+```
+class MyCounter {
+	private static int counter = 0;
+	public static synchronized int getCount() {
+		return counter++;
+	}
+}
+```
+2) Import java.util.concurrent.atomic.* package. Use the method inside it.
+```
+import java.util.concurrent.atomic.AtomicInteger; 
+public class MyCounter {
+	private static AtomicInteger counter = new AtomicInteger(0);
+	public static int getCount() {
+		return counter.getAndIncrement();
+	}
+}
+```
