@@ -583,8 +583,8 @@ method:     specifies HTTP method
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/14/Spring/Spring_Basic/Spring_AOP/" rel="next" title="Spring Configuration">
-                <i class="fa fa-chevron-left"></i> Spring Configuration
+              <a href="/2019/08/17/Spring/Spring_Basic/Spring_Overview/" rel="next" title="Spring Overview">
+                <i class="fa fa-chevron-left"></i> Spring Overview
               </a>
             
           </div>
@@ -593,8 +593,8 @@ method:     specifies HTTP method
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/08/17/Spring/Spring_Basic/Spring_Overview/" rel="prev" title="Spring Overview">
-                Spring Overview <i class="fa fa-chevron-right"></i>
+              <a href="/2019/08/18/Spring/Spring_Basic/Spring_Implementation/" rel="prev" title="Spring Implementation">
+                Spring Implementation <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -993,17 +993,20 @@ setInterval("createtime()",250);
   <script src="/js/src/next-boot.js?v=7.0.1"></script>
 
 
+
   <script src="//cdn.bootcss.com/jquery.pjax/1.9.6/jquery.pjax.js"></script>
 <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
 <script type="text/javascript">
+
 $(document).on('pjax:start', NProgress.start).on('pjax:end', NProgress.done);
 $(document).pjax('a[target!="_blank"]', '#pjax-container', {timeout: 8000, fragment: '#pjax-container'});
 $(document).on('pjax:complete', function () {
+
   NexT.motion.integrator.cursor = -1;
 
   $(document).trigger('bootstrap:before');
 
-  NexT.utils.isMobile() && window.FastClick.attach(document.body);
+
 
   NexT.utils.lazyLoadPostsImages();
 

@@ -617,9 +617,9 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/06/03/Java/Java_Basic/Java_4_String/" itemprop="url">
+          <a class="post-title-link" href="/2019/06/03/Java/Java_Basic/Java_6_Constructor/" itemprop="url">
             
-              <span itemprop="name">Java Study Notes(4) String</span>
+              <span itemprop="name">Java Study Notes(6) Constructor</span>
             
           </a>
         
@@ -996,17 +996,20 @@ setInterval("createtime()",250);
   <script src="/js/src/next-boot.js?v=7.0.1"></script>
 
 
+
   <script src="//cdn.bootcss.com/jquery.pjax/1.9.6/jquery.pjax.js"></script>
 <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
 <script type="text/javascript">
+
 $(document).on('pjax:start', NProgress.start).on('pjax:end', NProgress.done);
 $(document).pjax('a[target!="_blank"]', '#pjax-container', {timeout: 8000, fragment: '#pjax-container'});
 $(document).on('pjax:complete', function () {
+
   NexT.motion.integrator.cursor = -1;
 
   $(document).trigger('bootstrap:before');
 
-  NexT.utils.isMobile() && window.FastClick.attach(document.body);
+
 
   NexT.utils.lazyLoadPostsImages();
 

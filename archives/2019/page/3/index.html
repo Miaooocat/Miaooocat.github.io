@@ -464,9 +464,9 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/07/03/Java/Java_Basic/Java_28_Stream/" itemprop="url">
+          <a class="post-title-link" href="/2019/07/03/Java/Java_Basic/Java_29_Logging/" itemprop="url">
             
-              <span itemprop="name">Java Study Notes(28) Java Stream</span>
+              <span itemprop="name">Java Study Notes(29) Logging</span>
             
           </a>
         
@@ -499,9 +499,9 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/07/03/Java/Java_Basic/Java_29_Logging/" itemprop="url">
+          <a class="post-title-link" href="/2019/07/03/Java/Java_Basic/Java_28_Stream/" itemprop="url">
             
-              <span itemprop="name">Java Study Notes(29) Logging</span>
+              <span itemprop="name">Java Study Notes(28) Java Stream</span>
             
           </a>
         
@@ -709,9 +709,9 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/06/28/Java/Java_Basic/Java_23_JSON&Jackson/" itemprop="url">
+          <a class="post-title-link" href="/2019/06/28/Java/Java_Basic/Java_24_MultiThreading/" itemprop="url">
             
-              <span itemprop="name">Java Study Notes(23) JSON and Jackson</span>
+              <span itemprop="name">Java Study Notes(24) Multi-Threading</span>
             
           </a>
         
@@ -1089,17 +1089,20 @@ setInterval("createtime()",250);
   <script src="/js/src/next-boot.js?v=7.0.1"></script>
 
 
+
   <script src="//cdn.bootcss.com/jquery.pjax/1.9.6/jquery.pjax.js"></script>
 <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
 <script type="text/javascript">
+
 $(document).on('pjax:start', NProgress.start).on('pjax:end', NProgress.done);
 $(document).pjax('a[target!="_blank"]', '#pjax-container', {timeout: 8000, fragment: '#pjax-container'});
 $(document).on('pjax:complete', function () {
+
   NexT.motion.integrator.cursor = -1;
 
   $(document).trigger('bootstrap:before');
 
-  NexT.utils.isMobile() && window.FastClick.attach(document.body);
+
 
   NexT.utils.lazyLoadPostsImages();
 

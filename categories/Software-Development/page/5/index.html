@@ -383,32 +383,6 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/06/03/Java/Java_Basic/Java_7_AbstractClass_Interface/" itemprop="url">
-            
-              <span itemprop="name">Java Study Notes(7) Abstract and Interface</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-03T12:06:52-04:00" content="2019-06-03">
-          06-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
           <a class="post-title-link" href="/2019/06/03/Java/Java_Basic/Java_14_Generic/" itemprop="url">
             
               <span itemprop="name">Java Study Notes(14) Generic</span>
@@ -435,9 +409,9 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/06/03/Java/Java_Basic/Java_13_Comparable_Comparator/" itemprop="url">
+          <a class="post-title-link" href="/2019/06/03/Java/Java_Basic/Java_4_String/" itemprop="url">
             
-              <span itemprop="name">Java Study Notes(14) Comparable vs Comparator</span>
+              <span itemprop="name">Java Study Notes(4) String</span>
             
           </a>
         
@@ -461,9 +435,35 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/06/03/Java/Java_Basic/Java_11_UML/" itemprop="url">
+          <a class="post-title-link" href="/2019/06/03/Java/Java_Basic/Java_15_JUnit_Mockito/" itemprop="url">
             
-              <span itemprop="name">Java Study Notes(10) UML</span>
+              <span itemprop="name">Java Study Notes(15) JUnit and Mockito</span>
+            
+          </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-06-03T12:06:52-04:00" content="2019-06-03">
+          06-03
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+          <a class="post-title-link" href="/2019/06/03/Java/Java_Basic/Java_13_Comparable_Comparator/" itemprop="url">
+            
+              <span itemprop="name">Java Study Notes(14) Comparable vs Comparator</span>
             
           </a>
         
@@ -944,17 +944,20 @@ setInterval("createtime()",250);
   <script src="/js/src/next-boot.js?v=7.0.1"></script>
 
 
+
   <script src="//cdn.bootcss.com/jquery.pjax/1.9.6/jquery.pjax.js"></script>
 <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
 <script type="text/javascript">
+
 $(document).on('pjax:start', NProgress.start).on('pjax:end', NProgress.done);
 $(document).pjax('a[target!="_blank"]', '#pjax-container', {timeout: 8000, fragment: '#pjax-container'});
 $(document).on('pjax:complete', function () {
+
   NexT.motion.integrator.cursor = -1;
 
   $(document).trigger('bootstrap:before');
 
-  NexT.utils.isMobile() && window.FastClick.attach(document.body);
+
 
   NexT.utils.lazyLoadPostsImages();
 

@@ -605,8 +605,8 @@ Atomic operations are operations which either happen completely or do not happen
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/27/Java/DesignPattern/DesignPattern_2_Adapter/" rel="next" title="Deisgn Pattern Notes(2) Adapter">
-                <i class="fa fa-chevron-left"></i> Deisgn Pattern Notes(2) Adapter
+              <a href="/2019/06/28/Java/Java_Basic/Java_23_JSON&Jackson/" rel="next" title="Java Study Notes(23) JSON and Jackson">
+                <i class="fa fa-chevron-left"></i> Java Study Notes(23) JSON and Jackson
               </a>
             
           </div>
@@ -615,8 +615,8 @@ Atomic operations are operations which either happen completely or do not happen
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/06/28/Java/Java_Basic/Java_23_JSON&Jackson/" rel="prev" title="Java Study Notes(23) JSON and Jackson">
-                Java Study Notes(23) JSON and Jackson <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/02/Java/Java_Basic/Java_25_Anonymouse_Class/" rel="prev" title="Java Study Notes(25) Anonymouse Class (Not Finished)">
+                Java Study Notes(25) Anonymouse Class (Not Finished) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1015,17 +1015,20 @@ setInterval("createtime()",250);
   <script src="/js/src/next-boot.js?v=7.0.1"></script>
 
 
+
   <script src="//cdn.bootcss.com/jquery.pjax/1.9.6/jquery.pjax.js"></script>
 <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
 <script type="text/javascript">
+
 $(document).on('pjax:start', NProgress.start).on('pjax:end', NProgress.done);
 $(document).pjax('a[target!="_blank"]', '#pjax-container', {timeout: 8000, fragment: '#pjax-container'});
 $(document).on('pjax:complete', function () {
+
   NexT.motion.integrator.cursor = -1;
 
   $(document).trigger('bootstrap:before');
 
-  NexT.utils.isMobile() && window.FastClick.attach(document.body);
+
 
   NexT.utils.lazyLoadPostsImages();
 
