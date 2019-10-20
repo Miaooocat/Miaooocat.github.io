@@ -11,9 +11,9 @@
 {% block content %}
   <section id="posts" class="posts-expand">
     {% for post in page.posts %}
-        {% if post.notshow != true %}
-            {{ post_template.render(post, true) }}
-        {% endif %}
+      {% if post.notshow != true %}
+        {{ post_template.render(post, true) }}
+      {% endif %}
     {% endfor %}
   </section>
 
@@ -21,5 +21,5 @@
 {% endblock %}
 
 {% block sidebar %}
-  {{ sidebar_template.render(false) }}
+  {{ sidebar_template.render(true) }}
 {% endblock %}

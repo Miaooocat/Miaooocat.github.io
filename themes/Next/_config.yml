@@ -84,9 +84,9 @@ footer:
 
   theme:
     # Theme & scheme info link (Theme - NexT.scheme).
-    enable: true
+    enable: false
     # Version info of NexT after scheme info (vX.X.X).
-    version: true
+    version: false
   # -------------------------------------------------------------
   # Beian icp information for Chinese users. In China, every legal website should have a beian icp in website footer.
   # http://www.miitbeian.gov.cn
@@ -174,7 +174,7 @@ baidu_push: false
 menu:
   Home: / || empire
   Notes: categories/ || pencil
-  Blog: trace || angle-double-down
+  Blog: /blog/ || angle-double-down
   Tag: /tags/ || flask
   Timeline: /archives/ || backward
   About-me: /about/ || rebel
