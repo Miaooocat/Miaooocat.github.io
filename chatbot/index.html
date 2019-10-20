@@ -845,8 +845,8 @@ $(document).on('pjax:complete', function () {
   NexT.motion.integrator.cursor = -1;
 
   $(document).trigger('bootstrap:before');
-
-
+  
+  //NexT.utils.isMobile() && window.FastClick.attach(document.body);
 
   NexT.utils.lazyLoadPostsImages();
 
