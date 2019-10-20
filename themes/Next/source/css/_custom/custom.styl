@@ -1,19 +1,18 @@
 // Custom styles.
 // 主页文章添加阴影效果
 // 页面背景图
-body {
-    //background: url(https://hbimg.b0.upaiyun.com/fe7343d213869361a4428c581278d427e3d2b0aa9725-Os4lwD_fw658);
-    background-repeat: no-repeat;
-    background-attachment:fixed;
-    background-position:50% 100%;
-    background-size: cover;   
-}
+
 .menu {
     text-align: center;
     margin-top: 50px;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
     padding: 5px;
     background-color: rgba(255, 255, 255, 0.75);
+}
+// 页面最顶部的横线
+.headband {
+    height: 5px;
+    background-image: linear-gradient(90deg, #e3cae4 0%, #ffffff 15%, #d6ceff 30%, #e3cae4 44%, #afc4e0 58%, #d2e4fd 72%, #d1d1ef 86%, #e3cae4 100%);
 }
 // 页面顶部行高
 .header {
@@ -103,7 +102,18 @@ body {
 .back-to-top.back-to-top-on {
     bottom: 10px;
 }
-
+// 分类页面
+.post-block.page {
+    margin-top: 40px;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+.category-all-page {
+    margin: -80px 0px 40px 0px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 80px 20px 100px 40px;//上右下左
+}
 // 选中文字部分的样式
 ::selection {
     background-color: #132e50b8;

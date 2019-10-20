@@ -104,6 +104,7 @@
   {% block script_extra %}{% endblock %}
 
   {% include '_scripts/next-boot.swig' %}
+  {% include '_scripts/pjax.swig' %}
   
   {% include '_scripts/scroll-cookie.swig' %}
   {% include '_scripts/exturl.swig' %}
@@ -128,6 +129,7 @@
 <link rel="stylesheet" href="/dist/APlayer.min.css">
 <div id="aplayer"></div>
 <script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script>
 <script type="text/javascript" src="/js/src/crash_cheat.js"></script>
 </body>
 </html>

@@ -3,11 +3,11 @@ const apFixed = new APlayer({
   mutex: true,
   theme: '#97dffd',
   order: 'random',
-  showlrc: false,
+  lrcType: 3,
   fixed: true,
 });
 $.ajax({
-  url: 'https://api.i-meto.com/meting/api?server=netease&type=playlist&id=2796323604',
+  url: 'https://api.i-meto.com/meting/api?server=xiami&type=playlist&id=805356298',
   success: function (list) {
     apFixed.list.add(JSON.parse(list));
   }

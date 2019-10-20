@@ -38,6 +38,8 @@ $(document).ready(function() {
     }, settings.status);
   }
 
+
+  
   SidebarToggleLine.prototype.init = function() {
     this.transform('init');
   };
@@ -51,32 +53,6 @@ $(document).ready(function() {
     this.el.velocity('stop').velocity(this.status[status]);
   };
 
-  var sidebarToggleLine1st = new SidebarToggleLine({
-    el    : '.sidebar-toggle-line-first',
-    status: {
-      arrow: {width: '50%', rotateZ: '-45deg', top: '2px'},
-      close: {width: '100%', rotateZ: '-45deg', top: '5px'}
-    }
-  });
-  var sidebarToggleLine2nd = new SidebarToggleLine({
-    el    : '.sidebar-toggle-line-middle',
-    status: {
-      arrow: {width: '90%'},
-      close: {opacity: 0}
-    }
-  });
-  var sidebarToggleLine3rd = new SidebarToggleLine({
-    el    : '.sidebar-toggle-line-last',
-    status: {
-      arrow: {width: '50%', rotateZ: '45deg', top: '-2px'},
-      close: {width: '100%', rotateZ: '45deg', top: '-5px'}
-    }
-  });
-
-  sidebarToggleLines.push(sidebarToggleLine1st);
-  sidebarToggleLines.push(sidebarToggleLine2nd);
-  sidebarToggleLines.push(sidebarToggleLine3rd);
-
   var SIDEBAR_WIDTH = CONFIG.sidebar.width ? CONFIG.sidebar.width : '320px';
   var SIDEBAR_DISPLAY_DURATION = 200;
   var xPos, yPos;
@@ -87,6 +63,9 @@ $(document).ready(function() {
     sidebarEl       : $('.sidebar'),
     isSidebarVisible: false,
     init            : function() {
+      this.toggleEl = $('.sidebar-toggle');
+      this.sidebarEl = $('.sidebar');
+      this.isSidebarVisible = false;
       this.toggleEl.on('click', this.clickHandler.bind(this));
       this.dimmerEl.on('click', this.clickHandler.bind(this));
       this.toggleEl.on('mouseenter', this.mouseEnterHandler.bind(this));
@@ -188,6 +167,7 @@ $(document).ready(function() {
       }
     }
   };
+
   sidebarToggleMotion.init();
 
   NexT.motion.integrator = {
@@ -368,5 +348,36 @@ $(document).ready(function() {
       integrator.next();
     }
   };
+  NexT.motion.init = function(){
+    sidebarToggleMotion.hideSidebar();
+    sidebarToggleMotion.init();
+
+  var sidebarToggleLine1st = new SidebarToggleLine({
+    el: '.sidebar-toggle-line-first',
+    status: {
+      arrow: {width: '50%', rotateZ: '-45deg', top: '2px'},
+      close: {width: '100%', rotateZ: '-45deg', top: '5px'}
+    }
+  });
+  var sidebarToggleLine2nd = new SidebarToggleLine({
+    el: '.sidebar-toggle-line-middle',
+    status: {
+      arrow: {width: '90%'},
+      close: {opacity: 0}
+    }
+  });
+  var sidebarToggleLine3rd = new SidebarToggleLine({
+    el: '.sidebar-toggle-line-last',
+    status: {
+      arrow: {width: '50%', rotateZ: '45deg', top: '-2px'},
+      close: {width: '100%', rotateZ: '45deg', top: '-5px'}
+    }
+  });
+
+  sidebarToggleLines.lines = [];
+  sidebarToggleLines.push(sidebarToggleLine1st);
+  sidebarToggleLines.push(sidebarToggleLine2nd);
+  sidebarToggleLines.push(sidebarToggleLine3rd);
+};
 
 });

@@ -46,8 +46,8 @@ cache:
 # For example, you put your favicons into `hexo-site/source/images` directory.
 # Then need to rename & redefine them on any other names, otherwise icons from Next will rewrite your custom icons in Hexo.
 favicon:
-  small: /images/icon.png
-  medium: /images/icon.png
+  small: /images/icon.jpg
+  medium: /images/icon.jpg
   apple_touch_icon: /images/apple-touch-icon-next.png
   safari_pinned_tab: /images/logo.svg
   #android_manifest: /images/manifest.json
@@ -113,7 +113,7 @@ creative_commons:
 # Follow me on GitHub banner in right-top corner.
 github_banner:
   enable: false
-  permalink: https://github.com/Miaooocat
+  permalink: https://github.com/yourname
   title: Follow me on GitHub
 
 
@@ -174,13 +174,10 @@ baidu_push: false
 menu:
   Home: / || empire
   Notes: categories/ || pencil
-  #Blog: /trace/ || rebel
-  Projects: /projectlist/ || flask
-  Music: /music/ || music
-  Tags: /tags/ || tags
+  Blog: trace || angle-double-down
+  Tag: /tags/ || flask
   Timeline: /archives/ || backward
-  #回音壁|Moments: /moments/ || arrows-alt
-  Sitemap: /sitemap/ || anchor
+  About-me: /about/ || rebel
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
@@ -215,7 +212,7 @@ site_state: true
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
 social:
-  GitHub: https://github.com/Miaooocat || github
+  GitHub: https://github.com/Miaooocat|| github
   E-Mail: mailto:miao.shihaoo@gmail.com || envelope
   #Weibo: https://weibo.com/yourname || weibo
   #Google: https://plus.google.com/yourname || google
@@ -413,7 +410,7 @@ post_edit:
 # ---------------------------------------------------------------
 
 # Reduce padding / margin indents on devices with narrow width.
-mobile_layout_economy: true
+mobile_layout_economy: false
 
 # Android Chrome header panel color ($brand-bg / $headband-bg => $black-deep).
 android_chrome_color: "#222"
