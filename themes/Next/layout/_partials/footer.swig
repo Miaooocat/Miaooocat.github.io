@@ -38,7 +38,7 @@
 </div>
 
 <div>
-<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<span id="timeDate">Loading Days...</span><span id="times">Loading Times...</span>
 <script>
     var now = new Date();
     function createtime() {
@@ -50,8 +50,8 @@
         mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
         seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
         snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
-        document.getElementById("timeDate").innerHTML = "本站已经在各种报错下不安全的运行了 "+dnum+" 天 ";
-        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分钟 " + snum + " 秒";
+        document.getElementById("timeDate").innerHTML = "This website has struggled in this world for "+dnum+" day ";
+        document.getElementById("times").innerHTML = hnum + " hour " + mnum + " min " + snum + " sec";
     }
 setInterval("createtime()",250);
 </script>
