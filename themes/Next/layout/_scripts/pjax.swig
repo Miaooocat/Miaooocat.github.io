@@ -1,14 +1,16 @@
 <script src="//cdn.bootcss.com/jquery.pjax/1.9.6/jquery.pjax.js"></script>
 <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
 <script type="text/javascript">
+
 $(document).on('pjax:start', NProgress.start).on('pjax:end', NProgress.done);
 $(document).pjax('a[target!="_blank"]', '#pjax-container', {timeout: 8000, fragment: '#pjax-container'});
 $(document).on('pjax:complete', function () {
+
   NexT.motion.integrator.cursor = -1;
 
   $(document).trigger('bootstrap:before');
-
-  NexT.utils.isMobile() && window.FastClick.attach(document.body);
+  
+  //NexT.utils.isMobile() && window.FastClick.attach(document.body);
 
   NexT.utils.lazyLoadPostsImages();
 

@@ -104,6 +104,7 @@
   {% block script_extra %}{% endblock %}
 
   {% include '_scripts/next-boot.swig' %}
+
   {% include '_scripts/pjax.swig' %}
   
   {% include '_scripts/scroll-cookie.swig' %}
