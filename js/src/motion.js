@@ -38,6 +38,8 @@ $(document).ready(function() {
     }, settings.status);
   }
 
+
+  
   SidebarToggleLine.prototype.init = function() {
     this.transform('init');
   };
@@ -165,6 +167,8 @@ $(document).ready(function() {
       }
     }
   };
+
+  sidebarToggleMotion.init();
 
   NexT.motion.integrator = {
     queue : [],

@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,default">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.0.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon.jpg?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icon.jpg?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="What is SerializationSerialization is a Java mechanism for converting an object’s state (data of object) into a stream of bytes. The stream can have a variety of destinations:  A file Byte array Anoth">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java Study Notes(19) Serialization">
+<meta property="og:url" content="http://yoursite.com/2019/06/27/Java/Java_Basic/Java_19_Serialization/index.html">
+<meta property="og:site_name" content="Hi, Shihao">
+<meta property="og:description" content="What is SerializationSerialization is a Java mechanism for converting an object’s state (data of object) into a stream of bytes. The stream can have a variety of destinations:  A file Byte array Anoth">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-19T23:46:25.463Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java Study Notes(19) Serialization">
+<meta name="twitter:description" content="What is SerializationSerialization is a Java mechanism for converting an object’s state (data of object) into a stream of bytes. The stream can have a variety of destinations:  A file Byte array Anoth">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/06/27/Java/Java_Basic/Java_19_Serialization/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Java Study Notes(19) Serialization | Hi, Shihao</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div id="pjax-container" class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hi, Shihao</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-empire"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-notes">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-pencil"></i> <br>Notes</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-blog">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/trace" rel="section"><i class="menu-item-icon fa fa-fw fa-angle-double-down"></i> <br>Blog</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tag">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br>Tag</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-timeline">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-backward"></i> <br>Timeline</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about-me">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rebel"></i> <br>About-me</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/27/Java/Java_Basic/Java_19_Serialization/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shihao Miao">
+      <meta itemprop="description" content="坠欢莫拾，酒痕在衣">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi, Shihao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Java Study Notes(19) Serialization
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-06-27 11:20:52" itemprop="dateCreated datePublished" datetime="2019-06-27T11:20:52-04:00">2019-06-27</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-10-19 19:46:25" itemprop="dateModified" datetime="2019-10-19T19:46:25-04:00">2019-10-19</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Software-Development/" itemprop="url" rel="index"><span itemprop="name">Software Development</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Software-Development/Java-Programming/" itemprop="url" rel="index"><span itemprop="name">Java Programming</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="What-is-Serialization"><a href="#What-is-Serialization" class="headerlink" title="What is Serialization"></a>What is Serialization</h1><p>Serialization is a Java mechanism for converting an object’s state (data of object) into a stream of bytes.</p>
+<p>The stream can have a variety of destinations:</p>
+<ul>
+<li>A file</li>
+<li>Byte array</li>
+<li>Another location on the network</li>
+</ul>
+<p>De-serialization is the reverse - restoring an object from a byte stream</p>
+<h1 id="Common-Uses-of-Serialization"><a href="#Common-Uses-of-Serialization" class="headerlink" title="Common Uses of Serialization"></a>Common Uses of Serialization</h1><ul>
+<li>Saving/restoring a game’s state<ul>
+<li>Convert game state to a binary file, and could restore it later</li>
+</ul>
+</li>
+<li>Transferring an object across a server or over a network</li>
+<li>Load balancing mechanisms in clustered architectures<ul>
+<li>When one server is overloaded, the request could be transfer to another server</li>
+</ul>
+</li>
+</ul>
+<h1 id="How-to-use"><a href="#How-to-use" class="headerlink" title="How to use?"></a>How to use?</h1><p>To be serialized, an object must implement the java.io.Serializable interface</p>
+<p>It does not define any methods, it only tells that the object could be serialize</p>
+<ul>
+<li>This kind of interface is called a <strong>marker</strong> or <strong>tag</strong>.</li>
+</ul>
+<p>If attempt to serialize an object that is not serializable, a NotSerializableException will be thrown.</p>
+<h2 id="Object-to-be-Serialized"><a href="#Object-to-be-Serialized" class="headerlink" title="Object to be Serialized"></a>Object to be Serialized</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import java.io.Serializable;</span><br><span class="line">// All objects inside this object need to serialized</span><br><span class="line">// In the example Department class should also implements seriablizable</span><br><span class="line">class User implements Serializable&#123;</span><br><span class="line">    private String username</span><br><span class="line">    private String password;</span><br><span class="line">    private Department department</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Non-Serializable-Data"><a href="#Non-Serializable-Data" class="headerlink" title="Non-Serializable Data"></a>Non-Serializable Data</h1><p>Static members and variable marked with key word <strong>transit</strong> is not seriablizable in default serialization.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class User implements Serializable&#123;</span><br><span class="line">    // Static is not seriablizable</span><br><span class="line">    public static int userCount;</span><br><span class="line">    private String username</span><br><span class="line">    // any variable marked with transit is seriablizable</span><br><span class="line">    private transit String password;</span><br><span class="line">    private Department department</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Serialization-and-Inheritance"><a href="#Serialization-and-Inheritance" class="headerlink" title="Serialization and Inheritance"></a>Serialization and Inheritance</h1><p>This is important when you extend to a thrid party class that is not seriablizable</p>
+<h2 id="Serializable-parent-and-serializable-child"><a href="#Serializable-parent-and-serializable-child" class="headerlink" title="Serializable parent and serializable child"></a>Serializable parent and serializable child</h2><p>Child data is serialized including the inherited data from parents.</p>
+<h2 id="Child-data-is-serialized-Inherited-data-is-ingored"><a href="#Child-data-is-serialized-Inherited-data-is-ingored" class="headerlink" title="Child data is serialized Inherited data is ingored"></a>Child data is serialized Inherited data is ingored</h2><p>Child data is serialized, but <strong>inherited data is ignored</strong>, and become <strong>default</strong>.</p>
+<h1 id="Custom-Serialization"><a href="#Custom-Serialization" class="headerlink" title="Custom Serialization"></a>Custom Serialization</h1><p>Create own method to avoid transit and write static variable</p>
+<p>If the methods below are presented in the class, then JVM will use the following method instead of the default method</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// Customizing serialization</span><br><span class="line">private void writeObject (ObjectOutputStream oos) throws IOException &#123;</span><br><span class="line">       // This is to write static</span><br><span class="line">	oos.writeInt(userCount);</span><br><span class="line">       // This is to write transit</span><br><span class="line">	oos.writeUTF(passWord);</span><br><span class="line">	oos.writeObject(department);</span><br><span class="line">       // This is to enable the default serialization</span><br><span class="line">	oos.defaultWriteObject();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">	// Customizing deserialization</span><br><span class="line">	private void readObject (ObjectInputStream ois) throws IOException, ClassNotFoundException&#123;</span><br><span class="line">        // This is to write static</span><br><span class="line">		userCount = ois.readInt();</span><br><span class="line">        // This is to write transit</span><br><span class="line">		passWord = ois.readUTF();</span><br><span class="line">		department = (Department) ois.readObject();</span><br><span class="line">        // This is to enable the default serialization</span><br><span class="line">		ois.defaultReadObject();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Versioning"><a href="#Versioning" class="headerlink" title="Versioning"></a>Versioning</h1><p>when deserializaing, it is important to make sure that class information has not changes.</p>
+<ul>
+<li><p>If it cannot be fund, a ClassNotFoundException thrown</p>
+</li>
+<li><p>If it has a different version ID, an invalidClassException is thrown.</p>
+<ul>
+<li>Version number is automatically calculated by JVM based on the attributes and method</li>
+</ul>
+</li>
+</ul>
+<p>We could also define your own serialVersion_ID. Then if the version_ID is same, even data in class has changed you could do de-sterilization</p>
+<h1 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h1><h2 id="SerializationApp-Class"><a href="#SerializationApp-Class" class="headerlink" title="SerializationApp Class"></a>SerializationApp Class</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">import java.io.FileInputStream;</span><br><span class="line">import java.io.FileNotFoundException;</span><br><span class="line">import java.io.FileOutputStream;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.io.ObjectInputStream;</span><br><span class="line">import java.io.ObjectOutputStream;</span><br><span class="line"></span><br><span class="line">public class SerializationApp &#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		Department department = new Department();</span><br><span class="line">		User user = new User(1,&quot;john.doe&quot;,&quot;1234&quot;,department,80000);</span><br><span class="line">		serializeUser(user);</span><br><span class="line">		System.out.println(User.userCount);</span><br><span class="line">		</span><br><span class="line">		User deSerializedUser = deSerializeUser();</span><br><span class="line">		System.out.println(deSerializedUser);</span><br><span class="line">		System.out.println(User.userCount);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	private static User deSerializeUser() &#123;</span><br><span class="line">		try (FileInputStream fis = new FileInputStream(&quot;C:\\Users\\shihao.miao\\Desktop\\user.ser&quot;);</span><br><span class="line">				ObjectInputStream ois = new ObjectInputStream(fis);)&#123;</span><br><span class="line">			// Downcasting because return type of readObject() is Object</span><br><span class="line">			// and u r converting Object (supertype) to User type</span><br><span class="line">			return (User) ois.readObject();</span><br><span class="line">		&#125; catch (IOException e) &#123;</span><br><span class="line">			// TODO Auto-generated catch block</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; catch (ClassNotFoundException e) &#123;</span><br><span class="line">			// TODO Auto-generated catch block</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		return null;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	private static void serializeUser(User user) &#123;</span><br><span class="line">		try(FileOutputStream fos = new FileOutputStream(&quot;C:\\Users\\shihao.miao\\Desktop\\user.ser&quot;);</span><br><span class="line">				ObjectOutputStream oos = new ObjectOutputStream(fos))&#123;</span><br><span class="line">			oos.writeObject(user);</span><br><span class="line">			System.out.println(&quot;User object is serialized...&quot;);</span><br><span class="line">			</span><br><span class="line">		&#125; catch (FileNotFoundException e) &#123;</span><br><span class="line">			// TODO Auto-generated catch block</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; catch (IOException e) &#123;</span><br><span class="line">			// TODO Auto-generated catch block</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Department-Class"><a href="#Department-Class" class="headerlink" title="Department Class"></a>Department Class</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">import java.io.Serializable;</span><br><span class="line"></span><br><span class="line">public class Department implements Serializable &#123;</span><br><span class="line">	static private String departmentName;</span><br><span class="line">	private int deptId;</span><br><span class="line">	public Department(String departmentName, int deptId) &#123;</span><br><span class="line">		super();</span><br><span class="line">		this.departmentName = departmentName;</span><br><span class="line">		this.deptId = deptId;</span><br><span class="line">	&#125;</span><br><span class="line">	public Department() &#123;</span><br><span class="line">		super();</span><br><span class="line">		// TODO Auto-generated constructor stub</span><br><span class="line">	&#125;</span><br><span class="line">	public String getDepartmentName() &#123;</span><br><span class="line">		return departmentName;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setDepartmentName(String departmentName) &#123;</span><br><span class="line">		this.departmentName = departmentName;</span><br><span class="line">	&#125;</span><br><span class="line">	public int getDeptId() &#123;</span><br><span class="line">		return deptId;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setDeptId(int deptId) &#123;</span><br><span class="line">		this.deptId = deptId;</span><br><span class="line">	&#125;</span><br><span class="line">	@Override</span><br><span class="line">	public String toString() &#123;</span><br><span class="line">		return &quot;Department [departmentName=&quot; + departmentName + &quot;, deptId=&quot; + deptId + &quot;]&quot;;</span><br><span class="line">	&#125;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="User-class"><a href="#User-class" class="headerlink" title="User class"></a>User class</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line">import java.io.IOException;</span><br><span class="line">import java.io.ObjectInputStream;</span><br><span class="line">import java.io.ObjectOutputStream;</span><br><span class="line">import java.io.Serializable;</span><br><span class="line"></span><br><span class="line">public class User implements Serializable &#123;</span><br><span class="line">	/**</span><br><span class="line">	 * </span><br><span class="line">	 */</span><br><span class="line">	private static final long serialVersionUID = 1L;</span><br><span class="line">	public static int userCount;</span><br><span class="line">	private int id;</span><br><span class="line">	private String userName;</span><br><span class="line">	private transient String passWord;</span><br><span class="line">	private Department department;</span><br><span class="line">	private long salary;</span><br><span class="line">	public User(int id, String userName, String passWord, Department department, long salary) &#123;</span><br><span class="line">		super();</span><br><span class="line">		++ userCount;</span><br><span class="line">		this.id = id;</span><br><span class="line">		this.userName = userName;</span><br><span class="line">		this.passWord = passWord;</span><br><span class="line">		this.salary = salary;</span><br><span class="line">		this.department = department;</span><br><span class="line">	&#125;</span><br><span class="line">	public User() &#123;</span><br><span class="line">		super();</span><br><span class="line">		++ userCount;</span><br><span class="line">	&#125;</span><br><span class="line">	public int getId() &#123;</span><br><span class="line">		return id;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setId(int id) &#123;</span><br><span class="line">		this.id = id;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getUserName() &#123;</span><br><span class="line">		return userName;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setUserName(String userName) &#123;</span><br><span class="line">		this.userName = userName;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getPassWord() &#123;</span><br><span class="line">		return passWord;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setPassWord(String passWord) &#123;</span><br><span class="line">		this.passWord = passWord;</span><br><span class="line">	&#125;</span><br><span class="line">	public Department getDepartment() &#123;</span><br><span class="line">		return department;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setDepartment(Department department) &#123;</span><br><span class="line">		this.department = department;</span><br><span class="line">	&#125;</span><br><span class="line">	public long getSalary() &#123;</span><br><span class="line">		return salary;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setSalary(long salary) &#123;</span><br><span class="line">		this.salary = salary;</span><br><span class="line">	&#125;</span><br><span class="line">	@Override</span><br><span class="line">	public String toString() &#123;</span><br><span class="line">		return &quot;User [id=&quot; + id + &quot;, userName=&quot; + userName + &quot;, passWord=&quot; + passWord + &quot;, department=&quot; + department</span><br><span class="line">				+ &quot;, salary=&quot; + salary + &quot;]&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	// Customizing serialization</span><br><span class="line">	private void writeObject (ObjectOutputStream oos) throws IOException &#123;</span><br><span class="line">		oos.writeInt(userCount);</span><br><span class="line">		oos.writeUTF(passWord);</span><br><span class="line">		oos.writeObject(department);</span><br><span class="line">		oos.defaultWriteObject();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	// Customizing deserialization</span><br><span class="line">	private void readObject (ObjectInputStream ois) throws IOException, ClassNotFoundException&#123;</span><br><span class="line">		userCount = ois.readInt();</span><br><span class="line">		passWord = ois.readUTF();</span><br><span class="line">		department = (Department) ois.readObject();</span><br><span class="line">		ois.defaultReadObject();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/25/Java/Java_Basic/Java_17_File_IO/" rel="next" title="Java Study Notes(17) File_I/O">
+                <i class="fa fa-chevron-left"></i> Java Study Notes(17) File_I/O
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/27/Java/Java_Basic/Java_20_SOLID/" rel="prev" title="Java Study Notes(20) SOLID">
+                Java Study Notes(20) SOLID <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Shihao Miao</p>
+              <div class="site-description motion-element" itemprop="description">坠欢莫拾，酒痕在衣</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives">
+                
+                    <span class="site-state-item-count">70</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/Miaooocat" title="GitHub &rarr; https://github.com/Miaooocat" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:miao.shihaoo@gmail.com" title="E-Mail &rarr; mailto:miao.shihaoo@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-Serialization"><span class="nav-number">1.</span> <span class="nav-text">What is Serialization</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Common-Uses-of-Serialization"><span class="nav-number">2.</span> <span class="nav-text">Common Uses of Serialization</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-to-use"><span class="nav-number">3.</span> <span class="nav-text">How to use?</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-to-be-Serialized"><span class="nav-number">3.1.</span> <span class="nav-text">Object to be Serialized</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Non-Serializable-Data"><span class="nav-number">4.</span> <span class="nav-text">Non-Serializable Data</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Serialization-and-Inheritance"><span class="nav-number">5.</span> <span class="nav-text">Serialization and Inheritance</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Serializable-parent-and-serializable-child"><span class="nav-number">5.1.</span> <span class="nav-text">Serializable parent and serializable child</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Child-data-is-serialized-Inherited-data-is-ingored"><span class="nav-number">5.2.</span> <span class="nav-text">Child data is serialized Inherited data is ingored</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Custom-Serialization"><span class="nav-number">6.</span> <span class="nav-text">Custom Serialization</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Versioning"><span class="nav-number">7.</span> <span class="nav-text">Versioning</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Example"><span class="nav-number">8.</span> <span class="nav-text">Example</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SerializationApp-Class"><span class="nav-number">8.1.</span> <span class="nav-text">SerializationApp Class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Department-Class"><span class="nav-number">8.2.</span> <span class="nav-text">Department Class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#User-class"><span class="nav-number">8.3.</span> <span class="nav-text">User class</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Shihao Miao</span>
+
+  
+
+  
+</div>
+
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("03/20/2019 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已经在各种报错下不安全的运行了 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分钟 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/schemes/muse.js?v=7.0.1"></script>
+
+
+
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+  
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
+
+  
+
+
+  <script src="/js/src/next-boot.js?v=7.0.1"></script>
+
+
+  <script src="//cdn.bootcss.com/jquery.pjax/1.9.6/jquery.pjax.js"></script>
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+<script type="text/javascript">
+$(document).on('pjax:start', NProgress.start).on('pjax:end', NProgress.done);
+$(document).pjax('a[target!="_blank"]', '#pjax-container', {timeout: 8000, fragment: '#pjax-container'});
+$(document).on('pjax:complete', function () {
+  NexT.motion.integrator.cursor = -1;
+
+  $(document).trigger('bootstrap:before');
+
+  NexT.utils.isMobile() && window.FastClick.attach(document.body);
+
+  NexT.utils.lazyLoadPostsImages();
+
+  NexT.utils.registerBackToTop();
+
+  $('.site-nav-toggle button').on('click', function () {
+    var $siteNav = $('.site-nav');
+    var ON_CLASS_NAME = 'site-nav-on';
+    var isSiteNavOn = $siteNav.hasClass(ON_CLASS_NAME);
+    var animateAction = isSiteNavOn ? 'slideUp' : 'slideDown';
+    var animateCallback = isSiteNavOn ? 'removeClass' : 'addClass';
+
+    $siteNav.stop()[animateAction]('fast', function () {
+      $siteNav[animateCallback](ON_CLASS_NAME);
+    });
+  });
+
+  CONFIG.fancybox && NexT.utils.wrapImageWithFancyBox();
+  NexT.utils.embeddedVideoTransformer();
+
+
+  $(document).trigger('motion:before');
+
+  NexT.motion.init();
+  if (CONFIG.motion) {
+    $('.archive-year').velocity('transition.slideLeftIn');
+    CONFIG.motion && NexT.motion.integrator.bootstrap();
+  }
+  NexT.postDetails.init();
+  $(document).trigger('bootstrap:after');
+});
+</script>
+  
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<script>
+  $('.highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('Copy');
+      }, 300);
+    }).append(e);
+  })
+</script>
+
+
+  
+
+  
+
+  
+<link rel="stylesheet" href="/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script>
+<script type="text/javascript" src="/js/src/crash_cheat.js"></script>
+</body>
+</html>
