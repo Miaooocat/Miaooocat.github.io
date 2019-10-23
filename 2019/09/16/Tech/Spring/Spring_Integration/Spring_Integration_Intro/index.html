@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,default">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.0.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon.jpg?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icon.jpg?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="SummarySpring Integration is an open source framework that designed to enable the development of integration solutions typical of event-driven architectures and messaging-centric architectures Depende">
+<meta name="keywords" content="Java,Spring">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring Integration - Overview">
+<meta property="og:url" content="http://yoursite.com/2019/09/16/Tech/Spring/Spring_Integration/Spring_Integration_Intro/index.html">
+<meta property="og:site_name" content="Hi, Shihao">
+<meta property="og:description" content="SummarySpring Integration is an open source framework that designed to enable the development of integration solutions typical of event-driven architectures and messaging-centric architectures Depende">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-23T02:02:40.169Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Spring Integration - Overview">
+<meta name="twitter:description" content="SummarySpring Integration is an open source framework that designed to enable the development of integration solutions typical of event-driven architectures and messaging-centric architectures Depende">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/09/16/Tech/Spring/Spring_Integration/Spring_Integration_Intro/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Spring Integration - Overview | Hi, Shihao</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div id="pjax-container" class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hi, Shihao</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-empire"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-notes">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-pencil"></i> <br>Notes</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-blog">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-angle-double-down"></i> <br>Blog</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tag">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br>Tag</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-timeline">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-backward"></i> <br>Timeline</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about-me">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-rebel"></i> <br>About-me</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/16/Tech/Spring/Spring_Integration/Spring_Integration_Intro/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shihao Miao">
+      <meta itemprop="description" content="坠欢莫拾，酒痕在衣">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi, Shihao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Spring Integration - Overview
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-09-16 19:51:52" itemprop="dateCreated datePublished" datetime="2019-09-16T19:51:52-04:00">2019-09-16</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-10-22 22:02:40" itemprop="dateModified" datetime="2019-10-22T22:02:40-04:00">2019-10-22</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Software-Development/" itemprop="url" rel="index"><span itemprop="name">Software Development</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Software-Development/Framework/" itemprop="url" rel="index"><span itemprop="name">Framework</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h1><p>Spring Integration is an open source framework that designed to enable the development of integration solutions typical of <strong>event-driven architectures</strong> and <strong>messaging-centric architectures</strong></p>
+<h1 id="Dependency"><a href="#Dependency" class="headerlink" title="Dependency"></a>Dependency</h1><p>It requires two dependencies <strong>spring intergration core</strong> and <strong>spring integration file</strong>, which could be downloaded from Maven Central. </p>
+<h1 id="Core-concepts-of-Spring"><a href="#Core-concepts-of-Spring" class="headerlink" title="Core concepts of Spring"></a>Core concepts of Spring</h1><p>Spring integration framework consists three parts, namely <strong>message</strong>, <strong>message channel</strong>, and <strong>message endpoint</strong>. In general. a <strong>message</strong> is a unit of information that can be passed between different <strong>message endpoint</strong> through <strong>message channels</strong>.</p>
+<h3 id="Message-Endpoint"><a href="#Message-Endpoint" class="headerlink" title="Message Endpoint"></a>Message Endpoint</h3><p>Its target is to connect in a non-invasive manner, the application with the messaging framework. The endpoint will be mapped to a message channel in the same way the MVC controller is mapped to a URL pattern.</p>
+<h3 id="Channel-adapter-–-Connects-the-application-to-an-external-system-Unidirectional"><a href="#Channel-adapter-–-Connects-the-application-to-an-external-system-Unidirectional" class="headerlink" title="Channel adapter – Connects the application to an external system (Unidirectional)"></a>Channel adapter – Connects the application to an external system (Unidirectional)</h3><p>The channel adapter is the endpoint that allows your application to connect with external systems.<br>There are four types of adapters</p>
+<h4 id="Inbound-channel-adapter"><a href="#Inbound-channel-adapter" class="headerlink" title="Inbound channel adapter"></a>Inbound channel adapter</h4><p>It receives a message from an external system. It then enters to our messaging system through a message channel, where we will handle it.</p>
+<h4 id="Outbound-channel-adapter"><a href="#Outbound-channel-adapter" class="headerlink" title="Outbound channel adapter:"></a>Outbound channel adapter:</h4><p>Our message system creates a message and sends it to an external system.</p>
+<h3 id="Gateway-–-Connects-the-application-to-an-external-system-bidirectional"><a href="#Gateway-–-Connects-the-application-to-an-external-system-bidirectional" class="headerlink" title="Gateway – Connects the application to an external system (bidirectional)"></a>Gateway – Connects the application to an external system (bidirectional)</h3><h4 id="Inbound-gateway-Bidirectional-A-message-enters-into-the-application-and-expects-a-response-The-response-will-be-sent-back-to-the-external-system"><a href="#Inbound-gateway-Bidirectional-A-message-enters-into-the-application-and-expects-a-response-The-response-will-be-sent-back-to-the-external-system" class="headerlink" title="Inbound gateway: Bidirectional. A message enters into the application and expects a response. The response will be sent back to the external system."></a>Inbound gateway: Bidirectional. A message enters into the application and expects a response. The response will be sent back to the external system.</h4><h4 id="Outbound-gateway-Bidirectional-The-application-creates-a-message-and-sends-it-to-the-external-system-The-gateway-will-then-wait-for-a-response"><a href="#Outbound-gateway-Bidirectional-The-application-creates-a-message-and-sends-it-to-the-external-system-The-gateway-will-then-wait-for-a-response" class="headerlink" title="Outbound gateway: Bidirectional. The application creates a message and sends it to the external system. The gateway will then wait for a response."></a>Outbound gateway: Bidirectional. The application creates a message and sends it to the external system. The gateway will then wait for a response.</h4><h3 id="Service-Activator-–-Can-invoke-an-operation-on-a-service-object"><a href="#Service-Activator-–-Can-invoke-an-operation-on-a-service-object" class="headerlink" title="Service Activator – Can invoke an operation on a service object"></a>Service Activator – Can invoke an operation on a service object</h3><h3 id="Transformer-–-Converts-the-content-of-a-message"><a href="#Transformer-–-Converts-the-content-of-a-message" class="headerlink" title="Transformer – Converts the content of a message"></a>Transformer – Converts the content of a message</h3><p>This endpoint is used for payload conversion. It converts the type of the payload to another type. For example, from String to XML document. Just take into account that transforming the payload will result in a new message (remember that the message is immutable!). This type of endpoint increases loose-coupling between producers and consumers, because the consumer doesn’t need to know what is the created type of the producer. The transformer will take care of it and deliver the content type the consumer is waiting for.</p>
+<h4 id="HeaderEnricher"><a href="#HeaderEnricher" class="headerlink" title="HeaderEnricher"></a>HeaderEnricher</h4><p>It permits to add header values to the message.</p>
+<h4 id="ObjectToMapTransformer"><a href="#ObjectToMapTransformer" class="headerlink" title="ObjectToMapTransformer"></a>ObjectToMapTransformer</h4><p>Converts an Object to a Map, converting its attributes to map values.</p>
+<h4 id="ObjectToStringTransformer"><a href="#ObjectToStringTransformer" class="headerlink" title="ObjectToStringTransformer"></a>ObjectToStringTransformer</h4><p>Converts an Object to a String. It converts it by calling its toString() operation.</p>
+<h4 id="PayloadSerializingTransformer-PayloadDeserializingTransformer"><a href="#PayloadSerializingTransformer-PayloadDeserializingTransformer" class="headerlink" title="PayloadSerializingTransformer / PayloadDeserializingTransformer"></a>PayloadSerializingTransformer / PayloadDeserializingTransformer</h4><p>Converts from Object to a byte array and the other way round.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public class Order implements Serializable &#123;</span><br><span class="line">    private static final long serialVersionUID = 1L; </span><br><span class="line">    private int id;</span><br><span class="line">    private String description;</span><br><span class="line"></span><br><span class="line">    public Order() &#123;&#125;</span><br><span class="line">     </span><br><span class="line">    public Order(int id, String description) &#123;</span><br><span class="line">        this.id = id;</span><br><span class="line">        this.description = description;</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    @Override</span><br><span class="line">    public String toString() &#123;</span><br><span class="line">        return String.valueOf(this.getId());</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    //Setters &amp; Getters</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;int:object-to-string-transformer input-channel=&quot;requestChannel&quot; output-channel=&quot;transformedChannel&quot;/&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;int:transformer ref=&quot;myTransformer&quot; method=&quot;transform&quot;</span><br><span class="line">  input-channel=&quot;requestChannel&quot; output-channel=&quot;transformedChannel&quot;/&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@Component(&quot;myTransformer&quot;)</span><br><span class="line">public class MyTransformer &#123;</span><br><span class="line">    public Order transform(Order requestOrder) &#123;</span><br><span class="line">        return new Order(requestOrder.getId(), requestOrder.getDescription()+&quot;_modified&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>In this example, the method attribute of the transformer element is not necessary, since the transformer only has one method. If it had several methods, you would need to set the “method” attribute to tell the framework which method to invoke. Or if you prefer annotations, you could specify the method using @Transformer annotation at method level:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@Component(&quot;myTransformer&quot;)</span><br><span class="line">public class MyTransformer &#123;</span><br><span class="line">     </span><br><span class="line">    @Transformer</span><br><span class="line">    public Order transform(Order requestOrder) &#123;</span><br><span class="line">        return new Order(requestOrder.getId(), requestOrder.getDescription()+&quot;_modified&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    public Order doOtherThings(Order requestOrder) &#123;</span><br><span class="line">        //do other things</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Filter-—-Determines-if-a-message-can-continue-its-way-to-the-output-channel"><a href="#Filter-—-Determines-if-a-message-can-continue-its-way-to-the-output-channel" class="headerlink" title="Filter — Determines if a message can continue its way to the output channel"></a>Filter — Determines if a message can continue its way to the output channel</h3><h3 id="Router-—-Decides-to-which-channel-the-message-will-be-sent"><a href="#Router-—-Decides-to-which-channel-the-message-will-be-sent" class="headerlink" title="Router — Decides to which channel the message will be sent"></a>Router — Decides to which channel the message will be sent</h3><h3 id="Splitter-—-Splits-the-message-in-several-parts"><a href="#Splitter-—-Splits-the-message-in-several-parts" class="headerlink" title="Splitter — Splits the message in several parts"></a>Splitter — Splits the message in several parts</h3><h3 id="Aggregator-—-Combines-several-messages-into-a-single-one"><a href="#Aggregator-—-Combines-several-messages-into-a-single-one" class="headerlink" title="Aggregator — Combines several messages into a single one"></a>Aggregator — Combines several messages into a single one</h3>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/tags/Spring/" rel="tag"># Spring</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/16/Tech/Spring/Spring_Integration/SpringIntegrationTesting/" rel="next" title="Spring Integration - Testing">
+                <i class="fa fa-chevron-left"></i> Spring Integration - Testing
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/01/Journal/2019Sept/" rel="prev" title="2019年九月小结">
+                2019年九月小结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Shihao Miao</p>
+              <div class="site-description motion-element" itemprop="description">坠欢莫拾，酒痕在衣</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives">
+                
+                    <span class="site-state-item-count">68</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/Miaooocat" title="GitHub &rarr; https://github.com/Miaooocat" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:miao.shihaoo@gmail.com" title="E-Mail &rarr; mailto:miao.shihaoo@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Summary"><span class="nav-number">1.</span> <span class="nav-text">Summary</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Dependency"><span class="nav-number">2.</span> <span class="nav-text">Dependency</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Core-concepts-of-Spring"><span class="nav-number">3.</span> <span class="nav-text">Core concepts of Spring</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Message-Endpoint"><span class="nav-number">3.0.1.</span> <span class="nav-text">Message Endpoint</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Channel-adapter-–-Connects-the-application-to-an-external-system-Unidirectional"><span class="nav-number">3.0.2.</span> <span class="nav-text">Channel adapter – Connects the application to an external system (Unidirectional)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Inbound-channel-adapter"><span class="nav-number">3.0.2.1.</span> <span class="nav-text">Inbound channel adapter</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Outbound-channel-adapter"><span class="nav-number">3.0.2.2.</span> <span class="nav-text">Outbound channel adapter:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gateway-–-Connects-the-application-to-an-external-system-bidirectional"><span class="nav-number">3.0.3.</span> <span class="nav-text">Gateway – Connects the application to an external system (bidirectional)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Inbound-gateway-Bidirectional-A-message-enters-into-the-application-and-expects-a-response-The-response-will-be-sent-back-to-the-external-system"><span class="nav-number">3.0.3.1.</span> <span class="nav-text">Inbound gateway: Bidirectional. A message enters into the application and expects a response. The response will be sent back to the external system.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Outbound-gateway-Bidirectional-The-application-creates-a-message-and-sends-it-to-the-external-system-The-gateway-will-then-wait-for-a-response"><span class="nav-number">3.0.3.2.</span> <span class="nav-text">Outbound gateway: Bidirectional. The application creates a message and sends it to the external system. The gateway will then wait for a response.</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Service-Activator-–-Can-invoke-an-operation-on-a-service-object"><span class="nav-number">3.0.4.</span> <span class="nav-text">Service Activator – Can invoke an operation on a service object</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Transformer-–-Converts-the-content-of-a-message"><span class="nav-number">3.0.5.</span> <span class="nav-text">Transformer – Converts the content of a message</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HeaderEnricher"><span class="nav-number">3.0.5.1.</span> <span class="nav-text">HeaderEnricher</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ObjectToMapTransformer"><span class="nav-number">3.0.5.2.</span> <span class="nav-text">ObjectToMapTransformer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ObjectToStringTransformer"><span class="nav-number">3.0.5.3.</span> <span class="nav-text">ObjectToStringTransformer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PayloadSerializingTransformer-PayloadDeserializingTransformer"><span class="nav-number">3.0.5.4.</span> <span class="nav-text">PayloadSerializingTransformer / PayloadDeserializingTransformer</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Filter-—-Determines-if-a-message-can-continue-its-way-to-the-output-channel"><span class="nav-number">3.0.6.</span> <span class="nav-text">Filter — Determines if a message can continue its way to the output channel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Router-—-Decides-to-which-channel-the-message-will-be-sent"><span class="nav-number">3.0.7.</span> <span class="nav-text">Router — Decides to which channel the message will be sent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Splitter-—-Splits-the-message-in-several-parts"><span class="nav-number">3.0.8.</span> <span class="nav-text">Splitter — Splits the message in several parts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Aggregator-—-Combines-several-messages-into-a-single-one"><span class="nav-number">3.0.9.</span> <span class="nav-text">Aggregator — Combines several messages into a single one</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Shihao Miao</span>
+
+  
+
+  
+</div>
+
+<div>
+<span id="timeDate">Loading Days...</span><span id="times">Loading Times...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("03/20/2019 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "This website has struggled in this world for "+dnum+" day ";
+        document.getElementById("times").innerHTML = hnum + " hour " + mnum + " min " + snum + " sec";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/schemes/muse.js?v=7.0.1"></script>
+
+
+
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+  
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
+
+  
+
+
+  <script src="/js/src/next-boot.js?v=7.0.1"></script>
+
+
+
+  <script src="//cdn.bootcss.com/jquery.pjax/1.9.6/jquery.pjax.js"></script>
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+<script type="text/javascript">
+
+$(document).on('pjax:start', NProgress.start).on('pjax:end', NProgress.done);
+$(document).pjax('a[target!="_blank"]', '#pjax-container', {timeout: 8000, fragment: '#pjax-container'});
+$(document).on('pjax:complete', function () {
+
+  NexT.motion.integrator.cursor = -1;
+
+  $(document).trigger('bootstrap:before');
+  
+  //NexT.utils.isMobile() && window.FastClick.attach(document.body);
+
+  NexT.utils.lazyLoadPostsImages();
+
+  NexT.utils.registerBackToTop();
+
+  $('.site-nav-toggle button').on('click', function () {
+    var $siteNav = $('.site-nav');
+    var ON_CLASS_NAME = 'site-nav-on';
+    var isSiteNavOn = $siteNav.hasClass(ON_CLASS_NAME);
+    var animateAction = isSiteNavOn ? 'slideUp' : 'slideDown';
+    var animateCallback = isSiteNavOn ? 'removeClass' : 'addClass';
+
+    $siteNav.stop()[animateAction]('fast', function () {
+      $siteNav[animateCallback](ON_CLASS_NAME);
+    });
+  });
+
+  CONFIG.fancybox && NexT.utils.wrapImageWithFancyBox();
+  NexT.utils.embeddedVideoTransformer();
+
+
+  $(document).trigger('motion:before');
+
+  NexT.motion.init();
+  if (CONFIG.motion) {
+    $('.archive-year').velocity('transition.slideLeftIn');
+    CONFIG.motion && NexT.motion.integrator.bootstrap();
+  }
+  NexT.postDetails.init();
+  $(document).trigger('bootstrap:after');
+});
+</script>
+  
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<script>
+  $('.highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('Copy');
+      }, 300);
+    }).append(e);
+  })
+</script>
+
+
+  
+
+  
+
+  
+<link rel="stylesheet" href="/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script>
+<script type="text/javascript" src="/js/src/crash_cheat.js"></script>
+</body>
+</html>
