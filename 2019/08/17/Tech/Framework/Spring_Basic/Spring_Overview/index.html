@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,default">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="css/main.css?v=7.0.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon.jpg?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icon.jpg?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="OverviewSpring framework is an open source Java platform that provides comprehensive infrastructure support for developing robust Java applications. It is made up of a series of JAR files (The depende">
+<meta name="keywords" content="Java,Web">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring Overview">
+<meta property="og:url" content="http://yoursite.com/2019/08/17/Tech/Framework/Spring_Basic/Spring_Overview/index.html">
+<meta property="og:site_name" content="Hi, Shihao">
+<meta property="og:description" content="OverviewSpring framework is an open source Java platform that provides comprehensive infrastructure support for developing robust Java applications. It is made up of a series of JAR files (The depende">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/2019/08/17/Tech/Framework/Spring_Basic/Spring_Overview/img/Spring_Architecture.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/17/Tech/Framework/Spring_Basic/Spring_Overview/img/Spring_Container.png">
+<meta property="og:updated_time" content="2019-10-19T23:46:25.512Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Spring Overview">
+<meta name="twitter:description" content="OverviewSpring framework is an open source Java platform that provides comprehensive infrastructure support for developing robust Java applications. It is made up of a series of JAR files (The depende">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/17/Tech/Framework/Spring_Basic/Spring_Overview/img/Spring_Architecture.png">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/08/17/Tech/Framework/Spring_Basic/Spring_Overview/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Spring Overview | Hi, Shihao</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div id="pjax-container" class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hi, Shihao</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a rel="section"><i class="menu-item-icon fa fa-fw fa-empire"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-notes">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a rel="section"><i class="menu-item-icon fa fa-fw fa-pencil"></i> <br>Notes</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-blog">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a rel="section"><i class="menu-item-icon fa fa-fw fa-angle-double-down"></i> <br>Blog</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tag">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br>Tag</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-timeline">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a rel="section"><i class="menu-item-icon fa fa-fw fa-backward"></i> <br>Timeline</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about-me">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a rel="section"><i class="menu-item-icon fa fa-fw fa-rebel"></i> <br>About-me</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shihao Miao">
+      <meta itemprop="description" content="坠欢莫拾，酒痕在衣">
+      <meta itemprop="image" content="../../../../../../../images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi, Shihao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Spring Overview
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-08-17 12:06:52" itemprop="dateCreated datePublished" datetime="2019-08-17T12:06:52-04:00">2019-08-17</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="../../../../../../../categories/Software-Development/" itemprop="url" rel="index"><span itemprop="name">Software Development</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>Spring framework is an open source Java platform that provides comprehensive infrastructure support for developing robust Java applications. It is made up of a series of JAR files (The dependencies could be add in Maven). The technologies that Spring are most indentified with are <strong>inversion of Control(IOC)</strong> and <strong>aspect oriented programming(AOP)</strong>.</p>
+<h2 id="Inversion-of-Control-IoC"><a href="#Inversion-of-Control-IoC" class="headerlink" title="Inversion of Control (IoC)"></a>Inversion of Control (IoC)</h2><p>The general concept of Inversion of Control says that <strong>you do not create your objects but describe how they should be created</strong>. If an object depends on another, you do not connect them together yourself – you merely describe which objects are needed by which. The IoC container is then responsible for hooking it all up, which reduces code in the application. </p>
+<h2 id="Aspect-Oriented-Programming"><a href="#Aspect-Oriented-Programming" class="headerlink" title="Aspect Oriented Programming"></a>Aspect Oriented Programming</h2><p>Another key component is the Aspect Oriented Programming(AOP framework. Aspect oriented programming addresses the problem of <strong>cross-cutting concerns</strong>, which would be any kind of code that is repeated in different method, but can’t normally be completely refactored into its own module. Aspect oriented programming enables cohesive development by <strong>separating business logic from cross-cutting concerns</strong>. An example is like logging or verification.</p>
+<h1 id="Spring-Architecture"><a href="#Spring-Architecture" class="headerlink" title="Spring Architecture"></a>Spring Architecture</h1><p><img src="img/Spring_Architecture.png" alt="Spring Architecture"></p>
+<p>The Spring Framework consists of features organised into about 20 modules. These modules can be used individually or in conjunction with each other. For example, an application that needs to connect to a database might use the JDBC  module. If this application is a web application, it might also use the web module.</p>
+<h1 id="Spring-Terminology"><a href="#Spring-Terminology" class="headerlink" title="Spring Terminology"></a>Spring Terminology</h1><h3 id="Spring-Core-Container"><a href="#Spring-Core-Container" class="headerlink" title="Spring Core Container"></a>Spring Core Container</h3><p><img src="img/Spring_Container.png" alt="Spring Container"></p>
+<p>The Spring IoC container makes use of Java POJO classes and configuration metadata to manage the life cycle of bean.</p>
+<h3 id="Life-Cycle"><a href="#Life-Cycle" class="headerlink" title="Life Cycle"></a>Life Cycle</h3><p>The life cycle is maintained by Spring IoC container:</p>
+<ol>
+<li>Creation: The container will look for the configuration metadata of given bean. Once found, the container will create an instance of the object by reflection.</li>
+<li>Injection: After creation, its dependencies will be injected into the bean. If these dependencies are other beans, they are created first.</li>
+<li>Validation:</li>
+<li>Registration:</li>
+<li>Destruction:</li>
+</ol>
+<h3 id="Spring-Bean"><a href="#Spring-Bean" class="headerlink" title="Spring Bean"></a>Spring Bean</h3><p>Spring beans are Java objects that are managed by the Spring container.<br>To declare bean in Spring.xml configuration file.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=&quot;beanName&quot; class=&quot;package.classname&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="BeanFactory-Interface"><a href="#BeanFactory-Interface" class="headerlink" title="BeanFactory Interface"></a>BeanFactory Interface</h3><p>The BeanFactory interface is the root interface for accessing the Spring container.</p>
+<h3 id="Application-Context-Interface"><a href="#Application-Context-Interface" class="headerlink" title="Application Context Interface"></a>Application Context Interface</h3><p>ApplicationContext interface implements BeanFactory Interface. Thus, it has all the functionality of BeanFactory as well as other additional functionality.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ApplicationContext context = </span><br><span class="line">        new ClassPathXmlApplicationContext(“context.xml”);</span><br></pre></td></tr></table></figure></p>
+<h3 id="Bean-Scope"><a href="#Bean-Scope" class="headerlink" title="Bean Scope"></a>Bean Scope</h3><p>Bean Scope dictate how beans are created. There are two types:</p>
+<ol>
+<li>Singleton – (Default)<ul>
+<li>Maintains a single instance per Spring Container</li>
+</ul>
+</li>
+<li>Prototype<ul>
+<li>Produces a new instance each time it is referenced</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=&quot;user&quot; class=&quot;com.User&quot; scope=&quot;prototype&quot;&gt;</span><br><span class="line">  &lt;property name=&quot;password&quot; ref=&quot;password&quot; /&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="Cross-Cutting-Concerns"><a href="#Cross-Cutting-Concerns" class="headerlink" title="Cross-Cutting Concerns"></a><strong>Cross-Cutting Concerns</strong></h3><p>A piece of code that is repeated in different method, but can’t normally be completely refactored into its own module.</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="../../../../../../../tags/Java/" rel="tag"># Java</a>
+          
+            <a href="../../../../../../../tags/Web/" rel="tag"># Web</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="../../../../../14/Tech/Framework/Spring_Basic/Spring_AOP/" rel="next" title="Spring Configuration">
+                <i class="fa fa-chevron-left"></i> Spring Configuration
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="../Spring_MVC/" rel="prev" title="Spring MVC">
+                Spring MVC <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Shihao Miao</p>
+              <div class="site-description motion-element" itemprop="description">坠欢莫拾，酒痕在衣</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="../../../../../../../archives">
+                
+                    <span class="site-state-item-count">69</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="../../../../../../../categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="../../../../../../../tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/Miaooocat" title="GitHub &rarr; https://github.com/Miaooocat" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:miao.shihaoo@gmail.com" title="E-Mail &rarr; mailto:miao.shihaoo@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Inversion-of-Control-IoC"><span class="nav-number">1.1.</span> <span class="nav-text">Inversion of Control (IoC)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Aspect-Oriented-Programming"><span class="nav-number">1.2.</span> <span class="nav-text">Aspect Oriented Programming</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring-Architecture"><span class="nav-number">2.</span> <span class="nav-text">Spring Architecture</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring-Terminology"><span class="nav-number">3.</span> <span class="nav-text">Spring Terminology</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-Core-Container"><span class="nav-number">3.0.1.</span> <span class="nav-text">Spring Core Container</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Life-Cycle"><span class="nav-number">3.0.2.</span> <span class="nav-text">Life Cycle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-Bean"><span class="nav-number">3.0.3.</span> <span class="nav-text">Spring Bean</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BeanFactory-Interface"><span class="nav-number">3.0.4.</span> <span class="nav-text">BeanFactory Interface</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Application-Context-Interface"><span class="nav-number">3.0.5.</span> <span class="nav-text">Application Context Interface</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bean-Scope"><span class="nav-number">3.0.6.</span> <span class="nav-text">Bean Scope</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cross-Cutting-Concerns"><span class="nav-number">3.0.7.</span> <span class="nav-text">Cross-Cutting Concerns</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Shihao Miao</span>
+
+  
+
+  
+</div>
+
+<div>
+<span id="timeDate">Loading Days...</span><span id="times">Loading Times...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("03/20/2019 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "This website has struggled in this world for "+dnum+" day ";
+        document.getElementById("times").innerHTML = hnum + " hour " + mnum + " min " + snum + " sec";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="../../../../../../../lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="../../../../../../../lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script src="../../../../../../../lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="../../../../../../../lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="../../../../../../../js/src/utils.js?v=7.0.1"></script>
+
+  <script src="../../../../../../../js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="../../../../../../../js/src/schemes/muse.js?v=7.0.1"></script>
+
+
+
+  <script src="../../../../../../../js/src/scrollspy.js?v=7.0.1"></script>
+<script src="../../../../../../../js/src/post-details.js?v=7.0.1"></script>
+
+  
+  <script src="../../../../../../../js/src/scrollspy.js?v=7.0.1"></script>
+<script src="../../../../../../../js/src/post-details.js?v=7.0.1"></script>
+
+
+
+  
+
+
+  <script src="../../../../../../../js/src/next-boot.js?v=7.0.1"></script>
+
+
+
+  <script src="//cdn.bootcss.com/jquery.pjax/1.9.6/jquery.pjax.js"></script>
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+<script type="text/javascript">
+
+$(document).on('pjax:start', NProgress.start).on('pjax:end', NProgress.done);
+$(document).pjax('a[target!="_blank"]', '#pjax-container', {timeout: 8000, fragment: '#pjax-container'});
+$(document).on('pjax:complete', function () {
+
+  NexT.motion.integrator.cursor = -1;
+
+  $(document).trigger('bootstrap:before');
+  
+  //NexT.utils.isMobile() && window.FastClick.attach(document.body);
+
+  NexT.utils.lazyLoadPostsImages();
+
+  NexT.utils.registerBackToTop();
+
+  $('.site-nav-toggle button').on('click', function () {
+    var $siteNav = $('.site-nav');
+    var ON_CLASS_NAME = 'site-nav-on';
+    var isSiteNavOn = $siteNav.hasClass(ON_CLASS_NAME);
+    var animateAction = isSiteNavOn ? 'slideUp' : 'slideDown';
+    var animateCallback = isSiteNavOn ? 'removeClass' : 'addClass';
+
+    $siteNav.stop()[animateAction]('fast', function () {
+      $siteNav[animateCallback](ON_CLASS_NAME);
+    });
+  });
+
+  CONFIG.fancybox && NexT.utils.wrapImageWithFancyBox();
+  NexT.utils.embeddedVideoTransformer();
+
+
+  $(document).trigger('motion:before');
+
+  NexT.motion.init();
+  if (CONFIG.motion) {
+    $('.archive-year').velocity('transition.slideLeftIn');
+    CONFIG.motion && NexT.motion.integrator.bootstrap();
+  }
+  NexT.postDetails.init();
+  $(document).trigger('bootstrap:after');
+});
+</script>
+  
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<script>
+  $('.highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('Copy');
+      }, 300);
+    }).append(e);
+  })
+</script>
+
+
+  
+
+  
+
+  
+<link rel="stylesheet" href="/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script>
+<script type="text/javascript" src="/js/src/crash_cheat.js"></script>
+</body>
+</html>

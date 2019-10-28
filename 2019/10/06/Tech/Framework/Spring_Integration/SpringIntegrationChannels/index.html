@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,default">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="css/main.css?v=7.0.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon.jpg?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icon.jpg?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Important Point Summary:By using a Queue Channel producer and consumer get decoupled and both happen in different threads ChannelMessage need to travel from one component to another through Channel.">
+<meta name="keywords" content="Java,Spring">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring Integration - Channels">
+<meta property="og:url" content="http://yoursite.com/2019/10/06/Tech/Framework/Spring_Integration/SpringIntegrationChannels/index.html">
+<meta property="og:site_name" content="Hi, Shihao">
+<meta property="og:description" content="Important Point Summary:By using a Queue Channel producer and consumer get decoupled and both happen in different threads ChannelMessage need to travel from one component to another through Channel.">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-28T02:10:44.413Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Spring Integration - Channels">
+<meta name="twitter:description" content="Important Point Summary:By using a Queue Channel producer and consumer get decoupled and both happen in different threads ChannelMessage need to travel from one component to another through Channel.">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/10/06/Tech/Framework/Spring_Integration/SpringIntegrationChannels/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Spring Integration - Channels | Hi, Shihao</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div id="pjax-container" class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hi, Shihao</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a rel="section"><i class="menu-item-icon fa fa-fw fa-empire"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-notes">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a rel="section"><i class="menu-item-icon fa fa-fw fa-pencil"></i> <br>Notes</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-blog">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a rel="section"><i class="menu-item-icon fa fa-fw fa-angle-double-down"></i> <br>Blog</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tag">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br>Tag</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-timeline">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a rel="section"><i class="menu-item-icon fa fa-fw fa-backward"></i> <br>Timeline</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about-me">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a rel="section"><i class="menu-item-icon fa fa-fw fa-rebel"></i> <br>About-me</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shihao Miao">
+      <meta itemprop="description" content="坠欢莫拾，酒痕在衣">
+      <meta itemprop="image" content="../../../../../../../images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi, Shihao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Spring Integration - Channels
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-10-06 19:51:52" itemprop="dateCreated datePublished" datetime="2019-10-06T19:51:52-04:00">2019-10-06</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="../../../../../../../categories/Software-Development/" itemprop="url" rel="index"><span itemprop="name">Software Development</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="../../../../../../../categories/Software-Development/Framework/" itemprop="url" rel="index"><span itemprop="name">Framework</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Important-Point-Summary"><a href="#Important-Point-Summary" class="headerlink" title="Important Point Summary:"></a>Important Point Summary:</h1><p>By using a Queue Channel producer and consumer get decoupled and both happen in different threads</p>
+<h1 id="Channel"><a href="#Channel" class="headerlink" title="Channel"></a>Channel</h1><p>Message need to travel from one component to another through <strong>Channel</strong>. </p>
+<h2 id="MessageChannel"><a href="#MessageChannel" class="headerlink" title="MessageChannel"></a>MessageChannel</h2><p>Message channel interface has no receive method. Message being sent will <strong>be delivered directly</strong> to the Message Endpoint.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.springframework.integration;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">MessageChannel</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">send</span><span class="params">(Message&lt;?&gt; message)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">send</span><span class="params">(Message&lt;?&gt; message, <span class="keyword">long</span> timeout)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="SubscribableChannel"><a href="#SubscribableChannel" class="headerlink" title="SubscribableChannel"></a>SubscribableChannel</h2><p><strong>SubscibableChannel</strong> extends from MessageChannel takes responsibility for notifying subscribers when a message is available.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.springframework.integration.core;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">SubscribableChannel</span> <span class="keyword">extends</span> <span class="title">MessageChannel</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">subscribe</span><span class="params">(MessageHandler handler)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">unsubscribe</span><span class="params">(MessageHandler handler)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="PollableChannel"><a href="#PollableChannel" class="headerlink" title="PollableChannel"></a>PollableChannel</h2><p><strong>PollableChannel</strong> extends from MessageChannel has the advantage that the consumer can choose when to process messages. The disadvantage is more computational overhead from more frequent polls that find no messages.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.springframework.integration.core;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">PollableChannel</span> <span class="keyword">extends</span> <span class="title">MessageChannel</span> </span>&#123;</span><br><span class="line">    Message&lt;?&gt; receive();</span><br><span class="line">    Message&lt;?&gt; receive(<span class="keyword">long</span> timeout);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Other-Channel"><a href="#Other-Channel" class="headerlink" title="Other Channel"></a>Other Channel</h3><p>There are many different types of channel could be implemented in Spring Integration Framework. In general, they could be categorized into <strong>Point-to-Point Channel</strong>, <strong>Publish-Subscribe Channel</strong> and <strong>Temporary Channel</strong>.</p>
+<h4 id="Point-to-point-Channel"><a href="#Point-to-point-Channel" class="headerlink" title="Point-to-point Channel"></a>Point-to-point Channel</h4><p>Point-to-point Channel has only one receiver connected to it.</p>
+<ol>
+<li><p><strong>DirectChannel</strong>: Implements SubsribableChannel.</p>
+<p> The message is sent to the subscriber through the same receiver’s thread. This communication is synchronous and the producer block until a response is received</p>
+</li>
+<li><p><strong>QueueChannel</strong>: Implements PollableChannel.<br> There’s one endpoint connected to the channel, no subscribers. This communication is asynchronous; the receiver will retrieve the message through a different thread.</p>
+</li>
+<li><p><strong>PriorityChannel</strong>: Implements PollableChannel<br> Similar to the QueueChannel but messages are ordered by priority instead of FIFO.</p>
+</li>
+<li><p><strong>RendezvousChannel</strong>: Implements PollableChannel<br> Similar to the QueueChannel but with zero capacity. The producer will block until the receiver invokes its receive() method.</p>
+</li>
+<li><p><strong>ExecutorChannel</strong>: Implements SubscribableChannel<br> Sending is delegated to a TaskExecutor. This means that the send() method will not block.</p>
+</li>
+</ol>
+<h4 id="Publish-subscribe"><a href="#Publish-subscribe" class="headerlink" title="Publish-subscribe"></a>Publish-subscribe</h4><p>Publish-subscribe channel can have several endpoints subscribed to it. Thus, the message will be handled to different receivers.</p>
+<ol>
+<li><strong>PublishSubscribeChannel</strong>: Implements SubscribableChannel. Subscribed receivers can be invoked consecutively through the producer’s thread. If we specify a TaskExecutor, receivers will be invoked in parallel through different threads.</li>
+</ol>
+<h4 id="Temporary-channels"><a href="#Temporary-channels" class="headerlink" title="Temporary channels"></a>Temporary channels</h4><p>This is a special type of channel which is <strong>created automatically</strong> by endpoints that have no output channel explicitly defined. The channel created is a point-to-point anonymous channel. You can see it defined in the message header under the name <strong>replyChannel</strong>.<br>These types of channels are <strong>automatically deleted</strong> once the response is sent. It is recommended that you don’t explicitly define an output channel if you don’t need it. The framework will handle it for you.</p>
+<h1 id="Design-Idea"><a href="#Design-Idea" class="headerlink" title="Design Idea"></a>Design Idea</h1><h2 id="Basic-Case"><a href="#Basic-Case" class="headerlink" title="Basic Case"></a>Basic Case</h2><p>The xml example below utilize a default channel(SubscribableChannels). The message transmission is synchronous. A single thread is responsible for invoking all three services <strong>sequentially</strong>.</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">channel</span> <span class="attr">id</span>=<span class="string">"bookingConfirmationRequests"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">service-activator</span> </span></span><br><span class="line"><span class="tag">                <span class="attr">input-channel</span>=<span class="string">"bookingConfirmationRequests"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">output-channel</span>=<span class="string">"chargedBookings"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">ref</span>=<span class="string">"billForBookingService"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">channel</span> <span class="attr">id</span>=<span class="string">"chargedBookings"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">service-activator</span> </span></span><br><span class="line"><span class="tag">                <span class="attr">input-channel</span>=<span class="string">"chargedBookings"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">output-channel</span>=<span class="string">"emailConfirmationRequests"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">ref</span>=<span class="string">"seatAvailabilityService"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">channel</span> <span class="attr">id</span>=<span class="string">"emailConfirmationRequests"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">outbound-channel-adapter</span> <span class="attr">channel</span>=<span class="string">"emailConfirmationRequests"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">ref</span>=<span class="string">"emailConfirmationService"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="When-Email-Server-is-Overloaded"><a href="#When-Email-Server-is-Overloaded" class="headerlink" title="When Email Server is Overloaded"></a>When Email Server is Overloaded</h2><p>This basic configuration is ok, but some improvements could be made. Consider email server is sometimes overloaded and the<br>network sometimes fails. A way to improve a system is to consider what we can afford to do later. Billing the credit card and updating the seat availability are clearly things you need to do now so you can respond with confidence that the booking has been made. Sending the confirmation email isn’t time critical, and you don’t want to refuse bookings simply because the mail server is down. Therefore, i<strong>ntroducing a queue between the mainline business logic execution</strong> and the confirmation email service will allow you to do just that: <strong>charge the card, update availability</strong>, and <strong>send the email confirmation when you can</strong>.</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">channel</span> <span class="attr">id</span>=<span class="string">"bookingConfirmationRequests"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">service-activator</span> </span></span><br><span class="line"><span class="tag">                <span class="attr">input-channel</span>=<span class="string">"bookingConfirmationRequests"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">output-channel</span>=<span class="string">"chargedBookings"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">ref</span>=<span class="string">"billForBookingService"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">channel</span> <span class="attr">id</span>=<span class="string">"chargedBookings"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">service-activator</span> </span></span><br><span class="line"><span class="tag">                <span class="attr">input-channel</span>=<span class="string">"chargedBookings"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">output-channel</span>=<span class="string">"emailConfirmationRequests"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">ref</span>=<span class="string">"seatAvailabilityService"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">channel</span> <span class="attr">id</span>=<span class="string">"emailConfirmationRequests"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">queue</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">channel</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">outbound-channel-adapter</span> <span class="attr">channel</span>=<span class="string">"emailConfirmationRequests"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">ref</span>=<span class="string">"emailConfirmationService"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="Publish-an-Information-to-Mutiple-Users"><a href="#Publish-an-Information-to-Mutiple-Users" class="headerlink" title="Publish an Information to Mutiple Users"></a>Publish an Information to Mutiple Users</h2><p>Sometimes, message should be passed to multiple consumers. To allow delivery of the same message to more than one consumer, a publish-subscribe channel is introduced after the availability check. The publish-subscribe channel doesn’t support queueing, but it does support asynchronous operation if we provide a task executor that delivers messages to each of the subscribers in separate threads. This approach may still <strong>block the main thread sending the message on the channel</strong>. The <strong>task executor</strong> is configured to use <strong>the caller thread or block the caller thread when the underlying thread pool is exhausted</strong>.</p>
+<p>To ensure that a backlog in sending email confirmations doesn’t block either the sender thread or the entire thread pool for the task executor, we can connect the new publish-subscribe channel to the existing email confirmation queue by means of a <strong>bridge</strong>. <strong>The bridge is an enterprise integration pattern that supports the connection of two channels</strong>, which allows the publish-subscribe channel to deliver to the queue and then have the thread return immediately.</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">channel</span> <span class="attr">id</span>=<span class="string">"bookingConfirmationRequests"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">service-activator</span> </span></span><br><span class="line"><span class="tag">                <span class="attr">input-channel</span>=<span class="string">"bookingConfirmationRequests"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">output-channel</span>=<span class="string">"chargedBookings"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">ref</span>=<span class="string">"billForBookingService"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">channel</span> <span class="attr">id</span>=<span class="string">"chargedBookings"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">service-activator</span> </span></span><br><span class="line"><span class="tag">                <span class="attr">input-channel</span>=<span class="string">"chargedBookings"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">output-channel</span>=<span class="string">"completedBookings"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">ref</span>=<span class="string">"seatAvailabilityService"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">publish-subscribe-channel</span> <span class="attr">id</span>=<span class="string">"completedBookings"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bridge</span> <span class="attr">input-channel</span>=<span class="string">"completedBookings"</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">output-channel</span>=<span class="string">"emailConfirmationRequests"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">channel</span> <span class="attr">id</span>=<span class="string">"emailConfirmationRequests"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">queue</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">channel</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">outbound-channel-adapter</span> <span class="attr">channel</span>=<span class="string">"emailConfirmationRequests"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">ref</span>=<span class="string">"emailConfirmationService"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="Priority-Channel"><a href="#Priority-Channel" class="headerlink" title="Priority Channel"></a>Priority Channel</h1><p>Comparator could be implemented as well to help with the prioritizing certain request. An example could be seen in below.</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">channel</span> <span class="attr">id</span>=<span class="string">"bookingConfirmationRequests"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">priority-queue</span> <span class="attr">comparator</span>=<span class="string">"customerPriorityComparator"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">channel</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">service-activator</span> </span></span><br><span class="line"><span class="tag">                <span class="attr">input-channel</span>=<span class="string">"bookingConfirmationRequests"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">output-channel</span>=<span class="string">"chargedBookings"</span></span></span><br><span class="line">&lt;channel id="chargedBookings" /&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">service-activator</span> </span></span><br><span class="line"><span class="tag">                <span class="attr">input-channel</span>=<span class="string">"chargedBookings"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">output-channel</span>=<span class="string">"completedBookings"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">ref</span>=<span class="string">"seatAvailabilityService"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">publish-subscribe-channel</span> <span class="attr">id</span>=<span class="string">"completedBookings"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bridge</span> <span class="attr">input-channel</span>=<span class="string">"completedBookings"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">output-channel</span>=<span class="string">"emailConfirmationRequests"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">channel</span> <span class="attr">id</span>=<span class="string">"emailConfirmationRequests"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">queue</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">channel</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">outbound-channel-adapter</span> <span class="attr">channel</span>=<span class="string">"emailConfirmationRequests"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">ref</span>=<span class="string">"emailConfirmationService"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="Channel-collaborators"><a href="#Channel-collaborators" class="headerlink" title="Channel collaborators"></a>Channel collaborators</h1><h2 id="MessageDispatcher"><a href="#MessageDispatcher" class="headerlink" title="MessageDispatcher"></a>MessageDispatcher</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.springframework.integration.dispatcher;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">MessageDispatcher</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">addHandler</span><span class="params">(MessageHandler handler)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">removeHandler</span><span class="params">(MessageHandler handler)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">dispatch</span><span class="params">(Message&lt;?&gt; message)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Spring Integration provides <strong>two dispatcher implementations</strong> out of the box:<br><strong>UnicastingDispatcher</strong>, which, as the name suggests, delivers the message to at most<br>one MessageHandler, and <strong>BroadcastingDispatcher</strong>, which delivers to zero or more.<br>The <strong>UnicastingDispatcher provides an additional strategy interface, Load-<br>BalancingStrategy</strong>, shown in the next code snippet, which determines which single<br>MessageHandler of potentially many should receive any given message. The only provided<br>implementation of this is the <strong>RoundRobinLoadBalancingStrategy</strong>, which works<br>through the list of handlers, passing one message to each in turn.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.springframework.integration.dispatcher;</span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">LoadBalancingStrategy</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> Iterator&lt;MessageHandler&gt;</span><br><span class="line">        getHandlerIterator(Message&lt;?&gt; message,List&lt;MessageHandler&gt; handlers);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Providing your own implementations of MessageDispatcher is uncommon and should<br>be resorted to only where other options don’t provide the level of control desired over<br>the process of delivering messages to handlers. An example where a custom Message-<br>Dispatcher could be appropriate is where different handlers are being used to deal<br>with varying service levels. In this scenario, a custom dispatcher could be used to prioritize<br>messages according to the defined service-level agreements. The dispatcher<br>implementation could inspect the message and attempt to dispatch to the full set of<br>handlers only where a message is determined to be high priority:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ServiceLevelAgreementAwareMessageDispatcher</span> <span class="keyword">implements</span> <span class="title">MessageDispatcher</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> List&lt;MessageHandler&gt; highPriorityHandlers;</span><br><span class="line">    <span class="keyword">private</span> List&lt;MessageHandler&gt; lowPriorityHandlers;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">dispatch</span><span class="params">(Message&lt;?&gt; message)</span></span>&#123;</span><br><span class="line">    <span class="keyword">boolean</span> highPriority = isHighPriority(message); </span><br><span class="line">    <span class="keyword">boolean</span> delivered = <span class="keyword">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(highPriority)&#123;</span><br><span class="line">        delivered = attemptDelivery(highPriorityHandlers);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(!delivered)&#123;</span><br><span class="line">        delivered = attemptDelivery(lowPriorityHandlers);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> delivered;</span><br><span class="line">&#125;</span><br><span class="line">...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="ChannelInterceptor"><a href="#ChannelInterceptor" class="headerlink" title="ChannelInterceptor"></a>ChannelInterceptor</h2>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="../../../../../../../tags/Java/" rel="tag"># Java</a>
+          
+            <a href="../../../../../../../tags/Spring/" rel="tag"># Spring</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="../../../../../01/Journal/2019Sept/" rel="next" title="2019年九月小结">
+                <i class="fa fa-chevron-left"></i> 2019年九月小结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="../SpringIntegrationMessage/" rel="prev" title="Spring Integration - Message">
+                Spring Integration - Message <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Shihao Miao</p>
+              <div class="site-description motion-element" itemprop="description">坠欢莫拾，酒痕在衣</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="../../../../../../../archives">
+                
+                    <span class="site-state-item-count">69</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="../../../../../../../categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="../../../../../../../tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/Miaooocat" title="GitHub &rarr; https://github.com/Miaooocat" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:miao.shihaoo@gmail.com" title="E-Mail &rarr; mailto:miao.shihaoo@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Important-Point-Summary"><span class="nav-number">1.</span> <span class="nav-text">Important Point Summary:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Channel"><span class="nav-number">2.</span> <span class="nav-text">Channel</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MessageChannel"><span class="nav-number">2.1.</span> <span class="nav-text">MessageChannel</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SubscribableChannel"><span class="nav-number">2.2.</span> <span class="nav-text">SubscribableChannel</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PollableChannel"><span class="nav-number">2.3.</span> <span class="nav-text">PollableChannel</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Other-Channel"><span class="nav-number">2.3.1.</span> <span class="nav-text">Other Channel</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Point-to-point-Channel"><span class="nav-number">2.3.1.1.</span> <span class="nav-text">Point-to-point Channel</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Publish-subscribe"><span class="nav-number">2.3.1.2.</span> <span class="nav-text">Publish-subscribe</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Temporary-channels"><span class="nav-number">2.3.1.3.</span> <span class="nav-text">Temporary channels</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Design-Idea"><span class="nav-number">3.</span> <span class="nav-text">Design Idea</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-Case"><span class="nav-number">3.1.</span> <span class="nav-text">Basic Case</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#When-Email-Server-is-Overloaded"><span class="nav-number">3.2.</span> <span class="nav-text">When Email Server is Overloaded</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Publish-an-Information-to-Mutiple-Users"><span class="nav-number">3.3.</span> <span class="nav-text">Publish an Information to Mutiple Users</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Priority-Channel"><span class="nav-number">4.</span> <span class="nav-text">Priority Channel</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Channel-collaborators"><span class="nav-number">5.</span> <span class="nav-text">Channel collaborators</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MessageDispatcher"><span class="nav-number">5.1.</span> <span class="nav-text">MessageDispatcher</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ChannelInterceptor"><span class="nav-number">5.2.</span> <span class="nav-text">ChannelInterceptor</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Shihao Miao</span>
+
+  
+
+  
+</div>
+
+<div>
+<span id="timeDate">Loading Days...</span><span id="times">Loading Times...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("03/20/2019 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "This website has struggled in this world for "+dnum+" day ";
+        document.getElementById("times").innerHTML = hnum + " hour " + mnum + " min " + snum + " sec";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="../../../../../../../lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="../../../../../../../lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script src="../../../../../../../lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="../../../../../../../lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="../../../../../../../js/src/utils.js?v=7.0.1"></script>
+
+  <script src="../../../../../../../js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="../../../../../../../js/src/schemes/muse.js?v=7.0.1"></script>
+
+
+
+  <script src="../../../../../../../js/src/scrollspy.js?v=7.0.1"></script>
+<script src="../../../../../../../js/src/post-details.js?v=7.0.1"></script>
+
+  
+  <script src="../../../../../../../js/src/scrollspy.js?v=7.0.1"></script>
+<script src="../../../../../../../js/src/post-details.js?v=7.0.1"></script>
+
+
+
+  
+
+
+  <script src="../../../../../../../js/src/next-boot.js?v=7.0.1"></script>
+
+
+
+  <script src="//cdn.bootcss.com/jquery.pjax/1.9.6/jquery.pjax.js"></script>
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+<script type="text/javascript">
+
+$(document).on('pjax:start', NProgress.start).on('pjax:end', NProgress.done);
+$(document).pjax('a[target!="_blank"]', '#pjax-container', {timeout: 8000, fragment: '#pjax-container'});
+$(document).on('pjax:complete', function () {
+
+  NexT.motion.integrator.cursor = -1;
+
+  $(document).trigger('bootstrap:before');
+  
+  //NexT.utils.isMobile() && window.FastClick.attach(document.body);
+
+  NexT.utils.lazyLoadPostsImages();
+
+  NexT.utils.registerBackToTop();
+
+  $('.site-nav-toggle button').on('click', function () {
+    var $siteNav = $('.site-nav');
+    var ON_CLASS_NAME = 'site-nav-on';
+    var isSiteNavOn = $siteNav.hasClass(ON_CLASS_NAME);
+    var animateAction = isSiteNavOn ? 'slideUp' : 'slideDown';
+    var animateCallback = isSiteNavOn ? 'removeClass' : 'addClass';
+
+    $siteNav.stop()[animateAction]('fast', function () {
+      $siteNav[animateCallback](ON_CLASS_NAME);
+    });
+  });
+
+  CONFIG.fancybox && NexT.utils.wrapImageWithFancyBox();
+  NexT.utils.embeddedVideoTransformer();
+
+
+  $(document).trigger('motion:before');
+
+  NexT.motion.init();
+  if (CONFIG.motion) {
+    $('.archive-year').velocity('transition.slideLeftIn');
+    CONFIG.motion && NexT.motion.integrator.bootstrap();
+  }
+  NexT.postDetails.init();
+  $(document).trigger('bootstrap:after');
+});
+</script>
+  
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<script>
+  $('.highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('Copy');
+      }, 300);
+    }).append(e);
+  })
+</script>
+
+
+  
+
+  
+
+  
+<link rel="stylesheet" href="/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script>
+<script type="text/javascript" src="/js/src/crash_cheat.js"></script>
+</body>
+</html>

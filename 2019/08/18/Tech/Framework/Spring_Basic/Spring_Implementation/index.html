@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,default">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="css/main.css?v=7.0.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon.jpg?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icon.jpg?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="ConfigurationFactory methodSpring incorporates a factory-method attribute which allows you to specify the factory responsible for creating an objectThis can be internal or external to the object being">
+<meta name="keywords" content="Web">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring Implementation">
+<meta property="og:url" content="http://yoursite.com/2019/08/18/Tech/Framework/Spring_Basic/Spring_Implementation/index.html">
+<meta property="og:site_name" content="Hi, Shihao">
+<meta property="og:description" content="ConfigurationFactory methodSpring incorporates a factory-method attribute which allows you to specify the factory responsible for creating an objectThis can be internal or external to the object being">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-19T23:46:25.510Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Spring Implementation">
+<meta name="twitter:description" content="ConfigurationFactory methodSpring incorporates a factory-method attribute which allows you to specify the factory responsible for creating an objectThis can be internal or external to the object being">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/08/18/Tech/Framework/Spring_Basic/Spring_Implementation/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Spring Implementation | Hi, Shihao</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div id="pjax-container" class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hi, Shihao</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a rel="section"><i class="menu-item-icon fa fa-fw fa-empire"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-notes">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a rel="section"><i class="menu-item-icon fa fa-fw fa-pencil"></i> <br>Notes</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-blog">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a rel="section"><i class="menu-item-icon fa fa-fw fa-angle-double-down"></i> <br>Blog</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tag">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br>Tag</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-timeline">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a rel="section"><i class="menu-item-icon fa fa-fw fa-backward"></i> <br>Timeline</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about-me">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a rel="section"><i class="menu-item-icon fa fa-fw fa-rebel"></i> <br>About-me</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shihao Miao">
+      <meta itemprop="description" content="坠欢莫拾，酒痕在衣">
+      <meta itemprop="image" content="../../../../../../../images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi, Shihao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Spring Implementation
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-08-18 18:06:52" itemprop="dateCreated datePublished" datetime="2019-08-18T18:06:52-04:00">2019-08-18</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="../../../../../../../categories/Software-Development/" itemprop="url" rel="index"><span itemprop="name">Software Development</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h1><h2 id="Factory-method"><a href="#Factory-method" class="headerlink" title="Factory method"></a>Factory method</h2><p>Spring incorporates a factory-method attribute which allows you to specify the factory responsible for creating an object<br>This can be internal or external to the object being created</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=“bean” class=“com.MyFactory” factory-method=“createBean” scope=“prototype” /&gt;</span><br></pre></td></tr></table></figure>
+<p>Each time that bean is referenced it will actually call the factory method<br>If the factory method takes arguments, this can be specified by using the constructor-arg attribute</p>
+<h2 id="Autowiring"><a href="#Autowiring" class="headerlink" title="Autowiring"></a>Autowiring</h2><p>Spring includes a feature called <strong>autowiring</strong>. This allows Spring to guess which dependencies to inject. This means you do not need to specify this manually. By default, it will check the class of the object. </p>
+<p>There are <strong>4 types</strong></p>
+<ul>
+<li>byName: Autowires by variable name and bean name</li>
+<li>byType: Autowires by variable type and bean type</li>
+<li>constructor: Autowires byType for constructors</li>
+<li>autodetect: Autowires by constructor first and then byType</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=“bean” class=“com.fdm.MyBean autowire=“byType” /&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Dependency"><a href="#Dependency" class="headerlink" title="Dependency"></a>Dependency</h2><p>Class User might have two fields which must always be populated, but could have several field remaining unpopulated. Thus, there are need to check if the required fields are populated when Spring instantiates the beans. There are two solutions </p>
+<ol>
+<li><p>dependency-check attribute (deprecated)</p>
+</li>
+<li><p>@Required</p>
+</li>
+</ol>
+<h3 id="Dependency-check-attribute"><a href="#Dependency-check-attribute" class="headerlink" title="Dependency-check attribute"></a>Dependency-check attribute</h3><p>Dependency-check has different modes</p>
+<ul>
+<li><strong>simple</strong>: Ensures all primitive datatypes in a bean are set</li>
+<li><strong>objects</strong>: Ensures all Object datatypes in a bean are set</li>
+<li><strong>all</strong>: Ensures that all primitives and Objects in a bean are set</li>
+</ul>
+<h3 id="Required"><a href="#Required" class="headerlink" title="@Required"></a>@Required</h3><p>@Required annotation allows fine control over <strong>which properties should be set</strong> and which should not. This annotation is <strong>applied to the setter method</strong> only.<br>If a property is listed as required but it is not set then Spring will throw an Exception that happens after compile time, but before run time.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class User &#123;</span><br><span class="line">  private String username;</span><br><span class="line"></span><br><span class="line">  @Required</span><br><span class="line">  public void setUsername(String username)&#123;</span><br><span class="line">    this.username = username;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Annotations"><a href="#Annotations" class="headerlink" title="Annotations"></a>Annotations</h2><p>Annotations reduce the amount of work needed to be done in the xml<br>In order to use annotations you must have the following .xml configuration set</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;context:annotation-config /&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="Four-key-annotations-to-use-in-code"><a href="#Four-key-annotations-to-use-in-code" class="headerlink" title="Four key annotations to use in code"></a>Four key annotations to use in code</h3><p>Annotations are <strong>applied directly to class fields</strong>. There are four types of annotations.</p>
+<ul>
+<li>@Required (covered previously, should be annotated at setter method)</li>
+<li>@Autowired</li>
+<li>@Qualifier</li>
+<li>@Resource</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public class User&#123;</span><br><span class="line">  @Autowired</span><br><span class="line">  private String username;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Autowired"><a href="#Autowired" class="headerlink" title="@Autowired"></a>@Autowired</h4><p>Also acts as @Required<br>Indicates that Spring should automatically inject a valid dependency into this field<br>Works byType</p>
+<h4 id="Qualifier-“beanName”"><a href="#Qualifier-“beanName”" class="headerlink" title="@Qualifier(“beanName”)"></a>@Qualifier(“beanName”)</h4><p>Provides an add-on to @Autowire. This Specifies the name of the bean to use.</p>
+<h3 id="Resource"><a href="#Resource" class="headerlink" title="@Resource"></a>@Resource</h3><p>This is a JSR-250 alternative to the spring annotations<br>Does not cause the program to couple to Spring<br>Acts as @Required, @Autowired and @Qualifier</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public class User&#123;</span><br><span class="line">  @Resource(name=“name”)</span><br><span class="line">  public String username</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h1><p>Spring provides functionality for wiring collections<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;map&gt;&lt;/map&gt;</span><br><span class="line">&lt;list&gt;&lt;/list&gt;</span><br><span class="line">&lt;array&gt;&lt;/array&gt;</span><br><span class="line">&lt;props&gt;&lt;/props&gt;</span><br><span class="line">&lt;set&gt;&lt;/set&gt;</span><br></pre></td></tr></table></figure></p>
+<p>Makes injecting collections very straight forwards</p>
+<p>Within the tags you should reference the bean or create the bean anonymously<br>This configuration works for list, set and array<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean name=“myBean” class=“com.MyBean”&gt;</span><br><span class="line">  &lt;property name=“myCollection”&gt;</span><br><span class="line">    &lt;list&gt;</span><br><span class="line">      &lt;ref bean=“myOtherBean” /&gt;</span><br><span class="line">      ...</span><br><span class="line">    &lt;/list&gt;</span><br><span class="line">  &lt;/property&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean name=“myBean” class=“com.MyBean”&gt;</span><br><span class="line">  &lt;property name=“myCollection”&gt;</span><br><span class="line">    &lt;map&gt;</span><br><span class="line">      &lt;entry key=&quot;Key 1&quot; value=&quot;1&quot; /&gt;</span><br><span class="line">      &lt;entry key=&quot;Key 2&quot; value-ref=&quot;PersonBean&quot; /&gt;</span><br><span class="line">      &lt;entry key=&quot;Key 3&quot;&gt;</span><br><span class="line">        &lt;bean class=&quot;com.Person&quot;&gt;</span><br><span class="line">          &lt;property name=&quot;name&quot; value=“PersonX&quot; /&gt;</span><br><span class="line">        &lt;/bean&gt;</span><br><span class="line">      &lt;/entry&gt;</span><br><span class="line">    &lt;/map&gt;</span><br><span class="line">  &lt;/property&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean name=“myBean” class=“com.MyBean”&gt;</span><br><span class="line">  &lt;property name=“myCollection”&gt;</span><br><span class="line">    &lt;props&gt;</span><br><span class="line">      &lt;prop key=“MyValue”&gt;TheStringValue&lt;/prop&gt;</span><br><span class="line">    &lt;/props&gt;</span><br><span class="line">  &lt;/property&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+<p>Spring provides an additional namespace called util which can be used for generating collections of a specific type<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;beans …</span><br><span class="line"> xmlns:util=“http://www.springframework.org/schema/util”</span><br><span class="line">  xsi:schemaLocation=“…</span><br><span class="line">    http://www.springframework.org/schema/util</span><br><span class="line">    http://www.springframework.org/schema/util/spring-util-3.1.xsd”&gt;</span><br><span class="line">  &lt;bean name=“myBean” class=“com.fdm.MyBean”&gt;</span><br><span class="line">    &lt;property name=“myCollection”&gt;</span><br><span class="line">      &lt;util:set set-class=“java.util.TreeSet”&gt;</span><br><span class="line">        ...</span><br><span class="line">      &lt;/util:set&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">  &lt;/bean&gt;</span><br><span class="line">&lt;/beans&gt;</span><br></pre></td></tr></table></figure></p>
+<h1 id="Exception"><a href="#Exception" class="headerlink" title="Exception"></a>Exception</h1><p>Spring creates a well defined Exception called BeanCreationException<br>This Exception will be thrown if there are missing dependencies and various other issues which might occur<br>This Exception introduces an extra layer of protection by causing the application to fail early rather than late</p>
+<p>Spring initialisation time happens after compile time, but before run time</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="../../../../../../../tags/Web/" rel="tag"># Web</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="../../../../../17/Tech/Framework/Spring_Basic/Spring_MVC/" rel="next" title="Spring MVC">
+                <i class="fa fa-chevron-left"></i> Spring MVC
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="../../../../../../09/03/Journal/2019Aug/" rel="prev" title="2019年八月小结">
+                2019年八月小结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Shihao Miao</p>
+              <div class="site-description motion-element" itemprop="description">坠欢莫拾，酒痕在衣</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="../../../../../../../archives">
+                
+                    <span class="site-state-item-count">69</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="../../../../../../../categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="../../../../../../../tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/Miaooocat" title="GitHub &rarr; https://github.com/Miaooocat" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:miao.shihaoo@gmail.com" title="E-Mail &rarr; mailto:miao.shihaoo@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Configuration"><span class="nav-number">1.</span> <span class="nav-text">Configuration</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Factory-method"><span class="nav-number">1.1.</span> <span class="nav-text">Factory method</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Autowiring"><span class="nav-number">1.2.</span> <span class="nav-text">Autowiring</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dependency"><span class="nav-number">1.3.</span> <span class="nav-text">Dependency</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Dependency-check-attribute"><span class="nav-number">1.3.1.</span> <span class="nav-text">Dependency-check attribute</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Required"><span class="nav-number">1.3.2.</span> <span class="nav-text">@Required</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Annotations"><span class="nav-number">1.4.</span> <span class="nav-text">Annotations</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Four-key-annotations-to-use-in-code"><span class="nav-number">1.4.1.</span> <span class="nav-text">Four key annotations to use in code</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Autowired"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">@Autowired</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Qualifier-“beanName”"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">@Qualifier(“beanName”)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Resource"><span class="nav-number">1.4.2.</span> <span class="nav-text">@Resource</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Collection"><span class="nav-number">2.</span> <span class="nav-text">Collection</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Exception"><span class="nav-number">3.</span> <span class="nav-text">Exception</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Shihao Miao</span>
+
+  
+
+  
+</div>
+
+<div>
+<span id="timeDate">Loading Days...</span><span id="times">Loading Times...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("03/20/2019 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "This website has struggled in this world for "+dnum+" day ";
+        document.getElementById("times").innerHTML = hnum + " hour " + mnum + " min " + snum + " sec";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="../../../../../../../lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="../../../../../../../lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script src="../../../../../../../lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="../../../../../../../lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="../../../../../../../js/src/utils.js?v=7.0.1"></script>
+
+  <script src="../../../../../../../js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="../../../../../../../js/src/schemes/muse.js?v=7.0.1"></script>
+
+
+
+  <script src="../../../../../../../js/src/scrollspy.js?v=7.0.1"></script>
+<script src="../../../../../../../js/src/post-details.js?v=7.0.1"></script>
+
+  
+  <script src="../../../../../../../js/src/scrollspy.js?v=7.0.1"></script>
+<script src="../../../../../../../js/src/post-details.js?v=7.0.1"></script>
+
+
+
+  
+
+
+  <script src="../../../../../../../js/src/next-boot.js?v=7.0.1"></script>
+
+
+
+  <script src="//cdn.bootcss.com/jquery.pjax/1.9.6/jquery.pjax.js"></script>
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+<script type="text/javascript">
+
+$(document).on('pjax:start', NProgress.start).on('pjax:end', NProgress.done);
+$(document).pjax('a[target!="_blank"]', '#pjax-container', {timeout: 8000, fragment: '#pjax-container'});
+$(document).on('pjax:complete', function () {
+
+  NexT.motion.integrator.cursor = -1;
+
+  $(document).trigger('bootstrap:before');
+  
+  //NexT.utils.isMobile() && window.FastClick.attach(document.body);
+
+  NexT.utils.lazyLoadPostsImages();
+
+  NexT.utils.registerBackToTop();
+
+  $('.site-nav-toggle button').on('click', function () {
+    var $siteNav = $('.site-nav');
+    var ON_CLASS_NAME = 'site-nav-on';
+    var isSiteNavOn = $siteNav.hasClass(ON_CLASS_NAME);
+    var animateAction = isSiteNavOn ? 'slideUp' : 'slideDown';
+    var animateCallback = isSiteNavOn ? 'removeClass' : 'addClass';
+
+    $siteNav.stop()[animateAction]('fast', function () {
+      $siteNav[animateCallback](ON_CLASS_NAME);
+    });
+  });
+
+  CONFIG.fancybox && NexT.utils.wrapImageWithFancyBox();
+  NexT.utils.embeddedVideoTransformer();
+
+
+  $(document).trigger('motion:before');
+
+  NexT.motion.init();
+  if (CONFIG.motion) {
+    $('.archive-year').velocity('transition.slideLeftIn');
+    CONFIG.motion && NexT.motion.integrator.bootstrap();
+  }
+  NexT.postDetails.init();
+  $(document).trigger('bootstrap:after');
+});
+</script>
+  
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<script>
+  $('.highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('Copy');
+      }, 300);
+    }).append(e);
+  })
+</script>
+
+
+  
+
+  
+
+  
+<link rel="stylesheet" href="/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script>
+<script type="text/javascript" src="/js/src/crash_cheat.js"></script>
+</body>
+</html>
