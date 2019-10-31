@@ -38,40 +38,6 @@ $(document).ready(function() {
     }, settings.status);
   }
 
-  function sidebarInitiation()
-{
-  sidebarToggleMotion.init();
-  var sidebarToggleLine1st = new SidebarToggleLine({
-    el: '.sidebar-toggle-line-first',
-    status: {
-      arrow: {width: '50%', rotateZ: '-45deg', top: '2px'},
-      close: {width: '100%', rotateZ: '-45deg', top: '5px'}
-    }
-  });
-  var sidebarToggleLine2nd = new SidebarToggleLine({
-    el: '.sidebar-toggle-line-middle',
-    status: {
-      arrow: {width: '90%'},
-      close: {opacity: 0}
-    }
-  });
-  var sidebarToggleLine3rd = new SidebarToggleLine({
-    el: '.sidebar-toggle-line-last',
-    status: {
-      arrow: {width: '50%', rotateZ: '45deg', top: '-2px'},
-      close: {width: '100%', rotateZ: '45deg', top: '-5px'}
-    }
-  });
-
-  sidebarToggleLines.lines = [];
-  sidebarToggleLines.push(sidebarToggleLine1st);
-  sidebarToggleLines.push(sidebarToggleLine2nd);
-  sidebarToggleLines.push(sidebarToggleLine3rd);
-}
-
-
-
-  
   SidebarToggleLine.prototype.init = function() {
     this.transform('init');
   };
@@ -199,10 +165,6 @@ $(document).ready(function() {
       }
     }
   };
-
-  sidebarInitiation();
-
-
 
   NexT.motion.integrator = {
     queue : [],
@@ -384,8 +346,34 @@ $(document).ready(function() {
   };
   NexT.motion.init = function(){
     sidebarToggleMotion.hideSidebar();
-    sidebarInitiation();
+    sidebarToggleMotion.init();
+
+  var sidebarToggleLine1st = new SidebarToggleLine({
+    el: '.sidebar-toggle-line-first',
+    status: {
+      arrow: {width: '50%', rotateZ: '-45deg', top: '2px'},
+      close: {width: '100%', rotateZ: '-45deg', top: '5px'}
+    }
+  });
+  var sidebarToggleLine2nd = new SidebarToggleLine({
+    el: '.sidebar-toggle-line-middle',
+    status: {
+      arrow: {width: '90%'},
+      close: {opacity: 0}
+    }
+  });
+  var sidebarToggleLine3rd = new SidebarToggleLine({
+    el: '.sidebar-toggle-line-last',
+    status: {
+      arrow: {width: '50%', rotateZ: '45deg', top: '-2px'},
+      close: {width: '100%', rotateZ: '45deg', top: '-5px'}
+    }
+  });
+
+  sidebarToggleLines.lines = [];
+  sidebarToggleLines.push(sidebarToggleLine1st);
+  sidebarToggleLines.push(sidebarToggleLine2nd);
+  sidebarToggleLines.push(sidebarToggleLine3rd);
 };
 
 });
-

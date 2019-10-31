@@ -1,100 +1,53 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="en,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<html lang="en,default">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.8.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icon.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icon.jpg">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
-
-<link rel="stylesheet" href="css/main.css?v=7.0.1">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.1">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon.jpg?v=7.0.1">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/icon.jpg?v=7.0.1">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=7.0.1" color="#222">
-
-
-
-
-
-
-
-<script id="hexo.configurations">
+<script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Muse',
-    version: '7.0.1',
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
-    back2top: true,
-    back2top_sidebar: false,
+    version: '7.4.2',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
-    fastclick: false,
-    lazyload: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
     algolia: {
-      applicationID: '',
+      appID: '',
       apiKey: '',
       indexName: '',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
   };
 </script>
-
-
-  
-
-
-
 
   <meta name="description" content="About this pageThis page is about the use of vi editor and some basic syntax in UNIX. The vi Editor2 modes of operation - Command mode: Input the commend - Input mode: Input to the document vi Command">
 <meta name="keywords" content="Unix">
@@ -109,18 +62,17 @@
 <meta name="twitter:title" content="Syntax of Unix">
 <meta name="twitter:description" content="About this pageThis page is about the use of vi editor and some basic syntax in UNIX. The vi Editor2 modes of operation - Command mode: Input the commend - Input mode: Input to the document vi Command">
 
+<link rel="canonical" href="http://yoursite.com/2019/06/06/Tech/System/Basic_Unix/">
 
 
-
-
-
-  <link rel="canonical" href="http://yoursite.com/2019/06/06/Tech/System/Basic_Unix/">
-
-
-
-<script id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
   };
 </script>
 
@@ -132,15 +84,8 @@
 
 
 
-
-
-
-
-
-
   <noscript>
   <style>
-  .use-motion .motion-element,
   .use-motion .brand,
   .use-motion .menu-item,
   .sidebar-inner,
@@ -149,9 +94,8 @@
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
+  .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
@@ -165,299 +109,156 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="en">
-
-  
-  
-    
-  
-
-  <div id="pjax-container" class="container sidebar-position-left page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
   <div class="site-meta">
-    
 
-    <div class="custom-logo-site-title">
+    <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Hi, Shihao</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-    
-    
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
   </div>
 </div>
-
 
 
 <nav class="site-nav">
   
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a rel="section"><i class="menu-item-icon fa fa-fw fa-empire"></i> <br>Home</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-empire"></i>Home</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-notes">
+        <li class="menu-item menu-item-notes">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a rel="section"><i class="menu-item-icon fa fa-fw fa-pencil"></i> <br>Notes</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-pencil"></i>Notes</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-blog">
+        <li class="menu-item menu-item-blog">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a rel="section"><i class="menu-item-icon fa fa-fw fa-angle-double-down"></i> <br>Blog</a>
+    <a href="/blog/" rel="section"><i class="fa fa-fw fa-angle-double-down"></i>Blog</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tag">
+        <li class="menu-item menu-item-tag">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a rel="section"><i class="menu-item-icon fa fa-fw fa-flask"></i> <br>Tag</a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-flask"></i>Tag</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-timeline">
+        <li class="menu-item menu-item-music">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a rel="section"><i class="menu-item-icon fa fa-fw fa-backward"></i> <br>Timeline</a>
+    <a href="/music/" rel="section"><i class="fa fa-fw fa-music"></i>Music</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about-me">
+        <li class="menu-item menu-item-timeline">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a rel="section"><i class="menu-item-icon fa fa-fw fa-rebel"></i> <br>About-me</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-backward"></i>Timeline</a>
 
   </li>
+        <li class="menu-item menu-item-about-me">
 
-      
-      
-    </ul>
-  
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-rebel"></i>About-me</a>
 
-  
-    
+  </li>
+  </ul>
 
-  
-
-  
 </nav>
-
-
-
-  
-
-
-
 </div>
     </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
           
-          <div id="content" class="content">
+
+          <div class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
-
-  
-
+  <div class="posts-expand">
+      
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/06/Tech/System/Basic_Unix/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Shihao Miao">
       <meta itemprop="description" content="坠欢莫拾，酒痕在衣">
-      <meta itemprop="image" content="../../../../../../images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Hi, Shihao">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">Syntax of Unix
-
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          Syntax of Unix
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">Posted on</span>
 
               <time title="Created: 2019-06-06 18:06:52" itemprop="dateCreated datePublished" datetime="2019-06-06T18:06:52-04:00">2019-06-06</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-10-19 19:46:25" itemprop="dateModified" datetime="2019-10-19T19:46:25-04:00">2019-10-19</time>
+              </span>
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="../../../../../../categories/Operating-System/" itemprop="url" rel="index"><span itemprop="name">Operating System</span></a></span>
-
-                
-                
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Operating-System/" itemprop="url" rel="index">
+                    <span itemprop="name">Operating System</span>
+                  </a>
+                </span>
                   , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="../../../../../../categories/Operating-System/Unix/" itemprop="url" rel="index"><span itemprop="name">Unix</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Operating-System/Unix/" itemprop="url" rel="index">
+                    <span itemprop="name">Unix</span>
+                  </a>
+                </span>
             </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
 
           
 
         </div>
       </header>
-    
 
     
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-      
 
       
         <h1 id="About-this-page"><a href="#About-this-page" class="headerlink" title="About this page"></a>About this page</h1><p>This page is about the use of vi editor and some basic syntax in UNIX.</p>
@@ -517,313 +318,134 @@
 <p>ps                 displays YOUR processes<br>ps -f          displays more information on YOUR processes<br>ps  –forest      displays processes and shows their relationship<br>ps -u username<br>ps -e          displays ALL system processes<br>top         real time interactive list of SYSTEM processes - quit with q<br>kill processid<br>kill -9   processid    (kill serious)<br>jobs               displays active jobs<br>fg  jobnumber    brings a background process to the foreground<br>bg jobnumber    runs a process in the background<br>sleep 20        pauses for 20 seconds<br>Ctrl-C           terminates the current foreground process<br>Ctrl-Z         stops the current foreground process and leave it in the background<br>sleep 20 &amp;       runs in the background<br>kill %jobnumber    uses the job number ñ ìJIDî<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">## To make a program run in background</span><br><span class="line">&amp;</span><br><span class="line">Example: sleep 10 &amp;</span><br><span class="line"></span><br><span class="line"># Environment variable</span><br></pre></td></tr></table></figure></p>
 <p>COMPANYNAME = “ABC Group” (Same as set local variable, capital letter is for convention)<br>export COMPANYNAME  (Put it to the env)<br><code>`</code></p>
 
-      
     </div>
 
     
-
-    
-    
-    
-
-    
-
-    
-      
     
     
 
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="../../../../../../tags/Unix/" rel="tag"># Unix</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="../../../../05/Journal/2019May/" rel="next" title="2019年五月小结">
-                <i class="fa fa-chevron-left"></i> 2019年五月小结
-              </a>
-            
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Unix/" rel="tag"># Unix</a>
           </div>
 
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="../../../../24/Tech/Java/Java_Basic/Java_16_Exception and Error/" rel="prev" title="Java Study Notes(16) Exception and Error">
-                Java Study Notes(16) Exception and Error <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-  </div>
-
-
-          </div>
-          
-
-  
-
-
-
-        </div>
         
-          
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/06/05/Journal/2019May/" rel="next" title="2019年五月小结">
+                  <i class="fa fa-chevron-left"></i> 2019年五月小结
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2019/06/24/Tech/Java/Java_Basic/Java_16_Exception and Error/" rel="prev" title="Java Study Notes(16) Exception and Error">
+                  Java Study Notes(16) Exception and Error <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
+  </article>
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  
+  
+
   </div>
 
-  <aside id="sidebar" class="sidebar">
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
-      
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#About-this-page"><span class="nav-number">1.</span> <span class="nav-text">About this page</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-vi-Editor"><span class="nav-number">2.</span> <span class="nav-text">The vi Editor</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#vi-Command"><span class="nav-number">2.1.</span> <span class="nav-text">vi Command</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Switch-to-Input-Model"><span class="nav-number">2.1.1.</span> <span class="nav-text">Switch to Input Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Useful-Command"><span class="nav-number">2.1.2.</span> <span class="nav-text">Useful Command</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Navigation-Command"><span class="nav-number">2.1.3.</span> <span class="nav-text">Navigation Command</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Saving-work"><span class="nav-number">2.1.4.</span> <span class="nav-text">Saving work</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#UNIX"><span class="nav-number">3.</span> <span class="nav-text">UNIX</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#UNIX-File-Control"><span class="nav-number">3.1.</span> <span class="nav-text">UNIX File Control</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UNIX-Filename"><span class="nav-number">3.2.</span> <span class="nav-text">UNIX Filename</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UNIX-Basic-Command"><span class="nav-number">3.3.</span> <span class="nav-text">UNIX Basic Command</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#echo-Print-things-out"><span class="nav-number">3.3.1.</span> <span class="nav-text">echo  (Print things out.)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Browse-file"><span class="nav-number">3.3.2.</span> <span class="nav-text">Browse file</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#less-path-filename"><span class="nav-number">3.3.2.1.</span> <span class="nav-text">less path/filename</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#more-path-filename"><span class="nav-number">3.3.2.2.</span> <span class="nav-text">more path/filename</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cat-path-filename"><span class="nav-number">3.3.2.3.</span> <span class="nav-text">cat path/filename</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#head-path-filename"><span class="nav-number">3.3.2.4.</span> <span class="nav-text">head path/filename</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tail-path-filename"><span class="nav-number">3.3.3.</span> <span class="nav-text">tail path/filename</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cut"><span class="nav-number">3.3.4.</span> <span class="nav-text">cut:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sort"><span class="nav-number">3.3.5.</span> <span class="nav-text">sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#uniq-removes-repeated-lines-Only-work-for-adjacent"><span class="nav-number">3.3.6.</span> <span class="nav-text">uniq: removes repeated lines. (Only work for adjacent)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#basename-Not-a-way-to-check-if-a-file-existed"><span class="nav-number">3.3.7.</span> <span class="nav-text">basename (Not a way to check if a file existed)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dirname"><span class="nav-number">3.3.8.</span> <span class="nav-text">dirname</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#readlink"><span class="nav-number">3.3.9.</span> <span class="nav-text">readlink</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Links"><span class="nav-number">3.3.10.</span> <span class="nav-text">Links</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Chmod"><span class="nav-number">3.3.11.</span> <span class="nav-text">Chmod</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Symbolic-method"><span class="nav-number">3.3.11.1.</span> <span class="nav-text">Symbolic method</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Numerical-method"><span class="nav-number">3.3.12.</span> <span class="nav-text">Numerical method</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Find"><span class="nav-number">3.3.13.</span> <span class="nav-text">Find</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Rediction"><span class="nav-number">3.4.</span> <span class="nav-text">Rediction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Piping"><span class="nav-number">3.5.</span> <span class="nav-text">Piping</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#tee"><span class="nav-number">3.5.1.</span> <span class="nav-text">tee</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tr"><span class="nav-number">3.5.2.</span> <span class="nav-text">tr</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-lt-lt-lt-lt-lt"><span class="nav-number">3.6.</span> <span class="nav-text">&lt;,&lt;&lt;,&lt;&lt;&lt;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-Here-file"><span class="nav-number">3.6.1.</span> <span class="nav-text">&lt; Here-file</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-lt-Here-document-Need-EOF"><span class="nav-number">3.6.2.</span> <span class="nav-text">&lt;&lt; Here-document (Need EOF)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-lt-lt-Here-String"><span class="nav-number">3.6.3.</span> <span class="nav-text">&lt;&lt;&lt; Here String</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pattern-Matching-and-Searching"><span class="nav-number">3.7.</span> <span class="nav-text">Pattern Matching and Searching</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#grep-–-grep-is-looking-for-lines"><span class="nav-number">4.</span> <span class="nav-text">grep –  grep is looking for lines</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#fgrep-“pattern-or-string”-file"><span class="nav-number">4.0.1.</span> <span class="nav-text">fgrep “pattern or string” [file]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#grep-options-pattern-filename"><span class="nav-number">4.0.2.</span> <span class="nav-text">grep [-options] pattern filename</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Regular-Expression-Only-used-for-grep-in-UNIX"><span class="nav-number">4.0.3.</span> <span class="nav-text">Regular Expression (Only used for grep in UNIX)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#egrep-adds-more-functionality-in-regular-expression"><span class="nav-number">4.0.4.</span> <span class="nav-text">egrep adds more functionality in regular expression</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Shell-Variable"><span class="nav-number">5.</span> <span class="nav-text">Shell Variable</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Arithmetic-Expansion"><span class="nav-number">6.</span> <span class="nav-text">Arithmetic Expansion</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Command-Substitution"><span class="nav-number">7.</span> <span class="nav-text">Command Substitution</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">Shihao Miao</p>
-              <div class="site-description motion-element" itemprop="description">坠欢莫拾，酒痕在衣</div>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="../../../../../../archives">
-                
-                    <span class="site-state-item-count">70</span>
-                    <span class="site-state-item-name">posts</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  
-                    
-                      <a href="../../../../../../categories/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">14</span>
-                    <span class="site-state-item-name">categories</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  
-                    
-                      <a href="../../../../../../tags/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">16</span>
-                    <span class="site-state-item-name">tags</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="https://github.com/Miaooocat" title="GitHub &rarr; https://github.com/Miaooocat" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="mailto:miao.shihaoo@gmail.com" title="E-Mail &rarr; mailto:miao.shihaoo@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                </span>
-              
-            </div>
-          
-
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="Shihao Miao" src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Shihao Miao</p>
+  <div class="site-description" itemprop="description">坠欢莫拾，酒痕在衣</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">70</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
       </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Miaooocat/" title="GitHub &rarr; https://github.com/Miaooocat/" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:miao.shihaoo@gmail.com" title="E-Mail &rarr; mailto:miao.shihaoo@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
 
-            
-            
-            
-            
 
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#About-this-page"><span class="nav-number">1.</span> <span class="nav-text">About this page</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-vi-Editor"><span class="nav-number">2.</span> <span class="nav-text">The vi Editor</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#vi-Command"><span class="nav-number">2.1.</span> <span class="nav-text">vi Command</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Switch-to-Input-Model"><span class="nav-number">2.1.1.</span> <span class="nav-text">Switch to Input Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Useful-Command"><span class="nav-number">2.1.2.</span> <span class="nav-text">Useful Command</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Navigation-Command"><span class="nav-number">2.1.3.</span> <span class="nav-text">Navigation Command</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Saving-work"><span class="nav-number">2.1.4.</span> <span class="nav-text">Saving work</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#UNIX"><span class="nav-number">3.</span> <span class="nav-text">UNIX</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#UNIX-File-Control"><span class="nav-number">3.1.</span> <span class="nav-text">UNIX File Control</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UNIX-Filename"><span class="nav-number">3.2.</span> <span class="nav-text">UNIX Filename</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UNIX-Basic-Command"><span class="nav-number">3.3.</span> <span class="nav-text">UNIX Basic Command</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#echo-Print-things-out"><span class="nav-number">3.3.1.</span> <span class="nav-text">echo  (Print things out.)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Browse-file"><span class="nav-number">3.3.2.</span> <span class="nav-text">Browse file</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#less-path-filename"><span class="nav-number">3.3.2.1.</span> <span class="nav-text">less path/filename</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#more-path-filename"><span class="nav-number">3.3.2.2.</span> <span class="nav-text">more path/filename</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cat-path-filename"><span class="nav-number">3.3.2.3.</span> <span class="nav-text">cat path/filename</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#head-path-filename"><span class="nav-number">3.3.2.4.</span> <span class="nav-text">head path/filename</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tail-path-filename"><span class="nav-number">3.3.3.</span> <span class="nav-text">tail path/filename</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cut"><span class="nav-number">3.3.4.</span> <span class="nav-text">cut:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sort"><span class="nav-number">3.3.5.</span> <span class="nav-text">sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#uniq-removes-repeated-lines-Only-work-for-adjacent"><span class="nav-number">3.3.6.</span> <span class="nav-text">uniq: removes repeated lines. (Only work for adjacent)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#basename-Not-a-way-to-check-if-a-file-existed"><span class="nav-number">3.3.7.</span> <span class="nav-text">basename (Not a way to check if a file existed)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dirname"><span class="nav-number">3.3.8.</span> <span class="nav-text">dirname</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#readlink"><span class="nav-number">3.3.9.</span> <span class="nav-text">readlink</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Links"><span class="nav-number">3.3.10.</span> <span class="nav-text">Links</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Chmod"><span class="nav-number">3.3.11.</span> <span class="nav-text">Chmod</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Symbolic-method"><span class="nav-number">3.3.11.1.</span> <span class="nav-text">Symbolic method</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Numerical-method"><span class="nav-number">3.3.12.</span> <span class="nav-text">Numerical method</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Find"><span class="nav-number">3.3.13.</span> <span class="nav-text">Find</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Rediction"><span class="nav-number">3.4.</span> <span class="nav-text">Rediction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Piping"><span class="nav-number">3.5.</span> <span class="nav-text">Piping</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#tee"><span class="nav-number">3.5.1.</span> <span class="nav-text">tee</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tr"><span class="nav-number">3.5.2.</span> <span class="nav-text">tr</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-lt-lt-lt-lt-lt"><span class="nav-number">3.6.</span> <span class="nav-text">&lt;,&lt;&lt;,&lt;&lt;&lt;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-Here-file"><span class="nav-number">3.6.1.</span> <span class="nav-text">&lt; Here-file</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-lt-Here-document-Need-EOF"><span class="nav-number">3.6.2.</span> <span class="nav-text">&lt;&lt; Here-document (Need EOF)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-lt-lt-Here-String"><span class="nav-number">3.6.3.</span> <span class="nav-text">&lt;&lt;&lt; Here String</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pattern-Matching-and-Searching"><span class="nav-number">3.7.</span> <span class="nav-text">Pattern Matching and Searching</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#grep-–-grep-is-looking-for-lines"><span class="nav-number">4.</span> <span class="nav-text">grep –  grep is looking for lines</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#fgrep-“pattern-or-string”-file"><span class="nav-number">4.0.1.</span> <span class="nav-text">fgrep “pattern or string” [file]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#grep-options-pattern-filename"><span class="nav-number">4.0.2.</span> <span class="nav-text">grep [-options] pattern filename</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Regular-Expression-Only-used-for-grep-in-UNIX"><span class="nav-number">4.0.3.</span> <span class="nav-text">Regular Expression (Only used for grep in UNIX)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#egrep-adds-more-functionality-in-regular-expression"><span class="nav-number">4.0.4.</span> <span class="nav-text">egrep adds more functionality in regular expression</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Shell-Variable"><span class="nav-number">5.</span> <span class="nav-text">Shell Variable</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Arithmetic-Expansion"><span class="nav-number">6.</span> <span class="nav-text">Arithmetic Expansion</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Command-Substitution"><span class="nav-number">7.</span> <span class="nav-text">Command Substitution</span></a></li></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
-
-      
+      </div>
 
     </div>
   </aside>
-  
+  <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Shihao Miao</span>
-
-  
-
-  
-</div>
-
-<div>
+</div><div>
 <span id="timeDate">Loading Days...</span><span id="times">Loading Times...</span>
 <script>
     var now = new Date();
@@ -843,15 +465,11 @@ setInterval("createtime()",250);
 </script>
 </div>
 
-
-
-
-
-
-
-
-
         
+
+
+
+
 
 
 
@@ -863,237 +481,98 @@ setInterval("createtime()",250);
         
       </div>
     </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-    
-
-    
   </div>
 
   
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
 
-<script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script src="../../../../../../lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script src="../../../../../../lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script src="../../../../../../lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script src="../../../../../../lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-
-  
-
-
-  <script src="../../../../../../js/src/utils.js?v=7.0.1"></script>
-
-  <script src="../../../../../../js/src/motion.js?v=7.0.1"></script>
-
-
-
-  
-  
-
-
-  <script src="../../../../../../js/src/schemes/muse.js?v=7.0.1"></script>
-
-
-
-  <script src="../../../../../../js/src/scrollspy.js?v=7.0.1"></script>
-<script src="../../../../../../js/src/post-details.js?v=7.0.1"></script>
-
-  
-  <script src="../../../../../../js/src/scrollspy.js?v=7.0.1"></script>
-<script src="../../../../../../js/src/post-details.js?v=7.0.1"></script>
-
-
-
-  
-
-
-  <script src="../../../../../../js/src/next-boot.js?v=7.0.1"></script>
-
-
-
-  <script src="//cdn.bootcss.com/jquery.pjax/1.9.6/jquery.pjax.js"></script>
-<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
-<script type="text/javascript">
-
-$(document).on('pjax:start', NProgress.start).on('pjax:end', NProgress.done);
-$(document).pjax('a[target!="_blank"]', '#pjax-container', {timeout: 8000, fragment: '#pjax-container'});
-$(document).on('pjax:complete', function () {
-
-  NexT.motion.integrator.cursor = -1;
-
-  $(document).trigger('bootstrap:before');
-  
-  //NexT.utils.isMobile() && window.FastClick.attach(document.body);
-
-  NexT.utils.lazyLoadPostsImages();
-
-  NexT.utils.registerBackToTop();
-
-  $('.site-nav-toggle button').on('click', function () {
-    var $siteNav = $('.site-nav');
-    var ON_CLASS_NAME = 'site-nav-on';
-    var isSiteNavOn = $siteNav.hasClass(ON_CLASS_NAME);
-    var animateAction = isSiteNavOn ? 'slideUp' : 'slideDown';
-    var animateCallback = isSiteNavOn ? 'removeClass' : 'addClass';
-
-    $siteNav.stop()[animateAction]('fast', function () {
-      $siteNav[animateCallback](ON_CLASS_NAME);
-    });
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.getAttribute('pjax') !== null) {
+      element.setAttribute('pjax', '');
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
   });
-
-  CONFIG.fancybox && NexT.utils.wrapImageWithFancyBox();
-  NexT.utils.embeddedVideoTransformer();
-
-
-  $(document).trigger('motion:before');
-
-  NexT.motion.init();
-  if (CONFIG.motion) {
-    $('.archive-year').velocity('transition.slideLeftIn');
-    CONFIG.motion && NexT.motion.integrator.bootstrap();
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
   }
-  NexT.postDetails.init();
-  $(document).trigger('bootstrap:after');
+  NexT.utils.updateSidebarPosition();
 });
 </script>
-  
-  
-
-  
-
-  
-
-  
-
-
-  
-
-
-  
 
 
 
 
   
 
-  
-
-  
-  
-
-  
-  
-
-  
 
 
-  
 
-  
 
-  
 
-  
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
 
   
 
   
 
-  
-
-  
-
-  
-<script>
-  $('.highlight').each(function(i, e) {
-    var $wrap = $('<div>').addClass('highlight-wrap');
-    $(e).after($wrap);
-    $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function(e) {
-      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
-        return $(e).text();
-      }).toArray().join('\n');
-      var ta = document.createElement('textarea');
-      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
-      ta.style.top = yPosition + 'px'; // Prevent page scroll
-      ta.style.position = 'absolute';
-      ta.style.opacity = '0';
-      ta.readOnly = true;
-      ta.value = code;
-      document.body.appendChild(ta);
-      ta.select();
-      ta.setSelectionRange(0, code.length);
-      ta.readOnly = false;
-      var result = document.execCommand('copy');
-      
-      ta.blur(); // For iOS
-      $(this).blur();
-    })).on('mouseleave', function(e) {
-      var $b = $(this).find('.copy-btn');
-      setTimeout(function() {
-        $b.text('Copy');
-      }, 300);
-    }).append(e);
-  })
-</script>
-
-
-  
-
-  
-
-  
-<link rel="stylesheet" href="/dist/APlayer.min.css">
-<div id="aplayer"></div>
-<script type="text/javascript" src="/dist/APlayer.min.js"></script>
-<script type="text/javascript" src="/dist/music.js"></script>
-<script type="text/javascript" src="/js/src/crash_cheat.js"></script>
+    </div>
 </body>
 </html>

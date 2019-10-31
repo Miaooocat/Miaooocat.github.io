@@ -1,4 +1,4 @@
-<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script>/* ===========================================================
+/* ===========================================================
  * pagepiling.js 0.0.7 (Beta)
  *
  * https://github.com/alvarotrigo/pagePiling.js
@@ -208,7 +208,7 @@
         * Enables vertical centering by wrapping the content and the use of table and table-cell
         */
         function addTableClass(element){
-            element.addClass('pp-table').wrapInner('<div class="pp-tableCell" style="height:100%">');
+            element.addClass('pp-table').wrapInner('<div class="pp-tableCell" style="height:100%" />');
         }
 
 
@@ -658,7 +658,7 @@
         }
 
         /*
-        * Returns and object with Microsoft pointers (for IE<11 and for ie>= 11)
+        * Returns and object with Microsoft pointers (for IE<11 and for IE >= 11)
         * http://msdn.microsoft.com/en-us/library/ie/dn304886(v=vs.85).aspx
         */
         function getMSPointer(){
@@ -722,7 +722,7 @@
                     touchEndY = touchEvents['y'];
                     touchEndX = touchEvents['x'];
 
-                  //$('body').append('<span style="position:fixed; top: 250px; left: 20px; z-index:88; font-size: 25px; color: #000;">touchEndY: ' + touchEndY  + '</span></11></div>');
+                  //$('body').append('<span style="position:fixed; top: 250px; left: 20px; z-index:88; font-size: 25px; color: #000;">touchEndY: ' + touchEndY  + '</div>');
 
                     //X movement bigger than Y movement?
                     if (options.direction === 'horizontal' && Math.abs(touchStartX - touchEndX) > (Math.abs(touchStartY - touchEndY))) {
