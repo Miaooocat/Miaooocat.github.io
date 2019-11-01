@@ -691,6 +691,105 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/16/Tech/Framework/Spring_Integration/Spring_Integration_Intro/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Shihao Miao">
+      <meta itemprop="description" content="坠欢莫拾，酒痕在衣">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi, Shihao">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/16/Tech/Framework/Spring_Integration/Spring_Integration_Intro/" class="post-title-link" itemprop="url">Spring Integration - Overview</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-09-16 19:51:52" itemprop="dateCreated datePublished" datetime="2019-09-16T19:51:52-04:00">2019-09-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-10-22 22:02:40" itemprop="dateModified" datetime="2019-10-22T22:02:40-04:00">2019-10-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Software-Development/" itemprop="url" rel="index">
+                    <span itemprop="name">Software Development</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Software-Development/Framework/" itemprop="url" rel="index">
+                    <span itemprop="name">Framework</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h1><p>Spring Integration is an open source framework that designed to enable the development of integration solutions typical of <strong>event-driven architectures</strong> and <strong>messaging-centric architectures</strong></p>
+<h1 id="Dependency"><a href="#Dependency" class="headerlink" title="Dependency"></a>Dependency</h1><p>It requires two dependencies <strong>spring intergration core</strong> and <strong>spring integration file</strong>, which could be downloaded from Maven Central. </p>
+<h1 id="Core-concepts-of-Spring"><a href="#Core-concepts-of-Spring" class="headerlink" title="Core concepts of Spring"></a>Core concepts of Spring</h1><p>Spring integration framework consists three parts, namely <strong>message</strong>, <strong>message channel</strong>, and <strong>message endpoint</strong>. In general. a <strong>message</strong> is a unit of information that can be passed between different <strong>message endpoint</strong> through <strong>message channels</strong>.</p>
+<h3 id="Message-Endpoint"><a href="#Message-Endpoint" class="headerlink" title="Message Endpoint"></a>Message Endpoint</h3><p>Its target is to connect in a non-invasive manner, the application with the messaging framework. The endpoint will be mapped to a message channel in the same way the MVC controller is mapped to a URL pattern.</p>
+<h3 id="Channel-adapter-–-Connects-the-application-to-an-external-system-Unidirectional"><a href="#Channel-adapter-–-Connects-the-application-to-an-external-system-Unidirectional" class="headerlink" title="Channel adapter – Connects the application to an external system (Unidirectional)"></a>Channel adapter – Connects the application to an external system (Unidirectional)</h3><p>The channel adapter is the endpoint that allows your application to connect with external systems.<br>There are four types of adapters</p>
+<h4 id="Inbound-channel-adapter"><a href="#Inbound-channel-adapter" class="headerlink" title="Inbound channel adapter"></a>Inbound channel adapter</h4><p>It receives a message from an external system. It then enters to our messaging system through a message channel, where we will handle it.</p>
+<h4 id="Outbound-channel-adapter"><a href="#Outbound-channel-adapter" class="headerlink" title="Outbound channel adapter:"></a>Outbound channel adapter:</h4><p>Our message system creates a message and sends it to an external system.</p>
+<h3 id="Gateway-–-Connects-the-application-to-an-external-system-bidirectional"><a href="#Gateway-–-Connects-the-application-to-an-external-system-bidirectional" class="headerlink" title="Gateway – Connects the application to an external system (bidirectional)"></a>Gateway – Connects the application to an external system (bidirectional)</h3><h4 id="Inbound-gateway-Bidirectional-A-message-enters-into-the-application-and-expects-a-response-The-response-will-be-sent-back-to-the-external-system"><a href="#Inbound-gateway-Bidirectional-A-message-enters-into-the-application-and-expects-a-response-The-response-will-be-sent-back-to-the-external-system" class="headerlink" title="Inbound gateway: Bidirectional. A message enters into the application and expects a response. The response will be sent back to the external system."></a>Inbound gateway: Bidirectional. A message enters into the application and expects a response. The response will be sent back to the external system.</h4><h4 id="Outbound-gateway-Bidirectional-The-application-creates-a-message-and-sends-it-to-the-external-system-The-gateway-will-then-wait-for-a-response"><a href="#Outbound-gateway-Bidirectional-The-application-creates-a-message-and-sends-it-to-the-external-system-The-gateway-will-then-wait-for-a-response" class="headerlink" title="Outbound gateway: Bidirectional. The application creates a message and sends it to the external system. The gateway will then wait for a response."></a>Outbound gateway: Bidirectional. The application creates a message and sends it to the external system. The gateway will then wait for a response.</h4><h3 id="Service-Activator-–-Can-invoke-an-operation-on-a-service-object"><a href="#Service-Activator-–-Can-invoke-an-operation-on-a-service-object" class="headerlink" title="Service Activator – Can invoke an operation on a service object"></a>Service Activator – Can invoke an operation on a service object</h3><h3 id="Transformer-–-Converts-the-content-of-a-message"><a href="#Transformer-–-Converts-the-content-of-a-message" class="headerlink" title="Transformer – Converts the content of a message"></a>Transformer – Converts the content of a message</h3><p>This endpoint is used for payload conversion. It converts the type of the payload to another type. For example, from String to XML document. Just take into account that transforming the payload will result in a new message (remember that the message is immutable!). This type of endpoint increases loose-coupling between producers and consumers, because the consumer doesn’t need to know what is the created type of the producer. The transformer will take care of it and deliver the content type the consumer is waiting for.</p>
+<h4 id="HeaderEnricher"><a href="#HeaderEnricher" class="headerlink" title="HeaderEnricher"></a>HeaderEnricher</h4><p>It permits to add header values to the message.</p>
+<h4 id="ObjectToMapTransformer"><a href="#ObjectToMapTransformer" class="headerlink" title="ObjectToMapTransformer"></a>ObjectToMapTransformer</h4><p>Converts an Object to a Map, converting its attributes to map values.</p>
+<h4 id="ObjectToStringTransformer"><a href="#ObjectToStringTransformer" class="headerlink" title="ObjectToStringTransformer"></a>ObjectToStringTransformer</h4><p>Converts an Object to a String. It converts it by calling its toString() operation.</p>
+<h4 id="PayloadSerializingTransformer-PayloadDeserializingTransformer"><a href="#PayloadSerializingTransformer-PayloadDeserializingTransformer" class="headerlink" title="PayloadSerializingTransformer / PayloadDeserializingTransformer"></a>PayloadSerializingTransformer / PayloadDeserializingTransformer</h4><p>Converts from Object to a byte array and the other way round.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public class Order implements Serializable &#123;</span><br><span class="line">    private static final long serialVersionUID = 1L; </span><br><span class="line">    private int id;</span><br><span class="line">    private String description;</span><br><span class="line"></span><br><span class="line">    public Order() &#123;&#125;</span><br><span class="line">     </span><br><span class="line">    public Order(int id, String description) &#123;</span><br><span class="line">        this.id = id;</span><br><span class="line">        this.description = description;</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    @Override</span><br><span class="line">    public String toString() &#123;</span><br><span class="line">        return String.valueOf(this.getId());</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    //Setters &amp; Getters</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;int:object-to-string-transformer input-channel=&quot;requestChannel&quot; output-channel=&quot;transformedChannel&quot;/&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;int:transformer ref=&quot;myTransformer&quot; method=&quot;transform&quot;</span><br><span class="line">  input-channel=&quot;requestChannel&quot; output-channel=&quot;transformedChannel&quot;/&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@Component(&quot;myTransformer&quot;)</span><br><span class="line">public class MyTransformer &#123;</span><br><span class="line">    public Order transform(Order requestOrder) &#123;</span><br><span class="line">        return new Order(requestOrder.getId(), requestOrder.getDescription()+&quot;_modified&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>In this example, the method attribute of the transformer element is not necessary, since the transformer only has one method. If it had several methods, you would need to set the “method” attribute to tell the framework which method to invoke. Or if you prefer annotations, you could specify the method using @Transformer annotation at method level:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@Component(&quot;myTransformer&quot;)</span><br><span class="line">public class MyTransformer &#123;</span><br><span class="line">     </span><br><span class="line">    @Transformer</span><br><span class="line">    public Order transform(Order requestOrder) &#123;</span><br><span class="line">        return new Order(requestOrder.getId(), requestOrder.getDescription()+&quot;_modified&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    public Order doOtherThings(Order requestOrder) &#123;</span><br><span class="line">        //do other things</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Filter-—-Determines-if-a-message-can-continue-its-way-to-the-output-channel"><a href="#Filter-—-Determines-if-a-message-can-continue-its-way-to-the-output-channel" class="headerlink" title="Filter — Determines if a message can continue its way to the output channel"></a>Filter — Determines if a message can continue its way to the output channel</h3><h3 id="Router-—-Decides-to-which-channel-the-message-will-be-sent"><a href="#Router-—-Decides-to-which-channel-the-message-will-be-sent" class="headerlink" title="Router — Decides to which channel the message will be sent"></a>Router — Decides to which channel the message will be sent</h3><h3 id="Splitter-—-Splits-the-message-in-several-parts"><a href="#Splitter-—-Splits-the-message-in-several-parts" class="headerlink" title="Splitter — Splits the message in several parts"></a>Splitter — Splits the message in several parts</h3><h3 id="Aggregator-—-Combines-several-messages-into-a-single-one"><a href="#Aggregator-—-Combines-several-messages-into-a-single-one" class="headerlink" title="Aggregator — Combines several messages into a single one"></a>Aggregator — Combines several messages into a single one</h3>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/16/Tech/Framework/Spring_Integration/SpringIntegrationTesting/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -773,105 +872,6 @@
 <p>Test Example:<br>In a scenario, a user could CreateTripCommand. This is sent into the system wrapped in a message. The message<br>goes through a splitter that chops the command into subcommands for rental cars, hotel rooms, and flights. We need to test if the splitter works as the way it should be.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">@Autowired</span><br><span class="line">MessageChannel tripCommands;</span><br><span class="line"></span><br><span class="line">@Autowired</span><br><span class="line">PollableChannel javaLegQuoteCommands;</span><br><span class="line"></span><br><span class="line">@Test</span><br><span class="line">public void splitterShouldSplitIntoSubcommands()&#123;</span><br><span class="line">    CreateTripCommand tripCommand = mock(CreateTripCommand.class);</span><br><span class="line">    Message&lt;CreateTripCommand&gt; tripCommandMessage = MessageBuilder.withPayload(tripCommand).build();</span><br><span class="line">    final Command carCommand = mock(Command.class);</span><br><span class="line">    final Command flightCommand = mock(Command.class);</span><br><span class="line">    final Command hotelCommand = mock(Command.class);</span><br><span class="line">    given(tripCommand.getSubCommands()).willReturn(Arrays.asList(carCommand, flightCommand, hotelCommand));</span><br><span class="line">    tripCommands.send(tripCommandMessage);</span><br><span class="line">    List&lt;Message&lt;? extends Object&gt;&gt; received = Arrays.asList(javaLegQuoteCommands.receive(100),</span><br><span class="line">    javaLegQuoteCommands.receive(100),</span><br><span class="line">    javaLegQuoteCommands.receive(100));</span><br><span class="line">    assertThat(received.size(), is(3));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="Expectations-on-headers"><a href="#Expectations-on-headers" class="headerlink" title="Expectations on headers"></a>Expectations on headers</h2>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/16/Tech/Framework/Spring_Integration/Spring_Integration_Intro/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Shihao Miao">
-      <meta itemprop="description" content="坠欢莫拾，酒痕在衣">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hi, Shihao">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/09/16/Tech/Framework/Spring_Integration/Spring_Integration_Intro/" class="post-title-link" itemprop="url">Spring Integration - Overview</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-09-16 19:51:52" itemprop="dateCreated datePublished" datetime="2019-09-16T19:51:52-04:00">2019-09-16</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-22 22:02:40" itemprop="dateModified" datetime="2019-10-22T22:02:40-04:00">2019-10-22</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Software-Development/" itemprop="url" rel="index">
-                    <span itemprop="name">Software Development</span>
-                  </a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Software-Development/Framework/" itemprop="url" rel="index">
-                    <span itemprop="name">Framework</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h1><p>Spring Integration is an open source framework that designed to enable the development of integration solutions typical of <strong>event-driven architectures</strong> and <strong>messaging-centric architectures</strong></p>
-<h1 id="Dependency"><a href="#Dependency" class="headerlink" title="Dependency"></a>Dependency</h1><p>It requires two dependencies <strong>spring intergration core</strong> and <strong>spring integration file</strong>, which could be downloaded from Maven Central. </p>
-<h1 id="Core-concepts-of-Spring"><a href="#Core-concepts-of-Spring" class="headerlink" title="Core concepts of Spring"></a>Core concepts of Spring</h1><p>Spring integration framework consists three parts, namely <strong>message</strong>, <strong>message channel</strong>, and <strong>message endpoint</strong>. In general. a <strong>message</strong> is a unit of information that can be passed between different <strong>message endpoint</strong> through <strong>message channels</strong>.</p>
-<h3 id="Message-Endpoint"><a href="#Message-Endpoint" class="headerlink" title="Message Endpoint"></a>Message Endpoint</h3><p>Its target is to connect in a non-invasive manner, the application with the messaging framework. The endpoint will be mapped to a message channel in the same way the MVC controller is mapped to a URL pattern.</p>
-<h3 id="Channel-adapter-–-Connects-the-application-to-an-external-system-Unidirectional"><a href="#Channel-adapter-–-Connects-the-application-to-an-external-system-Unidirectional" class="headerlink" title="Channel adapter – Connects the application to an external system (Unidirectional)"></a>Channel adapter – Connects the application to an external system (Unidirectional)</h3><p>The channel adapter is the endpoint that allows your application to connect with external systems.<br>There are four types of adapters</p>
-<h4 id="Inbound-channel-adapter"><a href="#Inbound-channel-adapter" class="headerlink" title="Inbound channel adapter"></a>Inbound channel adapter</h4><p>It receives a message from an external system. It then enters to our messaging system through a message channel, where we will handle it.</p>
-<h4 id="Outbound-channel-adapter"><a href="#Outbound-channel-adapter" class="headerlink" title="Outbound channel adapter:"></a>Outbound channel adapter:</h4><p>Our message system creates a message and sends it to an external system.</p>
-<h3 id="Gateway-–-Connects-the-application-to-an-external-system-bidirectional"><a href="#Gateway-–-Connects-the-application-to-an-external-system-bidirectional" class="headerlink" title="Gateway – Connects the application to an external system (bidirectional)"></a>Gateway – Connects the application to an external system (bidirectional)</h3><h4 id="Inbound-gateway-Bidirectional-A-message-enters-into-the-application-and-expects-a-response-The-response-will-be-sent-back-to-the-external-system"><a href="#Inbound-gateway-Bidirectional-A-message-enters-into-the-application-and-expects-a-response-The-response-will-be-sent-back-to-the-external-system" class="headerlink" title="Inbound gateway: Bidirectional. A message enters into the application and expects a response. The response will be sent back to the external system."></a>Inbound gateway: Bidirectional. A message enters into the application and expects a response. The response will be sent back to the external system.</h4><h4 id="Outbound-gateway-Bidirectional-The-application-creates-a-message-and-sends-it-to-the-external-system-The-gateway-will-then-wait-for-a-response"><a href="#Outbound-gateway-Bidirectional-The-application-creates-a-message-and-sends-it-to-the-external-system-The-gateway-will-then-wait-for-a-response" class="headerlink" title="Outbound gateway: Bidirectional. The application creates a message and sends it to the external system. The gateway will then wait for a response."></a>Outbound gateway: Bidirectional. The application creates a message and sends it to the external system. The gateway will then wait for a response.</h4><h3 id="Service-Activator-–-Can-invoke-an-operation-on-a-service-object"><a href="#Service-Activator-–-Can-invoke-an-operation-on-a-service-object" class="headerlink" title="Service Activator – Can invoke an operation on a service object"></a>Service Activator – Can invoke an operation on a service object</h3><h3 id="Transformer-–-Converts-the-content-of-a-message"><a href="#Transformer-–-Converts-the-content-of-a-message" class="headerlink" title="Transformer – Converts the content of a message"></a>Transformer – Converts the content of a message</h3><p>This endpoint is used for payload conversion. It converts the type of the payload to another type. For example, from String to XML document. Just take into account that transforming the payload will result in a new message (remember that the message is immutable!). This type of endpoint increases loose-coupling between producers and consumers, because the consumer doesn’t need to know what is the created type of the producer. The transformer will take care of it and deliver the content type the consumer is waiting for.</p>
-<h4 id="HeaderEnricher"><a href="#HeaderEnricher" class="headerlink" title="HeaderEnricher"></a>HeaderEnricher</h4><p>It permits to add header values to the message.</p>
-<h4 id="ObjectToMapTransformer"><a href="#ObjectToMapTransformer" class="headerlink" title="ObjectToMapTransformer"></a>ObjectToMapTransformer</h4><p>Converts an Object to a Map, converting its attributes to map values.</p>
-<h4 id="ObjectToStringTransformer"><a href="#ObjectToStringTransformer" class="headerlink" title="ObjectToStringTransformer"></a>ObjectToStringTransformer</h4><p>Converts an Object to a String. It converts it by calling its toString() operation.</p>
-<h4 id="PayloadSerializingTransformer-PayloadDeserializingTransformer"><a href="#PayloadSerializingTransformer-PayloadDeserializingTransformer" class="headerlink" title="PayloadSerializingTransformer / PayloadDeserializingTransformer"></a>PayloadSerializingTransformer / PayloadDeserializingTransformer</h4><p>Converts from Object to a byte array and the other way round.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public class Order implements Serializable &#123;</span><br><span class="line">    private static final long serialVersionUID = 1L; </span><br><span class="line">    private int id;</span><br><span class="line">    private String description;</span><br><span class="line"></span><br><span class="line">    public Order() &#123;&#125;</span><br><span class="line">     </span><br><span class="line">    public Order(int id, String description) &#123;</span><br><span class="line">        this.id = id;</span><br><span class="line">        this.description = description;</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    @Override</span><br><span class="line">    public String toString() &#123;</span><br><span class="line">        return String.valueOf(this.getId());</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    //Setters &amp; Getters</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;int:object-to-string-transformer input-channel=&quot;requestChannel&quot; output-channel=&quot;transformedChannel&quot;/&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;int:transformer ref=&quot;myTransformer&quot; method=&quot;transform&quot;</span><br><span class="line">  input-channel=&quot;requestChannel&quot; output-channel=&quot;transformedChannel&quot;/&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@Component(&quot;myTransformer&quot;)</span><br><span class="line">public class MyTransformer &#123;</span><br><span class="line">    public Order transform(Order requestOrder) &#123;</span><br><span class="line">        return new Order(requestOrder.getId(), requestOrder.getDescription()+&quot;_modified&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>In this example, the method attribute of the transformer element is not necessary, since the transformer only has one method. If it had several methods, you would need to set the “method” attribute to tell the framework which method to invoke. Or if you prefer annotations, you could specify the method using @Transformer annotation at method level:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@Component(&quot;myTransformer&quot;)</span><br><span class="line">public class MyTransformer &#123;</span><br><span class="line">     </span><br><span class="line">    @Transformer</span><br><span class="line">    public Order transform(Order requestOrder) &#123;</span><br><span class="line">        return new Order(requestOrder.getId(), requestOrder.getDescription()+&quot;_modified&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    public Order doOtherThings(Order requestOrder) &#123;</span><br><span class="line">        //do other things</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Filter-—-Determines-if-a-message-can-continue-its-way-to-the-output-channel"><a href="#Filter-—-Determines-if-a-message-can-continue-its-way-to-the-output-channel" class="headerlink" title="Filter — Determines if a message can continue its way to the output channel"></a>Filter — Determines if a message can continue its way to the output channel</h3><h3 id="Router-—-Decides-to-which-channel-the-message-will-be-sent"><a href="#Router-—-Decides-to-which-channel-the-message-will-be-sent" class="headerlink" title="Router — Decides to which channel the message will be sent"></a>Router — Decides to which channel the message will be sent</h3><h3 id="Splitter-—-Splits-the-message-in-several-parts"><a href="#Splitter-—-Splits-the-message-in-several-parts" class="headerlink" title="Splitter — Splits the message in several parts"></a>Splitter — Splits the message in several parts</h3><h3 id="Aggregator-—-Combines-several-messages-into-a-single-one"><a href="#Aggregator-—-Combines-several-messages-into-a-single-one" class="headerlink" title="Aggregator — Combines several messages into a single one"></a>Aggregator — Combines several messages into a single one</h3>
       
     </div>
 
@@ -1789,91 +1789,6 @@ method:     specifies HTTP method
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/06/Tech/Java/Java_web/HttpProtocol/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Shihao Miao">
-      <meta itemprop="description" content="坠欢莫拾，酒痕在衣">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hi, Shihao">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/08/06/Tech/Java/Java_web/HttpProtocol/" class="post-title-link" itemprop="url">HTTP Protocol</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-08-06 18:06:52" itemprop="dateCreated datePublished" datetime="2019-08-06T18:06:52-04:00">2019-08-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-19 19:46:25" itemprop="dateModified" datetime="2019-10-19T19:46:25-04:00">2019-10-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Software-Development/" itemprop="url" rel="index">
-                    <span itemprop="name">Software Development</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="What-is-HTTP-Protocol-HyperText-Transfer-Protocol"><a href="#What-is-HTTP-Protocol-HyperText-Transfer-Protocol" class="headerlink" title="What is HTTP Protocol (HyperText Transfer Protocol)"></a>What is HTTP Protocol (HyperText Transfer Protocol)</h2><p>HTTP is the <strong>stateless</strong> underlying protocol used by the World Wide Web(www). This protocol defines how <strong>messages</strong> are formatted and transmitted, and what action web servers and browsers should take in response to various commands.</p>
-<p><strong>Stateless Protocol</strong>: A statelss protocol means that server does not retain user information. HTTP is connetionless protocol that only use <strong>HTTP message</strong> transfer information.</p>
-<p><strong>Message</strong>: HTTP messages are how data is exchanged between a server and a client. There are two types of messages: <strong>HTTP requests</strong> sent by the client to trigger an action on the server, and <strong>HTTP responses</strong>, the answer from the server.</p>
-<p>HTTP requests, and responses, share similar structure and are composed of:<br>1) A <strong>start-line</strong> describing the requests to be implemented or its <strong>status</strong> of whether successful or a failure. This start-line is always a single line.<br>2) An optional set of <strong>HTTP headers</strong> specifying the request, or <strong>describing the body</strong> included in the message.<br>3) A <strong>blank line</strong> indicating all meta-information for the request have been sent.<br>4) An optional <strong>body</strong> containing <strong>data associated with the request</strong> (like content of an HTML form), or the document associated with a response. The presence of the body and its size is specified by the start-line and HTTP headers.<br><img src="img/HTTP_Message.png" alt="HTTP Message"></p>
-<h2 id="GET-and-POST-message"><a href="#GET-and-POST-message" class="headerlink" title="GET and POST message"></a>GET and POST message</h2><p>Both are methods used in the <strong>form</strong> </p>
-<p>POST requests supply additional data from the client (browser) to the server in the message body. POST method is not displayed in URL, and has no size limitation</p>
-<p>GET requests include all required data in the URL, and is the <strong>default method</strong>. GET method is <strong>less secure</strong> as it is visible at the browser’s address bar and has size limitation</p>
-<h2 id="Status"><a href="#Status" class="headerlink" title="Status"></a>Status</h2><p><strong>1xx Informational:</strong> Communicates transfer protocol-level information.<br><strong>2xx Success:</strong> Success<br><strong>3xx Redirection:</strong> Client must take some additional action in order to complete their request.<br><strong>4xx Client Error:</strong> Error with client<br><strong>5xx Server Error:</strong> Error with the server</p>
-<h2 id="Real-Example"><a href="#Real-Example" class="headerlink" title="Real Example"></a>Real Example</h2><p><strong>Example</strong>: In real example, when you enter an URL in your browser, this actually sends an HTTP command from web clients to the Web server directing it to fetch and transmit the requested Web page. This is demonstrated in the following diagram.</p>
-<p><img src="img/HTTP_Communication_Basics.png" alt="HTTP Communication Basics"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/06/Tech/Java/Java_web/Servlet/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2106,6 +2021,91 @@ method:     specifies HTTP method
 <h1 id="Attributes"><a href="#Attributes" class="headerlink" title="Attributes"></a>Attributes</h1><p>Attributes are String to Object mappings used to share data between web app components.</p>
 <p>Add attributes to the HttpServletRequest object in a Servlet.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">request.setAttribute(&quot;currentGuest&quot;, UserManager.getUser(username));</span><br></pre></td></tr></table></figure></p>
 <p>Retrieve them when access HttpServletRequest<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">User myUser = request.getAttribute(&quot;currentGuest&quot;);</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/06/Tech/Java/Java_web/HttpProtocol/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Shihao Miao">
+      <meta itemprop="description" content="坠欢莫拾，酒痕在衣">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi, Shihao">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/08/06/Tech/Java/Java_web/HttpProtocol/" class="post-title-link" itemprop="url">HTTP Protocol</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-08-06 18:06:52" itemprop="dateCreated datePublished" datetime="2019-08-06T18:06:52-04:00">2019-08-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-10-19 19:46:25" itemprop="dateModified" datetime="2019-10-19T19:46:25-04:00">2019-10-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Software-Development/" itemprop="url" rel="index">
+                    <span itemprop="name">Software Development</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="What-is-HTTP-Protocol-HyperText-Transfer-Protocol"><a href="#What-is-HTTP-Protocol-HyperText-Transfer-Protocol" class="headerlink" title="What is HTTP Protocol (HyperText Transfer Protocol)"></a>What is HTTP Protocol (HyperText Transfer Protocol)</h2><p>HTTP is the <strong>stateless</strong> underlying protocol used by the World Wide Web(www). This protocol defines how <strong>messages</strong> are formatted and transmitted, and what action web servers and browsers should take in response to various commands.</p>
+<p><strong>Stateless Protocol</strong>: A statelss protocol means that server does not retain user information. HTTP is connetionless protocol that only use <strong>HTTP message</strong> transfer information.</p>
+<p><strong>Message</strong>: HTTP messages are how data is exchanged between a server and a client. There are two types of messages: <strong>HTTP requests</strong> sent by the client to trigger an action on the server, and <strong>HTTP responses</strong>, the answer from the server.</p>
+<p>HTTP requests, and responses, share similar structure and are composed of:<br>1) A <strong>start-line</strong> describing the requests to be implemented or its <strong>status</strong> of whether successful or a failure. This start-line is always a single line.<br>2) An optional set of <strong>HTTP headers</strong> specifying the request, or <strong>describing the body</strong> included in the message.<br>3) A <strong>blank line</strong> indicating all meta-information for the request have been sent.<br>4) An optional <strong>body</strong> containing <strong>data associated with the request</strong> (like content of an HTML form), or the document associated with a response. The presence of the body and its size is specified by the start-line and HTTP headers.<br><img src="img/HTTP_Message.png" alt="HTTP Message"></p>
+<h2 id="GET-and-POST-message"><a href="#GET-and-POST-message" class="headerlink" title="GET and POST message"></a>GET and POST message</h2><p>Both are methods used in the <strong>form</strong> </p>
+<p>POST requests supply additional data from the client (browser) to the server in the message body. POST method is not displayed in URL, and has no size limitation</p>
+<p>GET requests include all required data in the URL, and is the <strong>default method</strong>. GET method is <strong>less secure</strong> as it is visible at the browser’s address bar and has size limitation</p>
+<h2 id="Status"><a href="#Status" class="headerlink" title="Status"></a>Status</h2><p><strong>1xx Informational:</strong> Communicates transfer protocol-level information.<br><strong>2xx Success:</strong> Success<br><strong>3xx Redirection:</strong> Client must take some additional action in order to complete their request.<br><strong>4xx Client Error:</strong> Error with client<br><strong>5xx Server Error:</strong> Error with the server</p>
+<h2 id="Real-Example"><a href="#Real-Example" class="headerlink" title="Real Example"></a>Real Example</h2><p><strong>Example</strong>: In real example, when you enter an URL in your browser, this actually sends an HTTP command from web clients to the Web server directing it to fetch and transmit the requested Web page. This is demonstrated in the following diagram.</p>
+<p><img src="img/HTTP_Communication_Basics.png" alt="HTTP Communication Basics"></p>
 
       
     </div>
@@ -2774,6 +2774,118 @@ method:     specifies HTTP method
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/03/Tech/Java/Java_Basic/Java_28_Stream/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Shihao Miao">
+      <meta itemprop="description" content="坠欢莫拾，酒痕在衣">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi, Shihao">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/07/03/Tech/Java/Java_Basic/Java_28_Stream/" class="post-title-link" itemprop="url">Java Study Notes(28) Java Stream</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-07-03 13:12:17" itemprop="dateCreated datePublished" datetime="2019-07-03T13:12:17-04:00">2019-07-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-10-19 19:46:25" itemprop="dateModified" datetime="2019-10-19T19:46:25-04:00">2019-10-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Software-Development/" itemprop="url" rel="index">
+                    <span itemprop="name">Software Development</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Software-Development/Java-Programming/" itemprop="url" rel="index">
+                    <span itemprop="name">Java Programming</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>Stream is a new abstract layer introduced in Java 8. Stream represents a sequence of objects from a source, which supports aggregate operations. Following are the characteristics of a Stream </p>
+<ul>
+<li><p>Sequence of elements: A stream provides a set of elements of specific type in a sequential manner. A stream gets/computes elements on demand. It never stores the elements</p>
+</li>
+<li><p>Source: Stream takes Collections, Arrays, or I/O resources as input source.</p>
+</li>
+<li><p>Aggregate operation: Stream supports aggregate operations like filter, map, limit, reduce, find, match and so on.</p>
+</li>
+<li><p>intermediate method: Most of the stream operations return stream itself so that their result can be pipelined. These operations are called intermediate method. As a result we can chain zero or many calls to intermediate methods. collect() method is a termial operation which is normally present at the end of the pipelining operation</p>
+</li>
+<li><p>Automatic iterations: Stream Operations do the iterations internally over the source elements provided in contrast to Collections where explicit iteration is required.</p>
+</li>
+</ul>
+<h2 id="Streams-syntax"><a href="#Streams-syntax" class="headerlink" title="Streams syntax"></a>Streams syntax</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;R,A&gt; R collect(Collector&lt;? super T,A,R&gt; collector)</span><br><span class="line"></span><br><span class="line">Stream&lt;T&gt; filter(Predicate&lt;? super T&gt; predicate)</span><br><span class="line"></span><br><span class="line">&lt;R&gt; Stream&lt;R&gt; map(Function&lt;? super T,? extends R&gt;mapper)</span><br></pre></td></tr></table></figure>
+<p><strong>.stream()</strong> changes a list to a stream.<br><strong>.parallelStream()</strong> Use multiple stream to increase the speed<br><strong>.filter()</strong> take a boolean function to filter data.<br><strong>.collect()</strong> change a stream to other output</p>
+<ul>
+<li>ex) .collect(Collectors.toList()) //Convert to list</li>
+<li>ex) .collector(Collectors.counting()) //Count number</li>
+</ul>
+<p><strong>.distinct()</strong> remove duplicate items</p>
+<p><strong>.map(Data type::method)</strong> change all the data based on one function</p>
+<ul>
+<li>ex) .map(Integer::valueOf)</li>
+<li>ex) .map(Employee::getSalary)</li>
+<li>ex) .map(e -&gt; e.getSalary)</li>
+</ul>
+<p><strong>limit(num)</strong> Limit method is used to reduce the size of the stream. The following code segment shows how to print 10 random numbers using limit.</p>
+<p><strong>sorted()</strong> The ‘sorted’ method is used to sort the stream. The following code seg</p>
+<p><strong>forEach</strong> print every elements in a stream<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Random random = new Random();</span><br><span class="line">random.ints().limit(10).forEach(System.out::println);</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ArrayList&lt;Integer&gt; numbers = new ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">numbers.stream().filter(n -&gt; n%2 != 0);</span><br><span class="line"></span><br><span class="line">List&lt;Integer&gt; filtered = stream.collect(Collectors.toList());</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">employeeList.stream()</span><br><span class="line">            .map(Employee::getSalary)</span><br><span class="line">            .distinct()</span><br><span class="line">            .filter(n-&gt;n&gt;80000)</span><br><span class="line">            .collect(Collectors.counting());</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/03/Tech/Java/Java_Database/JDBC_1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2923,118 +3035,6 @@ method:     specifies HTTP method
 <p>Class.forName(“oracle.jdbc.driver.OracleDriver”);</p>
 <p> DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver())</p>
 <p>Connection con = DriverManager.getConnection(url,user,password)</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/03/Tech/Java/Java_Basic/Java_28_Stream/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Shihao Miao">
-      <meta itemprop="description" content="坠欢莫拾，酒痕在衣">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hi, Shihao">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/07/03/Tech/Java/Java_Basic/Java_28_Stream/" class="post-title-link" itemprop="url">Java Study Notes(28) Java Stream</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-07-03 13:12:17" itemprop="dateCreated datePublished" datetime="2019-07-03T13:12:17-04:00">2019-07-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-19 19:46:25" itemprop="dateModified" datetime="2019-10-19T19:46:25-04:00">2019-10-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Software-Development/" itemprop="url" rel="index">
-                    <span itemprop="name">Software Development</span>
-                  </a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Software-Development/Java-Programming/" itemprop="url" rel="index">
-                    <span itemprop="name">Java Programming</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>Stream is a new abstract layer introduced in Java 8. Stream represents a sequence of objects from a source, which supports aggregate operations. Following are the characteristics of a Stream </p>
-<ul>
-<li><p>Sequence of elements: A stream provides a set of elements of specific type in a sequential manner. A stream gets/computes elements on demand. It never stores the elements</p>
-</li>
-<li><p>Source: Stream takes Collections, Arrays, or I/O resources as input source.</p>
-</li>
-<li><p>Aggregate operation: Stream supports aggregate operations like filter, map, limit, reduce, find, match and so on.</p>
-</li>
-<li><p>intermediate method: Most of the stream operations return stream itself so that their result can be pipelined. These operations are called intermediate method. As a result we can chain zero or many calls to intermediate methods. collect() method is a termial operation which is normally present at the end of the pipelining operation</p>
-</li>
-<li><p>Automatic iterations: Stream Operations do the iterations internally over the source elements provided in contrast to Collections where explicit iteration is required.</p>
-</li>
-</ul>
-<h2 id="Streams-syntax"><a href="#Streams-syntax" class="headerlink" title="Streams syntax"></a>Streams syntax</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;R,A&gt; R collect(Collector&lt;? super T,A,R&gt; collector)</span><br><span class="line"></span><br><span class="line">Stream&lt;T&gt; filter(Predicate&lt;? super T&gt; predicate)</span><br><span class="line"></span><br><span class="line">&lt;R&gt; Stream&lt;R&gt; map(Function&lt;? super T,? extends R&gt;mapper)</span><br></pre></td></tr></table></figure>
-<p><strong>.stream()</strong> changes a list to a stream.<br><strong>.parallelStream()</strong> Use multiple stream to increase the speed<br><strong>.filter()</strong> take a boolean function to filter data.<br><strong>.collect()</strong> change a stream to other output</p>
-<ul>
-<li>ex) .collect(Collectors.toList()) //Convert to list</li>
-<li>ex) .collector(Collectors.counting()) //Count number</li>
-</ul>
-<p><strong>.distinct()</strong> remove duplicate items</p>
-<p><strong>.map(Data type::method)</strong> change all the data based on one function</p>
-<ul>
-<li>ex) .map(Integer::valueOf)</li>
-<li>ex) .map(Employee::getSalary)</li>
-<li>ex) .map(e -&gt; e.getSalary)</li>
-</ul>
-<p><strong>limit(num)</strong> Limit method is used to reduce the size of the stream. The following code segment shows how to print 10 random numbers using limit.</p>
-<p><strong>sorted()</strong> The ‘sorted’ method is used to sort the stream. The following code seg</p>
-<p><strong>forEach</strong> print every elements in a stream<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Random random = new Random();</span><br><span class="line">random.ints().limit(10).forEach(System.out::println);</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ArrayList&lt;Integer&gt; numbers = new ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">numbers.stream().filter(n -&gt; n%2 != 0);</span><br><span class="line"></span><br><span class="line">List&lt;Integer&gt; filtered = stream.collect(Collectors.toList());</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">employeeList.stream()</span><br><span class="line">            .map(Employee::getSalary)</span><br><span class="line">            .distinct()</span><br><span class="line">            .filter(n-&gt;n&gt;80000)</span><br><span class="line">            .collect(Collectors.counting());</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -3420,106 +3420,6 @@ method:     specifies HTTP method
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/28/Tech/Java/Java_Basic/Java_23_JSON&Jackson/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Shihao Miao">
-      <meta itemprop="description" content="坠欢莫拾，酒痕在衣">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hi, Shihao">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/28/Tech/Java/Java_Basic/Java_23_JSON&Jackson/" class="post-title-link" itemprop="url">Java Study Notes(23) JSON and Jackson</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-06-28 16:19:11" itemprop="dateCreated datePublished" datetime="2019-06-28T16:19:11-04:00">2019-06-28</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-19 19:46:25" itemprop="dateModified" datetime="2019-10-19T19:46:25-04:00">2019-10-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Software-Development/" itemprop="url" rel="index">
-                    <span itemprop="name">Software Development</span>
-                  </a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Software-Development/Java-Programming/" itemprop="url" rel="index">
-                    <span itemprop="name">Java Programming</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>JSON syntax is based on two constructs objects and arrays</p>
-<pre><code>* Objects: sets of name(String)/value(String,number,boolean,null, Objects or Array) pairs
-* Arrays: ordered lists of values
-</code></pre><h1 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h1><h2 id="JSON-Object"><a href="#JSON-Object" class="headerlink" title="JSON Object"></a>JSON Object</h2><p>Objects in JSON consist of name/value pairs surrounded by curly brack(“{…}”) and separated by commas</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">&quot;name&quot;:&quot;John Doe&quot;,</span><br><span class="line">&quot;Stream&quot;:&quot;ITSM&quot;,</span><br><span class="line">&quot;academy&quot;:</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;Location&quot;:&quot;New York&quot;,</span><br><span class="line">        &quot;address&quot;:&quot;14 Wall Street&quot;,</span><br><span class="line">        &quot;popUp&quot;:&quot;false&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;signedOff&quot; : false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="JSON-Array"><a href="#JSON-Array" class="headerlink" title="JSON Array"></a>JSON Array</h2><h1 id="Jackson"><a href="#Jackson" class="headerlink" title="Jackson"></a>Jackson</h1><ul>
-<li>Previously “the standardJSON library for Java”</li>
-<li>Includes libraries to read and write JSON(as well as other data formats)<ul>
-<li>includes data-binding and streaming functionality<ul>
-<li>Data-binding</li>
-<li>Streaming</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="ObjectMapper-class"><a href="#ObjectMapper-class" class="headerlink" title="ObjectMapper class"></a>ObjectMapper class</h2><p>The ObjectMapper class in Jackson provides a customizable entry point for reading/writing JSON from a java application</p>
-<pre><code>* readValue(...) can be used to deserialize JSON
-* writeValue(...) can be used to serialize Java objects
-</code></pre><h2 id="Annotations"><a href="#Annotations" class="headerlink" title="Annotations"></a>Annotations</h2>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/28/Tech/Java/Java_Basic/Java_24_MultiThreading/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -3676,6 +3576,106 @@ Atomic operations are operations which either happen completely or do not happen
 <p>Two solution to make it thread safe.<br>1) Add synchronized key word:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class MyCounter &#123;</span><br><span class="line">	private static int counter = 0;</span><br><span class="line">	public static synchronized int getCount() &#123;</span><br><span class="line">		return counter++;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>2) Import java.util.concurrent.atomic.* package. Use the method inside it.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import java.util.concurrent.atomic.AtomicInteger; </span><br><span class="line">public class MyCounter &#123;</span><br><span class="line">	private static AtomicInteger counter = new AtomicInteger(0);</span><br><span class="line">	public static int getCount() &#123;</span><br><span class="line">		return counter.getAndIncrement();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/28/Tech/Java/Java_Basic/Java_23_JSON&Jackson/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Shihao Miao">
+      <meta itemprop="description" content="坠欢莫拾，酒痕在衣">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi, Shihao">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/28/Tech/Java/Java_Basic/Java_23_JSON&Jackson/" class="post-title-link" itemprop="url">Java Study Notes(23) JSON and Jackson</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-06-28 16:19:11" itemprop="dateCreated datePublished" datetime="2019-06-28T16:19:11-04:00">2019-06-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-10-19 19:46:25" itemprop="dateModified" datetime="2019-10-19T19:46:25-04:00">2019-10-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Software-Development/" itemprop="url" rel="index">
+                    <span itemprop="name">Software Development</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Software-Development/Java-Programming/" itemprop="url" rel="index">
+                    <span itemprop="name">Java Programming</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>JSON syntax is based on two constructs objects and arrays</p>
+<pre><code>* Objects: sets of name(String)/value(String,number,boolean,null, Objects or Array) pairs
+* Arrays: ordered lists of values
+</code></pre><h1 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h1><h2 id="JSON-Object"><a href="#JSON-Object" class="headerlink" title="JSON Object"></a>JSON Object</h2><p>Objects in JSON consist of name/value pairs surrounded by curly brack(“{…}”) and separated by commas</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">&quot;name&quot;:&quot;John Doe&quot;,</span><br><span class="line">&quot;Stream&quot;:&quot;ITSM&quot;,</span><br><span class="line">&quot;academy&quot;:</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;Location&quot;:&quot;New York&quot;,</span><br><span class="line">        &quot;address&quot;:&quot;14 Wall Street&quot;,</span><br><span class="line">        &quot;popUp&quot;:&quot;false&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;signedOff&quot; : false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="JSON-Array"><a href="#JSON-Array" class="headerlink" title="JSON Array"></a>JSON Array</h2><h1 id="Jackson"><a href="#Jackson" class="headerlink" title="Jackson"></a>Jackson</h1><ul>
+<li>Previously “the standardJSON library for Java”</li>
+<li>Includes libraries to read and write JSON(as well as other data formats)<ul>
+<li>includes data-binding and streaming functionality<ul>
+<li>Data-binding</li>
+<li>Streaming</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="ObjectMapper-class"><a href="#ObjectMapper-class" class="headerlink" title="ObjectMapper class"></a>ObjectMapper class</h2><p>The ObjectMapper class in Jackson provides a customizable entry point for reading/writing JSON from a java application</p>
+<pre><code>* readValue(...) can be used to deserialize JSON
+* writeValue(...) can be used to serialize Java objects
+</code></pre><h2 id="Annotations"><a href="#Annotations" class="headerlink" title="Annotations"></a>Annotations</h2>
       
     </div>
 
@@ -3981,110 +3981,6 @@ Atomic operations are operations which either happen completely or do not happen
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/27/Tech/CleanCode/Meaningful_Name/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Shihao Miao">
-      <meta itemprop="description" content="坠欢莫拾，酒痕在衣">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hi, Shihao">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/27/Tech/CleanCode/Meaningful_Name/" class="post-title-link" itemprop="url">Clean Code Notes(1) Meaningful Name</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-06-27 13:59:52" itemprop="dateCreated datePublished" datetime="2019-06-27T13:59:52-04:00">2019-06-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-19 19:46:25" itemprop="dateModified" datetime="2019-10-19T19:46:25-04:00">2019-10-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Software-Development/" itemprop="url" rel="index">
-                    <span itemprop="name">Software Development</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>This is the note that I took when reading Clean Code: A Handbook of Agile Software Craftsmanship by Robert C. Martin.</p>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>The name of variable, function and class name should tells its function.<br>If commenting is used, then this is not a good variable name.</p>
-<h2 id="Use-Intention-Revealing-Names"><a href="#Use-Intention-Revealing-Names" class="headerlink" title="Use Intention-Revealing Names"></a>Use Intention-Revealing Names</h2><h3 id="Example-1-Variable-name"><a href="#Example-1-Variable-name" class="headerlink" title="Example 1: Variable name"></a>Example 1: Variable name</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// Bad Example</span><br><span class="line">int d; // Calculate elapsedTimeInDays</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// Good Example</span><br><span class="line">int elaspsedTimeInDays;</span><br><span class="line">int daysSinceCreation;</span><br><span class="line">int daysSinceModification;</span><br><span class="line">int fileAgeInDays;</span><br></pre></td></tr></table></figure>
-<h3 id="Example-2-Variable-name-inside-a-function"><a href="#Example-2-Variable-name-inside-a-function" class="headerlink" title="Example 2: Variable name inside a function"></a>Example 2: Variable name inside a function</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// Bad Example</span><br><span class="line">public List&lt;int []&gt; getThem()&#123;</span><br><span class="line">    List&lt;int []&gt; list1 = new ArrayList&lt;int[]&gt;();</span><br><span class="line">    for (int[] x : theList)</span><br><span class="line">        if (x[0] == 4)</span><br><span class="line">            list1.add(x);</span><br><span class="line">        return list1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>The above code is really hard for people to understand if not providing context. There are 4 major question about the above code.</p>
-<ol>
-<li>What kinds of things are in theList?</li>
-<li>What is the significance of the zeroth subscript of an item in theList?</li>
-<li>What is the significance of the value 4?</li>
-<li>How would I use the list being returned?</li>
-</ol>
-<p>The answers of above question are not present in the code sample, but they could have been. </p>
-<p>Imaging this piece code is a mine sweeper game.<br>Each cell on the board is represented by a simple array. We further find that the zeroth subscript is the location of a status value and that a status value of 4 means “flagged.” Just by giving these concepts names we can improve the code considerably</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// Good Example</span><br><span class="line">public List&lt;int []&gt; getFlaggedCells()&#123;</span><br><span class="line">    List&lt;int []&gt; flaggedCells = new ArrayList&lt;int[]&gt;();</span><br><span class="line">    for (int[] cell : gameBoard)</span><br><span class="line">        if (cell[STATUS_VALUE] == FLAGGED)</span><br><span class="line">            flaggedCells.add(cell);</span><br><span class="line">        return flaggedCells;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// Even better example</span><br><span class="line">public List&lt;Cell&gt; getFlaggedCells()&#123;</span><br><span class="line">    List&lt;Cell&gt; flaggedCells = new ArrayList&lt;Cell&gt;();</span><br><span class="line">    for (Cell cell : gameBoard)</span><br><span class="line">        if (cell.isFlagged())</span><br><span class="line">            flaggedCells.add(cell);</span><br><span class="line">        return flaggedCells;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Avoid-Disinformation"><a href="#Avoid-Disinformation" class="headerlink" title="Avoid Disinformation"></a>Avoid Disinformation</h2><ul>
-<li>Avoid to use common reserved name, even the reserved name is in other coding system.</li>
-<li>Do not refer a grouping of accounts as an accountList. This will give false impression that you are using a List data structure. It is not recommend even if you use List data structure.</li>
-<li>Be aware of using name that vary in small ways. Ex) <strong>XYZControllerForEfficientHandlingOfStrings vs XYZControllerForEfficientStorageOfStrings</strong>. This </li>
-<li>Don’t use l, O, o as variable. They will be misleading.</li>
-</ul>
-<h2 id="Make-Meaningful-Distinctions"><a href="#Make-Meaningful-Distinctions" class="headerlink" title="Make Meaningful Distinctions"></a>Make Meaningful Distinctions</h2><p>It is not sufficient to add number series or noise words, even though the compiler is<br>satisfied. If names must be different, then they should also mean something different.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// Bad example</span><br><span class="line">getActiveAccount();</span><br><span class="line">getActiveAccounts();</span><br><span class="line">getActiveAccountInfo();</span><br></pre></td></tr></table></figure>
-<h2 id="Use-Pronounceable-Name"><a href="#Use-Pronounceable-Name" class="headerlink" title="Use Pronounceable Name"></a>Use Pronounceable Name</h2><p>All the variable should be pronouceable for future group discussion.</p>
-<h2 id="Use-Searchable-Name"><a href="#Use-Searchable-Name" class="headerlink" title="Use Searchable Name"></a>Use Searchable Name</h2><p>Single-letter names and numeric constants have a particular problem in that they are not easy to locate across a body of text. </p>
-<p>Thus, for any variable that appears in multiple location (not local variable), we should give a searchable name. </p>
-<p>Bad Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for (int j=0; j&lt;34; j++) &#123;</span><br><span class="line">    s += (t[j]*4)/5;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Good Example<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">int realDaysPerIdealDay = 4;</span><br><span class="line">const int WORK_DAYS_PER_WEEK = 5;</span><br><span class="line">int sum = 0;</span><br><span class="line">for (int j=0; j &lt; NUMBER_OF_TASKS; j++) &#123;</span><br><span class="line">    int realTaskDays = taskEstimate[j] * realDaysPerIdealDay;</span><br><span class="line">    int realTaskWeeks = (realdays / WORK_DAYS_PER_WEEK);</span><br><span class="line">    sum += realTaskWeeks;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/27/Tech/Java/Java_Basic/Java_21_Clean_Code/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -4177,6 +4073,110 @@ Atomic operations are operations which either happen completely or do not happen
 4. How can I use the returned List.
 </code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// My attempt</span><br><span class="line">public List&lt;int []&gt; getThem()&#123;</span><br><span class="line">    List&lt;int []&gt; list1 = new ArrayList&lt;int[]&gt;();</span><br><span class="line">    for (int[] x : theList)</span><br><span class="line">        if (x[0] == 4)</span><br><span class="line">            list1.add(x);</span><br><span class="line">        return list1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="Formatting"><a href="#Formatting" class="headerlink" title="Formatting"></a>Formatting</h1><h2 id="Indentation"><a href="#Indentation" class="headerlink" title="Indentation"></a>Indentation</h2><h1 id="Module-Organization"><a href="#Module-Organization" class="headerlink" title="Module Organization"></a>Module Organization</h1>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/27/Tech/CleanCode/Meaningful_Name/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Shihao Miao">
+      <meta itemprop="description" content="坠欢莫拾，酒痕在衣">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi, Shihao">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/27/Tech/CleanCode/Meaningful_Name/" class="post-title-link" itemprop="url">Clean Code Notes(1) Meaningful Name</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-06-27 13:59:52" itemprop="dateCreated datePublished" datetime="2019-06-27T13:59:52-04:00">2019-06-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-10-19 19:46:25" itemprop="dateModified" datetime="2019-10-19T19:46:25-04:00">2019-10-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Software-Development/" itemprop="url" rel="index">
+                    <span itemprop="name">Software Development</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>This is the note that I took when reading Clean Code: A Handbook of Agile Software Craftsmanship by Robert C. Martin.</p>
+<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>The name of variable, function and class name should tells its function.<br>If commenting is used, then this is not a good variable name.</p>
+<h2 id="Use-Intention-Revealing-Names"><a href="#Use-Intention-Revealing-Names" class="headerlink" title="Use Intention-Revealing Names"></a>Use Intention-Revealing Names</h2><h3 id="Example-1-Variable-name"><a href="#Example-1-Variable-name" class="headerlink" title="Example 1: Variable name"></a>Example 1: Variable name</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// Bad Example</span><br><span class="line">int d; // Calculate elapsedTimeInDays</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// Good Example</span><br><span class="line">int elaspsedTimeInDays;</span><br><span class="line">int daysSinceCreation;</span><br><span class="line">int daysSinceModification;</span><br><span class="line">int fileAgeInDays;</span><br></pre></td></tr></table></figure>
+<h3 id="Example-2-Variable-name-inside-a-function"><a href="#Example-2-Variable-name-inside-a-function" class="headerlink" title="Example 2: Variable name inside a function"></a>Example 2: Variable name inside a function</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// Bad Example</span><br><span class="line">public List&lt;int []&gt; getThem()&#123;</span><br><span class="line">    List&lt;int []&gt; list1 = new ArrayList&lt;int[]&gt;();</span><br><span class="line">    for (int[] x : theList)</span><br><span class="line">        if (x[0] == 4)</span><br><span class="line">            list1.add(x);</span><br><span class="line">        return list1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>The above code is really hard for people to understand if not providing context. There are 4 major question about the above code.</p>
+<ol>
+<li>What kinds of things are in theList?</li>
+<li>What is the significance of the zeroth subscript of an item in theList?</li>
+<li>What is the significance of the value 4?</li>
+<li>How would I use the list being returned?</li>
+</ol>
+<p>The answers of above question are not present in the code sample, but they could have been. </p>
+<p>Imaging this piece code is a mine sweeper game.<br>Each cell on the board is represented by a simple array. We further find that the zeroth subscript is the location of a status value and that a status value of 4 means “flagged.” Just by giving these concepts names we can improve the code considerably</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// Good Example</span><br><span class="line">public List&lt;int []&gt; getFlaggedCells()&#123;</span><br><span class="line">    List&lt;int []&gt; flaggedCells = new ArrayList&lt;int[]&gt;();</span><br><span class="line">    for (int[] cell : gameBoard)</span><br><span class="line">        if (cell[STATUS_VALUE] == FLAGGED)</span><br><span class="line">            flaggedCells.add(cell);</span><br><span class="line">        return flaggedCells;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// Even better example</span><br><span class="line">public List&lt;Cell&gt; getFlaggedCells()&#123;</span><br><span class="line">    List&lt;Cell&gt; flaggedCells = new ArrayList&lt;Cell&gt;();</span><br><span class="line">    for (Cell cell : gameBoard)</span><br><span class="line">        if (cell.isFlagged())</span><br><span class="line">            flaggedCells.add(cell);</span><br><span class="line">        return flaggedCells;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Avoid-Disinformation"><a href="#Avoid-Disinformation" class="headerlink" title="Avoid Disinformation"></a>Avoid Disinformation</h2><ul>
+<li>Avoid to use common reserved name, even the reserved name is in other coding system.</li>
+<li>Do not refer a grouping of accounts as an accountList. This will give false impression that you are using a List data structure. It is not recommend even if you use List data structure.</li>
+<li>Be aware of using name that vary in small ways. Ex) <strong>XYZControllerForEfficientHandlingOfStrings vs XYZControllerForEfficientStorageOfStrings</strong>. This </li>
+<li>Don’t use l, O, o as variable. They will be misleading.</li>
+</ul>
+<h2 id="Make-Meaningful-Distinctions"><a href="#Make-Meaningful-Distinctions" class="headerlink" title="Make Meaningful Distinctions"></a>Make Meaningful Distinctions</h2><p>It is not sufficient to add number series or noise words, even though the compiler is<br>satisfied. If names must be different, then they should also mean something different.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// Bad example</span><br><span class="line">getActiveAccount();</span><br><span class="line">getActiveAccounts();</span><br><span class="line">getActiveAccountInfo();</span><br></pre></td></tr></table></figure>
+<h2 id="Use-Pronounceable-Name"><a href="#Use-Pronounceable-Name" class="headerlink" title="Use Pronounceable Name"></a>Use Pronounceable Name</h2><p>All the variable should be pronouceable for future group discussion.</p>
+<h2 id="Use-Searchable-Name"><a href="#Use-Searchable-Name" class="headerlink" title="Use Searchable Name"></a>Use Searchable Name</h2><p>Single-letter names and numeric constants have a particular problem in that they are not easy to locate across a body of text. </p>
+<p>Thus, for any variable that appears in multiple location (not local variable), we should give a searchable name. </p>
+<p>Bad Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for (int j=0; j&lt;34; j++) &#123;</span><br><span class="line">    s += (t[j]*4)/5;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Good Example<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">int realDaysPerIdealDay = 4;</span><br><span class="line">const int WORK_DAYS_PER_WEEK = 5;</span><br><span class="line">int sum = 0;</span><br><span class="line">for (int j=0; j &lt; NUMBER_OF_TASKS; j++) &#123;</span><br><span class="line">    int realTaskDays = taskEstimate[j] * realDaysPerIdealDay;</span><br><span class="line">    int realTaskWeeks = (realdays / WORK_DAYS_PER_WEEK);</span><br><span class="line">    sum += realTaskWeeks;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
 
@@ -4962,6 +4962,185 @@ Atomic operations are operations which either happen completely or do not happen
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/03/Tech/Java/Java_Basic/Java_4_String/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Shihao Miao">
+      <meta itemprop="description" content="坠欢莫拾，酒痕在衣">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi, Shihao">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/03/Tech/Java/Java_Basic/Java_4_String/" class="post-title-link" itemprop="url">Java Study Notes(4) String</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-06-03 12:06:52" itemprop="dateCreated datePublished" datetime="2019-06-03T12:06:52-04:00">2019-06-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-10-19 19:46:25" itemprop="dateModified" datetime="2019-10-19T19:46:25-04:00">2019-10-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Software-Development/" itemprop="url" rel="index">
+                    <span itemprop="name">Software Development</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Software-Development/Java-Programming/" itemprop="url" rel="index">
+                    <span itemprop="name">Java Programming</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>String, in general, is a sequence of characters. But in Java, string is an object that represents a sequence of character. </p>
+<p>CharSequence Interface: The CharSequence interface is used to represent the sequence of characters. The Charsequence interface is extended in three class namely <strong>String</strong>, <strong>StringBuffer</strong>, and <strong>StringBuilder</strong> classes.</p>
+<h3 id="String-Class"><a href="#String-Class" class="headerlink" title="String Class"></a>String Class</h3><ol>
+<li>By String literal<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String s1 = &quot;Welcome&quot;;</span><br><span class="line">// This doesn&apos;t create a new instance.</span><br><span class="line">String s2 = &quot;Welcome&quot;;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>In the above example, only one object will be created. Firstly, JVM will not find any string object with the value “Welcome” in string constant pool, that is why it will create a new object. After that it will find the string with the value “Welcome” in the pool, it will not create a new object but will return the reference to the same instance.<br>This results that both <strong>s1 == s2</strong> and <strong>s1.equal(s2)</strong> return <strong>true</strong> value.</p>
+<ol start="2">
+<li>By new Keyword</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String s1=new String(&quot;Welcome&quot;);</span><br><span class="line">String s2=new String(&quot;Welcome&quot;);</span><br><span class="line">s1 == s2 // return false</span><br><span class="line">s1.equal(s2) // return true</span><br></pre></td></tr></table></figure>
+<p>In the above example, object will be created. There is some ambiguity of whether one or two object is created.<br>In case of only one object being created, the object is created in non-pool heap memory. In case of two objects being created, the objects are created in both non-pool heap memory and and string constant pool.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//A new object is created if we modify the string</span><br><span class="line">s2=s2.concat(&quot;world&quot;);</span><br></pre></td></tr></table></figure>
+<p>It will waste time and computation if we constantly modify the string. Thus, two new classes are introduced.</p>
+<h3 id="StringBuffer-Class"><a href="#StringBuffer-Class" class="headerlink" title="StringBuffer Class"></a>StringBuffer Class</h3><p>String buffer is slower than StringBuilder class but it is thread safe</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class Test&#123;</span><br><span class="line">  public static void main(String args[])&#123;</span><br><span class="line">    StringBuffer sBuffer = new StringBuffer(&quot;ABC&quot;);</span><br><span class="line">    sBuffer.append(&quot;DEF&quot;);</span><br><span class="line">    sBuffer.append(&quot;GHI&quot;);</span><br><span class="line">    sBuffer.append(&quot;JKL&quot;);</span><br><span class="line">    System.out.println(sBuffer);  </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="StringBuilder-Class"><a href="#StringBuilder-Class" class="headerlink" title="StringBuilder Class"></a>StringBuilder Class</h3><p>String builder is fast but not thread safe.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class Test&#123;</span><br><span class="line">  public static void main(String args[])&#123;</span><br><span class="line">    StringBuilder sBuilder=new StringBuilder(&quot;ABC&quot;);</span><br><span class="line">    sBuffer.append(&quot;DEF&quot;);</span><br><span class="line">    sBuffer.append(&quot;GHI&quot;);</span><br><span class="line">    sBuffer.append(&quot;JKL&quot;);</span><br><span class="line">    System.out.println(sBuilder);  </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/03/Tech/Java/Java_Basic/Java_15_JUnit_Mockito/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Shihao Miao">
+      <meta itemprop="description" content="坠欢莫拾，酒痕在衣">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi, Shihao">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/03/Tech/Java/Java_Basic/Java_15_JUnit_Mockito/" class="post-title-link" itemprop="url">Java Study Notes(15) JUnit and Mockito</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-06-03 12:06:52" itemprop="dateCreated datePublished" datetime="2019-06-03T12:06:52-04:00">2019-06-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-10-19 19:46:25" itemprop="dateModified" datetime="2019-10-19T19:46:25-04:00">2019-10-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Software-Development/" itemprop="url" rel="index">
+                    <span itemprop="name">Software Development</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Software-Development/Java-Programming/" itemprop="url" rel="index">
+                    <span itemprop="name">Java Programming</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/03/Tech/Java/Java_Basic/Java_7_AbstractClass_Interface/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -5064,6 +5243,339 @@ Atomic operations are operations which either happen completely or do not happen
 <li>Multiple interfaces can be implemented at once.</li>
 </ul>
 
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/03/Tech/Java/Java_Basic/Java_13_Comparable_Comparator/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Shihao Miao">
+      <meta itemprop="description" content="坠欢莫拾，酒痕在衣">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi, Shihao">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/03/Tech/Java/Java_Basic/Java_13_Comparable_Comparator/" class="post-title-link" itemprop="url">Java Study Notes(14) Comparable vs Comparator</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-06-03 12:06:52" itemprop="dateCreated datePublished" datetime="2019-06-03T12:06:52-04:00">2019-06-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-10-19 19:46:25" itemprop="dateModified" datetime="2019-10-19T19:46:25-04:00">2019-10-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Software-Development/" itemprop="url" rel="index">
+                    <span itemprop="name">Software Development</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Software-Development/Java-Programming/" itemprop="url" rel="index">
+                    <span itemprop="name">Java Programming</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Comparable and comparator are interfaces to provide a sorting logic for the collection.</p>
+<p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public class Employee &#123;</span><br><span class="line">    private int id;</span><br><span class="line">    privaate String name;</span><br><span class="line">    private int age;</span><br><span class="line">    private long salary;</span><br><span class="line">    public int getId()&#123;</span><br><span class="line">        return id;</span><br><span class="line">    &#125;</span><br><span class="line">    public Employee(int id, String name, int age, int salary)&#123;</span><br><span class="line">        this.id = id;</span><br><span class="line">        this.name = name;</span><br><span class="line">        this.age = age;</span><br><span class="line">        this.salary = salary;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>The above code gives an object with too many attributes. Thus, we need to use comparable or comparator to sort them.</p>
+<h2 id="Java-Comparable"><a href="#Java-Comparable" class="headerlink" title="Java Comparable"></a>Java Comparable</h2><p>The Comparable interface has <strong>only one method compareTo(T obj)</strong>. This interface is implemented at the class that required to build desired object.</p>
+<p>In this method, it returns a negative, zero, or positive integer as the employee Id is less than, equal to or greater than the specified object.</p>
+<p>In <strong>Comparable method</strong>, value must need to know how to be order. We could not define the order logic.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public class Employee &#123;</span><br><span class="line">    private int id;</span><br><span class="line">    privaate String name;</span><br><span class="line">    private int age;</span><br><span class="line">    private long salary;</span><br><span class="line">    public int getId()&#123;</span><br><span class="line">        return id;</span><br><span class="line">    &#125;</span><br><span class="line">    public Employee(int id, String name, int age, int salary)&#123;</span><br><span class="line">        this.id = id;</span><br><span class="line">        this.name = name;</span><br><span class="line">        this.age = age;</span><br><span class="line">        this.salary = salary;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">    @Override</span><br><span class="line">    public int compareTo(Employee emp)&#123;</span><br><span class="line">        return (this.id - emp.id);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>Then, in the main class, we could use <strong>build in method of array.sort</strong>. If it is a collection, we could use <strong>Collections.sort</strong>.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Employee[] empArr = new Employee[4];</span><br><span class="line">empArr[0] = new Employee(10,&quot;A&quot;,25,10000);</span><br><span class="line">empArr[1] = new Employee(20,&quot;B&quot;,29,20000);</span><br><span class="line">empArr[2] = new Employee(4,&quot;C&quot;,31,5000);</span><br><span class="line">empArr[3] = new Employee(1,&quot;D&quot;,32,50000);</span><br><span class="line"></span><br><span class="line">Arrays.sort(empArr);</span><br></pre></td></tr></table></figure></p>
+<h2 id="Java-Comparator"><a href="#Java-Comparator" class="headerlink" title="Java Comparator"></a>Java Comparator</h2><p>Unlike Comparable, Comparator should be in a separate class or (anonymous classes inside Employee class(implement Comparator interface)). We create multiple separate classes to compare by different members.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// Comparator to sort employees list or array in order of Salary</span><br><span class="line">public static Comparator&lt;Employee&gt; SalaryComparator = new Comparator&lt;Employee&gt;()&#123;</span><br><span class="line">    @Override</span><br><span class="line">    public int compare(Employee e1, Employee e2&#123;</span><br><span class="line">        return (int) (e1.getSalary() - e2.getSalary());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// Comparator to sort employees list or array in order of Age</span><br><span class="line">public static Comparator&lt;Employee&gt; AgeComparator = new Comparator&lt;Employee&gt;()&#123;</span><br><span class="line">    @Override</span><br><span class="line">    public int compare(Employee e1, Employee e2&#123;</span><br><span class="line">        return e1.getAge() - e2.getAge();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/03/Tech/Java/Java_Basic/Java_5_Enum/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Shihao Miao">
+      <meta itemprop="description" content="坠欢莫拾，酒痕在衣">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi, Shihao">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/03/Tech/Java/Java_Basic/Java_5_Enum/" class="post-title-link" itemprop="url">Java Study Notes(5) Enum</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-06-03 12:06:52" itemprop="dateCreated datePublished" datetime="2019-06-03T12:06:52-04:00">2019-06-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-10-19 19:46:25" itemprop="dateModified" datetime="2019-10-19T19:46:25-04:00">2019-10-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Software-Development/" itemprop="url" rel="index">
+                    <span itemprop="name">Software Development</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Software-Development/Java-Programming/" itemprop="url" rel="index">
+                    <span itemprop="name">Java Programming</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/03/Tech/Java/Java_Basic/Java_9_Utilities/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Shihao Miao">
+      <meta itemprop="description" content="坠欢莫拾，酒痕在衣">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi, Shihao">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/03/Tech/Java/Java_Basic/Java_9_Utilities/" class="post-title-link" itemprop="url">Java Study Notes(9) Utilities</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-06-03 12:06:52" itemprop="dateCreated datePublished" datetime="2019-06-03T12:06:52-04:00">2019-06-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-10-19 19:46:25" itemprop="dateModified" datetime="2019-10-19T19:46:25-04:00">2019-10-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Software-Development/" itemprop="url" rel="index">
+                    <span itemprop="name">Software Development</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Software-Development/Java-Programming/" itemprop="url" rel="index">
+                    <span itemprop="name">Java Programming</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/03/Tech/Java/Java_Basic/Java_10_MemoryHandling/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Shihao Miao">
+      <meta itemprop="description" content="坠欢莫拾，酒痕在衣">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi, Shihao">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/03/Tech/Java/Java_Basic/Java_10_MemoryHandling/" class="post-title-link" itemprop="url">Java Study Notes(10) Memory Handling</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-06-03 12:06:52" itemprop="dateCreated datePublished" datetime="2019-06-03T12:06:52-04:00">2019-06-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-10-19 19:46:25" itemprop="dateModified" datetime="2019-10-19T19:46:25-04:00">2019-10-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Software-Development/" itemprop="url" rel="index">
+                    <span itemprop="name">Software Development</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Software-Development/Java-Programming/" itemprop="url" rel="index">
+                    <span itemprop="name">Java Programming</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
       
     </div>
 
@@ -5275,7 +5787,7 @@ Atomic operations are operations which either happen completely or do not happen
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/03/Tech/Java/Java_Basic/Java_4_String/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/03/Tech/Java/Java_Basic/Java_8_Casting/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -5289,7 +5801,7 @@ Atomic operations are operations which either happen completely or do not happen
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/03/Tech/Java/Java_Basic/Java_4_String/" class="post-title-link" itemprop="url">Java Study Notes(4) String</a>
+            <a href="/2019/06/03/Tech/Java/Java_Basic/Java_8_Casting/" class="post-title-link" itemprop="url">Java Study Notes(8) Casting</a>
         </h1>
 
         <div class="post-meta">
@@ -5337,276 +5849,21 @@ Atomic operations are operations which either happen completely or do not happen
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>String, in general, is a sequence of characters. But in Java, string is an object that represents a sequence of character. </p>
-<p>CharSequence Interface: The CharSequence interface is used to represent the sequence of characters. The Charsequence interface is extended in three class namely <strong>String</strong>, <strong>StringBuffer</strong>, and <strong>StringBuilder</strong> classes.</p>
-<h3 id="String-Class"><a href="#String-Class" class="headerlink" title="String Class"></a>String Class</h3><ol>
-<li>By String literal<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String s1 = &quot;Welcome&quot;;</span><br><span class="line">// This doesn&apos;t create a new instance.</span><br><span class="line">String s2 = &quot;Welcome&quot;;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>In the above example, only one object will be created. Firstly, JVM will not find any string object with the value “Welcome” in string constant pool, that is why it will create a new object. After that it will find the string with the value “Welcome” in the pool, it will not create a new object but will return the reference to the same instance.<br>This results that both <strong>s1 == s2</strong> and <strong>s1.equal(s2)</strong> return <strong>true</strong> value.</p>
-<ol start="2">
-<li>By new Keyword</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String s1=new String(&quot;Welcome&quot;);</span><br><span class="line">String s2=new String(&quot;Welcome&quot;);</span><br><span class="line">s1 == s2 // return false</span><br><span class="line">s1.equal(s2) // return true</span><br></pre></td></tr></table></figure>
-<p>In the above example, object will be created. There is some ambiguity of whether one or two object is created.<br>In case of only one object being created, the object is created in non-pool heap memory. In case of two objects being created, the objects are created in both non-pool heap memory and and string constant pool.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//A new object is created if we modify the string</span><br><span class="line">s2=s2.concat(&quot;world&quot;);</span><br></pre></td></tr></table></figure>
-<p>It will waste time and computation if we constantly modify the string. Thus, two new classes are introduced.</p>
-<h3 id="StringBuffer-Class"><a href="#StringBuffer-Class" class="headerlink" title="StringBuffer Class"></a>StringBuffer Class</h3><p>String buffer is slower than StringBuilder class but it is thread safe</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class Test&#123;</span><br><span class="line">  public static void main(String args[])&#123;</span><br><span class="line">    StringBuffer sBuffer = new StringBuffer(&quot;ABC&quot;);</span><br><span class="line">    sBuffer.append(&quot;DEF&quot;);</span><br><span class="line">    sBuffer.append(&quot;GHI&quot;);</span><br><span class="line">    sBuffer.append(&quot;JKL&quot;);</span><br><span class="line">    System.out.println(sBuffer);  </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="StringBuilder-Class"><a href="#StringBuilder-Class" class="headerlink" title="StringBuilder Class"></a>StringBuilder Class</h3><p>String builder is fast but not thread safe.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class Test&#123;</span><br><span class="line">  public static void main(String args[])&#123;</span><br><span class="line">    StringBuilder sBuilder=new StringBuilder(&quot;ABC&quot;);</span><br><span class="line">    sBuffer.append(&quot;DEF&quot;);</span><br><span class="line">    sBuffer.append(&quot;GHI&quot;);</span><br><span class="line">    sBuffer.append(&quot;JKL&quot;);</span><br><span class="line">    System.out.println(sBuilder);  </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
+          <h1 id="Primitive-casting"><a href="#Primitive-casting" class="headerlink" title="Primitive casting"></a>Primitive casting</h1><p>in Java 2 Data type</p>
+<h1 id="Upcasting"><a href="#Upcasting" class="headerlink" title="Upcasting"></a>Upcasting</h1><p>Casting from a subclass to a superclass is called upcasting. </p>
+<p>Example<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public class Animal&#123;</span><br><span class="line">    public void eat();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class Cat extends Animal &#123;</span><br><span class="line">    public void eat()&#123;</span><br><span class="line">        //...</span><br><span class="line">    &#125;</span><br><span class="line">    public void meow()&#123;</span><br><span class="line">        //...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Now we can create an object of Cat class and assign it to the reference variable of type Cat.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cat cat = new Cat();</span><br></pre></td></tr></table></figure></p>
+<p>And we can also assign it to the reference variable of type Animal<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Animal animal = cat;</span><br></pre></td></tr></table></figure></p>
+<p>We could do it explicitly, but not necessary<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Animal animal = (Animal) cat</span><br></pre></td></tr></table></figure></p>
+<p>Using upcasting, we’ve restrcted the number of methods available to Cat instance but haven;t changed the instance itself. Now we can’t do anything that is specific to Cat — we can’t invoke meow() on the animal variable.</p>
+<p>So, <strong>what is the use of this?</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public class Dog extends Animal&#123;</span><br><span class="line">    public void eat()&#123;</span><br><span class="line">        //...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public class AnimalFeeder&#123;</span><br><span class="line">    public void feed(List&lt;Animal&gt; animals)&#123;</span><br><span class="line">        animal.forEach(animal -&gt;&#123;animal.eat()&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Animal&gt; animals = new ArrayList&lt;&gt;();</span><br><span class="line">animals.add(new Cat());</span><br><span class="line">animals.add(new Dog());</span><br><span class="line">new AnimalFeeder().feed(animals);</span><br></pre></td></tr></table></figure>
+<p>The use of upcasting and polymorphism is that your cat and dog will all be treated as animal.</p>
+<h1 id="Downcasting"><a href="#Downcasting" class="headerlink" title="Downcasting"></a>Downcasting</h1><p>Downcasting is to cast from a superclass to subclass. The cast need to be explicitly defined. Down casting helps super class to use method in sub class</p>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/03/Tech/Java/Java_Basic/Java_5_Enum/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Shihao Miao">
-      <meta itemprop="description" content="坠欢莫拾，酒痕在衣">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hi, Shihao">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/03/Tech/Java/Java_Basic/Java_5_Enum/" class="post-title-link" itemprop="url">Java Study Notes(5) Enum</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-06-03 12:06:52" itemprop="dateCreated datePublished" datetime="2019-06-03T12:06:52-04:00">2019-06-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-19 19:46:25" itemprop="dateModified" datetime="2019-10-19T19:46:25-04:00">2019-10-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Software-Development/" itemprop="url" rel="index">
-                    <span itemprop="name">Software Development</span>
-                  </a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Software-Development/Java-Programming/" itemprop="url" rel="index">
-                    <span itemprop="name">Java Programming</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/03/Tech/Java/Java_Basic/Java_15_JUnit_Mockito/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Shihao Miao">
-      <meta itemprop="description" content="坠欢莫拾，酒痕在衣">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hi, Shihao">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/03/Tech/Java/Java_Basic/Java_15_JUnit_Mockito/" class="post-title-link" itemprop="url">Java Study Notes(15) JUnit and Mockito</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-06-03 12:06:52" itemprop="dateCreated datePublished" datetime="2019-06-03T12:06:52-04:00">2019-06-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-19 19:46:25" itemprop="dateModified" datetime="2019-10-19T19:46:25-04:00">2019-10-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Software-Development/" itemprop="url" rel="index">
-                    <span itemprop="name">Software Development</span>
-                  </a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Software-Development/Java-Programming/" itemprop="url" rel="index">
-                    <span itemprop="name">Java Programming</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/03/Tech/Java/Java_Basic/Java_13_Comparable_Comparator/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Shihao Miao">
-      <meta itemprop="description" content="坠欢莫拾，酒痕在衣">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hi, Shihao">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/03/Tech/Java/Java_Basic/Java_13_Comparable_Comparator/" class="post-title-link" itemprop="url">Java Study Notes(14) Comparable vs Comparator</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-06-03 12:06:52" itemprop="dateCreated datePublished" datetime="2019-06-03T12:06:52-04:00">2019-06-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-19 19:46:25" itemprop="dateModified" datetime="2019-10-19T19:46:25-04:00">2019-10-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Software-Development/" itemprop="url" rel="index">
-                    <span itemprop="name">Software Development</span>
-                  </a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Software-Development/Java-Programming/" itemprop="url" rel="index">
-                    <span itemprop="name">Java Programming</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Comparable and comparator are interfaces to provide a sorting logic for the collection.</p>
-<p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public class Employee &#123;</span><br><span class="line">    private int id;</span><br><span class="line">    privaate String name;</span><br><span class="line">    private int age;</span><br><span class="line">    private long salary;</span><br><span class="line">    public int getId()&#123;</span><br><span class="line">        return id;</span><br><span class="line">    &#125;</span><br><span class="line">    public Employee(int id, String name, int age, int salary)&#123;</span><br><span class="line">        this.id = id;</span><br><span class="line">        this.name = name;</span><br><span class="line">        this.age = age;</span><br><span class="line">        this.salary = salary;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>The above code gives an object with too many attributes. Thus, we need to use comparable or comparator to sort them.</p>
-<h2 id="Java-Comparable"><a href="#Java-Comparable" class="headerlink" title="Java Comparable"></a>Java Comparable</h2><p>The Comparable interface has <strong>only one method compareTo(T obj)</strong>. This interface is implemented at the class that required to build desired object.</p>
-<p>In this method, it returns a negative, zero, or positive integer as the employee Id is less than, equal to or greater than the specified object.</p>
-<p>In <strong>Comparable method</strong>, value must need to know how to be order. We could not define the order logic.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public class Employee &#123;</span><br><span class="line">    private int id;</span><br><span class="line">    privaate String name;</span><br><span class="line">    private int age;</span><br><span class="line">    private long salary;</span><br><span class="line">    public int getId()&#123;</span><br><span class="line">        return id;</span><br><span class="line">    &#125;</span><br><span class="line">    public Employee(int id, String name, int age, int salary)&#123;</span><br><span class="line">        this.id = id;</span><br><span class="line">        this.name = name;</span><br><span class="line">        this.age = age;</span><br><span class="line">        this.salary = salary;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">    @Override</span><br><span class="line">    public int compareTo(Employee emp)&#123;</span><br><span class="line">        return (this.id - emp.id);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>Then, in the main class, we could use <strong>build in method of array.sort</strong>. If it is a collection, we could use <strong>Collections.sort</strong>.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Employee[] empArr = new Employee[4];</span><br><span class="line">empArr[0] = new Employee(10,&quot;A&quot;,25,10000);</span><br><span class="line">empArr[1] = new Employee(20,&quot;B&quot;,29,20000);</span><br><span class="line">empArr[2] = new Employee(4,&quot;C&quot;,31,5000);</span><br><span class="line">empArr[3] = new Employee(1,&quot;D&quot;,32,50000);</span><br><span class="line"></span><br><span class="line">Arrays.sort(empArr);</span><br></pre></td></tr></table></figure></p>
-<h2 id="Java-Comparator"><a href="#Java-Comparator" class="headerlink" title="Java Comparator"></a>Java Comparator</h2><p>Unlike Comparable, Comparator should be in a separate class or (anonymous classes inside Employee class(implement Comparator interface)). We create multiple separate classes to compare by different members.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// Comparator to sort employees list or array in order of Salary</span><br><span class="line">public static Comparator&lt;Employee&gt; SalaryComparator = new Comparator&lt;Employee&gt;()&#123;</span><br><span class="line">    @Override</span><br><span class="line">    public int compare(Employee e1, Employee e2&#123;</span><br><span class="line">        return (int) (e1.getSalary() - e2.getSalary());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// Comparator to sort employees list or array in order of Age</span><br><span class="line">public static Comparator&lt;Employee&gt; AgeComparator = new Comparator&lt;Employee&gt;()&#123;</span><br><span class="line">    @Override</span><br><span class="line">    public int compare(Employee e1, Employee e2&#123;</span><br><span class="line">        return e1.getAge() - e2.getAge();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -5721,87 +5978,6 @@ Atomic operations are operations which either happen completely or do not happen
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/03/Tech/Java/Java_Basic/Java_10_MemoryHandling/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Shihao Miao">
-      <meta itemprop="description" content="坠欢莫拾，酒痕在衣">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hi, Shihao">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/03/Tech/Java/Java_Basic/Java_10_MemoryHandling/" class="post-title-link" itemprop="url">Java Study Notes(10) Memory Handling</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-06-03 12:06:52" itemprop="dateCreated datePublished" datetime="2019-06-03T12:06:52-04:00">2019-06-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-19 19:46:25" itemprop="dateModified" datetime="2019-10-19T19:46:25-04:00">2019-10-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Software-Development/" itemprop="url" rel="index">
-                    <span itemprop="name">Software Development</span>
-                  </a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Software-Development/Java-Programming/" itemprop="url" rel="index">
-                    <span itemprop="name">Java Programming</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/03/Tech/Java/Java_Basic/Java_6_Constructor/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -5884,182 +6060,6 @@ Atomic operations are operations which either happen completely or do not happen
 <pre><code>- Chain must be able to complete in order to compile
 </code></pre><p>##Example<br>In this example, if we create a Admin object with no arguement. The order will be listed in the code</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public class User &#123;</span><br><span class="line">    // Step 4 the name will be stored here</span><br><span class="line">    public String name;</span><br><span class="line">    // Step 3 super() from step 2 will go here </span><br><span class="line">    public User (String name)&#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public class Admin extends User &#123;</span><br><span class="line">    // Step 1. It invokes when no argument presents</span><br><span class="line">    public Admin()&#123;</span><br><span class="line">        this (&quot;default_name&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">    // Step 2 this() from step 1 will go here</span><br><span class="line">    public Admin(String name)&#123;</span><br><span class="line">        super(name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/03/Tech/Java/Java_Basic/Java_9_Utilities/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Shihao Miao">
-      <meta itemprop="description" content="坠欢莫拾，酒痕在衣">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hi, Shihao">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/03/Tech/Java/Java_Basic/Java_9_Utilities/" class="post-title-link" itemprop="url">Java Study Notes(9) Utilities</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-06-03 12:06:52" itemprop="dateCreated datePublished" datetime="2019-06-03T12:06:52-04:00">2019-06-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-19 19:46:25" itemprop="dateModified" datetime="2019-10-19T19:46:25-04:00">2019-10-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Software-Development/" itemprop="url" rel="index">
-                    <span itemprop="name">Software Development</span>
-                  </a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Software-Development/Java-Programming/" itemprop="url" rel="index">
-                    <span itemprop="name">Java Programming</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/03/Tech/Java/Java_Basic/Java_8_Casting/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Shihao Miao">
-      <meta itemprop="description" content="坠欢莫拾，酒痕在衣">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hi, Shihao">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/03/Tech/Java/Java_Basic/Java_8_Casting/" class="post-title-link" itemprop="url">Java Study Notes(8) Casting</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-06-03 12:06:52" itemprop="dateCreated datePublished" datetime="2019-06-03T12:06:52-04:00">2019-06-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-19 19:46:25" itemprop="dateModified" datetime="2019-10-19T19:46:25-04:00">2019-10-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Software-Development/" itemprop="url" rel="index">
-                    <span itemprop="name">Software Development</span>
-                  </a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Software-Development/Java-Programming/" itemprop="url" rel="index">
-                    <span itemprop="name">Java Programming</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Primitive-casting"><a href="#Primitive-casting" class="headerlink" title="Primitive casting"></a>Primitive casting</h1><p>in Java 2 Data type</p>
-<h1 id="Upcasting"><a href="#Upcasting" class="headerlink" title="Upcasting"></a>Upcasting</h1><p>Casting from a subclass to a superclass is called upcasting. </p>
-<p>Example<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public class Animal&#123;</span><br><span class="line">    public void eat();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class Cat extends Animal &#123;</span><br><span class="line">    public void eat()&#123;</span><br><span class="line">        //...</span><br><span class="line">    &#125;</span><br><span class="line">    public void meow()&#123;</span><br><span class="line">        //...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Now we can create an object of Cat class and assign it to the reference variable of type Cat.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cat cat = new Cat();</span><br></pre></td></tr></table></figure></p>
-<p>And we can also assign it to the reference variable of type Animal<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Animal animal = cat;</span><br></pre></td></tr></table></figure></p>
-<p>We could do it explicitly, but not necessary<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Animal animal = (Animal) cat</span><br></pre></td></tr></table></figure></p>
-<p>Using upcasting, we’ve restrcted the number of methods available to Cat instance but haven;t changed the instance itself. Now we can’t do anything that is specific to Cat — we can’t invoke meow() on the animal variable.</p>
-<p>So, <strong>what is the use of this?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public class Dog extends Animal&#123;</span><br><span class="line">    public void eat()&#123;</span><br><span class="line">        //...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public class AnimalFeeder&#123;</span><br><span class="line">    public void feed(List&lt;Animal&gt; animals)&#123;</span><br><span class="line">        animal.forEach(animal -&gt;&#123;animal.eat()&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Animal&gt; animals = new ArrayList&lt;&gt;();</span><br><span class="line">animals.add(new Cat());</span><br><span class="line">animals.add(new Dog());</span><br><span class="line">new AnimalFeeder().feed(animals);</span><br></pre></td></tr></table></figure>
-<p>The use of upcasting and polymorphism is that your cat and dog will all be treated as animal.</p>
-<h1 id="Downcasting"><a href="#Downcasting" class="headerlink" title="Downcasting"></a>Downcasting</h1><p>Downcasting is to cast from a superclass to subclass. The cast need to be explicitly defined. Down casting helps super class to use method in sub class</p>
 
       
     </div>
@@ -7335,6 +7335,95 @@ Atomic operations are operations which either happen completely or do not happen
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/30/Tech/Other/MusicAPI/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Shihao Miao">
+      <meta itemprop="description" content="坠欢莫拾，酒痕在衣">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi, Shihao">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/03/30/Tech/Other/MusicAPI/" class="post-title-link" itemprop="url">Hexo music player - Aplayer</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-03-30 18:06:52" itemprop="dateCreated datePublished" datetime="2019-03-30T18:06:52-04:00">2019-03-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-10-19 19:46:25" itemprop="dateModified" datetime="2019-10-19T19:46:25-04:00">2019-10-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Website/" itemprop="url" rel="index">
+                    <span itemprop="name">Website</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Website/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="About-this-post"><a href="#About-this-post" class="headerlink" title="About this post"></a>About this post</h2><p>This post is about to use Aplayer to set up a music player that can play music list from major music servers including netease, tencent, xiami, kugou and baidu in my blog (powered by hexo).</p>
+<h2 id="Source"><a href="#Source" class="headerlink" title="Source"></a>Source</h2><p>Aplayer is a HTML5 music player, and MetingJS is used to interprete music hyperlink. </p>
+<blockquote>
+<p>hexo-tag-player Install Instruction:<br><a href="https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md" target="_blank" rel="noopener">https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md</a></p>
+</blockquote>
+<p>Following this instruction, you could add a music player in your blog. However, it requires you to build a music list. The list requires your to give music link yourself.<br>Thus, we could use the following code as an alternative that helps to transfer music playlist ID to music.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">const apFixed = new APlayer(&#123;</span><br><span class="line">  element: document.getElementById(&apos;aplayer&apos;),</span><br><span class="line">  mutex: true,</span><br><span class="line">  theme: &apos;#97dffd&apos;,</span><br><span class="line">  order: &apos;random&apos;,</span><br><span class="line">  lrcType: 3,</span><br><span class="line">  fixed: true,</span><br><span class="line">&#125;);</span><br><span class="line">$.ajax(&#123;</span><br><span class="line">  url: &apos;https://api.i-meto.com/meting/api?server=netease&amp;type=playlist&amp;id=60198&apos;,</span><br><span class="line">  success: function (list) &#123;</span><br><span class="line">    apFixed.list.add(JSON.parse(list));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="P-S"><a href="#P-S" class="headerlink" title="P.S.,"></a>P.S.,</h2><p><strong>禁止一切商用</strong><br>这是一个用来在海外免费听国内音乐的办法。现在就算买了会员也把音乐禁了。在不想用VPN翻回国情况下只能这么办。<br>原code 是从<a href="https://diygod.me/" target="_blank" rel="noopener">bilibili前端大神DIYgod</a>的网站上用inspect-&gt;source扒下来的.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/30/Tech/Other/Hexo_Summary/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -7527,7 +7616,7 @@ cursor move on that)
 <h2 id="8-Code"><a href="#8-Code" class="headerlink" title="8. Code"></a>8. Code</h2><p>To denote a word or phrase as code, enclose it in two tick marks <code></code> (One at front, one at back).<br><code>Hello World</code><br>To create code blocks, indent every line of the block by at least four spaces or one tab, or enclose it in 6 tick marks <figure class="highlight plain"><figcaption><span>in each side).</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main()&#123;</span><br><span class="line">    printf(&quot;Hello, World!&quot;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="9-Link"><a href="#9-Link" class="headerlink" title="9. Link"></a>9. Link</h2><p>To create a link, enclose the link text in brackets (e.g., [Google]) and then follow it immediately with the URL in parentheses (e.g., (<a href="http://www.google.com))" target="_blank" rel="noopener">www.google.com))</a>.<br>This is a hyperlink <a href="www.google.com">Google</a></p>
 <h2 id="10-URLs-and-Email-Addresses"><a href="#10-URLs-and-Email-Addresses" class="headerlink" title="10. URLs and Email Addresses"></a>10. URLs and Email Addresses</h2><p>To quickly turn a URL or email address into a link, enclose it in angle brackets.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;https://www.markdownguide.org&gt;</span><br><span class="line">&lt;fake@example.com&gt;</span><br></pre></td></tr></table></figure></p>
-<p>The rendered output looks like this:<br><a href="https://www.markdownguide.org" target="_blank" rel="noopener">https://www.markdownguide.org</a><br><a href="mailto:&#x66;&#x61;&#107;&#x65;&#x40;&#x65;&#x78;&#97;&#109;&#112;&#108;&#x65;&#46;&#x63;&#111;&#109;" target="_blank" rel="noopener">&#x66;&#x61;&#107;&#x65;&#x40;&#x65;&#x78;&#97;&#109;&#112;&#108;&#x65;&#46;&#x63;&#111;&#109;</a></p>
+<p>The rendered output looks like this:<br><a href="https://www.markdownguide.org" target="_blank" rel="noopener">https://www.markdownguide.org</a><br><a href="mailto:&#x66;&#97;&#107;&#101;&#x40;&#101;&#x78;&#97;&#109;&#x70;&#108;&#101;&#46;&#x63;&#x6f;&#109;" target="_blank" rel="noopener">&#x66;&#97;&#107;&#101;&#x40;&#101;&#x78;&#97;&#109;&#x70;&#108;&#101;&#46;&#x63;&#x6f;&#109;</a></p>
 
       
     </div>
@@ -7655,95 +7744,6 @@ cursor move on that)
 <h3 id="如果我转系读研究生需要做到什么？"><a href="#如果我转系读研究生需要做到什么？" class="headerlink" title="如果我转系读研究生需要做到什么？"></a>如果我转系读研究生需要做到什么？</h3><p>—研究生需要带着一个目标去读。学会的知识将要更加结构化的记录</p>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>—不悔过去，不畏未来。每个人都应该会有年轻时候认知的局限。而时间能教会我们很多东西。时间到达一定长度的时候，就会发现那些曾经细微末节的改变，最后能长成能看到的样子。五年前的自己并不知道我那时候的选择是否正确。就如现在我也不会知道这个选择是否正确。但是如果人生能够重复，在相同的信息情况下我还是会选择去转系。</p>
 <p>在这里需要感谢我的家庭让我人生再一次不会因为自己当年随意的选择而抱憾终生.</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/30/Tech/Other/MusicAPI/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Shihao Miao">
-      <meta itemprop="description" content="坠欢莫拾，酒痕在衣">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hi, Shihao">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/03/30/Tech/Other/MusicAPI/" class="post-title-link" itemprop="url">Hexo music player - Aplayer</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-03-30 18:06:52" itemprop="dateCreated datePublished" datetime="2019-03-30T18:06:52-04:00">2019-03-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-19 19:46:25" itemprop="dateModified" datetime="2019-10-19T19:46:25-04:00">2019-10-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Website/" itemprop="url" rel="index">
-                    <span itemprop="name">Website</span>
-                  </a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Website/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="About-this-post"><a href="#About-this-post" class="headerlink" title="About this post"></a>About this post</h2><p>This post is about to use Aplayer to set up a music player that can play music list from major music servers including netease, tencent, xiami, kugou and baidu in my blog (powered by hexo).</p>
-<h2 id="Source"><a href="#Source" class="headerlink" title="Source"></a>Source</h2><p>Aplayer is a HTML5 music player, and MetingJS is used to interprete music hyperlink. </p>
-<blockquote>
-<p>hexo-tag-player Install Instruction:<br><a href="https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md" target="_blank" rel="noopener">https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md</a></p>
-</blockquote>
-<p>Following this instruction, you could add a music player in your blog. However, it requires you to build a music list. The list requires your to give music link yourself.<br>Thus, we could use the following code as an alternative that helps to transfer music playlist ID to music.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">const apFixed = new APlayer(&#123;</span><br><span class="line">  element: document.getElementById(&apos;aplayer&apos;),</span><br><span class="line">  mutex: true,</span><br><span class="line">  theme: &apos;#97dffd&apos;,</span><br><span class="line">  order: &apos;random&apos;,</span><br><span class="line">  lrcType: 3,</span><br><span class="line">  fixed: true,</span><br><span class="line">&#125;);</span><br><span class="line">$.ajax(&#123;</span><br><span class="line">  url: &apos;https://api.i-meto.com/meting/api?server=netease&amp;type=playlist&amp;id=60198&apos;,</span><br><span class="line">  success: function (list) &#123;</span><br><span class="line">    apFixed.list.add(JSON.parse(list));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h2 id="P-S"><a href="#P-S" class="headerlink" title="P.S.,"></a>P.S.,</h2><p><strong>禁止一切商用</strong><br>这是一个用来在海外免费听国内音乐的办法。现在就算买了会员也把音乐禁了。在不想用VPN翻回国情况下只能这么办。<br>原code 是从<a href="https://diygod.me/" target="_blank" rel="noopener">bilibili前端大神DIYgod</a>的网站上用inspect-&gt;source扒下来的.</p>
 
       
     </div>
