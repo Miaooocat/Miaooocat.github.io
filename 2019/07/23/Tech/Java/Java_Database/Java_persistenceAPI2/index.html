@@ -49,13 +49,13 @@
   };
 </script>
 
-  <meta name="description" content="Entity RelationshipDirection of RelationshipsUnidirectional: One class has reference of another class. Another class doesn’t have reference of it.Bidirectional: Both classes have reference of them. 12">
+  <meta name="description" content="Entity RelationshipDirection of RelationshipsUnidirectional: One class has reference of another class. Another class doesn’t have reference of it.Bidirectional: Both classes have reference of them.">
 <meta name="keywords" content="Java,JPA">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JPA Study Notes(2)">
 <meta property="og:url" content="http://yoursite.com/2019/07/23/Tech/Java/Java_Database/Java_persistenceAPI2/index.html">
 <meta property="og:site_name" content="Hi, Shihao">
-<meta property="og:description" content="Entity RelationshipDirection of RelationshipsUnidirectional: One class has reference of another class. Another class doesn’t have reference of it.Bidirectional: Both classes have reference of them. 12">
+<meta property="og:description" content="Entity RelationshipDirection of RelationshipsUnidirectional: One class has reference of another class. Another class doesn’t have reference of it.Bidirectional: Both classes have reference of them.">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2019/07/23/Tech/Java/Java_Database/Java_persistenceAPI2/Super_Mapped_Class.png">
 <meta property="og:image" content="http://yoursite.com/2019/07/23/Tech/Java/Java_Database/Java_persistenceAPI2/Single_Table_per_class.png">
@@ -64,7 +64,7 @@
 <meta property="og:updated_time" content="2019-10-19T23:46:25.477Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JPA Study Notes(2)">
-<meta name="twitter:description" content="Entity RelationshipDirection of RelationshipsUnidirectional: One class has reference of another class. Another class doesn’t have reference of it.Bidirectional: Both classes have reference of them. 12">
+<meta name="twitter:description" content="Entity RelationshipDirection of RelationshipsUnidirectional: One class has reference of another class. Another class doesn’t have reference of it.Bidirectional: Both classes have reference of them.">
 <meta name="twitter:image" content="http://yoursite.com/2019/07/23/Tech/Java/Java_Database/Java_persistenceAPI2/Super_Mapped_Class.png">
 
 <link rel="canonical" href="http://yoursite.com/2019/07/23/Tech/Java/Java_Database/Java_persistenceAPI2/">
@@ -266,7 +266,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="Entity-Relationship"><a href="#Entity-Relationship" class="headerlink" title="Entity Relationship"></a>Entity Relationship</h1><h2 id="Direction-of-Relationships"><a href="#Direction-of-Relationships" class="headerlink" title="Direction of Relationships"></a>Direction of Relationships</h2><p>Unidirectional: One class has reference of another class. Another class doesn’t have reference of it.<br>Bidirectional: Both classes have reference of them.</p>
+        <h1 id="Entity-Relationship"><a href="#Entity-Relationship" class="headerlink" title="Entity Relationship"></a>Entity Relationship</h1><h2 id="Direction-of-Relationships"><a href="#Direction-of-Relationships" class="headerlink" title="Direction of Relationships"></a>Direction of Relationships</h2><p>Unidirectional: One class has reference of another class. Another class doesn’t have reference of it.<br>Bidirectional: Both classes have reference of them.</p><a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// Only one class has reference of it</span><br><span class="line">public class Employee&#123;</span><br><span class="line">    int empID;</span><br><span class="line">    Address address;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class Address&#123;</span><br><span class="line">    int doorNO;</span><br><span class="line">    String street;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// Both classes have reference for each other</span><br><span class="line">public class Employee&#123;</span><br><span class="line">    int empID;</span><br><span class="line">    Address address;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class Address&#123;</span><br><span class="line">    int doorNO;</span><br><span class="line">    String street;</span><br><span class="line">    Employee employee;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="Cascade-Operation"><a href="#Cascade-Operation" class="headerlink" title="Cascade Operation"></a>Cascade Operation</h2><p>Entities that use relationships often have dependencies on the existence of the other entity in the relationship.</p>

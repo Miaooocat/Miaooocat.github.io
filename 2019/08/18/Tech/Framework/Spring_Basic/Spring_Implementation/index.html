@@ -255,7 +255,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h1><h2 id="Factory-method"><a href="#Factory-method" class="headerlink" title="Factory method"></a>Factory method</h2><p>Spring incorporates a factory-method attribute which allows you to specify the factory responsible for creating an object<br>This can be internal or external to the object being created</p>
+        <h1 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h1><h2 id="Factory-method"><a href="#Factory-method" class="headerlink" title="Factory method"></a>Factory method</h2><p>Spring incorporates a factory-method attribute which allows you to specify the factory responsible for creating an object<br>This can be internal or external to the object being created</p><a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=“bean” class=“com.MyFactory” factory-method=“createBean” scope=“prototype” /&gt;</span><br></pre></td></tr></table></figure>
 <p>Each time that bean is referenced it will actually call the factory method<br>If the factory method takes arguments, this can be specified by using the constructor-arg attribute</p>
 <h2 id="Autowiring"><a href="#Autowiring" class="headerlink" title="Autowiring"></a>Autowiring</h2><p>Spring includes a feature called <strong>autowiring</strong>. This allows Spring to guess which dependencies to inject. This means you do not need to specify this manually. By default, it will check the class of the object. </p>

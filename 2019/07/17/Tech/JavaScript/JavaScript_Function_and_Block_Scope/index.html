@@ -49,18 +49,18 @@
   };
 </script>
 
-  <meta name="description" content="IIFEIIFE stands for Immediately Invoked Function Expression. ???It is a good way at protecting the scope of your function and the variables within it. It avoid the pollute of global variable???. 12345">
+  <meta name="description" content="IIFEIIFE stands for Immediately Invoked Function Expression. ???It is a good way at protecting the scope of your function and the variables within it. It avoid the pollute of global variable???.">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript(2) Function and Scope">
 <meta property="og:url" content="http://yoursite.com/2019/07/17/Tech/JavaScript/JavaScript_Function_and_Block_Scope/index.html">
 <meta property="og:site_name" content="Hi, Shihao">
-<meta property="og:description" content="IIFEIIFE stands for Immediately Invoked Function Expression. ???It is a good way at protecting the scope of your function and the variables within it. It avoid the pollute of global variable???. 12345">
+<meta property="og:description" content="IIFEIIFE stands for Immediately Invoked Function Expression. ???It is a good way at protecting the scope of your function and the variables within it. It avoid the pollute of global variable???.">
 <meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2019-10-19T23:46:25.495Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript(2) Function and Scope">
-<meta name="twitter:description" content="IIFEIIFE stands for Immediately Invoked Function Expression. ???It is a good way at protecting the scope of your function and the variables within it. It avoid the pollute of global variable???. 12345">
+<meta name="twitter:description" content="IIFEIIFE stands for Immediately Invoked Function Expression. ???It is a good way at protecting the scope of your function and the variables within it. It avoid the pollute of global variable???.">
 
 <link rel="canonical" href="http://yoursite.com/2019/07/17/Tech/JavaScript/JavaScript_Function_and_Block_Scope/">
 
@@ -255,7 +255,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="IIFE"><a href="#IIFE" class="headerlink" title="IIFE"></a>IIFE</h1><p>IIFE stands for Immediately Invoked Function Expression. ???It is a good way at protecting the scope of your function and the variables within it. It avoid the pollute of global variable???.</p>
+        <h1 id="IIFE"><a href="#IIFE" class="headerlink" title="IIFE"></a>IIFE</h1><p>IIFE stands for Immediately Invoked Function Expression. ???It is a good way at protecting the scope of your function and the variables within it. It avoid the pollute of global variable???.</p><a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// Normal function</span><br><span class="line">function addTogether() &#123;</span><br><span class="line"> var x = 20;</span><br><span class="line"> var y = 20;</span><br><span class="line"> var answer = x + y;</span><br><span class="line"> console.log(answer);</span><br><span class="line"> &#125;</span><br><span class="line">addTogether();</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(function() &#123;</span><br><span class="line"> var x = 20;</span><br><span class="line"> var y = 20;</span><br><span class="line"> var answer = x + y;</span><br><span class="line"> console.log(answer);</span><br><span class="line"> &#125;)();</span><br></pre></td></tr></table></figure>
 <h1 id="Closures"><a href="#Closures" class="headerlink" title="Closures"></a>Closures</h1><p>Closure are nested function which has access to the outer scope. After the outer function is returned, by keeping a reference to the inner function (the closures) we prevent the outer scope to be destroyed.</p>

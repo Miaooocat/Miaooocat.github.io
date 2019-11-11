@@ -49,18 +49,18 @@
   };
 </script>
 
-  <meta name="description" content="Important Point Summary:By using a Queue Channel producer and consumer get decoupled and both happen in different threads ChannelMessage need to travel from one component to another through Channel.">
+  <meta name="description" content="Important Point Summary:By using a Queue Channel producer and consumer get decoupled and both happen in different threadsChannelMessage need to travel from one component to another through Channel.">
 <meta name="keywords" content="Java,Spring">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring Integration - Channels">
 <meta property="og:url" content="http://yoursite.com/2019/10/06/Tech/Framework/Spring_Integration/SpringIntegrationChannels/index.html">
 <meta property="og:site_name" content="Hi, Shihao">
-<meta property="og:description" content="Important Point Summary:By using a Queue Channel producer and consumer get decoupled and both happen in different threads ChannelMessage need to travel from one component to another through Channel.">
+<meta property="og:description" content="Important Point Summary:By using a Queue Channel producer and consumer get decoupled and both happen in different threadsChannelMessage need to travel from one component to another through Channel.">
 <meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2019-10-30T02:56:04.099Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring Integration - Channels">
-<meta name="twitter:description" content="Important Point Summary:By using a Queue Channel producer and consumer get decoupled and both happen in different threads ChannelMessage need to travel from one component to another through Channel.">
+<meta name="twitter:description" content="Important Point Summary:By using a Queue Channel producer and consumer get decoupled and both happen in different threadsChannelMessage need to travel from one component to another through Channel.">
 
 <link rel="canonical" href="http://yoursite.com/2019/10/06/Tech/Framework/Spring_Integration/SpringIntegrationChannels/">
 
@@ -261,8 +261,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="Important-Point-Summary"><a href="#Important-Point-Summary" class="headerlink" title="Important Point Summary:"></a>Important Point Summary:</h1><p>By using a Queue Channel producer and consumer get decoupled and both happen in different threads</p>
-<h1 id="Channel"><a href="#Channel" class="headerlink" title="Channel"></a>Channel</h1><p>Message need to travel from one component to another through <strong>Channel</strong>. </p>
+        <h1 id="Important-Point-Summary"><a href="#Important-Point-Summary" class="headerlink" title="Important Point Summary:"></a>Important Point Summary:</h1><p>By using a Queue Channel producer and consumer get decoupled and both happen in different threads</p><h1 id="Channel"><a href="#Channel" class="headerlink" title="Channel"></a>Channel</h1><p>Message need to travel from one component to another through <strong>Channel</strong>. </p><a id="more"></a>
+
 <h2 id="MessageChannel"><a href="#MessageChannel" class="headerlink" title="MessageChannel"></a>MessageChannel</h2><p>Message channel interface has no receive method. Message being sent will <strong>be delivered directly</strong> to the Message Endpoint.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.springframework.integration;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">MessageChannel</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">send</span><span class="params">(Message&lt;?&gt; message)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">send</span><span class="params">(Message&lt;?&gt; message, <span class="keyword">long</span> timeout)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="SubscribableChannel"><a href="#SubscribableChannel" class="headerlink" title="SubscribableChannel"></a>SubscribableChannel</h2><p><strong>SubscibableChannel</strong> extends from MessageChannel takes responsibility for notifying subscribers when a message is available.</p>

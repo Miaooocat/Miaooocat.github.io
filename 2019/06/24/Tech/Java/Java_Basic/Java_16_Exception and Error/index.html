@@ -49,18 +49,18 @@
   };
 </script>
 
-  <meta name="description" content="OverviewWhen an error occurs, Java creates an exception object, then the normal flow of the program stopped. JRE(Java Running Environment) tries to find the handdler for this exception. Exception Hand">
+  <meta name="description" content="OverviewWhen an error occurs, Java creates an exception object, then the normal flow of the program stopped. JRE(Java Running Environment) tries to find the handdler for this exception.">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java Study Notes(16) Exception and Error">
 <meta property="og:url" content="http://yoursite.com/2019/06/24/Tech/Java/Java_Basic/Java_16_Exception and Error/index.html">
 <meta property="og:site_name" content="Hi, Shihao">
-<meta property="og:description" content="OverviewWhen an error occurs, Java creates an exception object, then the normal flow of the program stopped. JRE(Java Running Environment) tries to find the handdler for this exception. Exception Hand">
+<meta property="og:description" content="OverviewWhen an error occurs, Java creates an exception object, then the normal flow of the program stopped. JRE(Java Running Environment) tries to find the handdler for this exception.">
 <meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2019-10-19T23:46:25.462Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java Study Notes(16) Exception and Error">
-<meta name="twitter:description" content="OverviewWhen an error occurs, Java creates an exception object, then the normal flow of the program stopped. JRE(Java Running Environment) tries to find the handdler for this exception. Exception Hand">
+<meta name="twitter:description" content="OverviewWhen an error occurs, Java creates an exception object, then the normal flow of the program stopped. JRE(Java Running Environment) tries to find the handdler for this exception.">
 
 <link rel="canonical" href="http://yoursite.com/2019/06/24/Tech/Java/Java_Basic/Java_16_Exception and Error/">
 
@@ -261,7 +261,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>When an error occurs, Java creates an exception object, then the normal flow of the program stopped. JRE(Java Running Environment) tries to find the handdler for this exception.</p>
+        <h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>When an error occurs, Java creates an exception object, then the normal flow of the program stopped. JRE(Java Running Environment) tries to find the handdler for this exception.</p><a id="more"></a>
 <p>Exception Handler is the block of code that can process the exception object. The logic to find the exception handler is to start the search in the method where error occurred, if no appropriate handler found, then move to the caller method and so on.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">|---|</span><br><span class="line">| C |</span><br><span class="line">|---|</span><br><span class="line">| B |</span><br><span class="line">|---|</span><br><span class="line">| A |</span><br><span class="line">|---|</span><br></pre></td></tr></table></figure></p>
 <p>So if methods call stack is A-&gt;B-&gt;C and exception is raised in method C, then the search for appropriate handler will move from C-&gt;B-&gt;A. If the top most method doesn’t ‘handle’ the exception, it is popped off the stack – <strong>even if the method has not finished executing!</strong> </p>
 <p>If appropriate exception handler is found, exception object is passed to the handler to process it. The handler is said to be <strong>“catching the exception”</strong>. If there are no appropriate exception handler found after all method being popped off from the stack, the program crashes and prints information about the exception.</p>

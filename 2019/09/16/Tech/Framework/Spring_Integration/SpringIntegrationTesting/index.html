@@ -49,18 +49,18 @@
   };
 </script>
 
-  <meta name="description" content="This is the summary notes for unit testing in spring integration framework after reading the book Spring Integration in Action.  This page covers   Test-driven development in the context of messaging">
+  <meta name="description" content="This is the summary notes for unit testing in spring integration framework after reading the book Spring Integration in Action. This page covers  Test-driven development in the context of messaging Ha">
 <meta name="keywords" content="Java,Spring">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring Integration - Testing">
 <meta property="og:url" content="http://yoursite.com/2019/09/16/Tech/Framework/Spring_Integration/SpringIntegrationTesting/index.html">
 <meta property="og:site_name" content="Hi, Shihao">
-<meta property="og:description" content="This is the summary notes for unit testing in spring integration framework after reading the book Spring Integration in Action.  This page covers   Test-driven development in the context of messaging">
+<meta property="og:description" content="This is the summary notes for unit testing in spring integration framework after reading the book Spring Integration in Action. This page covers  Test-driven development in the context of messaging Ha">
 <meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2019-10-19T23:46:25.518Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring Integration - Testing">
-<meta name="twitter:description" content="This is the summary notes for unit testing in spring integration framework after reading the book Spring Integration in Action.  This page covers   Test-driven development in the context of messaging">
+<meta name="twitter:description" content="This is the summary notes for unit testing in spring integration framework after reading the book Spring Integration in Action. This page covers  Test-driven development in the context of messaging Ha">
 
 <link rel="canonical" href="http://yoursite.com/2019/09/16/Tech/Framework/Spring_Integration/SpringIntegrationTesting/">
 
@@ -261,13 +261,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>This is the summary notes for unit testing in spring integration framework after reading the book Spring Integration in Action. </p>
-<p>This page covers </p>
-<ol>
+        <p>This is the summary notes for unit testing in spring integration framework after reading the book Spring Integration in Action. </p><p>This page covers </p><ol>
 <li>Test-driven development in the context of messaging</li>
 <li>Hamcrest and Mockito matchers for messages</li>
 <li>Testing asynchronous applications</li>
-</ol>
+</ol><a id="more"></a>
+
+
 <h1 id="Matching-Messages-with-Spring-Integration-testing-framework"><a href="#Matching-Messages-with-Spring-Integration-testing-framework" class="headerlink" title="Matching Messages with Spring Integration testing framework"></a>Matching Messages with Spring Integration testing framework</h1><p>When a message being send to a system, it must comes out in some form or another, either through being consumed by an <strong>outbound channel adapter</strong>, <strong>as another message being sent on a subsequent channel</strong>, or <strong>as an ErrorMessage being sent to the errorChannel</strong>.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void outputShouldContainDelayedFlight() &#123;</span><br><span class="line">    inputChannel.send(testMessage());</span><br><span class="line">    Message output = outputChannel.receive();</span><br><span class="line">    assertThat(((FlightDelayedEvent) output</span><br><span class="line">    .getPayload()).getDelay(),  is(expectedDelay) );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>The above method is complicated, as getting the delay requires a cast and two method invocations. In following sub-section, a easy method is introduced to match both payload and header.</p>

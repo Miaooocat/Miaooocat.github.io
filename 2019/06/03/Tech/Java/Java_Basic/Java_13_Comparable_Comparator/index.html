@@ -49,18 +49,18 @@
   };
 </script>
 
-  <meta name="description" content="Comparable and comparator are interfaces to provide a sorting logic for the collection. Example:123456789101112131415public class Employee &amp;#123;    private int id;    privaate String name;    private">
+  <meta name="description" content="Comparable and comparator are interfaces to provide a sorting logic for the collection.Example:123456789101112131415public class Employee &amp;#123;    private int id;    privaate String name;    private">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java Study Notes(14) Comparable vs Comparator">
 <meta property="og:url" content="http://yoursite.com/2019/06/03/Tech/Java/Java_Basic/Java_13_Comparable_Comparator/index.html">
 <meta property="og:site_name" content="Hi, Shihao">
-<meta property="og:description" content="Comparable and comparator are interfaces to provide a sorting logic for the collection. Example:123456789101112131415public class Employee &amp;#123;    private int id;    privaate String name;    private">
+<meta property="og:description" content="Comparable and comparator are interfaces to provide a sorting logic for the collection.Example:123456789101112131415public class Employee &amp;#123;    private int id;    privaate String name;    private">
 <meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2019-10-19T23:46:25.461Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java Study Notes(14) Comparable vs Comparator">
-<meta name="twitter:description" content="Comparable and comparator are interfaces to provide a sorting logic for the collection. Example:123456789101112131415public class Employee &amp;#123;    private int id;    privaate String name;    private">
+<meta name="twitter:description" content="Comparable and comparator are interfaces to provide a sorting logic for the collection.Example:123456789101112131415public class Employee &amp;#123;    private int id;    privaate String name;    private">
 
 <link rel="canonical" href="http://yoursite.com/2019/06/03/Tech/Java/Java_Basic/Java_13_Comparable_Comparator/">
 
@@ -261,8 +261,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Comparable and comparator are interfaces to provide a sorting logic for the collection.</p>
-<p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public class Employee &#123;</span><br><span class="line">    private int id;</span><br><span class="line">    privaate String name;</span><br><span class="line">    private int age;</span><br><span class="line">    private long salary;</span><br><span class="line">    public int getId()&#123;</span><br><span class="line">        return id;</span><br><span class="line">    &#125;</span><br><span class="line">    public Employee(int id, String name, int age, int salary)&#123;</span><br><span class="line">        this.id = id;</span><br><span class="line">        this.name = name;</span><br><span class="line">        this.age = age;</span><br><span class="line">        this.salary = salary;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>Comparable and comparator are interfaces to provide a sorting logic for the collection.</p><p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public class Employee &#123;</span><br><span class="line">    private int id;</span><br><span class="line">    privaate String name;</span><br><span class="line">    private int age;</span><br><span class="line">    private long salary;</span><br><span class="line">    public int getId()&#123;</span><br><span class="line">        return id;</span><br><span class="line">    &#125;</span><br><span class="line">    public Employee(int id, String name, int age, int salary)&#123;</span><br><span class="line">        this.id = id;</span><br><span class="line">        this.name = name;</span><br><span class="line">        this.age = age;</span><br><span class="line">        this.salary = salary;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><a id="more"></a>
+
 <p>The above code gives an object with too many attributes. Thus, we need to use comparable or comparator to sort them.</p>
 <h2 id="Java-Comparable"><a href="#Java-Comparable" class="headerlink" title="Java Comparable"></a>Java Comparable</h2><p>The Comparable interface has <strong>only one method compareTo(T obj)</strong>. This interface is implemented at the class that required to build desired object.</p>
 <p>In this method, it returns a negative, zero, or positive integer as the employee Id is less than, equal to or greater than the specified object.</p>

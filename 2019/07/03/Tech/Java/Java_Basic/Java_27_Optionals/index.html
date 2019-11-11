@@ -49,18 +49,18 @@
   };
 </script>
 
-  <meta name="description" content="Method of deal with NullCatch NullPointException is not a solution. Check every return value is NULL Two Solution Two types of Null Objects:  A representation of empty behavior   Could be due to an ob">
+  <meta name="description" content="Method of deal with NullCatch NullPointException is not a solution.Check every return value is NULLTwo Solution Two types of Null Objects:  A representation of empty behavior   Could be due to an obje">
 <meta name="keywords" content="Java,Function Programming">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java Study Notes(27) Optionals (not Finished)">
 <meta property="og:url" content="http://yoursite.com/2019/07/03/Tech/Java/Java_Basic/Java_27_Optionals/index.html">
 <meta property="og:site_name" content="Hi, Shihao">
-<meta property="og:description" content="Method of deal with NullCatch NullPointException is not a solution. Check every return value is NULL Two Solution Two types of Null Objects:  A representation of empty behavior   Could be due to an ob">
+<meta property="og:description" content="Method of deal with NullCatch NullPointException is not a solution.Check every return value is NULLTwo Solution Two types of Null Objects:  A representation of empty behavior   Could be due to an obje">
 <meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2019-10-19T23:46:25.467Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java Study Notes(27) Optionals (not Finished)">
-<meta name="twitter:description" content="Method of deal with NullCatch NullPointException is not a solution. Check every return value is NULL Two Solution Two types of Null Objects:  A representation of empty behavior   Could be due to an ob">
+<meta name="twitter:description" content="Method of deal with NullCatch NullPointException is not a solution.Check every return value is NULLTwo Solution Two types of Null Objects:  A representation of empty behavior   Could be due to an obje">
 
 <link rel="canonical" href="http://yoursite.com/2019/07/03/Tech/Java/Java_Basic/Java_27_Optionals/">
 
@@ -261,9 +261,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="Method-of-deal-with-Null"><a href="#Method-of-deal-with-Null" class="headerlink" title="Method of deal with Null"></a>Method of deal with Null</h1><p>Catch NullPointException is not a solution.</p>
-<p>Check every return value is NULL</p>
-<h1 id="Two-Solution"><a href="#Two-Solution" class="headerlink" title="Two Solution"></a>Two Solution</h1><ol>
+        <h1 id="Method-of-deal-with-Null"><a href="#Method-of-deal-with-Null" class="headerlink" title="Method of deal with Null"></a>Method of deal with Null</h1><p>Catch NullPointException is not a solution.</p><p>Check every return value is NULL</p><h1 id="Two-Solution"><a href="#Two-Solution" class="headerlink" title="Two Solution"></a>Two Solution</h1><ol>
 <li><p>Two types of Null Objects:</p>
 <ul>
 <li>A representation of empty behavior</li>
@@ -271,7 +269,9 @@
 </li>
 <li><p>Could be due to an object changing state, such as a stream of data that has been closed</p>
 </li>
-</ol>
+</ol><a id="more"></a>
+
+
 <p>An optional absence of an object</p>
 <h1 id="Represnting-absence-of-objects"><a href="#Represnting-absence-of-objects" class="headerlink" title="Represnting absence of objects"></a>Represnting absence of objects</h1><p>A BookStorage interface might declare methods for fetching individual information or fetching bulk information<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class BookRepository&#123;</span><br><span class="line">    //Exclude storage code</span><br><span class="line">    List&lt;Book&gt; getAllBooks()&#123;</span><br><span class="line">        //Code for bulk fetch</span><br><span class="line">    &#125;</span><br><span class="line">    Book get (String isbn)&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>Returning an “empty” array or an “empty” collection</p>
