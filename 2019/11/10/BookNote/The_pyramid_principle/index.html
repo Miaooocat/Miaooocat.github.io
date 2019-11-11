@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en,default">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.8.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icon.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icon.jpg">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.4.2',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="总结这本书依托于金字塔原理展开，分为四个部分:  表达的逻辑: “说”，使用金字塔原理的原因和具体构建方法; 思考的逻辑: “想”，使用金字塔原理过程中的应用逻辑要素; 解决问题的逻辑: “做”，在实例中界定、解构、分析和解决问题; 演示的逻辑: “表演”，在PPT演示和文字中呈现金字塔;  第一部分: 表达的逻辑金字塔结构的构建原理可以总结成:  归类分组，将思想组织成金字塔: 找出逻辑关系，抽">
+<meta property="og:type" content="article">
+<meta property="og:title" content="金字塔思考模型">
+<meta property="og:url" content="http://yoursite.com/2019/11/10/BookNote/The_pyramid_principle/index.html">
+<meta property="og:site_name" content="Hi, Shihao">
+<meta property="og:description" content="总结这本书依托于金字塔原理展开，分为四个部分:  表达的逻辑: “说”，使用金字塔原理的原因和具体构建方法; 思考的逻辑: “想”，使用金字塔原理过程中的应用逻辑要素; 解决问题的逻辑: “做”，在实例中界定、解构、分析和解决问题; 演示的逻辑: “表演”，在PPT演示和文字中呈现金字塔;  第一部分: 表达的逻辑金字塔结构的构建原理可以总结成:  归类分组，将思想组织成金字塔: 找出逻辑关系，抽">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-11T20:51:44.879Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="金字塔思考模型">
+<meta name="twitter:description" content="总结这本书依托于金字塔原理展开，分为四个部分:  表达的逻辑: “说”，使用金字塔原理的原因和具体构建方法; 思考的逻辑: “想”，使用金字塔原理过程中的应用逻辑要素; 解决问题的逻辑: “做”，在实例中界定、解构、分析和解决问题; 演示的逻辑: “表演”，在PPT演示和文字中呈现金字塔;  第一部分: 表达的逻辑金字塔结构的构建原理可以总结成:  归类分组，将思想组织成金字塔: 找出逻辑关系，抽">
+
+<link rel="canonical" href="http://yoursite.com/2019/11/10/BookNote/The_pyramid_principle/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>金字塔思考模型 | Hi, Shihao</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hi, Shihao</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-empire"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-notes">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-pencil"></i>Notes</a>
+
+  </li>
+        <li class="menu-item menu-item-blog">
+
+    <a href="/blog/" rel="section"><i class="fa fa-fw fa-angle-double-down"></i>Blog</a>
+
+  </li>
+        <li class="menu-item menu-item-tag">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-flask"></i>Tag</a>
+
+  </li>
+        <li class="menu-item menu-item-music">
+
+    <a href="/music/" rel="section"><i class="fa fa-fw fa-music"></i>Music</a>
+
+  </li>
+        <li class="menu-item menu-item-timeline">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-backward"></i>Timeline</a>
+
+  </li>
+        <li class="menu-item menu-item-about-me">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-rebel"></i>About-me</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/10/BookNote/The_pyramid_principle/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Shihao Miao">
+      <meta itemprop="description" content="坠欢莫拾，酒痕在衣">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi, Shihao">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          金字塔思考模型
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-11-10 13:59:52" itemprop="dateCreated datePublished" datetime="2019-11-10T13:59:52-05:00">2019-11-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-11-11 15:51:44" itemprop="dateModified" datetime="2019-11-11T15:51:44-05:00">2019-11-11</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>这本书依托于金字塔原理展开，分为四个部分:</p>
+<ul>
+<li>表达的逻辑: “<strong>说</strong>”，使用金字塔原理的原因和具体构建方法;</li>
+<li>思考的逻辑: “<strong>想</strong>”，使用金字塔原理过程中的应用逻辑要素;</li>
+<li>解决问题的逻辑: “<strong>做</strong>”，在实例中界定、解构、分析和解决问题;</li>
+<li>演示的逻辑: “<strong>表演</strong>”，在PPT演示和文字中呈现金字塔;</li>
+</ul>
+<h1 id="第一部分-表达的逻辑"><a href="#第一部分-表达的逻辑" class="headerlink" title="第一部分: 表达的逻辑"></a>第一部分: 表达的逻辑</h1><p>金字塔结构的构建原理可以总结成:</p>
+<ol>
+<li>归类分组，将思想组织成金字塔:</li>
+<li>找出逻辑关系，抽象概括:</li>
+<li>自上而下表达，结论先行:</li>
+</ol>
+<p>金字塔中的思想必须以<strong>3种方式</strong>互相关联 —- <strong>向上</strong>，<strong>向下</strong>，<strong>横向</strong>。</p>
+<ul>
+<li>位于一组思想的上一层次的思想必须是对这一组思想的概括。</li>
+<li>这一组的思想则是对其上一层思想的解释和支持。</li>
+<li>横向思想必须属于同一逻辑范畴，必须按照逻辑顺序组织</li>
+</ul>
+<p>基本的逻辑顺序</p>
+<ol>
+<li><p>演绎法：大前提，小前提，结论<br>演绎法是对某个思想引起的疑问。其中，第二个思想是对第一个思想的主语或谓语作出的表述，而第三个思想则是从以上两个思想中得到推论<br>ex) 所有的人都会死 -&gt; 苏格拉底是一个人 —&gt; 因此苏格拉底会死</p>
+</li>
+<li><p>归纳法<br>归纳性思想是要保证所有论点可以被概括<br>ex） 波兰将受到坦克入侵 ——&gt; 1. 法国坦克已抵达波兰边境 2. 德国坦克已抵达波兰边境 3. 俄国坦克已抵达波兰边境</p>
+</li>
+</ol>
+<ol>
+<li>时间（步骤）顺序：第一，第二，第三</li>
+<li>结构（空间）顺序：波士顿，纽约，华盛顿</li>
+<li>程度（重要性）顺序：最重要，次重要，等等</li>
+</ol>
+<h1 id="序言的结构"><a href="#序言的结构" class="headerlink" title="序言的结构"></a>序言的结构</h1><p>序言的开头应向读者说明<strong>背景</strong>（situation/context），在这一背景中应当发生了某件事（Conflict），以及要向读者提出你的文章要回答的问题</p>
+<h1 id="第二部分-思考的逻辑"><a href="#第二部分-思考的逻辑" class="headerlink" title="第二部分: 思考的逻辑"></a>第二部分: 思考的逻辑</h1><h1 id="第三部分-解决问题的逻辑"><a href="#第三部分-解决问题的逻辑" class="headerlink" title="第三部分: 解决问题的逻辑"></a>第三部分: 解决问题的逻辑</h1><h1 id="第四部分-演示的逻辑"><a href="#第四部分-演示的逻辑" class="headerlink" title="第四部分: 演示的逻辑"></a>第四部分: 演示的逻辑</h1>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/10/29/Blog/OnlineEducation/" rel="next" title="关于教育的杂谈">
+                  <i class="fa fa-chevron-left"></i> 关于教育的杂谈
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">1.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第一部分-表达的逻辑"><span class="nav-number">2.</span> <span class="nav-text">第一部分: 表达的逻辑</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#序言的结构"><span class="nav-number">3.</span> <span class="nav-text">序言的结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二部分-思考的逻辑"><span class="nav-number">4.</span> <span class="nav-text">第二部分: 思考的逻辑</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三部分-解决问题的逻辑"><span class="nav-number">5.</span> <span class="nav-text">第三部分: 解决问题的逻辑</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第四部分-演示的逻辑"><span class="nav-number">6.</span> <span class="nav-text">第四部分: 演示的逻辑</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="Shihao Miao" src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Shihao Miao</p>
+  <div class="site-description" itemprop="description">坠欢莫拾，酒痕在衣</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">71</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Miaooocat/" title="GitHub &rarr; https://github.com/Miaooocat/" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:miao.shihaoo@gmail.com" title="E-Mail &rarr; mailto:miao.shihaoo@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Shihao Miao</span>
+</div><div>
+<span id="timeDate">Loading Days...</span><span id="times">Loading Times...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("03/20/2019 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "This website has struggled in this world for "+dnum+" day ";
+        document.getElementById("times").innerHTML = hnum + " hour " + mnum + " min " + snum + " sec";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.getAttribute('pjax') !== null) {
+      element.setAttribute('pjax', '');
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+
+  
+
+  
+
+    </div>
+</body>
+</html>
