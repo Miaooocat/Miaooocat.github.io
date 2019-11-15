@@ -49,18 +49,18 @@
   };
 </script>
 
-  <meta name="description" content="What is logging?When something goes wrong, the first point of call is the system logsLogs provide a trace to figure out circumstances that cause issues, both at runtime and during debugging.">
+  <meta name="description" content="What is logLog is the information generated when running the application. It provides a trace to figure out circumstances or error that may happening in the program.">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java Study Notes(29) Logging">
 <meta property="og:url" content="http://yoursite.com/2019/07/03/Tech/Java/Java_Basic/Java_29_Logging/index.html">
 <meta property="og:site_name" content="Hi, Shihao">
-<meta property="og:description" content="What is logging?When something goes wrong, the first point of call is the system logsLogs provide a trace to figure out circumstances that cause issues, both at runtime and during debugging.">
+<meta property="og:description" content="What is logLog is the information generated when running the application. It provides a trace to figure out circumstances or error that may happening in the program.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-19T23:46:25.468Z">
+<meta property="og:updated_time" content="2019-11-15T02:50:38.422Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java Study Notes(29) Logging">
-<meta name="twitter:description" content="What is logging?When something goes wrong, the first point of call is the system logsLogs provide a trace to figure out circumstances that cause issues, both at runtime and during debugging.">
+<meta name="twitter:description" content="What is logLog is the information generated when running the application. It provides a trace to figure out circumstances or error that may happening in the program.">
 
 <link rel="canonical" href="http://yoursite.com/2019/07/03/Tech/Java/Java_Basic/Java_29_Logging/">
 
@@ -225,13 +225,6 @@
 
               <time title="Created: 2019-07-03 13:12:17" itemprop="dateCreated datePublished" datetime="2019-07-03T13:12:17-04:00">2019-07-03</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-19 19:46:25" itemprop="dateModified" datetime="2019-10-19T19:46:25-04:00">2019-10-19</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -261,37 +254,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="What-is-logging"><a href="#What-is-logging" class="headerlink" title="What is logging?"></a>What is logging?</h1><p><strong>When something goes wrong, the first point of call is the system logs</strong><br>Logs provide a trace to figure out circumstances that cause issues, both at runtime and during debugging.</p><a id="more"></a>
-<p>Logs are the main piece of information available to Support consultants and Developers</p>
-<p>Almost every large application devotes development efforts to logging, tracing, and/or auditing</p>
-<p>Logs help isolate and identify where problems occur</p>
-<h1 id="log4j2"><a href="#log4j2" class="headerlink" title="log4j2"></a>log4j2</h1><p>Hierarchical logging framework</p>
-<pre><code>- Different levels of severity for different messages
-- Inheritable configuration
-</code></pre><p>Allows us to send differnt log messages to different locations simultaneously</p>
-<p>Allows configuration to be external to the code</p>
-<pre><code>- Logging can be turned off or made to log only certain events without recompiling the source code
-- Can be configured even after deployment to the client
-</code></pre><h1 id="Key-Componentss"><a href="#Key-Componentss" class="headerlink" title="Key Componentss"></a>Key Componentss</h1><p>Loggers</p>
+        <h1 id="What-is-log"><a href="#What-is-log" class="headerlink" title="What is log"></a>What is log</h1><p>Log is the information generated when running the application. It provides a trace to figure out circumstances or error that may happening in the program.</p><a id="more"></a>
+<h1 id="Log4j2"><a href="#Log4j2" class="headerlink" title="Log4j2"></a>Log4j2</h1><p>Log4j2 is an open source library that’s published and licnesed under Apache Software.<br>The main advantage of Log4j2 is<br><strong>1)</strong> It allows us to send different log messages to different locations simultaneously.<br><strong>2)</strong> The configuration(xml, yaml, json, or properties file) can be external to the code. This allows logging to be turned off or on without recompiling the source code, and it can be configured even after deployment.</p>
+<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>Each logger object needs <strong>two</strong> pieces of information</p>
 <ul>
-<li>Named objects that allow us to log messages according to level<ul>
-<li>One “root logger” object always exists</li>
-<li>Child logger objects are created from configuration</li>
+<li>A level / threshold (the minimum level of messages it will log)</li>
+<li>At least one appender (Where to send the messages)</li>
+<li>(option) A pattern layout for formatting</li>
 </ul>
-</li>
-</ul>
-<p>Appenders</p>
-<ul>
-<li>Output destinations for log messages</li>
-<li>A single logger can have multiple appenders</li>
-</ul>
-<p>Layouts</p>
-<ul>
-<li>Output formats for log messages</li>
-<li>A layout is set for each appender</li>
-</ul>
-<h1 id="Loggers"><a href="#Loggers" class="headerlink" title="Loggers"></a>Loggers</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// Create a log</span><br><span class="line">Logger logger = LogManager.getLogger(&quot;MyLogger&quot;);</span><br><span class="line">Logger logger = LogManager.getLogger(ClassName.class);</span><br><span class="line">Logger logger = LogManager.getLogger();</span><br></pre></td></tr></table></figure>
-<h1 id="Appenders"><a href="#Appenders" class="headerlink" title="Appenders"></a>Appenders</h1><p>Loggers need to know where to send your request for logging</p>
+<p>It should be noted that log4j2 property file configuration is different from the log4j property file. If file is not right, the following exception will be thrown.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR StatusLogger No log4j2 configuration file found. Using default configuration: logging only errors to the console.</span><br></pre></td></tr></table></figure></p>
+<h3 id="Log-Levels"><a href="#Log-Levels" class="headerlink" title="Log Levels"></a>Log Levels</h3><p>Log levels could be different in different organizations. Normally, there are <strong>DEBUG</strong>, <strong>INFO</strong>, <strong>WARN</strong>, <strong>ERROR</strong>, and <strong>FATAL</strong> levels. Those log levels could be used as string to be monitored by apllication supporter.<br><strong>DEBUG</strong>: Use for writing debugging messages. This log level should be hided in the production environment.<br><strong>INFO</strong>: Use to trace the runtime events in the application.<br><strong>WARN</strong>: Use to record some business error. Application should be able to handle by itself with exceptions.<br><strong>ERROR</strong>: Use to record issues that cause unexpected or unacceptable behavior. This level should be monitored.<br><strong>FATAL</strong>: Use to record issues that stop the application or crash the server. This level should be reportted immediately.</p>
+<h4 id="Log-Level-hierarchy-order"><a href="#Log-Level-hierarchy-order" class="headerlink" title="Log Level hierarchy order"></a>Log Level hierarchy order</h4><p>When the library decides whether to print a certain statement or not, it computes the effective level of the responsible Logger object (It is based on configuration. The default log level is <strong>ERROR</strong>.) and compares it with the LogEvent’s level (depends on which method was used in the code – trace/debug/…/fatal). <strong>If LogEvent’s level is greater or equal to the Logger’s level, the LogEvent is sent to appender(s) – “printed”</strong>. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public final static int OFF_INT = Integer.MAX_VALUE;</span><br><span class="line">public final static int FATAL_INT = 50000;</span><br><span class="line">public final static int ERROR_INT = 40000;</span><br><span class="line">public final static int WARN_INT  = 30000;</span><br><span class="line">public final static int INFO_INT  = 20000;</span><br><span class="line">public final static int DEBUG_INT = 10000;</span><br><span class="line">public static final int TRACE_INT = 5000; </span><br><span class="line">public final static int ALL_INT = Integer.MIN_VALUE;</span><br></pre></td></tr></table></figure>
+<h3 id="Appenders"><a href="#Appenders" class="headerlink" title="Appenders"></a>Appenders</h3><p>Loggers need to know where to send your request for logging</p>
 <p>The log4j2API allows us to select from a variety of output destinations</p>
 <ul>
 <li>Files (FileAppender, RollingFileAppender)</li>
@@ -300,29 +275,10 @@
 <li>Remote servers (SocketAppender, HTTPAppender)</li>
 <li>…</li>
 </ul>
-<h1 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h1><p>Each logger object needs two pieces of information</p>
-<ul>
-<li>A level / threshold (the minimum level of messages it will log)</li>
-<li>At least one appender (Where to send the messages)</li>
-</ul>
-<h2 id="Log-Message-Level"><a href="#Log-Message-Level" class="headerlink" title="Log Message Level"></a>Log Message Level</h2><p>From least severe -&gt; most severe<br>trace -&gt; debug -&gt; info -&gt; warn -&gt; error -&gt; fatal</p>
-<p><strong>Trace</strong>: Use for debugging messags which let the developer know which parts of the source code have been reached. Examples including tracing method entry and exit. The level should only be used for developers.</p>
-<p><strong>Debug</strong>: Use for writing debugging messages</p>
-<p><strong>Info</strong>: Use for messages similar to the verbose mode of some applications: runtime events. Info and above should be considered public information.</p>
-<p><strong>Warn</strong>: Use for warning messages that logged to some log but the application is able to carry on without a problem. Examples may be loading default configuration if a file cannot be located.</p>
-<p><strong>Error</strong></p>
-<p><strong>Fatal</strong></p>
-<p>Root Logger </p>
-<ul>
-<li>error</li>
-<li>Console</li>
-</ul>
-<p>Own logger </p>
-<ul>
-<li>INFO</li>
-<li>File</li>
-</ul>
-<h1 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">09:57:06:934 [main] ERROR com.fdmgroup.logginApp - This is an error message</span><br></pre></td></tr></table></figure>
+<h2 id="Basic-Implementation-of-Using-External-Configuration-File"><a href="#Basic-Implementation-of-Using-External-Configuration-File" class="headerlink" title="Basic Implementation of Using External Configuration File"></a>Basic Implementation of Using External Configuration File</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dev;</span><br><span class="line"><span class="keyword">import</span> org.apache.logging.log4j.LogManager;</span><br><span class="line"><span class="keyword">import</span> org.apache.logging.log4j.Logger;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">( String[] args )</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Set the system file</span></span><br><span class="line">        System.setProperties(<span class="string">"log4j.configurationFile"</span>,<span class="string">"FILE_PATH"</span>)</span><br><span class="line">        <span class="comment">// It can be any string in the bracket. By convension, it uses class name</span></span><br><span class="line">        Logger logger = LogManager.getLogger(App.class);;</span><br><span class="line">        <span class="comment">// Log4j will inspect log4j.configurationFile system property to determine log4j2 configuration file. </span></span><br><span class="line">        <span class="comment">// Log4j configuration can be written in JSON, YAML and XML.</span></span><br><span class="line">    	logger.trace(<span class="string">"Configuration File Defined To Be :: "</span>+System.getProperty(<span class="string">"log4j.configurationFile"</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Configuration</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Appenders</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Console</span> <span class="attr">name</span>=<span class="string">"Console"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">PatternLayout</span> <span class="attr">pattern</span>=<span class="string">"%d&#123;HH:mm:ss.SSS&#125; [%t] %-5level %logger&#123;36&#125; - %msg%n"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Console</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">Appenders</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Loggers</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">"com.dev"</span> <span class="attr">level</span>=<span class="string">"trace"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">AppenderRef</span> <span class="attr">ref</span>=<span class="string">"Console"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">logger</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">Loggers</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://www.journaldev.com/7128/log4j2-example-tutorial-configuration-levels-appenders" target="_blank" rel="noopener">https://www.journaldev.com/7128/log4j2-example-tutorial-configuration-levels-appenders</a></p>
+
     </div>
 
     
@@ -338,8 +294,8 @@
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2019/07/03/Tech/Java/Java_Database/JDBC_1/" rel="next" title="JDBC Study Notes(1)">
-                  <i class="fa fa-chevron-left"></i> JDBC Study Notes(1)
+                <a href="/2019/07/03/Tech/Java/Java_Basic/Java_28_Stream/" rel="next" title="Java Study Notes(28) Java Stream">
+                  <i class="fa fa-chevron-left"></i> Java Study Notes(28) Java Stream
                 </a>
             </div>
 
@@ -387,7 +343,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-logging"><span class="nav-number">1.</span> <span class="nav-text">What is logging?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#log4j2"><span class="nav-number">2.</span> <span class="nav-text">log4j2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Key-Componentss"><span class="nav-number">3.</span> <span class="nav-text">Key Componentss</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Loggers"><span class="nav-number">4.</span> <span class="nav-text">Loggers</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Appenders"><span class="nav-number">5.</span> <span class="nav-text">Appenders</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Configuration"><span class="nav-number">6.</span> <span class="nav-text">Configuration</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Log-Message-Level"><span class="nav-number">6.1.</span> <span class="nav-text">Log Message Level</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Example"><span class="nav-number">7.</span> <span class="nav-text">Example</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-log"><span class="nav-number">1.</span> <span class="nav-text">What is log</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Log4j2"><span class="nav-number">2.</span> <span class="nav-text">Log4j2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Configuration"><span class="nav-number">2.1.</span> <span class="nav-text">Configuration</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Log-Levels"><span class="nav-number">2.1.1.</span> <span class="nav-text">Log Levels</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Log-Level-hierarchy-order"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">Log Level hierarchy order</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Appenders"><span class="nav-number">2.1.2.</span> <span class="nav-text">Appenders</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-Implementation-of-Using-External-Configuration-File"><span class="nav-number">2.2.</span> <span class="nav-text">Basic Implementation of Using External Configuration File</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">3.</span> <span class="nav-text">Reference</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -401,18 +357,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">71</span>
+          <span class="site-state-item-count">72</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

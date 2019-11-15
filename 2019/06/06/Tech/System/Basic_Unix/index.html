@@ -49,18 +49,18 @@
   };
 </script>
 
-  <meta name="description" content="About this pageThis page is about the use of vi editor and some basic syntax in UNIX.The vi Editor2 modes of operation- Command mode: Input the commend - Input mode: Input to the document">
+  <meta name="description" content="About this pageThis page is about the use of vi editor and some basic syntax in UNIX.The vi Editor2 modes of operation">
 <meta name="keywords" content="Unix">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Syntax of Unix">
 <meta property="og:url" content="http://yoursite.com/2019/06/06/Tech/System/Basic_Unix/index.html">
 <meta property="og:site_name" content="Hi, Shihao">
-<meta property="og:description" content="About this pageThis page is about the use of vi editor and some basic syntax in UNIX.The vi Editor2 modes of operation- Command mode: Input the commend - Input mode: Input to the document">
+<meta property="og:description" content="About this pageThis page is about the use of vi editor and some basic syntax in UNIX.The vi Editor2 modes of operation">
 <meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2019-10-19T23:46:25.455Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Syntax of Unix">
-<meta name="twitter:description" content="About this pageThis page is about the use of vi editor and some basic syntax in UNIX.The vi Editor2 modes of operation- Command mode: Input the commend - Input mode: Input to the document">
+<meta name="twitter:description" content="About this pageThis page is about the use of vi editor and some basic syntax in UNIX.The vi Editor2 modes of operation">
 
 <link rel="canonical" href="http://yoursite.com/2019/06/06/Tech/System/Basic_Unix/">
 
@@ -225,13 +225,6 @@
 
               <time title="Created: 2019-06-06 18:06:52" itemprop="dateCreated datePublished" datetime="2019-06-06T18:06:52-04:00">2019-06-06</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-19 19:46:25" itemprop="dateModified" datetime="2019-10-19T19:46:25-04:00">2019-10-19</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -261,11 +254,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="About-this-page"><a href="#About-this-page" class="headerlink" title="About this page"></a>About this page</h1><p>This page is about the use of vi editor and some basic syntax in UNIX.</p><h1 id="The-vi-Editor"><a href="#The-vi-Editor" class="headerlink" title="The vi Editor"></a>The vi Editor</h1><p>2 modes of operation</p><pre><code>- Command mode: Input the commend
-- Input mode: Input to the document
-</code></pre><a id="more"></a>
+        <h1 id="About-this-page"><a href="#About-this-page" class="headerlink" title="About this page"></a>About this page</h1><p>This page is about the use of vi editor and some basic syntax in UNIX.</p><h1 id="The-vi-Editor"><a href="#The-vi-Editor" class="headerlink" title="The vi Editor"></a>The vi Editor</h1><p>2 modes of operation</p><a id="more"></a>
 
-<h2 id="vi-Command"><a href="#vi-Command" class="headerlink" title="vi Command"></a>vi Command</h2><p>Esc - Switch to existing model</p>
+<pre><code>- Command mode: Input the commend
+- Input mode: Input to the document
+</code></pre><h2 id="vi-Command"><a href="#vi-Command" class="headerlink" title="vi Command"></a>vi Command</h2><p>Esc - Switch to existing model</p>
 <h3 id="Switch-to-Input-Model"><a href="#Switch-to-Input-Model" class="headerlink" title="Switch to Input Model"></a>Switch to Input Model</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">i - Moves to input mode</span><br><span class="line">I - Moves to input mode ñ insert at start of line</span><br><span class="line">a - Moves to input mode</span><br><span class="line">A - Moves to input mode ñ append at end of line</span><br><span class="line">o - Moves to text mode - opens up a new line below cursor</span><br><span class="line">O - Moves to text mode - opens up a new line above cursor</span><br></pre></td></tr></table></figure>
 <h3 id="Useful-Command"><a href="#Useful-Command" class="headerlink" title="Useful Command"></a>Useful Command</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">x - Delete a character</span><br><span class="line">nx - Delete n characters where n is any number</span><br><span class="line">dw - Delete a word</span><br><span class="line">ndw - Delete n words where n is any number</span><br><span class="line">dd - Delete or cut a line</span><br><span class="line">ndd - Delete n lines where n is any number   </span><br><span class="line">yy - Copies a line into a buffer ñ ex: 3yy will copy 3 lines</span><br><span class="line">yw - Copies a word into a buffer ñ ex: 7yw copies 7 words</span><br><span class="line">p - Paste the copied lines </span><br><span class="line">u - undo</span><br><span class="line">CTRL-r - redo</span><br><span class="line">/xyz -search for &quot;xyz&quot;    n for next)</span><br><span class="line">. - do the last command again</span><br></pre></td></tr></table></figure>
 <h3 id="Navigation-Command"><a href="#Navigation-Command" class="headerlink" title="Navigation Command"></a>Navigation Command</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">:1 - Take me to the first line</span><br><span class="line">:n - Take me to the nth line</span><br><span class="line">G - Take me to the bottom of the file</span><br><span class="line">h  (left cursor)</span><br><span class="line">j   (cursor down)</span><br><span class="line">k   (cursor up)</span><br><span class="line">l    (cursor right)</span><br></pre></td></tr></table></figure>
@@ -396,18 +389,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">71</span>
+          <span class="site-state-item-count">72</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

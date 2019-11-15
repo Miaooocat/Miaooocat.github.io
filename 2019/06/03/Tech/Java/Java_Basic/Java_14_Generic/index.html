@@ -49,18 +49,18 @@
   };
 </script>
 
-  <meta name="description" content="OverviewGenerics allow you to specify the type of object that another object should deal with in a dynamic wayJava Generic Type Nameing Convension E - Element K - Key N - Number T - Type V - Value S,U">
+  <meta name="description" content="OverviewGenerics allow you to specify the type of object that another object should deal with in a dynamic way">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java Study Notes(14) Generic">
 <meta property="og:url" content="http://yoursite.com/2019/06/03/Tech/Java/Java_Basic/Java_14_Generic/index.html">
 <meta property="og:site_name" content="Hi, Shihao">
-<meta property="og:description" content="OverviewGenerics allow you to specify the type of object that another object should deal with in a dynamic wayJava Generic Type Nameing Convension E - Element K - Key N - Number T - Type V - Value S,U">
+<meta property="og:description" content="OverviewGenerics allow you to specify the type of object that another object should deal with in a dynamic way">
 <meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2019-10-19T23:46:25.461Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java Study Notes(14) Generic">
-<meta name="twitter:description" content="OverviewGenerics allow you to specify the type of object that another object should deal with in a dynamic wayJava Generic Type Nameing Convension E - Element K - Key N - Number T - Type V - Value S,U">
+<meta name="twitter:description" content="OverviewGenerics allow you to specify the type of object that another object should deal with in a dynamic way">
 
 <link rel="canonical" href="http://yoursite.com/2019/06/03/Tech/Java/Java_Basic/Java_14_Generic/">
 
@@ -225,13 +225,6 @@
 
               <time title="Created: 2019-06-03 12:06:52" itemprop="dateCreated datePublished" datetime="2019-06-03T12:06:52-04:00">2019-06-03</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-19 19:46:25" itemprop="dateModified" datetime="2019-10-19T19:46:25-04:00">2019-10-19</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -261,15 +254,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>Generics allow you to specify the type of object that another object should deal with in a dynamic way</p><h1 id="Java-Generic-Type-Nameing-Convension"><a href="#Java-Generic-Type-Nameing-Convension" class="headerlink" title="Java Generic Type Nameing Convension"></a>Java Generic Type Nameing Convension</h1><ul>
+        <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>Generics allow you to specify the type of object that another object should deal with in a dynamic way</p><a id="more"></a>
+<h1 id="Java-Generic-Type-Nameing-Convension"><a href="#Java-Generic-Type-Nameing-Convension" class="headerlink" title="Java Generic Type Nameing Convension"></a>Java Generic Type Nameing Convension</h1><ul>
 <li>E - Element</li>
 <li>K - Key</li>
 <li>N - Number</li>
 <li>T - Type</li>
 <li>V - Value</li>
 <li>S,U,V etc. - 2nd, 3rd, 4th types</li>
-</ul><a id="more"></a>
-
+</ul>
 <h1 id="Type-Erasure"><a href="#Type-Erasure" class="headerlink" title="Type Erasure"></a>Type Erasure</h1><p>Generic type information does not exist at runtime. Generic type will be replaced with simple types.</p>
 <h1 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h1><p>It should be noted that only reference type can replace the generic type. Primitives are not allowed(Wrapper classes could help).<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public class GenericClass&lt;T&gt;&#123;</span><br><span class="line">    public void add(T type)&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    public T get(String id)&#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">GenericClass&lt;String&gt; gc = new GenericClass&lt;&gt;();</span><br></pre></td></tr></table></figure></p>
 <h1 id="Polymorphism-is-not-allowed"><a href="#Polymorphism-is-not-allowed" class="headerlink" title="Polymorphism is not allowed"></a>Polymorphism is not allowed</h1><h1 id="Bounded-Type-Parameters"><a href="#Bounded-Type-Parameters" class="headerlink" title="Bounded Type Parameters"></a>Bounded Type Parameters</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public class GenericClass&lt;T extends Storable&gt;&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -292,16 +285,16 @@
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2019/06/03/Tech/Java/Java_Basic/Java_5_Enum/" rel="next" title="Java Study Notes(5) Enum">
-                  <i class="fa fa-chevron-left"></i> Java Study Notes(5) Enum
+                <a href="/2019/06/02/Tech/Java/Java_Basic/Java_3_Objective_Oriented/" rel="next" title="Java Study Notes(3) Objective Oriented Concept">
+                  <i class="fa fa-chevron-left"></i> Java Study Notes(3) Objective Oriented Concept
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2019/06/03/Tech/Java/Java_Basic/Java_15_JUnit_Mockito/" rel="prev" title="Java Study Notes(15) JUnit and Mockito">
-                  Java Study Notes(15) JUnit and Mockito <i class="fa fa-chevron-right"></i>
+                <a href="/2019/06/03/Tech/Java/Java_Basic/Java_5_Enum/" rel="prev" title="Java Study Notes(5) Enum">
+                  Java Study Notes(5) Enum <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -355,18 +348,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">71</span>
+          <span class="site-state-item-count">72</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

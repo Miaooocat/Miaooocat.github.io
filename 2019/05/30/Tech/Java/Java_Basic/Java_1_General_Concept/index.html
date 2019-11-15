@@ -49,18 +49,18 @@
   };
 </script>
 
-  <meta name="description" content="JDK, JRE, JVMJDK(Java Development Kit) is a tool used to to compile, document and package Java programs. It contains JRE + development tools.JRE(Java Runtime Environment) refers to a runtime environme">
+  <meta name="description" content="JDK, JRE, JVMJDK(Java Development Kit) is a tool used by developer. It includes JRE, Java compiler and other tools(such as Javadoc). In Eclipse, it can compile Java program without JDK, since it has i">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java Study Notes(1) General Concept">
 <meta property="og:url" content="http://yoursite.com/2019/05/30/Tech/Java/Java_Basic/Java_1_General_Concept/index.html">
 <meta property="og:site_name" content="Hi, Shihao">
-<meta property="og:description" content="JDK, JRE, JVMJDK(Java Development Kit) is a tool used to to compile, document and package Java programs. It contains JRE + development tools.JRE(Java Runtime Environment) refers to a runtime environme">
+<meta property="og:description" content="JDK, JRE, JVMJDK(Java Development Kit) is a tool used by developer. It includes JRE, Java compiler and other tools(such as Javadoc). In Eclipse, it can compile Java program without JDK, since it has i">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-19T23:46:25.464Z">
+<meta property="og:updated_time" content="2019-11-13T03:25:30.162Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java Study Notes(1) General Concept">
-<meta name="twitter:description" content="JDK, JRE, JVMJDK(Java Development Kit) is a tool used to to compile, document and package Java programs. It contains JRE + development tools.JRE(Java Runtime Environment) refers to a runtime environme">
+<meta name="twitter:description" content="JDK, JRE, JVMJDK(Java Development Kit) is a tool used by developer. It includes JRE, Java compiler and other tools(such as Javadoc). In Eclipse, it can compile Java program without JDK, since it has i">
 
 <link rel="canonical" href="http://yoursite.com/2019/05/30/Tech/Java/Java_Basic/Java_1_General_Concept/">
 
@@ -225,13 +225,6 @@
 
               <time title="Created: 2019-05-30 18:06:52" itemprop="dateCreated datePublished" datetime="2019-05-30T18:06:52-04:00">2019-05-30</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-19 19:46:25" itemprop="dateModified" datetime="2019-10-19T19:46:25-04:00">2019-10-19</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -261,18 +254,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="JDK-JRE-JVM"><a href="#JDK-JRE-JVM" class="headerlink" title="JDK, JRE, JVM"></a>JDK, JRE, JVM</h1><p><strong>JDK(Java Development Kit)</strong> is a tool used to to compile, document and package Java programs. It contains JRE + development tools.</p><p><strong>JRE(Java Runtime Environment)</strong> refers to a runtime environment in which Java bytecode can be executed. It’s an implementation of the JVM which physically exists.</p><a id="more"></a>
-
-<p><strong>JVM(Java Virtual Machine)</strong> is an abstract machine. It is a specification that provides a run-time environment in which Java bytecode can be executed. </p>
-<h1 id="Java-is-statically-strongly-manifestly-typed-programming-language"><a href="#Java-is-statically-strongly-manifestly-typed-programming-language" class="headerlink" title="Java is statically, strongly, manifestly typed programming language"></a>Java is statically, strongly, manifestly typed programming language</h1><h2 id="Statically-Typed-vs-Dynamically-Typed"><a href="#Statically-Typed-vs-Dynamically-Typed" class="headerlink" title="Statically Typed vs. Dynamically Typed"></a>Statically Typed vs. Dynamically Typed</h2><p><strong>Statically Typed</strong>: Data types are checked at compile time. Thus, varaible need to be defined before using. (Java)</p>
-<p><strong>Dynamically Typed</strong>: Types are checked at runtime. A target may hold a binding to any kind of object. (Python)</p>
-<h2 id="Manifestly-Typed-vs-Type-Inferred"><a href="#Manifestly-Typed-vs-Type-Inferred" class="headerlink" title="Manifestly Typed vs. Type Inferred"></a>Manifestly Typed vs. Type Inferred</h2><p><strong>Manifestly Typed</strong>: Variable types must be declared.</p>
-<p><strong>Type Inferred</strong>: Variable types are deduced by context (Thus no need to provide type) (Java 1.8 has introduced Type Inferred (Lambda Expression))</p>
-<h2 id="Strongly-Typed-vs-Weakly-Typed"><a href="#Strongly-Typed-vs-Weakly-Typed" class="headerlink" title="Strongly Typed vs. Weakly Typed"></a>Strongly Typed vs. Weakly Typed</h2><p><strong>Strongly Typed</strong>: Types are restricted within their own bounds<br>Once assigned a value of a particular kind, the object must obey rules about how it can interact with other objects</p>
-<p><strong>Weakly Typed</strong>: A value of one type can be treated as another<br>Example: a=10; b=”10” add(a,b); C and PHP is weekly type</p>
-<h2 id="Java-is-both-compiler-language-and-interpreted-language"><a href="#Java-is-both-compiler-language-and-interpreted-language" class="headerlink" title="Java is both compiler language and interpreted language"></a>Java is both compiler language and interpreted language</h2><p><strong>Compiler languages</strong>: Compilers convert source code to binary machine code<br>The <strong>machine code</strong> is platform dependent - it cannot be transferred from one platform to another</p>
-<p><strong>Interpreted Languages</strong>: Source code is written in languages such as Bash and SQL<br>An interpreter will read this code and perform the instructions.<br>These scripts can be run on any platform where the interpreter exists.</p>
-<p><strong>Java is both</strong>.<br><strong>Java source code</strong> is compiled to <strong>Java Byte Code</strong>. <strong>Java Byte Code</strong> is then interpreted by the <strong>Java Virtual Machine(JVM)</strong>. Thus, Java <strong>write one and run anywhere</strong>.<br>Java source code -&gt; Convert to Java byte code(by compiler) -&gt; Java virtual machine(Platform dependent) -&gt; Machine code</p>
+        <h1 id="JDK-JRE-JVM"><a href="#JDK-JRE-JVM" class="headerlink" title="JDK, JRE, JVM"></a>JDK, JRE, JVM</h1><p><strong>JDK(Java Development Kit)</strong> is a tool used by developer. It includes JRE, Java compiler and other tools(such as Javadoc). In Eclipse, it can compile Java program without JDK, since it has its own version of compiler. Yet, Maven in Eclipse still requires JDK.</p><a id="more"></a>
+<p><strong>JRE(Java Runtime Environment)</strong> refers to a runtime environment in which Java bytecode can be executed. It’s an implementation of the JVM which physically exists. JRE allow .class file to be executed.</p>
+<p><strong>JVM(Java Virtual Machine)</strong> is an abstract machine. It is a specification that provides a run-time environment in which Java bytecode can be executed. Our application is running on the JVM. JVM is often in an application server that deals with TCP/IP, HTTP, SSL protocol and so on. </p>
+<h1 id="Java-is-statically-strongly-manifestly-typed-programming-language"><a href="#Java-is-statically-strongly-manifestly-typed-programming-language" class="headerlink" title="Java is statically, strongly, manifestly typed programming language"></a>Java is statically, strongly, manifestly typed programming language</h1><h2 id="Statically-Typed"><a href="#Statically-Typed" class="headerlink" title="Statically Typed"></a>Statically Typed</h2><p><strong>Statically Typed</strong> means that data types are checked at compile time. Thus, varaible need to be defined before using. An opposite type is <strong>Dynamically Typed</strong>. In Dynamically Typed, yypes are checked at runtime. A target may hold a binding to any kind of object. An example could be found like Python.</p>
+<h2 id="Strongly-Typed"><a href="#Strongly-Typed" class="headerlink" title="Strongly Typed"></a>Strongly Typed</h2><p><strong>Strongly Typed</strong> means that types are restricted within their own bounds. Once assigned a value of a particular kind, the object must obey rules about how it can interact with other objects. An opposite type is <strong>weakly Typed</strong>: A value of one type can be treated as another. <strong>Example</strong>: a=10; b=”10” add(a,b); C and PHP is weekly type</p>
+<h2 id="Manifestly-Typed"><a href="#Manifestly-Typed" class="headerlink" title="Manifestly Typed"></a>Manifestly Typed</h2><p><strong>Manifestly Typed</strong> means that variable types must be declared. An opposite type is <strong>Type Inferred</strong>, where variable types are deduced by context. It should noted in Java 1.8, an Lambda Expression helps with Type inferred.</p>
+<h2 id="Compiler-language-and-interpreted-language"><a href="#Compiler-language-and-interpreted-language" class="headerlink" title="Compiler language and interpreted language"></a>Compiler language and interpreted language</h2><p>Java is both <strong>Compiler languages</strong> and <strong>Interpreted Languages</strong>. <strong>Java source code</strong> is compiled to <strong>Java Byte Code</strong>. <strong>Java Byte Code</strong> is then interpreted by the <strong>Java Virtual Machine(JVM)</strong>. Thus, Java <strong>write one and run anywhere</strong>.</p>
+<p>Java source code -&gt; Convert to Java byte code(by compiler) -&gt; Java virtual machine(Platform dependent) -&gt; Machine code</p>
 
     </div>
 
@@ -338,7 +327,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JDK-JRE-JVM"><span class="nav-number">1.</span> <span class="nav-text">JDK, JRE, JVM</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-is-statically-strongly-manifestly-typed-programming-language"><span class="nav-number">2.</span> <span class="nav-text">Java is statically, strongly, manifestly typed programming language</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Statically-Typed-vs-Dynamically-Typed"><span class="nav-number">2.1.</span> <span class="nav-text">Statically Typed vs. Dynamically Typed</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Manifestly-Typed-vs-Type-Inferred"><span class="nav-number">2.2.</span> <span class="nav-text">Manifestly Typed vs. Type Inferred</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Strongly-Typed-vs-Weakly-Typed"><span class="nav-number">2.3.</span> <span class="nav-text">Strongly Typed vs. Weakly Typed</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-is-both-compiler-language-and-interpreted-language"><span class="nav-number">2.4.</span> <span class="nav-text">Java is both compiler language and interpreted language</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JDK-JRE-JVM"><span class="nav-number">1.</span> <span class="nav-text">JDK, JRE, JVM</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-is-statically-strongly-manifestly-typed-programming-language"><span class="nav-number">2.</span> <span class="nav-text">Java is statically, strongly, manifestly typed programming language</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Statically-Typed"><span class="nav-number">2.1.</span> <span class="nav-text">Statically Typed</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Strongly-Typed"><span class="nav-number">2.2.</span> <span class="nav-text">Strongly Typed</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Manifestly-Typed"><span class="nav-number">2.3.</span> <span class="nav-text">Manifestly Typed</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Compiler-language-and-interpreted-language"><span class="nav-number">2.4.</span> <span class="nav-text">Compiler language and interpreted language</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -352,18 +341,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">71</span>
+          <span class="site-state-item-count">72</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
