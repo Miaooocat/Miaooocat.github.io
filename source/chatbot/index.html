@@ -9,10 +9,6 @@
     </head>
 
     <body>
-        <div id="lang-panel">
-            <a class="lang" href="indexEn.html">English</a>
-            <a class="lang selected" href="#">中</a>
-        </div>
         <div id="mobile" :class="{ 'has-prompt': hasPrompt }">
             <div id="mobile-head">
                 <div id="mobile-head-title">与Shihao聊天中</div>
@@ -20,7 +16,6 @@
             <div id="mobile-body">
                 <div id="mobile-body-bg"></div>
                 <div id="mobile-body-content">
-                    <!--<div class="msg-time">21:40</div>-->
                     <div id="mock-msg-row" class="msg-row">
                         <div id="mock-msg" class="msg" v-html="latestMsgContent"></div>
                     </div>
