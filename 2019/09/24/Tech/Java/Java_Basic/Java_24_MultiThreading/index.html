@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en,default">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.8.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icon.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icon.jpg">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.4.2',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="Concurrency OverviewConcurrency is when a program can perform more than one thing at once. There are two approaches in computer science, namely multi-threading, and multi-processing.">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java Study Notes(24) Multi-Threading">
+<meta property="og:url" content="http://yoursite.com/2019/09/24/Tech/Java/Java_Basic/Java_24_MultiThreading/index.html">
+<meta property="og:site_name" content="Hi, Shihao">
+<meta property="og:description" content="Concurrency OverviewConcurrency is when a program can perform more than one thing at once. There are two approaches in computer science, namely multi-threading, and multi-processing.">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-27T02:12:52.414Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java Study Notes(24) Multi-Threading">
+<meta name="twitter:description" content="Concurrency OverviewConcurrency is when a program can perform more than one thing at once. There are two approaches in computer science, namely multi-threading, and multi-processing.">
+
+<link rel="canonical" href="http://yoursite.com/2019/09/24/Tech/Java/Java_Basic/Java_24_MultiThreading/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Java Study Notes(24) Multi-Threading | Hi, Shihao</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hi, Shihao</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-empire"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-notes">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-pencil"></i>Notes</a>
+
+  </li>
+        <li class="menu-item menu-item-blog">
+
+    <a href="/blog/" rel="section"><i class="fa fa-fw fa-angle-double-down"></i>Blog</a>
+
+  </li>
+        <li class="menu-item menu-item-tag">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-flask"></i>Tag</a>
+
+  </li>
+        <li class="menu-item menu-item-music">
+
+    <a href="/music/" rel="section"><i class="fa fa-fw fa-music"></i>Music</a>
+
+  </li>
+        <li class="menu-item menu-item-timeline">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-backward"></i>Timeline</a>
+
+  </li>
+        <li class="menu-item menu-item-about-me">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-rebel"></i>About-me</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/24/Tech/Java/Java_Basic/Java_24_MultiThreading/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Shihao Miao">
+      <meta itemprop="description" content="坠欢莫拾，酒痕在衣">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi, Shihao">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Java Study Notes(24) Multi-Threading
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-09-24 16:19:11" itemprop="dateCreated datePublished" datetime="2019-09-24T16:19:11-04:00">2019-09-24</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Software-Development/" itemprop="url" rel="index">
+                    <span itemprop="name">Software Development</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Software-Development/Java-Programming/" itemprop="url" rel="index">
+                    <span itemprop="name">Java Programming</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Concurrency-Overview"><a href="#Concurrency-Overview" class="headerlink" title="Concurrency Overview"></a>Concurrency Overview</h1><p>Concurrency is when a program can perform more than one thing at once. There are two approaches in computer science, namely multi-threading, and multi-processing.</p><a id="more"></a>
+<h2 id="Multi-Threading-vs-Multi-Process"><a href="#Multi-Threading-vs-Multi-Process" class="headerlink" title="Multi-Threading vs. Multi-Process"></a>Multi-Threading vs. Multi-Process</h2><h3 id="Multi-process"><a href="#Multi-process" class="headerlink" title="Multi-process:"></a>Multi-process:</h3><ul>
+<li>Each process has an address in memory. In other words, each process allocates a separate memory area.</li>
+<li>A process is heavyweight</li>
+<li>Cost of communication between the process is high</li>
+</ul>
+<h3 id="Multi-thread"><a href="#Multi-thread" class="headerlink" title="Multi-thread:"></a>Multi-thread:</h3><ul>
+<li>Threads share the same address space</li>
+<li>A thread is lightweight</li>
+<li>Cost of communication between the thread is low</li>
+</ul>
+<h1 id="Concurrency-with-Java"><a href="#Concurrency-with-Java" class="headerlink" title="Concurrency with Java"></a>Concurrency with Java</h1><p>In Java, concurrency could be achieved by multithreading.<br>In Java, every application has at least one thread - the main thread:</p>
+<pre><code>- Its set of instructions are the code in the main() method
+- Starts running when main() is invoked
+</code></pre><p>We can create other threads</p>
+<pre><code>- These will run concurrently with main thread 
+- Background system threads also compete with our threads for CPU time
+- The JVM&apos;s thread scheduler decides which one runs
+</code></pre><h1 id="Thread-States"><a href="#Thread-States" class="headerlink" title="Thread States"></a>Thread States</h1><p>Thread could have different states. The state of thread could be get by using <strong>debug</strong> mode or use Thread.State getState().</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Thread.<span class="function">State <span class="title">getState</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<p>Thread.State is a enum that could have following constants:</p>
+<p><strong>New</strong>: A new thread begins its life cycle in the new state. It remains in this state until the program starts the thread. It is also referred to as a born thread.</p>
+<p><strong>Runnable</strong>: After a newly born thread is started, the thread becomes runnable. A thread in this state is considered to be executing its task.</p>
+<p><strong>Waiting</strong>: Sometimes, a thread transitions to the waiting state while the thread waits for another thread to perform a task. A thread transitions back to the runnable state only when another thread transitions back to the runnable state only when another tread signals the waiting thread to continue executing.</p>
+<p><strong>Timed Waiting</strong>: A runnable thread can enter the timed waiting state for a specified interval of time. A thread in  this state transitions back to the runnable state when that time interval expires or when the event it is waiting for occurs </p>
+<p><strong>Terminated(Dead)</strong>: A runnable thread enters the terminated state when it complete its task or otherwise terminates.</p>
+<h1 id="Thread-Priorities"><a href="#Thread-Priorities" class="headerlink" title="Thread Priorities"></a>Thread Priorities</h1><p>Every Java thread has a priority that helps the operating system determine the order in which threads are schedulled. Java thread priorities are in the range between MIN_PRIORIITY(a constant of 1) and MAX_PRIORITY (a constant of 10). By default, every thread is given priority NORM_PRIORITY(a constant of 5).</p>
+<p>Threads with higher priority are more important to a program and should be allocated processor time before lower-priority threads. However, thread priorities cannot guarantee the order in which threads execute and are very much plaform dependent.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ThreadDemo t1 = <span class="keyword">new</span> ThreadDemo(); </span><br><span class="line"><span class="comment">// Default Priority is 5</span></span><br><span class="line">t1.getPriority());</span><br><span class="line">t1.setPriority(<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+<h1 id="Thread-Debuging"><a href="#Thread-Debuging" class="headerlink" title="Thread Debuging"></a>Thread Debuging</h1><p>Thread debuging requires thread dump. A typical way to do that is to use jstack in the Terminal. If that is not possible, a Heap dump could be used to generate thread dump by software like visualVM.</p>
+<p>The thread dump could be analyzed through software or some online website. A feasible approach is to compare thread dump from two jvm, and see the difference.</p>
+<h1 id="Typical-Thread-Hazards"><a href="#Typical-Thread-Hazards" class="headerlink" title="Typical Thread Hazards"></a>Typical Thread Hazards</h1><p>There are some typical issues when working with multi-threading.</p>
+<h3 id="Deadlock"><a href="#Deadlock" class="headerlink" title="Deadlock"></a>Deadlock</h3><pre><code>- A deadlock happens when you have two threads, both of which (in waiting state) are holding a key the other thread wants. 
+</code></pre><h3 id="Livelock"><a href="#Livelock" class="headerlink" title="Livelock"></a>Livelock</h3><pre><code>- Similar to the above deadlock sitution, but threads should be **runnable** state.
+</code></pre><h3 id="Race-Condition"><a href="#Race-Condition" class="headerlink" title="Race Condition"></a>Race Condition</h3><pre><code>- The order in which threads execute affects the outcome.
+</code></pre><h3 id="Starvation"><a href="#Starvation" class="headerlink" title="Starvation"></a>Starvation</h3><pre><code>- (Resource) One thread is unable to get enough time on the CPU due to lack of resources and ends up blocked
+</code></pre><h1 id="Synchronization"><a href="#Synchronization" class="headerlink" title="Synchronization"></a>Synchronization</h1><p>Synchronization is a mechanism by which we can control access to data shared by threads. It allows limited number of thread to access the given resource. There are many way to implement synchronization in Java.</p>
+<h2 id="Synchronized-Method-and-Block"><a href="#Synchronized-Method-and-Block" class="headerlink" title="Synchronized Method and Block"></a>Synchronized Method and Block</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">int</span> <span class="title">getCount</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getCount</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">synchronized</span> (<span class="keyword">this</span>) &#123;</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Lock"><a href="#Lock" class="headerlink" title="Lock"></a>Lock</h2><h2 id="Re-entrant-methods"><a href="#Re-entrant-methods" class="headerlink" title="Re-entrant methods"></a>Re-entrant methods</h2><p>A method is re-entrant if a program can be interrupted and safely be called again</p>
+<pre><code>- It does not depend on the state of the containing class
+- It does not depend on any non-final static data
+- It does not depend on any data that might be changed by other parts of the program
+</code></pre><h2 id="Wait-Notify-Mechanism"><a href="#Wait-Notify-Mechanism" class="headerlink" title="Wait/Notify Mechanism"></a>Wait/Notify Mechanism</h2><pre><code>Provides a flagging system that allows threads to coordinate their activities
+    - Threads can register that they are waiting for a resources
+    - Threads can notify other threads when a resources is available
+</code></pre><h2 id="Lock-1"><a href="#Lock-1" class="headerlink" title="Lock"></a>Lock</h2><pre><code>A system to indicate whether an object is in use by a thread:
+    - If a thread has a lock an object, that means the object is in use by that thread
+    - Any other thread looking to acquire the lock will not be able to, unless multiple locks are available
+</code></pre><h2 id="Atomic-Operations"><a href="#Atomic-Operations" class="headerlink" title="Atomic Operations"></a>Atomic Operations</h2><pre><code>Atomic means cannot be broken down.
+
+Atomic operations are operations which either happen completely or do not happen at they cannot be broken up into small operations
+</code></pre><h1 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h1><h2 id="Create-a-Thread-by-Extending-a-Thread-Class"><a href="#Create-a-Thread-by-Extending-a-Thread-Class" class="headerlink" title="Create a Thread by Extending a Thread Class"></a>Create a Thread by Extending a Thread Class</h2><ol>
+<li>To override run() method in Thread class</li>
+<li>Put the complete logic inside the run method</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyThread</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"MyThread is in execution"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>To call this thread is to create a thread object and call its method<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">t = <span class="keyword">new</span> MyThread (<span class="string">"Thread -1"</span>);</span><br><span class="line">t.start();</span><br></pre></td></tr></table></figure></p>
+<h2 id="Create-thread-by-Implementing-Runnable-Interface"><a href="#Create-thread-by-Implementing-Runnable-Interface" class="headerlink" title="Create thread by Implementing Runnable Interface"></a>Create thread by Implementing Runnable Interface</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Runnable task = () -&gt; &#123;</span><br><span class="line">    String threadName = Thread.currentThread().getName();</span><br><span class="line">    System.out.println(<span class="string">"Hello "</span> + threadName);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">task.run();</span><br><span class="line"></span><br><span class="line">Thread thread = <span class="keyword">new</span> Thread(task);</span><br><span class="line">thread.start();</span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">"Done!"</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="Create-thread-by-Executors"><a href="#Create-thread-by-Executors" class="headerlink" title="Create thread by Executors"></a>Create thread by Executors</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ExecutorService executor = Executors.newSingleThreadExecutor();</span><br><span class="line">executor.submit(() -&gt; &#123;</span><br><span class="line">    String threadName = Thread.currentThread().getName();</span><br><span class="line">    System.out.println(<span class="string">"Hello "</span> + threadName);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="Issue-of-IS-A"><a href="#Issue-of-IS-A" class="headerlink" title="Issue of IS-A"></a>Issue of IS-A</h2><p>This can lead to system design issue. </p>
+<h2 id="Preferred-method-is-HAS-A"><a href="#Preferred-method-is-HAS-A" class="headerlink" title="Preferred method is HAS-A"></a>Preferred method is HAS-A</h2><h2 id="Key-Thread-Methods"><a href="#Key-Thread-Methods" class="headerlink" title="Key Thread Methods"></a>Key Thread Methods</h2><p><strong>start()</strong><br>Launches thread execution - the run() method is called by the JVM</p>
+<p><strong>sleep(long millis)</strong></p>
+<p><strong>yield()</strong></p>
+<p><strong>join()</strong><br>The current running thread will wait for this thread to dead</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">muThread.join</span><br></pre></td></tr></table></figure>
+<h2 id="Synchronized-Keyword"><a href="#Synchronized-Keyword" class="headerlink" title="Synchronized Keyword"></a>Synchronized Keyword</h2><h1 id="Concurrency-Package"><a href="#Concurrency-Package" class="headerlink" title="Concurrency Package"></a>Concurrency Package</h1><p>The java.util.concurrent.atomic package:</p>
+<ul>
+<li>Provides solutions for performing atomic operations</li>
+<li>Deals with atomic primitive arithmetic<ul>
+<li>Caution: Atomic and non-atomic objects are not interchangeable</li>
+</ul>
+</li>
+</ul>
+<h2 id="Interview-Practice"><a href="#Interview-Practice" class="headerlink" title="Interview Practice"></a>Interview Practice</h2><p>Is the following method thread-safe? How to make it thread-safe?</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class MyCounter &#123;</span><br><span class="line">	private static int counter = 0;</span><br><span class="line">	public static int getCount() &#123;</span><br><span class="line">		return counter++;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>The method is not thread-safe.<br>First, the counter++ operation is not atomic, which means it consists more than one atomic operations. </p>
+<p>Second, the counter is a static varable that belong to the class. This is really similar to global variable. Thus, it is not safe.</p>
+<p>Two solution to make it thread safe.<br>1) Add synchronized key word:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class MyCounter &#123;</span><br><span class="line">	private static int counter = 0;</span><br><span class="line">	public static synchronized int getCount() &#123;</span><br><span class="line">		return counter++;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>2) Import java.util.concurrent.atomic.* package. Use the method inside it.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import java.util.concurrent.atomic.AtomicInteger; </span><br><span class="line">public class MyCounter &#123;</span><br><span class="line">	private static AtomicInteger counter = new AtomicInteger(0);</span><br><span class="line">	public static int getCount() &#123;</span><br><span class="line">		return counter.getAndIncrement();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Java/" rel="tag"># Java</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/09/23/Tech/Java/Java_Basic/Java_23_JSON&Jackson/" rel="next" title="Java Study Notes(23) JSON and Jackson">
+                  <i class="fa fa-chevron-left"></i> Java Study Notes(23) JSON and Jackson
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2019/09/25/Tech/Java/Java_Basic/Java_25_Anonymouse_Class/" rel="prev" title="Java Study Notes(25) Anonymouse Class (Not Finished)">
+                  Java Study Notes(25) Anonymouse Class (Not Finished) <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Concurrency-Overview"><span class="nav-number">1.</span> <span class="nav-text">Concurrency Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Multi-Threading-vs-Multi-Process"><span class="nav-number">1.1.</span> <span class="nav-text">Multi-Threading vs. Multi-Process</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Multi-process"><span class="nav-number">1.1.1.</span> <span class="nav-text">Multi-process:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Multi-thread"><span class="nav-number">1.1.2.</span> <span class="nav-text">Multi-thread:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Concurrency-with-Java"><span class="nav-number">2.</span> <span class="nav-text">Concurrency with Java</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Thread-States"><span class="nav-number">3.</span> <span class="nav-text">Thread States</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Thread-Priorities"><span class="nav-number">4.</span> <span class="nav-text">Thread Priorities</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Thread-Debuging"><span class="nav-number">5.</span> <span class="nav-text">Thread Debuging</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Typical-Thread-Hazards"><span class="nav-number">6.</span> <span class="nav-text">Typical Thread Hazards</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Deadlock"><span class="nav-number">6.0.1.</span> <span class="nav-text">Deadlock</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Livelock"><span class="nav-number">6.0.2.</span> <span class="nav-text">Livelock</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Race-Condition"><span class="nav-number">6.0.3.</span> <span class="nav-text">Race Condition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Starvation"><span class="nav-number">6.0.4.</span> <span class="nav-text">Starvation</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Synchronization"><span class="nav-number">7.</span> <span class="nav-text">Synchronization</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Synchronized-Method-and-Block"><span class="nav-number">7.1.</span> <span class="nav-text">Synchronized Method and Block</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lock"><span class="nav-number">7.2.</span> <span class="nav-text">Lock</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Re-entrant-methods"><span class="nav-number">7.3.</span> <span class="nav-text">Re-entrant methods</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Wait-Notify-Mechanism"><span class="nav-number">7.4.</span> <span class="nav-text">Wait/Notify Mechanism</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lock-1"><span class="nav-number">7.5.</span> <span class="nav-text">Lock</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Atomic-Operations"><span class="nav-number">7.6.</span> <span class="nav-text">Atomic Operations</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Implementation"><span class="nav-number">8.</span> <span class="nav-text">Implementation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Create-a-Thread-by-Extending-a-Thread-Class"><span class="nav-number">8.1.</span> <span class="nav-text">Create a Thread by Extending a Thread Class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Create-thread-by-Implementing-Runnable-Interface"><span class="nav-number">8.2.</span> <span class="nav-text">Create thread by Implementing Runnable Interface</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Create-thread-by-Executors"><span class="nav-number">8.3.</span> <span class="nav-text">Create thread by Executors</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Issue-of-IS-A"><span class="nav-number">8.4.</span> <span class="nav-text">Issue of IS-A</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Preferred-method-is-HAS-A"><span class="nav-number">8.5.</span> <span class="nav-text">Preferred method is HAS-A</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Key-Thread-Methods"><span class="nav-number">8.6.</span> <span class="nav-text">Key Thread Methods</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Synchronized-Keyword"><span class="nav-number">8.7.</span> <span class="nav-text">Synchronized Keyword</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Concurrency-Package"><span class="nav-number">9.</span> <span class="nav-text">Concurrency Package</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Interview-Practice"><span class="nav-number">9.1.</span> <span class="nav-text">Interview Practice</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="Shihao Miao" src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Shihao Miao</p>
+  <div class="site-description" itemprop="description">坠欢莫拾，酒痕在衣</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">72</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Miaooocat/" title="GitHub &rarr; https://github.com/Miaooocat/" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:miao.shihaoo@gmail.com" title="E-Mail &rarr; mailto:miao.shihaoo@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Shihao Miao</span>
+</div><div>
+<span id="timeDate">Loading Days...</span><span id="times">Loading Times...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("03/20/2019 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "This website has struggled in this world for "+dnum+" day ";
+        document.getElementById("times").innerHTML = hnum + " hour " + mnum + " min " + snum + " sec";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.getAttribute('pjax') !== null) {
+      element.setAttribute('pjax', '');
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+
+  
+
+  
+
+    </div>
+</body>
+</html>

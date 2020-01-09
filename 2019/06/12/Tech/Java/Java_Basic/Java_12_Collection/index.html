@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en,default">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.8.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icon.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icon.jpg">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.4.2',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="Java Collections FrameworkJava Collections Framework consists of three parts: Interfaces, Implementation Classes and Algorithms.">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java Study Notes(12) Collection">
+<meta property="og:url" content="http://yoursite.com/2019/06/12/Tech/Java/Java_Basic/Java_12_Collection/index.html">
+<meta property="og:site_name" content="Hi, Shihao">
+<meta property="og:description" content="Java Collections FrameworkJava Collections Framework consists of three parts: Interfaces, Implementation Classes and Algorithms.">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-21T02:03:49.178Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java Study Notes(12) Collection">
+<meta name="twitter:description" content="Java Collections FrameworkJava Collections Framework consists of three parts: Interfaces, Implementation Classes and Algorithms.">
+
+<link rel="canonical" href="http://yoursite.com/2019/06/12/Tech/Java/Java_Basic/Java_12_Collection/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Java Study Notes(12) Collection | Hi, Shihao</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hi, Shihao</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-empire"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-notes">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-pencil"></i>Notes</a>
+
+  </li>
+        <li class="menu-item menu-item-blog">
+
+    <a href="/blog/" rel="section"><i class="fa fa-fw fa-angle-double-down"></i>Blog</a>
+
+  </li>
+        <li class="menu-item menu-item-tag">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-flask"></i>Tag</a>
+
+  </li>
+        <li class="menu-item menu-item-music">
+
+    <a href="/music/" rel="section"><i class="fa fa-fw fa-music"></i>Music</a>
+
+  </li>
+        <li class="menu-item menu-item-timeline">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-backward"></i>Timeline</a>
+
+  </li>
+        <li class="menu-item menu-item-about-me">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-rebel"></i>About-me</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/12/Tech/Java/Java_Basic/Java_12_Collection/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Shihao Miao">
+      <meta itemprop="description" content="坠欢莫拾，酒痕在衣">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi, Shihao">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Java Study Notes(12) Collection
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-06-12 12:06:52" itemprop="dateCreated datePublished" datetime="2019-06-12T12:06:52-04:00">2019-06-12</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Software-Development/" itemprop="url" rel="index">
+                    <span itemprop="name">Software Development</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Software-Development/Java-Programming/" itemprop="url" rel="index">
+                    <span itemprop="name">Java Programming</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Java-Collections-Framework"><a href="#Java-Collections-Framework" class="headerlink" title="Java Collections Framework"></a>Java Collections Framework</h1><p>Java Collections Framework consists of three parts: <strong>Interfaces</strong>, <strong>Implementation Classes</strong> and <strong>Algorithms</strong>.</p><a id="more"></a>
+<h2 id="Interfaces-and-Implemetation-Classes"><a href="#Interfaces-and-Implemetation-Classes" class="headerlink" title="Interfaces and Implemetation Classes"></a>Interfaces and Implemetation Classes</h2><h3 id="Collection-Interface"><a href="#Collection-Interface" class="headerlink" title="Collection Interface"></a>Collection Interface</h3><p>Collection Interface is the root of the collection hierarchy. A collection represents a group of objects known as its elements. The Java platform doesn�t provide any direct implementations of this interface. Three key interfaces extend it: <strong>List</strong>, <strong>Queue</strong>, <strong>Set</strong></p>
+<p>The interface has following methods:</p>
+<ul>
+<li><p>To check number of elements in the collection (size, isEmpty)</p>
+</li>
+<li><p>To check whether a given object is in the collection (contains), </p>
+</li>
+<li><p>To add and remove an element from the collection (add, remove)</p>
+</li>
+<li><p>To provide an iterator over the collection (iterator).</p>
+</li>
+</ul>
+<p>Collection interface also provides bulk operations methods such as (containsAll, addAll, removeAll, retainAll, clear).</p>
+<p>The toArray methods are provided as a bridge between collections and older APIs that expect arrays on input.</p>
+<h3 id="Set-Interface"><a href="#Set-Interface" class="headerlink" title="Set Interface"></a>Set Interface</h3><p>Set is a collection that cannot contain duplicate elements. This interface models the mathematical set abstraction and is used to represent sets, such as the deck of cards.</p>
+<p>The Java platform contains three general-purpose Set implementations: HashSet, TreeSet, and LinkedHashSet. Set interface doesn�t allow random-access to an element in the Collection. You can use iterator or foreach loop to traverse the elements of a Set.</p>
+<h4 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h4><p>Java HashSet is the basic implementation the Set interface that is backed by a HashMap. It makes <strong>no guarantees for iteration order</strong> of the set and <strong>permits the null element</strong>.</p>
+<h4 id="LinkedHashSet"><a href="#LinkedHashSet" class="headerlink" title="LinkedHashSet"></a>LinkedHashSet</h4><h4 id="TreeSet-Tree-can-be-ordered-and-sorted"><a href="#TreeSet-Tree-can-be-ordered-and-sorted" class="headerlink" title="TreeSet (Tree can be ordered and sorted)"></a>TreeSet (Tree can be ordered and sorted)</h4><p>TreeSet is an implementation based on a TreeMap. The elements are <strong>ordered using their natural ordering</strong>, or by a Comparator provided at set creation time, depending on which constructor is used.</p>
+<h3 id="List-Interface"><a href="#List-Interface" class="headerlink" title="List Interface"></a>List Interface</h3><h3 id="Queue-Interface"><a href="#Queue-Interface" class="headerlink" title="Queue Interface"></a>Queue Interface</h3><p>Queue is a collection used to hold multiple elements prior to processing. Besides basic Collection operations, a Queue provides additional insertion, extraction, and inspection operations.</p>
+<p>Queues typically, but do not necessarily, order elements in a FIFO (first-in-first-out) manner. Among the exceptions are priority queues, which order elements according to a supplied comparator or the elements� natural ordering. Whatever the ordering used, the head of the queue is the element that would be removed by a call to remove or poll. In a FIFO queue, all new elements are inserted at the tail of the queue.</p>
+<h3 id="List"><a href="#List" class="headerlink" title="List:"></a>List:</h3><h4 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h4><h4 id="Vector"><a href="#Vector" class="headerlink" title="Vector"></a>Vector</h4><p>Same as ArrayList, but is slower and thread safe.</p>
+<h3 id="Queue"><a href="#Queue" class="headerlink" title="Queue:"></a>Queue:</h3><h4 id="PriorityQueue"><a href="#PriorityQueue" class="headerlink" title="PriorityQueue"></a>PriorityQueue</h4><h3 id="List-and-Queue"><a href="#List-and-Queue" class="headerlink" title="List and Queue"></a>List and Queue</h3><h4 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h4><p>Doubly-linked list implementation of the List and Deque interfaces. Implements all optional list operations, and permits all elements (including null).</p>
+<h3 id="Map"><a href="#Map" class="headerlink" title="Map:"></a>Map:</h3><h4 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h4><p>Hash table based implementation of the Map interface. This implementation provides all of the optional map operations and permits null values and the null key. HashMap class is roughly equivalent to Hashtable, except that it is unsynchronized and permits null. This class makes no guarantees for the order of the map.</p>
+<h4 id="TreeMap"><a href="#TreeMap" class="headerlink" title="TreeMap"></a>TreeMap</h4><p>A Red-Black tree based NavigableMap implementation. The map is sorted according to the natural ordering of its keys, or by a Comparator provided at map creation time, depending on which constructor is used.</p>
+<h4 id="LinkedHashMap"><a href="#LinkedHashMap" class="headerlink" title="LinkedHashMap"></a>LinkedHashMap</h4><h4 id="Hashtable"><a href="#Hashtable" class="headerlink" title="Hashtable"></a>Hashtable</h4><h3 id="In-Summary"><a href="#In-Summary" class="headerlink" title="In Summary"></a>In Summary</h3><p>Tree and PriorityQueue classes are sorted and ordered.</p>
+<p>Set class doesn’t allow duplicated</p>
+<p>Hash is not ordered and not sorted</p>
+<h2 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h2><p>Algorithms are useful methods to provide some common functionalities, for example searching, sorting and shuffling.</p>
+<h1 id="hashCode-and-equal"><a href="#hashCode-and-equal" class="headerlink" title="hashCode() and equal()"></a>hashCode() and equal()</h1><p>Returns an int hash code value for any given object<br>Also defined in the Object class and can be overridden<br>Typically based on the same things being compared in equals<br>Buckets Objects together<br>Acts as a coarse grained equals()<br>Used as a way of narrowing down a search</p>
+<p>If two objects are equal by equal method then they must have the same hash code.<br>If two objects have the same hash code they do not need to be equal by equal method.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Java/" rel="tag"># Java</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/06/11/Tech/Java/Java_Basic/Java_11_UML/" rel="next" title="Java Study Notes(10) UML">
+                  <i class="fa fa-chevron-left"></i> Java Study Notes(10) UML
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2019/06/13/Tech/Java/Java_Basic/Java_13_Comparable_Comparator/" rel="prev" title="Java Study Notes(14) Comparable vs Comparator">
+                  Java Study Notes(14) Comparable vs Comparator <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-Collections-Framework"><span class="nav-number">1.</span> <span class="nav-text">Java Collections Framework</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Interfaces-and-Implemetation-Classes"><span class="nav-number">1.1.</span> <span class="nav-text">Interfaces and Implemetation Classes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Collection-Interface"><span class="nav-number">1.1.1.</span> <span class="nav-text">Collection Interface</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Set-Interface"><span class="nav-number">1.1.2.</span> <span class="nav-text">Set Interface</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HashSet"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">HashSet</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LinkedHashSet"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">LinkedHashSet</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TreeSet-Tree-can-be-ordered-and-sorted"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">TreeSet (Tree can be ordered and sorted)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#List-Interface"><span class="nav-number">1.1.3.</span> <span class="nav-text">List Interface</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Queue-Interface"><span class="nav-number">1.1.4.</span> <span class="nav-text">Queue Interface</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#List"><span class="nav-number">1.1.5.</span> <span class="nav-text">List:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ArrayList"><span class="nav-number">1.1.5.1.</span> <span class="nav-text">ArrayList</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Vector"><span class="nav-number">1.1.5.2.</span> <span class="nav-text">Vector</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Queue"><span class="nav-number">1.1.6.</span> <span class="nav-text">Queue:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#PriorityQueue"><span class="nav-number">1.1.6.1.</span> <span class="nav-text">PriorityQueue</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#List-and-Queue"><span class="nav-number">1.1.7.</span> <span class="nav-text">List and Queue</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#LinkedList"><span class="nav-number">1.1.7.1.</span> <span class="nav-text">LinkedList</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Map"><span class="nav-number">1.1.8.</span> <span class="nav-text">Map:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap"><span class="nav-number">1.1.8.1.</span> <span class="nav-text">HashMap</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TreeMap"><span class="nav-number">1.1.8.2.</span> <span class="nav-text">TreeMap</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LinkedHashMap"><span class="nav-number">1.1.8.3.</span> <span class="nav-text">LinkedHashMap</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hashtable"><span class="nav-number">1.1.8.4.</span> <span class="nav-text">Hashtable</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#In-Summary"><span class="nav-number">1.1.9.</span> <span class="nav-text">In Summary</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Algorithm"><span class="nav-number">1.2.</span> <span class="nav-text">Algorithm</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hashCode-and-equal"><span class="nav-number">2.</span> <span class="nav-text">hashCode() and equal()</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="Shihao Miao" src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Shihao Miao</p>
+  <div class="site-description" itemprop="description">坠欢莫拾，酒痕在衣</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">72</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Miaooocat/" title="GitHub &rarr; https://github.com/Miaooocat/" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:miao.shihaoo@gmail.com" title="E-Mail &rarr; mailto:miao.shihaoo@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Shihao Miao</span>
+</div><div>
+<span id="timeDate">Loading Days...</span><span id="times">Loading Times...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("03/20/2019 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "This website has struggled in this world for "+dnum+" day ";
+        document.getElementById("times").innerHTML = hnum + " hour " + mnum + " min " + snum + " sec";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.getAttribute('pjax') !== null) {
+      element.setAttribute('pjax', '');
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+
+  
+
+  
+
+    </div>
+</body>
+</html>

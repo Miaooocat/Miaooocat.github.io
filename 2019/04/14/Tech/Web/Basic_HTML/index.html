@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en,default">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.8.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icon.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icon.jpg">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.4.2',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="About this pageThis post is related to HTML. HTML, or HyperText Markup Language, is a markup language used to describe the structure of a web page. The basic syntax is what I learned from freeCodeCamp">
+<meta name="keywords" content="HTML">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Syntax of HTML and HTML5">
+<meta property="og:url" content="http://yoursite.com/2019/04/14/Tech/Web/Basic_HTML/index.html">
+<meta property="og:site_name" content="Hi, Shihao">
+<meta property="og:description" content="About this pageThis post is related to HTML. HTML, or HyperText Markup Language, is a markup language used to describe the structure of a web page. The basic syntax is what I learned from freeCodeCamp">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-19T23:46:25.523Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Syntax of HTML and HTML5">
+<meta name="twitter:description" content="About this pageThis post is related to HTML. HTML, or HyperText Markup Language, is a markup language used to describe the structure of a web page. The basic syntax is what I learned from freeCodeCamp">
+
+<link rel="canonical" href="http://yoursite.com/2019/04/14/Tech/Web/Basic_HTML/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Syntax of HTML and HTML5 | Hi, Shihao</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hi, Shihao</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-empire"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-notes">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-pencil"></i>Notes</a>
+
+  </li>
+        <li class="menu-item menu-item-blog">
+
+    <a href="/blog/" rel="section"><i class="fa fa-fw fa-angle-double-down"></i>Blog</a>
+
+  </li>
+        <li class="menu-item menu-item-tag">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-flask"></i>Tag</a>
+
+  </li>
+        <li class="menu-item menu-item-music">
+
+    <a href="/music/" rel="section"><i class="fa fa-fw fa-music"></i>Music</a>
+
+  </li>
+        <li class="menu-item menu-item-timeline">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-backward"></i>Timeline</a>
+
+  </li>
+        <li class="menu-item menu-item-about-me">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-rebel"></i>About-me</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/14/Tech/Web/Basic_HTML/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Shihao Miao">
+      <meta itemprop="description" content="坠欢莫拾，酒痕在衣">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi, Shihao">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Syntax of HTML and HTML5
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-04-14 18:06:52" itemprop="dateCreated datePublished" datetime="2019-04-14T18:06:52-04:00">2019-04-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Website/" itemprop="url" rel="index">
+                    <span itemprop="name">Website</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Website/HTML/" itemprop="url" rel="index">
+                    <span itemprop="name">HTML</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="About-this-page"><a href="#About-this-page" class="headerlink" title="About this page"></a>About this page</h2><p>This post is related to HTML. HTML, or HyperText Markup Language, is a markup language used to describe the structure of a web page. The basic syntax is what I learned from <a href="https://www.freecodecamp.org/" target="_blank" rel="noopener">freeCodeCamp</a>. The advanced syntax will be on going when I work on my projects.</p><a id="more"></a>
+<h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><p>HTML stands for Hyper Text Markup Language which is used for creating web pages and web applications. </p>
+<p><strong>Hyper Text:</strong> HyperText simply means “Text within Text.” A text has a link within it, is a hypertext.<br><strong>Markup Language:</strong> A markup language is a computer language that is used to apply layout and formatting conventions to a text document.<br><strong>Web Page:</strong> A web page is a document which is commonly written in HTML and translated by a web browser. </p>
+<h3 id="Tags"><a href="#Tags" class="headerlink" title="Tags"></a>Tags</h3><p>HTML documents contain two things:</p>
+<ol>
+<li>content, and</li>
+<li>tags<br>HTML tags are composed of three things: an opening tag, content and ending tag. Some tags are unclosed tags, such as <code>&lt;image&gt; tag, &lt;br&gt; tag</code>. </li>
+</ol>
+<p>When a web browser reads an HTML document, the browser reads it from top to bottom and left to right. HTML tags are used to create HTML documents and render their properties. Each HTML tags have different properties.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--</span><br><span class="line">Content is placed between tags to display data on the web page.</span><br><span class="line">--&gt;</span><br><span class="line">&lt;tag&gt; content &lt;/tag&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Comment"><a href="#Comment" class="headerlink" title="Comment"></a>Comment</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--</span><br><span class="line">Comment</span><br><span class="line">--&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="Insert-image"><a href="#Insert-image" class="headerlink" title="Insert image"></a>Insert image</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--alt element shows when image is not available--&gt;</span><br><span class="line">&lt;img src=&quot;https://bit.ly/fcc-relaxing-cat&quot; alt=&quot;No image.&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>### </p>
+<h3 id="Link-to-Internal-Sections-of-a-Page-with-Anchor-Elements"><a href="#Link-to-Internal-Sections-of-a-Page-with-Anchor-Elements" class="headerlink" title="Link to Internal Sections of a Page with Anchor Elements"></a>Link to Internal Sections of a Page with Anchor Elements</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;#footer&quot;&gt;Jump to Bottom&lt;/a&gt;</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">&lt;footer id=&quot;footer&quot;&gt;Here&lt;/footer&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="Nest-an-Anchor-Element-within-a-Paragraph"><a href="#Nest-an-Anchor-Element-within-a-Paragraph" class="headerlink" title="Nest an Anchor Element within a Paragraph"></a>Nest an Anchor Element within a Paragraph</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">View more &lt;a href=&quot;http://freecatphotoapp.com&quot; target=&quot;_blank&quot;&gt;cat photos&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="Make-Deadlink"><a href="#Make-Deadlink" class="headerlink" title="Make Deadlink"></a>Make Deadlink</h3><p>href=”#”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--it will point back to the website--&gt;</span><br><span class="line">&lt;a href=&quot;#&quot;&gt;cat photos&lt;/a&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Turn-an-Image-into-a-Link"><a href="#Turn-an-Image-into-a-Link" class="headerlink" title="Turn an Image into a Link"></a>Turn an Image into a Link</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;https://bit.ly/fcc-relaxing-cat&quot; alt=&quot;cat.&quot;&gt;&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="Create-a-Bulleted-Unordered-List"><a href="#Create-a-Bulleted-Unordered-List" class="headerlink" title="Create a Bulleted Unordered List"></a>Create a Bulleted Unordered List</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">  &lt;li&gt;milk&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;cheese&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+<p><ul><br>  <li>milk</li><br>  <li>cheese</li><br></ul></p>
+<h3 id="Create-an-Ordered-List"><a href="#Create-an-Ordered-List" class="headerlink" title="Create an Ordered List"></a>Create an Ordered List</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;ol&gt;</span><br><span class="line">  &lt;li&gt;Garfield&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;Sylvester&lt;/li&gt;</span><br><span class="line">&lt;/ol&gt;</span><br></pre></td></tr></table></figure>
+<p><ol><br>  <li>Garfield</li><br>  <li>Sylvester</li><br></ol></p>
+<h3 id="Create-a-Text-Field"><a href="#Create-a-Text-Field" class="headerlink" title="Create a Text Field"></a>Create a Text Field</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;text&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p><input type="text"></p>
+<h3 id="Add-Placeholder-Text-to-a-Text-Field"><a href="#Add-Placeholder-Text-to-a-Text-Field" class="headerlink" title="Add Placeholder Text to a Text Field"></a>Add Placeholder Text to a Text Field</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;text&quot; placeholder=&quot;this is placeholder text&quot;&gt;</span><br></pre></td></tr></table></figure>
+<input type="text" placeholder="this is placeholder text">
+
+<h3 id="Create-a-Form-Element"><a href="#Create-a-Form-Element" class="headerlink" title="Create a Form Element"></a>Create a Form Element</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=&quot;/submit-cat-photo&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;text&quot; placeholder=&quot;cat photo URL&quot;&gt;</span><br><span class="line">    &lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<form action="/submit-cat-photo"><br>    <input type="text" placeholder="cat photo URL"><br>    <button type="submit">Submit</button><br></form><br>### To Require a Field<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=&quot;/submit-cat-photo&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;text&quot; required placeholder=&quot;cat photo URL&quot;&gt;</span><br><span class="line">    &lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure><br><br><form action="/submit-cat-photo"><br>    <input type="text" required placeholder="cat photo URL"><br>    <button type="submit">Submit</button><br></form>
+
+<h3 id="Create-a-Set-of-Radio-Buttons"><a href="#Create-a-Set-of-Radio-Buttons" class="headerlink" title="Create a Set of Radio Buttons"></a>Create a Set of Radio Buttons</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=&quot;/I dont know&quot;&gt;</span><br><span class="line">  &lt;label for=&quot;indoor&quot;&gt; </span><br><span class="line">    &lt;input id=&quot;indoor&quot; type=&quot;radio&quot; name=&quot;indoor-outdoor&quot;&gt;indoor</span><br><span class="line">  &lt;/label&gt;</span><br><span class="line">  &lt;label for=&quot;outdoor&quot;&gt; </span><br><span class="line">    &lt;input id=&quot;outdoor&quot; type=&quot;radio&quot; name=&quot;indoor-outdoor&quot;&gt;outdoor</span><br><span class="line">  &lt;/label&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<form action="/I dont know"><br>  <label for="indoor"><br>    <input id="indoor" type="radio" name="indoor-outdoor">indoor<br>  </label><br>  <label for="outdoor"><br>    <input id="outdoor" type="radio" name="indoor-outdoor">outdoor<br>  </label><br></form>
+
+<h3 id="Create-a-Set-of-Checkboxes"><a href="#Create-a-Set-of-Checkboxes" class="headerlink" title="Create a Set of Checkboxes"></a>Create a Set of Checkboxes</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=&quot;/I dont know&quot;&gt;</span><br><span class="line">    &lt;label for=&quot;Checkbox1&quot;&gt;&lt;input id=&quot;Checkbox1&quot; type=&quot;checkbox&quot; name=&quot;check&quot;&gt; Checkbox1&lt;/label&gt;</span><br><span class="line">    &lt;label for=&quot;Checkbox2&quot;&gt;&lt;input id=&quot;Checkbox2&quot; type=&quot;checkbox&quot; name=&quot;check&quot;&gt; Checkbox2&lt;/label&gt;</span><br><span class="line">    &lt;label for=&quot;Checkbox3&quot;&gt;&lt;input id=&quot;Checkbox3&quot; type=&quot;checkbox&quot; name=&quot;personality&quot;&gt; Checkbox3&lt;/label&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<form action="/I dont know"><br>    <label for="Checkbox1"><input id="Checkbox1" type="checkbox" name="check"> Checkbox1</label><br>    <label for="Checkbox2"><input id="Checkbox2" type="checkbox" name="check"> Checkbox2</label><br>    <label for="Checkbox3"><input id="Checkbox3" type="checkbox" name="personality"> Checkbox3</label><br></form>
+
+<h3 id="Check-Radio-Buttons-and-Checkboxes-by-Default"><a href="#Check-Radio-Buttons-and-Checkboxes-by-Default" class="headerlink" title="Check Radio Buttons and Checkboxes by Default"></a>Check Radio Buttons and Checkboxes by Default</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;label&gt;&lt;input type=&quot;checkbox&quot; name=&quot;personality&quot; checked&gt; Loving&lt;/label&gt;</span><br><span class="line">&lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;indoor-outdoor&quot;&gt; Indoor&lt;/label&gt;</span><br></pre></td></tr></table></figure>
+<label><input type="checkbox" name="personality" checked> Loving</label><br><label><input type="radio" name="indoor-outdoor"> Indoor</label>
+
+<h3 id="Nest-Many-Elements-within-a-Single-div-Element"><a href="#Nest-Many-Elements-within-a-Single-div-Element" class="headerlink" title="Nest Many Elements within a Single div Element"></a>Nest Many Elements within a Single div Element</h3><p>The div element, also known as a division element, is a general purpose container for other elements.</p>
+<h3 id="Basic-html-format"><a href="#Basic-html-format" class="headerlink" title="Basic html format"></a>Basic html format</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;!-- metadata elements --&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;!-- page contents --&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Advanced-Syntax-of-HTML-and-HTML5"><a href="#Advanced-Syntax-of-HTML-and-HTML5" class="headerlink" title="Advanced Syntax of HTML and HTML5"></a>Advanced Syntax of HTML and HTML5</h2><h3 id="Navigation"><a href="#Navigation" class="headerlink" title="Navigation"></a>Navigation</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;nav&gt;</span><br><span class="line">  &lt;ul&gt;</span><br><span class="line">    &lt;li&gt;&lt;a href=&quot;#stealth&quot;&gt;Stealth &amp;amp; Agility&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;&lt;a href=&quot;#combat&quot;&gt;Combat&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;&lt;a href=&quot;#weapons&quot;&gt;Weapons&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">  &lt;/ul&gt;</span><br><span class="line">&lt;/nav&gt;</span><br></pre></td></tr></table></figure>
+<p>The label tag wraps the text for a specific form control item, usually the name or label for a choice. This ties meaning to the item and makes the form more readable. The for attribute on a label tag explicitly associates that label with the form control and is used by screen readers.</p>
+<h1 id="Add-an-Accessible-Date-Picker"><a href="#Add-an-Accessible-Date-Picker" class="headerlink" title="Add an Accessible Date Picker"></a>Add an Accessible Date Picker</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;label for=&quot;input1&quot;&gt;Enter a date:&lt;/label&gt;</span><br><span class="line">&lt;input type=&quot;date&quot; id=&quot;input1&quot; name=&quot;input1&quot;&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="Keyboard-Focus-When-Use-Tab"><a href="#Keyboard-Focus-When-Use-Tab" class="headerlink" title="Keyboard Focus When Use Tab"></a>Keyboard Focus When Use Tab</h1><div tabindex="0">I need keyboard focus!</div>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/HTML/" rel="tag"># HTML</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/04/01/Blog/love,death_and_robot/" rel="next" title="爱，死亡和机器人">
+                  <i class="fa fa-chevron-left"></i> 爱，死亡和机器人
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2019/04/14/Tech/Web/Basic_CSS/" rel="prev" title="Syntax of CSS">
+                  Syntax of CSS <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#About-this-page"><span class="nav-number">1.</span> <span class="nav-text">About this page</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML"><span class="nav-number">1.1.</span> <span class="nav-text">HTML</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tags"><span class="nav-number">1.2.</span> <span class="nav-text">Tags</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Comment"><span class="nav-number">1.3.</span> <span class="nav-text">Comment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Insert-image"><span class="nav-number">1.4.</span> <span class="nav-text">Insert image</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Link-to-Internal-Sections-of-a-Page-with-Anchor-Elements"><span class="nav-number">1.5.</span> <span class="nav-text">Link to Internal Sections of a Page with Anchor Elements</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nest-an-Anchor-Element-within-a-Paragraph"><span class="nav-number">1.6.</span> <span class="nav-text">Nest an Anchor Element within a Paragraph</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Make-Deadlink"><span class="nav-number">1.7.</span> <span class="nav-text">Make Deadlink</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Turn-an-Image-into-a-Link"><span class="nav-number">1.8.</span> <span class="nav-text">Turn an Image into a Link</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-Bulleted-Unordered-List"><span class="nav-number">1.9.</span> <span class="nav-text">Create a Bulleted Unordered List</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-an-Ordered-List"><span class="nav-number">1.10.</span> <span class="nav-text">Create an Ordered List</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-Text-Field"><span class="nav-number">1.11.</span> <span class="nav-text">Create a Text Field</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Add-Placeholder-Text-to-a-Text-Field"><span class="nav-number">1.12.</span> <span class="nav-text">Add Placeholder Text to a Text Field</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-Form-Element"><span class="nav-number">1.13.</span> <span class="nav-text">Create a Form Element</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-Set-of-Radio-Buttons"><span class="nav-number">1.14.</span> <span class="nav-text">Create a Set of Radio Buttons</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-Set-of-Checkboxes"><span class="nav-number">1.15.</span> <span class="nav-text">Create a Set of Checkboxes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Check-Radio-Buttons-and-Checkboxes-by-Default"><span class="nav-number">1.16.</span> <span class="nav-text">Check Radio Buttons and Checkboxes by Default</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nest-Many-Elements-within-a-Single-div-Element"><span class="nav-number">1.17.</span> <span class="nav-text">Nest Many Elements within a Single div Element</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Basic-html-format"><span class="nav-number">1.18.</span> <span class="nav-text">Basic html format</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Advanced-Syntax-of-HTML-and-HTML5"><span class="nav-number">2.</span> <span class="nav-text">Advanced Syntax of HTML and HTML5</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Navigation"><span class="nav-number">2.1.</span> <span class="nav-text">Navigation</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Add-an-Accessible-Date-Picker"><span class="nav-number"></span> <span class="nav-text">Add an Accessible Date Picker</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Keyboard-Focus-When-Use-Tab"><span class="nav-number"></span> <span class="nav-text">Keyboard Focus When Use Tab</span></a></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="Shihao Miao" src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Shihao Miao</p>
+  <div class="site-description" itemprop="description">坠欢莫拾，酒痕在衣</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">72</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Miaooocat/" title="GitHub &rarr; https://github.com/Miaooocat/" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:miao.shihaoo@gmail.com" title="E-Mail &rarr; mailto:miao.shihaoo@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Shihao Miao</span>
+</div><div>
+<span id="timeDate">Loading Days...</span><span id="times">Loading Times...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("03/20/2019 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "This website has struggled in this world for "+dnum+" day ";
+        document.getElementById("times").innerHTML = hnum + " hour " + mnum + " min " + snum + " sec";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.getAttribute('pjax') !== null) {
+      element.setAttribute('pjax', '');
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+
+  
+
+  
+
+    </div>
+</body>
+</html>

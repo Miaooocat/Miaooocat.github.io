@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en,default">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.8.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icon.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icon.jpg">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.4.2',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="RestREST, stands for Representational State Transfer, is an architectural style for distributed system. A service which is built on the REST architecture is called a RESTful service. The underlying pr">
+<meta name="keywords" content="Web">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Rest_Basic (To be continued)">
+<meta property="og:url" content="http://yoursite.com/2019/10/23/Tech/Framework/Rest/Rest_Basic/index.html">
+<meta property="og:site_name" content="Hi, Shihao">
+<meta property="og:description" content="RestREST, stands for Representational State Transfer, is an architectural style for distributed system. A service which is built on the REST architecture is called a RESTful service. The underlying pr">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/2019/10/23/Tech/Framework/Rest/Rest_Basic/img/ResourceIllustration.png">
+<meta property="og:updated_time" content="2019-11-21T01:54:06.260Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Rest_Basic (To be continued)">
+<meta name="twitter:description" content="RestREST, stands for Representational State Transfer, is an architectural style for distributed system. A service which is built on the REST architecture is called a RESTful service. The underlying pr">
+<meta name="twitter:image" content="http://yoursite.com/2019/10/23/Tech/Framework/Rest/Rest_Basic/img/ResourceIllustration.png">
+
+<link rel="canonical" href="http://yoursite.com/2019/10/23/Tech/Framework/Rest/Rest_Basic/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Rest_Basic (To be continued) | Hi, Shihao</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hi, Shihao</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-empire"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-notes">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-pencil"></i>Notes</a>
+
+  </li>
+        <li class="menu-item menu-item-blog">
+
+    <a href="/blog/" rel="section"><i class="fa fa-fw fa-angle-double-down"></i>Blog</a>
+
+  </li>
+        <li class="menu-item menu-item-tag">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-flask"></i>Tag</a>
+
+  </li>
+        <li class="menu-item menu-item-music">
+
+    <a href="/music/" rel="section"><i class="fa fa-fw fa-music"></i>Music</a>
+
+  </li>
+        <li class="menu-item menu-item-timeline">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-backward"></i>Timeline</a>
+
+  </li>
+        <li class="menu-item menu-item-about-me">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-rebel"></i>About-me</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/23/Tech/Framework/Rest/Rest_Basic/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Shihao Miao">
+      <meta itemprop="description" content="坠欢莫拾，酒痕在衣">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi, Shihao">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Rest_Basic (To be continued)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-10-23 18:10:52" itemprop="dateCreated datePublished" datetime="2019-10-23T18:10:52-04:00">2019-10-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Software-Development/" itemprop="url" rel="index">
+                    <span itemprop="name">Software Development</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Rest"><a href="#Rest" class="headerlink" title="Rest"></a>Rest</h1><p>REST, stands for Representational State Transfer, is an architectural style for distributed system. A service which is built on the REST architecture is called a RESTful service. The underlying protocol for REST is HTTP, which is the basic web protocol. </p><a id="more"></a>
+<h1 id="Key-Elements-of-RESTful-Implementation"><a href="#Key-Elements-of-RESTful-Implementation" class="headerlink" title="Key Elements of RESTful Implementation"></a>Key Elements of RESTful Implementation</h1><h2 id="Resources"><a href="#Resources" class="headerlink" title="Resources"></a>Resources</h2><p><strong>Resource</strong> could be considered as <strong>data</strong> stored in the server. <strong>Each resource has unique URL</strong>. Multiple resources with same type could be grouped into <strong>collection</strong>. Resource could also exist outside any collection. Collection could also be stored within a resources. The Figure below demonstrated the relationship. </p>
+<p><img src="img/ResourceIllustration.png" alt="Resource Illustration"></p>
+<h3 id="Resource-Example"><a href="#Resource-Example" class="headerlink" title="Resource Example"></a>Resource Example</h3><p>A web application on a server has records of several employees. Let’s assume the URL of the web application is <a href="http://demo.com" target="_blank" rel="noopener">http://demo.com</a>. Now in order to access an employee record resource via REST, one can issue the command <a href="http://demo.com/employee/1" target="_blank" rel="noopener">http://demo.com/employee/1</a> - This command tells the web server to please provide the details of the employee whose employee number is 1.</p>
+<h2 id="Request-Method"><a href="#Request-Method" class="headerlink" title="Request Method"></a>Request Method</h2><p><strong>Request Method</strong> describe a set of methods that you could do with resource. A browser issues a <strong>GET</strong> verb to instruct the endpoint it wants to get data. However, there are many other verbs available including things like <strong>POST</strong>, <strong>PATCH</strong>, <strong>PUT</strong>, and <strong>DELETE</strong>. </p>
+<table>
+<thead>
+<tr>
+<th>HTTP Verb</th>
+<th>CRUD</th>
+<th>Entire Collection</th>
+<th>Specific Item (e.g. /customers/{id})</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POST</td>
+<td>Create</td>
+<td>201 (Created), ‘Location’ header with link to /customers/{id} containing new ID.</td>
+<td>404 (Not Found), 409 (Conflict) if resource already exists..</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>Read</td>
+<td>200 (OK), list of customers. Use pagination, sorting and filtering to navigate big lists.</td>
+<td>200 (OK), single customer. 404 (Not Found), if ID not found or invalid.</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>Update/Replace</td>
+<td>405 (Method Not Allowed), unless you want to update/replace every resource in the entire collection.</td>
+<td>200 (OK) or 204 (No Content). 404 (Not Found), if ID not found or invalid.</td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td>Update/Modify</td>
+<td>405 (Method Not Allowed), unless you want to modify the collection itself.</td>
+<td>200 (OK) or 204 (No Content). 404 (Not Found), if ID not found or invalid.</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Delete</td>
+<td>405 (Method Not Allowed), unless you want to delete the whole collection—not often desirable.</td>
+<td>desirable.200 (OK). 404 (Not Found), if ID not found or invalid.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Request-Method-Example"><a href="#Request-Method-Example" class="headerlink" title="Request Method Example"></a>Request Method Example</h3><p>So in the case of the earlier example <a href="http://demo.com/employee/1" target="_blank" rel="noopener">http://demo.com/employee/1</a> , the web browser is actually issuing a <strong>GET</strong> Verb because it wants to get the details of the employee record.</p>
+<h2 id="Request-Headers"><a href="#Request-Headers" class="headerlink" title="Request Headers"></a>Request Headers</h2><p>These are additional instructions sent with the request. These might define the type of response required or the authorization details.</p>
+<h2 id="Request-Body"><a href="#Request-Body" class="headerlink" title="Request Body"></a>Request Body</h2><p>Data is sent with the request. Data is normally sent in the request when a POST request is made to the REST web service. In a POST call, the client actually tells the web service that it wants to add a resource to the server. Hence, the request body would have the details of the resource which is required to be added to the server.</p>
+<h2 id="Response-Body"><a href="#Response-Body" class="headerlink" title="Response Body"></a>Response Body</h2><p>This is the main body of the response. So in our example, if we were to query the web server via the request <a href="http://demo.com/employee/1" target="_blank" rel="noopener">http://demo.com/employee/1</a> , the web server might return an XML document with all the details of the employee in the Response Body.</p>
+<h2 id="Response-Status-codes"><a href="#Response-Status-codes" class="headerlink" title="Response Status codes"></a>Response Status codes</h2><p>The respnse status code could be found on the table above. This is normally returned along with the response from the web server.</p>
+<h1 id="RESTful-Architecture"><a href="#RESTful-Architecture" class="headerlink" title="RESTful Architecture"></a>RESTful Architecture</h1><p>An application or architecture considered RESTful or REST-style has the following characteristics</p>
+<p>State and functionality are divided into distributed resources – This means that every resource should be accessible via the normal HTTP commands of GET, POST, PUT, or DELETE. So if someone wanted to get a file from a server, they should be able to issue the GET request and get the file. If they want to put a file on the server, they should be able to either issue the POST or PUT request. And finally, if they wanted to delete a file from the server, they an issue the DELETE request.<br>The architecture is client/server, stateless, layered, and supports caching –<br>Client-server is the typical architecture where the server can be the web server hosting the application, and the client can be as simple as the web browser.<br>Stateless means that the state of the application is not maintained in REST.<br>For example, if you delete a resource from a server using the DELETE command, you cannot expect that delete information to be passed to the next request.</p>
+<p>In order to ensure that the resource is deleted, you would need to issue the GET request. The GET request would be used to first get all the resources on the server. After which one would need to see if the resource was actually deleted.</p>
+<h1 id="RESTFul-Principles-and-Constraints"><a href="#RESTFul-Principles-and-Constraints" class="headerlink" title="RESTFul Principles and Constraints"></a>RESTFul Principles and Constraints</h1><p>The REST architecture is based on a few characteristics which are elaborated below. Any RESTful web service has to comply with the below characteristics in order for it to be called RESTful. These characteristics are also known as design principles which need to be followed when working with RESTful based services.</p>
+<h2 id="RESTFul-Client-Server"><a href="#RESTFul-Client-Server" class="headerlink" title="RESTFul Client-Server"></a>RESTFul Client-Server</h2><p>This is the most fundamental requirement of a REST based architecture. It means that the server will have a RESTful web service which would provide the required functionality to the client. The client send’s a request to the web service on the server. The server would either reject the request or comply and provide an adequate response to the client.</p>
+<h2 id="Stateless"><a href="#Stateless" class="headerlink" title="Stateless"></a>Stateless</h2><h2 id="Cache"><a href="#Cache" class="headerlink" title="Cache"></a>Cache</h2><h2 id="Layered-System"><a href="#Layered-System" class="headerlink" title="Layered System"></a>Layered System</h2><h2 id="Interface-Uniform-Contract"><a href="#Interface-Uniform-Contract" class="headerlink" title="Interface/Uniform Contract"></a>Interface/Uniform Contract</h2><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://www.guru99.com/restful-web-services.html" target="_blank" rel="noopener">https://www.guru99.com/restful-web-services.html</a><br><a href="https://restful-api-design.readthedocs.io/en/latest/resources.html" target="_blank" rel="noopener">https://restful-api-design.readthedocs.io/en/latest/resources.html</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Web/" rel="tag"># Web</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/10/06/Tech/Framework/Spring_Integration/SpringIntegrationMessage/" rel="next" title="Spring Integration - Message">
+                  <i class="fa fa-chevron-left"></i> Spring Integration - Message
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2019/10/29/Blog/OnlineEducation/" rel="prev" title="关于教育的杂谈">
+                  关于教育的杂谈 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Rest"><span class="nav-number">1.</span> <span class="nav-text">Rest</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Key-Elements-of-RESTful-Implementation"><span class="nav-number">2.</span> <span class="nav-text">Key Elements of RESTful Implementation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Resources"><span class="nav-number">2.1.</span> <span class="nav-text">Resources</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Resource-Example"><span class="nav-number">2.1.1.</span> <span class="nav-text">Resource Example</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Request-Method"><span class="nav-number">2.2.</span> <span class="nav-text">Request Method</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Request-Method-Example"><span class="nav-number">2.2.1.</span> <span class="nav-text">Request Method Example</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Request-Headers"><span class="nav-number">2.3.</span> <span class="nav-text">Request Headers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Request-Body"><span class="nav-number">2.4.</span> <span class="nav-text">Request Body</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Response-Body"><span class="nav-number">2.5.</span> <span class="nav-text">Response Body</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Response-Status-codes"><span class="nav-number">2.6.</span> <span class="nav-text">Response Status codes</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RESTful-Architecture"><span class="nav-number">3.</span> <span class="nav-text">RESTful Architecture</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RESTFul-Principles-and-Constraints"><span class="nav-number">4.</span> <span class="nav-text">RESTFul Principles and Constraints</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#RESTFul-Client-Server"><span class="nav-number">4.1.</span> <span class="nav-text">RESTFul Client-Server</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stateless"><span class="nav-number">4.2.</span> <span class="nav-text">Stateless</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cache"><span class="nav-number">4.3.</span> <span class="nav-text">Cache</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Layered-System"><span class="nav-number">4.4.</span> <span class="nav-text">Layered System</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interface-Uniform-Contract"><span class="nav-number">4.5.</span> <span class="nav-text">Interface/Uniform Contract</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">5.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="Shihao Miao" src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Shihao Miao</p>
+  <div class="site-description" itemprop="description">坠欢莫拾，酒痕在衣</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">72</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Miaooocat/" title="GitHub &rarr; https://github.com/Miaooocat/" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:miao.shihaoo@gmail.com" title="E-Mail &rarr; mailto:miao.shihaoo@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Shihao Miao</span>
+</div><div>
+<span id="timeDate">Loading Days...</span><span id="times">Loading Times...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("03/20/2019 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "This website has struggled in this world for "+dnum+" day ";
+        document.getElementById("times").innerHTML = hnum + " hour " + mnum + " min " + snum + " sec";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.getAttribute('pjax') !== null) {
+      element.setAttribute('pjax', '');
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+
+  
+
+  
+
+    </div>
+</body>
+</html>

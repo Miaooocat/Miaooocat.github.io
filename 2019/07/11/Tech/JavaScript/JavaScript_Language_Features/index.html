@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en,default">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.8.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icon.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icon.jpg">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.4.2',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="JavaScript in HTMLJavaScript inside the HTML12345&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; //     function sayHi()&amp;#123;        alert(&amp;quot;Hi!&amp;quot;);    &amp;#125;&amp;lt;/script&amp;gt;">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript(1) Baisc Language Features">
+<meta property="og:url" content="http://yoursite.com/2019/07/11/Tech/JavaScript/JavaScript_Language_Features/index.html">
+<meta property="og:site_name" content="Hi, Shihao">
+<meta property="og:description" content="JavaScript in HTMLJavaScript inside the HTML12345&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; //     function sayHi()&amp;#123;        alert(&amp;quot;Hi!&amp;quot;);    &amp;#125;&amp;lt;/script&amp;gt;">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-19T23:46:25.499Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript(1) Baisc Language Features">
+<meta name="twitter:description" content="JavaScript in HTMLJavaScript inside the HTML12345&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; //     function sayHi()&amp;#123;        alert(&amp;quot;Hi!&amp;quot;);    &amp;#125;&amp;lt;/script&amp;gt;">
+
+<link rel="canonical" href="http://yoursite.com/2019/07/11/Tech/JavaScript/JavaScript_Language_Features/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>JavaScript(1) Baisc Language Features | Hi, Shihao</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hi, Shihao</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-empire"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-notes">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-pencil"></i>Notes</a>
+
+  </li>
+        <li class="menu-item menu-item-blog">
+
+    <a href="/blog/" rel="section"><i class="fa fa-fw fa-angle-double-down"></i>Blog</a>
+
+  </li>
+        <li class="menu-item menu-item-tag">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-flask"></i>Tag</a>
+
+  </li>
+        <li class="menu-item menu-item-music">
+
+    <a href="/music/" rel="section"><i class="fa fa-fw fa-music"></i>Music</a>
+
+  </li>
+        <li class="menu-item menu-item-timeline">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-backward"></i>Timeline</a>
+
+  </li>
+        <li class="menu-item menu-item-about-me">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-rebel"></i>About-me</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/11/Tech/JavaScript/JavaScript_Language_Features/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Shihao Miao">
+      <meta itemprop="description" content="坠欢莫拾，酒痕在衣">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi, Shihao">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JavaScript(1) Baisc Language Features
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-07-11 16:19:11" itemprop="dateCreated datePublished" datetime="2019-07-11T16:19:11-04:00">2019-07-11</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web-Development/" itemprop="url" rel="index">
+                    <span itemprop="name">Web Development</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="JavaScript-in-HTML"><a href="#JavaScript-in-HTML" class="headerlink" title="JavaScript in HTML"></a>JavaScript in HTML</h1><h2 id="JavaScript-inside-the-HTML"><a href="#JavaScript-inside-the-HTML" class="headerlink" title="JavaScript inside the HTML"></a>JavaScript inside the HTML</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt; // </span><br><span class="line">    function sayHi()&#123;</span><br><span class="line">        alert(&quot;Hi!&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure><a id="more"></a>
+<h2 id="JavaScript-as-an-external-file"><a href="#JavaScript-as-an-external-file" class="headerlink" title="JavaScript as an external file"></a>JavaScript as an external file</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;example1.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="Type-of-JavaScript"><a href="#Type-of-JavaScript" class="headerlink" title="Type of JavaScript"></a>Type of JavaScript</h1><p>JavaScript has 6 types that are ‘undefined’, ‘boolean’, ‘string’, ‘number’, ‘object’, ‘function’</p>
+<h2 id="typeof"><a href="#typeof" class="headerlink" title="typeof()"></a>typeof()</h2><p>typeof() is not a function. It is an operator.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">typeof(1); // number</span><br><span class="line">typeof(true); // boolean</span><br><span class="line">typeof(&apos;Hello&apos;); // string</span><br><span class="line">typeof(function()&#123;&#125;); // function</span><br><span class="line">typeof(&#123;&#125;); // object</span><br><span class="line">typeof(null) // object</span><br><span class="line">typeof(undefined) // undefined</span><br><span class="line">typeof(NaN) // number</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// Common type conversion</span><br><span class="line">toString()</span><br><span class="line">Number.parseInt()</span><br><span class="line">Number.parseFloat()</span><br></pre></td></tr></table></figure>
+<h1 id="Variable"><a href="#Variable" class="headerlink" title="Variable"></a>Variable</h1><h2 id="VAR"><a href="#VAR" class="headerlink" title="VAR"></a>VAR</h2><p>var declarations are globally scoped or function/locally scoped. It is <strong>globally scoped</strong> when a var variable is <strong>declared outside a function</strong>. var is <strong>function scoped</strong> when it is <strong>declared within a function</strong>. This means that it is available and can be accessed only within that function.<br>To understand further, look at the example below.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// Global Scoped</span><br><span class="line">var greeter = &quot;hey hi&quot;;</span><br><span class="line"></span><br><span class="line">// Function Scoped</span><br><span class="line">function newFunction() &#123;</span><br><span class="line">    var hello = &quot;hello&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Here, greeter is globally scoped because it exists outside a function while hello is function scoped. So we cannot access the variable hello outside of a function. So if we do this:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var tester = &quot;hey hi&quot;;</span><br><span class="line"></span><br><span class="line">function newFunction() &#123;</span><br><span class="line">    var hello = &quot;hello&quot;;</span><br><span class="line">&#125;</span><br><span class="line">console.log(hello); // error: hello is not defined</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// This will result undefined if we call a var before declare it</span><br><span class="line"></span><br><span class="line">console.log(foo);</span><br><span class="line">var foo = 1;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// This will result undefined if we call a var before declare it</span><br><span class="line"></span><br><span class="line">console.log(foo);</span><br><span class="line">var foo = 1;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// This will result error if we call a let before declare it</span><br><span class="line">console.log(foo);</span><br><span class="line">let foo = 1;</span><br></pre></td></tr></table></figure>
+<h2 id="LET"><a href="#LET" class="headerlink" title="LET"></a>LET</h2><p>let is block scoped. What that means is that a variable created with the let keyword is available inside the “block{}” that it was created in as well as any nested blocks. </p>
+<h2 id="CONST"><a href="#CONST" class="headerlink" title="CONST"></a>CONST</h2><p>const is almost exactly the same as let. However, the only difference is that once you’ve assigned a value to a variable using const, you can’t reassign it to a new value.</p>
+<h1 id="Rest-Parameter"><a href="#Rest-Parameter" class="headerlink" title="Rest Parameter"></a>Rest Parameter</h1><p>Parameter in a function with … at the front called rest parameter.<br>For rest parameter, you could put multiple arguments in side it. It should be noted rest parameter could only be placed at the end.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function sendCars(day, ...allCarIds)&#123;</span><br><span class="line">    allCarIds.forEach( id =&gt; console.log(id))</span><br><span class="line">&#125;</span><br><span class="line">sendCars(&apos;Monday&apos;, 1, 2, 3)</span><br></pre></td></tr></table></figure>
+<h1 id="Destructuring-Arrays"><a href="#Destructuring-Arrays" class="headerlink" title="Destructuring Arrays"></a>Destructuring Arrays</h1><p>Destructuring is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables. That is, we can extract data from arrays and objects and assign them to variables. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// Example 1</span><br><span class="line">let carIds = [1,2,5];</span><br><span class="line">let [car1, car2, car3] = carIds;</span><br><span class="line"></span><br><span class="line">console.log(car1, car2, car3);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// Example 2</span><br><span class="line">//This combines the idea of destructuring Array and Rest parameter</span><br><span class="line">let carIds = [1,2,5];</span><br><span class="line">let car1, remainingCars;</span><br><span class="line">let [car1, ... remainingCars] = carIds;</span><br><span class="line">console.log(car1, car2, car3);</span><br><span class="line"></span><br><span class="line">// Example 3</span><br><span class="line">// Comma could be used to skip the parameter in array.</span><br><span class="line">let [, ... remainingCars] = carIds;</span><br><span class="line">console.log(remainingCars);</span><br></pre></td></tr></table></figure>
+<h1 id="Destructuring-Objects"><a href="#Destructuring-Objects" class="headerlink" title="Destructuring Objects"></a>Destructuring Objects</h1><p>Destructuring Objects is similar to destructing an array but it use the {}. If the variable is declared first, we need to use ().</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let car = &#123; id: 5000, style: &apos;convertible&apos; &#125;</span><br><span class="line">let &#123; id, style &#125; = car;</span><br><span class="line"></span><br><span class="line">console.log(id, style);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let car = &#123; id: 5000, style: &apos;convertible&apos; &#125;</span><br><span class="line">let id, style;</span><br><span class="line">// The bracket is required, otherwise it will get confused</span><br><span class="line">(&#123; id, style &#125; = car);</span><br><span class="line"></span><br><span class="line">console.log(id, style);</span><br></pre></td></tr></table></figure>
+<h1 id="Spread-Syntax"><a href="#Spread-Syntax" class="headerlink" title="Spread Syntax"></a>Spread Syntax</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function startCars(car1, car2, car3)&#123;</span><br><span class="line">    console.log(car1, car2, car3);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let carIds = [100, 300, 500];</span><br><span class="line">startCars(...carIds);</span><br><span class="line">// 100 300 500</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function startCars(car1, car2, car3)&#123;</span><br><span class="line">    console.log(car1, car2, car3);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let carIds = &apos;abc&apos;;</span><br><span class="line">startCars(...carIds);</span><br><span class="line">// a b c</span><br></pre></td></tr></table></figure>
+<h1 id="Operator"><a href="#Operator" class="headerlink" title="Operator"></a>Operator</h1><h2 id="Equality-Operators"><a href="#Equality-Operators" class="headerlink" title="Equality Operators"></a>Equality Operators</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">console.log(1 == 1); // true</span><br><span class="line">console.log(1 === 1); // true</span><br><span class="line">console.log(1 == true); // false</span><br><span class="line">console.log(1 === true); // true</span><br></pre></td></tr></table></figure>
+<h2 id="Conditional-Operators"><a href="#Conditional-Operators" class="headerlink" title="Conditional Operators"></a>Conditional Operators</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// Easy If statement could be converted</span><br><span class="line">console.log( 5 &gt; 4 ? &apos;yes&apos; : &apos;no&apos;)</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/07/03/Tech/Java/Java_Database/JDBC_1/" rel="next" title="JDBC Study Notes(1)">
+                  <i class="fa fa-chevron-left"></i> JDBC Study Notes(1)
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2019/07/17/Tech/JavaScript/JavaScript_Function_and_Block_Scope/" rel="prev" title="JavaScript(2) Function and Scope">
+                  JavaScript(2) Function and Scope <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-in-HTML"><span class="nav-number">1.</span> <span class="nav-text">JavaScript in HTML</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-inside-the-HTML"><span class="nav-number">1.1.</span> <span class="nav-text">JavaScript inside the HTML</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-as-an-external-file"><span class="nav-number">1.2.</span> <span class="nav-text">JavaScript as an external file</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Type-of-JavaScript"><span class="nav-number">2.</span> <span class="nav-text">Type of JavaScript</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#typeof"><span class="nav-number">2.1.</span> <span class="nav-text">typeof()</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Variable"><span class="nav-number">3.</span> <span class="nav-text">Variable</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#VAR"><span class="nav-number">3.1.</span> <span class="nav-text">VAR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LET"><span class="nav-number">3.2.</span> <span class="nav-text">LET</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CONST"><span class="nav-number">3.3.</span> <span class="nav-text">CONST</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Rest-Parameter"><span class="nav-number">4.</span> <span class="nav-text">Rest Parameter</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Destructuring-Arrays"><span class="nav-number">5.</span> <span class="nav-text">Destructuring Arrays</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Destructuring-Objects"><span class="nav-number">6.</span> <span class="nav-text">Destructuring Objects</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spread-Syntax"><span class="nav-number">7.</span> <span class="nav-text">Spread Syntax</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Operator"><span class="nav-number">8.</span> <span class="nav-text">Operator</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Equality-Operators"><span class="nav-number">8.1.</span> <span class="nav-text">Equality Operators</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conditional-Operators"><span class="nav-number">8.2.</span> <span class="nav-text">Conditional Operators</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="Shihao Miao" src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Shihao Miao</p>
+  <div class="site-description" itemprop="description">坠欢莫拾，酒痕在衣</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">72</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Miaooocat/" title="GitHub &rarr; https://github.com/Miaooocat/" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:miao.shihaoo@gmail.com" title="E-Mail &rarr; mailto:miao.shihaoo@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Shihao Miao</span>
+</div><div>
+<span id="timeDate">Loading Days...</span><span id="times">Loading Times...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("03/20/2019 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "This website has struggled in this world for "+dnum+" day ";
+        document.getElementById("times").innerHTML = hnum + " hour " + mnum + " min " + snum + " sec";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.getAttribute('pjax') !== null) {
+      element.setAttribute('pjax', '');
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+
+  
+
+  
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en,default">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.8.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icon.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icon.jpg">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.4.2',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="What is JDBC?JDBC (Java DataBase Connectivity) is an API that enables Java applications to interact with databases.">
+<meta name="keywords" content="Java,Database">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JDBC Study Notes(1)">
+<meta property="og:url" content="http://yoursite.com/2019/07/03/Tech/Java/Java_Database/JDBC_1/index.html">
+<meta property="og:site_name" content="Hi, Shihao">
+<meta property="og:description" content="What is JDBC?JDBC (Java DataBase Connectivity) is an API that enables Java applications to interact with databases.">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-19T23:46:25.476Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JDBC Study Notes(1)">
+<meta name="twitter:description" content="What is JDBC?JDBC (Java DataBase Connectivity) is an API that enables Java applications to interact with databases.">
+
+<link rel="canonical" href="http://yoursite.com/2019/07/03/Tech/Java/Java_Database/JDBC_1/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>JDBC Study Notes(1) | Hi, Shihao</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hi, Shihao</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-empire"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-notes">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-pencil"></i>Notes</a>
+
+  </li>
+        <li class="menu-item menu-item-blog">
+
+    <a href="/blog/" rel="section"><i class="fa fa-fw fa-angle-double-down"></i>Blog</a>
+
+  </li>
+        <li class="menu-item menu-item-tag">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-flask"></i>Tag</a>
+
+  </li>
+        <li class="menu-item menu-item-music">
+
+    <a href="/music/" rel="section"><i class="fa fa-fw fa-music"></i>Music</a>
+
+  </li>
+        <li class="menu-item menu-item-timeline">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-backward"></i>Timeline</a>
+
+  </li>
+        <li class="menu-item menu-item-about-me">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-rebel"></i>About-me</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/03/Tech/Java/Java_Database/JDBC_1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Shihao Miao">
+      <meta itemprop="description" content="坠欢莫拾，酒痕在衣">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi, Shihao">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JDBC Study Notes(1)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-07-03 13:12:17" itemprop="dateCreated datePublished" datetime="2019-07-03T13:12:17-04:00">2019-07-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Software-Development/" itemprop="url" rel="index">
+                    <span itemprop="name">Software Development</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Software-Development/Java-Programming/" itemprop="url" rel="index">
+                    <span itemprop="name">Java Programming</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="What-is-JDBC"><a href="#What-is-JDBC" class="headerlink" title="What is JDBC?"></a>What is JDBC?</h1><p>JDBC (Java DataBase Connectivity) is an API that enables Java applications to interact with databases.</p><a id="more"></a>
+<h1 id="JDBC-Class"><a href="#JDBC-Class" class="headerlink" title="JDBC Class"></a>JDBC Class</h1><p><strong>DriverManager</strong>: The DriverManager class acts as an interface between the user and drivers. It keeps track of the drivers that are available and handles establishing a connection between a database and the appropriate driver. It contains several methods to keep the interaction between the user and drivers.</p>
+<p>There is <strong>only one concrete class</strong> called <strong>DriverManager</strong></p>
+<ul>
+<li>Which manages the drivers!</li>
+<li>Sets up JDBC for use by tell it:<ul>
+<li>The database vendor</li>
+<li>Database location(URL)</li>
+<li>Username &amp; Password</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Connection conn = DriverManager.getConnection(url,user,password)</span><br></pre></td></tr></table></figure>
+<h1 id="JDBC-interface"><a href="#JDBC-interface" class="headerlink" title="JDBC interface"></a>JDBC interface</h1><ol>
+<li><p><strong>Connection</strong>: The Connection object is created by using <strong>getConnection()</strong> method of DriverManager class. DriverManager is the factory for connection.</p>
+<ul>
+<li>Used to establish a connection (session)</li>
+<li>The link between the Java application and the database</li>
+<li>Concretion is provided by DriverManager and is vendor specific</li>
+</ul>
+</li>
+<li><p><strong>Statement</strong>: The Statement object is created by using <strong>createStatement()</strong> method of connection class</p>
+<ul>
+<li>Used as encapsulating layer for SQL statements</li>
+<li>Concretion is provided by Connection and is also vendor-specific<ul>
+<li>i.e. A MySQL statement differs from an Oracle Statement</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>ResultSet</strong>: The object of ResultSet maintains a cursor pointing to a row of a table. Initially, cursor points before the first row. The <strong>executeQuery()</strong> method of Statement interface returns the ResultSet object </p>
+<ul>
+<li>Encapsulates data returned from the database.</li>
+<li>Representsa table of data.</li>
+<li>Returned when we execute a SELECT query through JDBC</li>
+</ul>
+</li>
+<li><p><strong>DatabaseMetaData</strong>: DatabaseMetaData interface provides methods to get metadata of a database product name, database product verson, driver name, name of the total number of tables, the name of the total number of views, etc. The <strong>getMetaData()</strong> method of Connection interface returns te object of DatabaseMetaData</p>
+<ul>
+<li>Provides information about the database as a whole.<ul>
+<li>E.g. how is the database set up? Default values?</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="Driver-Manager-and-JDBC-Drivers"><a href="#Driver-Manager-and-JDBC-Drivers" class="headerlink" title="Driver Manager and JDBC Drivers"></a>Driver Manager and JDBC Drivers</h1><h2 id="DriverManager"><a href="#DriverManager" class="headerlink" title="DriverManager"></a>DriverManager</h2><ul>
+<li>Only concrete class in the API</li>
+<li>Will load the vendor specific driver</li>
+<li>Used to get a Connecton object</li>
+</ul>
+<p>DriverManager needs to be given a driver</p>
+<p>There are four types:<br>(* Important)</p>
+<ul>
+<li>Type 1 Driver – JDBC-ODBC Bridge<ul>
+<li>It connects Java clients to ODBC calls</li>
+<li>Slow, this is not supported after Java 8</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Type 2 Driver – Native API Driver<ul>
+<li>It converts JDBC methods into calls to client-side API on the database side</li>
+<li>Faster than type 1 drivers</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Type 3 Driver – Network Protocol Driver (MiddleWare Driver)<ul>
+<li>Uses network protocol to communicate with a middle tier</li>
+<li>Acts as proxy between the client and server</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Type 4 Driver – Database Protocol Driver (Pure Java Driver)<ul>
+<li>Connects directly to databases, without any native code or middle tier.</li>
+<li>Written in pure Java</li>
+<li>Thin driver</li>
+</ul>
+</li>
+</ul>
+<h1 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h1><p>##<br>In this example, we will use the Oracle Thin Driver to connect to a database.</p>
+<p>Steps for connectivity between Java program and database</p>
+<p>Class.forName(“oracle.jdbc.driver.OracleDriver”);</p>
+<p> DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver())</p>
+<p>Connection con = DriverManager.getConnection(url,user,password)</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Java/" rel="tag"># Java</a>
+              <a href="/tags/Database/" rel="tag"># Database</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/07/03/Journal/2019June/" rel="next" title="2019年六月小结">
+                  <i class="fa fa-chevron-left"></i> 2019年六月小结
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2019/07/11/Tech/JavaScript/JavaScript_Language_Features/" rel="prev" title="JavaScript(1) Baisc Language Features">
+                  JavaScript(1) Baisc Language Features <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-JDBC"><span class="nav-number">1.</span> <span class="nav-text">What is JDBC?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JDBC-Class"><span class="nav-number">2.</span> <span class="nav-text">JDBC Class</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JDBC-interface"><span class="nav-number">3.</span> <span class="nav-text">JDBC interface</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Driver-Manager-and-JDBC-Drivers"><span class="nav-number">4.</span> <span class="nav-text">Driver Manager and JDBC Drivers</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DriverManager"><span class="nav-number">4.1.</span> <span class="nav-text">DriverManager</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Implementation"><span class="nav-number">5.</span> <span class="nav-text">Implementation</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="Shihao Miao" src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Shihao Miao</p>
+  <div class="site-description" itemprop="description">坠欢莫拾，酒痕在衣</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">72</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Miaooocat/" title="GitHub &rarr; https://github.com/Miaooocat/" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:miao.shihaoo@gmail.com" title="E-Mail &rarr; mailto:miao.shihaoo@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Shihao Miao</span>
+</div><div>
+<span id="timeDate">Loading Days...</span><span id="times">Loading Times...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("03/20/2019 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "This website has struggled in this world for "+dnum+" day ";
+        document.getElementById("times").innerHTML = hnum + " hour " + mnum + " min " + snum + " sec";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.getAttribute('pjax') !== null) {
+      element.setAttribute('pjax', '');
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+
+  
+
+  
+
+    </div>
+</body>
+</html>
