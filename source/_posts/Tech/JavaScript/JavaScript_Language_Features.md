@@ -8,6 +8,29 @@ categories:
 notshow: true
 ---
 
+
+# HelloWorld
+
+```javascript
+function greeting(parameterVariable) {
+    console.log('Hello, World!');
+    console.log('Welcome to 10 Days of JavaScript!');
+}
+```
+
+# Convert Variable type
+
+```javascript
+function performOperation(secondInteger, secondDecimal, secondString) {
+    const firstInteger = 4;
+    const firstDecimal = 4.0;
+    const firstString = 'HackerRank ';
+    console.log(parseInt(firstInteger) + parseInt(secondInteger))
+    console.log(parseFloat(firstDecimal)+parseFloat(secondDecimal))
+    console.log(firstString+secondString)
+}
+```
+
 # JavaScript in HTML
 ## JavaScript inside the HTML
 
