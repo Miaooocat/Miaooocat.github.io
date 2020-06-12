@@ -1,34 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-	<meta name="generator" content="Hugo 0.72.0" />
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>Hi, Shihao</title><meta name="Description" content="About LoveIt Theme"><meta property="og:title" content="Hi, Shihao" />
-<meta property="og:description" content="About LoveIt Theme" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://miaoshihao.com/" />
+        <title>Java Study Notes(1) General Concept - Hi, Shihao</title><meta name="Description" content="Java learning notes"><meta property="og:title" content="Java Study Notes(1) General Concept" />
+<meta property="og:description" content="Java learning notes" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://miaoshihao.com/notes/java_basic/java_1_general_concept/" />
 <meta property="og:image" content="http://miaoshihao.com/logo.png"/>
-<meta property="og:updated_time" content="2020-05-30T15:58:26+08:00" />
+<meta property="article:published_time" content="2019-05-30T15:58:26+08:00" />
+<meta property="article:modified_time" content="2020-05-30T15:58:26+08:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://miaoshihao.com/logo.png"/>
 
-<meta name="twitter:title" content="Hi, Shihao"/>
-<meta name="twitter:description" content="About LoveIt Theme"/>
+<meta name="twitter:title" content="Java Study Notes(1) General Concept"/>
+<meta name="twitter:description" content="Java learning notes"/>
 <meta name="application-name" content="Hi, Shihao">
 <meta name="apple-mobile-web-app-title" content="Hi, Shihao"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://miaoshihao.com/" /><link rel="alternate" href="/index.xml" type="application/rss+xml" title="Hi, Shihao">
-    <link rel="feed" href="/index.xml" type="application/rss+xml" title="Hi, Shihao"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://miaoshihao.com/notes/java_basic/java_1_general_concept/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
-        "@type": "WebSite",
-        "url": "http:\/\/miaoshihao.com\/","inLanguage": "en","author": {
+        "@type": "BlogPosting",
+        "headline": "Java Study Notes(1) General Concept",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/miaoshihao.com\/notes\/java_basic\/java_1_general_concept\/"
+        },"image": ["http:\/\/miaoshihao.com\/images\/Apple-Devices-Preview.png"],"genre": "notes","keywords": "Java","wordcount":  342 ,
+        "url": "http:\/\/miaoshihao.com\/notes\/java_basic\/java_1_general_concept\/","datePublished": "2019-05-30T15:58:26+08:00","dateModified": "2020-05-30T15:58:26+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "http:\/\/miaoshihao.com\/images\/avatar.png"},"author": {
                 "@type": "Person",
-                "name": "Shihao Miao"
-            },"description": "About LoveIt Theme","image": "http:\/\/miaoshihao.com\/images\/Apple-Devices-Preview.png","thumbnailUrl": "http:\/\/miaoshihao.com\/images\/screenshot.png","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","name": "Hi, Shihao"
+                "name": "Shihao"
+            },"description": "Java learning notes"
     }
     </script></head>
     <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
@@ -40,7 +47,7 @@
         </div>
         <div class="menu">
             <div class="menu-inner"><a class="menu-item" href="/blogs/"> Blogs </a><a class="menu-item" href="/notes/"> Notes </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/music/"> Music </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
-                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/" selected>English</option><option value="/zh-cn/">简体中文</option></select>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/notes/java_basic/java_1_general_concept/" selected>English</option></select>
                     </a><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
@@ -90,7 +97,7 @@
                 </div><a class="menu-item" href="/blogs/" title="">Blogs</a><a class="menu-item" href="/notes/" title="">Notes</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/music/" title="">Music</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                 <i class="fas fa-adjust fa-fw"></i>
             </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
-                    <select class="language-select" onchange="location = this.value;"><option value="/" selected>English</option><option value="/zh-cn/">简体中文</option></select>
+                    <select class="language-select" onchange="location = this.value;"><option value="/notes/java_basic/java_1_general_concept/" selected>English</option></select>
                 </a></div>
     </div>
 </header>
@@ -101,8 +108,21 @@
     <div id="search-dropdown-mobile"></div>
 </div>
 <main class="main">
-                <div class="container"><div class="page home" posts><div class="home-profile"><h1 class="home-title">Hi, Shihao</h1><h2 class="home-subtitle"><div id="id-3" class="typeit"></div></h2><div class="links"><a href="https://github.com/https://github.com/Miaooocat/" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github-alt fa-fw"></i></a><a href="https://linkedin.com/in/https://www.linkedin.com/in/shihao-miao-583317a4/" title="LinkedIn" target="_blank" rel="noopener noreffer me"><i class="fab fa-linkedin fa-fw"></i></a><a href="https://stackoverflow.com/users/https://stackoverflow.com/users/11631258/shihaocat?tab=profile" title="Stack Overflow" target="_blank" rel="noopener noreffer me"><i class="fab fa-codepen fa-fw"></i></a><a href="https://steamcommunity.com/id/https://steamcommunity.com/id/miaoooooooooo/" title="Steam" target="_blank" rel="noopener noreffer me"><i class="fab fa-steam fa-fw"></i></a><a href="mailto:miao.shihaoo@gmail.com" title="Email" rel=" me"><i class="far fa-envelope fa-fw"></i></a></div></div>
-</div></div>
+                <div class="container"><div class="page single special"><h1 class="single-title animated pulse faster">Java Study Notes(1) General Concept</h1><div class="content" id="content"><h1 id="jdk-jre-jvm">JDK, JRE, JVM</h1>
+<p><strong>JDK(Java Development Kit)</strong> is a tool used by developer. It includes JRE, Java compiler and other tools(such as Javadoc). In Eclipse, it can compile Java program without JDK, since it has its own version of compiler. Yet, Maven in Eclipse still requires JDK.</p>
+<p><strong>JRE(Java Runtime Environment)</strong> refers to a runtime environment in which Java bytecode can be executed. It’s an implementation of the JVM which physically exists. JRE allow .class file to be executed.</p>
+<p><strong>JVM(Java Virtual Machine)</strong> is an abstract machine. It is a specification that provides a run-time environment in which Java bytecode can be executed. Our application is running on the JVM. JVM is often in an application server that deals with TCP/IP, HTTP, SSL protocol and so on.</p>
+<h1 id="java-is-statically-strongly-manifestly-typed-programming-language">Java is statically, strongly, manifestly typed programming language</h1>
+<h2 id="statically-typed">Statically Typed</h2>
+<p><strong>Statically Typed</strong> means that data types are checked at compile time. Thus, varaible need to be defined before using. An opposite type is <strong>Dynamically Typed</strong>. In Dynamically Typed, yypes are checked at runtime. A target may hold a binding to any kind of object. An example could be found like Python.</p>
+<h2 id="strongly-typed">Strongly Typed</h2>
+<p><strong>Strongly Typed</strong> means that types are restricted within their own bounds. Once assigned a value of a particular kind, the object must obey rules about how it can interact with other objects. An opposite type is <strong>weakly Typed</strong>: A value of one type can be treated as another. <strong>Example</strong>: a=10; b=&quot;10&rdquo; add(a,b); C and PHP is weekly type</p>
+<h2 id="manifestly-typed">Manifestly Typed</h2>
+<p><strong>Manifestly Typed</strong> means that variable types must be declared. An opposite type is <strong>Type Inferred</strong>, where variable types are deduced by context. It should noted in Java 1.8, an Lambda Expression helps with Type inferred.</p>
+<h2 id="compiler-language-and-interpreted-language">Compiler language and interpreted language</h2>
+<p>Java is both <strong>Compiler languages</strong> and <strong>Interpreted Languages</strong>. <strong>Java source code</strong> is compiled to <strong>Java Byte Code</strong>. <strong>Java Byte Code</strong> is then interpreted by the <strong>Java Virtual Machine(JVM)</strong>. Thus, Java <strong>write one and run anywhere</strong>.</p>
+<p>Java source code -&gt; Convert to Java byte code(by compiler) -&gt; Java virtual machine(Platform dependent) -&gt; Machine code</p>
+</div><div id="comments"></div></div></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Shihao Miao</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><div>
                     <span id="timeDate">Loading Days...</span><span id="times">Loading Times...</span>
@@ -131,5 +151,5 @@
             </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
                 <i class="fas fa-comment fa-fw"></i>
             </a>
-        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"data":{"id-1":"Home","id-2":"Home","id-3":"Hello"},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"],"id-3":["id-3"]},"duration":30000,"speed":500}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-1":"Home","id-2":"Home"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":30000,"speed":500}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
 </html>

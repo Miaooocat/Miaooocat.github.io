@@ -2,39 +2,41 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://example.org/zh-cn/music/</loc><lastmod>2020-06-10T22:58:57-04:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://miaoshihao.com/zh-cn/music/</loc><lastmod>2020-06-10T22:58:57-04:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://example.org/music/"
+                        href="http://miaoshihao.com/music/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="zh-cn"
-                    href="http://example.org/zh-cn/music/"
+                    href="http://miaoshihao.com/zh-cn/music/"
                     /></url><url>
-            <loc>http://example.org/zh-cn/categories/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://miaoshihao.com/zh-cn/blogs/</loc><lastmod>2019-04-30T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://miaoshihao.com/zh-cn/</loc><lastmod>2019-04-30T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://example.org/categories/"
+                        href="http://miaoshihao.com/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="zh-cn"
-                    href="http://example.org/zh-cn/categories/"
+                    href="http://miaoshihao.com/zh-cn/"
                     /></url><url>
-            <loc>http://example.org/zh-cn/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://miaoshihao.com/zh-cn/blogs/playedgame/playedgame/</loc><lastmod>2019-04-30T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://miaoshihao.com/zh-cn/categories/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://example.org/"
+                        href="http://miaoshihao.com/categories/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="zh-cn"
-                    href="http://example.org/zh-cn/"
+                    href="http://miaoshihao.com/zh-cn/categories/"
                     /></url><url>
-            <loc>http://example.org/zh-cn/tags/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://miaoshihao.com/zh-cn/tags/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://example.org/tags/"
+                        href="http://miaoshihao.com/tags/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="zh-cn"
-                    href="http://example.org/zh-cn/tags/"
+                    href="http://miaoshihao.com/zh-cn/tags/"
                     /></url></urlset>

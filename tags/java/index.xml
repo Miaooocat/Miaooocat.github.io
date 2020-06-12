@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Java - Tag - Hi, Shihao</title>
+        <link>http://miaoshihao.com/tags/java/</link>
+        <description>Java - Tag - Hi, Shihao</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
+            <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 30 May 2019 15:58:26 &#43;0800</lastBuildDate><atom:link href="http://miaoshihao.com/tags/java/" rel="self" type="application/rss+xml" /><item>
+    <title>Java Study Notes(1) General Concept</title>
+    <link>http://miaoshihao.com/notes/java_basic/java_1_general_concept/</link>
+    <pubDate>Thu, 30 May 2019 15:58:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/java_basic/java_1_general_concept/</guid>
+    <description><![CDATA[JDK, JRE, JVM JDK(Java Development Kit) is a tool used by developer. It includes JRE, Java compiler and other tools(such as Javadoc). In Eclipse, it can compile Java program without JDK, since it has its own version of compiler. Yet, Maven in Eclipse still requires JDK.
+JRE(Java Runtime Environment) refers to a runtime environment in which Java bytecode can be executed. It’s an implementation of the JVM which physically exists. JRE allow .]]></description>
+</item></channel>
+</rss>

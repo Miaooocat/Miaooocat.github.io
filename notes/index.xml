@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Notes on Hi, Shihao</title>
+    <link>http://miaoshihao.com/notes/</link>
+    <description>Recent content in Notes on Hi, Shihao</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
+    <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Thu, 30 May 2019 15:58:26 +0800</lastBuildDate>
+    
+	<atom:link href="http://miaoshihao.com/notes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java Study Notes(1) General Concept</title>
+      <link>http://miaoshihao.com/notes/java_basic/java_1_general_concept/</link>
+      <pubDate>Thu, 30 May 2019 15:58:26 +0800</pubDate>
+      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
+      <guid>http://miaoshihao.com/notes/java_basic/java_1_general_concept/</guid>
+      <description>JDK, JRE, JVM JDK(Java Development Kit) is a tool used by developer. It includes JRE, Java compiler and other tools(such as Javadoc). In Eclipse, it can compile Java program without JDK, since it has its own version of compiler. Yet, Maven in Eclipse still requires JDK.
+JRE(Java Runtime Environment) refers to a runtime environment in which Java bytecode can be executed. It’s an implementation of the JVM which physically exists. JRE allow .</description>
+    </item>
+    
+  </channel>
+</rss>
