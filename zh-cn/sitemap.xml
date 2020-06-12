@@ -2,6 +2,69 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
+            <loc>http://miaoshihao.com/zh-cn/notes/java_advance/jvm_1/</loc><lastmod>2020-06-12T15:58:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="http://miaoshihao.com/notes/java_advance/jvm_1/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="http://miaoshihao.com/zh-cn/notes/java_advance/jvm_1/"
+                    /></url><url>
+            <loc>http://miaoshihao.com/zh-cn/categories/</loc><lastmod>2020-06-12T15:58:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="http://miaoshihao.com/categories/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="http://miaoshihao.com/zh-cn/categories/"
+                    /></url><url>
+            <loc>http://miaoshihao.com/zh-cn/</loc><lastmod>2020-06-12T15:58:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="http://miaoshihao.com/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="http://miaoshihao.com/zh-cn/"
+                    /></url><url>
+            <loc>http://miaoshihao.com/zh-cn/tags/java/</loc><lastmod>2020-06-12T15:58:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="http://miaoshihao.com/tags/java/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="http://miaoshihao.com/zh-cn/tags/java/"
+                    /></url><url>
+            <loc>http://miaoshihao.com/zh-cn/categories/java-language/</loc><lastmod>2020-06-12T15:58:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="http://miaoshihao.com/categories/java-language/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="http://miaoshihao.com/zh-cn/categories/java-language/"
+                    /></url><url>
+            <loc>http://miaoshihao.com/zh-cn/notes/</loc><lastmod>2020-06-12T15:58:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="http://miaoshihao.com/notes/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="http://miaoshihao.com/zh-cn/notes/"
+                    /></url><url>
+            <loc>http://miaoshihao.com/zh-cn/tags/</loc><lastmod>2020-06-12T15:58:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="http://miaoshihao.com/tags/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="http://miaoshihao.com/zh-cn/tags/"
+                    /></url><url>
             <loc>http://miaoshihao.com/zh-cn/music/</loc><lastmod>2020-06-10T22:58:57-04:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
@@ -12,31 +75,4 @@
                     href="http://miaoshihao.com/zh-cn/music/"
                     /></url><url>
             <loc>http://miaoshihao.com/zh-cn/blogs/</loc><lastmod>2019-04-30T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://miaoshihao.com/zh-cn/</loc><lastmod>2019-04-30T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="http://miaoshihao.com/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="zh-cn"
-                    href="http://miaoshihao.com/zh-cn/"
-                    /></url><url>
-            <loc>http://miaoshihao.com/zh-cn/blogs/playedgame/playedgame/</loc><lastmod>2019-04-30T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://miaoshihao.com/zh-cn/categories/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="http://miaoshihao.com/categories/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="zh-cn"
-                    href="http://miaoshihao.com/zh-cn/categories/"
-                    /></url><url>
-            <loc>http://miaoshihao.com/zh-cn/tags/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="http://miaoshihao.com/tags/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="zh-cn"
-                    href="http://miaoshihao.com/zh-cn/tags/"
-                    /></url></urlset>
+            <loc>http://miaoshihao.com/zh-cn/blogs/playedgame/playedgame/</loc><lastmod>2019-04-30T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>

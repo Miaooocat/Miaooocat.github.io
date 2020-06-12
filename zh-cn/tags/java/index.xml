@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Java - 标签 - Hi, Shihao</title>
+        <link>http://miaoshihao.com/zh-cn/tags/java/</link>
+        <description>Java - 标签 - Hi, Shihao</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
+            <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 12 Jun 2020 15:58:26 &#43;0800</lastBuildDate><atom:link href="http://miaoshihao.com/zh-cn/tags/java/" rel="self" type="application/rss+xml" /><item>
+    <title>JVM Study Notes(1)</title>
+    <link>http://miaoshihao.com/zh-cn/notes/java_advance/jvm_1/</link>
+    <pubDate>Fri, 12 Jun 2020 15:58:26 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://miaoshihao.com/zh-cn/notes/java_advance/jvm_1/</guid>
+    <description><![CDATA[Java 运行环境 JRE（Java Runtime Environment）仅包含运行 Java 程序的必需组件，包括 Java 虚拟机以及 Java 核心类库等。而 JDK（Java Development Kit）除]]></description>
+</item></channel>
+</rss>

@@ -6,11 +6,19 @@
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
             <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 30 May 2019 15:58:26 &#43;0800</lastBuildDate><atom:link href="http://miaoshihao.com/tags/java/" rel="self" type="application/rss+xml" /><item>
     <title>Java Study Notes(1) General Concept</title>
-    <link>http://miaoshihao.com/notes/java_basic/java_1_general_concept/</link>
+    <link>http://miaoshihao.com/notes/java_basic/java_1_java_language/</link>
     <pubDate>Thu, 30 May 2019 15:58:26 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/java_basic/java_1_general_concept/</guid>
-    <description><![CDATA[JDK, JRE, JVM JDK(Java Development Kit) is a tool used by developer. It includes JRE, Java compiler and other tools(such as Javadoc). In Eclipse, it can compile Java program without JDK, since it has its own version of compiler. Yet, Maven in Eclipse still requires JDK.
+    <guid>http://miaoshihao.com/notes/java_basic/java_1_java_language/</guid>
+    <description><![CDATA[Java is statically, strongly, manifestly typed programming language  Statically and Dynamically typed Statically Typed means that data types are checked at compile time. Thus, varaible need to be defined before using. An opposite type is Dynamically Typed. In Dynamically Typed, tpes are checked at runtime. A target may hold a binding to any kind of object. An example could be found like Python.
+  Strongly vs Weakly typed]]></description>
+</item><item>
+    <title>JVM Study Notes(1)</title>
+    <link>http://miaoshihao.com/notes/java_advance/jvm_1/</link>
+    <pubDate>Thu, 30 May 2019 15:58:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/java_advance/jvm_1/</guid>
+    <description><![CDATA[Java Environment JDK(Java Development Kit) is a tool used by developer. It includes JRE, Java compiler and other tools(such as Javadoc). In Eclipse, it can compile Java program without JDK, since it has its own version of compiler. Yet, Maven in Eclipse still requires JDK.
 JRE(Java Runtime Environment) refers to a runtime environment in which Java bytecode can be executed. It’s an implementation of the JVM which physically exists. JRE allow .]]></description>
 </item></channel>
 </rss>
