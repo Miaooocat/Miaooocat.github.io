@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Java Notes(2) Feature and Program Execution - Hi, Shihao</title><meta name="Description" content="Java notes"><meta property="og:title" content="Java Notes(2) Feature and Program Execution" />
+<meta property="og:description" content="Java notes" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://miaoshihao.com/notes/java_basic/java_feature_execution/" />
+<meta property="og:image" content="http://miaoshihao.com/notes/java_basic/java_feature_execution/java-features.png"/>
+<meta property="article:published_time" content="2019-06-13T16:58:26+08:00" />
+<meta property="article:modified_time" content="2019-06-13T16:58:26+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://miaoshihao.com/notes/java_basic/java_feature_execution/java-features.png"/>
+<meta name="twitter:title" content="Java Notes(2) Feature and Program Execution"/>
+<meta name="twitter:description" content="Java notes"/>
+<meta name="application-name" content="Hi, Shihao">
+<meta name="apple-mobile-web-app-title" content="Hi, Shihao"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://miaoshihao.com/notes/java_basic/java_feature_execution/" /><link rel="prev" href="http://miaoshihao.com/notes/java_basic/java_fundamentals/" /><link rel="next" href="http://miaoshihao.com/notes/java_basic/java_key_words/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Java Notes(2) Feature and Program Execution",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/miaoshihao.com\/notes\/java_basic\/java_feature_execution\/"
+        },"image": ["http:\/\/miaoshihao.com\/images\/Apple-Devices-Preview.png"],"genre": "notes","keywords": "Java","wordcount":  997 ,
+        "url": "http:\/\/miaoshihao.com\/notes\/java_basic\/java_feature_execution\/","datePublished": "2019-06-13T16:58:26+08:00","dateModified": "2019-06-13T16:58:26+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "http:\/\/miaoshihao.com\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Shihao"
+            },"description": "Java notes"
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Hi, Shihao"><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/blogs/"> Blogs </a><a class="menu-item" href="/notes/"> Notes </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/music/"> Music </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/notes/java_basic/java_feature_execution/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>                
+                <a href="/robot" class="menu-item robot">
+                    <i class="fas fa-robot fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Hi, Shihao"><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/blogs/" title="">Blogs</a><a class="menu-item" href="/notes/" title="">Notes</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/music/" title="">Music</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/notes/java_basic/java_feature_execution/" selected>English</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="page single special"><h1 class="single-title animated pulse faster">Java Notes(2) Feature and Program Execution</h1><div class="content" id="content"><h1 id="java-features-and-program-execution">Java Features and Program Execution</h1>
+<p>Java is a <strong>programming language</strong> and a <strong>platform</strong>.</p>
+<p><strong>Platform:</strong> Any hardware or software environment in which a program runs, is known as a platform. Since Java has its own runtime environment (JRE) and Application Programming Interface (API), it is called platform.</p>
+<h2 id="features-of-java-">Features of Java :</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="java-features.png"
+        data-srcset="/notes/java_basic/java_feature_execution/java-features.png, java-features.png 1.5x, /notes/java_basic/java_feature_execution/java-features.png 2x"
+        data-sizes="auto"
+        alt="/notes/java_basic/java_feature_execution/java-features.png"
+        title="java-features" /></p>
+<ul>
+<li>
+<p><strong>Simple:</strong></p>
+<ul>
+<li>User friendly syntax based on C++</li>
+<li>It has Automatic Garbage Collection</li>
+<li>It has Rich set of APIs</li>
+<li>Removed confusing features - explicit pointers, operator overloading, multiple inheritance, etc</li>
+</ul>
+</li>
+<li>
+<p><strong>Object-oriented:</strong></p>
+<ul>
+<li>In Java, we organize the software as a combination of different types of objects that incorporates both data and behaviour.</li>
+<li>Based on the concept of Objects, Class, Inheritance, Polymorphism, Abstraction, Encapsulation</li>
+</ul>
+</li>
+<li>
+<p><strong>Platform Independent:</strong></p>
+<ul>
+<li>Java provides software-based platform. It has two components:
+<ul>
+<li>JRE (Runtime Environment)</li>
+<li>API (Application Programming Interface)</li>
+</ul>
+</li>
+<li>Java code is compiled by the compiler and converted into bytecode. This bytecode is a platform-independent. Can run on many platforms - Windows, Linux, Mac, etc.</li>
+</ul>
+</li>
+<li>
+<p><strong>Secured:</strong></p>
+<ul>
+<li><strong>No explicit pointer</strong></li>
+<li><strong>JVM -</strong> java Programs run inside virtual machine sandbox</li>
+<li><strong>Classloader -</strong> adds security by separating the package for the classes of the local file system from those that are imported from network sources.</li>
+<li><strong>Bytecode Verifier -</strong> checks the code fragments for illegal code that can violate access right to objects.</li>
+<li><strong>Security Manager -</strong> determines what resources a class can access such as reading and writing to the local disk.</li>
+<li><strong>More -</strong> developers can add extra security through SSL, JAAS, Cryptography etc.</li>
+</ul>
+</li>
+<li>
+<p><strong>Robust:</strong></p>
+<ul>
+<li><strong>Good memory management -</strong> automatic garbage collection.</li>
+<li><strong>No pointers -</strong> increses security.</li>
+<li><strong>Exception handling -</strong> increses robustness against errors.</li>
+<li><strong>Strongly typed -</strong> every variable must be declared with a data type.</li>
+<li><strong>Statically typed -</strong> type checking of variables is performed at compile time.</li>
+</ul>
+</li>
+<li>
+<p><strong>Architecture-Neutral:</strong></p>
+<ul>
+<li>There is no implementation dependent features. e.g. size of primitive types is fixed.</li>
+</ul>
+</li>
+<li>
+<p><strong>Portable:</strong></p>
+<ul>
+<li>Write Once and Run Anywhere.</li>
+</ul>
+</li>
+<li>
+<p><strong>interpreted:</strong></p>
+<ul>
+<li>Java is compiled to bytecodes, which are interpreted by a Java run-time environment.</li>
+<li>The interpreter reads bytecode stream then execute the instructions.</li>
+</ul>
+</li>
+<li>
+<p><strong>High-Performance:</strong></p>
+<ul>
+<li><strong>Uses ByteCode -</strong> Java is faster than traditional interpreted languages since byte code is &ldquo;close&rdquo; to native code.</li>
+<li><strong>Just-In-Time (JIT) -</strong> it is designed to support JIT compilers, which dynamically compile bytecodes to machine code.</li>
+<li><strong>Garbage collector -</strong> collect the unused memory space and improve the performance of the application.</li>
+<li>NOTE: Java is still slower than a compiled language like C/C++.</li>
+</ul>
+</li>
+<li>
+<p><strong>Distributed:</strong></p>
+<ul>
+<li>We can create distributed applications in java. RMI and EJB are used for creating distributed applications.</li>
+<li>We may access files by calling the methods from any machine on the internet.</li>
+</ul>
+</li>
+<li>
+<p><strong>Multi-threaded:</strong></p>
+<ul>
+<li>A thread is like a separate program, executing concurrently. We can write Java programs that deal with many tasks at once by defining multiple threads.</li>
+<li>The main advantage of multi-threading is that it doesn&rsquo;t occupy memory for each thread. It shares a common memory area.</li>
+<li>Threads are important for multi-media, Web applications etc.</li>
+</ul>
+</li>
+<li>
+<p><strong>Dynamic:</strong></p>
+<ul>
+<li><strong>Dynamic Compilation (JIT) -</strong> Implementations to gain performance during program execution. The machine code emitted by a dynamic compiler is constructed and optimized at program runtime, the use of dynamic compilation enables optimizations for efficiency.</li>
+<li><strong>Load on Demand -</strong> Loads in classes as they are needed, even from across the network.</li>
+<li><strong>Dynamic memory allocation -</strong> All Java objects are dynamically allocated.</li>
+<li><strong>Dynamic Polymorphism -</strong> Compiler doesn’t know which method to be called in advance. JVM decides which method to called at run time.</li>
+</ul>
+</li>
+</ul>
+<h2 id="java-program-execution-process-">Java Program Execution Process :</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="java-execution-process.png"
+        data-srcset="/notes/java_basic/java_feature_execution/java-execution-process.png, java-execution-process.png 1.5x, /notes/java_basic/java_feature_execution/java-execution-process.png 2x"
+        data-sizes="auto"
+        alt="/notes/java_basic/java_feature_execution/java-execution-process.png"
+        title="java-execution-process" /></p>
+<h2 id="jdk---jre---jvm-">JDK - JRE - JVM :</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="jdk-jre-jvm.png"
+        data-srcset="/notes/java_basic/java_feature_execution/jdk-jre-jvm.png, jdk-jre-jvm.png 1.5x, /notes/java_basic/java_feature_execution/jdk-jre-jvm.png 2x"
+        data-sizes="auto"
+        alt="/notes/java_basic/java_feature_execution/jdk-jre-jvm.png"
+        title="jdk-jre-jvm" /></p>
+<p><strong>Java Development Kit (JDK):</strong> It is a collection of development tools including JRE.</p>
+<p><strong>Java Runtime Environment (JRE):</strong> It contains set of libraries and the JVM.</p>
+<p><strong>Java Virtual Machine (JVM):</strong> It is an abstract machine. It is a specification that provides runtime environment in which java bytecode can be executed. The JVM performs following main tasks: Loads code, Verifies code, Executes code and Provides runtime environment.</p>
+<p><strong>NOTE -</strong> JVMs are available for many hardware and software platforms. JVM, JRE and JDK are platform dependent because configuration of each OS differs. But, Java is platform independent.</p>
+<h2 id="internal-architecture-of-jvm-">Internal Architecture of JVM :</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="jvm-architecture.png"
+        data-srcset="/notes/java_basic/java_feature_execution/jvm-architecture.png, jvm-architecture.png 1.5x, /notes/java_basic/java_feature_execution/jvm-architecture.png 2x"
+        data-sizes="auto"
+        alt="/notes/java_basic/java_feature_execution/jvm-architecture.png"
+        title="jvm-architecture" /></p>
+<p>JVM (Java Virtual Machine) has various sub components internally. You can see the most important ones in the above diagram.</p>
+<ul>
+<li>
+<p><strong>Class loader sub system:</strong> JVM&rsquo;s class loader sub system performs 3 tasks</p>
+<ul>
+<li>It loads .class file into memory.</li>
+<li>It verifies byte code instructions.</li>
+<li>It allots memory required for the program.</li>
+</ul>
+</li>
+<li>
+<p><strong>Run time data area:</strong> This is the memory resource used by JVM and it is divided into 5 parts</p>
+<ul>
+<li><strong>Class (Method) area:</strong> Stores constant pool, field and method data, the code for methods.</li>
+<li><strong>Heap:</strong> Objects are allocated on the heap.</li>
+<li><strong>Java stacks:</strong> Java stacks are the places where the Java methods are executed. A Java stack contains frames. It holds local variables and partial results, and plays a part in method invocation and return. On each frame, a separate method is executed. Each thread has a private JVM stack, created at the same time as thread. A new frame is created each time a method is invoked. A frame is destroyed when its method invocation completes.</li>
+<li><strong>Program counter registers:</strong> PC (program counter) register. It contains the address of the JVM instruction currently being executed.</li>
+<li><strong>Native method stacks:</strong> Are places where native methods (eg. C language programs, etc) are executed.</li>
+</ul>
+</li>
+<li>
+<p><strong>Native method interface:</strong> Native method interface is a program that connects native methods libraries (C header files) with JVM for executing native methods.</p>
+</li>
+<li>
+<p><strong>Native method library:</strong> Holds the native libraries information.</p>
+</li>
+<li>
+<p><strong>Execution engine:</strong></p>
+<ul>
+<li><strong>Just-In-Time(JIT) compiler:</strong> It is used to improve the performance. It coverts byte code into machine code. JIT compiles parts of the byte code that have similar functionality at the same time, and hence reduces the amount of time needed for compilation.Here the term ?compiler? refers to a translator from the instruction set of a Java virtual machine (JVM) to the instruction set of a specific CPU.</li>
+<li><strong>Interpreter:</strong> Read bytecode stream then execute the instructions.</li>
+<li><strong>Virtual processor</strong></li>
+<li><strong>NOTE -</strong> JVM uses optimization technique to decide which part to be interpreted and which part to be used with JIT compiler.</li>
+</ul>
+</li>
+</ul>
+</div></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Shihao Miao</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><div>
+                    <span id="timeDate">Loading Days...</span><span id="times">Loading Times...</span>
+                    <script>
+                        var now = new Date();
+                        function createtime() {
+                            var grt= new Date("03/20/2019 00:00:00");
+                            now.setTime(now.getTime()+250);
+                            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+                            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+                            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+                            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+                            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+                            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+                            document.getElementById("timeDate").innerHTML = "This website has struggled in this world for "+dnum+" day ";
+                            document.getElementById("times").innerHTML = hnum + " hour " + mnum + " min " + snum + " sec";
+                        }
+                    setInterval("createtime()",250);
+                    </script>
+                    </div></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-1":"Home","id-2":"Home"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":30000,"speed":500}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

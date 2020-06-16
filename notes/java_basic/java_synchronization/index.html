@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Java Notes(13) Synchronization - Hi, Shihao</title><meta name="Description" content="Java Serialization reference notes"><meta property="og:title" content="Java Notes(13) Synchronization" />
+<meta property="og:description" content="Java Serialization reference notes" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://miaoshihao.com/notes/java_basic/java_synchronization/" />
+<meta property="og:image" content="http://miaoshihao.com/logo.png"/>
+<meta property="article:published_time" content="2019-08-06T20:58:26+08:00" />
+<meta property="article:modified_time" content="2019-08-06T20:58:26+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://miaoshihao.com/logo.png"/>
+
+<meta name="twitter:title" content="Java Notes(13) Synchronization"/>
+<meta name="twitter:description" content="Java Serialization reference notes"/>
+<meta name="application-name" content="Hi, Shihao">
+<meta name="apple-mobile-web-app-title" content="Hi, Shihao"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://miaoshihao.com/notes/java_basic/java_synchronization/" /><link rel="next" href="http://miaoshihao.com/notes/java_basic/java_file_io/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Java Notes(13) Synchronization",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/miaoshihao.com\/notes\/java_basic\/java_synchronization\/"
+        },"image": ["http:\/\/miaoshihao.com\/images\/Apple-Devices-Preview.png"],"genre": "notes","keywords": "Java","wordcount":  1616 ,
+        "url": "http:\/\/miaoshihao.com\/notes\/java_basic\/java_synchronization\/","datePublished": "2019-08-06T20:58:26+08:00","dateModified": "2019-08-06T20:58:26+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "http:\/\/miaoshihao.com\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Shihao"
+            },"description": "Java Serialization reference notes"
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Hi, Shihao"><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/blogs/"> Blogs </a><a class="menu-item" href="/notes/"> Notes </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/music/"> Music </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/notes/java_basic/java_synchronization/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>                
+                <a href="/robot" class="menu-item robot">
+                    <i class="fas fa-robot fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Hi, Shihao"><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/blogs/" title="">Blogs</a><a class="menu-item" href="/notes/" title="">Notes</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/music/" title="">Music</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/notes/java_basic/java_synchronization/" selected>English</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="page single special"><h1 class="single-title animated pulse faster">Java Notes(13) Synchronization</h1><div class="content" id="content"><p>Synchronization in java is the capability to control the access of multiple threads to any shared resource. Java Synchronization is better option where we want to allow only one thread to access the shared resource.</p>
+<p><strong>The synchronization is mainly used to :</strong></p>
+<ul>
+<li>To <strong>prevent Thread Interference</strong> (Thread interference is a condition which occurs when more than one threads, executing simultaneously, access same piece of data.).</li>
+<li>To <strong>prevent Consistency Problem</strong> (Memory consistency errors occur when different threads have inconsistent views of what should be the same data.).</li>
+</ul>
+<h2 id="types-of-synchronization-">Types of Synchronization :</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="synchronization-types.png"
+        data-srcset="/notes/java_basic/java_synchronization/synchronization-types.png, synchronization-types.png 1.5x, /notes/java_basic/java_synchronization/synchronization-types.png 2x"
+        data-sizes="auto"
+        alt="/notes/java_basic/java_synchronization/synchronization-types.png"
+        title="synchronization-types" /></p>
+<h2 id="thread-synchronization">Thread Synchronization</h2>
+<p>There are two types of thread synchronization mutual exclusive and inter-thread communication.</p>
+<ol>
+<li>Mutual Exclusive</li>
+<li>Cooperation (Inter-thread communication in java)</li>
+</ol>
+<p><strong>Mutual Exclusive :</strong>
+Mutual Exclusive helps keep threads from interfering with one another while sharing data.
+This can be done by three ways in java :</p>
+<ol>
+<li>by synchronized method</li>
+<li>by synchronized block</li>
+<li>by static synchronization</li>
+</ol>
+<p><strong>Concept of Lock in Java :</strong>
+Synchronization is built around an internal entity known as the lock or monitor. Every object has an lock associated with it. By convention, a thread that needs consistent access to an object&rsquo;s fields has to acquire the object&rsquo;s lock before accessing them, and then release the lock when it&rsquo;s done with them. The package java.util.concurrent.locks contains several lock implementations.</p>
+<h2 id="synchronized-method-in-java-">Synchronized Method in Java :**</h2>
+<p>If you declare any method as synchronized, it is known as synchronized method. Synchronized method is used to lock an object for any shared resource. When a thread invokes a synchronized method, it automatically acquires the lock for that object and releases it when the thread completes its task.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">synchronized</span> <span class="kt">void</span> <span class="nf">printTable</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">){</span>  <span class="c1">//synchronized method  
+</span><span class="c1"></span>   <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">1</span><span class="o">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">5</span><span class="o">;</span><span class="n">i</span><span class="o">++){</span>  
+     <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">n</span><span class="o">*</span><span class="n">i</span><span class="o">);</span>  
+     <span class="k">try</span><span class="o">{</span>  <span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">200</span><span class="o">);</span>  
+     <span class="o">}</span><span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">){</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">e</span><span class="o">);}</span>  
+   <span class="o">}</span> <span class="o">}</span>  
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="synchronized-block-in-java">Synchronized Block in Java</h2>
+<p>Synchronized block can be used to perform synchronization on any specific resource of the method. Suppose you have 50 lines of code in your method, but you want to synchronize only 5 lines, you can use synchronized block. Scope of synchronized block is smaller than the method. If you put all the codes of the method in the synchronized block, it will work same as the synchronized method. Syntax - synchronized (object reference expression) { &hellip; }</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kt">void</span> <span class="nf">printTable</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">){</span>  
+   <span class="kd">synchronized</span><span class="o">(</span><span class="k">this</span><span class="o">){</span>      <span class="c1">//synchronized block  
+</span><span class="c1"></span>     <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">1</span><span class="o">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">5</span><span class="o">;</span><span class="n">i</span><span class="o">++){</span>  
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">n</span><span class="o">*</span><span class="n">i</span><span class="o">);</span>  
+      <span class="k">try</span><span class="o">{</span>  <span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">200</span><span class="o">);</span>  
+      <span class="o">}</span><span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">){</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">e</span><span class="o">);}</span>  
+     <span class="o">}</span> <span class="o">}</span> <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="static-synchronization-in-java">Static Synchronization in Java</h2>
+<p>If you make any static method as synchronized, the lock will be on the class not on object.</p>
+<p><strong>Problem without static synchronization :</strong></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="static_synchronization.png"
+        data-srcset="/notes/java_basic/java_synchronization/static_synchronization.png, static_synchronization.png 1.5x, /notes/java_basic/java_synchronization/static_synchronization.png 2x"
+        data-sizes="auto"
+        alt="/notes/java_basic/java_synchronization/static_synchronization.png"
+        title="static synchronization" /></p>
+<p>Suppose there are two objects of a shared class(e.g. Table) named object1 and object2.In case of synchronized method and synchronized block there cannot be interference between t1 and t2 or t3 and t4 because t1 and t2 both refers to a common object that have a single lock.But there can be interference between t1 and t3 or t2 and t4 because t1 acquires another lock and t3 acquires another lock.I want no interference between t1 and t3 or t2 and t4.Static synchronization solves this problem.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">synchronized</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">printTable</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">){</span>  
+   <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">1</span><span class="o">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">10</span><span class="o">;</span><span class="n">i</span><span class="o">++){</span>  
+     <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">n</span><span class="o">*</span><span class="n">i</span><span class="o">);</span>  
+     <span class="k">try</span><span class="o">{</span>  <span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">200</span><span class="o">);</span>  
+     <span class="o">}</span><span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">){</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">e</span><span class="o">);}</span>  
+   <span class="o">}</span>  <span class="o">}</span>  
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="deadlock-in-java">Deadlock in Java</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="deadlock.png"
+        data-srcset="/notes/java_basic/java_synchronization/deadlock.png, deadlock.png 1.5x, /notes/java_basic/java_synchronization/deadlock.png 2x"
+        data-sizes="auto"
+        alt="/notes/java_basic/java_synchronization/deadlock.png"
+        title="deadlock of threads" /></p>
+<p>Deadlock can occur in a situation when a thread is waiting for an object lock, that is acquired by another thread and second thread is waiting for an object lock that is acquired by first thread. Since, both threads are waiting for each other to release the lock, the condition is called deadlock.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestDeadlockExample1</span> <span class="o">{</span>  
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>  
+    <span class="kd">final</span> <span class="n">String</span> <span class="n">resource1</span> <span class="o">=</span> <span class="s">&#34;John&#34;</span><span class="o">;</span>  
+    <span class="kd">final</span> <span class="n">String</span> <span class="n">resource2</span> <span class="o">=</span> <span class="s">&#34;Tom&#34;</span><span class="o">;</span>  
+    
+    <span class="c1">// t1 tries to lock resource1 then resource2  
+</span><span class="c1"></span>    <span class="n">Thread</span> <span class="n">t1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Thread</span><span class="o">()</span> <span class="o">{</span>  
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>  
+          <span class="kd">synchronized</span> <span class="o">(</span><span class="n">resource1</span><span class="o">)</span> <span class="o">{</span>  
+           <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Thread 1: locked resource 1&#34;</span><span class="o">);</span>  
+           <span class="k">try</span> <span class="o">{</span> <span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">100</span><span class="o">);}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{}</span>  
+           <span class="kd">synchronized</span> <span class="o">(</span><span class="n">resource2</span><span class="o">)</span> <span class="o">{</span>  
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Thread 1: locked resource 2&#34;</span><span class="o">);</span>  
+           <span class="o">}</span> <span class="o">}</span> <span class="o">}</span> <span class="o">};</span>  
+  
+    <span class="c1">// t2 tries to lock resource2 then resource1  
+</span><span class="c1"></span>    <span class="n">Thread</span> <span class="n">t2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Thread</span><span class="o">()</span> <span class="o">{</span>  
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>  
+        <span class="kd">synchronized</span> <span class="o">(</span><span class="n">resource2</span><span class="o">)</span> <span class="o">{</span>  
+          <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Thread 2: locked resource 2&#34;</span><span class="o">);</span>  
+          <span class="k">try</span> <span class="o">{</span> <span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">100</span><span class="o">);}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{}</span>  
+          <span class="kd">synchronized</span> <span class="o">(</span><span class="n">resource1</span><span class="o">)</span> <span class="o">{</span>  
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Thread 2: locked resource 1&#34;</span><span class="o">);</span>  
+          <span class="o">}</span> <span class="o">}</span> <span class="o">}</span> <span class="o">};</span>  
+      
+    <span class="n">t1</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>  
+    <span class="n">t2</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>  
+  <span class="o">}</span> <span class="o">}</span> 
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Output:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Thread 1: locked resource 1
+Thread 2: locked resource 2
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="inter-thread-communication-in-java">Inter-Thread Communication in Java</h2>
+<p>Inter-thread communication or Co-operation is all about allowing synchronized threads to communicate with each other. Cooperation (Inter-thread communication) is a mechanism in which a thread is paused running in its critical section and another thread is allowed to enter (or lock) in the same critical section to be executed.</p>
+<p>It is implemented by following 3 methods of <strong>Object class:</strong></p>
+<ol>
+<li>wait()</li>
+<li>notify()</li>
+<li>notifyAll()</li>
+</ol>
+<h3 id="wait-method">wait() Method</h3>
+<p>Causes current thread to release the lock and wait until either another thread invokes the notify() method or the notifyAll() method for this object, or a specified amount of time has elapsed. The current thread must own this object&rsquo;s monitor, so it must be called from the synchronized method only otherwise it will throw exception.</p>
+<ul>
+<li>public final void wait()throws InterruptedException</li>
+<li>public final void wait(long timeout)throws InterruptedException</li>
+</ul>
+<h3 id="notify-method">notify() Method</h3>
+<p>Wakes up a single thread that is waiting on this object&rsquo;s monitor. If any threads are waiting on this object, one of them is chosen to be awakened. The choice is arbitrary and occurs at the discretion of the implementation.</p>
+<ul>
+<li>public final void notify()</li>
+</ul>
+<h3 id="notifyall-method">notifyAll() Method</h3>
+<p>Wakes up all threads that are waiting on this object&rsquo;s monitor.</p>
+<ul>
+<li>public final void notifyAll()</li>
+</ul>
+<h2 id="understanding-the-process-of-inter-thread-communication">Understanding the process of inter-thread communication</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="threadcommunication.png"
+        data-srcset="/notes/java_basic/java_synchronization/threadcommunication.png, threadcommunication.png 1.5x, /notes/java_basic/java_synchronization/threadcommunication.png 2x"
+        data-sizes="auto"
+        alt="/notes/java_basic/java_synchronization/threadcommunication.png"
+        title="inter-thread communication" /></p>
+<p><strong>Explanation of the above diagram :</strong></p>
+<ol>
+<li>Threads enter to acquire lock.</li>
+<li>Lock is acquired by one thread.</li>
+<li>Now thread goes to waiting state if you call wait() method on the object. Otherwise, it releases the lock &amp; exits when done.</li>
+<li>If you call notify() or notifyAll() method, thread moves to the notified state (runnable state).</li>
+<li>Now thread is available to acquire lock.</li>
+<li>After completion of the task, thread releases the lock and exits the monitor state of the object.</li>
+</ol>
+<p><strong>NOTE :</strong> wait(), notify() and notifyAll() methods are defined in Object class not Thread class because they are related to lock and object has a lock.</p>
+<h2 id="difference-between-wait-and-sleep">Difference between wait and sleep</h2>
+<table class="alt">
+<tbody><tr><th>wait()</th><th>sleep()</th></tr>
+<tr><td>wait() method releases the lock</td><td>sleep() method doesn't release the lock.</td></tr>
+<tr><td>is a method of Object class</td><td>is a method of Thread class</td></tr>
+<tr><td>is a non-static method</td><td>is a static method</td></tr>
+<tr><td>should be notified by notify() or notifyAll() methods</td><td>after the specified amount of time, sleep is completed.</td></tr>
+</tbody></table>
+<p><strong>Sinple Example :</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Customer</span> <span class="o">{</span>
+ <span class="kt">int</span> <span class="n">amount</span> <span class="o">=</span> <span class="n">10000</span><span class="o">;</span>
+
+ <span class="kd">synchronized</span> <span class="kt">void</span> <span class="nf">withdraw</span><span class="o">(</span><span class="kt">int</span> <span class="n">amount</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;going to withdraw...&#34;</span><span class="o">);</span>
+  <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">amount</span> <span class="o">&lt;</span> <span class="n">amount</span><span class="o">)</span> <span class="o">{</span>
+   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Less balance; waiting for deposit...&#34;</span><span class="o">);</span>
+   <span class="k">try</span> <span class="o">{</span> <span class="n">wait</span><span class="o">();</span> <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{}</span> 
+  <span class="o">}</span>   <span class="c1">// Simple Eg. So, doesn&#39;t consider if amount is again low after notify()
+</span><span class="c1"></span>  <span class="k">this</span><span class="o">.</span><span class="na">amount</span> <span class="o">-=</span> <span class="n">amount</span><span class="o">;</span>
+  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;withdraw completed...&#34;</span><span class="o">);</span>
+ <span class="o">}</span>
+ 
+ <span class="kd">synchronized</span> <span class="kt">void</span> <span class="nf">deposit</span><span class="o">(</span><span class="kt">int</span> <span class="n">amount</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;going to deposit...&#34;</span><span class="o">);</span>
+  <span class="k">this</span><span class="o">.</span><span class="na">amount</span> <span class="o">+=</span> <span class="n">amount</span><span class="o">;</span>
+  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;deposit completed... &#34;</span><span class="o">);</span>
+  <span class="n">notify</span><span class="o">();</span>
+ <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Test</span> <span class="o">{</span>
+ <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[])</span> <span class="o">{</span>
+  <span class="kd">final</span> <span class="n">Customer</span> <span class="n">c</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Customer</span><span class="o">();</span>
+  <span class="k">new</span> <span class="n">Thread</span><span class="o">()</span> <span class="o">{</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span> <span class="n">c</span><span class="o">.</span><span class="na">withdraw</span><span class="o">(</span><span class="n">15000</span><span class="o">);</span> <span class="o">}}.</span><span class="na">start</span><span class="o">();</span>
+  <span class="k">new</span> <span class="n">Thread</span><span class="o">()</span> <span class="o">{</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span> <span class="n">c</span><span class="o">.</span><span class="na">deposit</span><span class="o">(</span><span class="n">10000</span><span class="o">);</span> <span class="o">}}.</span><span class="na">start</span><span class="o">();</span>
+ <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="interrupting-a-thread">Interrupting a Thread</h2>
+<p>An interrupt is an indication to a thread that it should stop what it is doing and do something else. It&rsquo;s up to the programmer to decide exactly how a thread responds to an interrupt, but it is very common for the thread to terminate.</p>
+<p>The 3 methods provided by the Thread class for interrupting a thread :</p>
+<ul>
+<li>public void interrupt()
+If any thread is in sleeping or waiting state (i.e. sleep() or wait()) is invoked, calling the interrupt() method on the thread, breaks out the sleeping or waiting state throwing InterruptedException. If the thread is not in the sleeping or waiting state, calling the interrupt() method performs normal behaviour and doesn&rsquo;t interrupt the thread but sets the interrupt flag to true.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">t1.interrupt();  
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>public static boolean interrupted()
+The static interrupted() method returns the interrupted flag afterthat it sets the flag to false if it is true.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">t1.interrupted()
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>public boolean isInterrupted()
+The isInterrupted() method returns the interrupted flag either true or false.</li>
+</ul>
+<p><strong>NOTE :</strong> If we interrupt a thread, and propagate the exception, it will stop working. If we don&rsquo;t want to stop the thread, we should handle it where sleep() or wait() method is invoked.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">TestIntrpt</span> <span class="kd">extends</span> <span class="n">Thread</span> <span class="o">{</span>
+ <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+  <span class="k">try</span> <span class="o">{</span> <span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">1000</span><span class="o">);</span>
+   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;task&#34;</span><span class="o">);</span>
+  <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Exception handled &#34;</span> <span class="o">+</span> <span class="n">e</span><span class="o">);</span> <span class="o">}</span>
+  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;thread is still running after exception...&#34;</span><span class="o">);</span>
+ <span class="o">}</span>
+ <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[])</span> <span class="o">{</span>
+  <span class="n">TestIntrpt</span> <span class="n">t1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TestIntrpt</span><span class="o">();</span>
+  <span class="n">t1</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+  <span class="n">t1</span><span class="o">.</span><span class="na">interrupt</span><span class="o">();</span>
+ <span class="o">}}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="reentrant-monitor-in-java">Reentrant Monitor in Java</h2>
+<p>According to Sun Microsystems, <strong>Java monitors are reentrant</strong> means java thread can reuse the same monitor for different synchronized methods if method is called from the method.</p>
+<p><strong>Advantage of Reentrant Monitor:</strong> It eliminates the possibility of single thread deadlocking.</p>
+<p><strong>Example :</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Reentrant</span> <span class="o">{</span>  
+    <span class="kd">public</span> <span class="kd">synchronized</span> <span class="kt">void</span> <span class="nf">m</span><span class="o">()</span> <span class="o">{</span>  
+    <span class="n">n</span><span class="o">();</span>  
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;this is m() method&#34;</span><span class="o">);</span> <span class="o">}</span>  
+    
+    <span class="kd">public</span> <span class="kd">synchronized</span> <span class="kt">void</span> <span class="nf">n</span><span class="o">()</span> <span class="o">{</span>  
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;this is n() method&#34;</span><span class="o">);</span> <span class="o">}</span>  
+<span class="o">}</span>  
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ReentrantExample</span> <span class="o">{</span>
+ <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[])</span> <span class="o">{</span>
+  <span class="kd">final</span> <span class="n">ReentrantExample</span> <span class="n">re</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ReentrantExample</span><span class="o">();</span>
+  
+  <span class="n">Thread</span> <span class="n">t1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Thread</span><span class="o">()</span> <span class="o">{</span> <span class="c1">//creating thread using annonymous class
+</span><span class="c1"></span>   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">re</span><span class="o">.</span><span class="na">m</span><span class="o">();</span> <span class="o">}};</span>  <span class="c1">//calling m() method of Reentrant class  
+</span><span class="c1"></span>   
+  <span class="n">t1</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+ <span class="o">}}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div></div></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Shihao Miao</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><div>
+                    <span id="timeDate">Loading Days...</span><span id="times">Loading Times...</span>
+                    <script>
+                        var now = new Date();
+                        function createtime() {
+                            var grt= new Date("03/20/2019 00:00:00");
+                            now.setTime(now.getTime()+250);
+                            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+                            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+                            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+                            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+                            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+                            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+                            document.getElementById("timeDate").innerHTML = "This website has struggled in this world for "+dnum+" day ";
+                            document.getElementById("times").innerHTML = hnum + " hour " + mnum + " min " + snum + " sec";
+                        }
+                    setInterval("createtime()",250);
+                    </script>
+                    </div></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-1":"Home","id-2":"Home"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":30000,"speed":500}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
