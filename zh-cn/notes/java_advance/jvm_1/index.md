@@ -23,6 +23,6 @@ JRE（Java Runtime Environment）仅包含运行 Java 程序的必需组件，�
 **J2ME** 称之为嵌入式技术体系（Java 2 Micro Edition），它包含 J2SE 中的一部分类。J2ME 技术体系主要用于消费类电子产品的软件开发，例如：手机、PDA、寻呼机等。
 
 
-![JVM Picture](JVM_Picture1.png "JVM Picture")
+![JVM Picture](../JVM_Picture1.png "JVM Picture")
 
 
