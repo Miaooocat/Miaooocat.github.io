@@ -9,7 +9,7 @@
     <managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
     <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Tue, 06 Aug 2019 20:58:26 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 02 Oct 2019 20:50:26 +0800</lastBuildDate>
     
 	<atom:link href="http://miaoshihao.com/notes/index.xml" rel="self" type="application/rss+xml" />
     
@@ -46,7 +46,7 @@ Features of Java :   Simple:
     </item>
     
     <item>
-      <title>Java Notes(12) Multithreading</title>
+      <title>Java Notes(14) Multithreading</title>
       <link>http://miaoshihao.com/notes/java_basic/java_multithreading/</link>
       <pubDate>Tue, 06 Aug 2019 05:11:21 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
@@ -57,7 +57,7 @@ Thread is executed inside the process. There is context-switching between the th
     </item>
     
     <item>
-      <title>Java Notes(11) Networking</title>
+      <title>Java Notes(13) Networking</title>
       <link>http://miaoshihao.com/notes/java_basic/java_networking/</link>
       <pubDate>Fri, 02 Aug 2019 22:00:16 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
@@ -71,7 +71,7 @@ Advantage of Java Networking :
     </item>
     
     <item>
-      <title>Java Notes(10) Serialization</title>
+      <title>Java Notes(12) Serialization</title>
       <link>http://miaoshihao.com/notes/java_basic/java_serialization/</link>
       <pubDate>Tue, 30 Jul 2019 15:58:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
@@ -125,6 +125,33 @@ Collection : A collection represents a group of objects, known as its elements. 
     </item>
     
     <item>
+      <title>Java Notes(19) Jackson</title>
+      <link>http://miaoshihao.com/notes/java_basic/java_jackson/</link>
+      <pubDate>Fri, 30 Aug 2019 20:58:26 +0800</pubDate>
+      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
+      <guid>http://miaoshihao.com/notes/java_basic/java_jackson/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java Notes(18) Hibernate</title>
+      <link>http://miaoshihao.com/notes/java_basic/java_hibernate/</link>
+      <pubDate>Thu, 29 Aug 2019 20:58:26 +0800</pubDate>
+      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
+      <guid>http://miaoshihao.com/notes/java_basic/java_hibernate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java Notes(17) JDBC</title>
+      <link>http://miaoshihao.com/notes/java_basic/java_jdbc/</link>
+      <pubDate>Tue, 27 Aug 2019 20:58:26 +0800</pubDate>
+      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
+      <guid>http://miaoshihao.com/notes/java_basic/java_jdbc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Java Notes(8) String</title>
       <link>http://miaoshihao.com/notes/java_basic/java_string/</link>
       <pubDate>Fri, 26 Jul 2019 20:58:26 +0800</pubDate>
@@ -136,7 +163,52 @@ String Class  By String literal  1 2 3  String s1 = &amp;#34;Welcome&amp;#34;; /
     </item>
     
     <item>
-      <title>Java Notes(9) File I/O</title>
+      <title>Java Notes(24) Lambda </title>
+      <link>http://miaoshihao.com/notes/java_basic/java_lambda/</link>
+      <pubDate>Wed, 02 Oct 2019 20:50:26 +0800</pubDate>
+      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
+      <guid>http://miaoshihao.com/notes/java_basic/java_lambda/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java Notes(23) Optionals</title>
+      <link>http://miaoshihao.com/notes/java_basic/java_optionals/</link>
+      <pubDate>Sat, 28 Sep 2019 20:50:46 +0800</pubDate>
+      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
+      <guid>http://miaoshihao.com/notes/java_basic/java_optionals/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java Notes(21) Logging</title>
+      <link>http://miaoshihao.com/notes/java_basic/java_logging/</link>
+      <pubDate>Thu, 12 Sep 2019 20:50:46 +0800</pubDate>
+      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
+      <guid>http://miaoshihao.com/notes/java_basic/java_logging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java Notes(20) JavaDoc</title>
+      <link>http://miaoshihao.com/notes/java_basic/java_doc/</link>
+      <pubDate>Tue, 10 Sep 2019 22:50:26 +0800</pubDate>
+      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
+      <guid>http://miaoshihao.com/notes/java_basic/java_doc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java Notes(16) Maven</title>
+      <link>http://miaoshihao.com/notes/java_basic/java_maven/</link>
+      <pubDate>Sat, 24 Aug 2019 22:50:26 +0800</pubDate>
+      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
+      <guid>http://miaoshihao.com/notes/java_basic/java_maven/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java Notes(11) File I/O</title>
       <link>http://miaoshihao.com/notes/java_basic/java_file_io/</link>
       <pubDate>Sat, 27 Jul 2019 09:58:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
@@ -146,7 +218,26 @@ The Hierarchy of I/O Class in Java Stream A stream can be defined as a sequence 
     </item>
     
     <item>
-      <title>Java Notes(13) Synchronization</title>
+      <title>Java Notes(10) Enum</title>
+      <link>http://miaoshihao.com/notes/java_basic/java_enum/</link>
+      <pubDate>Fri, 26 Jul 2019 23:50:26 +0800</pubDate>
+      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
+      <guid>http://miaoshihao.com/notes/java_basic/java_enum/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java Notes(9) Nested and Anonymous Class </title>
+      <link>http://miaoshihao.com/notes/java_basic/java_anonymouse_class/</link>
+      <pubDate>Fri, 26 Jul 2019 22:50:26 +0800</pubDate>
+      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
+      <guid>http://miaoshihao.com/notes/java_basic/java_anonymouse_class/</guid>
+      <description>Nested Class In Java, just like methods, variables of a class too can have another class as its member. Writing a class within another is allowed in Java. The class written within is called the nested class, and the class that holds the inner class is called the outer class.
+1 2 3 4 5 6 7 8  public class Outer { public class Inner { } } Outer.Inner inner = outer.</description>
+    </item>
+    
+    <item>
+      <title>Java Notes(15) Synchronization</title>
       <link>http://miaoshihao.com/notes/java_basic/java_synchronization/</link>
       <pubDate>Tue, 06 Aug 2019 20:58:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
@@ -154,6 +245,15 @@ The Hierarchy of I/O Class in Java Stream A stream can be defined as a sequence 
       <description>Synchronization in java is the capability to control the access of multiple threads to any shared resource. Java Synchronization is better option where we want to allow only one thread to access the shared resource.
 The synchronization is mainly used to :
  To prevent Thread Interference (Thread interference is a condition which occurs when more than one threads, executing simultaneously, access same piece of data.). To prevent Consistency Problem (Memory consistency errors occur when different threads have inconsistent views of what should be the same data.</description>
+    </item>
+    
+    <item>
+      <title>Java Notes(22) Unit Test&amp; Mockito</title>
+      <link>http://miaoshihao.com/notes/java_basic/java_testing/</link>
+      <pubDate>Wed, 25 Sep 2019 20:50:46 +0800</pubDate>
+      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
+      <guid>http://miaoshihao.com/notes/java_basic/java_testing/</guid>
+      <description></description>
     </item>
     
   </channel>
