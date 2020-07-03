@@ -15,6 +15,25 @@
     
     
     <item>
+      <title>Spring Integration Notes(1) Overview </title>
+      <link>http://miaoshihao.com/notes/spring/spring_integration/</link>
+      <pubDate>Tue, 01 Oct 2019 22:50:26 +0800</pubDate>
+      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
+      <guid>http://miaoshihao.com/notes/spring/spring_integration/</guid>
+      <description>Spring Integration Basic Overview Spring Integration is an open source framework that designed to enable the development of integration solutions typical of event-driven architectures and messaging-centric architectures. It requires dependency spring intergration core, which could be downloaded from Maven Central.
+1 2 3 4 5  &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.integration&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-integration-core&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;5.3.1.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;   Spring integration framework consists three parts, namely message, message channel, and message endpoint. In general. a message is a unit of information that can be passed between different message endpoint through message channels.</description>
+    </item>
+    
+    <item>
+      <title>Technical Indicator</title>
+      <link>http://miaoshihao.com/notes/investment/technicalindicator/</link>
+      <pubDate>Sat, 29 Jun 2019 19:32:26 +0800</pubDate>
+      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
+      <guid>http://miaoshihao.com/notes/investment/technicalindicator/</guid>
+      <description>Accumulation/Distribution Line (ADL)  The accumulation/distribution line gauges supply and demand by looking at where the price closed within the period&amp;rsquo;s range, and then multiplying that by volume. The A/D indicator is cumulative, meaning one period&amp;rsquo;s value is added or subtracted from the last. A rising A/D line helps confirm a rising price trend. A falling A/D line helps confirm a price downtrend. If the price is rising but A/D is falling, it signals underlying weakness and a potential decline in price.</description>
+    </item>
+    
+    <item>
       <title>Java Notes(1) Keywords</title>
       <link>http://miaoshihao.com/notes/java_basic/java_key_words/</link>
       <pubDate>Wed, 12 Jun 2019 15:58:26 +0800</pubDate>

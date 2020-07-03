@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Web - 标签 - Hi, Shihao</title>
+        <link>http://miaoshihao.com/zh-cn/tags/web/</link>
+        <description>Web - 标签 - Hi, Shihao</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
+            <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 02 Jul 2020 19:51:00 &#43;0800</lastBuildDate><atom:link href="http://miaoshihao.com/zh-cn/tags/web/" rel="self" type="application/rss+xml" /><item>
+    <title>HTTPS</title>
+    <link>http://miaoshihao.com/zh-cn/notes/network/https_principle/</link>
+    <pubDate>Thu, 02 Jul 2020 19:51:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://miaoshihao.com/zh-cn/notes/network/https_principle/</guid>
+    <description><![CDATA[我们为什么需要HTTPS？ HTTPS是什么？SSL/TLS是什么？ SSL/TLS发展史 SSL/TLS的工作原理 什么是HTTP HTTP协议(H]]></description>
+</item></channel>
+</rss>

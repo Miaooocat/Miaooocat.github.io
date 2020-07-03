@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Investment - Category - Hi, Shihao</title>
+        <link>http://miaoshihao.com/categories/investment/</link>
+        <description>Investment - Category - Hi, Shihao</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
+            <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 29 Jun 2019 19:32:26 &#43;0800</lastBuildDate><atom:link href="http://miaoshihao.com/categories/investment/" rel="self" type="application/rss+xml" /><item>
+    <title>Technical Indicator</title>
+    <link>http://miaoshihao.com/notes/investment/technicalindicator/</link>
+    <pubDate>Sat, 29 Jun 2019 19:32:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/investment/technicalindicator/</guid>
+    <description><![CDATA[Accumulation/Distribution Line (ADL)  The accumulation/distribution line gauges supply and demand by looking at where the price closed within the period&rsquo;s range, and then multiplying that by volume. The A/D indicator is cumulative, meaning one period&rsquo;s value is added or subtracted from the last. A rising A/D line helps confirm a rising price trend. A falling A/D line helps confirm a price downtrend. If the price is rising but A/D is falling, it signals underlying weakness and a potential decline in price.]]></description>
+</item></channel>
+</rss>

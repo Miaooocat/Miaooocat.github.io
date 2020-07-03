@@ -5,6 +5,14 @@
         <description>Java - Tag - Hi, Shihao</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
             <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 02 Oct 2019 20:50:26 &#43;0800</lastBuildDate><atom:link href="http://miaoshihao.com/tags/java/" rel="self" type="application/rss+xml" /><item>
+    <title>Spring Integration Notes(1) Overview </title>
+    <link>http://miaoshihao.com/notes/spring/spring_integration/</link>
+    <pubDate>Tue, 01 Oct 2019 22:50:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/spring/spring_integration/</guid>
+    <description><![CDATA[Spring Integration Basic Overview Spring Integration is an open source framework that designed to enable the development of integration solutions typical of event-driven architectures and messaging-centric architectures. It requires dependency spring intergration core, which could be downloaded from Maven Central.
+1 2 3 4 5  &lt;dependency&gt; &lt;groupId&gt;org.springframework.integration&lt;/groupId&gt; &lt;artifactId&gt;spring-integration-core&lt;/artifactId&gt; &lt;version&gt;5.3.1.RELEASE&lt;/version&gt; &lt;/dependency&gt;   Spring integration framework consists three parts, namely message, message channel, and message endpoint. In general. a message is a unit of information that can be passed between different message endpoint through message channels.]]></description>
+</item><item>
     <title>Java Notes(1) Keywords</title>
     <link>http://miaoshihao.com/notes/java_basic/java_key_words/</link>
     <pubDate>Wed, 12 Jun 2019 15:58:26 &#43;0800</pubDate>
@@ -86,13 +94,5 @@ Syntax:
     <description><![CDATA[The java.util package contains all the classes and interfaces for Collection framework.
 Map : An object that maps keys to values. A map is not ordered and cannot contain duplicate keys (but can contain duplicate values). Each key can map to at most one value.
 Collection : A collection represents a group of objects, known as its elements. The JDK provides implementations of more specific subinterfaces like Set and List.]]></description>
-</item><item>
-    <title>Java Notes(7) Error and Exception Handling</title>
-    <link>http://miaoshihao.com/notes/java_basic/java_errors_and_exception_handling/</link>
-    <pubDate>Thu, 25 Jul 2019 15:58:26 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>http://miaoshihao.com/notes/java_basic/java_errors_and_exception_handling/</guid>
-    <description><![CDATA[Exception Handling in Java Exception is an event that disrupts the normal flow of the program. It is an object which is thrown at runtime. The exception handling in java is one of the powerful mechanism to handle the runtime errors so that normal flow of the application can be maintained.
- An Error &ldquo;indicates serious problems that a reasonable application should not try to catch.&rdquo; An Exception &ldquo;indicates conditions that a reasonable application might want to catch.]]></description>
 </item></channel>
 </rss>

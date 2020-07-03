@@ -2,6 +2,8 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
+            <loc>http://miaoshihao.com/notes/spring/spring_integration/</loc><lastmod>2019-10-01T22:50:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://miaoshihao.com/notes/investment/technicalindicator/</loc><lastmod>2019-06-29T19:32:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/notes/java_basic/java_key_words/</loc><lastmod>2019-06-12T15:58:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/notes/java_basic/java_feature_execution/</loc><lastmod>2019-06-13T16:58:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/notes/java_basic/java_fundamentals/</loc><lastmod>2019-06-15T15:58:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -26,7 +28,7 @@
             <loc>http://miaoshihao.com/notes/java_basic/java_anonymouse_class/</loc><lastmod>2019-07-26T22:50:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/notes/java_basic/java_synchronization/</loc><lastmod>2019-08-06T20:58:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/notes/java_basic/java_testing/</loc><lastmod>2019-09-25T20:50:46&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://miaoshihao.com/music/</loc><lastmod>2020-06-10T22:58:57-04:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://miaoshihao.com/music/</loc><lastmod>2020-06-10T22:58:57-04:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="http://miaoshihao.com/zh-cn/music/"
@@ -55,7 +57,15 @@
                     /></url><url>
             <loc>http://miaoshihao.com/tags/java/</loc><lastmod>2019-10-02T20:50:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/categories/java-language/</loc><lastmod>2019-10-02T20:50:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://miaoshihao.com/notes/</loc><lastmod>2019-10-02T20:50:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://miaoshihao.com/notes/</loc><lastmod>2019-10-02T20:50:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="http://miaoshihao.com/zh-cn/notes/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://miaoshihao.com/notes/"
+                    /></url><url>
             <loc>http://miaoshihao.com/tags/</loc><lastmod>2019-10-02T20:50:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
@@ -64,4 +74,7 @@
                     rel="alternate"
                     hreflang="en"
                     href="http://miaoshihao.com/tags/"
-                    /></url></urlset>
+                    /></url><url>
+            <loc>http://miaoshihao.com/categories/spring/</loc><lastmod>2019-10-01T22:50:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://miaoshihao.com/tags/finance/</loc><lastmod>2019-06-29T19:32:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://miaoshihao.com/categories/investment/</loc><lastmod>2019-06-29T19:32:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>

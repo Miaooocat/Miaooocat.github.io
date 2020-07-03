@@ -9,18 +9,18 @@
     <managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
     <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 12 Jun 2020 15:58:26 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 02 Jul 2020 19:51:00 +0800</lastBuildDate>
     
 	<atom:link href="http://miaoshihao.com/zh-cn/notes/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>JVM Study Notes(1)</title>
-      <link>http://miaoshihao.com/zh-cn/notes/java_advance/jvm_1/</link>
-      <pubDate>Fri, 12 Jun 2020 15:58:26 +0800</pubDate>
+      <title>HTTPS</title>
+      <link>http://miaoshihao.com/zh-cn/notes/network/https_principle/</link>
+      <pubDate>Thu, 02 Jul 2020 19:51:00 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/zh-cn/notes/java_advance/jvm_1/</guid>
-      <description>Java 运行环境 JRE（Java Runtime Environment）仅包含运行 Java 程序的必需组件，包括 Java 虚拟机以及 Java 核心类库等。而 JDK（Java Development Kit）除</description>
+      <guid>http://miaoshihao.com/zh-cn/notes/network/https_principle/</guid>
+      <description>我们为什么需要HTTPS？ HTTPS是什么？SSL/TLS是什么？ SSL/TLS发展史 SSL/TLS的工作原理 什么是HTTP HTTP协议(H</description>
     </item>
     
   </channel>
