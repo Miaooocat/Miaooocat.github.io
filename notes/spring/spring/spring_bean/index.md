@@ -46,86 +46,40 @@ The class attribute in bean is normally **mandatory**. The creation of bean obje
 Every bean has one or more ids (also called identifiers, or names; these terms refer to the same thing). These ids must be unique within the BeanFactory or ApplicationContext the bean is hosted in. A bean will almost always have only one id, but if a bean has more than one id, the extra ones can essentially be considered aliases.
 
 
-### singleton or not to singleton (prototype)
+### Bean scopes
 
-Beans are defined to be deployed in one of two modes: **singleton(default)** or **non-singleton**. When a bean is a singleton, only one shared instance of the bean will be managed and all requests for beans with an id or ids matching that bean definition will result in that one specific bean instance being returned. The non-singleton, prototype mode of a bean deployment results in the creation of a new bean instance every time a request for that specific bean is done. 
+### The singleton scope
 
-Spring **cannot manage the complete lifecycle of a non-singleton/prototype bean**, since after it is created, it is given to the client and the container does not keep track of it at all any longer. 
-
-
-```xml
-<bean id="exampleBean"
-      class="examples.ExampleBean" singleton="false"/>
-<bean name="yetAnotherExample"
-      class="examples.ExampleBeanTwo" singleton="true"/>
-```
+Only one shared instance of a singleton bean is managed, and all requests for beans with an id or ids matching that bean definition result in that one specific bean instance being returned by the Spring container.
 
 
-**Setter-based dependency injection** is accomplished by the container calling setter methods on your beans after invoking a no-argument constructor or no-argument static factory method to instantiate your bean.
-
-```java
-public class TextEditor {
-   private SpellChecker spellChecker;
-
-   // a setter method to inject the dependency.
-   public void setSpellChecker(SpellChecker spellChecker) {
-      System.out.println("Inside setSpellChecker." );
-      this.spellChecker = spellChecker;
-   }
-   // a getter method to return spellChecker
-   public SpellChecker getSpellChecker() {
-      return spellChecker;
-   }
-   public void spellCheck() {
-      spellChecker.checkSpelling();
-   }
-}
-```
-
-```java
-public class SpellChecker {
-   public SpellChecker(){
-      System.out.println("Inside SpellChecker constructor." );
-   }
-   public void checkSpelling() {
-      System.out.println("Inside checkSpelling." );
-   }
-}
-```
-
-
-```java
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-public class MainApp {
-   public static void main(String[] args) {
-      ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
-      TextEditor te = (TextEditor) context.getBean("textEditor");
-      te.spellCheck();
-   }
-}
-```
+Spring's concept of a singleton bean differs from the Singleton pattern as defined in the Gang of Four (GoF) patterns book. The GoF Singleton hard-codes the scope of an object such that one and only one instance of a particular class is created per ClassLoader. The scope of the Spring singleton is best described as per container and per bean. This means that if you define one bean for a particular class in a single Spring container, then the Spring container creates one and only one instance of the class defined by that bean definition. The singleton scope is the default scope in Spring. To define a bean as a singleton in XML, you would write, for example:
 
 ```xml
-<?xml version = "1.0" encoding = "UTF-8"?>
+<bean id="accountService" class="com.foo.DefaultAccountService"/>
 
-<beans xmlns = "http://www.springframework.org/schema/beans"
-   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation = "http://www.springframework.org/schema/beans
-   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+<!-- the following is equivalent, though redundant (singleton scope is the default); using spring-beans-2.0.dtd -->
+<bean id="accountService" class="com.foo.DefaultAccountService" scope="singleton"/>
 
-   <!-- Definition for textEditor bean -->
-   <bean id = "textEditor" class = "com.tutorialspoint.TextEditor">
-      <property name = "spellChecker" ref = "spellChecker"/>
-   </bean>
-
-   <!-- Definition for spellChecker bean -->
-   <bean id = "spellChecker" class = "com.tutorialspoint.SpellChecker"></bean>
-
-</beans>
+<!-- the following is equivalent and preserved for backward compatibility in spring-beans.dtd -->
+<bean id="accountService" class="com.foo.DefaultAccountService" singleton="true"/>
 ```
 
-**Constructor-based dependency injection** is realized by invoking a constructor with a number of arguments, each representing a collaborator or property. Additionally, calling a static factory method with specific arguments, to construct the bean, can be considered almost equivalent, and the rest of this text will consider arguments to a constructor and arguments to a static factory method similarly. Although Spring generally advocates usage of setter-based dependency injection for most situations, it does fully support the constructor-based approach as well, since you may wish to use it with pre-existing beans which provide only multi-argument constructors, and no setters. Additionally, for simpler beans, some people prefer the constructor approach as a means of ensuring beans cannot be constructed in an invalid state.
+### The prototype scope
+The non-singleton, prototype scope of bean deployment results in the creation of a new bean instance every time a request for that specific bean is made. That is, the bean is injected into another bean or you request it through a getBean() method call on the container. As a rule, use the prototype scope for all stateful beans and the singleton scope for stateless beans.
 
-The BeanFactory supports both of these variants for injecting dependencies into beans it manages.
+```xml
+<!-- using spring-beans-2.0.dtd -->
+<bean id="accountService" class="com.foo.DefaultAccountService" scope="prototype"/>
+
+<!-- the following is equivalent and preserved for backward compatibility in spring-beans.dtd -->
+<bean id="accountService" class="com.foo.DefaultAccountService" singleton="false"/>
+```
+
+In contrast to the other scopes, Spring does not manage the complete lifecycle of a prototype bean: the container instantiates, configures, and otherwise assembles a prototype object, and hands it to the client, with no further record of that prototype instance.
+
+#### Singleton beans with prototype-bean dependencies
+
+When you use singleton-scoped beans with dependencies on prototype beans, be aware that dependencies are resolved at instantiation time. Thus if you dependency-inject a prototype-scoped bean into a singleton-scoped bean, a new prototype bean is instantiated and then dependency-injected into the singleton bean. The prototype instance is the sole instance that is ever supplied to the singleton-scoped bean.
+
+However, suppose you want the singleton-scoped bean to acquire a new instance of the prototype-scoped bean repeatedly at runtime. You cannot dependency-inject a prototype-scoped bean into your singleton bean, because that injection occurs only once, when the Spring container is instantiating the singleton bean and resolving and injecting its dependencies. I
