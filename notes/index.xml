@@ -9,10 +9,30 @@
     <managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
     <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Wed, 02 Oct 2019 20:50:26 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 18 Jul 2020 11:58:26 +0800</lastBuildDate>
     
 	<atom:link href="http://miaoshihao.com/notes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Beneish Model</title>
+      <link>http://miaoshihao.com/notes/investment/beneish_model/</link>
+      <pubDate>Fri, 17 Jul 2020 19:32:26 +0800</pubDate>
+      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
+      <guid>http://miaoshihao.com/notes/investment/beneish_model/</guid>
+      <description>The Beneish model is a mathematical model that uses financial ratios and eight variables to identify whether a company has manipulated its earnings. It is used as a tool to uncover potential financial fraud. However, the result generated from beneish model can not be the evidence.
+The variables are constructed from the data in the company&amp;rsquo;s financial statements, and once calculated, create an M-Score to describe the degree to which the earnings have been manipulated.</description>
+    </item>
+    
+    <item>
+      <title>Spring Framework Notes</title>
+      <link>http://miaoshihao.com/notes/spring/spring/spring_overview/</link>
+      <pubDate>Tue, 01 Oct 2019 22:50:26 +0800</pubDate>
+      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
+      <guid>http://miaoshihao.com/notes/spring/spring/spring_overview/</guid>
+      <description>The Core package is the most fundamental part of the framework and provides the Dependency Injection features allowing you to manage bean container functionality. The basic concept here is the BeanFactory, which provides a factory pattern removing the need for programmatic singletons and allowing you to decouple the configuration and specification of dependencies from your actual program logic.
+On top of the Core package sits the Context package, providing a way to access beans in a framework-style manner, somewhat resembling a JNDI-registry.</description>
+    </item>
     
     <item>
       <title>Spring Integration Notes(1) Overview </title>
@@ -41,6 +61,27 @@
       <guid>http://miaoshihao.com/notes/java_basic/java_key_words/</guid>
       <description>All 48 Java Keywords with Examples Table below lists 48 Keywords in Java.
 1) abstract abstract keyword is used to implement the abstraction in java. A method which doesn’t have method definition must be declared as abstract and the class containing it must be declared as abstract. You can’t instantiate abstract classes. Abstract methods must be implemented in the sub classes. You can’t use abstract keyword with variables and constructors.</description>
+    </item>
+    
+    <item>
+      <title>Spring Framework Notes - Beans, BeanFactory and the ApplicationContext</title>
+      <link>http://miaoshihao.com/notes/spring/spring/spring_bean/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
+      <guid>http://miaoshihao.com/notes/spring/spring/spring_bean/</guid>
+      <description>Bean Bean represents as an objects in Java. Bean need to contain the following points:
+The Bean class The class attribute in bean is normally mandatory. The creation of bean object is through BeanFactory. It has three approaches.
+The first approach is where the BeanFactory itself directly creates the bean by calling its constructor (equivalent to Java code calling new), the class attribute specifies the class of the bean to be constructed.</description>
+    </item>
+    
+    <item>
+      <title>Spring Framework Notes - IOC/DI</title>
+      <link>http://miaoshihao.com/notes/spring/spring/ioc_and_di/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
+      <guid>http://miaoshihao.com/notes/spring/spring/ioc_and_di/</guid>
+      <description>Inverse of Control (IOC) and Dependency Injection Dependency Injection (DI) and inversion of Control are a design pattern. It allows the creation of dependent objects outside of a class and provides those objects to a class through different ways.
+The basic principle is that beans define their dependencies (i.e. the other objects they work with) only through constructor arguments, arguments to a factory method, or properties which are set on the object instance after it has been constructed or returned from a factory method.</description>
     </item>
     
     <item>
@@ -144,6 +185,20 @@ Collection : A collection represents a group of objects, known as its elements. 
     </item>
     
     <item>
+      <title>Javascript Notes(1) Basic Syntax </title>
+      <link>http://miaoshihao.com/notes/javascript/javascript_basicsyntax/</link>
+      <pubDate>Sat, 18 Jul 2020 11:58:26 +0800</pubDate>
+      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
+      <guid>http://miaoshihao.com/notes/javascript/javascript_basicsyntax/</guid>
+      <description>Variable var vs let vs const var declarations are globally scoped or function scoped while let and const are block scoped.
+var variables can be updated and re-declared within its scope; let variables can be updated but not re-declared; const variables can neither be updated nor re-declared.
+Primitive types undefined null String Boolean Number
+Implicit Type Conversion &amp;ldquo;3&amp;rdquo; can be converted by 3 implicitly
+Strict equality === and !==
+Check both type and value without type conversion</description>
+    </item>
+    
+    <item>
       <title>Java Notes(19) Jackson</title>
       <link>http://miaoshihao.com/notes/java_basic/java_jackson/</link>
       <pubDate>Fri, 30 Aug 2019 20:58:26 +0800</pubDate>
@@ -191,6 +246,15 @@ String Class  By String literal  1 2 3  String s1 = &amp;#34;Welcome&amp;#34;; /
     </item>
     
     <item>
+      <title>Java Notes(24) Lambda </title>
+      <link>http://miaoshihao.com/notes/mobiledevelopement/deeplink/</link>
+      <pubDate>Wed, 02 Oct 2019 20:50:26 +0800</pubDate>
+      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
+      <guid>http://miaoshihao.com/notes/mobiledevelopement/deeplink/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Java Notes(23) Optionals</title>
       <link>http://miaoshihao.com/notes/java_basic/java_optionals/</link>
       <pubDate>Sat, 28 Sep 2019 20:50:46 +0800</pubDate>
@@ -223,7 +287,8 @@ String Class  By String literal  1 2 3  String s1 = &amp;#34;Welcome&amp;#34;; /
       <pubDate>Sat, 24 Aug 2019 22:50:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
       <guid>http://miaoshihao.com/notes/java_basic/java_maven/</guid>
-      <description></description>
+      <description>Core Concepts of Maven:   POM Files: Project Object Model(POM) Files are XML file that contains information related to the project and configuration information such as dependencies, source directory, plugin, goals etc. used by Maven to build the project. When you should execute a maven command you give maven a POM file to execute the commands. Maven reads pom.xml file to accomplish its configuration and operations.
+  Dependencies and Repositories: Dependencies are external Java libraries required for Project and repositories are directories of packaged JAR files.</description>
     </item>
     
     <item>

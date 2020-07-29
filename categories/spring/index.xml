@@ -5,6 +5,14 @@
         <description>Spring - Category - Hi, Shihao</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
             <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 01 Oct 2019 22:50:26 &#43;0800</lastBuildDate><atom:link href="http://miaoshihao.com/categories/spring/" rel="self" type="application/rss+xml" /><item>
+    <title>Spring Framework Notes</title>
+    <link>http://miaoshihao.com/notes/spring/spring/spring_overview/</link>
+    <pubDate>Tue, 01 Oct 2019 22:50:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/spring/spring/spring_overview/</guid>
+    <description><![CDATA[The Core package is the most fundamental part of the framework and provides the Dependency Injection features allowing you to manage bean container functionality. The basic concept here is the BeanFactory, which provides a factory pattern removing the need for programmatic singletons and allowing you to decouple the configuration and specification of dependencies from your actual program logic.
+On top of the Core package sits the Context package, providing a way to access beans in a framework-style manner, somewhat resembling a JNDI-registry.]]></description>
+</item><item>
     <title>Spring Integration Notes(1) Overview </title>
     <link>http://miaoshihao.com/notes/spring/spring_integration/</link>
     <pubDate>Tue, 01 Oct 2019 22:50:26 &#43;0800</pubDate>
@@ -12,5 +20,22 @@
     <guid>http://miaoshihao.com/notes/spring/spring_integration/</guid>
     <description><![CDATA[Spring Integration Basic Overview Spring Integration is an open source framework that designed to enable the development of integration solutions typical of event-driven architectures and messaging-centric architectures. It requires dependency spring intergration core, which could be downloaded from Maven Central.
 1 2 3 4 5  &lt;dependency&gt; &lt;groupId&gt;org.springframework.integration&lt;/groupId&gt; &lt;artifactId&gt;spring-integration-core&lt;/artifactId&gt; &lt;version&gt;5.3.1.RELEASE&lt;/version&gt; &lt;/dependency&gt;   Spring integration framework consists three parts, namely message, message channel, and message endpoint. In general. a message is a unit of information that can be passed between different message endpoint through message channels.]]></description>
+</item><item>
+    <title>Spring Framework Notes - Beans, BeanFactory and the ApplicationContext</title>
+    <link>http://miaoshihao.com/notes/spring/spring/spring_bean/</link>
+    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/spring/spring/spring_bean/</guid>
+    <description><![CDATA[Bean Bean represents as an objects in Java. Bean need to contain the following points:
+The Bean class The class attribute in bean is normally mandatory. The creation of bean object is through BeanFactory. It has three approaches.
+The first approach is where the BeanFactory itself directly creates the bean by calling its constructor (equivalent to Java code calling new), the class attribute specifies the class of the bean to be constructed.]]></description>
+</item><item>
+    <title>Spring Framework Notes - IOC/DI</title>
+    <link>http://miaoshihao.com/notes/spring/spring/ioc_and_di/</link>
+    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/spring/spring/ioc_and_di/</guid>
+    <description><![CDATA[Inverse of Control (IOC) and Dependency Injection Dependency Injection (DI) and inversion of Control are a design pattern. It allows the creation of dependent objects outside of a class and provides those objects to a class through different ways.
+The basic principle is that beans define their dependencies (i.e. the other objects they work with) only through constructor arguments, arguments to a factory method, or properties which are set on the object instance after it has been constructed or returned from a factory method.]]></description>
 </item></channel>
 </rss>

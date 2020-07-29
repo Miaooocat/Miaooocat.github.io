@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "style.min.css",
-	"sourceRoot": "/Users/Miao/dev/MySite",
+	"sourceRoot": "/Users/shihaomiao/Dev/MySite",
 	"sources": [
 		"themes/Shihaoo/assets/css/style.scss",
 		"themes/Shihaoo/assets/css/_variables.scss",

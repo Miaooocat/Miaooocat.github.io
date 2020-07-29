@@ -4,7 +4,15 @@
         <link>http://miaoshihao.com/tags/finance/</link>
         <description>Finance - Tag - Hi, Shihao</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
-            <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 29 Jun 2019 19:32:26 &#43;0800</lastBuildDate><atom:link href="http://miaoshihao.com/tags/finance/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 17 Jul 2020 19:32:26 &#43;0800</lastBuildDate><atom:link href="http://miaoshihao.com/tags/finance/" rel="self" type="application/rss+xml" /><item>
+    <title>Beneish Model</title>
+    <link>http://miaoshihao.com/notes/investment/beneish_model/</link>
+    <pubDate>Fri, 17 Jul 2020 19:32:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/investment/beneish_model/</guid>
+    <description><![CDATA[The Beneish model is a mathematical model that uses financial ratios and eight variables to identify whether a company has manipulated its earnings. It is used as a tool to uncover potential financial fraud. However, the result generated from beneish model can not be the evidence.
+The variables are constructed from the data in the company&rsquo;s financial statements, and once calculated, create an M-Score to describe the degree to which the earnings have been manipulated.]]></description>
+</item><item>
     <title>Technical Indicator</title>
     <link>http://miaoshihao.com/notes/investment/technicalindicator/</link>
     <pubDate>Sat, 29 Jun 2019 19:32:26 &#43;0800</pubDate>

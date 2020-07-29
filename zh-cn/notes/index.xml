@@ -9,10 +9,28 @@
     <managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
     <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Thu, 02 Jul 2020 19:51:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 17 Jul 2020 19:32:26 +0800</lastBuildDate>
     
 	<atom:link href="http://miaoshihao.com/zh-cn/notes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>财报学习--Beneish Model</title>
+      <link>http://miaoshihao.com/zh-cn/notes/investment/beneish_model/</link>
+      <pubDate>Fri, 17 Jul 2020 19:32:26 +0800</pubDate>
+      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
+      <guid>http://miaoshihao.com/zh-cn/notes/investment/beneish_model/</guid>
+      <description>The Beneish model is a mathematical model that uses financial ratios and eight variables to identify whether a company has manipulated its earnings. It is used as a tool to uncover potential financial fraud. However, the result generated from beneish model can not be the evidence. The variables are constructed from the data in the company&amp;rsquo;s financial statements, and once calculated, create an M-Score to describe the degree to which</description>
+    </item>
+    
+    <item>
+      <title>Deep Linking</title>
+      <link>http://miaoshihao.com/zh-cn/notes/mobiledevelopement/deeplink/</link>
+      <pubDate>Fri, 10 Jul 2020 09:50:16 +0800</pubDate>
+      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
+      <guid>http://miaoshihao.com/zh-cn/notes/mobiledevelopement/deeplink/</guid>
+      <description>Deeplink，简单讲，就是你在手机上点击一个链接之后，可以直接链接到app内部的某个页面，而不是app正常打开时显示的首页。不似web，</description>
+    </item>
     
     <item>
       <title>HTTPS</title>
@@ -21,6 +39,15 @@
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
       <guid>http://miaoshihao.com/zh-cn/notes/network/https_principle/</guid>
       <description>我们为什么需要HTTPS？ HTTPS是什么？SSL/TLS是什么？ SSL/TLS发展史 SSL/TLS的工作原理 什么是HTTP HTTP协议(H</description>
+    </item>
+    
+    <item>
+      <title>Java Notes(16) Maven</title>
+      <link>http://miaoshihao.com/zh-cn/notes/java_basic/java_maven/</link>
+      <pubDate>Sat, 24 Aug 2019 22:50:26 +0800</pubDate>
+      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
+      <guid>http://miaoshihao.com/zh-cn/notes/java_basic/java_maven/</guid>
+      <description>Check English Version</description>
     </item>
     
   </channel>

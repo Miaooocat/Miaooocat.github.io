@@ -1,0 +1,20 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Javascript Language - Category - Hi, Shihao</title>
+        <link>http://miaoshihao.com/categories/javascript-language/</link>
+        <description>Javascript Language - Category - Hi, Shihao</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
+            <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 18 Jul 2020 11:58:26 &#43;0800</lastBuildDate><atom:link href="http://miaoshihao.com/categories/javascript-language/" rel="self" type="application/rss+xml" /><item>
+    <title>Javascript Notes(1) Basic Syntax </title>
+    <link>http://miaoshihao.com/notes/javascript/javascript_basicsyntax/</link>
+    <pubDate>Sat, 18 Jul 2020 11:58:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/javascript/javascript_basicsyntax/</guid>
+    <description><![CDATA[Variable var vs let vs const var declarations are globally scoped or function scoped while let and const are block scoped.
+var variables can be updated and re-declared within its scope; let variables can be updated but not re-declared; const variables can neither be updated nor re-declared.
+Primitive types undefined null String Boolean Number
+Implicit Type Conversion &ldquo;3&rdquo; can be converted by 3 implicitly
+Strict equality === and !==
+Check both type and value without type conversion]]></description>
+</item></channel>
+</rss>
