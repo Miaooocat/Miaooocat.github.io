@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Integrtion - Hi, Shihao</title><meta name="Description" content="Application Integration"><meta property="og:title" content="Integrtion" />
+<meta property="og:description" content="Application Integration" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://miaoshihao.com/notes/architecture_design/integration/" />
+<meta property="og:image" content="http://miaoshihao.com/logo.png"/>
+<meta property="article:published_time" content="2020-07-30T20:50:26+08:00" />
+<meta property="article:modified_time" content="2020-07-30T20:50:26+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://miaoshihao.com/logo.png"/>
+
+<meta name="twitter:title" content="Integrtion"/>
+<meta name="twitter:description" content="Application Integration"/>
+<meta name="application-name" content="Hi, Shihao">
+<meta name="apple-mobile-web-app-title" content="Hi, Shihao"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://miaoshihao.com/notes/architecture_design/integration/" /><link rel="prev" href="http://miaoshihao.com/notes/architecture_design/coupling/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Integrtion",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/miaoshihao.com\/notes\/architecture_design\/integration\/"
+        },"image": ["http:\/\/miaoshihao.com\/images\/Apple-Devices-Preview.png"],"genre": "notes","wordcount":  1053 ,
+        "url": "http:\/\/miaoshihao.com\/notes\/architecture_design\/integration\/","datePublished": "2020-07-30T20:50:26+08:00","dateModified": "2020-07-30T20:50:26+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "http:\/\/miaoshihao.com\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Shihao"
+            },"description": "Application Integration"
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Hi, Shihao"><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/blogs/"> Blogs </a><a class="menu-item" href="/notes/"> Notes </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/music/"> Music </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/notes/architecture_design/integration/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>                
+                <a href="./robot/" class="menu-item chat-bot" title="">
+                    <i class="fas fa-robot fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Hi, Shihao"><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/blogs/" title="">Blogs</a><a class="menu-item" href="/notes/" title="">Notes</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/music/" title="">Music</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/notes/architecture_design/integration/" selected>English</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="page single special"><h1 class="single-title animated pulse faster">Integrtion</h1><div class="content" id="content"><p>In enterprise environments, interaction between applications is important. This interaction allowed organizations to both share data and make use of functionality provided by other systems.</p>
+<p>Though enterprise application integration can take many different forms, from extract-transform-load jobs run overnight to all-encompassing service-oriented architecture (SOA) strategies, all approaches leverage one of four well-known integration
+styles:</p>
+<ol>
+<li>File-based integration</li>
+<li>Shared-database integration</li>
+<li>Remote Procedure Calls</li>
+<li>Message-based integration</li>
+</ol>
+<h3 id="integrating-applications-by-transferring-files">Integrating applications by transferring files</h3>
+<p>The most basic approach is for one application to produce a file and for that file to be made available to another system. This approach is simple and generally interoperable because all that’s required is for interacting applications to be able to <strong>read and write files</strong>. Because the basic requirements for using file-based integration are simple, it’s a fairly common solution, but some of the limitations of filesystems mean that additional complexity may be created in applications having to deal with files.</p>
+<p>One limitation is that filesystems aren’t transactional and don’t provide metadata about the current state and validity of a file. As a consequence, it’s hard to tell, for example, if another process is currently updating the file.</p>
+<p>In general, to work properly, this type of integration requires some strategies to ensure that the receiver doesn’t read inconsistent data, such as a half-written file. Also, it requires setting up a process by which corrupt files are moved out of the way to prevent repeated attempts to process them.</p>
+<p>Another significant drawback is that applications generally need to poll specific locations to discover if more files are ready to be processed, thus introducing additional application complexity and a potential for unnecessary delay.</p>
+<h3 id="interacting-through-a-shared-database">Interacting through a shared database</h3>
+<p>Databases are more advanced data storage mechanisms than files and alleviate some of the limitations of the filesystems. They provide atomic operations, well-defined data structures, and mechanisms that provide some guarantees on data consistency. Shared-database integration consists of providing the different applications with access to the same database. In general, shared databases are used in two scenarios:</p>
+<ol>
+<li>
+<p>As a smarter form of data transfer, by defining a set of staging tables where the different applications can write data that will be consumed by the receiver applications. Compared with the filesystem style, this approach has the advantage that metadata, validation, and support for concurrent access are available out of the box for the transferred data.</p>
+</li>
+<li>
+<p>By allowing different applications to share the same data. This has no direct correspondent to the filesystem style and has the advantage that changes made by one application are made available to everyone else in real-time (unlike the data transfer approach, which involves writing data in the file or staging tables and a certain lag until the recipient application makes use of it).</p>
+</li>
+</ol>
+<p>The challenges of shared-database integration are as follows:</p>
+<ol>
+<li>
+<p>One-size-fits-all is hardly true in software development, and the compromises necessary to implement a domain model (and subsequent database model) based on the needs of multiple business processes may result in a model that fits no one very well.</p>
+</li>
+<li>
+<p>Sharing the same data model may create unwanted coupling between the different applications in the system. This may seriously affect their capabilities of evolving in the future because changing it will require all the other applications to change as well (at least in the parts that deal directly with the shared model).</p>
+</li>
+<li>
+<p>Concurrent systems frequently writing the same set of data might face performance problems because exclusive access will need to be granted from time to time, so they will end up locking each other out.</p>
+</li>
+<li>
+<p>Caching data in memory might be an issue because applications may not be aware when it becomes stale.</p>
+</li>
+<li>
+<p>Database sharing works well with transferring data between applications but doesn’t solve the problem of invoking functionality in the remote application.</p>
+</li>
+</ol>
+<h3 id="remote-procedure-calls">Remote Procedure Calls</h3>
+<p>Remote Procedure Calls (RPC) is an integration style that tries to hide the fact that different services are running on different systems. The method invocation is serialized over the network to the service provider, where the service is invoked. The return value is then serialized and sent back to the invoker. This involves proxies and exporters (in Spring) or stubs and skeletons (in EJB).</p>
+<p>RPC would presumably allow architects to design scalable applications without developers having to worry about the differences between local and remote invocations.</p>
+<p>The problem with this approach is that certain details about remoting can’t safely be hidden or ignored. Assuming that RPC can hide these details will lead to simplistic solutions and leaky abstractions. Dealing with problems properly will violate the
+loose coupling we’ve come to enjoy.</p>
+<p>RPC requires that parameters and return values of a service are serializable, which means they can be translated into an intermediate format that can be transmitted over the wire. From case to case, this can be achieved in different ways, such as through Java serialization or using XML marshalling through mechanisms such as Java Architecture for XML Binding (JAXB). This not only restricts the types that can be sent, it also requires that the application code deal with serialization or marshalling errors.</p>
+<p>We’re probably not the first to tell you, but it’s worth mentioning again that the network isn’t reliable. You can assume that a local method invocation returns within a certain (reasonable) time with the return value or an exception, but with a network
+connection in the mix, this can take much longer, and worse, it’s much less predictable. The trickiest part is that the service that’s invoked can return successfully, but the invoker doesn’t get the response. Assuming you don’t need to account for this is
+usually a bad idea.</p>
+<p>Finally, serializing arguments and return values harms interoperability. Sending a representation of some Serializable to an application written in Perl is wishful thinking at best. The need to know about the method name and argument order is
+questionable.</p>
+<h3 id="message-based-integration">Message-based integration</h3>
+<p>Messaging is an integration style based on exchanging encapsulated data packets (messages) between components (endpoints) through connections (channels). As described at <a href="http://www.enterpriseintegrationpatterns.com">www.enterpriseintegrationpatterns.com</a>, the packets should be small, and they should be shared frequently, reliably, immediately, and asynchronously. Potentially this resolves many of the problems of encapsulation and error handling associated with the previous three integration styles. It also provides an easy way to deal with sharing both data and functionality, and overall it’s the most recommended integration style when you have a choice.</p>
+</div></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Shihao Miao</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><div>
+                    <span id="timeDate">Loading Days...</span><span id="times">Loading Times...</span>
+                    <script>
+                        var now = new Date();
+                        function createtime() {
+                            var grt= new Date("03/20/2019 00:00:00");
+                            now.setTime(now.getTime()+250);
+                            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+                            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+                            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+                            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+                            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+                            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+                            document.getElementById("timeDate").innerHTML = "This website has struggled in this world for "+dnum+" day ";
+                            document.getElementById("times").innerHTML = hnum + " hour " + mnum + " min " + snum + " sec";
+                        }
+                    setInterval("createtime()",250);
+                    </script>
+                    </div></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-1":"Home","id-2":"Home"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":30000,"speed":500}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

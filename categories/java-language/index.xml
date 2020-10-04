@@ -6,44 +6,44 @@
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
             <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 02 Oct 2019 20:50:26 &#43;0800</lastBuildDate><atom:link href="http://miaoshihao.com/categories/java-language/" rel="self" type="application/rss+xml" /><item>
     <title>Java Notes(1) Keywords</title>
-    <link>http://miaoshihao.com/notes/java_basic/java_key_words/</link>
+    <link>http://miaoshihao.com/notes/java/java_key_words/</link>
     <pubDate>Wed, 12 Jun 2019 15:58:26 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/java_basic/java_key_words/</guid>
+    <guid>http://miaoshihao.com/notes/java/java_key_words/</guid>
     <description><![CDATA[All 48 Java Keywords with Examples Table below lists 48 Keywords in Java.
 1) abstract abstract keyword is used to implement the abstraction in java. A method which doesn’t have method definition must be declared as abstract and the class containing it must be declared as abstract. You can’t instantiate abstract classes. Abstract methods must be implemented in the sub classes. You can’t use abstract keyword with variables and constructors.]]></description>
 </item><item>
     <title>Java Notes(2) Feature and Program Execution</title>
-    <link>http://miaoshihao.com/notes/java_basic/java_feature_execution/</link>
+    <link>http://miaoshihao.com/notes/java/java_feature_execution/</link>
     <pubDate>Thu, 13 Jun 2019 16:58:26 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/java_basic/java_feature_execution/</guid>
+    <guid>http://miaoshihao.com/notes/java/java_feature_execution/</guid>
     <description><![CDATA[Java Features and Program Execution Java is a programming language and a platform.
 Platform: Any hardware or software environment in which a program runs, is known as a platform. Since Java has its own runtime environment (JRE) and Application Programming Interface (API), it is called platform.
 Features of Java :   Simple:
  User friendly syntax based on C++ It has Automatic Garbage Collection It has Rich set of APIs Removed confusing features - explicit pointers, operator overloading, multiple inheritance, etc    Object-oriented:]]></description>
 </item><item>
     <title>Java Notes(3) Java Fundamentals</title>
-    <link>http://miaoshihao.com/notes/java_basic/java_fundamentals/</link>
+    <link>http://miaoshihao.com/notes/java/java_fundamentals/</link>
     <pubDate>Sat, 15 Jun 2019 15:58:26 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/java_basic/java_fundamentals/</guid>
+    <guid>http://miaoshihao.com/notes/java/java_fundamentals/</guid>
     <description><![CDATA[Data Types in Java  Data Type Default Value Default size   boolean false 1 bit   char '\u0000' 2 byte   byte 0 1 byte   short 0 2 byte   int 0 4 byte   long 0L 8 byte   float 0.0f 4 byte   double 0.0d 8 byte   Data Type Promotion in Java : Wrapper Classes in Java In Java, there is a wrapper class.]]></description>
 </item><item>
     <title>Java Notes(14) Multithreading</title>
-    <link>http://miaoshihao.com/notes/java_basic/java_multithreading/</link>
+    <link>http://miaoshihao.com/notes/java/java_multithreading/</link>
     <pubDate>Tue, 06 Aug 2019 05:11:21 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/java_basic/java_multithreading/</guid>
+    <guid>http://miaoshihao.com/notes/java/java_multithreading/</guid>
     <description><![CDATA[Multithreading in java is a process of executing multiple threads simultaneously. Thread is basically a lightweight sub-process, a smallest unit of processing. Multiprocessing and multithreading, both are used to achieve multitasking.
 But we use multithreading than multiprocessing because threads share a common memory area. They don&rsquo;t allocate separate memory area so saves memory, and context-switching between the threads takes less time than process.
 Thread is executed inside the process. There is context-switching between the threads.]]></description>
 </item><item>
     <title>Java Notes(13) Networking</title>
-    <link>http://miaoshihao.com/notes/java_basic/java_networking/</link>
+    <link>http://miaoshihao.com/notes/java/java_networking/</link>
     <pubDate>Fri, 02 Aug 2019 22:00:16 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/java_basic/java_networking/</guid>
+    <guid>http://miaoshihao.com/notes/java/java_networking/</guid>
     <description><![CDATA[Java Networking is a concept of connecting two or more computing devices together so that we can share resources.
 Java Socket Programming provides facility to share data between different computing devices.
 Advantage of Java Networking :
@@ -52,46 +52,46 @@ Advantage of Java Networking :
  IP address is a unique number assigned to a node of a network e.]]></description>
 </item><item>
     <title>Java Notes(12) Serialization</title>
-    <link>http://miaoshihao.com/notes/java_basic/java_serialization/</link>
+    <link>http://miaoshihao.com/notes/java/java_serialization/</link>
     <pubDate>Tue, 30 Jul 2019 15:58:26 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/java_basic/java_serialization/</guid>
+    <guid>http://miaoshihao.com/notes/java/java_serialization/</guid>
     <description><![CDATA[Serialization in java is a mechanism of writing the state of an object into a byte stream. It is mainly used in Hibernate, RMI, JPA, EJB and JMS technologies. The reverse operation of serialization is called deserialization.
 Advantage of Java Serialization : It is mainly used to travel object&rsquo;s state on the network (known as marshaling).
 java.io.Serializable interface : Serializable is a marker interface (has no data member and method). It is used to &ldquo;mark&rdquo; java classes so that objects of these classes may get certain capability.]]></description>
 </item><item>
     <title>Java Notes(4) Object Oriented Language</title>
-    <link>http://miaoshihao.com/notes/java_basic/java_oop/</link>
+    <link>http://miaoshihao.com/notes/java/java_oop/</link>
     <pubDate>Mon, 17 Jun 2019 15:58:26 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/java_basic/java_oop/</guid>
+    <guid>http://miaoshihao.com/notes/java/java_oop/</guid>
     <description><![CDATA[Object Oriented Object-Oriented Programming is a methodology or paradigm to design a program using classes and objects. It simplifies the software development and maintenance.
 Class  A class in Java can contain: field(variable, attribute), methods, constructors, blocks, nested class and interface. Object is an instance of a class. There is only one way to define class in java using class keyword. The Object class is the parent class of all the classes in java by default.]]></description>
 </item><item>
     <title>Java Notes(5) Generic</title>
-    <link>http://miaoshihao.com/notes/java_basic/java_generics/</link>
+    <link>http://miaoshihao.com/notes/java/java_generics/</link>
     <pubDate>Fri, 05 Jul 2019 19:50:26 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/java_basic/java_generics/</guid>
+    <guid>http://miaoshihao.com/notes/java/java_generics/</guid>
     <description><![CDATA[Generic Classes A generic class declaration looks like a non-generic class declaration, except that the class name is followed by a type parameter section.
 The type parameter section of a generic class can have one or more type parameters separated by commas. These classes are known as parameterized classes or parameterized types because they accept one or more parameters.
 Syntax:
 1 2 3  public class Box&lt;T&gt; { private T t; }   Box − Box is a generic class.]]></description>
 </item><item>
     <title>Java Notes(6) Collection Framework</title>
-    <link>http://miaoshihao.com/notes/java_basic/java_collection/</link>
+    <link>http://miaoshihao.com/notes/java/java_collection/</link>
     <pubDate>Tue, 16 Jul 2019 15:58:26 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/java_basic/java_collection/</guid>
+    <guid>http://miaoshihao.com/notes/java/java_collection/</guid>
     <description><![CDATA[The java.util package contains all the classes and interfaces for Collection framework.
 Map : An object that maps keys to values. A map is not ordered and cannot contain duplicate keys (but can contain duplicate values). Each key can map to at most one value.
 Collection : A collection represents a group of objects, known as its elements. The JDK provides implementations of more specific subinterfaces like Set and List.]]></description>
 </item><item>
     <title>Java Notes(7) Error and Exception Handling</title>
-    <link>http://miaoshihao.com/notes/java_basic/java_errors_and_exception_handling/</link>
+    <link>http://miaoshihao.com/notes/java/java_errors_and_exception_handling/</link>
     <pubDate>Thu, 25 Jul 2019 15:58:26 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/java_basic/java_errors_and_exception_handling/</guid>
+    <guid>http://miaoshihao.com/notes/java/java_errors_and_exception_handling/</guid>
     <description><![CDATA[Exception Handling in Java Exception is an event that disrupts the normal flow of the program. It is an object which is thrown at runtime. The exception handling in java is one of the powerful mechanism to handle the runtime errors so that normal flow of the application can be maintained.
  An Error &ldquo;indicates serious problems that a reasonable application should not try to catch.&rdquo; An Exception &ldquo;indicates conditions that a reasonable application might want to catch.]]></description>
 </item></channel>

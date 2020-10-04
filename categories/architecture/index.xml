@@ -1,0 +1,24 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Architecture - Category - Hi, Shihao</title>
+        <link>http://miaoshihao.com/categories/architecture/</link>
+        <description>Architecture - Category - Hi, Shihao</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
+            <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 30 Jul 2020 20:50:26 &#43;0800</lastBuildDate><atom:link href="http://miaoshihao.com/categories/architecture/" rel="self" type="application/rss+xml" /><item>
+    <title>Integrtion</title>
+    <link>http://miaoshihao.com/notes/architecture_design/integration/</link>
+    <pubDate>Thu, 30 Jul 2020 20:50:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/architecture_design/integration/</guid>
+    <description><![CDATA[In enterprise environments, interaction between applications is important. This interaction allowed organizations to both share data and make use of functionality provided by other systems.
+Though enterprise application integration can take many different forms, from extract-transform-load jobs run overnight to all-encompassing service-oriented architecture (SOA) strategies, all approaches leverage one of four well-known integration styles:
+ File-based integration Shared-database integration Remote Procedure Calls Message-based integration  Integrating applications by transferring files The most basic approach is for one application to produce a file and for that file to be made available to another system.]]></description>
+</item><item>
+    <title>Coupling</title>
+    <link>http://miaoshihao.com/notes/architecture_design/coupling/</link>
+    <pubDate>Wed, 29 Jul 2020 20:50:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/architecture_design/coupling/</guid>
+    <description><![CDATA[Loose coupling within systems and between systems deserves serious consideration, because it has serious implications for design and maintenance. Achieving an appropriate degree of loose coupling allows you to spend more time adding new features and delivering business value. By contrast, tightly coupled systems are expensive to maintain and expand because small changes to the code tend to produce ripple effects, requiring modifications across a large number of interacting systems.]]></description>
+</item></channel>
+</rss>
