@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Design Pattern Notes - Hi, Shihao</title><meta name="Description" content="Adapter"><meta property="og:title" content="Design Pattern Notes" />
+<meta property="og:description" content="Adapter" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://miaoshihao.com/notes/javadesignpatten/adapter/" />
+<meta property="og:image" content="http://miaoshihao.com/logo.png"/>
+<meta property="article:published_time" content="2020-10-23T10:35:26+08:00" />
+<meta property="article:modified_time" content="2020-10-23T10:35:26+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://miaoshihao.com/logo.png"/>
+
+<meta name="twitter:title" content="Design Pattern Notes"/>
+<meta name="twitter:description" content="Adapter"/>
+<meta name="application-name" content="Hi, Shihao">
+<meta name="apple-mobile-web-app-title" content="Hi, Shihao"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://miaoshihao.com/notes/javadesignpatten/adapter/" /><link rel="prev" href="http://miaoshihao.com/notes/java/java_8/" /><link rel="next" href="http://miaoshihao.com/notes/java/java_string/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Design Pattern Notes",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/miaoshihao.com\/notes\/javadesignpatten\/adapter\/"
+        },"image": ["http:\/\/miaoshihao.com\/images\/Apple-Devices-Preview.png"],"genre": "notes","keywords": "Java","wordcount":  707 ,
+        "url": "http:\/\/miaoshihao.com\/notes\/javadesignpatten\/adapter\/","datePublished": "2020-10-23T10:35:26+08:00","dateModified": "2020-10-23T10:35:26+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "http:\/\/miaoshihao.com\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Shihao"
+            },"description": "Adapter"
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Hi, Shihao"><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/blogs/"> Blogs </a><a class="menu-item" href="/notes/"> Notes </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/music/"> Music </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/notes/javadesignpatten/adapter/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>                
+                <a href="./robot/" class="menu-item chat-bot" title="">
+                    <i class="fas fa-robot fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Hi, Shihao"><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/blogs/" title="">Blogs</a><a class="menu-item" href="/notes/" title="">Notes</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/music/" title="">Music</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/notes/javadesignpatten/adapter/" selected>English</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="page single special"><h1 class="single-title animated pulse faster">Design Pattern Notes</h1><div class="content" id="content"><h2 id="overview">Overview</h2>
+<p>Adapter is classified as a <strong>structural</strong> design pattern. This design pattern is also known as wrapper</p>
+<h2 id="intent">Intent</h2>
+<p>Convert the interface of a class into another interface the clients expect. Adapter lets classes work together that couldn&rsquo;t otherwise because of incompatible interfaces.</p>
+<h2 id="explanation">Explanation</h2>
+<p><strong>Wikipedia</strong></p>
+<blockquote>
+<p>In software engineering, the adapter pattern is a software design pattern that allows the interface of an existing class to be used as another interface. It is often used to make existing classes work with others without modifying their source code.</p>
+</blockquote>
+<p><strong>In plain words</strong></p>
+<blockquote>
+<p>Adapter pattern lets you wrap an otherwise incompatible object in an adapter to make it compatible with another class.</p>
+</blockquote>
+<p><strong>Real world example</strong></p>
+<blockquote>
+<p>Consider that you have some pictures in your memory card and you need to transfer them to your computer. In order to transfer them you need some kind of adapter that is compatible with your computer ports so that you can attach memory card to your computer. In this case card reader is an adapter.</p>
+</blockquote>
+<blockquote>
+<p>Another example would be the famous power adapter; a three legged plug can&rsquo;t be connected to a two pronged outlet, it needs to use a power adapter that makes it compatible with the two pronged outlet.</p>
+</blockquote>
+<blockquote>
+<p>Yet another example would be a translator translating words spoken by one person to another</p>
+</blockquote>
+<p><strong>Programmatic Example</strong></p>
+<p>Consider a captain that can only use rowing boats and cannot sail at all.</p>
+<p>First we have interfaces <code>RowingBoat</code> and <code>FishingBoat</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">RowingBoat</span> <span class="o">{</span>
+  <span class="kt">void</span> <span class="nf">row</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FishingBoat</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Logger</span> <span class="n">LOGGER</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">FishingBoat</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sail</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">LOGGER</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;The fishing boat is sailing&#34;</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>And captain expects an implementation of <code>RowingBoat</code> interface to be able to move</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Captain</span> <span class="o">{</span>
+
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">RowingBoat</span> <span class="n">rowingBoat</span><span class="o">;</span>
+  <span class="c1">// default constructor and setter for rowingBoat
+</span><span class="c1"></span>  <span class="kd">public</span> <span class="nf">Captain</span><span class="o">(</span><span class="n">RowingBoat</span> <span class="n">rowingBoat</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">rowingBoat</span> <span class="o">=</span> <span class="n">rowingBoat</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">row</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">rowingBoat</span><span class="o">.</span><span class="na">row</span><span class="o">();</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Now let&rsquo;s say the pirates are coming and our captain needs to escape but there is only fishing boat available. We need to create an adapter that allows the captain to operate the fishing boat with his rowing boat skills.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">FishingBoatAdapter</span> <span class="kd">implements</span> <span class="n">RowingBoat</span> <span class="o">{</span>
+
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Logger</span> <span class="n">LOGGER</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">FishingBoatAdapter</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">FishingBoat</span> <span class="n">boat</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="nf">FishingBoatAdapter</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">boat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FishingBoat</span><span class="o">();</span>
+  <span class="o">}</span>
+
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">row</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">boat</span><span class="o">.</span><span class="na">sail</span><span class="o">();</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>And now the <code>Captain</code> can use the <code>FishingBoat</code> to escape the pirates.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">var</span> <span class="n">captain</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Captain</span><span class="o">(</span><span class="k">new</span> <span class="n">FishingBoatAdapter</span><span class="o">());</span>
+<span class="n">captain</span><span class="o">.</span><span class="na">row</span><span class="o">();</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="class-diagram">Class diagram</h2>
+<p><figure><a class="lightgallery" href="./etc/adapter.urm.png" title="alt text" data-thumbnail="./etc/adapter.urm.png" data-sub-html="<h2>Adapter class diagram</h2><p>alt text</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="./etc/adapter.urm.png"
+            data-srcset="./etc/adapter.urm.png, ./etc/adapter.urm.png 1.5x, ./etc/adapter.urm.png 2x"
+            data-sizes="auto"
+            alt="./etc/adapter.urm.png" />
+    </a><figcaption class="image-caption">Adapter class diagram</figcaption>
+    </figure></p>
+<h2 id="applicability">Applicability</h2>
+<p>Use the Adapter pattern when</p>
+<ul>
+<li>you want to use an existing class, and its interface does not match the one you need</li>
+<li>you want to create a reusable class that cooperates with unrelated or unforeseen classes, that is, classes that don&rsquo;t necessarily have compatible interfaces</li>
+<li>you need to use several existing subclasses, but it&rsquo;s impractical to adapt their interface by subclassing every one. An object adapter can adapt the interface of its parent class.</li>
+<li>most of the applications using third party libraries use adapters as a middle layer between the application and the 3rd party library to decouple the application from the library. If another library has to be used only an adapter for the new library is required without having to change the application code.</li>
+</ul>
+<h2 id="consequences">Consequences:</h2>
+<p>Class and object adapters have different trade-offs. A class adapter</p>
+<ul>
+<li>adapts Adaptee to Target by committing to a concrete Adaptee class. As a consequence, a class adapter won’t work when we want to adapt a class and all its subclasses.</li>
+<li>let’s Adapter override some of Adaptee’s behavior, since Adapter is a subclass of Adaptee.</li>
+<li>introduces only one object, and no additional pointer indirection is needed to get to the adaptee.</li>
+</ul>
+<p>An object adapter</p>
+<ul>
+<li>let’s a single Adapter work with many Adaptees—that is, the Adaptee itself and all of its subclasses (if any). The Adapter can also add functionality to all Adaptees at once.</li>
+<li>makes it harder to override Adaptee behavior. It will require subclassing Adaptee and making Adapter refer to the subclass rather than the Adaptee itself.</li>
+</ul>
+</div></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Shihao Miao</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><div>
+                    <span id="timeDate">Loading Days...</span><span id="times">Loading Times...</span>
+                    <script>
+                        var now = new Date();
+                        function createtime() {
+                            var grt= new Date("03/20/2019 00:00:00");
+                            now.setTime(now.getTime()+250);
+                            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+                            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+                            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+                            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+                            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+                            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+                            document.getElementById("timeDate").innerHTML = "This website has struggled in this world for "+dnum+" day ";
+                            document.getElementById("times").innerHTML = hnum + " hour " + mnum + " min " + snum + " sec";
+                        }
+                    setInterval("createtime()",250);
+                    </script>
+                    </div></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-1":"Home","id-2":"Home"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":30000,"speed":500}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

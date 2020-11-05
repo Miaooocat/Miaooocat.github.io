@@ -13,10 +13,12 @@
 <br>
 <br>
 <br>
+
 <meting-js
 	server="netease"
 	type="playlist"
 	id="2796323604"
+	order="random"
 	>
 </meting-js>
 

@@ -9,7 +9,7 @@
     <managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
     <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Tue, 18 Aug 2020 11:58:26 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 23 Oct 2020 10:35:26 +0800</lastBuildDate>
     
 	<atom:link href="http://miaoshihao.com/notes/index.xml" rel="self" type="application/rss+xml" />
     
@@ -252,11 +252,23 @@ String Class  By String literal  1 2 3  String s1 = &amp;#34;Welcome&amp;#34;; /
     </item>
     
     <item>
+      <title>Design Pattern Notes</title>
+      <link>http://miaoshihao.com/notes/javadesignpatten/adapter/</link>
+      <pubDate>Fri, 23 Oct 2020 10:35:26 +0800</pubDate>
+      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
+      <guid>http://miaoshihao.com/notes/javadesignpatten/adapter/</guid>
+      <description>Overview Adapter is classified as a structural design pattern. This design pattern is also known as wrapper
+Intent Convert the interface of a class into another interface the clients expect. Adapter lets classes work together that couldn&amp;rsquo;t otherwise because of incompatible interfaces.
+Explanation Wikipedia
+ In software engineering, the adapter pattern is a software design pattern that allows the interface of an existing class to be used as another interface. It is often used to make existing classes work with others without modifying their source code.</description>
+    </item>
+    
+    <item>
       <title>Java Notes(24) Lambda </title>
-      <link>http://miaoshihao.com/notes/java/java_lambda/</link>
+      <link>http://miaoshihao.com/notes/java/java_8/</link>
       <pubDate>Wed, 02 Oct 2019 20:50:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_lambda/</guid>
+      <guid>http://miaoshihao.com/notes/java/java_8/</guid>
       <description></description>
     </item>
     
@@ -275,8 +287,9 @@ String Class  By String literal  1 2 3  String s1 = &amp;#34;Welcome&amp;#34;; /
       <pubDate>Wed, 02 Oct 2019 20:50:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
       <guid>http://miaoshihao.com/notes/java/java_stream/</guid>
-      <description>Stream Creation Empty Stream 1  Stream&amp;lt;String&amp;gt; streamEmpty = Stream.empty();   1 2 3  public Stream&amp;lt;String&amp;gt; streamOf(List&amp;lt;String&amp;gt; list) { return list == null || list.isEmpty() ? Stream.empty() : list.stream(); }   Stream of Collection 1 2  Collection&amp;lt;String&amp;gt; collection = Arrays.asList(&amp;#34;a&amp;#34;, &amp;#34;b&amp;#34;, &amp;#34;c&amp;#34;); Stream&amp;lt;String&amp;gt; streamOfCollection = collection.stream();   Stream of Array Array can also be a source of a Stream:
-1  Stream&amp;lt;String&amp;gt; streamOfArray = Stream.of(&amp;#34;a&amp;#34;, &amp;#34;b&amp;#34;, &amp;#34;c&amp;#34;);   They can also be created out of an existing array or of a part of an array:</description>
+      <description>A stream represents a sequence of elements and supports different kind of operations to perform computations upon those elements:
+1 2 3 4 5 6 7 8 9  List&amp;lt;String&amp;gt; myList = Arrays.asList(&amp;#34;a1&amp;#34;, &amp;#34;a2&amp;#34;, &amp;#34;b1&amp;#34;, &amp;#34;c2&amp;#34;, &amp;#34;c1&amp;#34;); myList .stream() .filter(s -&amp;gt; s.startsWith(&amp;#34;c&amp;#34;)) .map(String::toUpperCase) .sorted() .forEach(System.out::println);   Stream Creation Calling the method stream() on a list of objects returns a regular object stream.
+1 2 3 4  Arrays.asList(&amp;#34;a1&amp;#34;, &amp;#34;a2&amp;#34;, &amp;#34;a3&amp;#34;) .</description>
     </item>
     
     <item>

@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/miaoshihao.com\/notes\/java\/java_stream\/"
-        },"image": ["http:\/\/miaoshihao.com\/images\/Apple-Devices-Preview.png"],"genre": "notes","keywords": "Java","wordcount":  629 ,
+        },"image": ["http:\/\/miaoshihao.com\/images\/Apple-Devices-Preview.png"],"genre": "notes","keywords": "Java","wordcount":  1132 ,
         "url": "http:\/\/miaoshihao.com\/notes\/java\/java_stream\/","datePublished": "2019-10-02T20:50:26+08:00","dateModified": "2019-10-02T20:50:26+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "http:\/\/miaoshihao.com\/images\/avatar.png"},"author": {
@@ -108,8 +108,75 @@
     <div id="search-dropdown-mobile"></div>
 </div>
 <main class="main">
-                <div class="container"><div class="page single special"><h1 class="single-title animated pulse faster">Java Notes(25) Stream </h1><div class="content" id="content"><h2 id="stream-creation">Stream Creation</h2>
-<h3 id="empty-stream">Empty Stream</h3>
+                <div class="container"><div class="page single special"><h1 class="single-title animated pulse faster">Java Notes(25) Stream </h1><div class="content" id="content"><p>A stream represents a sequence of elements and supports different kind of operations to perform computations upon those elements:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">myList</span> <span class="o">=</span>
+    <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="s">&#34;a1&#34;</span><span class="o">,</span> <span class="s">&#34;a2&#34;</span><span class="o">,</span> <span class="s">&#34;b1&#34;</span><span class="o">,</span> <span class="s">&#34;c2&#34;</span><span class="o">,</span> <span class="s">&#34;c1&#34;</span><span class="o">);</span>
+
+<span class="n">myList</span>
+    <span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+    <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">s</span> <span class="o">-&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">startsWith</span><span class="o">(</span><span class="s">&#34;c&#34;</span><span class="o">))</span>
+    <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">String</span><span class="o">::</span><span class="n">toUpperCase</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">sorted</span><span class="o">()</span>
+    <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="stream-creation">Stream Creation</h2>
+<p>Calling the method stream() on a list of objects returns a regular object stream.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="s">&#34;a1&#34;</span><span class="o">,</span> <span class="s">&#34;a2&#34;</span><span class="o">,</span> <span class="s">&#34;a3&#34;</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+    <span class="o">.</span><span class="na">findFirst</span><span class="o">()</span>
+    <span class="o">.</span><span class="na">ifPresent</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>But we don&rsquo;t have to create collections in order to work with streams as we see in the next code sample Stream.of().</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Stream</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&#34;a1&#34;</span><span class="o">,</span> <span class="s">&#34;a2&#34;</span><span class="o">,</span> <span class="s">&#34;a3&#34;</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">findFirst</span><span class="o">()</span>
+    <span class="o">.</span><span class="na">ifPresent</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>  <span class="c1">// a1
+</span></code></pre></td></tr></table>
+</div>
+</div><p>Stream.of() to create a stream from a bunch of object references.</p>
+<h3 id="primitive-streams">Primitive Streams</h3>
+<p>Besides regular object streams Java 8 ships with special kinds of streams for working with the primitive data types int, long and double. As you might have guessed it&rsquo;s IntStream, LongStream and DoubleStream.</p>
+<p>IntStreams can replace the regular for-loop utilizing IntStream.range():</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">IntStream</span><span class="o">.</span><span class="na">range</span><span class="o">(</span><span class="n">1</span><span class="o">,</span> <span class="n">4</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="empty-stream">Empty Stream</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -264,26 +331,6 @@
 </code></pre></td></tr></table>
 </div>
 </div><p>The Charset can be specified as an argument of the lines() method.</p>
-<h3 id="中间操作符">中间操作符</h3>
-<p>map(mapToInt,mapToLong,mapToDouble) 转换操作符，把比如A-&gt;B，这里默认提供了转int，long，double的操作符。
-flatmap(flatmapToInt,flatmapToLong,flatmapToDouble) 拍平操作比如把 int[]{2,3,4} 拍平 变成 2，3，4 也就是从原来的一个数据变成了3个数据，这里默认提供了拍平成int,long,double的操作符。
-limit 限流操作，比如数据流中有10个 我只要出前3个就可以使用。
-distint 去重操作，对重复元素去重，底层使用了equals方法。
-filter 过滤操作，把不想要的数据过滤。
-peek 挑出操作，如果想对数据进行某些操作，如：读取、编辑修改等。
-skip 跳过操作，跳过某些元素。
-sorted(unordered) 排序操作，对元素排序，前提是实现Comparable接口，当然也可以自定义比较器。</p>
-<h3 id="终止操作符">终止操作符</h3>
-<p>Stream 的一系列操作必须要使用终止操作，否者整个数据流是不会流动起来的，即处理操作不会执行。</p>
-<p>数据经过中间加工操作，就轮到终止操作符上场了；终止操作符就是用来对数据进行收集或者消费的，数据到了终止操作这里就不会向下流动了，终止操作符只能使用一次。
-collect 收集操作，将所有数据收集起来，这个操作非常重要，官方的提供的Collectors 提供了非常多收集器，可以说Stream 的核心在于Collectors。
-count 统计操作，统计最终的数据个数。
-findFirst、findAny 查找操作，查找第一个、查找任何一个 返回的类型为Optional。
-noneMatch、allMatch、anyMatch 匹配操作，数据流中是否存在符合条件的元素 返回值为bool 值。
-min、max 最值操作，需要自定义比较器，返回数据流中最大最小的值。
-reduce 规约操作，将整个数据流的值规约为一个值，count、min、max底层就是使用reduce。
-forEach、forEachOrdered 遍历操作，这里就是对最终的数据进行消费了。
-toArray 数组操作，将数据流的元素转换成数组。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -294,7 +341,120 @@ toArray 数组操作，将数据流的元素转换成数组。</p>
 List&lt;String&gt; filtered = strings.stream().filter(string -&gt; !string.isEmpty()).collect(Collectors.toList());
 </code></pre></td></tr></table>
 </div>
-</div></div></div></div>
+</div><h2 id="intermediate-and-termial-operation">Intermediate and Termial Operation</h2>
+<p>Stream operations are either <strong>intermediate</strong> or <strong>terminal</strong>. Intermediate operations return a stream so we can chain multiple intermediate operations without using semicolons. Terminal operations are either void or return a non-stream result. In the above example filter, map and sorted are intermediate operations whereas forEach is a terminal operation.</p>
+<p>Streams can be created from various data sources, especially collections. Lists and Sets support new methods stream() and parallelStream() to either create a sequential or a parallel stream.</p>
+<h3 id="intermediate-operation">Intermediate Operation</h3>
+<p><strong>map</strong>(mapToInt,mapToLong,mapToDouble) It allows elements of a Stream to be transformed into something else by mapping them to another value or type
+<strong>flatmap</strong>(flatmapToInt,flatmapToLong,flatmapToDouble):  It taking a Function that goes from a type T to a return type R. Thre result stream are flattened.
+<strong>limit</strong> it creates a new stream that only contains the first n elements of the stream it is applied on.
+<strong>distint</strong> filter out any duplicates by using equal method
+<strong>filter</strong>: Filter elements out in a stream.
+<strong>Skip</strong>：Skip the number of elements in the device
+<strong>peek</strong> 挑出操作，如果想对数据进行某些操作，如：读取、编辑修改等。
+<strong>sorted</strong>: Sorted by using natural order or defined comparator.</p>
+<h3 id="termial-operation">Termial Operation</h3>
+<p><strong>collect</strong>: To build data structures containing a specific collection of elements.</p>
+<ul>
+<li>Collect to Set</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toSet</span><span class="o">())</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Collect to List</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">())</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Collect to General Collection</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toCollection</span><span class="o">(</span><span class="n">LinkedList</span><span class="o">::</span><span class="k">new</span><span class="o">))</span>
+<span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toCollection</span><span class="o">(</span><span class="n">LinkedHashSet</span><span class="o">::</span><span class="k">new</span><span class="o">))</span>
+<span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toCollection</span><span class="o">(</span><span class="n">PriorityQueue</span><span class="o">::</span><span class="k">new</span><span class="o">))</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Collect to Array</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="o">.</span><span class="na">toArray</span><span class="o">(</span><span class="n">String</span><span class="o">[]::</span><span class="k">new</span><span class="o">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Collect to Map</li>
+</ul>
+<p>Collectors.toMap() takes two Functions corresponding to a key-mapper and a value-mapper</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toMap</span><span class="o">(,))</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Collect GroupingBy</li>
+</ul>
+<p>There is a very useful Collector named groupingBy() which divides the elements into different groups, depending on some property whereby the property is extracted by something called a &ldquo;classifier&rdquo;.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">groupingBy</span><span class="o">(,))</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Collect GroupingBy Using Downstream Collector
+There is an overloaded version of groupingBy() that allows the use of a custom &ldquo;downstream collector&rdquo; to get better control over the resulting Map. Below is an example of how the special downstream collector counting() is applied to count, rather than collecting, the elements of each bucket.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">groupingBy</span><span class="o">(</span><span class="n">s</span> <span class="o">-&amp;</span><span class="n">gt</span><span class="o">;</span><span class="n">s</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">0</span><span class="o">),</span><span class="n">counting</span><span class="o">()))</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>count</strong> count the number of element in a Stream.</p>
+<p><strong>findFirst、findAny</strong> 查找操作，查找第一个、查找任何一个 返回的类型为Optional。
+<strong>noneMatch、allMatch、anyMatch</strong> 匹配操作，数据流中是否存在符合条件的元素 返回值为bool 值。
+<strong>min,max,average</strong>: return the aggregate value of a stream
+<strong>reduce</strong> 规约操作，将整个数据流的值规约为一个值，count、min、max底层就是使用reduce。
+<strong>forEach、forEachOrdered</strong>: They both take a Consumer and terminates the Stream without returning anything.
+<strong>toArray</strong> 数组操作，将数据流的元素转换成数组。
+<strong>anyMatch()</strong>: return a boolean to see if the value existed</p>
+<h2 id="reference">Reference</h2>
+<p>Java 8 Stream Tutorial
+<a href="https://winterbe.com/posts/2014/07/31/java8-stream-tutorial-examples/">https://winterbe.com/posts/2014/07/31/java8-stream-tutorial-examples/</a></p>
+<p>Become a Master of Java Streams, Part 3: Terminal Operations
+<a href="https://dzone.com/articles/become-a-master-of-java-streams-part-1-creating-st">https://dzone.com/articles/become-a-master-of-java-streams-part-1-creating-st</a>
+<a href="https://dzone.com/articles/become-a-master-of-java-streams-part-2-intermediat">https://dzone.com/articles/become-a-master-of-java-streams-part-2-intermediat</a>
+<a href="https://dzone.com/articles/become-a-master-of-java-streams-part-3-terminal-op">https://dzone.com/articles/become-a-master-of-java-streams-part-3-terminal-op</a></p>
+</div></div></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Shihao Miao</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><div>
                     <span id="timeDate">Loading Days...</span><span id="times">Loading Times...</span>

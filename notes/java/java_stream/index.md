@@ -2,7 +2,50 @@
 
 
 
+A stream represents a sequence of elements and supports different kind of operations to perform computations upon those elements:
+
+```java
+List<String> myList =
+    Arrays.asList("a1", "a2", "b1", "c2", "c1");
+
+myList
+    .stream()
+    .filter(s -> s.startsWith("c"))
+    .map(String::toUpperCase)
+    .sorted()
+    .forEach(System.out::println);
+```
+
 ## Stream Creation
+
+Calling the method stream() on a list of objects returns a regular object stream. 
+
+```java
+Arrays.asList("a1", "a2", "a3")
+    .stream()
+    .findFirst()
+    .ifPresent(System.out::println);
+```
+But we don't have to create collections in order to work with streams as we see in the next code sample Stream.of().
+
+```java
+Stream.of("a1", "a2", "a3")
+    .findFirst()
+    .ifPresent(System.out::println);  // a1
+```
+Stream.of() to create a stream from a bunch of object references.
+
+### Primitive Streams
+
+Besides regular object streams Java 8 ships with special kinds of streams for working with the primitive data types int, long and double. As you might have guessed it's IntStream, LongStream and DoubleStream.
+
+IntStreams can replace the regular for-loop utilizing IntStream.range():
+
+```java
+IntStream.range(1, 4)
+    .forEach(System.out::println);
+```
+
 
 ### Empty Stream
 
@@ -119,35 +162,97 @@ Stream<String> streamWithCharset =
 ```
 The Charset can be specified as an argument of the lines() method.
 
-
-
-### 中间操作符
-
-map(mapToInt,mapToLong,mapToDouble) 转换操作符，把比如A->B，这里默认提供了转int，long，double的操作符。
-flatmap(flatmapToInt,flatmapToLong,flatmapToDouble) 拍平操作比如把 int[]{2,3,4} 拍平 变成 2，3，4 也就是从原来的一个数据变成了3个数据，这里默认提供了拍平成int,long,double的操作符。
-limit 限流操作，比如数据流中有10个 我只要出前3个就可以使用。
-distint 去重操作，对重复元素去重，底层使用了equals方法。
-filter 过滤操作，把不想要的数据过滤。
-peek 挑出操作，如果想对数据进行某些操作，如：读取、编辑修改等。
-skip 跳过操作，跳过某些元素。
-sorted(unordered) 排序操作，对元素排序，前提是实现Comparable接口，当然也可以自定义比较器。
-
-
-### 终止操作符
-Stream 的一系列操作必须要使用终止操作，否者整个数据流是不会流动起来的，即处理操作不会执行。
-
-数据经过中间加工操作，就轮到终止操作符上场了；终止操作符就是用来对数据进行收集或者消费的，数据到了终止操作这里就不会向下流动了，终止操作符只能使用一次。
-collect 收集操作，将所有数据收集起来，这个操作非常重要，官方的提供的Collectors 提供了非常多收集器，可以说Stream 的核心在于Collectors。
-count 统计操作，统计最终的数据个数。
-findFirst、findAny 查找操作，查找第一个、查找任何一个 返回的类型为Optional。
-noneMatch、allMatch、anyMatch 匹配操作，数据流中是否存在符合条件的元素 返回值为bool 值。
-min、max 最值操作，需要自定义比较器，返回数据流中最大最小的值。
-reduce 规约操作，将整个数据流的值规约为一个值，count、min、max底层就是使用reduce。
-forEach、forEachOrdered 遍历操作，这里就是对最终的数据进行消费了。
-toArray 数组操作，将数据流的元素转换成数组。
-
-
 ```
 List<String> strings = Arrays.asList("abc", "", "bc", "efg", "abcd","", "jkl");
 List<String> filtered = strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.toList());
 ```
+
+## Intermediate and Termial Operation
+
+Stream operations are either **intermediate** or **terminal**. Intermediate operations return a stream so we can chain multiple intermediate operations without using semicolons. Terminal operations are either void or return a non-stream result. In the above example filter, map and sorted are intermediate operations whereas forEach is a terminal operation.
+
+Streams can be created from various data sources, especially collections. Lists and Sets support new methods stream() and parallelStream() to either create a sequential or a parallel stream.
+
+### Intermediate Operation
+
+**map**(mapToInt,mapToLong,mapToDouble) It allows elements of a Stream to be transformed into something else by mapping them to another value or type
+**flatmap**(flatmapToInt,flatmapToLong,flatmapToDouble):  It taking a Function that goes from a type T to a return type R. Thre result stream are flattened.
+**limit** it creates a new stream that only contains the first n elements of the stream it is applied on.
+**distint** filter out any duplicates by using equal method
+**filter**: Filter elements out in a stream.
+**Skip**：Skip the number of elements in the device
+**peek** 挑出操作，如果想对数据进行某些操作，如：读取、编辑修改等。
+**sorted**: Sorted by using natural order or defined comparator.
+
+### Termial Operation
+
+**collect**: To build data structures containing a specific collection of elements. 
+  
+- Collect to Set
+  
+```java
+.collect(Collectors.toSet())
+```
+
+- Collect to List
+
+```java
+.collect(Collectors.toList())
+```
+
+- Collect to General Collection
+  
+```java
+.collect(Collectors.toCollection(LinkedList::new))
+.collect(Collectors.toCollection(LinkedHashSet::new))
+.collect(Collectors.toCollection(PriorityQueue::new))
+```
+
+- Collect to Array
+
+```java
+.toArray(String[]::new)
+```
+
+- Collect to Map
+
+Collectors.toMap() takes two Functions corresponding to a key-mapper and a value-mapper
+
+```java
+.collect(Collectors.toMap(,))
+```
+
+- Collect GroupingBy
+
+There is a very useful Collector named groupingBy() which divides the elements into different groups, depending on some property whereby the property is extracted by something called a "classifier". 
+
+```java
+.collect(Collectors.groupingBy(,))
+```
+
+- Collect GroupingBy Using Downstream Collector
+There is an overloaded version of groupingBy() that allows the use of a custom "downstream collector" to get better control over the resulting Map. Below is an example of how the special downstream collector counting() is applied to count, rather than collecting, the elements of each bucket.
+
+```java
+.collect(Collectors.groupingBy(s -&gt;s.charAt(0),counting()))
+```
+
+**count** count the number of element in a Stream.
+
+**findFirst、findAny** 查找操作，查找第一个、查找任何一个 返回的类型为Optional。
+**noneMatch、allMatch、anyMatch** 匹配操作，数据流中是否存在符合条件的元素 返回值为bool 值。
+**min,max,average**: return the aggregate value of a stream
+**reduce** 规约操作，将整个数据流的值规约为一个值，count、min、max底层就是使用reduce。
+**forEach、forEachOrdered**: They both take a Consumer and terminates the Stream without returning anything. 
+**toArray** 数组操作，将数据流的元素转换成数组。
+**anyMatch()**: return a boolean to see if the value existed
+
+## Reference
+
+Java 8 Stream Tutorial
+https://winterbe.com/posts/2014/07/31/java8-stream-tutorial-examples/
+
+Become a Master of Java Streams, Part 3: Terminal Operations
+https://dzone.com/articles/become-a-master-of-java-streams-part-1-creating-st
+https://dzone.com/articles/become-a-master-of-java-streams-part-2-intermediat
+https://dzone.com/articles/become-a-master-of-java-streams-part-3-terminal-op
