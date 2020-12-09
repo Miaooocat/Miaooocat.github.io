@@ -33,7 +33,7 @@
             <loc>http://miaoshihao.com/notes/java/java_hibernate/</loc><lastmod>2019-08-29T20:58:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/notes/java/java_jdbc/</loc><lastmod>2019-08-27T20:58:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/notes/java/java_string/</loc><lastmod>2019-07-26T20:58:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://miaoshihao.com/notes/javadesignpatten/adapter/</loc><lastmod>2020-10-23T10:35:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>http://miaoshihao.com/notes/javadesignpatten/adapter/</loc><lastmod>2020-10-23T10:35:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/notes/java/java_8/</loc><lastmod>2019-10-02T20:50:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/notes/mobiledevelopement/deeplink/</loc><lastmod>2019-10-02T20:50:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
@@ -62,7 +62,7 @@
             <loc>http://miaoshihao.com/notes/java/java_anonymouse_class/</loc><lastmod>2019-07-26T22:50:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/notes/java/java_synchronization/</loc><lastmod>2019-08-06T20:58:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/notes/java/java_testing/</loc><lastmod>2019-09-25T20:50:46&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://miaoshihao.com/categories/</loc><lastmod>2020-10-23T10:35:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority><xhtml:link
+            <loc>http://miaoshihao.com/categories/</loc><lastmod>2020-10-23T10:35:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="http://miaoshihao.com/zh-cn/categories/"
@@ -71,7 +71,7 @@
                     hreflang="en"
                     href="http://miaoshihao.com/categories/"
                     /></url><url>
-            <loc>http://miaoshihao.com/</loc><lastmod>2020-10-23T10:35:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority><xhtml:link
+            <loc>http://miaoshihao.com/</loc><lastmod>2020-10-23T10:35:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="http://miaoshihao.com/zh-cn/"
@@ -80,7 +80,7 @@
                     hreflang="en"
                     href="http://miaoshihao.com/"
                     /></url><url>
-            <loc>http://miaoshihao.com/tags/java/</loc><lastmod>2020-10-23T10:35:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority><xhtml:link
+            <loc>http://miaoshihao.com/tags/java/</loc><lastmod>2020-10-23T10:35:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="http://miaoshihao.com/zh-cn/tags/java/"
@@ -89,7 +89,7 @@
                     hreflang="en"
                     href="http://miaoshihao.com/tags/java/"
                     /></url><url>
-            <loc>http://miaoshihao.com/categories/java-language/</loc><lastmod>2020-10-23T10:35:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority><xhtml:link
+            <loc>http://miaoshihao.com/categories/java-language/</loc><lastmod>2020-10-23T10:35:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="http://miaoshihao.com/zh-cn/categories/java-language/"
@@ -98,7 +98,7 @@
                     hreflang="en"
                     href="http://miaoshihao.com/categories/java-language/"
                     /></url><url>
-            <loc>http://miaoshihao.com/notes/</loc><lastmod>2020-10-23T10:35:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority><xhtml:link
+            <loc>http://miaoshihao.com/notes/</loc><lastmod>2020-10-23T10:35:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="http://miaoshihao.com/zh-cn/notes/"
@@ -107,7 +107,7 @@
                     hreflang="en"
                     href="http://miaoshihao.com/notes/"
                     /></url><url>
-            <loc>http://miaoshihao.com/tags/</loc><lastmod>2020-10-23T10:35:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority><xhtml:link
+            <loc>http://miaoshihao.com/tags/</loc><lastmod>2020-10-23T10:35:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="http://miaoshihao.com/zh-cn/tags/"

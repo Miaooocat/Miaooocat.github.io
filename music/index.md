@@ -16,7 +16,7 @@
 <br>
 
 <meting-js
-	server="tencent"
+	server="netease"
 	type="playlist"
-	id="7772011830"
+	id="2796323604"
 	>
