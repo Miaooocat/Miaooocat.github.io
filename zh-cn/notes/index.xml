@@ -34,19 +34,19 @@
     
     <item>
       <title>HTTPS</title>
-      <link>http://miaoshihao.com/zh-cn/notes/network/https_principle/</link>
+      <link>http://miaoshihao.com/zh-cn/notes/web/https_principle/</link>
       <pubDate>Thu, 02 Jul 2020 19:51:00 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/zh-cn/notes/network/https_principle/</guid>
+      <guid>http://miaoshihao.com/zh-cn/notes/web/https_principle/</guid>
       <description>我们为什么需要HTTPS？ HTTPS是什么？SSL/TLS是什么？ SSL/TLS发展史 SSL/TLS的工作原理 什么是HTTP HTTP协议(H</description>
     </item>
     
     <item>
       <title>Java Notes(16) Maven</title>
-      <link>http://miaoshihao.com/zh-cn/notes/java/java_maven/</link>
+      <link>http://miaoshihao.com/zh-cn/notes/java/java_framework/java_maven/</link>
       <pubDate>Sat, 24 Aug 2019 22:50:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/zh-cn/notes/java/java_maven/</guid>
+      <guid>http://miaoshihao.com/zh-cn/notes/java/java_framework/java_maven/</guid>
       <description>Check English Version</description>
     </item>
     

@@ -20,11 +20,11 @@
     <description><![CDATA[Spring Integration Basic Overview Spring Integration is an open source framework that designed to enable the development of integration solutions typical of event-driven architectures and messaging-centric architectures. It requires dependency spring intergration core, which could be downloaded from Maven Central.
 1 2 3 4 5  &lt;dependency&gt; &lt;groupId&gt;org.springframework.integration&lt;/groupId&gt; &lt;artifactId&gt;spring-integration-core&lt;/artifactId&gt; &lt;version&gt;5.3.1.RELEASE&lt;/version&gt; &lt;/dependency&gt;   Spring integration framework consists three parts, namely message, message channel, and message endpoint. In general. a message is a unit of information that can be passed between different message endpoint through message channels.]]></description>
 </item><item>
-    <title>Java Notes(1) Keywords</title>
-    <link>http://miaoshihao.com/notes/java/java_key_words/</link>
+    <title>Java Notes(0) Reference Keywords</title>
+    <link>http://miaoshihao.com/notes/java/java_notes_0_key_words/</link>
     <pubDate>Wed, 12 Jun 2019 15:58:26 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/java/java_key_words/</guid>
+    <guid>http://miaoshihao.com/notes/java/java_notes_0_key_words/</guid>
     <description><![CDATA[All 48 Java Keywords with Examples Table below lists 48 Keywords in Java.
 1) abstract abstract keyword is used to implement the abstraction in java. A method which doesn’t have method definition must be declared as abstract and the class containing it must be declared as abstract. You can’t instantiate abstract classes. Abstract methods must be implemented in the sub classes. You can’t use abstract keyword with variables and constructors.]]></description>
 </item><item>
@@ -46,48 +46,46 @@ The first approach is where the BeanFactory itself directly creates the bean by 
 The basic principle is that beans define their dependencies (i.e. the other objects they work with) only through constructor arguments, arguments to a factory method, or properties which are set on the object instance after it has been constructed or returned from a factory method.]]></description>
 </item><item>
     <title>Java Notes(2) Feature and Program Execution</title>
-    <link>http://miaoshihao.com/notes/java/java_feature_execution/</link>
+    <link>http://miaoshihao.com/notes/java/java_notes_1_feature/</link>
     <pubDate>Thu, 13 Jun 2019 16:58:26 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/java/java_feature_execution/</guid>
+    <guid>http://miaoshihao.com/notes/java/java_notes_1_feature/</guid>
     <description><![CDATA[Java Features and Program Execution Java is a programming language and a platform.
 Platform: Any hardware or software environment in which a program runs, is known as a platform. Since Java has its own runtime environment (JRE) and Application Programming Interface (API), it is called platform.
 Features of Java :   Simple:
  User friendly syntax based on C++ It has Automatic Garbage Collection It has Rich set of APIs Removed confusing features - explicit pointers, operator overloading, multiple inheritance, etc    Object-oriented:]]></description>
 </item><item>
     <title>Java Notes(3) Java Fundamentals</title>
-    <link>http://miaoshihao.com/notes/java/java_fundamentals/</link>
+    <link>http://miaoshihao.com/notes/java/java_notes_2_fundamentals/</link>
     <pubDate>Sat, 15 Jun 2019 15:58:26 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/java/java_fundamentals/</guid>
+    <guid>http://miaoshihao.com/notes/java/java_notes_2_fundamentals/</guid>
     <description><![CDATA[Data Types in Java  Data Type Default Value Default size   boolean false 1 bit   char '\u0000' 2 byte   byte 0 1 byte   short 0 2 byte   int 0 4 byte   long 0L 8 byte   float 0.0f 4 byte   double 0.0d 8 byte   Data Type Promotion in Java : Wrapper Classes in Java In Java, there is a wrapper class.]]></description>
 </item><item>
-    <title>Java Notes(14) Multithreading</title>
-    <link>http://miaoshihao.com/notes/java/java_multithreading/</link>
+    <title>Java Notes(11) Multithreading</title>
+    <link>http://miaoshihao.com/notes/java/java_notes_11_multithreading/</link>
     <pubDate>Tue, 06 Aug 2019 05:11:21 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/java/java_multithreading/</guid>
+    <guid>http://miaoshihao.com/notes/java/java_notes_11_multithreading/</guid>
     <description><![CDATA[Multithreading in java is a process of executing multiple threads simultaneously. Thread is basically a lightweight sub-process, a smallest unit of processing. Multiprocessing and multithreading, both are used to achieve multitasking.
 But we use multithreading than multiprocessing because threads share a common memory area. They don&rsquo;t allocate separate memory area so saves memory, and context-switching between the threads takes less time than process.
 Thread is executed inside the process. There is context-switching between the threads.]]></description>
 </item><item>
     <title>Java Notes(13) Networking</title>
-    <link>http://miaoshihao.com/notes/java/java_networking/</link>
+    <link>http://miaoshihao.com/notes/java/java_notes_14_networking/</link>
     <pubDate>Fri, 02 Aug 2019 22:00:16 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/java/java_networking/</guid>
-    <description><![CDATA[Java Networking is a concept of connecting two or more computing devices together so that we can share resources.
-Java Socket Programming provides facility to share data between different computing devices.
-Advantage of Java Networking :
- sharing resources centralized software management  Java Networking Terminology : Some of the widely used java networking terminologies are as follows:
-  IP Address
- IP address is a unique number assigned to a node of a network e.]]></description>
+    <guid>http://miaoshihao.com/notes/java/java_notes_14_networking/</guid>
+    <description><![CDATA[Network Overview
+Java.net java.net is the library working with network development.
+ServerSocket and Socket ServerSocket is used for server. Socket is used for client. Java Socket Programming provides facility to share data between different computing devices.
+Port Number The port number is used to uniquely identify different applications. It acts as a communication endpoint between applications. The port number is associated with the IP address for communication between two applications. This allows application communicates to the application via same port number.]]></description>
 </item><item>
     <title>Java Notes(12) Serialization</title>
-    <link>http://miaoshihao.com/notes/java/java_serialization/</link>
+    <link>http://miaoshihao.com/notes/java/java_notes_10_serialization/</link>
     <pubDate>Tue, 30 Jul 2019 15:58:26 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/java/java_serialization/</guid>
+    <guid>http://miaoshihao.com/notes/java/java_notes_10_serialization/</guid>
     <description><![CDATA[Serialization in java is a mechanism of writing the state of an object into a byte stream. It is mainly used in Hibernate, RMI, JPA, EJB and JMS technologies. The reverse operation of serialization is called deserialization.
 Advantage of Java Serialization : It is mainly used to travel object&rsquo;s state on the network (known as marshaling).
 java.io.Serializable interface : Serializable is a marker interface (has no data member and method). It is used to &ldquo;mark&rdquo; java classes so that objects of these classes may get certain capability.]]></description>

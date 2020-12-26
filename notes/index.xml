@@ -9,10 +9,20 @@
     <managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
     <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 23 Oct 2020 10:35:26 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 11 Dec 2020 19:32:26 +0800</lastBuildDate>
     
 	<atom:link href="http://miaoshihao.com/notes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Network</title>
+      <link>http://miaoshihao.com/notes/network/network_overview/</link>
+      <pubDate>Fri, 11 Dec 2020 19:32:26 +0800</pubDate>
+      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
+      <guid>http://miaoshihao.com/notes/network/network_overview/</guid>
+      <description>OSI Model The Open Systems Interconnection (OSI) model is a conceptual model created by the International Organization for Standardization which enables diverse communication systems to communicate using standard protocols.
+ Layer Protocol data unit (PDU) Function   Application (应用层) Data High-level APIs, including resource sharing, remote file access, ex: HTTP, HTTPS,FTP,SSH and etc..   Presentation (表示层) Data Translation of data between a networking service and an application; including character encoding, data compression and encryption/decryption   Session(会话层) Data Managing communication sessions, i.</description>
+    </item>
     
     <item>
       <title>Integrtion</title>
@@ -73,11 +83,11 @@ The variables are constructed from the data in the company&amp;rsquo;s financial
     </item>
     
     <item>
-      <title>Java Notes(1) Keywords</title>
-      <link>http://miaoshihao.com/notes/java/java_key_words/</link>
+      <title>Java Notes(0) Reference Keywords</title>
+      <link>http://miaoshihao.com/notes/java/java_notes_0_key_words/</link>
       <pubDate>Wed, 12 Jun 2019 15:58:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_key_words/</guid>
+      <guid>http://miaoshihao.com/notes/java/java_notes_0_key_words/</guid>
       <description>All 48 Java Keywords with Examples Table below lists 48 Keywords in Java.
 1) abstract abstract keyword is used to implement the abstraction in java. A method which doesn’t have method definition must be declared as abstract and the class containing it must be declared as abstract. You can’t instantiate abstract classes. Abstract methods must be implemented in the sub classes. You can’t use abstract keyword with variables and constructors.</description>
     </item>
@@ -105,10 +115,10 @@ The basic principle is that beans define their dependencies (i.e. the other obje
     
     <item>
       <title>Java Notes(2) Feature and Program Execution</title>
-      <link>http://miaoshihao.com/notes/java/java_feature_execution/</link>
+      <link>http://miaoshihao.com/notes/java/java_notes_1_feature/</link>
       <pubDate>Thu, 13 Jun 2019 16:58:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_feature_execution/</guid>
+      <guid>http://miaoshihao.com/notes/java/java_notes_1_feature/</guid>
       <description>Java Features and Program Execution Java is a programming language and a platform.
 Platform: Any hardware or software environment in which a program runs, is known as a platform. Since Java has its own runtime environment (JRE) and Application Programming Interface (API), it is called platform.
 Features of Java :   Simple:
@@ -117,19 +127,19 @@ Features of Java :   Simple:
     
     <item>
       <title>Java Notes(3) Java Fundamentals</title>
-      <link>http://miaoshihao.com/notes/java/java_fundamentals/</link>
+      <link>http://miaoshihao.com/notes/java/java_notes_2_fundamentals/</link>
       <pubDate>Sat, 15 Jun 2019 15:58:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_fundamentals/</guid>
+      <guid>http://miaoshihao.com/notes/java/java_notes_2_fundamentals/</guid>
       <description>Data Types in Java  Data Type Default Value Default size   boolean false 1 bit   char &#39;\u0000&#39; 2 byte   byte 0 1 byte   short 0 2 byte   int 0 4 byte   long 0L 8 byte   float 0.0f 4 byte   double 0.0d 8 byte   Data Type Promotion in Java : Wrapper Classes in Java In Java, there is a wrapper class.</description>
     </item>
     
     <item>
-      <title>Java Notes(14) Multithreading</title>
-      <link>http://miaoshihao.com/notes/java/java_multithreading/</link>
+      <title>Java Notes(11) Multithreading</title>
+      <link>http://miaoshihao.com/notes/java/java_notes_11_multithreading/</link>
       <pubDate>Tue, 06 Aug 2019 05:11:21 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_multithreading/</guid>
+      <guid>http://miaoshihao.com/notes/java/java_notes_11_multithreading/</guid>
       <description>Multithreading in java is a process of executing multiple threads simultaneously. Thread is basically a lightweight sub-process, a smallest unit of processing. Multiprocessing and multithreading, both are used to achieve multitasking.
 But we use multithreading than multiprocessing because threads share a common memory area. They don&amp;rsquo;t allocate separate memory area so saves memory, and context-switching between the threads takes less time than process.
 Thread is executed inside the process. There is context-switching between the threads.</description>
@@ -137,45 +147,43 @@ Thread is executed inside the process. There is context-switching between the th
     
     <item>
       <title>Java Notes(13) Networking</title>
-      <link>http://miaoshihao.com/notes/java/java_networking/</link>
+      <link>http://miaoshihao.com/notes/java/java_notes_14_networking/</link>
       <pubDate>Fri, 02 Aug 2019 22:00:16 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_networking/</guid>
-      <description>Java Networking is a concept of connecting two or more computing devices together so that we can share resources.
-Java Socket Programming provides facility to share data between different computing devices.
-Advantage of Java Networking :
- sharing resources centralized software management  Java Networking Terminology : Some of the widely used java networking terminologies are as follows:
-  IP Address
- IP address is a unique number assigned to a node of a network e.</description>
+      <guid>http://miaoshihao.com/notes/java/java_notes_14_networking/</guid>
+      <description>Network Overview
+Java.net java.net is the library working with network development.
+ServerSocket and Socket ServerSocket is used for server. Socket is used for client. Java Socket Programming provides facility to share data between different computing devices.
+Port Number The port number is used to uniquely identify different applications. It acts as a communication endpoint between applications. The port number is associated with the IP address for communication between two applications. This allows application communicates to the application via same port number.</description>
     </item>
     
     <item>
       <title>Java Notes(12) Serialization</title>
-      <link>http://miaoshihao.com/notes/java/java_serialization/</link>
+      <link>http://miaoshihao.com/notes/java/java_notes_10_serialization/</link>
       <pubDate>Tue, 30 Jul 2019 15:58:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_serialization/</guid>
+      <guid>http://miaoshihao.com/notes/java/java_notes_10_serialization/</guid>
       <description>Serialization in java is a mechanism of writing the state of an object into a byte stream. It is mainly used in Hibernate, RMI, JPA, EJB and JMS technologies. The reverse operation of serialization is called deserialization.
 Advantage of Java Serialization : It is mainly used to travel object&amp;rsquo;s state on the network (known as marshaling).
 java.io.Serializable interface : Serializable is a marker interface (has no data member and method). It is used to &amp;ldquo;mark&amp;rdquo; java classes so that objects of these classes may get certain capability.</description>
     </item>
     
     <item>
-      <title>Java Notes(4) Object Oriented Language</title>
-      <link>http://miaoshihao.com/notes/java/java_oop/</link>
+      <title>Java Notes(3) Object Oriented Language</title>
+      <link>http://miaoshihao.com/notes/java/java_notes_3_oop/</link>
       <pubDate>Mon, 17 Jun 2019 15:58:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_oop/</guid>
+      <guid>http://miaoshihao.com/notes/java/java_notes_3_oop/</guid>
       <description>Object Oriented Object-Oriented Programming is a methodology or paradigm to design a program using classes and objects. It simplifies the software development and maintenance.
 Class  A class in Java can contain: field(variable, attribute), methods, constructors, blocks, nested class and interface. Object is an instance of a class. There is only one way to define class in java using class keyword. The Object class is the parent class of all the classes in java by default.</description>
     </item>
     
     <item>
       <title>Java Notes(5) Generic</title>
-      <link>http://miaoshihao.com/notes/java/java_generics/</link>
+      <link>http://miaoshihao.com/notes/java/java_notes_5_generics/</link>
       <pubDate>Fri, 05 Jul 2019 19:50:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_generics/</guid>
+      <guid>http://miaoshihao.com/notes/java/java_notes_5_generics/</guid>
       <description>Generic Classes A generic class declaration looks like a non-generic class declaration, except that the class name is followed by a type parameter section.
 The type parameter section of a generic class can have one or more type parameters separated by commas. These classes are known as parameterized classes or parameterized types because they accept one or more parameters.
 Syntax:
@@ -183,22 +191,22 @@ Syntax:
     </item>
     
     <item>
-      <title>Java Notes(6) Collection Framework</title>
-      <link>http://miaoshihao.com/notes/java/java_collection/</link>
+      <title>Java Notes(5) Collection Framework</title>
+      <link>http://miaoshihao.com/notes/java/java_notes_4_collection/</link>
       <pubDate>Tue, 16 Jul 2019 15:58:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_collection/</guid>
+      <guid>http://miaoshihao.com/notes/java/java_notes_4_collection/</guid>
       <description>The java.util package contains all the classes and interfaces for Collection framework.
 Map : An object that maps keys to values. A map is not ordered and cannot contain duplicate keys (but can contain duplicate values). Each key can map to at most one value.
 Collection : A collection represents a group of objects, known as its elements. The JDK provides implementations of more specific subinterfaces like Set and List.</description>
     </item>
     
     <item>
-      <title>Java Notes(7) Error and Exception Handling</title>
-      <link>http://miaoshihao.com/notes/java/java_errors_and_exception_handling/</link>
+      <title>Java Notes(6) Error and Exception Handling</title>
+      <link>http://miaoshihao.com/notes/java/java_notes_6_errors_and_exception_handling/</link>
       <pubDate>Thu, 25 Jul 2019 15:58:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_errors_and_exception_handling/</guid>
+      <guid>http://miaoshihao.com/notes/java/java_notes_6_errors_and_exception_handling/</guid>
       <description>Exception Handling in Java Exception is an event that disrupts the normal flow of the program. It is an object which is thrown at runtime. The exception handling in java is one of the powerful mechanism to handle the runtime errors so that normal flow of the application can be maintained.
  An Error &amp;ldquo;indicates serious problems that a reasonable application should not try to catch.&amp;rdquo; An Exception &amp;ldquo;indicates conditions that a reasonable application might want to catch.</description>
     </item>
@@ -215,37 +223,40 @@ Collection : A collection represents a group of objects, known as its elements. 
     
     <item>
       <title>Java Notes(19) Jackson</title>
-      <link>http://miaoshihao.com/notes/java/java_jackson/</link>
+      <link>http://miaoshihao.com/notes/java/java_framework/java_jackson/</link>
       <pubDate>Fri, 30 Aug 2019 20:58:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_jackson/</guid>
+      <guid>http://miaoshihao.com/notes/java/java_framework/java_jackson/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Java Notes(18) Hibernate</title>
-      <link>http://miaoshihao.com/notes/java/java_hibernate/</link>
+      <link>http://miaoshihao.com/notes/java/java_framework/java_hibernate/</link>
       <pubDate>Thu, 29 Aug 2019 20:58:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_hibernate/</guid>
+      <guid>http://miaoshihao.com/notes/java/java_framework/java_hibernate/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Java Notes(17) JDBC</title>
-      <link>http://miaoshihao.com/notes/java/java_jdbc/</link>
+      <title>JDBC Notes (1)</title>
+      <link>http://miaoshihao.com/notes/java/java_framework/java_jdbc/</link>
       <pubDate>Tue, 27 Aug 2019 20:58:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_jdbc/</guid>
-      <description></description>
+      <guid>http://miaoshihao.com/notes/java/java_framework/java_jdbc/</guid>
+      <description>Common Database URL JDBC Database URL for MySQL Driver class name: com.mysql.jdbc.Driver
+Format of database URL:
+1 2 3 4 5  jdbc:mysql://[host][,failoverhost...][:port]/[database][?propertyName1][=propertyValue1][&amp;amp;propertyName2][=propertyValue2]... Examples: jdbc:mysql://localhost:3306/test jdbc:mysql://localhost:3306/test?user=root&amp;amp;password=secret   JDBC Database URL for Oracle Driver class name: oracle.jdbc.OracleDriver Format of database URL:
+1 2 3 4 5 6 7 8 9 10  jdbc:oracle:&amp;lt;drivertype&amp;gt;:@&amp;lt;database&amp;gt; jdbc:oracle:&amp;lt;drivertype&amp;gt;:&amp;lt;user&amp;gt;/&amp;lt;password&amp;gt;@&amp;lt;database&amp;gt; Examples: jdbc:oracle:thin:@localhost:1521:testdb jdbc:oracle:thin:root/secret@localhost:1521:testdb jdbc:oracle:oci:@hoststring jdbc:oracle:oci:@localhost:1521:testdb jdbc:oracle:oci:root/secret@hoststring&amp;gt; Jdbc:oracle:oci:root/secret@localhost:1521:testdb   Driver Example of using Driver to get connection 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  import java.</description>
     </item>
     
     <item>
-      <title>Java Notes(8) String</title>
-      <link>http://miaoshihao.com/notes/java/java_string/</link>
+      <title>Java Notes(7) String</title>
+      <link>http://miaoshihao.com/notes/java/java_notes_7_string/</link>
       <pubDate>Fri, 26 Jul 2019 20:58:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_string/</guid>
+      <guid>http://miaoshihao.com/notes/java/java_notes_7_string/</guid>
       <description>String, in general, is a sequence of characters. But in Java, string is an object that represents a sequence of character.
 CharSequence Interface: The CharSequence interface is used to represent the sequence of characters. The Charsequence interface is extended in three class namely String, StringBuffer, and StringBuilder classes.
 String Class  By String literal  1 2 3  String s1 = &amp;#34;Welcome&amp;#34;; // This doesn&amp;#39;t create a new instance. String s2 = &amp;#34;Welcome&amp;#34;;   In the above example, only one object will be created.</description>
@@ -265,15 +276,6 @@ Explanation Wikipedia
     
     <item>
       <title>Java Notes(24) Lambda </title>
-      <link>http://miaoshihao.com/notes/java/java_8/</link>
-      <pubDate>Wed, 02 Oct 2019 20:50:26 +0800</pubDate>
-      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_8/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Java Notes(24) Lambda </title>
       <link>http://miaoshihao.com/notes/mobiledevelopement/deeplink/</link>
       <pubDate>Wed, 02 Oct 2019 20:50:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
@@ -283,10 +285,10 @@ Explanation Wikipedia
     
     <item>
       <title>Java Notes(25) Stream </title>
-      <link>http://miaoshihao.com/notes/java/java_stream/</link>
+      <link>http://miaoshihao.com/notes/java/java8_new_feature/java_stream/</link>
       <pubDate>Wed, 02 Oct 2019 20:50:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_stream/</guid>
+      <guid>http://miaoshihao.com/notes/java/java8_new_feature/java_stream/</guid>
       <description>A stream represents a sequence of elements and supports different kind of operations to perform computations upon those elements:
 1 2 3 4 5 6 7 8 9  List&amp;lt;String&amp;gt; myList = Arrays.asList(&amp;#34;a1&amp;#34;, &amp;#34;a2&amp;#34;, &amp;#34;b1&amp;#34;, &amp;#34;c2&amp;#34;, &amp;#34;c1&amp;#34;); myList .stream() .filter(s -&amp;gt; s.startsWith(&amp;#34;c&amp;#34;)) .map(String::toUpperCase) .sorted() .forEach(System.out::println);   Stream Creation Calling the method stream() on a list of objects returns a regular object stream.
 1 2 3 4  Arrays.asList(&amp;#34;a1&amp;#34;, &amp;#34;a2&amp;#34;, &amp;#34;a3&amp;#34;) .</description>
@@ -294,78 +296,60 @@ Explanation Wikipedia
     
     <item>
       <title>Java Notes(23) Optional class</title>
-      <link>http://miaoshihao.com/notes/java/java_optional/</link>
+      <link>http://miaoshihao.com/notes/java/java8_new_feature/java_optional/</link>
       <pubDate>Sat, 28 Sep 2019 20:50:46 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_optional/</guid>
+      <guid>http://miaoshihao.com/notes/java/java8_new_feature/java_optional/</guid>
       <description>Optional class is a container for null.
 Optional class Declartion 1 2  public final class Optional&amp;lt;T&amp;gt; extends Object   Optional class method  Return an empty option class  1  static &amp;lt;T&amp;gt; Optional&amp;lt;T&amp;gt; empty()   Example:
 1 2 3 4 5  @Test public void whenCreatesEmptyOptional_thenCorrect() { Optional&amp;lt;String&amp;gt; empty = Optional.empty(); assertFalse(empty.isPresent()); }   判断其他对象是否等于Optional  1  boolean equals(Object obj)   optionObject.filter()  Filter takes a predicate as an argument and returns an Optional object.</description>
     </item>
     
     <item>
-      <title>Java Notes(21) Logging</title>
-      <link>http://miaoshihao.com/notes/java/java_logging/</link>
-      <pubDate>Thu, 12 Sep 2019 20:50:46 +0800</pubDate>
-      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_logging/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Java Notes(20) JavaDoc</title>
-      <link>http://miaoshihao.com/notes/java/java_doc/</link>
+      <title>Java Notes(13) JavaDoc</title>
+      <link>http://miaoshihao.com/notes/java/java_notes_13_java_doc/</link>
       <pubDate>Tue, 10 Sep 2019 22:50:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_doc/</guid>
+      <guid>http://miaoshihao.com/notes/java/java_notes_13_java_doc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Java Notes(16) Maven</title>
-      <link>http://miaoshihao.com/notes/java/java_maven/</link>
+      <link>http://miaoshihao.com/notes/java/java_framework/java_maven/</link>
       <pubDate>Sat, 24 Aug 2019 22:50:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_maven/</guid>
+      <guid>http://miaoshihao.com/notes/java/java_framework/java_maven/</guid>
       <description>Core Concepts of Maven:   POM Files: Project Object Model(POM) Files are XML file that contains information related to the project and configuration information such as dependencies, source directory, plugin, goals etc. used by Maven to build the project. When you should execute a maven command you give maven a POM file to execute the commands. Maven reads pom.xml file to accomplish its configuration and operations.
   Dependencies and Repositories: Dependencies are external Java libraries required for Project and repositories are directories of packaged JAR files.</description>
     </item>
     
     <item>
-      <title>Java Notes(11) File I/O</title>
-      <link>http://miaoshihao.com/notes/java/java_file_io/</link>
+      <title>Java Notes(9) File I/O</title>
+      <link>http://miaoshihao.com/notes/java/java_notes_9_file_io/</link>
       <pubDate>Sat, 27 Jul 2019 09:58:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_file_io/</guid>
+      <guid>http://miaoshihao.com/notes/java/java_notes_9_file_io/</guid>
       <description>The java.io package contains nearly every class required to perform input and output (I/O) in Java. All these streams represent an input source and an output destination. The stream in the java.io package supports many data such as primitives, object, localized characters, etc. Java provides strong and flexible support for I/O related to files and networks.
 The Hierarchy of I/O Class in Java Stream A stream can be defined as a sequence of data.</description>
     </item>
     
     <item>
-      <title>Java Notes(10) Enum</title>
-      <link>http://miaoshihao.com/notes/java/java_enum/</link>
-      <pubDate>Fri, 26 Jul 2019 23:50:26 +0800</pubDate>
-      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_enum/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Java Notes(9) Nested and Anonymous Class </title>
-      <link>http://miaoshihao.com/notes/java/java_anonymouse_class/</link>
+      <title>Java Notes(8) Nested and Anonymous Class </title>
+      <link>http://miaoshihao.com/notes/java/java_notes_8_anonymouse_class/</link>
       <pubDate>Fri, 26 Jul 2019 22:50:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_anonymouse_class/</guid>
+      <guid>http://miaoshihao.com/notes/java/java_notes_8_anonymouse_class/</guid>
       <description>Nested Class In Java, just like methods, variables of a class too can have another class as its member. Writing a class within another is allowed in Java. The class written within is called the nested class, and the class that holds the inner class is called the outer class.
 1 2 3 4 5 6 7 8  public class Outer { public class Inner { } } Outer.Inner inner = outer.</description>
     </item>
     
     <item>
-      <title>Java Notes(15) Synchronization</title>
-      <link>http://miaoshihao.com/notes/java/java_synchronization/</link>
+      <title>Java Notes(12) Synchronization</title>
+      <link>http://miaoshihao.com/notes/java/java_notes_12_synchronization/</link>
       <pubDate>Tue, 06 Aug 2019 20:58:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_synchronization/</guid>
+      <guid>http://miaoshihao.com/notes/java/java_notes_12_synchronization/</guid>
       <description>Synchronization in java is the capability to control the access of multiple threads to any shared resource. Java Synchronization is better option where we want to allow only one thread to access the shared resource.
 The synchronization is mainly used to :
  To prevent Thread Interference (Thread interference is a condition which occurs when more than one threads, executing simultaneously, access same piece of data.). To prevent Consistency Problem (Memory consistency errors occur when different threads have inconsistent views of what should be the same data.</description>
@@ -373,10 +357,10 @@ The synchronization is mainly used to :
     
     <item>
       <title>Java Notes(22) Unit Test&amp; Mockito</title>
-      <link>http://miaoshihao.com/notes/java/java_testing/</link>
+      <link>http://miaoshihao.com/notes/java/java_framework/java_testing/</link>
       <pubDate>Wed, 25 Sep 2019 20:50:46 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_testing/</guid>
+      <guid>http://miaoshihao.com/notes/java/java_framework/java_testing/</guid>
       <description></description>
     </item>
     
