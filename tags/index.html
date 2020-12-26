@@ -28,7 +28,7 @@
             <a href="/" title="Hi, Shihao"><span id="id-1" class="typeit"></span></a>
         </div>
         <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/blogs/"> Blogs </a><a class="menu-item" href="/notes/"> Notes </a><a class="menu-item active" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/music/"> Music </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+            <div class="menu-inner"><a class="menu-item" href="/knowledgemap/"> Knowledge Map </a><a class="menu-item active" href="/tags/"> Tags </a><a class="menu-item" href="/notes/"> Archives </a><a class="menu-item" href="/music/"> Music </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
                         <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/tags/" selected>English</option><option value="/zh-cn/tags/">简体中文</option></select>
                     </a><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
@@ -76,7 +76,7 @@
                     <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
                         Cancel
                     </a>
-                </div><a class="menu-item" href="/blogs/" title="">Blogs</a><a class="menu-item" href="/notes/" title="">Notes</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/music/" title="">Music</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                </div><a class="menu-item" href="/knowledgemap/" title="">Knowledge Map</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/notes/" title="">Archives</a><a class="menu-item" href="/music/" title="">Music</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                 <i class="fas fa-adjust fa-fw"></i>
             </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
                     <select class="language-select" onchange="location = this.value;"><option value="/tags/" selected>English</option><option value="/zh-cn/tags/">简体中文</option></select>
@@ -97,199 +97,7 @@
 </head>
 
 
-<div class="page archive"><h2 class="single-title animated pulse faster">All Tags</h2>
-    
-    <div id="main" style="width: 100%;height:800px;"></div>
-    <script type="text/javascript">
-        
-        var myChart = echarts.init(document.getElementById('main'));
-
-        var data = [
-            {
-                name: '知识',
-                itemStyle: {
-                    color: 'auto'
-                },
-                children: [{
-                    name: '人文',
-                    value: 1,
-                    itemStyle: {
-                        color: 'auto'
-                    }
-                }, {
-                    name: '自然',
-                    itemStyle: {
-                        color: 'auto'
-                    },
-                    children: [{
-                        name: '计算机',
-                        value: 1,
-                        itemStyle: {
-                            color: 'auto'
-                        },
-                        children: [{
-                            name: '语言',
-                            value: 1,
-                            itemStyle: {
-                                color: 'auto'
-                            },
-                            children: [{
-                                name: 'Java',
-                                value: 1,
-                                itemStyle: {
-                                    color: 'auto'
-                                }
-                            }]
-
-                        }]
-                    },
-                    {
-                        name: '数学',
-                        value: 1,
-                        itemStyle: {
-                            color: 'auto'
-                        },
-                    },
-                    {
-                        name: '生物',
-                        value: 1,
-                        itemStyle: {
-                            color: 'auto'
-                        },
-                    }]
-                }]
-            }, {
-                name: '智慧',
-                itemStyle: {
-                    color: '#da1d23'
-                },
-                children: [{
-                    name: '自我',
-                    itemStyle: {
-                        color: '#dd4c51'
-                    },
-                    children: [{
-                        name: '三观',
-                        value: 1,
-                        itemStyle: {
-                            color: '#3e0317'
-                        }
-                    }, {
-                        name: '生死',
-                        value: 1,
-                        itemStyle: {
-                            color: '#ef2d36'
-                        }
-                    }]
-                },
-                {
-                    name: '外在',
-                    itemStyle: {
-                        color: '#dd4c51'
-                    },
-                    children: [{
-                        name: '目标',
-                        value: 1,
-                        itemStyle: {
-                            color: '#3e0317'
-                        }
-                    }, {
-                        name: '系统性思维',
-                        value: 1,
-                        itemStyle: {
-                            color: '#ef2d36'
-                        }
-                    }]
-                }]
-            }];
-
-        option = {
-            title: {
-                textStyle: {
-                    fontSize: 14,
-                    align: 'center'
-                },
-                subtextStyle: {
-                    align: 'center'
-                }
-            },
-            series: {
-                type: 'sunburst',
-                highlightPolicy: 'ancestor',
-                data: data,
-                radius: [0, '95%'],
-                sort: null,
-                levels: [{}, {
-                    r0: '10%',
-                    r: '25%',
-                    itemStyle: {
-                        borderWidth: 2
-                    },
-                    label: {
-                        rotate: 'rotation'
-                    }
-                }, {
-                    r0: '25%',
-                    r: '35%',
-                    label: {
-                        align: 'center'
-                    }
-                }, {
-                    r0: '35%',
-                    r: '55%',
-                    label: {
-                        position: 'inside',
-                        padding: 3,
-                        silent: false
-                    },
-                    itemStyle: {
-                        borderWidth: 3
-                    }
-                }, {
-                    r0: '55%',
-                    r: '65%',
-                    label: {
-                        position: 'inside',
-                        padding: 4,
-                        silent: false
-                    },
-                    itemStyle: {
-                        borderWidth: 3
-                    }
-                }, {
-                    r0: '65%',
-                    r: '85%',
-                    label: {
-                        position: 'outside',
-                        padding: 4,
-                        silent: false
-                    },
-                    itemStyle: {
-                        borderWidth: 3
-                    }
-                }, {
-                    r0: '85%',
-                    r: '100%',
-                    label: {
-                        position: 'outside',
-                        padding: 4,
-                        silent: false
-                    },
-                    itemStyle: {
-                        borderWidth: 3
-                    }
-                }]
-            }
-        };
-        
-        myChart.setOption(option);
-        myChart.on('click', function (param){
-                    var name=param.name;
-                    if(name=="Java"){
-                        window.location.href="http://me.seekingqed.com";
-                    }                      
-                });
-    </script><div class="tag-cloud-tags"><a href="/tags/java/">Java <sup>28</sup></a><a href="/tags/finance/">Finance <sup>2</sup></a><a href="/tags/javascript/">Javascript <sup>1</sup></a><a href="/tags/network/">Network <sup>1</sup></a></div></div></div>
+<div class="page archive"><h2 class="single-title animated pulse faster">All Tags</h2><div class="tag-cloud-tags"><a href="/tags/java/">Java <sup>28</sup></a><a href="/tags/finance/">Finance <sup>2</sup></a><a href="/tags/javascript/">Javascript <sup>1</sup></a><a href="/tags/network/">Network <sup>1</sup></a></div></div></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Shihao Miao</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><div>
                     <span id="timeDate">Loading Days...</span><span id="times">Loading Times...</span>

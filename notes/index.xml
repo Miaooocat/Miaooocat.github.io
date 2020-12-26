@@ -83,16 +83,6 @@ The variables are constructed from the data in the company&amp;rsquo;s financial
     </item>
     
     <item>
-      <title>Java Notes(0) Reference Keywords</title>
-      <link>http://miaoshihao.com/notes/java/java_notes_0_key_words/</link>
-      <pubDate>Wed, 12 Jun 2019 15:58:26 +0800</pubDate>
-      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_notes_0_key_words/</guid>
-      <description>All 48 Java Keywords with Examples Table below lists 48 Keywords in Java.
-1) abstract abstract keyword is used to implement the abstraction in java. A method which doesn’t have method definition must be declared as abstract and the class containing it must be declared as abstract. You can’t instantiate abstract classes. Abstract methods must be implemented in the sub classes. You can’t use abstract keyword with variables and constructors.</description>
-    </item>
-    
-    <item>
       <title>Spring Framework Notes - Beans, BeanFactory and the ApplicationContext</title>
       <link>http://miaoshihao.com/notes/spring/spring/spring_bean/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -362,6 +352,16 @@ The synchronization is mainly used to :
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
       <guid>http://miaoshihao.com/notes/java/java_framework/java_testing/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Java Notes(0) Reference Keywords</title>
+      <link>http://miaoshihao.com/notes/java/java_notes_0_key_words/</link>
+      <pubDate>Wed, 12 Jun 2019 15:58:26 +0800</pubDate>
+      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
+      <guid>http://miaoshihao.com/notes/java/java_notes_0_key_words/</guid>
+      <description>All 48 Java Keywords with Examples Table below lists 48 Keywords in Java.
+1) abstract abstract keyword is used to implement the abstraction in java. A method which doesn’t have method definition must be declared as abstract and the class containing it must be declared as abstract. You can’t instantiate abstract classes. Abstract methods must be implemented in the sub classes. You can’t use abstract keyword with variables and constructors.</description>
     </item>
     
   </channel>

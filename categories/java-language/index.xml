@@ -5,24 +5,6 @@
         <description>Java Language - Category - Hi, Shihao</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
             <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 23 Oct 2020 10:35:26 &#43;0800</lastBuildDate><atom:link href="http://miaoshihao.com/categories/java-language/" rel="self" type="application/rss+xml" /><item>
-    <title>Java Notes(0) Reference Keywords</title>
-    <link>http://miaoshihao.com/notes/java/java_notes_0_key_words/</link>
-    <pubDate>Wed, 12 Jun 2019 15:58:26 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>http://miaoshihao.com/notes/java/java_notes_0_key_words/</guid>
-    <description><![CDATA[All 48 Java Keywords with Examples Table below lists 48 Keywords in Java.
-1) abstract abstract keyword is used to implement the abstraction in java. A method which doesn’t have method definition must be declared as abstract and the class containing it must be declared as abstract. You can’t instantiate abstract classes. Abstract methods must be implemented in the sub classes. You can’t use abstract keyword with variables and constructors.]]></description>
-</item><item>
-    <title>Java Notes(2) Feature and Program Execution</title>
-    <link>http://miaoshihao.com/notes/java/java_notes_1_feature/</link>
-    <pubDate>Thu, 13 Jun 2019 16:58:26 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>http://miaoshihao.com/notes/java/java_notes_1_feature/</guid>
-    <description><![CDATA[Java Features and Program Execution Java is a programming language and a platform.
-Platform: Any hardware or software environment in which a program runs, is known as a platform. Since Java has its own runtime environment (JRE) and Application Programming Interface (API), it is called platform.
-Features of Java :   Simple:
- User friendly syntax based on C++ It has Automatic Garbage Collection It has Rich set of APIs Removed confusing features - explicit pointers, operator overloading, multiple inheritance, etc    Object-oriented:]]></description>
-</item><item>
     <title>Java Notes(3) Java Fundamentals</title>
     <link>http://miaoshihao.com/notes/java/java_notes_2_fundamentals/</link>
     <pubDate>Sat, 15 Jun 2019 15:58:26 &#43;0800</pubDate>
@@ -92,5 +74,19 @@ Collection : A collection represents a group of objects, known as its elements. 
     <guid>http://miaoshihao.com/notes/java/java_notes_6_errors_and_exception_handling/</guid>
     <description><![CDATA[Exception Handling in Java Exception is an event that disrupts the normal flow of the program. It is an object which is thrown at runtime. The exception handling in java is one of the powerful mechanism to handle the runtime errors so that normal flow of the application can be maintained.
  An Error &ldquo;indicates serious problems that a reasonable application should not try to catch.&rdquo; An Exception &ldquo;indicates conditions that a reasonable application might want to catch.]]></description>
+</item><item>
+    <title>Java Notes(19) Jackson</title>
+    <link>http://miaoshihao.com/notes/java/java_framework/java_jackson/</link>
+    <pubDate>Fri, 30 Aug 2019 20:58:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/java/java_framework/java_jackson/</guid>
+    <description><![CDATA[Java Jackson&Json notes]]></description>
+</item><item>
+    <title>Java Notes(18) Hibernate</title>
+    <link>http://miaoshihao.com/notes/java/java_framework/java_hibernate/</link>
+    <pubDate>Thu, 29 Aug 2019 20:58:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/java/java_framework/java_hibernate/</guid>
+    <description><![CDATA[Java Hibernate notes]]></description>
 </item></channel>
 </rss>

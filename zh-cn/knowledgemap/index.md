@@ -189,10 +189,10 @@
      myChart.on('click', function (param){
                  var name=param.name;
                  if(name=="Java"){
-                     window.location.href="http://google.com/";
+                     window.location.href="{{<  ref "categories/java/">}}";
                  }
                  else if (name == "Spring"){
-                     window.location.href="http://google.com/";
+                    window.location.href="{{<  ref "categories/spring/">}}";
                  }
 
              });

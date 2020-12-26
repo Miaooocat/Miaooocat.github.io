@@ -1,0 +1,26 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Java - Category - Hi, Shihao</title>
+        <link>http://miaoshihao.com/categories/java/</link>
+        <description>Java - Category - Hi, Shihao</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
+            <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 13 Jun 2019 16:58:26 &#43;0800</lastBuildDate><atom:link href="http://miaoshihao.com/categories/java/" rel="self" type="application/rss+xml" /><item>
+    <title>Java Notes(2) Feature and Program Execution</title>
+    <link>http://miaoshihao.com/notes/java/java_notes_1_feature/</link>
+    <pubDate>Thu, 13 Jun 2019 16:58:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/java/java_notes_1_feature/</guid>
+    <description><![CDATA[Java Features and Program Execution Java is a programming language and a platform.
+Platform: Any hardware or software environment in which a program runs, is known as a platform. Since Java has its own runtime environment (JRE) and Application Programming Interface (API), it is called platform.
+Features of Java :   Simple:
+ User friendly syntax based on C++ It has Automatic Garbage Collection It has Rich set of APIs Removed confusing features - explicit pointers, operator overloading, multiple inheritance, etc    Object-oriented:]]></description>
+</item><item>
+    <title>Java Notes(0) Reference Keywords</title>
+    <link>http://miaoshihao.com/notes/java/java_notes_0_key_words/</link>
+    <pubDate>Wed, 12 Jun 2019 15:58:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/java/java_notes_0_key_words/</guid>
+    <description><![CDATA[All 48 Java Keywords with Examples Table below lists 48 Keywords in Java.
+1) abstract abstract keyword is used to implement the abstraction in java. A method which doesn’t have method definition must be declared as abstract and the class containing it must be declared as abstract. You can’t instantiate abstract classes. Abstract methods must be implemented in the sub classes. You can’t use abstract keyword with variables and constructors.]]></description>
+</item></channel>
+</rss>

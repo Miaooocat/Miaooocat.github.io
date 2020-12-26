@@ -20,14 +20,6 @@
     <description><![CDATA[Spring Integration Basic Overview Spring Integration is an open source framework that designed to enable the development of integration solutions typical of event-driven architectures and messaging-centric architectures. It requires dependency spring intergration core, which could be downloaded from Maven Central.
 1 2 3 4 5  &lt;dependency&gt; &lt;groupId&gt;org.springframework.integration&lt;/groupId&gt; &lt;artifactId&gt;spring-integration-core&lt;/artifactId&gt; &lt;version&gt;5.3.1.RELEASE&lt;/version&gt; &lt;/dependency&gt;   Spring integration framework consists three parts, namely message, message channel, and message endpoint. In general. a message is a unit of information that can be passed between different message endpoint through message channels.]]></description>
 </item><item>
-    <title>Java Notes(0) Reference Keywords</title>
-    <link>http://miaoshihao.com/notes/java/java_notes_0_key_words/</link>
-    <pubDate>Wed, 12 Jun 2019 15:58:26 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>http://miaoshihao.com/notes/java/java_notes_0_key_words/</guid>
-    <description><![CDATA[All 48 Java Keywords with Examples Table below lists 48 Keywords in Java.
-1) abstract abstract keyword is used to implement the abstraction in java. A method which doesn’t have method definition must be declared as abstract and the class containing it must be declared as abstract. You can’t instantiate abstract classes. Abstract methods must be implemented in the sub classes. You can’t use abstract keyword with variables and constructors.]]></description>
-</item><item>
     <title>Spring Framework Notes - Beans, BeanFactory and the ApplicationContext</title>
     <link>http://miaoshihao.com/notes/spring/spring/spring_bean/</link>
     <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
@@ -89,5 +81,13 @@ Port Number The port number is used to uniquely identify different applications.
     <description><![CDATA[Serialization in java is a mechanism of writing the state of an object into a byte stream. It is mainly used in Hibernate, RMI, JPA, EJB and JMS technologies. The reverse operation of serialization is called deserialization.
 Advantage of Java Serialization : It is mainly used to travel object&rsquo;s state on the network (known as marshaling).
 java.io.Serializable interface : Serializable is a marker interface (has no data member and method). It is used to &ldquo;mark&rdquo; java classes so that objects of these classes may get certain capability.]]></description>
+</item><item>
+    <title>Java Notes(3) Object Oriented Language</title>
+    <link>http://miaoshihao.com/notes/java/java_notes_3_oop/</link>
+    <pubDate>Mon, 17 Jun 2019 15:58:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/java/java_notes_3_oop/</guid>
+    <description><![CDATA[Object Oriented Object-Oriented Programming is a methodology or paradigm to design a program using classes and objects. It simplifies the software development and maintenance.
+Class  A class in Java can contain: field(variable, attribute), methods, constructors, blocks, nested class and interface. Object is an instance of a class. There is only one way to define class in java using class keyword. The Object class is the parent class of all the classes in java by default.]]></description>
 </item></channel>
 </rss>

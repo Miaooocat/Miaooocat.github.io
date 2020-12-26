@@ -105,4 +105,6 @@ Network programming often related to socket. A network socket is a software stru
 
 ## Java Implementation
 
+```
 [Java Network Implementation]({{<  ref "notes/Java/Java_Notes_14_Networking/index.en.md"  >}})
+```
