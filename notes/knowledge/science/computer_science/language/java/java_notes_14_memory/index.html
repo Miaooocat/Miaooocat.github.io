@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Java Notes(14) Stack Memory and Heap Space - Hi, Shihao</title><meta name="Description" content="Java Fundamental"><meta property="og:title" content="Java Notes(14) Stack Memory and Heap Space" />
+<meta property="og:description" content="Java Fundamental" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_14_memory/" />
+<meta property="og:image" content="http://miaoshihao.com/logo.png"/>
+<meta property="article:published_time" content="2020-09-11T22:50:26+08:00" />
+<meta property="article:modified_time" content="2020-09-11T22:50:26+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://miaoshihao.com/logo.png"/>
+
+<meta name="twitter:title" content="Java Notes(14) Stack Memory and Heap Space"/>
+<meta name="twitter:description" content="Java Fundamental"/>
+<meta name="application-name" content="Hi, Shihao">
+<meta name="apple-mobile-web-app-title" content="Hi, Shihao"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_14_memory/" /><link rel="prev" href="http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_0_reference/" /><link rel="next" href="http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_13_networking/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Java Notes(14) Stack Memory and Heap Space",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/miaoshihao.com\/notes\/knowledge\/science\/computer_science\/language\/java\/java_notes_14_memory\/"
+        },"image": ["http:\/\/miaoshihao.com\/images\/Apple-Devices-Preview.png"],"genre": "notes","keywords": "Java","wordcount":  887 ,
+        "url": "http:\/\/miaoshihao.com\/notes\/knowledge\/science\/computer_science\/language\/java\/java_notes_14_memory\/","datePublished": "2020-09-11T22:50:26+08:00","dateModified": "2020-09-11T22:50:26+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "http:\/\/miaoshihao.com\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Shihao"
+            },"description": "Java Fundamental"
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Hi, Shihao"><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/knowledgemap/"> Knowledge Map </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/notes/"> Archives </a><a class="menu-item" href="/music/"> Music </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/notes/knowledge/science/computer_science/language/java/java_notes_14_memory/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>                
+                <a href="./robot/" class="menu-item chat-bot" title="">
+                    <i class="fas fa-robot fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Hi, Shihao"><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/knowledgemap/" title="">Knowledge Map</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/notes/" title="">Archives</a><a class="menu-item" href="/music/" title="">Music</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/notes/knowledge/science/computer_science/language/java/java_notes_14_memory/" selected>English</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="page single special"><h1 class="single-title animated pulse faster">Java Notes(14) Stack Memory and Heap Space</h1><div class="content" id="content"><p>JVM divides memory into stack and heap memory.</p>
+<h1 id="stack-memory">Stack Memory</h1>
+<p><strong>Stack Memory in Java is used for static memory allocation and the execution of a thread</strong>.
+It contains primitive values that are specific to a method and references to objects that are in a heap, referred from the method.</p>
+<p>Access to this memory is in <strong>Last-In-First-Out (LIFO)</strong> order. Whenever a new method is called, a new block on top of the stack is created which contains values specific to that method, like primitive variables and references to objects.</p>
+<p>When the method finishes execution, it’s corresponding stack frame is flushed, the flow goes back to the calling method and space becomes available for the next method.</p>
+<h3 id="key-features-of-stack-memory">Key Features of Stack Memory</h3>
+<p>Apart from what we have discussed so far, following are some other features of stack memory:</p>
+<ul>
+<li>It grows and shrinks as new methods are called and returned respectively</li>
+<li>Variables inside stack exist only as long as the method that created them is running</li>
+<li>It&rsquo;s automatically allocated and deallocated when method finishes execution</li>
+<li>If this memory is full, Java throws java.lang.StackOverFlowError</li>
+<li>Access to this memory is fast when compared to heap memory</li>
+<li>This memory is threadsafe as each thread operates in its own stack</li>
+</ul>
+<h1 id="heap-space">Heap Space</h1>
+<p><strong>Heap space in Java is used for dynamic memory allocation for Java objects and JRE classes at the runtime.</strong>
+New objects are always created in heap space and the references to this objects are stored in stack memory.</p>
+<p>These objects have global access and can be accessed from anywhere in the application.</p>
+<p>This memory model is further broken into smaller parts called generations, these are:</p>
+<ol>
+<li>
+<p>Young Generation – this is where all new objects are allocated and aged. A minor Garbage collection occurs when this fills up.</p>
+</li>
+<li>
+<p>Old or Tenured Generation – this is where long surviving objects are stored. When objects are stored in the Young Generation, a threshold for the object&rsquo;s age is set and when that threshold is reached, the object is moved to the old generation.</p>
+</li>
+<li>
+<p>Permanent Generation – this consists of JVM metadata for the runtime classes and application methods</p>
+</li>
+</ol>
+<h3 id="key-features-of-java-heap-space">Key Features of Java Heap Space</h3>
+<ul>
+<li>It&rsquo;s accessed via complex memory management techniques that include Young Generation, Old or Tenured Generation, and Permanent Generation</li>
+<li>If heap space is full, Java throws java.lang.OutOfMemoryError</li>
+<li>Access to this memory is relatively slower than stack memory</li>
+<li>This memory, in contrast to stack, isn&rsquo;t automatically deallocated. It needs Garbage Collector to free up unused objects so as to keep the efficiency of the memory usage</li>
+<li>Unlike stack, a heap isn&rsquo;t threadsafe and needs to be guarded by properly synchronizing the code</li>
+</ul>
+<h2 id="analyze-memory-example">Analyze Memory Example</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">id</span><span class="o">;</span>
+    <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">Person</span><span class="o">(</span><span class="kt">int</span> <span class="n">id</span><span class="o">,</span> <span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">id</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PersonBuilder</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">Person</span> <span class="nf">buildPerson</span><span class="o">(</span><span class="kt">int</span> <span class="n">id</span><span class="o">,</span> <span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">Person</span><span class="o">(</span><span class="n">id</span><span class="o">,</span> <span class="n">name</span><span class="o">);</span>
+    <span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+      <span class="kt">int</span> <span class="n">id</span> <span class="o">=</span> <span class="n">23</span><span class="o">;</span>
+      <span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&#34;John&#34;</span><span class="o">;</span>
+      <span class="n">Person</span> <span class="n">person</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+      <span class="n">person</span> <span class="o">=</span> <span class="n">buildPerson</span><span class="o">(</span><span class="n">id</span><span class="o">,</span> <span class="n">name</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol>
+<li>Upon entering the main() method, a space in stack memory would be created to store primitives and references of this method
+<ul>
+<li>The primitive value of integer id will be stored directly in stack memory</li>
+<li>The reference variable person of type Person will also be created in stack memory which will point to the actual object in the heap</li>
+</ul>
+</li>
+<li>The call to the parameterized constructor Person(int, String) from main() will allocate further memory on top of the previous stack. This will store:
+<ul>
+<li>The this object reference of the calling object in stack memory</li>
+<li>The primitive value id in the stack memory</li>
+<li>The reference variable of String argument name which will point to the actual string from string pool in heap memory</li>
+</ul>
+</li>
+<li>The main method is further calling the buildPerson() static method, for which further allocation will take place in stack memory on top of the previous one. This will again store variables in the manner described above.</li>
+<li>However, for the newly created object person of type Person, all instance variables will be stored in heap memory.</li>
+</ol>
+<p>This allocation is explained in this diagram:</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="StackHeap.png"
+        data-srcset="/notes/knowledge/science/computer_science/language/java/java_notes_14_memory/StackHeap.png, StackHeap.png 1.5x, /notes/knowledge/science/computer_science/language/java/java_notes_14_memory/StackHeap.png 2x"
+        data-sizes="auto"
+        alt="/notes/knowledge/science/computer_science/language/java/java_notes_14_memory/StackHeap.png"
+        title="StackHeap" /></p>
+<h1 id="summary-table">Summary Table</h1>
+<table class="alt"> 
+<tbody><tr> 
+  <th id="table_dvpt_datatype"><strong>Parameter</strong></th> 
+  <th id="table_dvpt_defaultvalue"><strong>Stack Memory</strong></th> 
+  <th id="table_dvpt_defaultsize"><strong>Heap Space</strong></th> 
+</tr> 
+<tr> 
+<td headers="table_dvpt_datatype">Application</td> 
+<td headers="table_dvpt_defaultvalue">Stack is used in parts, one at a time during execution of a thread</td> 
+<td headers="table_dvpt_defaultsize">The entire application uses Heap space during runtime</td> 
+</tr> 
+<tr> 
+<td headers="table_dvpt_datatype">Size</td> 
+<td headers="table_dvpt_defaultvalue">Stack has size limits depending upon OS and is usually smaller then Heap</td> 
+<td headers="table_dvpt_defaultsize">There is no size limit on Heap</td> 
+</tr> 
+<tr> 
+<td headers="table_dvpt_datatype">Storage</td> 
+<td headers="table_dvpt_defaultvalue">Stores only primitive variables and references to objects that are created in Heap Space</td> 
+<td headers="table_dvpt_defaultsize">All the newly created objects are stored here</td> 
+</tr> 
+<tr> 
+<td headers="table_dvpt_datatype">Order</td> 
+<td headers="table_dvpt_defaultvalue">It is accessed using Last-in First-out (LIFO) memory allocation system</td> 
+<td headers="table_dvpt_defaultsize">This memory is accessed via complex memory management techniques that include Young Generation, Old or Tenured Generation, and Permanent Generation</td> 
+</tr> 
+<tr> 
+<td headers="table_dvpt_datatype">Life</td> 
+<td headers="table_dvpt_defaultvalue">Stack memory only exists as long as the current method is running</td> 
+<td headers="table_dvpt_defaultsize">Heap space exists as long as the application runs</td> 
+</tr> 
+<tr> 
+<td headers="table_dvpt_datatype">Efficiency</td> 
+<td headers="table_dvpt_defaultvalue">Comparatively much faster to allocate when compared to heap</td> 
+<td headers="table_dvpt_defaultsize">Slower to allocate when compared to stack</td> 
+</tr> 
+<tr> 
+<td headers="table_dvpt_datatype">Allocation/Deallocation</td> 
+<td headers="table_dvpt_defaultvalue">This Memory is automatically allocated and deallocated when a method is called and returned respectively</td> 
+<td headers="table_dvpt_defaultsize">Heap space is allocated when new objects are created and deallocated by Gargabe Collector when they are no longer referenced</td> 
+</tr> 
+</tbody></table>
+<h1 id="reference">Reference:</h1>
+<p><a href="https://www.baeldung.com/java-stack-heap">https://www.baeldung.com/java-stack-heap</a></p>
+</div></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Shihao Miao</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><div>
+                    <span id="timeDate">Loading Days...</span><span id="times">Loading Times...</span>
+                    <script>
+                        var now = new Date();
+                        function createtime() {
+                            var grt= new Date("03/20/2019 00:00:00");
+                            now.setTime(now.getTime()+250);
+                            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+                            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+                            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+                            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+                            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+                            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+                            document.getElementById("timeDate").innerHTML = "This website has struggled in this world for "+dnum+" day ";
+                            document.getElementById("times").innerHTML = hnum + " hour " + mnum + " min " + snum + " sec";
+                        }
+                    setInterval("createtime()",250);
+                    </script>
+                    </div></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-1":"Home","id-2":"Home"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":30000,"speed":500}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

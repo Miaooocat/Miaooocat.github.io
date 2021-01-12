@@ -6,18 +6,18 @@
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
             <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 17 Jul 2020 19:32:26 &#43;0800</lastBuildDate><atom:link href="http://miaoshihao.com/categories/investment/" rel="self" type="application/rss+xml" /><item>
     <title>Beneish Model</title>
-    <link>http://miaoshihao.com/notes/investment/beneish_model/</link>
+    <link>http://miaoshihao.com/notes/knowledge/science/finance/investment/beneish_model/</link>
     <pubDate>Fri, 17 Jul 2020 19:32:26 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/investment/beneish_model/</guid>
+    <guid>http://miaoshihao.com/notes/knowledge/science/finance/investment/beneish_model/</guid>
     <description><![CDATA[The Beneish model is a mathematical model that uses financial ratios and eight variables to identify whether a company has manipulated its earnings. It is used as a tool to uncover potential financial fraud. However, the result generated from beneish model can not be the evidence.
 The variables are constructed from the data in the company&rsquo;s financial statements, and once calculated, create an M-Score to describe the degree to which the earnings have been manipulated.]]></description>
 </item><item>
     <title>Technical Indicator</title>
-    <link>http://miaoshihao.com/notes/investment/technicalindicator/</link>
+    <link>http://miaoshihao.com/notes/knowledge/science/finance/investment/technicalindicator/</link>
     <pubDate>Sat, 29 Jun 2019 19:32:26 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/investment/technicalindicator/</guid>
+    <guid>http://miaoshihao.com/notes/knowledge/science/finance/investment/technicalindicator/</guid>
     <description><![CDATA[Accumulation/Distribution Line (ADL)  The accumulation/distribution line gauges supply and demand by looking at where the price closed within the period&rsquo;s range, and then multiplying that by volume. The A/D indicator is cumulative, meaning one period&rsquo;s value is added or subtracted from the last. A rising A/D line helps confirm a rising price trend. A falling A/D line helps confirm a price downtrend. If the price is rising but A/D is falling, it signals underlying weakness and a potential decline in price.]]></description>
 </item></channel>
 </rss>

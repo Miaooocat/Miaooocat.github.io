@@ -4,23 +4,95 @@
         <link>http://miaoshihao.com/categories/java/</link>
         <description>Java - Category - Hi, Shihao</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
-            <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 13 Jun 2019 16:58:26 &#43;0800</lastBuildDate><atom:link href="http://miaoshihao.com/categories/java/" rel="self" type="application/rss+xml" /><item>
-    <title>Java Notes(2) Feature and Program Execution</title>
-    <link>http://miaoshihao.com/notes/java/java_notes_1_feature/</link>
+            <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 11 Sep 2020 22:50:26 &#43;0800</lastBuildDate><atom:link href="http://miaoshihao.com/categories/java/" rel="self" type="application/rss+xml" /><item>
+    <title>Java8 Stream </title>
+    <link>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java8_notes_stream/</link>
+    <pubDate>Wed, 02 Oct 2019 20:50:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java8_notes_stream/</guid>
+    <description><![CDATA[A stream represents a sequence of elements and supports different kind of operations to perform computations upon those elements:
+1 2 3 4 5 6 7 8 9  List&lt;String&gt; myList = Arrays.asList(&#34;a1&#34;, &#34;a2&#34;, &#34;b1&#34;, &#34;c2&#34;, &#34;c1&#34;); myList .stream() .filter(s -&gt; s.startsWith(&#34;c&#34;)) .map(String::toUpperCase) .sorted() .forEach(System.out::println);   Stream Creation Calling the method stream() on a list of objects returns a regular object stream.
+1 2 3 4  Arrays.asList(&#34;a1&#34;, &#34;a2&#34;, &#34;a3&#34;) .]]></description>
+</item><item>
+    <title>Java8 Optional class</title>
+    <link>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java8_notes_option/</link>
+    <pubDate>Sat, 28 Sep 2019 20:50:46 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java8_notes_option/</guid>
+    <description><![CDATA[Optional class is a container for null.
+Optional class Declartion 1 2  public final class Optional&lt;T&gt; extends Object   Optional class method  Return an empty option class  1  static &lt;T&gt; Optional&lt;T&gt; empty()   Example:
+1 2 3 4 5  @Test public void whenCreatesEmptyOptional_thenCorrect() { Optional&lt;String&gt; empty = Optional.empty(); assertFalse(empty.isPresent()); }   判断其他对象是否等于Optional  1  boolean equals(Object obj)   optionObject.filter()  Filter takes a predicate as an argument and returns an Optional object.]]></description>
+</item><item>
+    <title>Java Notes(1) Introduction</title>
+    <link>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_1_introduction/</link>
     <pubDate>Thu, 13 Jun 2019 16:58:26 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/java/java_notes_1_feature/</guid>
+    <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_1_introduction/</guid>
     <description><![CDATA[Java Features and Program Execution Java is a programming language and a platform.
 Platform: Any hardware or software environment in which a program runs, is known as a platform. Since Java has its own runtime environment (JRE) and Application Programming Interface (API), it is called platform.
 Features of Java :   Simple:
  User friendly syntax based on C++ It has Automatic Garbage Collection It has Rich set of APIs Removed confusing features - explicit pointers, operator overloading, multiple inheritance, etc    Object-oriented:]]></description>
 </item><item>
-    <title>Java Notes(0) Reference Keywords</title>
-    <link>http://miaoshihao.com/notes/java/java_notes_0_key_words/</link>
-    <pubDate>Wed, 12 Jun 2019 15:58:26 &#43;0800</pubDate>
+    <title>Java Notes(2) Object Oriented Language</title>
+    <link>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_2_oop/</link>
+    <pubDate>Mon, 17 Jun 2019 15:58:26 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/java/java_notes_0_key_words/</guid>
-    <description><![CDATA[All 48 Java Keywords with Examples Table below lists 48 Keywords in Java.
-1) abstract abstract keyword is used to implement the abstraction in java. A method which doesn’t have method definition must be declared as abstract and the class containing it must be declared as abstract. You can’t instantiate abstract classes. Abstract methods must be implemented in the sub classes. You can’t use abstract keyword with variables and constructors.]]></description>
+    <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_2_oop/</guid>
+    <description><![CDATA[Object Oriented Object-Oriented Programming is a methodology or paradigm to design a program using classes and objects. It simplifies the software development and maintenance.
+Class  A class in Java can contain: field(variable, attribute), methods, constructors, blocks, nested class and interface. Object is an instance of a class. There is only one way to define class in java using class keyword. The Object class is the parent class of all the classes in java by default.]]></description>
+</item><item>
+    <title>Java Notes(3) Collection Framework</title>
+    <link>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_3_collection/</link>
+    <pubDate>Tue, 16 Jul 2019 15:58:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_3_collection/</guid>
+    <description><![CDATA[The java.util package contains all the classes and interfaces for Collection framework.
+Map : An object that maps keys to values. A map is not ordered and cannot contain duplicate keys (but can contain duplicate values). Each key can map to at most one value.
+Collection : A collection represents a group of objects, known as its elements. The JDK provides implementations of more specific subinterfaces like Set and List.]]></description>
+</item><item>
+    <title>Java Notes(4) Generic</title>
+    <link>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_4_generics/</link>
+    <pubDate>Fri, 05 Jul 2019 19:50:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_4_generics/</guid>
+    <description><![CDATA[Generic Classes A generic class declaration looks like a non-generic class declaration, except that the class name is followed by a type parameter section.
+The type parameter section of a generic class can have one or more type parameters separated by commas. These classes are known as parameterized classes or parameterized types because they accept one or more parameters.
+Syntax:
+1 2 3  public class Box&lt;T&gt; { private T t; }   Box − Box is a generic class.]]></description>
+</item><item>
+    <title>Java Notes(5) Error and Exception Handling</title>
+    <link>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_5_errors_and_exception_handling/</link>
+    <pubDate>Thu, 25 Jul 2019 15:58:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_5_errors_and_exception_handling/</guid>
+    <description><![CDATA[Exception Handling in Java Exception is an event that disrupts the normal flow of the program. It is an object which is thrown at runtime. The exception handling in java is one of the powerful mechanism to handle the runtime errors so that normal flow of the application can be maintained.
+ An Error &ldquo;indicates serious problems that a reasonable application should not try to catch.&rdquo; An Exception &ldquo;indicates conditions that a reasonable application might want to catch.]]></description>
+</item><item>
+    <title>Java Notes(6) String</title>
+    <link>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_6_string/</link>
+    <pubDate>Fri, 26 Jul 2019 20:58:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_6_string/</guid>
+    <description><![CDATA[String, in general, is a sequence of characters. But in Java, string is an object that represents a sequence of character.
+CharSequence Interface: The CharSequence interface is used to represent the sequence of characters. The Charsequence interface is extended in three class namely String, StringBuffer, and StringBuilder classes.
+String Class  By String literal  1 2 3  String s1 = &#34;Welcome&#34;; // This doesn&#39;t create a new instance. String s2 = &#34;Welcome&#34;;   In the above example, only one object will be created.]]></description>
+</item><item>
+    <title>Java Notes(7) Nested and Anonymous Class </title>
+    <link>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_7_anonymouse_class/</link>
+    <pubDate>Fri, 26 Jul 2019 22:50:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_7_anonymouse_class/</guid>
+    <description><![CDATA[Nested Class In Java, just like methods, variables of a class too can have another class as its member. Writing a class within another is allowed in Java. The class written within is called the nested class, and the class that holds the inner class is called the outer class.
+1 2 3 4 5 6 7 8  public class Outer { public class Inner { } } Outer.Inner inner = outer.]]></description>
+</item><item>
+    <title>JDBC Notes</title>
+    <link>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_jdbc/</link>
+    <pubDate>Tue, 27 Aug 2019 20:58:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_jdbc/</guid>
+    <description><![CDATA[Common Database URL JDBC Database URL for MySQL Driver class name: com.mysql.jdbc.Driver
+Format of database URL:
+1 2 3 4 5  jdbc:mysql://<sup>host][,failoverhost...][:port</sup>/<sub>database</sub>[?propertyName1][=propertyValue1][&amp;propertyName2][=propertyValue2]... Examples: jdbc:mysql://localhost:3306/test jdbc:mysql://localhost:3306/test?user=root&amp;password=secret   JDBC Database URL for Oracle Driver class name: oracle.jdbc.OracleDriver Format of database URL:
+1 2 3 4 5 6 7 8 9 10  jdbc:oracle:&lt;drivertype&gt;:@&lt;database&gt; jdbc:oracle:&lt;drivertype&gt;:&lt;user&gt;/&lt;password&gt;@&lt;database&gt; Examples: jdbc:oracle:thin:@localhost:1521:testdb jdbc:oracle:thin:root/secret@localhost:1521:testdb jdbc:oracle:oci:@hoststring jdbc:oracle:oci:@localhost:1521:testdb jdbc:oracle:oci:root/secret@hoststring&gt; Jdbc:oracle:oci:root/secret@localhost:1521:testdb   Driver Example of using Driver to get connection 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  import java.]]></description>
 </item></channel>
 </rss>

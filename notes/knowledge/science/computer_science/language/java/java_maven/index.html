@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Maven - Hi, Shihao</title><meta name="Description" content="Software Management Tool"><meta property="og:title" content="Maven" />
+<meta property="og:description" content="Software Management Tool" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_maven/" />
+<meta property="og:image" content="http://miaoshihao.com/logo.png"/>
+<meta property="article:published_time" content="2019-08-24T22:50:26+08:00" />
+<meta property="article:modified_time" content="2019-08-24T22:50:26+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://miaoshihao.com/logo.png"/>
+
+<meta name="twitter:title" content="Maven"/>
+<meta name="twitter:description" content="Software Management Tool"/>
+<meta name="application-name" content="Hi, Shihao">
+<meta name="apple-mobile-web-app-title" content="Hi, Shihao"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_maven/" /><link rel="prev" href="http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_9_serialization/" /><link rel="next" href="http://miaoshihao.com/notes/knowledge/science/computer_science/mobiledevelopement/deeplink/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Maven",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/miaoshihao.com\/notes\/knowledge\/science\/computer_science\/language\/java\/java_maven\/"
+        },"image": ["http:\/\/miaoshihao.com\/images\/Apple-Devices-Preview.png"],"genre": "notes","keywords": "Java","wordcount":  1536 ,
+        "url": "http:\/\/miaoshihao.com\/notes\/knowledge\/science\/computer_science\/language\/java\/java_maven\/","datePublished": "2019-08-24T22:50:26+08:00","dateModified": "2019-08-24T22:50:26+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "http:\/\/miaoshihao.com\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Shihao"
+            },"description": "Software Management Tool"
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Hi, Shihao"><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/knowledgemap/"> Knowledge Map </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/notes/"> Archives </a><a class="menu-item" href="/music/"> Music </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/notes/knowledge/science/computer_science/language/java/java_maven/" selected>English</option><option value="/zh-cn/notes/knowledge/science/computer_science/language/java/java_maven/">简体中文</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>                
+                <a href="./robot/" class="menu-item chat-bot" title="">
+                    <i class="fas fa-robot fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Hi, Shihao"><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/knowledgemap/" title="">Knowledge Map</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/notes/" title="">Archives</a><a class="menu-item" href="/music/" title="">Music</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/notes/knowledge/science/computer_science/language/java/java_maven/" selected>English</option><option value="/zh-cn/notes/knowledge/science/computer_science/language/java/java_maven/">简体中文</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="page single special"><h1 class="single-title animated pulse faster">Maven</h1><div class="content" id="content"><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="Maven.png"
+        data-srcset="/notes/knowledge/science/computer_science/language/java/java_maven/Maven.png, Maven.png 1.5x, /notes/knowledge/science/computer_science/language/java/java_maven/Maven.png 2x"
+        data-sizes="auto"
+        alt="/notes/knowledge/science/computer_science/language/java/java_maven/Maven.png"
+        title="Maven" /></p>
+<h2 id="core-concepts-of-maven">Core Concepts of Maven:</h2>
+<ul>
+<li>
+<p>POM Files: Project Object Model(POM) Files are XML file that contains information related to the project and configuration information such as dependencies, source directory, plugin, goals etc. used by Maven to build the project. When you should execute a maven command you give maven a POM file to execute the commands. Maven reads pom.xml file to accomplish its configuration and operations.</p>
+</li>
+<li>
+<p>Dependencies and Repositories: Dependencies are external Java libraries required for Project and repositories are directories of packaged JAR files. The local repository is just a directory on your machine hard drive. If the dependencies are not found in the local Maven repository, Maven downloads them from a central Maven repository and puts them in your local repository.</p>
+</li>
+<li>
+<p>Build Life Cycles, Phases and Goals: A build life cycle consists of a sequence of build phases, and each build phase consists of a sequence of goals. Maven command is the name of a build lifecycle, phase or goal. If a lifecycle is requested executed by giving maven command, all build phases in that life cycle are executed also. If a build phase is requested executed, all build phases before it in the defined sequence are executed too.</p>
+</li>
+<li>
+<p>Build Profiles: Build profiles a set of configuration values which allows you to build your project using different configurations. For example, you may need to build your project for your local computer, for development and test. To enable different builds you can add different build profiles to your POM files using its profiles elements and are triggered in the variety of ways.</p>
+</li>
+<li>
+<p>Build Plugins: Build plugins are used to perform specific goal. you can add a plugin to the POM file. Maven has some standard plugins you can use, and you can also implement your own in Java.</p>
+</li>
+</ul>
+<h2 id="pom-file">Pom File</h2>
+<p>POM means Project Object Model is key to operate Maven. Maven reads pom.xml file to accomplish its configuration and operations. It is an XML file that contains information related to the project and configuration information such as dependencies, source directory, plugin, goals etc. used by Maven to build the project.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0&#34;</span> 
+   <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+    <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0 
+</span><span class="s">http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span class="nt">&gt;</span> 
+          
+         <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span> 
+         <span class="nt">&lt;groupId&gt;</span> com.project.loggerapi <span class="nt">&lt;/groupId&gt;</span> 
+         <span class="nt">&lt;artifactId&gt;</span>LoggerApi<span class="nt">&lt;/artifactId&gt;</span> 
+         <span class="nt">&lt;version&gt;</span>0.0.1-SNAPSHOT<span class="nt">&lt;/version&gt;</span> 
+           
+       <span class="c">&lt;!-- Add typical dependencies for a web application --&gt;</span>
+       <span class="nt">&lt;dependencies&gt;</span> 
+               <span class="nt">&lt;dependency&gt;</span> 
+                       <span class="nt">&lt;groupId&gt;</span>org.apache.logging.log4j<span class="nt">&lt;/groupId&gt;</span> 
+                       <span class="nt">&lt;artifactId&gt;</span>log4j-api<span class="nt">&lt;/artifactId&gt;</span> 
+                       <span class="nt">&lt;version&gt;</span>2.11.0<span class="nt">&lt;/version&gt;</span> 
+                 <span class="nt">&lt;/dependency&gt;</span> 
+       <span class="nt">&lt;/dependencies&gt;</span> 
+   <span class="nt">&lt;/project&gt;</span> 
+</code></pre></td></tr></table>
+</div>
+</div><p>Elements used for Creating pom.xml file</p>
+<ol>
+<li>
+<p><strong>project</strong> - It is the root element of the pom.xml file.</p>
+</li>
+<li>
+<p><strong>modelVersion</strong> - modelversion means what version of the POM model you are using. Use version 4.0.0 for maven 2 and maven 3.</p>
+</li>
+<li>
+<p><strong>groupId</strong> - groupId means the id for the project group. It is unique and Most often you will use a group ID which is similar to the root Java package name of the project like we used the groupId com.project.loggerapi.</p>
+</li>
+<li>
+<p><strong>artifactId</strong> - artifactId used to give name of the project you are building.in our example name of our project is LoggerApi.</p>
+</li>
+<li>
+<p><strong>version</strong> - version element contains the version number of the project. If your project has been released in different versions then it is useful to give version of your project.</p>
+</li>
+</ol>
+<p>Other Elements of Pom.xml file</p>
+<ol start="6">
+<li><strong>dependencies</strong> - dependencies element is used to defines a list of dependency of project.</li>
+<li><strong>dependency</strong> - dependency defines a dependency and used inside dependencies tag. Each dependency is described by its groupId, artifactId and version.</li>
+<li><strong>name</strong> - this element is used to give name to our maven project.</li>
+<li><strong>scope</strong> - this element used to define scope for this maven project that can be compile, runtime, test, provided system etc.</li>
+<li><strong>packaging</strong> - packaging element is used to packaging our project to output types like JAR, WAR etc.</li>
+</ol>
+<h2 id="dependency-scopes">Dependency Scopes</h2>
+<h3 id="compile">Compile</h3>
+<p>This is the default scope when no other scope is provided.</p>
+<p>Dependencies with this scope are available on the classpath of the project in all build tasks and they&rsquo;re propagated to the dependent projects.</p>
+<p>More importantly, these dependencies are also transitive:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>commons-lang<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>commons-lang<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>2.6<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="provided">Provided</h3>
+<p>This scope is used to mark dependencies that should be provided at runtime by JDK or a container, hence the name.</p>
+<p>A good use case for this scope would be a web application deployed in some container, where the container already provides some libraries itself.</p>
+<p>For example, a web server that already provides the Servlet API at runtime, thus in our project, those dependencies can be defined with the provided scope:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>javax.servlet<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>servlet-api<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>2.5<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;scope&gt;</span>provided<span class="nt">&lt;/scope&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>The provided dependencies are available only at compile-time and in the test classpath of the project; what&rsquo;s more, they aren&rsquo;t transitive.</p>
+<h3 id="runtime">Runtime</h3>
+<p>The dependencies with this scope are required at runtime, but they&rsquo;re not needed for compilation of the project code. Because of that, dependencies marked with the runtime scope will be present in runtime and test classpath, but they will be missing from compile classpath.</p>
+<p>A good example of dependencies that should use the runtime scope is a JDBC driver:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>mysql<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>mysql-connector-java<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>6.0.6<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;scope&gt;</span>runtime<span class="nt">&lt;/scope&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="test">Test</h3>
+<p>This scope is used to indicate that dependency isn&rsquo;t required at standard runtime of the application, but is used only for test purposes. Test dependencies aren&rsquo;t transitive and are only present for test and execution classpaths.</p>
+<p>The standard use case for this scope is adding test library like JUnit to our application:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>junit<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>junit<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>4.12<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="system">System</h3>
+<p>System scope is much similar to the provided scope. The main difference between those two scopes is that system requires us to directly point to specific jar on the system.</p>
+<p>The important thing to remember is that building the project with system scope dependencies may fail on different machines if dependencies aren&rsquo;t present or are located in a different place than the one systemPath points to:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>com.baeldung<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>custom-dependency<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>1.3.2<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;scope&gt;</span>system<span class="nt">&lt;/scope&gt;</span>
+    <span class="nt">&lt;systemPath&gt;</span>${project.basedir}/libs/custom-dependency-1.3.2.jar<span class="nt">&lt;/systemPath&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="import">Import</h3>
+<p>This scope was added in Maven 2.0.9 and it&rsquo;s only available for the dependency type pom. We&rsquo;re going to speak more about the type of the dependency in future articles.</p>
+<p>Import indicates that this dependency should be replaced with all effective dependencies declared in it&rsquo;s POM:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>com.baeldung<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>custom-project<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>1.3.2<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;type&gt;</span>pom<span class="nt">&lt;/type&gt;</span>
+    <span class="nt">&lt;scope&gt;</span>import<span class="nt">&lt;/scope&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="dependency-and-transitivity">Dependency and Transitivity</h2>
+<p>Maven avoids the need to discover and specify the libraries that your own dependencies require by including transitive dependencies automatically.</p>
+<p><strong>Dependency management</strong> - this allows project authors to directly specify the versions of artifacts to be used when they are encountered in transitive dependencies or in dependencies where no version has been specified.
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="Transitivity_1.png"
+        data-srcset="/notes/knowledge/science/computer_science/language/java/java_maven/Transitivity_1.png, Transitivity_1.png 1.5x, /notes/knowledge/science/computer_science/language/java/java_maven/Transitivity_1.png 2x"
+        data-sizes="auto"
+        alt="/notes/knowledge/science/computer_science/language/java/java_maven/Transitivity_1.png"
+        title="Transitivity_1" /></p>
+<p><strong>Dependency mediation</strong> - this determines what version of an artifact will be chosen when multiple versions are encountered as dependencies. Maven picks the &ldquo;<strong>nearest definition</strong>&rdquo;.
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="Transitivity_2.png"
+        data-srcset="/notes/knowledge/science/computer_science/language/java/java_maven/Transitivity_2.png, Transitivity_2.png 1.5x, /notes/knowledge/science/computer_science/language/java/java_maven/Transitivity_2.png 2x"
+        data-sizes="auto"
+        alt="/notes/knowledge/science/computer_science/language/java/java_maven/Transitivity_2.png"
+        title="Transitivity_2" /></p>
+<p>If the path are same in length, then it will depends on which version comes first.
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="Transitivity_3.png"
+        data-srcset="/notes/knowledge/science/computer_science/language/java/java_maven/Transitivity_3.png, Transitivity_3.png 1.5x, /notes/knowledge/science/computer_science/language/java/java_maven/Transitivity_3.png 2x"
+        data-sizes="auto"
+        alt="/notes/knowledge/science/computer_science/language/java/java_maven/Transitivity_3.png"
+        title="Transitivity_3" /></p>
+<p>A better approach is to specify the version in property file lik below.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="Version_Control.png"
+        data-srcset="/notes/knowledge/science/computer_science/language/java/java_maven/Version_Control.png, Version_Control.png 1.5x, /notes/knowledge/science/computer_science/language/java/java_maven/Version_Control.png 2x"
+        data-sizes="auto"
+        alt="/notes/knowledge/science/computer_science/language/java/java_maven/Version_Control.png"
+        title="Version_Control" /></p>
+<h2 id="scope-and-transitivity">Scope and Transitivity</h2>
+<p>Each dependency scope affects transitive dependencies in its own way. This means that different transitive dependencies may end up in the project with different scopes.</p>
+<p>However, dependencies with scopes provided and test will never be included in the main project.</p>
+<p>Then:</p>
+<p>For the compile scope, all dependencies with runtime scope will be pulled in with the runtime scope, in the project and all dependencies with the compile scope will be pulled in with the compile scope, in the project
+For the provided scope, both runtime and compile scope dependencies will be pulled in with the provided scope, in the project
+For the test scope, both runtime and compile scope transitive dependencies will be pulled in with the test scope, in the project
+For the runtime scope, both runtime and compile scope transitive dependencies will be pulled in with the runtime scope, in the project</p>
+<h2 id="maven-repositories">Maven Repositories</h2>
+<p>Maven repositories are directories of packaged JAR files with some metadata. The metadata are POM files related to the projects each packaged JAR file belongs to, including what external dependencies each packaged JAR has. This metadata enables Maven to download dependencies of your dependencies recursively until all dependencies are download and put into your local machine.</p>
+<p>Maven has three types of repository :</p>
+<p><strong>Local repository</strong> - A local repository is a directory on the machine of developer. This repository contains all the dependencies Maven downloads. Maven only needs to download the dependencies once, even if multiple projects depends on them (e.g. ODBC).
+By default, maven local repository is user_home/m2 directory.
+example – C:\Users\asingh.m2</p>
+<p><strong>Central repository</strong> - The central Maven repository is created Maven community. Maven looks in this central repository for any dependencies needed but not found in your local repository. Maven then downloads these dependencies into your local repository. You can view central repository by this link.</p>
+<p><strong>Remote repository</strong> - remote repository is a repository on a web server from which Maven can download dependencies.it often used for hosting projects internal to organization. Maven then downloads these dependencies into your local repository.</p>
+<p>Maven searches for dependencies in this repositories. First maven searches in Local repository then Central repository then Remote repository if Remote repository specified in the POM.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="Maven_repository.png"
+        data-srcset="/notes/knowledge/science/computer_science/language/java/java_maven/Maven_repository.png, Maven_repository.png 1.5x, /notes/knowledge/science/computer_science/language/java/java_maven/Maven_repository.png 2x"
+        data-sizes="auto"
+        alt="/notes/knowledge/science/computer_science/language/java/java_maven/Maven_repository.png"
+        title="Maven_repository.png" /></p>
+<p>Reference:
+<a href="https://www.geeksforgeeks.org/introduction-apache-maven-build-automation-tool-java-projects/#:~:text=Maven%20is%20a%20powerful%20project,the%20build%20process%20like%20ANT.&amp;text=In%20short%20terms%20we%20can,managing%20any%20Java%2Dbased%20project">https://www.geeksforgeeks.org/introduction-apache-maven-build-automation-tool-java-projects/#:~:text=Maven%20is%20a%20powerful%20project,the%20build%20process%20like%20ANT.&amp;text=In%20short%20terms%20we%20can,managing%20any%20Java%2Dbased%20project</a>.</p>
+</div></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Shihao Miao</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><div>
+                    <span id="timeDate">Loading Days...</span><span id="times">Loading Times...</span>
+                    <script>
+                        var now = new Date();
+                        function createtime() {
+                            var grt= new Date("03/20/2019 00:00:00");
+                            now.setTime(now.getTime()+250);
+                            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+                            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+                            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+                            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+                            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+                            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+                            document.getElementById("timeDate").innerHTML = "This website has struggled in this world for "+dnum+" day ";
+                            document.getElementById("times").innerHTML = hnum + " hour " + mnum + " min " + snum + " sec";
+                        }
+                    setInterval("createtime()",250);
+                    </script>
+                    </div></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-1":"Home","id-2":"Home"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":30000,"speed":500}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

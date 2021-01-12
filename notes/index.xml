@@ -9,106 +9,87 @@
     <managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
     <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 11 Dec 2020 19:32:26 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 11 Jan 2021 11:58:26 +0800</lastBuildDate>
     
 	<atom:link href="http://miaoshihao.com/notes/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Network</title>
-      <link>http://miaoshihao.com/notes/network/network_overview/</link>
+      <link>http://miaoshihao.com/notes/knowledge/science/computer_science/middleware/network/network_overview/</link>
       <pubDate>Fri, 11 Dec 2020 19:32:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/network/network_overview/</guid>
+      <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/middleware/network/network_overview/</guid>
       <description>OSI Model The Open Systems Interconnection (OSI) model is a conceptual model created by the International Organization for Standardization which enables diverse communication systems to communicate using standard protocols.
  Layer Protocol data unit (PDU) Function   Application (应用层) Data High-level APIs, including resource sharing, remote file access, ex: HTTP, HTTPS,FTP,SSH and etc..   Presentation (表示层) Data Translation of data between a networking service and an application; including character encoding, data compression and encryption/decryption   Session(会话层) Data Managing communication sessions, i.</description>
     </item>
     
     <item>
-      <title>Integrtion</title>
-      <link>http://miaoshihao.com/notes/architecture_design/integration/</link>
-      <pubDate>Thu, 30 Jul 2020 20:50:26 +0800</pubDate>
-      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/architecture_design/integration/</guid>
-      <description>In enterprise environments, interaction between applications is important. This interaction allowed organizations to both share data and make use of functionality provided by other systems.
-Though enterprise application integration can take many different forms, from extract-transform-load jobs run overnight to all-encompassing service-oriented architecture (SOA) strategies, all approaches leverage one of four well-known integration styles:
- File-based integration Shared-database integration Remote Procedure Calls Message-based integration  Integrating applications by transferring files The most basic approach is for one application to produce a file and for that file to be made available to another system.</description>
-    </item>
-    
-    <item>
-      <title>Coupling</title>
-      <link>http://miaoshihao.com/notes/architecture_design/coupling/</link>
-      <pubDate>Wed, 29 Jul 2020 20:50:26 +0800</pubDate>
-      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/architecture_design/coupling/</guid>
-      <description>Loose coupling within systems and between systems deserves serious consideration, because it has serious implications for design and maintenance. Achieving an appropriate degree of loose coupling allows you to spend more time adding new features and delivering business value. By contrast, tightly coupled systems are expensive to maintain and expand because small changes to the code tend to produce ripple effects, requiring modifications across a large number of interacting systems.</description>
-    </item>
-    
-    <item>
       <title>Spring Framework Notes - Overview</title>
-      <link>http://miaoshihao.com/notes/spring/spring/spring_overview/</link>
+      <link>http://miaoshihao.com/notes/knowledge/science/computer_science/framework/spring/spring/spring_overview/</link>
       <pubDate>Mon, 20 Jul 2020 22:50:21 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/spring/spring/spring_overview/</guid>
+      <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/framework/spring/spring/spring_overview/</guid>
       <description> Spring Core  IOC/DI Spring Bean   Spring Web 1.  </description>
     </item>
     
     <item>
       <title>Beneish Model</title>
-      <link>http://miaoshihao.com/notes/investment/beneish_model/</link>
+      <link>http://miaoshihao.com/notes/knowledge/science/finance/investment/beneish_model/</link>
       <pubDate>Fri, 17 Jul 2020 19:32:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/investment/beneish_model/</guid>
+      <guid>http://miaoshihao.com/notes/knowledge/science/finance/investment/beneish_model/</guid>
       <description>The Beneish model is a mathematical model that uses financial ratios and eight variables to identify whether a company has manipulated its earnings. It is used as a tool to uncover potential financial fraud. However, the result generated from beneish model can not be the evidence.
 The variables are constructed from the data in the company&amp;rsquo;s financial statements, and once calculated, create an M-Score to describe the degree to which the earnings have been manipulated.</description>
     </item>
     
     <item>
+      <title>Java8 Stream </title>
+      <link>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java8_notes_stream/</link>
+      <pubDate>Wed, 02 Oct 2019 20:50:26 +0800</pubDate>
+      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
+      <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java8_notes_stream/</guid>
+      <description>A stream represents a sequence of elements and supports different kind of operations to perform computations upon those elements:
+1 2 3 4 5 6 7 8 9  List&amp;lt;String&amp;gt; myList = Arrays.asList(&amp;#34;a1&amp;#34;, &amp;#34;a2&amp;#34;, &amp;#34;b1&amp;#34;, &amp;#34;c2&amp;#34;, &amp;#34;c1&amp;#34;); myList .stream() .filter(s -&amp;gt; s.startsWith(&amp;#34;c&amp;#34;)) .map(String::toUpperCase) .sorted() .forEach(System.out::println);   Stream Creation Calling the method stream() on a list of objects returns a regular object stream.
+1 2 3 4  Arrays.asList(&amp;#34;a1&amp;#34;, &amp;#34;a2&amp;#34;, &amp;#34;a3&amp;#34;) .</description>
+    </item>
+    
+    <item>
       <title>Spring Integration Notes(1) Overview </title>
-      <link>http://miaoshihao.com/notes/spring/spring_integration/</link>
+      <link>http://miaoshihao.com/notes/knowledge/science/computer_science/framework/spring/spring_integration/</link>
       <pubDate>Tue, 01 Oct 2019 22:50:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/spring/spring_integration/</guid>
+      <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/framework/spring/spring_integration/</guid>
       <description>Spring Integration Basic Overview Spring Integration is an open source framework that designed to enable the development of integration solutions typical of event-driven architectures and messaging-centric architectures. It requires dependency spring intergration core, which could be downloaded from Maven Central.
 1 2 3 4 5  &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.integration&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-integration-core&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;5.3.1.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;   Spring integration framework consists three parts, namely message, message channel, and message endpoint. In general. a message is a unit of information that can be passed between different message endpoint through message channels.</description>
     </item>
     
     <item>
+      <title>Java8 Optional class</title>
+      <link>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java8_notes_option/</link>
+      <pubDate>Sat, 28 Sep 2019 20:50:46 +0800</pubDate>
+      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
+      <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java8_notes_option/</guid>
+      <description>Optional class is a container for null.
+Optional class Declartion 1 2  public final class Optional&amp;lt;T&amp;gt; extends Object   Optional class method  Return an empty option class  1  static &amp;lt;T&amp;gt; Optional&amp;lt;T&amp;gt; empty()   Example:
+1 2 3 4 5  @Test public void whenCreatesEmptyOptional_thenCorrect() { Optional&amp;lt;String&amp;gt; empty = Optional.empty(); assertFalse(empty.isPresent()); }   判断其他对象是否等于Optional  1  boolean equals(Object obj)   optionObject.filter()  Filter takes a predicate as an argument and returns an Optional object.</description>
+    </item>
+    
+    <item>
       <title>Technical Indicator</title>
-      <link>http://miaoshihao.com/notes/investment/technicalindicator/</link>
+      <link>http://miaoshihao.com/notes/knowledge/science/finance/investment/technicalindicator/</link>
       <pubDate>Sat, 29 Jun 2019 19:32:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/investment/technicalindicator/</guid>
+      <guid>http://miaoshihao.com/notes/knowledge/science/finance/investment/technicalindicator/</guid>
       <description>Accumulation/Distribution Line (ADL)  The accumulation/distribution line gauges supply and demand by looking at where the price closed within the period&amp;rsquo;s range, and then multiplying that by volume. The A/D indicator is cumulative, meaning one period&amp;rsquo;s value is added or subtracted from the last. A rising A/D line helps confirm a rising price trend. A falling A/D line helps confirm a price downtrend. If the price is rising but A/D is falling, it signals underlying weakness and a potential decline in price.</description>
     </item>
     
     <item>
-      <title>Spring Framework Notes - Beans, BeanFactory and the ApplicationContext</title>
-      <link>http://miaoshihao.com/notes/spring/spring/spring_bean/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/spring/spring/spring_bean/</guid>
-      <description>Bean Bean represents as an objects in Java. Bean need to contain the following points:
-The Bean class The class attribute in bean is normally mandatory. The creation of bean object is through BeanFactory. It has three approaches.
-The first approach is where the BeanFactory itself directly creates the bean by calling its constructor (equivalent to Java code calling new), the class attribute specifies the class of the bean to be constructed.</description>
-    </item>
-    
-    <item>
-      <title>Spring Framework Notes - IOC/DI</title>
-      <link>http://miaoshihao.com/notes/spring/spring/ioc_and_di/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/spring/spring/ioc_and_di/</guid>
-      <description>Inverse of Control (IOC) and Dependency Injection Dependency Injection (DI) and inversion of Control are a design pattern. It allows the creation of dependent objects outside of a class and provides those objects to a class through different ways.
-The basic principle is that beans define their dependencies (i.e. the other objects they work with) only through constructor arguments, arguments to a factory method, or properties which are set on the object instance after it has been constructed or returned from a factory method.</description>
-    </item>
-    
-    <item>
-      <title>Java Notes(2) Feature and Program Execution</title>
-      <link>http://miaoshihao.com/notes/java/java_notes_1_feature/</link>
+      <title>Java Notes(1) Introduction</title>
+      <link>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_1_introduction/</link>
       <pubDate>Thu, 13 Jun 2019 16:58:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_notes_1_feature/</guid>
+      <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_1_introduction/</guid>
       <description>Java Features and Program Execution Java is a programming language and a platform.
 Platform: Any hardware or software environment in which a program runs, is known as a platform. Since Java has its own runtime environment (JRE) and Application Programming Interface (API), it is called platform.
 Features of Java :   Simple:
@@ -116,64 +97,63 @@ Features of Java :   Simple:
     </item>
     
     <item>
-      <title>Java Notes(3) Java Fundamentals</title>
-      <link>http://miaoshihao.com/notes/java/java_notes_2_fundamentals/</link>
-      <pubDate>Sat, 15 Jun 2019 15:58:26 +0800</pubDate>
+      <title>Spring Framework Notes - Beans, BeanFactory and the ApplicationContext</title>
+      <link>http://miaoshihao.com/notes/knowledge/science/computer_science/framework/spring/spring/spring_bean/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_notes_2_fundamentals/</guid>
-      <description>Data Types in Java  Data Type Default Value Default size   boolean false 1 bit   char &#39;\u0000&#39; 2 byte   byte 0 1 byte   short 0 2 byte   int 0 4 byte   long 0L 8 byte   float 0.0f 4 byte   double 0.0d 8 byte   Data Type Promotion in Java : Wrapper Classes in Java In Java, there is a wrapper class.</description>
+      <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/framework/spring/spring/spring_bean/</guid>
+      <description>Bean Bean represents as an objects in Java. Bean need to contain the following points:
+The Bean class The class attribute in bean is normally mandatory. The creation of bean object is through BeanFactory. It has three approaches.
+The first approach is where the BeanFactory itself directly creates the bean by calling its constructor (equivalent to Java code calling new), the class attribute specifies the class of the bean to be constructed.</description>
     </item>
     
     <item>
-      <title>Java Notes(11) Multithreading</title>
-      <link>http://miaoshihao.com/notes/java/java_notes_11_multithreading/</link>
-      <pubDate>Tue, 06 Aug 2019 05:11:21 +0800</pubDate>
+      <title>Spring Framework Notes - IOC/DI</title>
+      <link>http://miaoshihao.com/notes/knowledge/science/computer_science/framework/spring/spring/ioc_and_di/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_notes_11_multithreading/</guid>
-      <description>Multithreading in java is a process of executing multiple threads simultaneously. Thread is basically a lightweight sub-process, a smallest unit of processing. Multiprocessing and multithreading, both are used to achieve multitasking.
-But we use multithreading than multiprocessing because threads share a common memory area. They don&amp;rsquo;t allocate separate memory area so saves memory, and context-switching between the threads takes less time than process.
-Thread is executed inside the process. There is context-switching between the threads.</description>
+      <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/framework/spring/spring/ioc_and_di/</guid>
+      <description>Inverse of Control (IOC) and Dependency Injection Dependency Injection (DI) and inversion of Control are a design pattern. It allows the creation of dependent objects outside of a class and provides those objects to a class through different ways.
+The basic principle is that beans define their dependencies (i.e. the other objects they work with) only through constructor arguments, arguments to a factory method, or properties which are set on the object instance after it has been constructed or returned from a factory method.</description>
     </item>
     
     <item>
-      <title>Java Notes(13) Networking</title>
-      <link>http://miaoshihao.com/notes/java/java_notes_14_networking/</link>
-      <pubDate>Fri, 02 Aug 2019 22:00:16 +0800</pubDate>
+      <title>Javascript Notes 2 ES6</title>
+      <link>http://miaoshihao.com/notes/knowledge/science/computer_science/language/javascript/javascript_notes_es6/</link>
+      <pubDate>Mon, 11 Jan 2021 11:58:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_notes_14_networking/</guid>
-      <description>Network Overview
-Java.net java.net is the library working with network development.
-ServerSocket and Socket ServerSocket is used for server. Socket is used for client. Java Socket Programming provides facility to share data between different computing devices.
-Port Number The port number is used to uniquely identify different applications. It acts as a communication endpoint between applications. The port number is associated with the IP address for communication between two applications. This allows application communicates to the application via same port number.</description>
+      <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/language/javascript/javascript_notes_es6/</guid>
+      <description>JavaScript ES6 Overview ECMAScript is a standardized version of JavaScript with the goal of unifying the language&amp;rsquo;s specifications and features. As all major browsers and JavaScript-runtimes follow this specification, the term ECMAScript is interchangeable with the term JavaScript.
+Syntax let and const  Variables declared with let and const are scoped to the block{ }, not to the function. Variables declared with let and const can only be accessed after they have been declared.</description>
     </item>
     
     <item>
-      <title>Java Notes(12) Serialization</title>
-      <link>http://miaoshihao.com/notes/java/java_notes_10_serialization/</link>
-      <pubDate>Tue, 30 Jul 2019 15:58:26 +0800</pubDate>
-      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_notes_10_serialization/</guid>
-      <description>Serialization in java is a mechanism of writing the state of an object into a byte stream. It is mainly used in Hibernate, RMI, JPA, EJB and JMS technologies. The reverse operation of serialization is called deserialization.
-Advantage of Java Serialization : It is mainly used to travel object&amp;rsquo;s state on the network (known as marshaling).
-java.io.Serializable interface : Serializable is a marker interface (has no data member and method). It is used to &amp;ldquo;mark&amp;rdquo; java classes so that objects of these classes may get certain capability.</description>
-    </item>
-    
-    <item>
-      <title>Java Notes(3) Object Oriented Language</title>
-      <link>http://miaoshihao.com/notes/java/java_notes_3_oop/</link>
+      <title>Java Notes(2) Object Oriented Language</title>
+      <link>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_2_oop/</link>
       <pubDate>Mon, 17 Jun 2019 15:58:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_notes_3_oop/</guid>
+      <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_2_oop/</guid>
       <description>Object Oriented Object-Oriented Programming is a methodology or paradigm to design a program using classes and objects. It simplifies the software development and maintenance.
 Class  A class in Java can contain: field(variable, attribute), methods, constructors, blocks, nested class and interface. Object is an instance of a class. There is only one way to define class in java using class keyword. The Object class is the parent class of all the classes in java by default.</description>
     </item>
     
     <item>
-      <title>Java Notes(5) Generic</title>
-      <link>http://miaoshihao.com/notes/java/java_notes_5_generics/</link>
+      <title>Java Notes(3) Collection Framework</title>
+      <link>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_3_collection/</link>
+      <pubDate>Tue, 16 Jul 2019 15:58:26 +0800</pubDate>
+      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
+      <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_3_collection/</guid>
+      <description>The java.util package contains all the classes and interfaces for Collection framework.
+Map : An object that maps keys to values. A map is not ordered and cannot contain duplicate keys (but can contain duplicate values). Each key can map to at most one value.
+Collection : A collection represents a group of objects, known as its elements. The JDK provides implementations of more specific subinterfaces like Set and List.</description>
+    </item>
+    
+    <item>
+      <title>Java Notes(4) Generic</title>
+      <link>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_4_generics/</link>
       <pubDate>Fri, 05 Jul 2019 19:50:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_notes_5_generics/</guid>
+      <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_4_generics/</guid>
       <description>Generic Classes A generic class declaration looks like a non-generic class declaration, except that the class name is followed by a type parameter section.
 The type parameter section of a generic class can have one or more type parameters separated by commas. These classes are known as parameterized classes or parameterized types because they accept one or more parameters.
 Syntax:
@@ -181,60 +161,42 @@ Syntax:
     </item>
     
     <item>
-      <title>Java Notes(5) Collection Framework</title>
-      <link>http://miaoshihao.com/notes/java/java_notes_4_collection/</link>
-      <pubDate>Tue, 16 Jul 2019 15:58:26 +0800</pubDate>
-      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_notes_4_collection/</guid>
-      <description>The java.util package contains all the classes and interfaces for Collection framework.
-Map : An object that maps keys to values. A map is not ordered and cannot contain duplicate keys (but can contain duplicate values). Each key can map to at most one value.
-Collection : A collection represents a group of objects, known as its elements. The JDK provides implementations of more specific subinterfaces like Set and List.</description>
-    </item>
-    
-    <item>
-      <title>Java Notes(6) Error and Exception Handling</title>
-      <link>http://miaoshihao.com/notes/java/java_notes_6_errors_and_exception_handling/</link>
+      <title>Java Notes(5) Error and Exception Handling</title>
+      <link>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_5_errors_and_exception_handling/</link>
       <pubDate>Thu, 25 Jul 2019 15:58:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_notes_6_errors_and_exception_handling/</guid>
+      <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_5_errors_and_exception_handling/</guid>
       <description>Exception Handling in Java Exception is an event that disrupts the normal flow of the program. It is an object which is thrown at runtime. The exception handling in java is one of the powerful mechanism to handle the runtime errors so that normal flow of the application can be maintained.
  An Error &amp;ldquo;indicates serious problems that a reasonable application should not try to catch.&amp;rdquo; An Exception &amp;ldquo;indicates conditions that a reasonable application might want to catch.</description>
     </item>
     
     <item>
-      <title>Javascript Study Notes</title>
-      <link>http://miaoshihao.com/notes/javascript/javascriptstudynotes/</link>
-      <pubDate>Tue, 18 Aug 2020 11:58:26 +0800</pubDate>
+      <title>Java Notes(6) String</title>
+      <link>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_6_string/</link>
+      <pubDate>Fri, 26 Jul 2019 20:58:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/javascript/javascriptstudynotes/</guid>
-      <description>Overview 1.1 Use external JavaScript 1 2 3 4 5  &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34; src=&amp;#34;xxx.js&amp;#34;&amp;gt; &amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;/html&amp;gt;   1.2. Variable and Operators Variables var declarations are globally scoped or function scoped while let and const are block scoped. var variables can be updated and re-declared within its scope; let variables can be updated but not re-declared; const variables can neither be updated nor re-declared.
-1 2 3 4  x=5; var x=5; let x=5; const x = 5;   Arithmetic Operators: 1  +, -, *, /, % (modulus), ++, --   Assignment Operators: 1  =, +=, -=, *=, /=, %=   String addition 1 2  x = &amp;#34;5&amp;#34; + &amp;#34;5&amp;#34; // result is &amp;#34;55&amp;#34;  x = 5 + &amp;#34;5&amp;#34; // result is still &amp;#34;55&amp;#34;   Comparison operators 1 2 3 4 5 6 7  == // equal to  === // exactly equal to (value and type)  !</description>
+      <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_6_string/</guid>
+      <description>String, in general, is a sequence of characters. But in Java, string is an object that represents a sequence of character.
+CharSequence Interface: The CharSequence interface is used to represent the sequence of characters. The Charsequence interface is extended in three class namely String, StringBuffer, and StringBuilder classes.
+String Class  By String literal  1 2 3  String s1 = &amp;#34;Welcome&amp;#34;; // This doesn&amp;#39;t create a new instance. String s2 = &amp;#34;Welcome&amp;#34;;   In the above example, only one object will be created.</description>
     </item>
     
     <item>
-      <title>Java Notes(19) Jackson</title>
-      <link>http://miaoshihao.com/notes/java/java_framework/java_jackson/</link>
-      <pubDate>Fri, 30 Aug 2019 20:58:26 +0800</pubDate>
+      <title>Java Notes(7) Nested and Anonymous Class </title>
+      <link>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_7_anonymouse_class/</link>
+      <pubDate>Fri, 26 Jul 2019 22:50:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_framework/java_jackson/</guid>
-      <description></description>
+      <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_7_anonymouse_class/</guid>
+      <description>Nested Class In Java, just like methods, variables of a class too can have another class as its member. Writing a class within another is allowed in Java. The class written within is called the nested class, and the class that holds the inner class is called the outer class.
+1 2 3 4 5 6 7 8  public class Outer { public class Inner { } } Outer.Inner inner = outer.</description>
     </item>
     
     <item>
-      <title>Java Notes(18) Hibernate</title>
-      <link>http://miaoshihao.com/notes/java/java_framework/java_hibernate/</link>
-      <pubDate>Thu, 29 Aug 2019 20:58:26 +0800</pubDate>
-      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_framework/java_hibernate/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>JDBC Notes (1)</title>
-      <link>http://miaoshihao.com/notes/java/java_framework/java_jdbc/</link>
+      <title>JDBC Notes</title>
+      <link>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_jdbc/</link>
       <pubDate>Tue, 27 Aug 2019 20:58:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_framework/java_jdbc/</guid>
+      <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_jdbc/</guid>
       <description>Common Database URL JDBC Database URL for MySQL Driver class name: com.mysql.jdbc.Driver
 Format of database URL:
 1 2 3 4 5  jdbc:mysql://[host][,failoverhost...][:port]/[database][?propertyName1][=propertyValue1][&amp;amp;propertyName2][=propertyValue2]... Examples: jdbc:mysql://localhost:3306/test jdbc:mysql://localhost:3306/test?user=root&amp;amp;password=secret   JDBC Database URL for Oracle Driver class name: oracle.jdbc.OracleDriver Format of database URL:
@@ -242,124 +204,105 @@ Format of database URL:
     </item>
     
     <item>
-      <title>Java Notes(7) String</title>
-      <link>http://miaoshihao.com/notes/java/java_notes_7_string/</link>
-      <pubDate>Fri, 26 Jul 2019 20:58:26 +0800</pubDate>
-      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_notes_7_string/</guid>
-      <description>String, in general, is a sequence of characters. But in Java, string is an object that represents a sequence of character.
-CharSequence Interface: The CharSequence interface is used to represent the sequence of characters. The Charsequence interface is extended in three class namely String, StringBuffer, and StringBuilder classes.
-String Class  By String literal  1 2 3  String s1 = &amp;#34;Welcome&amp;#34;; // This doesn&amp;#39;t create a new instance. String s2 = &amp;#34;Welcome&amp;#34;;   In the above example, only one object will be created.</description>
-    </item>
-    
-    <item>
-      <title>Design Pattern Notes</title>
-      <link>http://miaoshihao.com/notes/javadesignpatten/adapter/</link>
-      <pubDate>Fri, 23 Oct 2020 10:35:26 +0800</pubDate>
-      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/javadesignpatten/adapter/</guid>
-      <description>Overview Adapter is classified as a structural design pattern. This design pattern is also known as wrapper
-Intent Convert the interface of a class into another interface the clients expect. Adapter lets classes work together that couldn&amp;rsquo;t otherwise because of incompatible interfaces.
-Explanation Wikipedia
- In software engineering, the adapter pattern is a software design pattern that allows the interface of an existing class to be used as another interface. It is often used to make existing classes work with others without modifying their source code.</description>
-    </item>
-    
-    <item>
-      <title>Java Notes(24) Lambda </title>
-      <link>http://miaoshihao.com/notes/mobiledevelopement/deeplink/</link>
-      <pubDate>Wed, 02 Oct 2019 20:50:26 +0800</pubDate>
-      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/mobiledevelopement/deeplink/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Java Notes(25) Stream </title>
-      <link>http://miaoshihao.com/notes/java/java8_new_feature/java_stream/</link>
-      <pubDate>Wed, 02 Oct 2019 20:50:26 +0800</pubDate>
-      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java8_new_feature/java_stream/</guid>
-      <description>A stream represents a sequence of elements and supports different kind of operations to perform computations upon those elements:
-1 2 3 4 5 6 7 8 9  List&amp;lt;String&amp;gt; myList = Arrays.asList(&amp;#34;a1&amp;#34;, &amp;#34;a2&amp;#34;, &amp;#34;b1&amp;#34;, &amp;#34;c2&amp;#34;, &amp;#34;c1&amp;#34;); myList .stream() .filter(s -&amp;gt; s.startsWith(&amp;#34;c&amp;#34;)) .map(String::toUpperCase) .sorted() .forEach(System.out::println);   Stream Creation Calling the method stream() on a list of objects returns a regular object stream.
-1 2 3 4  Arrays.asList(&amp;#34;a1&amp;#34;, &amp;#34;a2&amp;#34;, &amp;#34;a3&amp;#34;) .</description>
-    </item>
-    
-    <item>
-      <title>Java Notes(23) Optional class</title>
-      <link>http://miaoshihao.com/notes/java/java8_new_feature/java_optional/</link>
-      <pubDate>Sat, 28 Sep 2019 20:50:46 +0800</pubDate>
-      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java8_new_feature/java_optional/</guid>
-      <description>Optional class is a container for null.
-Optional class Declartion 1 2  public final class Optional&amp;lt;T&amp;gt; extends Object   Optional class method  Return an empty option class  1  static &amp;lt;T&amp;gt; Optional&amp;lt;T&amp;gt; empty()   Example:
-1 2 3 4 5  @Test public void whenCreatesEmptyOptional_thenCorrect() { Optional&amp;lt;String&amp;gt; empty = Optional.empty(); assertFalse(empty.isPresent()); }   判断其他对象是否等于Optional  1  boolean equals(Object obj)   optionObject.filter()  Filter takes a predicate as an argument and returns an Optional object.</description>
-    </item>
-    
-    <item>
-      <title>Java Notes(13) JavaDoc</title>
-      <link>http://miaoshihao.com/notes/java/java_notes_13_java_doc/</link>
-      <pubDate>Tue, 10 Sep 2019 22:50:26 +0800</pubDate>
-      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_notes_13_java_doc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Java Notes(16) Maven</title>
-      <link>http://miaoshihao.com/notes/java/java_framework/java_maven/</link>
-      <pubDate>Sat, 24 Aug 2019 22:50:26 +0800</pubDate>
-      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_framework/java_maven/</guid>
-      <description>Core Concepts of Maven:   POM Files: Project Object Model(POM) Files are XML file that contains information related to the project and configuration information such as dependencies, source directory, plugin, goals etc. used by Maven to build the project. When you should execute a maven command you give maven a POM file to execute the commands. Maven reads pom.xml file to accomplish its configuration and operations.
-  Dependencies and Repositories: Dependencies are external Java libraries required for Project and repositories are directories of packaged JAR files.</description>
-    </item>
-    
-    <item>
-      <title>Java Notes(9) File I/O</title>
-      <link>http://miaoshihao.com/notes/java/java_notes_9_file_io/</link>
+      <title>Java Notes(8) File I/O</title>
+      <link>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_8_file_io/</link>
       <pubDate>Sat, 27 Jul 2019 09:58:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_notes_9_file_io/</guid>
+      <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_8_file_io/</guid>
       <description>The java.io package contains nearly every class required to perform input and output (I/O) in Java. All these streams represent an input source and an output destination. The stream in the java.io package supports many data such as primitives, object, localized characters, etc. Java provides strong and flexible support for I/O related to files and networks.
 The Hierarchy of I/O Class in Java Stream A stream can be defined as a sequence of data.</description>
     </item>
     
     <item>
-      <title>Java Notes(8) Nested and Anonymous Class </title>
-      <link>http://miaoshihao.com/notes/java/java_notes_8_anonymouse_class/</link>
-      <pubDate>Fri, 26 Jul 2019 22:50:26 +0800</pubDate>
+      <title>Java Notes(24) Lambda </title>
+      <link>http://miaoshihao.com/notes/knowledge/science/computer_science/mobiledevelopement/deeplink/</link>
+      <pubDate>Wed, 02 Oct 2019 20:50:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_notes_8_anonymouse_class/</guid>
-      <description>Nested Class In Java, just like methods, variables of a class too can have another class as its member. Writing a class within another is allowed in Java. The class written within is called the nested class, and the class that holds the inner class is called the outer class.
-1 2 3 4 5 6 7 8  public class Outer { public class Inner { } } Outer.Inner inner = outer.</description>
+      <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/mobiledevelopement/deeplink/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>Java Notes(12) Synchronization</title>
-      <link>http://miaoshihao.com/notes/java/java_notes_12_synchronization/</link>
+      <title>Maven</title>
+      <link>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_maven/</link>
+      <pubDate>Sat, 24 Aug 2019 22:50:26 +0800</pubDate>
+      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
+      <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_maven/</guid>
+      <description>Core Concepts of Maven:   POM Files: Project Object Model(POM) Files are XML file that contains information related to the project and configuration information such as dependencies, source directory, plugin, goals etc. used by Maven to build the project. When you should execute a maven command you give maven a POM file to execute the commands. Maven reads pom.xml file to accomplish its configuration and operations.
+  Dependencies and Repositories: Dependencies are external Java libraries required for Project and repositories are directories of packaged JAR files.</description>
+    </item>
+    
+    <item>
+      <title>Java Notes(9) Serialization</title>
+      <link>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_9_serialization/</link>
+      <pubDate>Tue, 30 Jul 2019 15:58:26 +0800</pubDate>
+      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
+      <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_9_serialization/</guid>
+      <description>Serialization in java is a mechanism of writing the state of an object into a byte stream. It is mainly used in Hibernate, RMI, JPA, EJB and JMS technologies. The reverse operation of serialization is called deserialization.
+Advantage of Java Serialization : It is mainly used to travel object&amp;rsquo;s state on the network (known as marshaling).
+java.io.Serializable interface : Serializable is a marker interface (has no data member and method). It is used to &amp;ldquo;mark&amp;rdquo; java classes so that objects of these classes may get certain capability.</description>
+    </item>
+    
+    <item>
+      <title>Java Notes(10) Multithreading</title>
+      <link>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_10_multithreading/</link>
+      <pubDate>Tue, 06 Aug 2019 05:11:21 +0800</pubDate>
+      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
+      <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_10_multithreading/</guid>
+      <description>Multithreading in java is a process of executing multiple threads simultaneously. Thread is basically a lightweight sub-process, a smallest unit of processing. Multiprocessing and multithreading, both are used to achieve multitasking.
+But we use multithreading than multiprocessing because threads share a common memory area. They don&amp;rsquo;t allocate separate memory area so saves memory, and context-switching between the threads takes less time than process.
+Thread is executed inside the process. There is context-switching between the threads.</description>
+    </item>
+    
+    <item>
+      <title>Java Notes(11) Synchronization</title>
+      <link>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_11_synchronization/</link>
       <pubDate>Tue, 06 Aug 2019 20:58:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_notes_12_synchronization/</guid>
+      <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_11_synchronization/</guid>
       <description>Synchronization in java is the capability to control the access of multiple threads to any shared resource. Java Synchronization is better option where we want to allow only one thread to access the shared resource.
 The synchronization is mainly used to :
  To prevent Thread Interference (Thread interference is a condition which occurs when more than one threads, executing simultaneously, access same piece of data.). To prevent Consistency Problem (Memory consistency errors occur when different threads have inconsistent views of what should be the same data.</description>
     </item>
     
     <item>
-      <title>Java Notes(22) Unit Test&amp; Mockito</title>
-      <link>http://miaoshihao.com/notes/java/java_framework/java_testing/</link>
-      <pubDate>Wed, 25 Sep 2019 20:50:46 +0800</pubDate>
+      <title>Java Notes(12) JavaDoc</title>
+      <link>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_12_java_doc/</link>
+      <pubDate>Tue, 10 Sep 2019 22:50:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_framework/java_testing/</guid>
+      <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_12_java_doc/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Java Notes(0) Reference Keywords</title>
-      <link>http://miaoshihao.com/notes/java/java_notes_0_key_words/</link>
+      <title>Java Notes(13) Networking</title>
+      <link>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_13_networking/</link>
+      <pubDate>Fri, 02 Aug 2019 22:00:16 +0800</pubDate>
+      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
+      <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_13_networking/</guid>
+      <description>Network Overview
+Java.net java.net is the library working with network development.
+ServerSocket and Socket ServerSocket is used for server. Socket is used for client. Java Socket Programming provides facility to share data between different computing devices.
+Port Number The port number is used to uniquely identify different applications. It acts as a communication endpoint between applications. The port number is associated with the IP address for communication between two applications. This allows application communicates to the application via same port number.</description>
+    </item>
+    
+    <item>
+      <title>Java Notes(14) Stack Memory and Heap Space</title>
+      <link>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_14_memory/</link>
+      <pubDate>Fri, 11 Sep 2020 22:50:26 +0800</pubDate>
+      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
+      <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_14_memory/</guid>
+      <description>JVM divides memory into stack and heap memory.
+Stack Memory Stack Memory in Java is used for static memory allocation and the execution of a thread. It contains primitive values that are specific to a method and references to objects that are in a heap, referred from the method.
+Access to this memory is in Last-In-First-Out (LIFO) order. Whenever a new method is called, a new block on top of the stack is created which contains values specific to that method, like primitive variables and references to objects.</description>
+    </item>
+    
+    <item>
+      <title>Java Notes(0) Reference</title>
+      <link>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_0_reference/</link>
       <pubDate>Wed, 12 Jun 2019 15:58:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/java/java_notes_0_key_words/</guid>
+      <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_0_reference/</guid>
       <description>All 48 Java Keywords with Examples Table below lists 48 Keywords in Java.
 1) abstract abstract keyword is used to implement the abstraction in java. A method which doesn’t have method definition must be declared as abstract and the class containing it must be declared as abstract. You can’t instantiate abstract classes. Abstract methods must be implemented in the sub classes. You can’t use abstract keyword with variables and constructors.</description>
     </item>

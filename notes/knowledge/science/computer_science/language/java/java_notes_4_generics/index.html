@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Java Notes(4) Generic - Hi, Shihao</title><meta name="Description" content="Java Fundamental"><meta property="og:title" content="Java Notes(4) Generic" />
+<meta property="og:description" content="Java Fundamental" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_4_generics/" />
+<meta property="og:image" content="http://miaoshihao.com/logo.png"/>
+<meta property="article:published_time" content="2019-07-05T19:50:26+08:00" />
+<meta property="article:modified_time" content="2019-07-05T19:50:26+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://miaoshihao.com/logo.png"/>
+
+<meta name="twitter:title" content="Java Notes(4) Generic"/>
+<meta name="twitter:description" content="Java Fundamental"/>
+<meta name="application-name" content="Hi, Shihao">
+<meta name="apple-mobile-web-app-title" content="Hi, Shihao"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_4_generics/" /><link rel="prev" href="http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_5_errors_and_exception_handling/" /><link rel="next" href="http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_3_collection/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Java Notes(4) Generic",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/miaoshihao.com\/notes\/knowledge\/science\/computer_science\/language\/java\/java_notes_4_generics\/"
+        },"image": ["http:\/\/miaoshihao.com\/images\/Apple-Devices-Preview.png"],"genre": "notes","keywords": "Java","wordcount":  1639 ,
+        "url": "http:\/\/miaoshihao.com\/notes\/knowledge\/science\/computer_science\/language\/java\/java_notes_4_generics\/","datePublished": "2019-07-05T19:50:26+08:00","dateModified": "2019-07-05T19:50:26+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "http:\/\/miaoshihao.com\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Shihao"
+            },"description": "Java Fundamental"
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Hi, Shihao"><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/knowledgemap/"> Knowledge Map </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/notes/"> Archives </a><a class="menu-item" href="/music/"> Music </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/notes/knowledge/science/computer_science/language/java/java_notes_4_generics/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>                
+                <a href="./robot/" class="menu-item chat-bot" title="">
+                    <i class="fas fa-robot fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Hi, Shihao"><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/knowledgemap/" title="">Knowledge Map</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/notes/" title="">Archives</a><a class="menu-item" href="/music/" title="">Music</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/notes/knowledge/science/computer_science/language/java/java_notes_4_generics/" selected>English</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="page single special"><h1 class="single-title animated pulse faster">Java Notes(4) Generic</h1><div class="content" id="content"><h2 id="generic-classes">Generic Classes</h2>
+<p>A generic class declaration looks like a non-generic class declaration, except that the class name is followed by a type parameter section.</p>
+<p>The type parameter section of a generic class can have one or more type parameters separated by commas. These classes are known as parameterized classes or parameterized types because they accept one or more parameters.</p>
+<p><strong>Syntax:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Box</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">{</span>
+   <span class="kd">private</span> <span class="n">T</span> <span class="n">t</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul class="list">
+<li><p><b>Box</b> − Box is a generic class.</p></li>
+<li><p><b>T</b> − The generic type parameter passed to generic class. It can take any Object.</p></li>
+<li><p><b>t</b> − Instance of generic type T.</p></li>
+</ul>
+<h2 id="naming-conventions">Naming Conventions</h2>
+<p>By convention, type parameter names are named as single, uppercase letters so that a type parameter can be distinguished easily with an ordinary class or interface name. Following is the list of commonly used type parameter names −</p>
+<ul class="list">
+<li><p><b>E</b> − Element (mainly used by Java Collections framework)</p></li>
+<li><p><b>K</b> − Key (mainly used to represent key of a map)</p></li>
+<li><p><b>V</b> − Value (mainly used to represent value of a map)</p></li>
+<li><p><b>N</b> − Number (represents numbers)</p></li>
+<li><p><b>T</b> − Type (represents first generic type parameter)</p></li>
+<li><p><b>S, U, V, etc</b> − 2nd, 3rd, 4th Types</p></li>
+</ul>
+<h2 id="type-inference">Type Inference</h2>
+<p>Type inference represents the Java compiler&rsquo;s ability to look at a method invocation and its corresponding declaration to check and determine the type argument(s). The inference algorithm checks the types of the arguments and, if available, assigned type is returned. Inference algorithms tries to find a specific type which can fullfill all type parameters.</p>
+<p>Compiler generates unchecked conversion warning in-case type inference is not used.</p>
+<p><strong>Syntax:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Box</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">integerBox</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Box</span><span class="o">&lt;&gt;();</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul class="list">
+<li><p><b>Box</b> − Box is a generic class.</p></li>
+<li><p><b><></b> − The diamond operator denotes type inference.</p></li>
+</ul>
+<p>Using diamond operator, compiler determines the type of the parameter. This operator is avalilable from Java SE 7 version onwards.</p>
+<h2 id="generic-methods">Generic Methods</h2>
+<p>You can write a single generic method declaration that can be called with arguments of different types. Based on the types of the arguments passed to the generic method, the compiler handles each method call appropriately. Following are the rules to define Generic Methods −</p>
+<ul class="list">
+<li><p>All generic method declarations have a type parameter section delimited by angle brackets (< and >) that precedes the method's return type ( < E > in the next example).</p></li>
+<li><p>Each type parameter section contains one or more type parameters separated by commas. A type parameter, also known as a type variable, is an identifier that specifies a generic type name.</p></li>
+<li><p>The type parameters can be used to declare the return type and act as placeholders for the types of the arguments passed to the generic method, which are known as actual type arguments.</p></li>
+<li><p>A generic method's body is declared like that of any other method. Note that type parameters can represent only reference types, not primitive types (like int, double and char).</p></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="nf">printArray</span><span class="o">(</span> <span class="n">E</span><span class="o">[]</span> <span class="n">inputArray</span> <span class="o">)</span> <span class="o">{</span>
+      <span class="c1">// Display array elements
+</span><span class="c1"></span>      <span class="k">for</span><span class="o">(</span><span class="n">E</span> <span class="n">element</span> <span class="o">:</span> <span class="n">inputArray</span><span class="o">)</span> <span class="o">{</span>
+         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;%s &#34;</span><span class="o">,</span> <span class="n">element</span><span class="o">);</span>
+      <span class="o">}</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
+   <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="multiple-type-parameters">Multiple Type Parameters</h2>
+<p>A Generic class can have muliple type parameters. Following example will showcase above mentioned concept.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Box</span><span class="o">&lt;</span><span class="n">S</span><span class="o">,</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">{</span>
+   <span class="kd">private</span> <span class="n">T</span> <span class="n">t</span><span class="o">;</span>
+   <span class="kd">private</span> <span class="n">S</span> <span class="n">s</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="parameterized-types">Parameterized Types</h2>
+<p>A Generic class can have parameterized types where a type parameter can be substituted with a parameterized type.
+Parameterized Types are types that take other types as parameters. Eg - Collection<String>, ArrayList<String>, etc.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Box</span><span class="o">&lt;</span><span class="n">S</span><span class="o">,</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">{</span>
+   <span class="o">...</span>
+<span class="o">}</span>
+<span class="o">...</span>
+<span class="n">Box</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span> <span class="n">box</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Box</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;();</span> <span class="c1">//Parameterized Types
+</span><span class="c1"></span><span class="o">...</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="raw-types">Raw Types</h2>
+<p>A raw type is an object of a generic class or interface if its type arguments are not passed during its creation.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Box</span> <span class="n">rawBox</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Box</span><span class="o">();</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="bounded-type-parameters">Bounded Type Parameters</h2>
+<p>There may be times when you&rsquo;ll want to restrict the kinds of types that are allowed to be passed to a type parameter. For example, a method that operates on numbers might only want to accept instances of Number or its subclasses. This is what bounded type parameters are for.</p>
+<p>To declare a bounded type parameter, list the type parameter&rsquo;s name, followed by the extends keyword, followed by its upper bound.</p>
+<p><strong>Single Bound:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span> <span class="kd">extends</span> <span class="n">Comparable</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;</span> <span class="n">T</span> <span class="nf">maximum</span><span class="o">(</span><span class="n">T</span> <span class="n">x</span><span class="o">,</span> <span class="n">T</span> <span class="n">y</span><span class="o">,</span> <span class="n">T</span> <span class="n">z</span><span class="o">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Multiple Bounds:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span> <span class="kd">extends</span> <span class="n">Number</span> <span class="o">&amp;</span> <span class="n">Comparable</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;</span> <span class="n">T</span> <span class="nf">maximum</span><span class="o">(</span><span class="n">T</span> <span class="n">x</span><span class="o">,</span> <span class="n">T</span> <span class="n">y</span><span class="o">,</span> <span class="n">T</span> <span class="n">z</span><span class="o">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul class="list">
+<li><p><b>maximum</b> − maximum is a generic method.</p></li>
+<li><p><b>T</b> − The generic type parameter passed to generic method. It can take any Object.</p></li>
+</ul>
+<p>The T is a type parameter passed to the generic class Box and should be subtype of Number class and must implments Comparable interface. In case a class is passed as bound, it should be passed first before interface otherwise compile time error will occur.</p>
+<p><strong>Calling eg.:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">maximum</span><span class="o">(</span> <span class="n">6</span><span class="o">.</span><span class="na">6</span><span class="o">,</span> <span class="n">8</span><span class="o">.</span><span class="na">8</span><span class="o">,</span> <span class="n">7</span><span class="o">.</span><span class="na">7</span> <span class="o">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="collections-framework-examples">Collections Framework Examples</h2>
+<p>Java has provided generic support in Collections Framework Interfaces like List, Set, Map, etc.</p>
+<h3 id="list">List</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;();</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul class="list">
+<li><p><b>list</b> − object of List interface.</p></li>
+<li><p><b>T</b> − The generic type parameter passed during List declaration.</p></li>
+</ul>
+The T is a type parameter passed to the generic interface List and its implemenation class ArrayList.
+<h3 id="set">Set</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Set</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">set</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;();</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul class="list">
+<li><p><b>set</b> − object of Set Interface.</p></li>
+<li><p><b>T</b> − The generic type parameter passed during Set declaration.</p></li>
+</ul>
+The T is a type parameter passed to the generic interface Set and its implemenation class HashSet.
+<h3 id="map">Map</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Map</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">set</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;();</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul class="list">
+<li><p><b>set</b> − object of Map Interface.</p></li>
+<li><p><b>T</b> − The generic type parameter passed during Map declaration.</p></li>
+</ul>
+The T is a type parameter passed to the generic interface Map and its implemenation class HashMap.
+<h2 id="generics-wild-cards">Generics Wild Cards</h2>
+<p>The question mark (?), represents the wildcard, stands for unknown type in generics.</p>
+<h3 id="upper-bounded-wildcards">Upper Bounded Wildcards</h3>
+<p>There may be times when you&rsquo;ll want to restrict the kinds of types that are allowed to be passed to a type parameter. For example, a method that operates on numbers might only want to accept instances of Number or its subclasses.</p>
+<p>To declare a upper bounded Wildcard parameter, list the ?, followed by the extends keyword, followed by its upper bound.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">double</span> <span class="nf">sum</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">Number</span><span class="o">&gt;</span> <span class="n">numberlist</span><span class="o">)</span> <span class="o">{</span>
+      <span class="o">...</span>
+   <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="unbounded-wildcards">Unbounded Wildcards</h3>
+<p>There may be times when any object can be used when a method can be implemented using functionality provided in the Object class or When the code is independent of the type parameter.</p>
+<p>To declare a Unbounded Wildcard parameter, list the ? only.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">printAll</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;?&gt;</span> <span class="n">list</span><span class="o">)</span> <span class="o">{</span>
+    <span class="o">...</span>
+   <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="lower-bounded-wildcards">Lower Bounded Wildcards</h3>
+<p>There may be times when you&rsquo;ll want to restrict the kinds of types that are allowed to be passed to a type parameter. For example, a method that operates on numbers might only want to accept instances of Integer or its superclasses like Number.</p>
+<p>To declare a lower bounded Wildcard parameter, list the ?, followed by the super keyword, followed by its lower bound.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">addCat</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="n">Cat</span><span class="o">&gt;</span> <span class="n">catList</span><span class="o">)</span> <span class="o">{</span>
+      <span class="o">...</span>
+   <span class="o">}</span>
+<span class="o">...</span>
+<span class="c1">//You can add list of Cat or Animal (super class of the Cat class)
+</span><span class="c1"></span><span class="n">addCat</span><span class="o">(</span><span class="n">animalList</span><span class="o">);</span>
+<span class="n">addCat</span><span class="o">(</span><span class="n">catList</span><span class="o">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="type-erasure">Type Erasure</h2>
+<p>Generics are used for tighter type checks at compile time and to provide a generic programming. To implement generic behaviour, java compiler apply type erasure. Type erasure is a process in which compiler replaces a generic parameter with actual class or bridge method. In type erasure, compiler ensures that no extra classes are created and there is no runtime overhead.</p>
+<p><strong>Type Erasure rules:</strong></p>
+<ul class="list">
+<li><p>Replace type parameters in generic type with their bound if bounded type parameters are used.</p></li>
+<li><p>Replace type parameters in generic type with Object if unbounded type parameters are used.</p></li>
+<li><p>Insert type casts to preserve type safety.</p></li>
+<li><p>Generate bridge methods to keep polymorphism in extended generic types.</p></li>
+</ul>
+<h2 id="restrictions-on-generics">Restrictions on Generics</h2>
+<p><strong>No Primitive Types</strong> - Using generics, primitive types can not be passed as type parameters.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Box</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">intBox</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Box</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;()</span> <span class="c1">//Error
+</span></code></pre></td></tr></table>
+</div>
+</div><p>NOTE: Use Wrappers like Integar instead.</p>
+<p><strong>No Instance</strong> - A type parameter cannot be used to instantiate its object inside a method.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="nf">add</span><span class="o">(</span><span class="n">Box</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">box</span><span class="o">)</span> <span class="c1">//Error
+</span></code></pre></td></tr></table>
+</div>
+</div><p>NOTE: To achieve such functionality, reflection can be used.</p>
+<p><strong>No Static field</strong> - Using generics, type parameters are not allowed to be static. As static variable is shared among object so compiler can not determine which type to used.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Box</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">{</span>   
+   <span class="kd">private</span> <span class="kd">static</span> <span class="n">T</span> <span class="n">t</span><span class="o">;</span> <span class="c1">//Error
+</span><span class="c1"></span><span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>No Cast</strong> - Casting to a parameterized type is not allowed unless it is parameterized by unbounded wildcards.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Box</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">integerBox</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Box</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
+<span class="n">Box</span><span class="o">&lt;</span><span class="n">Number</span><span class="o">&gt;</span> <span class="n">numberBox</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Box</span><span class="o">&lt;</span><span class="n">Number</span><span class="o">&gt;();</span>
+<span class="n">integerBox</span> <span class="o">=</span> <span class="o">(</span><span class="n">Box</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;)</span><span class="n">numberBox</span><span class="o">;</span> <span class="c1">//Error: Cannot cast from Box&lt;Number&gt; to Box&lt;Integer&gt;
+</span></code></pre></td></tr></table>
+</div>
+</div><p>NOTE: To achive the same, unbounded wildcards can be used.</p>
+<p><strong>No instanceOf</strong> - Because compiler uses type erasure, the runtime does not keep track of type parameters, so at runtime difference between Box<Integer> and Box<String> cannot be verified using instanceOf operator.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="o">...</span> <span class="n">integerBox</span> <span class="k">instanceof</span> <span class="n">Box</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="o">...</span> 
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>No Array</strong> - Arrays of parameterized types are not allowed. Because compiler uses type erasure, the type parameter is replaced with Object and user can add any type of object to the array. And at runtime, code will not able to throw ArrayStoreException.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Object</span><span class="o">[]</span> <span class="n">stringBoxes</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Box</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;[];</span> <span class="c1">//Error
+</span></code></pre></td></tr></table>
+</div>
+</div><p><strong>No Exceptionn</strong> - A generic class is not allowed to extend the Throwable class directly or indirectly.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="c1">//The generic class Box&lt;T&gt; may not subclass java.lang.Throwable
+</span><span class="c1"></span><span class="kd">class</span> <span class="nc">Box</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="kd">extends</span> <span class="n">Exception</span> <span class="o">{}</span>
+<span class="kd">class</span> <span class="nc">Box1</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="kd">extends</span> <span class="n">Throwable</span> <span class="o">{}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>A method is not allowed to catch an instance of a type parameter.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="o">...</span> <span class="k">catch</span> <span class="o">(</span><span class="n">T</span> <span class="n">e</span><span class="o">)</span> <span class="o">...</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>No Overload</strong> - A class is not allowed to have two overloaded methods that can have the same signature after type erasure.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="o">...</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">stringList</span><span class="o">)</span> <span class="o">{</span> <span class="o">}</span>  <span class="c1">// Error
+</span><span class="c1"></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">integerList</span><span class="o">)</span> <span class="o">{</span> <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></div></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Shihao Miao</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><div>
+                    <span id="timeDate">Loading Days...</span><span id="times">Loading Times...</span>
+                    <script>
+                        var now = new Date();
+                        function createtime() {
+                            var grt= new Date("03/20/2019 00:00:00");
+                            now.setTime(now.getTime()+250);
+                            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+                            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+                            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+                            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+                            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+                            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+                            document.getElementById("timeDate").innerHTML = "This website has struggled in this world for "+dnum+" day ";
+                            document.getElementById("times").innerHTML = hnum + " hour " + mnum + " min " + snum + " sec";
+                        }
+                    setInterval("createtime()",250);
+                    </script>
+                    </div></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-1":"Home","id-2":"Home"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":30000,"speed":500}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
