@@ -22,7 +22,7 @@
              },
              children: [{
                  name: '人文',
-                 value: 1,
+                 value: 0,
                  itemStyle: {
                      color: colors[0]
                  }
@@ -38,13 +38,13 @@
                      },
                      children: [{
                          name: '语言',
-                         value: 1,
+                         value: 0,
                          itemStyle: {
                              color: colors[3]
                          },
                          children: [{
                              name: 'Java',
-                             value: 1,
+                             value: 0,
                              itemStyle: {
                                  color: colors[4]
                              }
@@ -58,7 +58,7 @@
                          },
                          children: [{
                              name: 'Spring',
-                             value: 1,
+                             value: 0,
                              itemStyle: {
                                  color: colors[1]
                              }
@@ -68,14 +68,14 @@
                  },
                  {
                      name: '数学',
-                     value: 1,
+                     value: 0,
                      itemStyle: {
                          color: colors[2]
                      },
                  },
                  {
                      name: '生物',
-                     value: 1,
+                     value: 0,
                      itemStyle: {
                          color: colors[3]
                      },
@@ -93,13 +93,13 @@
                  },
                  children: [{
                      name: '三观',
-                     value: 1,
+                     value: 0,
                      itemStyle: {
                          color: colors[1]
                      }
                  }, {
                      name: '生死',
-                     value: 1,
+                     value: 0,
                      itemStyle: {
                          color: colors[2]
                      }
@@ -112,13 +112,13 @@
                  },
                  children: [{
                      name: '目标',
-                     value: 1,
+                     value: 0,
                      itemStyle: {
                          color: colors[4]
                      }
                  }, {
                      name: '系统性思维',
-                     value: 1,
+                     value: 0,
                      itemStyle: {
                          color: colors[0]
                      }

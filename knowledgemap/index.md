@@ -22,7 +22,7 @@
              },
              children: [{
                  name: 'Humanity',
-                 value: 1,
+                 value: 0,
                  itemStyle: {
                      color: colors[0]
                  }
@@ -38,7 +38,6 @@
                      },
                      children: [{
                          name: 'Language',
-                         value: 1,
                          itemStyle: {
                              color: colors[3]
                          },
@@ -48,7 +47,15 @@
                              itemStyle: {
                                  color: colors[4]
                              }
-                         }]
+                         },
+                         {
+                             name: 'JavaScript',
+                             value: 1,
+                             itemStyle: {
+                                 color: colors[4]
+                             }
+                         }
+                        ]
 
                      },
                      {
@@ -63,22 +70,7 @@
                                  color: colors[1]
                              }
                          }]
-
                      }]
-                 },
-                 {
-                     name: 'Math',
-                     value: 1,
-                     itemStyle: {
-                         color: colors[2]
-                     },
-                 },
-                 {
-                     name: 'Biology',
-                     value: 1,
-                     itemStyle: {
-                         color: colors[3]
-                     },
                  }]
              }]
          }, {
@@ -90,39 +82,13 @@
                  name: 'Internal',
                  itemStyle: {
                      color: colors[0]
-                 },
-                 children: [{
-                     name: 'View',
-                     value: 1,
-                     itemStyle: {
-                         color: colors[1]
-                     }
-                 }, {
-                     name: 'Life and Death',
-                     value: 1,
-                     itemStyle: {
-                         color: colors[2]
-                     }
-                 }]
+                 }
              },
              {
                  name: 'External',
                  itemStyle: {
                      color: colors[3]
-                 },
-                 children: [{
-                     name: 'Goal',
-                     value: 1,
-                     itemStyle: {
-                         color: colors[4]
-                     }
-                 }, {
-                     name: 'Structral Thinking',
-                     value: 1,
-                     itemStyle: {
-                         color: colors[0]
-                     }
-                 }]
+                 }
              }]
          }];
 
@@ -190,6 +156,9 @@
                  var name=param.name;
                  if(name=="Java"){
                      window.location.href="{{<  ref "categories/java/">}}";
+                 }
+                 else if (name == "JavaScript"){
+                    window.location.href="{{<  ref "categories/Javascript/">}}";
                  }
                  else if (name == "Spring"){
                     window.location.href="{{<  ref "categories/spring/">}}";

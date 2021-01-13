@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/miaoshihao.com\/notes\/knowledge\/science\/computer_science\/language\/javascript\/javascript_notes_es6\/"
-        },"image": ["http:\/\/miaoshihao.com\/images\/Apple-Devices-Preview.png"],"genre": "notes","keywords": "Javascript","wordcount":  3533 ,
+        },"image": ["http:\/\/miaoshihao.com\/images\/Apple-Devices-Preview.png"],"genre": "notes","keywords": "Javascript","wordcount":  3683 ,
         "url": "http:\/\/miaoshihao.com\/notes\/knowledge\/science\/computer_science\/language\/javascript\/javascript_notes_es6\/","datePublished": "2021-01-11T11:58:26+08:00","dateModified": "2021-01-11T11:58:26+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "http:\/\/miaoshihao.com\/images\/avatar.png"},"author": {
@@ -108,9 +108,9 @@
     <div id="search-dropdown-mobile"></div>
 </div>
 <main class="main">
-                <div class="container"><div class="page single special"><h1 class="single-title animated pulse faster">Javascript Notes 2 ES6</h1><div class="content" id="content"><h1 id="javascript-es6-overview">JavaScript ES6 Overview</h1>
-<p>ECMAScript is a standardized version of JavaScript with the goal of unifying the language&rsquo;s specifications and features. As all major browsers and JavaScript-runtimes follow this specification, the term <strong>ECMAScript</strong> is interchangeable with the term <strong>JavaScript</strong>.</p>
-<h2 id="syntax">Syntax</h2>
+                <div class="container"><div class="page single special"><h1 class="single-title animated pulse faster">Javascript Notes 2 ES6</h1><div class="content" id="content"><h1 id="javascript-es6">JavaScript ES6</h1>
+<p>ECMAScript is a standardized version of JavaScript with the goal of unifying the language&rsquo;s specifications and features. The term <strong>ECMAScript</strong> is interchangeable with the term <strong>JavaScript</strong>.</p>
+<h2 id="basic-syntax">Basic Syntax</h2>
 <h3 id="let-and-const"><code>let</code> and <code>const</code></h3>
 <ul>
 <li>Variables declared with <code>let</code> and <code>const</code> are scoped to the block<code>{ }</code>, not to the function.</li>
@@ -121,8 +121,7 @@
 </ul>
 <h3 id="mutateble-const-object">Mutateble <code>const</code> object</h3>
 <ul>
-<li>Using the const declaration only prevents reassignment of the variable identifier.</li>
-<li>JavaScript provides a function Object.freeze to prevent data mutation.</li>
+<li>Using the const declaration only prevents reassignment of the variable identifier. Value from the object can still be changed in the following method.</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -138,7 +137,10 @@
 </span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span> <span class="c1">// returns [5, 6, 45]
 </span></code></pre></td></tr></table>
 </div>
-</div><div class="highlight"><div class="chroma">
+</div><ul>
+<li>JavaScript also provides a function Object.freeze to prevent data mutation.</li>
+</ul>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -224,10 +226,9 @@
 </div>
 </div><h3 id="template-literals">Template literals</h3>
 <ul>
-<li>Template literal is a special type of string that makes creating complex strings easier.</li>
 <li>Template literals are string literals that include embedded expressions.</li>
 <li>Template literals in JavaScript are denoted with <strong>backticks</strong> ( ` ), and can template literals can contain placeholders which are represented using <code>${expression}</code>.</li>
-<li>Template literals <strong>preserve newlines</strong> as part of the string.</li>
+<li>Template literals can <strong>preserve newlines</strong> as part of the string.</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -362,33 +363,23 @@
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">decimalfy</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="k">this</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">toFixed</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">};</span>
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span><span class="nx">fname</span><span class="o">:</span><span class="s2">&#34;John&#34;</span><span class="p">,</span> <span class="nx">lname</span><span class="o">:</span><span class="s2">&#34;Doe&#34;</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span><span class="mi">25</span><span class="p">};</span>
 
-<span class="kr">const</span> <span class="nx">digits</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">];</span>
-
-<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">digits</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">digits</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+<span class="kd">var</span> <span class="nx">text</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">x</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="nx">x</span> <span class="k">in</span> <span class="nx">person</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">text</span> <span class="o">+=</span> <span class="nx">person</span><span class="p">[</span><span class="nx">x</span><span class="p">];</span>
 <span class="p">}</span>
-<span class="c1">// the decimalfy function will be printed out at the end
-</span></code></pre></td></tr></table>
+</code></pre></td></tr></table>
 </div>
 </div><ul>
 <li><code>for...of</code> loop
@@ -467,6 +458,68 @@
 <span class="c1">// Object {value: 2, done: false}
 </span></code></pre></td></tr></table>
 </div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">randint</span> <span class="o">=</span> <span class="p">(</span><span class="nx">min</span><span class="p">,</span> <span class="nx">max</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="p">(</span><span class="nx">max</span> <span class="o">-</span> <span class="nx">min</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="o">+</span> <span class="nx">min</span><span class="p">;</span>
+
+<span class="nx">create_random</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">min</span><span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+    <span class="nx">max</span><span class="o">:</span> <span class="mi">90</span><span class="p">,</span>
+    <span class="nx">lenght</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="nx">create_random</span><span class="p">[</span><span class="nx">Symbol</span><span class="p">.</span><span class="nx">iterator</span><span class="p">]</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="nx">start</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nx">min</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">min</span><span class="p">,</span>
+        <span class="nx">max</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">max</span><span class="p">,</span>
+        <span class="nx">lenght</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">lenght</span><span class="p">,</span>
+        <span class="nx">next</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">start</span><span class="o">++</span><span class="p">;</span>
+            <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">start</span> <span class="o">&lt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">lenght</span> <span class="o">?</span> <span class="p">{</span>
+                <span class="nx">done</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="nx">value</span><span class="o">:</span> <span class="nx">randint</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">min</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">max</span><span class="p">)</span>
+            <span class="p">}</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="nx">done</span><span class="o">:</span> <span class="kc">true</span>
+            <span class="p">};</span>
+        <span class="p">}</span>
+    <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="kd">let</span> <span class="nx">array</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">from</span><span class="p">(</span><span class="nx">create_random</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">array</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
 </div><h3 id="spread-operator">Spread operator</h3>
 <ul>
 <li>The spread operator (<code>...</code>) expands, or spreads, iterable objects into multiple elements.</li>
@@ -500,6 +553,16 @@
 <span class="kr">const</span> <span class="nx">produce</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">fruits</span><span class="p">,</span> <span class="p">...</span><span class="nx">vegetables</span><span class="p">];</span>
 </code></pre></td></tr></table>
 </div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">45</span><span class="p">];</span>
+<span class="kr">const</span> <span class="nx">maximus</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(...</span><span class="nx">arr</span><span class="p">);</span> <span class="c1">// returns 89
+</span></code></pre></td></tr></table>
+</div>
 </div><h3 id="rest-parameter">Rest parameter</h3>
 <ul>
 <li>The rest parameter (<code>...</code>) can represent an indefinite number of elements as an array.</li>
@@ -518,6 +581,26 @@
 <span class="c1">// total: 20.17
 </span><span class="c1">// subtotal: 18.67
 </span><span class="c1">// items: [&#34;cheese&#34;, &#34;eggs&#34;]
+</span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">howMany</span><span class="p">(...</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="s2">&#34;You have passed &#34;</span> <span class="o">+</span> <span class="nx">args</span><span class="p">.</span><span class="nx">length</span> <span class="o">+</span> <span class="s2">&#34; arguments.&#34;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">howMany</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span> 
+<span class="c1">// You have passed 3 arguments.
+</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">howMany</span><span class="p">(</span><span class="s2">&#34;string&#34;</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">{</span> <span class="p">}));</span> 
+<span class="c1">// You have passed 4 arguments.
 </span></code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -591,6 +674,7 @@
 </ul>
 </li>
 </ul>
+<p>Parentheses and return statement can be omitted when using arrow notation.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -609,6 +693,26 @@
 <span class="kr">const</span> <span class="nx">fn4</span> <span class="o">=</span> <span class="p">(</span><span class="nx">param1</span><span class="p">,</span> <span class="nx">param2</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
   <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
 <span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">myConcat1</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">arr1</span><span class="p">,</span> <span class="nx">arr2</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">arr1</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">arr2</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">myConcat2</span> <span class="o">=</span> <span class="p">(</span><span class="nx">arr1</span><span class="p">,</span> <span class="nx">arr2</span><span class="p">)</span> <span class="p">=&gt;</span>  <span class="nx">arr1</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">arr2</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myConcat1</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myConcat2</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]));</span>
 </code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -1010,8 +1114,8 @@
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="built-ins">Built-ins</h2>
-<h3 id="symbols">Symbols</h3>
+</div><h3 id="built-ins">Built-ins</h3>
+<h4 id="symbols">Symbols</h4>
 <ul>
 <li>A symbol is a unique and immutable data type that is often used to identify object properties.</li>
 <li>To create a symbol, write <code>Symbol()</code> with an optional string as its description.</li>

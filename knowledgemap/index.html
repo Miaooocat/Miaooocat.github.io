@@ -6,7 +6,7 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>Knowledge Chart - Hi, Shihao</title><meta name="Description" content=""><meta property="og:title" content="Knowledge Chart" />
-<meta property="og:description" content="Table of Content     // 基于准备好的dom，初始化echarts实例 var myChart = echarts.init(document.getElementById(&#39;main&#39;)); var colors = [&#39;#FF7853&#39;, &#39;#FFAE57&#39;, &#39;#EA5151&#39;, &#39;#CC3F57&#39;, &#39;#9A2555&#39;]; var data = [ { name: &#39;Knowledge&#39;, itemStyle: { }, children: [{ name: &#39;Humanity&#39;, value: 1, itemStyle: { color: colors[0] } }, { name: &#39;Science&#39;, itemStyle: { color: colors[1] }, children: [{ name: &#39;Computer&#39;, itemStyle: { color: colors[2] }, children: [{ name: &#39;Language&#39;, value: 1, itemStyle: { color: colors[3] }, children: [{ name: &#39;Java&#39;, value: 1, itemStyle: { color: colors[4] } }] }, { name: &#39;Framework&#39;, itemStyle: { color: colors[0] }, children: [{ name: &#39;Spring&#39;, value: 1, itemStyle: { color: colors[1] } }] }] }, { name: &#39;Math&#39;, value: 1, itemStyle: { color: colors[2] }, }, { name: &#39;Biology&#39;, value: 1, itemStyle: { color: colors[3] }, }] }] }, { name: &#39;Wisdom&#39;, itemStyle: { color: colors[4] }, children: [{ name: &#39;Internal&#39;, itemStyle: { color: colors[0] }, children: [{ name: &#39;View&#39;, value: 1, itemStyle: { color: colors[1] } }, { name: &#39;Life and Death&#39;, value: 1, itemStyle: { color: colors[2] } }] }, { name: &#39;External&#39;, itemStyle: { color: colors[3] }, children: [{ name: &#39;Goal&#39;, value: 1, itemStyle: { color: colors[4] } }, { name: &#39;Structral Thinking&#39;, value: 1, itemStyle: { color: colors[0] } }] }] }]; option = { series: { type: &#39;sunburst&#39;, highlightPolicy: &#39;ancestor&#39;, data: data, radius: [0, &#39;95%&#39;], sort: null, levels: [{}, { r0: &#39;10%&#39;, r: &#39;25%&#39;, itemStyle: { borderWidth: 2 }, label: { rotate: &#39;rotation&#39; } }, { r0: &#39;25%&#39;, r: &#39;45%&#39;, label: { align: &#39;center&#39; } }, { r0: &#39;45%&#39;, r: &#39;65%&#39;, label: { position: &#39;inside&#39;, padding: 3, silent: false }, itemStyle: { borderWidth: 3 } }, { r0: &#39;65%&#39;, r: &#39;80%&#39;, label: { position: &#39;inside&#39;, padding: 4, silent: false }, itemStyle: { borderWidth: 3 } }, { r0: &#39;80%&#39;, r: &#39;82%&#39;, label: { position: &#39;outside&#39;, padding: 4, silent: false }, itemStyle: { borderWidth: 3 } }] } }; // 使用刚指定的配置项和数据显示图表。 myChart." />
+<meta property="og:description" content="Table of Content     // 基于准备好的dom，初始化echarts实例 var myChart = echarts.init(document.getElementById(&#39;main&#39;)); var colors = [&#39;#FF7853&#39;, &#39;#FFAE57&#39;, &#39;#EA5151&#39;, &#39;#CC3F57&#39;, &#39;#9A2555&#39;]; var data = [ { name: &#39;Knowledge&#39;, itemStyle: { }, children: [{ name: &#39;Humanity&#39;, value: 0, itemStyle: { color: colors[0] } }, { name: &#39;Science&#39;, itemStyle: { color: colors[1] }, children: [{ name: &#39;Computer&#39;, itemStyle: { color: colors[2] }, children: [{ name: &#39;Language&#39;, itemStyle: { color: colors[3] }, children: [{ name: &#39;Java&#39;, value: 1, itemStyle: { color: colors[4] } }, { name: &#39;JavaScript&#39;, value: 1, itemStyle: { color: colors[4] } } ] }, { name: &#39;Framework&#39;, itemStyle: { color: colors[0] }, children: [{ name: &#39;Spring&#39;, value: 1, itemStyle: { color: colors[1] } }] }] }] }] }, { name: &#39;Wisdom&#39;, itemStyle: { color: colors[4] }, children: [{ name: &#39;Internal&#39;, itemStyle: { color: colors[0] } }, { name: &#39;External&#39;, itemStyle: { color: colors[3] } }] }]; option = { series: { type: &#39;sunburst&#39;, highlightPolicy: &#39;ancestor&#39;, data: data, radius: [0, &#39;95%&#39;], sort: null, levels: [{}, { r0: &#39;10%&#39;, r: &#39;25%&#39;, itemStyle: { borderWidth: 2 }, label: { rotate: &#39;rotation&#39; } }, { r0: &#39;25%&#39;, r: &#39;45%&#39;, label: { align: &#39;center&#39; } }, { r0: &#39;45%&#39;, r: &#39;65%&#39;, label: { position: &#39;inside&#39;, padding: 3, silent: false }, itemStyle: { borderWidth: 3 } }, { r0: &#39;65%&#39;, r: &#39;80%&#39;, label: { position: &#39;inside&#39;, padding: 4, silent: false }, itemStyle: { borderWidth: 3 } }, { r0: &#39;80%&#39;, r: &#39;82%&#39;, label: { position: &#39;outside&#39;, padding: 4, silent: false }, itemStyle: { borderWidth: 3 } }] } }; // 使用刚指定的配置项和数据显示图表。 myChart." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://miaoshihao.com/knowledgemap/" />
 <meta property="og:image" content="http://miaoshihao.com/logo.png"/>
@@ -16,7 +16,7 @@
 <meta name="twitter:image" content="http://miaoshihao.com/logo.png"/>
 
 <meta name="twitter:title" content="Knowledge Chart"/>
-<meta name="twitter:description" content="Table of Content     // 基于准备好的dom，初始化echarts实例 var myChart = echarts.init(document.getElementById(&#39;main&#39;)); var colors = [&#39;#FF7853&#39;, &#39;#FFAE57&#39;, &#39;#EA5151&#39;, &#39;#CC3F57&#39;, &#39;#9A2555&#39;]; var data = [ { name: &#39;Knowledge&#39;, itemStyle: { }, children: [{ name: &#39;Humanity&#39;, value: 1, itemStyle: { color: colors[0] } }, { name: &#39;Science&#39;, itemStyle: { color: colors[1] }, children: [{ name: &#39;Computer&#39;, itemStyle: { color: colors[2] }, children: [{ name: &#39;Language&#39;, value: 1, itemStyle: { color: colors[3] }, children: [{ name: &#39;Java&#39;, value: 1, itemStyle: { color: colors[4] } }] }, { name: &#39;Framework&#39;, itemStyle: { color: colors[0] }, children: [{ name: &#39;Spring&#39;, value: 1, itemStyle: { color: colors[1] } }] }] }, { name: &#39;Math&#39;, value: 1, itemStyle: { color: colors[2] }, }, { name: &#39;Biology&#39;, value: 1, itemStyle: { color: colors[3] }, }] }] }, { name: &#39;Wisdom&#39;, itemStyle: { color: colors[4] }, children: [{ name: &#39;Internal&#39;, itemStyle: { color: colors[0] }, children: [{ name: &#39;View&#39;, value: 1, itemStyle: { color: colors[1] } }, { name: &#39;Life and Death&#39;, value: 1, itemStyle: { color: colors[2] } }] }, { name: &#39;External&#39;, itemStyle: { color: colors[3] }, children: [{ name: &#39;Goal&#39;, value: 1, itemStyle: { color: colors[4] } }, { name: &#39;Structral Thinking&#39;, value: 1, itemStyle: { color: colors[0] } }] }] }]; option = { series: { type: &#39;sunburst&#39;, highlightPolicy: &#39;ancestor&#39;, data: data, radius: [0, &#39;95%&#39;], sort: null, levels: [{}, { r0: &#39;10%&#39;, r: &#39;25%&#39;, itemStyle: { borderWidth: 2 }, label: { rotate: &#39;rotation&#39; } }, { r0: &#39;25%&#39;, r: &#39;45%&#39;, label: { align: &#39;center&#39; } }, { r0: &#39;45%&#39;, r: &#39;65%&#39;, label: { position: &#39;inside&#39;, padding: 3, silent: false }, itemStyle: { borderWidth: 3 } }, { r0: &#39;65%&#39;, r: &#39;80%&#39;, label: { position: &#39;inside&#39;, padding: 4, silent: false }, itemStyle: { borderWidth: 3 } }, { r0: &#39;80%&#39;, r: &#39;82%&#39;, label: { position: &#39;outside&#39;, padding: 4, silent: false }, itemStyle: { borderWidth: 3 } }] } }; // 使用刚指定的配置项和数据显示图表。 myChart."/>
+<meta name="twitter:description" content="Table of Content     // 基于准备好的dom，初始化echarts实例 var myChart = echarts.init(document.getElementById(&#39;main&#39;)); var colors = [&#39;#FF7853&#39;, &#39;#FFAE57&#39;, &#39;#EA5151&#39;, &#39;#CC3F57&#39;, &#39;#9A2555&#39;]; var data = [ { name: &#39;Knowledge&#39;, itemStyle: { }, children: [{ name: &#39;Humanity&#39;, value: 0, itemStyle: { color: colors[0] } }, { name: &#39;Science&#39;, itemStyle: { color: colors[1] }, children: [{ name: &#39;Computer&#39;, itemStyle: { color: colors[2] }, children: [{ name: &#39;Language&#39;, itemStyle: { color: colors[3] }, children: [{ name: &#39;Java&#39;, value: 1, itemStyle: { color: colors[4] } }, { name: &#39;JavaScript&#39;, value: 1, itemStyle: { color: colors[4] } } ] }, { name: &#39;Framework&#39;, itemStyle: { color: colors[0] }, children: [{ name: &#39;Spring&#39;, value: 1, itemStyle: { color: colors[1] } }] }] }] }] }, { name: &#39;Wisdom&#39;, itemStyle: { color: colors[4] }, children: [{ name: &#39;Internal&#39;, itemStyle: { color: colors[0] } }, { name: &#39;External&#39;, itemStyle: { color: colors[3] } }] }]; option = { series: { type: &#39;sunburst&#39;, highlightPolicy: &#39;ancestor&#39;, data: data, radius: [0, &#39;95%&#39;], sort: null, levels: [{}, { r0: &#39;10%&#39;, r: &#39;25%&#39;, itemStyle: { borderWidth: 2 }, label: { rotate: &#39;rotation&#39; } }, { r0: &#39;25%&#39;, r: &#39;45%&#39;, label: { align: &#39;center&#39; } }, { r0: &#39;45%&#39;, r: &#39;65%&#39;, label: { position: &#39;inside&#39;, padding: 3, silent: false }, itemStyle: { borderWidth: 3 } }, { r0: &#39;65%&#39;, r: &#39;80%&#39;, label: { position: &#39;inside&#39;, padding: 4, silent: false }, itemStyle: { borderWidth: 3 } }, { r0: &#39;80%&#39;, r: &#39;82%&#39;, label: { position: &#39;outside&#39;, padding: 4, silent: false }, itemStyle: { borderWidth: 3 } }] } }; // 使用刚指定的配置项和数据显示图表。 myChart."/>
 <meta name="application-name" content="Hi, Shihao">
 <meta name="apple-mobile-web-app-title" content="Hi, Shihao"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/miaoshihao.com\/knowledgemap\/"
-        },"image": ["http:\/\/miaoshihao.com\/images\/Apple-Devices-Preview.png"],"genre": "page","wordcount":  329 ,
+        },"image": ["http:\/\/miaoshihao.com\/images\/Apple-Devices-Preview.png"],"genre": "page","wordcount":  275 ,
         "url": "http:\/\/miaoshihao.com\/knowledgemap\/","datePublished": "2020-12-26T10:58:57-04:00","dateModified": "2020-12-26T10:58:57-04:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "http:\/\/miaoshihao.com\/images\/avatar.png"},"author": {
@@ -130,7 +130,7 @@
              },
              children: [{
                  name: 'Humanity',
-                 value: 1,
+                 value: 0,
                  itemStyle: {
                      color: colors[0]
                  }
@@ -146,7 +146,6 @@
                      },
                      children: [{
                          name: 'Language',
-                         value: 1,
                          itemStyle: {
                              color: colors[3]
                          },
@@ -156,7 +155,15 @@
                              itemStyle: {
                                  color: colors[4]
                              }
-                         }]
+                         },
+                         {
+                             name: 'JavaScript',
+                             value: 1,
+                             itemStyle: {
+                                 color: colors[4]
+                             }
+                         }
+                        ]
 
                      },
                      {
@@ -171,22 +178,7 @@
                                  color: colors[1]
                              }
                          }]
-
                      }]
-                 },
-                 {
-                     name: 'Math',
-                     value: 1,
-                     itemStyle: {
-                         color: colors[2]
-                     },
-                 },
-                 {
-                     name: 'Biology',
-                     value: 1,
-                     itemStyle: {
-                         color: colors[3]
-                     },
                  }]
              }]
          }, {
@@ -198,39 +190,13 @@
                  name: 'Internal',
                  itemStyle: {
                      color: colors[0]
-                 },
-                 children: [{
-                     name: 'View',
-                     value: 1,
-                     itemStyle: {
-                         color: colors[1]
-                     }
-                 }, {
-                     name: 'Life and Death',
-                     value: 1,
-                     itemStyle: {
-                         color: colors[2]
-                     }
-                 }]
+                 }
              },
              {
                  name: 'External',
                  itemStyle: {
                      color: colors[3]
-                 },
-                 children: [{
-                     name: 'Goal',
-                     value: 1,
-                     itemStyle: {
-                         color: colors[4]
-                     }
-                 }, {
-                     name: 'Structral Thinking',
-                     value: 1,
-                     itemStyle: {
-                         color: colors[0]
-                     }
-                 }]
+                 }
              }]
          }];
 
@@ -298,6 +264,9 @@
                  var name=param.name;
                  if(name=="Java"){
                      window.location.href="http://miaoshihao.com/categories/java/";
+                 }
+                 else if (name == "JavaScript"){
+                    window.location.href="http://miaoshihao.com/categories/javascript/";
                  }
                  else if (name == "Spring"){
                     window.location.href="http://miaoshihao.com/categories/spring/";

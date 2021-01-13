@@ -123,8 +123,8 @@ The basic principle is that beans define their dependencies (i.e. the other obje
       <pubDate>Mon, 11 Jan 2021 11:58:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
       <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/language/javascript/javascript_notes_es6/</guid>
-      <description>JavaScript ES6 Overview ECMAScript is a standardized version of JavaScript with the goal of unifying the language&amp;rsquo;s specifications and features. As all major browsers and JavaScript-runtimes follow this specification, the term ECMAScript is interchangeable with the term JavaScript.
-Syntax let and const  Variables declared with let and const are scoped to the block{ }, not to the function. Variables declared with let and const can only be accessed after they have been declared.</description>
+      <description>JavaScript ES6 ECMAScript is a standardized version of JavaScript with the goal of unifying the language&amp;rsquo;s specifications and features. The term ECMAScript is interchangeable with the term JavaScript.
+Basic Syntax let and const  Variables declared with let and const are scoped to the block{ }, not to the function. Variables declared with let and const can only be accessed after they have been declared. They eliminate issues from hoisting. Variables declared with let can be reassigned, but can’t be redeclared in the same scope.</description>
     </item>
     
     <item>

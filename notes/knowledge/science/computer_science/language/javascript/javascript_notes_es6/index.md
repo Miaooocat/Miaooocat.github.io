@@ -1,12 +1,12 @@
 # Javascript Notes 2 ES6
 
 
-# JavaScript ES6 Overview
+# JavaScript ES6
 
-ECMAScript is a standardized version of JavaScript with the goal of unifying the language's specifications and features. As all major browsers and JavaScript-runtimes follow this specification, the term **ECMAScript** is interchangeable with the term **JavaScript**.
+ECMAScript is a standardized version of JavaScript with the goal of unifying the language's specifications and features. The term **ECMAScript** is interchangeable with the term **JavaScript**.
 
 
-## Syntax
+## Basic Syntax
 
 ### `let` and `const`
 - Variables declared with `let` and `const` are scoped to the block`{ }`, not to the function.
@@ -18,8 +18,7 @@ ECMAScript is a standardized version of JavaScript with the goal of unifying the
 
 ### Mutateble `const` object
 
-- Using the const declaration only prevents reassignment of the variable identifier.
-- JavaScript provides a function Object.freeze to prevent data mutation.
+- Using the const declaration only prevents reassignment of the variable identifier. Value from the object can still be changed in the following method.
 
 ```js
 const s = [5, 6, 7];
@@ -27,7 +26,7 @@ s = [1, 2, 3]; // throws error, trying to assign a const
 s[2] = 45; // works just as it would with an array declared with var or let
 console.log(s); // returns [5, 6, 45]
 ```
-
+- JavaScript also provides a function Object.freeze to prevent data mutation.
 ```js
 let obj = {
   name:"FreeCodeCamp",
@@ -77,10 +76,9 @@ const { type, carat } = gemstone;
 
 
 ### Template literals
-- Template literal is a special type of string that makes creating complex strings easier.
 - Template literals are string literals that include embedded expressions.
 - Template literals in JavaScript are denoted with **backticks** ( \` ), and can template literals can contain placeholders which are represented using `${expression}`.
-- Template literals **preserve newlines** as part of the string.
+- Template literals can **preserve newlines** as part of the string.
 
 ```js
 const person = {
@@ -151,18 +149,13 @@ for (let i = 0; i < digits.length; i++) {
   - Loop over all enumerable properties, including any additional properties of the array's prototype.
 
 ```js
-Array.prototype.decimalfy = function() {
-  for (let i = 0; i < this.length; i++) {
-    this[i] = this[i].toFixed(2);
-  }
-};
+var person = {fname:"John", lname:"Doe", age:25};
 
-const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-for (let i = 0; i < digits.length; i++) {
-  console.log(digits[i]);
+var text = "";
+var x;
+for (x in person) {
+  text += person[x];
 }
-// the decimalfy function will be printed out at the end
 ```
 
 - `for...of` loop
@@ -207,6 +200,38 @@ console.log(arrayIterator.next());
 // Object {value: 2, done: false}
 ```
 
+```js
+let randint = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+create_random = {
+    min: -1,
+    max: 90,
+    lenght: 100,
+};
+
+create_random[Symbol.iterator] = function() {
+    return {
+        start: 0,
+        min: this.min,
+        max: this.max,
+        lenght: this.lenght,
+        next() {
+            this.start++;
+            return this.start < this.lenght ? {
+                done: false,
+                value: randint(this.min, this.max)
+            } : {
+                done: true
+            };
+        }
+    };
+};
+
+let array = Array.from(create_random);
+console.log(array);
+```
+
+
 ### Spread operator
 - The spread operator (`...`) expands, or spreads, iterable objects into multiple elements.
 
@@ -224,6 +249,11 @@ const vegetables = ["corn", "potatoes", "carrots"];
 
 const produce = [...fruits, ...vegetables];
 ```
+```js
+const arr = [6, 89, 3, 45];
+const maximus = Math.max(...arr); // returns 89
+```
+
 
 ### Rest parameter
 - The rest parameter (`...`) can represent an indefinite number of elements as an array.
@@ -234,6 +264,16 @@ const [total, subtotal, ...items] = order;
 // total: 20.17
 // subtotal: 18.67
 // items: ["cheese", "eggs"]
+```
+
+```js
+function howMany(...args) {
+  return "You have passed " + args.length + " arguments.";
+}
+console.log(howMany(0, 1, 2)); 
+// You have passed 3 arguments.
+console.log(howMany("string", null, [1, 2, 3], { })); 
+// You have passed 4 arguments.
 ```
 
 - Useful for defining variadic functions
@@ -259,10 +299,6 @@ function sum(...nums) {
 }
 ```
 
-
-
-
-
 ## Functions
 
 ### Arrow functions
@@ -278,6 +314,8 @@ function sum(...nums) {
   - Concise body syntax: when there is only a single expression, curly braces, `return`, and semi-colons can all be omitted.
   - Block body syntax: when there is more than a single expression.
 
+Parentheses and return statement can be omitted when using arrow notation. 
+
 ```js
 const fn0 = () => result;
 const fn1 = _ => result;
@@ -288,18 +326,30 @@ const fn4 = (param1, param2) => {
 };
 ```
 
+```js
+var myConcat1 = function(arr1, arr2) {
+  return arr1.concat(arr2);
+};
+
+var myConcat2 = (arr1, arr2) =>  arr1.concat(arr2);
+console.log(myConcat1([1, 2], [3, 4, 5]));
+console.log(myConcat2([1, 2], [3, 4, 5]));
+```
+
+
 - When not to use arrow functions
   - Arrow functions are only expressions. There is no arrow function declaration.
   - There is a gotcha with the `this` keyword in arrow functions.
 
+
 ####  `this` and regular functions
 
-| Function Call | `this` |
-| ---- | ---- |
-| With the `new` operator | The new object |
-| With `call` / `apply` | Specified by `call` / `apply` |
-| Method of an object | The object the method is called from |
-| With no context | - In non-strict mode: the global object<br/>- In strict mode: `undefined` |
+| Function Call           | `this`                                                                    |
+| ----------------------- | ------------------------------------------------------------------------- |
+| With the `new` operator | The new object                                                            |
+| With `call` / `apply`   | Specified by `call` / `apply`                                             |
+| Method of an object     | The object the method is called from                                      |
+| With no context         | - In non-strict mode: the global object<br/>- In strict mode: `undefined` |
 
 ####  `this` and arrow functions
 - `this` is based on the function's surrounding context.
@@ -500,9 +550,9 @@ Maple.prototype.gatherSyrup = function() {
 ```
 
 
-## Built-ins
+### Built-ins
 
-### Symbols
+#### Symbols
 - A symbol is a unique and immutable data type that is often used to identify object properties.
 - To create a symbol, write `Symbol()` with an optional string as its description.
 
