@@ -1,0 +1,1610 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Javascript Notes 3 Object Oriented - Hi, Shihao</title><meta name="Description" content="Javascript"><meta property="og:title" content="Javascript Notes 3 Object Oriented" />
+<meta property="og:description" content="Javascript" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://miaoshihao.com/notes/knowledge/science/computer_science/language/javascript/javascript_notes_3_objectoriented/" />
+<meta property="og:image" content="http://miaoshihao.com/logo.png"/>
+<meta property="article:published_time" content="2021-01-11T11:58:26+08:00" />
+<meta property="article:modified_time" content="2021-01-11T11:58:26+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://miaoshihao.com/logo.png"/>
+
+<meta name="twitter:title" content="Javascript Notes 3 Object Oriented"/>
+<meta name="twitter:description" content="Javascript"/>
+<meta name="application-name" content="Hi, Shihao">
+<meta name="apple-mobile-web-app-title" content="Hi, Shihao"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://miaoshihao.com/notes/knowledge/science/computer_science/language/javascript/javascript_notes_3_objectoriented/" /><link rel="prev" href="http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_notes_2_oop/" /><link rel="next" href="http://miaoshihao.com/notes/knowledge/science/computer_science/language/javascript/javascript_notes_2_es6/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Javascript Notes 3 Object Oriented",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/miaoshihao.com\/notes\/knowledge\/science\/computer_science\/language\/javascript\/javascript_notes_3_objectoriented\/"
+        },"image": ["http:\/\/miaoshihao.com\/images\/Apple-Devices-Preview.png"],"genre": "notes","keywords": "Javascript","wordcount":  3744 ,
+        "url": "http:\/\/miaoshihao.com\/notes\/knowledge\/science\/computer_science\/language\/javascript\/javascript_notes_3_objectoriented\/","datePublished": "2021-01-11T11:58:26+08:00","dateModified": "2021-01-11T11:58:26+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "http:\/\/miaoshihao.com\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Shihao"
+            },"description": "Javascript"
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Hi, Shihao"><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/knowledgemap/"> Knowledge Map </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/notes/"> Archives </a><a class="menu-item" href="/music/"> Music </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/notes/knowledge/science/computer_science/language/javascript/javascript_notes_3_objectoriented/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>                
+                <a href="./robot/" class="menu-item chat-bot" title="">
+                    <i class="fas fa-robot fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Hi, Shihao"><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/knowledgemap/" title="">Knowledge Map</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/notes/" title="">Archives</a><a class="menu-item" href="/music/" title="">Music</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/notes/knowledge/science/computer_science/language/javascript/javascript_notes_3_objectoriented/" selected>English</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="page single special"><h1 class="single-title animated pulse faster">Javascript Notes 3 Object Oriented</h1><div class="content" id="content"><h1 id="object-oriented-programming">Object Oriented Programming</h1>
+<h2 id="creating-objects">Creating objects</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// Using literal notation:
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">myObject</span> <span class="o">=</span> <span class="p">{};</span>
+
+<span class="c1">// Using the Object() constructor function:
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">myObject</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Object</span><span class="p">();</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Both methods return an object without properties.</li>
+<li>The <code>Object()</code> constructor function is a bit slower.</li>
+<li>The recommended way to create new objects in JavaScript is to use <strong>literal notation</strong>.</li>
+</ul>
+<h2 id="modifying-properties">Modifying properties</h2>
+<ul>
+<li>Data within objects are <em>mutable</em>.</li>
+</ul>
+<h2 id="adding-properties">Adding properties</h2>
+<ul>
+<li>Properties can be added to objects simply by specifying the property name, then giving it a value</li>
+</ul>
+<h2 id="removing-properties">Removing properties</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// returns true if deletion is successful
+</span><span class="c1"></span><span class="k">delete</span> <span class="nx">object</span><span class="p">.</span><span class="nx">property</span><span class="p">;</span>
+<span class="k">delete</span> <span class="nx">object</span><span class="p">.</span><span class="kd">function</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="passing-primitives">Passing primitives</h2>
+<ul>
+<li>Primitives are immutable.</li>
+<li>Any changes made to an argument inside a function effectively creates a copy local to that function, and does not affect the primitive outside of that function</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">changeToEight</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// whatever n was, it is now 8,
+</span><span class="c1"></span>  <span class="c1">// but only in this function!
+</span><span class="c1"></span>  <span class="nx">n</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">n</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+<span class="nx">changeToEight</span><span class="p">(</span><span class="nx">n</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">n</span><span class="p">);</span>
+<span class="c1">// 7
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="passing-objects">Passing objects</h2>
+<ul>
+<li>Objects are <em>mutable</em>.</li>
+<li>When an object is passed into a function, JavaScript makes a copy of the reference to that object.</li>
+<li>Both the original reference and the copied references point to the same object.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">setToBlue</span><span class="p">(</span><span class="nx">object</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">object</span><span class="p">.</span><span class="nx">favoriteColor</span> <span class="o">=</span> <span class="s1">&#39;blue&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">originalObject</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">favoriteColor</span><span class="o">:</span> <span class="s1">&#39;red&#39;</span>
+<span class="p">};</span>
+<span class="nx">setToBlue</span><span class="p">(</span><span class="nx">originalObject</span><span class="p">);</span>
+<span class="nx">originalObject</span><span class="p">.</span><span class="nx">favoriteColor</span><span class="p">;</span>
+<span class="c1">// &#39;blue&#39;
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="comparing-objects">Comparing objects</h2>
+<ul>
+<li>When comparing two objects with <code>===</code>, the expression will only return <code>true</code> when comparing <strong>two references to exactly the same object</strong>.</li>
+</ul>
+<h2 id="functions-vs-methods">Functions vs. methods</h2>
+<ul>
+<li>Methods are functions inside an object.</li>
+<li>Methods are special properties whose values are functions.</li>
+</ul>
+<h2 id="access-object-in-the-method">Access object in the method</h2>
+<ul>
+<li>Using <code>this</code>, methods can directly access the object that it is called on.</li>
+<li><code>this</code> is a reserved word in JavaScript, and cannot be used as an identifier.</li>
+<li>Depending on how a function is called, <code>this</code> can be set to different values.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">triangle</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;scalene&#39;</span><span class="p">,</span>
+  <span class="nx">identify</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`This is a </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">type</span><span class="si">}</span><span class="sb"> triangle.`</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="value-of-this">Value of <code>this</code></h2>
+<ul>
+<li>When a method is invoked, the value of <code>this</code> is the <em>object left of the dot</em> at invocation.</li>
+<li>When a regular function is invoked, the value of this is the <em>global window object</em>.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">car</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">numberOfDoors</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
+  <span class="nx">drive</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Get in one of the </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">numberOfDoors</span><span class="si">}</span><span class="sb"> doors, and let&#39;s go!`</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">car</span><span class="p">.</span><span class="nx">drive</span><span class="p">();</span>
+<span class="c1">// Get in one of the 4 doors, and let&#39;s go!
+</span><span class="c1"></span>
+<span class="kr">const</span> <span class="nx">letsRoll</span> <span class="o">=</span> <span class="nx">car</span><span class="p">.</span><span class="nx">drive</span><span class="p">;</span>
+<span class="nx">letsRoll</span><span class="p">();</span>
+<span class="c1">// Get in one of the undefined doors, and let&#39;s go!
+</span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>The second <code>this</code> in the code above refers to the <code>window</code> object.</li>
+<li>Even though <code>car.drive</code> is a method, the function is stored in the a variable <code>letsRoll</code>.</li>
+<li>Because <code>letsRoll()</code> is invoked as a regular function, <code>this</code> will refer to the <code>window object</code> inside of it.</li>
+</ul>
+<h2 id="the-window-object">The <code>window</code> object</h2>
+<ul>
+<li>The <code>window</code> object is provided by the browser environment and is globally accessible to JavaScript code using the identifier, <code>window</code>.</li>
+<li>This object is not part of the JavaScript specification (i.e. ECMAScript). It is developed by the <a href="https://www.w3.org/Consortium/" target="_blank" rel="noopener noreffer">W3C</a>.</li>
+<li>This window object has access to a ton of information about the page itself, including:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// the page&#39;s URL
+</span><span class="c1"></span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">;</span>
+
+<span class="c1">// the vertical scroll position of the page
+</span><span class="c1"></span><span class="nb">window</span><span class="p">.</span><span class="nx">scrollY</span><span class="p">;</span>
+
+<span class="c1">// scroll to 200 pixels down from the current location
+</span><span class="c1"></span><span class="nb">window</span><span class="p">.</span><span class="nx">scroll</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">scrollY</span> <span class="o">+</span> <span class="mi">200</span><span class="p">);</span>
+
+<span class="c1">// open a new web page
+</span><span class="c1"></span><span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">&#34;https://www.udacity.com/&#34;</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="globals">Globals</h2>
+<ul>
+<li>Global variables
+<ul>
+<li>Every variable declaration with <code>var</code> made at the global level (outside of a function) automatically becomes a property on the <code>window</code> object.</li>
+<li><code>let</code> and <code>const</code> are introduced in ES6. Variabled declared with them are not added to the <code>window</code> object.</li>
+</ul>
+</li>
+<li>Global functions
+<ul>
+<li>Any global function declarations are accessible on the <code>window</code> object as methods.</li>
+</ul>
+</li>
+</ul>
+<h2 id="avoid-globals">Avoid globals</h2>
+<ul>
+<li>Tight coupling
+<ul>
+<li>Code that is too dependent on the details of each other.</li>
+<li>Changing one unintentionally alters the functioning of some other code.</li>
+</ul>
+</li>
+<li>Name collisions
+<ul>
+<li>Two (or more) functions depend on a variable with the same name.</li>
+</ul>
+</li>
+</ul>
+<h2 id="object-methods">Object methods</h2>
+<ul>
+<li>The <code>Object()</code> function includes a few methods of its own.</li>
+<li><code>Object.keys(&lt;object&gt;)</code>: returns an array of the provided objects&rsquo; property names.</li>
+<li><code>Object.values(&lt;object&gt;)</code>: returns an array of the provided objects&rsquo; property values.</li>
+<li>These two methods will return the items in the same order as when using a <code>for</code> loop on the object.</li>
+</ul>
+<h1 id="classes-and-objects">Classes and objects</h1>
+<h2 id="constructor-function">Constructor function</h2>
+<ul>
+<li>Persist data with the <code>this</code> keyword.</li>
+<li>No explicit return value.</li>
+<li>Can have parameters.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">SoftwareDeveloper</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">favoriteLanguage</span> <span class="o">=</span> <span class="s1">&#39;JavaScript&#39;</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="creating-a-new-object">Creating a new object</h2>
+<ul>
+<li>Use the <code>new</code> operator.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">developer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SoftwareDeveloper</span><span class="p">(</span><span class="s1">&#39;David&#39;</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>When the <code>new</code> operator is not used, no object is created.
+<ul>
+<li>The function is invoked like a regular function.</li>
+<li>Since there is no return value, the variable will be assigned to <code>undefined</code>.</li>
+</ul>
+</li>
+</ul>
+<h2 id="the-instanceof-operator">The <code>instanceof</code> operator</h2>
+<ul>
+<li>This operator confirms whether an object is created by a specific constructor function.</li>
+<li>This operator actually tests whether the constructor appears in the prototype chain of an object.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">object</span> <span class="k">instanceof</span> <span class="nx">ClassName</span><span class="p">;</span>
+<span class="c1">// return a boolean
+</span><span class="c1"></span>
+<span class="k">typeof</span> <span class="nx">object</span>
+<span class="c1">// &#34;object&#34;
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="this-in-objects"><code>this</code> in objects</h2>
+<ul>
+<li>A value for <code>this</code> is set when a method is invoked on an object, and that value refers to that object.</li>
+<li>Four ways to call functions
+<ul>
+<li>Calling a constructor function with the <code>new</code> keyword sets <code>this</code> to a newly-created object.</li>
+<li>Calling a method sets <code>this</code> to the object that owns the method.</li>
+<li>Calling a function on its own (i.e. invoking a regular function) sets <code>this</code> to <code>window</code>.</li>
+<li>Calling a function with <code>call</code> or <code>apply</code> allow customization of <code>this</code>.</li>
+</ul>
+</li>
+</ul>
+<h2 id="call"><code>call()</code></h2>
+<ul>
+<li>Set <code>this</code> to custom objects.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// this variable is set to thisObject in the invocation
+</span><span class="c1"></span><span class="kd">function</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">thisObject</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Invoke functions attached to objects (i.e. methods).</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">mockingbird</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;To Kill a Mockingbird&#39;</span><span class="p">,</span>
+  <span class="nx">describe</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span><span class="sb"> is a classic novel`</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kr">const</span> <span class="nx">pride</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Pride and Prejudice&#39;</span>
+<span class="p">};</span>
+
+<span class="nx">mockingbird</span><span class="p">.</span><span class="nx">describe</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">pride</span><span class="p">);</span>
+<span class="c1">// &#39;Pride and Prejudice is a classic novel&#39;
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="apply"><code>apply()</code></h2>
+<ul>
+<li>Pass in arguments in an array.</li>
+<li>Useful when the number of arguments is unknown.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">thisObject</span><span class="p">,</span> <span class="p">[</span><span class="nx">arguments</span><span class="p">])</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="bind"><code>bind()</code></h2>
+<ul>
+<li>When methods are passed in as a callback, <code>this</code> reference may be lost.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">invokeTwice</span><span class="p">(</span><span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">cb</span><span class="p">();</span>
+   <span class="nx">cb</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kr">const</span> <span class="nx">dog</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">age</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+  <span class="nx">growOneYear</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// growOneYear is passed in as a function, so
+</span><span class="c1">// this inside growOneYear is set to windows,
+</span><span class="c1">// and the age is not updated
+</span><span class="c1"></span><span class="nx">invokeTwice</span><span class="p">(</span><span class="nx">dog</span><span class="p">.</span><span class="nx">growOneYear</span><span class="p">);</span>
+
+<span class="nx">dog</span><span class="p">.</span><span class="nx">age</span><span class="p">;</span>
+<span class="c1">// 5
+</span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Use anonymous closure to close over the <code>dog</code> object.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">invokeTwice</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// growOneYear is directly call onto the dog object
+</span><span class="c1"></span>  <span class="nx">dog</span><span class="p">.</span><span class="nx">growOneYear</span><span class="p">();</span>
+<span class="p">});</span>
+
+<span class="nx">dog</span><span class="p">.</span><span class="nx">age</span><span class="p">;</span>
+<span class="c1">// 7
+</span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>bind()</code> method provides an less verbose alternative approach.</li>
+<li>It is called onto a function and returns a copy of that function with a specified this value.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">growOneYearMethod</span> <span class="o">=</span> <span class="nx">dog</span><span class="p">.</span><span class="nx">growOneYear</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">dog</span><span class="p">);</span>
+<span class="nx">invokeTwice</span><span class="p">(</span><span class="nx">growOneYearMethod</span><span class="p">);</span>
+<span class="nx">dog</span><span class="p">.</span><span class="nx">age</span><span class="p">;</span>
+<span class="c1">// 7
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="prototype"><code>prototype</code></h2>
+<ul>
+<li>Each function has a <code>prototype</code> property. <code>prototype</code> is an object.</li>
+<li>An object created by the <code>new</code> operator of a constructor function is linked to its constructor&rsquo;s <code>prototype</code>.</li>
+<li>This link allows the object to access the <code>prototype</code>'s properties and methods as if it were its own.</li>
+<li>Whether accessing a property or invoking a method, the JavaScript interpreter looks for them along the prototype chain in this order:
+<ul>
+<li>The object&rsquo;s own properties.</li>
+<li>The object&rsquo;s constructor&rsquo;s <code>prototype</code>.</li>
+<li>At the very end of the chain is the <code>Object()</code> object, or the top-level parent.</li>
+<li>If the property still cannot be found, the property is <code>undefined</code>.</li>
+</ul>
+</li>
+<li>By adding methods to the <code>prototype</code>, memory is saved as more objects are instantiated.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">Dalmatian</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// register a method on the prototype
+</span><span class="c1"></span><span class="nx">Dalmatian</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">bark</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb"> barks!`</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>When new methods are added to <code>prototype</code>, existing objects can access the new methods as well.</li>
+<li>When <code>proprotype</code> is replaced, objects created before the replacement are still linked to the old <code>prototype</code>. Objects created after the replacement are linked to the new <code>prototype</code>.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">Cat</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="s1">&#39;white&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">cat1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Cat</span><span class="p">();</span>
+<span class="nx">cat1</span><span class="p">.</span><span class="nx">color</span><span class="p">;</span>
+<span class="c1">// white
+</span><span class="c1"></span><span class="nx">cat1</span><span class="p">.</span><span class="nx">meow</span><span class="p">();</span>
+<span class="c1">// exception
+</span><span class="c1"></span>
+<span class="nx">Cat</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">isHungry</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nx">meow</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s1">&#39;Meow!&#39;</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+<span class="c1">// new properties and methods are not available
+</span><span class="c1">// for existing objects
+</span><span class="c1"></span><span class="nx">cat1</span><span class="p">.</span><span class="nx">isHungry</span><span class="p">;</span>
+<span class="c1">// undefined
+</span><span class="c1"></span><span class="nx">cat1</span><span class="p">.</span><span class="nx">meow</span><span class="p">();</span>
+<span class="c1">// exception
+</span><span class="c1"></span>
+<span class="kd">let</span> <span class="nx">cat2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Cat</span><span class="p">();</span>
+<span class="nx">cat2</span><span class="p">.</span><span class="nx">color</span><span class="p">;</span>
+<span class="c1">// white
+</span><span class="c1"></span><span class="nx">cat2</span><span class="p">.</span><span class="nx">meow</span><span class="p">();</span>
+<span class="c1">// Meow!
+</span><span class="c1"></span><span class="nx">cat2</span><span class="p">.</span><span class="nx">isHungry</span><span class="p">;</span>
+<span class="c1">// false
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="relevant-methods">Relevant Methods</h2>
+<ul>
+<li><code>hasOwnProperty()</code>
+<ul>
+<li><code>hasOwnProperty()</code> allows user to find the origin of a particular property.</li>
+<li>This method takes in a string of the property name, and returns a boolean indicating whether or not the property belongs to the object itself (i.e. that property was not inherited).</li>
+</ul>
+</li>
+<li><code>isPrototypeOf()</code></li>
+<li>This method checks whether or not an object exists in another object&rsquo;s <code>prototype</code> chain.</li>
+<li>It can be used to confirm if a particular object serves as the prototype of another object.</li>
+<li><code>Object.getPrototypeOf()</code></li>
+<li>This method retrieves the prototype of a given object.</li>
+<li><code>constructor</code>
+<ul>
+<li>A property that returns a reference to the constructor function that creates the object.</li>
+<li>Objects created with literal notation are constructed with the <code>Object()</code> constructor function.</li>
+</ul>
+</li>
+</ul>
+<h2 id="__proto__"><code>__proto__</code></h2>
+<ul>
+<li>An object is secretly linked to its constructor function&rsquo;s <code>prototype</code> object through that instance&rsquo;s <code>__proto__</code> property.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">object</span><span class="p">.</span><span class="nx">__proto__</span> <span class="o">===</span> <span class="nx">object</span><span class="p">.</span><span class="nx">constructor</span><span class="p">.</span><span class="nx">prototype</span><span class="p">;</span>
+<span class="c1">// true
+</span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>It is highly discouraged to reassign the <code>__proto__</code> property, or even use it in any written code.
+<ul>
+<li>There are compatibility issues across browsers.</li>
+<li>Since the JavaScript engine searches and accesses properties along the prototype chain, mutating an object&rsquo;s prototype can lead to performance issues.</li>
+</ul>
+</li>
+</ul>
+<h2 id="inheritance">Inheritance</h2>
+<ul>
+<li>Inheritance in JavaScript is all about setting up the <code>prototype</code> chain.
+<ul>
+<li>Users should not use <code>__proto__</code> to manage inheritance.</li>
+<li>Users should not inherit only the prototype, because this doesn&rsquo;t set up the prototype chain, and any changes made to a child object will also be reflected in a parent object.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// inappropriate
+</span><span class="c1"></span><span class="nx">Child</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="nx">Parent</span><span class="p">.</span><span class="nx">prototype</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Use <code>Object.create()</code> to manage inheritance without altering the prototype.</li>
+<li>This method takes in a single object as an argument, and returns a new object with its <code>__proto__</code> property set to the argument passed into it.</li>
+<li>Objects created with this method extend from the passed in argument.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">mammal</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">vertebrate</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">earBones</span><span class="o">:</span> <span class="mi">3</span>
+<span class="p">};</span>
+<span class="c1">// rabbit extends mammal
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">rabbit</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">mammal</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">rabbit</span><span class="p">.</span><span class="nx">__proto__</span> <span class="o">===</span> <span class="nx">mammal</span><span class="p">);</span>
+<span class="c1">// true
+</span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Create inheritance</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">Animal</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">Animal</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">walk</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb"> walks!`</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="kd">function</span> <span class="nx">Cat</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// call super constructor; use call
+</span><span class="c1"></span>  <span class="c1">// instead of new operator so that
+</span><span class="c1"></span>  <span class="c1">// no Animal object is created
+</span><span class="c1"></span>  <span class="nx">Animal</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">name</span><span class="p">);</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">lives</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">Cat</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">constructor</span> <span class="o">===</span> <span class="nx">Cat</span>
+<span class="c1">// true
+</span><span class="c1"></span>
+<span class="c1">// link Cat.prototype.__proto__ to Animal.prototype
+</span><span class="c1"></span><span class="nx">Cat</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">Animal</span><span class="p">.</span><span class="nx">prototype</span><span class="p">);</span>
+
+<span class="c1">// now Cat prototype&#39;s constructor is set to Animal
+</span><span class="c1">// https://stackoverflow.com/a/20830553
+</span><span class="c1"></span><span class="nx">Cat</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">constructor</span>
+<span class="c1">// Animal
+</span><span class="c1"></span>
+<span class="c1">// so its constructor needs to be changed back
+</span><span class="c1"></span><span class="nx">Cat</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">constructor</span> <span class="o">=</span> <span class="nx">Cat</span><span class="p">;</span>
+
+<span class="c1">// add a method only shared by Cat objects
+</span><span class="c1"></span><span class="nx">Cat</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">meow</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Meow!&#39;</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="kr">const</span> <span class="nx">bambi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Cat</span><span class="p">(</span><span class="s1">&#39;Bambi&#39;</span><span class="p">);</span>
+<span class="nx">bambi</span><span class="p">.</span><span class="nx">meow</span><span class="p">();</span>
+<span class="nx">bambi</span><span class="p">.</span><span class="nx">walk</span><span class="p">();</span>
+<span class="nx">bambi</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="object-oriented-design-patterns">Object-Oriented Design Patterns</h1>
+<h2 id="single-inheritance">Single inheritance</h2>
+<ul>
+<li>An object&rsquo;s <code>.prototype</code> property points to just one object.</li>
+<li>This is because JavaScript only supports single inheritance.</li>
+</ul>
+<h2 id="factory-functions">Factory Functions</h2>
+<ul>
+<li>A factory function is a function that returns an object, but isn&rsquo;t itself a class or constructor.</li>
+<li>We can invoke a factory function as a normal function without using the <code>new</code> operator to avoid the complexity of classes and constructors.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">Basketball</span><span class="p">(</span><span class="nx">color</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">color</span><span class="o">:</span> <span class="nx">color</span><span class="p">,</span>
+    <span class="nx">numDots</span><span class="o">:</span> <span class="mi">35000</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+<span class="kr">const</span> <span class="nx">orangeBasketball</span> <span class="o">=</span> <span class="nx">Basketball</span><span class="p">(</span><span class="s1">&#39;orange&#39;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">orangeBasketball</span><span class="p">);</span>
+<span class="c1">// { color: &#39;orange&#39;, numDots: 35000 }
+</span></code></pre></td></tr></table>
+</div>
+</div><table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Factory Function</th>
+<th>Constructor Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Can create new object each time</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Can receive arguments</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Implicate prototypal inheritance</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Invocation</td>
+<td>Normal function<br/><code>factoryFunc()</code></td>
+<td>With the <code>new</code> operator<br/><code>new ConstructorFunc()</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="mixins">Mixins</h2>
+<ul>
+<li>A mixin is a technique that takes the properties and methods from one object and copies them over to another object.</li>
+<li>Mixin is not meant to be added to the prototype chain.</li>
+</ul>
+<h3 id="objectassign"><code>Object.assign()</code></h3>
+<ul>
+<li><code>Object.assign()</code> is a method that (shallow) copies an object&rsquo;s own (non-inherited) properties from one or more source objects into a target object, then returns the updated target object.</li>
+<li><code>Object.assign()</code> does not create and return a new object. It directly modifies then returns the same target object that was passed in.</li>
+<li>Values of existing properties will be overwritten.</li>
+<li>This method is introduced in ES2015 (ES6).</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">target</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span> <span class="nx">source1</span><span class="p">,</span> <span class="nx">source2</span><span class="p">,</span> <span class="p">...);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="functional-mixins">Functional Mixins</h3>
+<ul>
+<li>A functional mixin is a composable factory function that receives a mixin as an argument, copies properties and methods from that mixin, and returns a new object.</li>
+<li>Functional mixins are composable. We can use them as individual pieces of code that add specific properties like an assembly line.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">CoffeeMaker</span><span class="p">(</span><span class="nx">object</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">needsRefill</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">({},</span> <span class="nx">object</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">pourAll</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="nx">needsRefill</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">},</span>
+    <span class="nx">isEmpty</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">needsRefill</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="kr">const</span> <span class="nx">mixedCoffeeMaker</span> <span class="o">=</span> <span class="nx">CoffeeMaker</span><span class="p">({</span> <span class="nx">style</span><span class="o">:</span> <span class="s1">&#39;percolator&#39;</span> <span class="p">});</span>
+
+<span class="c1">// mixedCoffeeMaker is equivalent to
+</span><span class="c1"></span><span class="p">{</span>
+  <span class="nx">style</span><span class="o">:</span> <span class="s1">&#39;percolator&#39;</span><span class="p">,</span>
+  <span class="nx">pourAll</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">needsRefill</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="p">},</span>
+  <span class="nx">isEmpty</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">needsRefill</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="private-properties">Private Properties</h2>
+<ul>
+<li>JavaScript has no concept of private properties out-of-the-box. There is no special syntax or keyword we can use to protect certain properties from being accessed.</li>
+<li>Some object properties and method names may be prefixed with an underscore (<code>_</code>). It They are private by convention only.</li>
+<li>we can use scope and closures to create a private state.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">myCounter</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">count</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">count</span><span class="p">;</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">counter</span> <span class="o">=</span> <span class="nx">myCounter</span><span class="p">();</span>
+
+<span class="nx">counter</span><span class="p">();</span>
+<span class="c1">// 1
+</span><span class="c1"></span>
+<span class="nx">counter</span><span class="p">();</span>
+<span class="c1">// 2
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="module-pattern">Module Pattern</h2>
+<ul>
+<li>Use function scope, closure, and IIFE.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">moduleVar</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="c1">// privatr variable
+</span><span class="c1"></span>    <span class="kd">let</span> <span class="nx">privateVar</span> <span class="o">=</span> <span class="s1">&#39;private variable&#39;</span><span class="p">;</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="c1">// setter
+</span><span class="c1"></span>      <span class="nx">setVar</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">varValue</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">privateVar</span> <span class="o">=</span> <span class="nx">varValue</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="c1">// getter
+</span><span class="c1"></span>      <span class="nx">getVar</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">privateVar</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+<span class="p">}());</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Advantages of module pattern:
+<ul>
+<li>Private properties</li>
+<li>Usage of IIFE that prevents pollution of global scope</li>
+<li>Code organization</li>
+</ul>
+</li>
+</ul>
+<h2 id="revealing-module-pattern">Revealing Module Pattern</h2>
+<ul>
+<li>While we still maintain encapsulation (as in the Module Pattern), we also reveal certain properties (and methods).</li>
+<li>Key ingredients to the Revealing Module Pattern:
+<ul>
+<li>An IIFE (wrapper)</li>
+<li>The module content (variables, methods, objects, etc.)</li>
+<li>A returned object literal with keys pointing to data to be revealed</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{]</span>
+  <span class="c1">// private properties
+</span><span class="c1"></span>  <span class="kd">let</span> <span class="nx">privateAge</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">privateName</span> <span class="o">=</span> <span class="s1">&#39;Andrew&#39;</span><span class="p">;</span>
+  <span class="c1">// private method
+</span><span class="c1"></span>  <span class="kd">function</span> <span class="nx">privateAgeOneYear</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">privateAge</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`One year has passed! Current age is </span><span class="si">${</span><span class="nx">privateAge</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="c1">// public method
+</span><span class="c1"></span>  <span class="kd">function</span> <span class="nx">publicDisplayName</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Name: </span><span class="si">${</span><span class="nx">privateName</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="c1">// public method
+</span><span class="c1"></span>  <span class="kd">function</span> <span class="nx">publicAgeOneYear</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">privateAgeOneYear</span><span class="p">();</span>
+  <span class="p">}</span>
+  <span class="c1">// object literal
+</span><span class="c1"></span>  <span class="k">return</span> <span class="p">{</span>
+    <span class="c1">// keys pointing to data to be revealed
+</span><span class="c1"></span>    <span class="nx">name</span><span class="o">:</span> <span class="nx">publicDisplayName</span><span class="p">,</span>
+    <span class="nx">age</span><span class="o">:</span> <span class="nx">publicDisplayName</span>
+  <span class="p">};</span>
+<span class="p">})();</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Advantages of the revealing module pattern:
+<ul>
+<li>There is clarity at the end of the module (in the <code>return</code> statement) as to which variables or methods may be accessed publicly.</li>
+<li>It has consistent syntax. In contrast, the normal Module Pattern may contain variables and functions spread throughout the entire function body.</li>
+</ul>
+</li>
+</ul>
+<h1 id="function">Function</h1>
+<h2 id="functions-are-first-class-functions">Functions are first-class functions</h2>
+<ul>
+<li>Functions can:
+<ul>
+<li>be stored in variables</li>
+<li>be returned from a function</li>
+<li>be passed as arguments into another function</li>
+</ul>
+</li>
+<li>A function that takes other functions as arguments (and/or returns a function) is known as a <em>higher-order function</em>.</li>
+<li>A function that is passed as an argument into another function is called a <em>callback function</em>.</li>
+</ul>
+<h2 id="scope">Scope</h2>
+<ul>
+<li>Functions have access to:
+<ul>
+<li>The function&rsquo;s arguments</li>
+<li>Local variables declared within the function</li>
+<li>Variables from its parent function&rsquo;s scope</li>
+<li>Global variables</li>
+</ul>
+</li>
+<li>JavaScript is <strong>function-scoped</strong>
+<ul>
+<li>Variables in JavaScript are traditionally defined in the scope of a function, rather than in the scope of a block.</li>
+<li>Any variables defined inside that function are not available outside of that function, since entering a function will change scope.</li>
+<li>Any variables defined inside a block (e.g. within an <code>if</code> statement) are available outside of that block.</li>
+</ul>
+</li>
+<li>ES6 syntax allows for <strong>block-scoped</strong> variables with <code>let</code> and <code>const</code>.
+<ul>
+<li>These keywords are used to declare block-scoped variables in JavaScript.</li>
+<li>They largely replace the need for <code>var</code>.</li>
+</ul>
+</li>
+<li>Scope chain: JavaScript interpreter will search the value of a variable in the following order:
+<ul>
+<li>Local variables</li>
+<li>Parent function&rsquo;s variables</li>
+<li>Parent function&rsquo;s parent function&rsquo;s variables</li>
+<li>Global variables</li>
+</ul>
+</li>
+</ul>
+<h2 id="variable-shadowing">Variable shadowing</h2>
+<ul>
+<li>When a variable has the same name as another variable somewhere in the scope chain, the variable with local scope will temporarily &ldquo;shawow&rdquo; the variable in the outer scope.</li>
+</ul>
+<h2 id="closure">Closure</h2>
+<ul>
+<li>Closure
+<ul>
+<li>The function itself</li>
+<li>The scope chain of the code where the function is declared</li>
+</ul>
+</li>
+<li>It is the process of a function retaining access to its scope.</li>
+<li>Formal definition: the combaination of a function and the lexical environment within which that function.
+<ul>
+<li>Lexical environment
+<ul>
+<li>The association of Identifiers to specific variables and functions based upon the lexical nesting structure of ECMAScript code.</li>
+<li>I.e. the code as it is written in the JavaScript file</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="creating-a-closure">Creating a closure</h2>
+<ul>
+<li>Every time a function is defined, closure is created for that function.</li>
+<li>Every function has closure.</li>
+<li>Functions close over at least one other context along the scope chain: the global scope.</li>
+<li>Recall that a nested function has access to variables outside of it. These nested functions close over (i.e. capture) variables that aren&rsquo;t passed in as arguments nor defined locally.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">remember</span><span class="p">(</span><span class="nx">number</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// the returned function retains the
+</span><span class="c1"></span>  <span class="c1">// scope chain of its parent function
+</span><span class="c1"></span>  <span class="k">return</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">number</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="kr">const</span> <span class="nx">returnedFunction</span> <span class="o">=</span> <span class="nx">remember</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">returnedFunction</span><span class="p">()</span> <span class="p">);</span>
+<span class="c1">// 5
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="garbage-collection">Garbage collection</h2>
+<ul>
+<li>JavaScript manages memory with automatic garbage collection.</li>
+<li>If the nested function captures and uses its parent&rsquo;s variables (or variables along the scope chain), those variables will stay in memory as long as the functions that utilize them can still be referenced.</li>
+</ul>
+<h2 id="function-declarations-vs-expressions">Function declarations vs. expressions</h2>
+<ul>
+<li>Function declaration
+<ul>
+<li>Defines a function</li>
+<li>Does <em>not</em> require a variable to be assigned to it</li>
+<li>Does <em>not</em> return a value</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">returnHello</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="s1">&#39;Hello!&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Function expression
+<ul>
+<li>Does return a value</li>
+<li>Can be anonymous or named</li>
+<li>Part of another expression&rsquo;s syntax</li>
+<li>Commonly assigned to variables</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// anonymous
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">myFunction</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="s1">&#39;Hello!&#39;</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// named
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">myFunction</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">returnHello</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="s1">&#39;Hello!&#39;</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="immediately-invoked-function-expressions-iife">Immediately-invoked function expressions (IIFE)</h2>
+<ul>
+<li>A function that is called as soon as it is declared:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="p">(</span><span class="kd">function</span> <span class="p">[</span><span class="nx">name</span><span class="p">](</span><span class="nx">parameters</span><span class="p">){</span>
+  <span class="c1">// function body
+</span><span class="c1"></span><span class="p">})(</span><span class="nx">arguments</span><span class="p">);</span>
+
+<span class="p">(</span><span class="kd">function</span> <span class="p">[</span><span class="nx">name</span><span class="p">](</span><span class="nx">parameters</span><span class="p">){</span>
+  <span class="c1">// function body
+</span><span class="c1"></span><span class="p">}(</span><span class="nx">arguments</span><span class="p">));</span>
+
+<span class="c1">// anonymous
+</span><span class="c1"></span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Hi!&#39;</span><span class="p">);</span>
+<span class="p">})();</span>
+
+<span class="c1">// named
+</span><span class="c1"></span><span class="p">(</span><span class="kd">function</span> <span class="nx">sayHi</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Hi!&#39;</span><span class="p">);</span>
+<span class="p">})();</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;Chirp, chirp!&#34;</span><span class="p">);</span>
+<span class="p">})();</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="iife-to-create-a-module">IIFE to Create a Module</h2>
+<p>An immediately invoked function expression (IIFE) is often used to group related functionality into a single object or module.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">glideMixin</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">obj</span><span class="p">.</span><span class="nx">glide</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;Gliding on the water&#34;</span><span class="p">);</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">flyMixin</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">obj</span><span class="p">.</span><span class="nx">fly</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;Flying, wooosh!&#34;</span><span class="p">);</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">motionModule</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">glideMixin</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">obj</span><span class="p">.</span><span class="nx">glide</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;Gliding on the water&#34;</span><span class="p">);</span>
+      <span class="p">};</span>
+    <span class="p">},</span>
+    <span class="nx">flyMixin</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">obj</span><span class="p">.</span><span class="nx">fly</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;Flying, wooosh!&#34;</span><span class="p">);</span>
+      <span class="p">};</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">})();</span> <span class="c1">// The two parentheses cause the function to be immediately invoked
+</span></code></pre></td></tr></table>
+</div>
+</div><p>Note that you have an immediately invoked function expression (IIFE) that returns an object <code>motionModule</code>. This returned object contains all of the mixin behaviors as properties of the object. The advantage of the module pattern is that <strong>all of the motion behaviors can be packaged into a single object</strong> that can then be used by other parts of your code.</p>
+<h2 id="private-scope">Private scope</h2>
+<ul>
+<li>One of the primary uses for IIFE is to create private scope (i.e., private state).</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// immediately-invoked function expression
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">myFunction</span> <span class="o">=</span> <span class="p">(</span>
+  <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// variable available for the returned function
+</span><span class="c1"></span>    <span class="kr">const</span> <span class="nx">hi</span> <span class="o">=</span> <span class="s1">&#39;Hi!&#39;</span><span class="p">;</span>
+    <span class="k">return</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hi</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">)();</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>The returned anonymous function closes over (i.e. captures) the <code>hi</code> variable. This allows <code>myFunction</code> to maintain a private, mutable state that cannot be accessed outside the function.</li>
+<li>Because the function expressed is called immediately, the IIFE wraps up the code nicely so that it won&rsquo;t pollute the global scope.</li>
+<li>IIFE is best for one-time task without polluting the global environment with extra variables.</li>
+</ul>
+<h2 id="iife-example">IIFE example</h2>
+<ul>
+<li>Create a button that alerts the user on every other click.</li>
+<li>One way is to keep track of the number of clicks of the button with a global variable.</li>
+<li>The better way is to enclose the data in the event handler itself.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!-- button.html --&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+     <span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&#39;button&#39;</span><span class="p">&gt;</span>Click me!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+     <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#39;button.js&#39;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// button.js
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">button</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">);</span>
+
+<span class="c1">// the function creates a closure to protect the count
+</span><span class="c1">// variable from being accesses externally
+</span><span class="c1"></span><span class="nx">button</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="c1">// the returned function closes on the count variable
+</span><span class="c1"></span>  <span class="k">return</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">count</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">count</span> <span class="o">===</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;This alert appears every other press!&#39;</span><span class="p">);</span>
+      <span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+<span class="p">})());</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>The first function creates a closure to
+<ul>
+<li>Define the <code>count</code> variable</li>
+<li>Protect the variable from being accesses externally</li>
+</ul>
+</li>
+<li>The second returned anonymous function creates a closure to
+<ul>
+<li>Access and modify the <code>count</code> variable</li>
+</ul>
+</li>
+</ul>
+<p>Reference:
+<a href="https://github.com/tuliren/javascript-notes">https://github.com/tuliren/javascript-notes</a></p>
+</div></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Shihao Miao</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><div>
+                    <span id="timeDate">Loading Days...</span><span id="times">Loading Times...</span>
+                    <script>
+                        var now = new Date();
+                        function createtime() {
+                            var grt= new Date("03/20/2019 00:00:00");
+                            now.setTime(now.getTime()+250);
+                            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+                            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+                            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+                            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+                            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+                            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+                            document.getElementById("timeDate").innerHTML = "This website has struggled in this world for "+dnum+" day ";
+                            document.getElementById("times").innerHTML = hnum + " hour " + mnum + " min " + snum + " sec";
+                        }
+                    setInterval("createtime()",250);
+                    </script>
+                    </div></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-1":"Home","id-2":"Home"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":30000,"speed":500}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

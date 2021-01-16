@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Javascript Notes 1 Intro - Hi, Shihao</title><meta name="Description" content="Javascript"><meta property="og:title" content="Javascript Notes 1 Intro" />
+<meta property="og:description" content="Javascript" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://miaoshihao.com/notes/knowledge/science/computer_science/language/javascript/javascript_notes_1_intro/" />
+<meta property="og:image" content="http://miaoshihao.com/logo.png"/>
+<meta property="article:published_time" content="2021-01-11T11:58:26+08:00" />
+<meta property="article:modified_time" content="2021-01-11T11:58:26+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://miaoshihao.com/logo.png"/>
+
+<meta name="twitter:title" content="Javascript Notes 1 Intro"/>
+<meta name="twitter:description" content="Javascript"/>
+<meta name="application-name" content="Hi, Shihao">
+<meta name="apple-mobile-web-app-title" content="Hi, Shihao"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://miaoshihao.com/notes/knowledge/science/computer_science/language/javascript/javascript_notes_1_intro/" /><link rel="prev" href="http://miaoshihao.com/notes/knowledge/science/computer_science/language/javascript/javascript_notes_2_es6/" /><link rel="next" href="http://miaoshihao.com/notes/knowledge/science/computer_science/framework/spring/spring/ioc_and_di/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Javascript Notes 1 Intro",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/miaoshihao.com\/notes\/knowledge\/science\/computer_science\/language\/javascript\/javascript_notes_1_intro\/"
+        },"image": ["http:\/\/miaoshihao.com\/images\/Apple-Devices-Preview.png"],"genre": "notes","keywords": "Javascript","wordcount":  1360 ,
+        "url": "http:\/\/miaoshihao.com\/notes\/knowledge\/science\/computer_science\/language\/javascript\/javascript_notes_1_intro\/","datePublished": "2021-01-11T11:58:26+08:00","dateModified": "2021-01-11T11:58:26+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "http:\/\/miaoshihao.com\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Shihao"
+            },"description": "Javascript"
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Hi, Shihao"><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/knowledgemap/"> Knowledge Map </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/notes/"> Archives </a><a class="menu-item" href="/music/"> Music </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/notes/knowledge/science/computer_science/language/javascript/javascript_notes_1_intro/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>                
+                <a href="./robot/" class="menu-item chat-bot" title="">
+                    <i class="fas fa-robot fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Hi, Shihao"><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/knowledgemap/" title="">Knowledge Map</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/notes/" title="">Archives</a><a class="menu-item" href="/music/" title="">Music</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/notes/knowledge/science/computer_science/language/javascript/javascript_notes_1_intro/" selected>English</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="page single special"><h1 class="single-title animated pulse faster">Javascript Notes 1 Intro</h1><div class="content" id="content"><h2 id="history-of-javascript">History of JavaScript</h2>
+<ul>
+<li>LiveScript -&gt; JavaScript</li>
+<li><a href="https://en.wikipedia.org/wiki/ECMAScript" target="_blank" rel="noopener noreffer">ECMAScript</a> (ES5, ES6)
+<ul>
+<li>ECMAScript (ES) is a scripting-language specification standardized by Ecma International.</li>
+<li>It was created to standardize JavaScript.</li>
+<li>JavaScript has remained the best-known implementation of ECMAScript.</li>
+</ul>
+</li>
+<li>ECMAScript (ES2016, ES2017)</li>
+</ul>
+<h2 id="html-css-vs-javascript">HTML, CSS vs JavaScript</h2>
+<ul>
+<li>HTML and CSS
+<ul>
+<li>Markup language used to describe and define elements within a document.</li>
+</ul>
+</li>
+<li>JavaScript
+<ul>
+<li>Programming language used to communicate instructions to a machine.</li>
+</ul>
+</li>
+</ul>
+<h2 id="data-types">Data Types</h2>
+<ul>
+<li>
+<p>Primitive types</p>
+<ul>
+<li><code>undefined</code></li>
+<li><code>null</code></li>
+<li>String</li>
+<li>Boolean</li>
+<li>Number</li>
+</ul>
+</li>
+<li>
+<p><code>null</code></p>
+<ul>
+<li>Data type</li>
+<li>Value of nothing</li>
+</ul>
+</li>
+<li>
+<p><code>undefined</code></p>
+<ul>
+<li>Data type</li>
+<li>Absence of value, meaning nothing is assigned to a variable.</li>
+</ul>
+</li>
+<li>
+<p><code>NaN</code></p>
+<ul>
+<li>Number type</li>
+<li>Not a number</li>
+<li>&lsquo;Hello&rsquo; % 10 =&gt; <code>NaN</code>
+<ul>
+<li>Type coercion converts <code>Hello</code> to number, <code>NaN</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Implicit type coercion</p>
+<ul>
+<li><code>&quot;3&quot;</code> can be converted by <code>3</code> implicitly</li>
+</ul>
+</li>
+<li>
+<p>Strict equality</p>
+<ul>
+<li><code>===</code> and <code>!==</code></li>
+<li>Check both type and value without type conversion</li>
+</ul>
+</li>
+</ul>
+<h1 id="conditionals">Conditionals</h1>
+<h2 id="truthy-values-and-falsy-values">Truthy values and falsy values</h2>
+<ul>
+<li>Every value in JavaScript has an inherent boolean value.</li>
+<li>Falsy values
+<ul>
+<li><code>false</code></li>
+<li><code>&quot;&quot;</code></li>
+<li><code>null</code> type</li>
+<li><code>undefined</code> type</li>
+<li><code>0</code></li>
+<li><code>NaN</code></li>
+</ul>
+</li>
+<li>Truthy values
+<ul>
+<li>Everything else</li>
+<li><code>0.0</code></li>
+<li><code>&quot;null&quot;</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="switch-statement">Switch statement</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="k">switch</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="s1">&#39;value1&#39;</span><span class="o">:</span>  <span class="c1">// if (x === &#39;value1&#39;)
+</span><span class="c1"></span>    <span class="p">...</span>
+    <span class="p">[</span><span class="k">break</span><span class="p">]</span>
+
+  <span class="k">case</span> <span class="s1">&#39;value2&#39;</span><span class="o">:</span>  <span class="c1">// if (x === &#39;value2&#39;)
+</span><span class="c1"></span>    <span class="p">...</span>
+    <span class="p">[</span><span class="k">break</span><span class="p">]</span>
+
+  <span class="k">default</span><span class="o">:</span>
+    <span class="p">...</span>
+    <span class="p">[</span><span class="k">break</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Each <code>case</code> statement is equivalent to <code>===</code></li>
+</ul>
+<h2 id="loop">Loop</h2>
+<ul>
+<li>While loop</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="k">while</span> <span class="p">(</span><span class="o">&lt;</span><span class="nx">expression</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
+  <span class="o">&lt;</span><span class="nx">code</span><span class="o">-</span><span class="nx">block</span><span class="o">&gt;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>For loop</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="k">for</span> <span class="p">(</span><span class="o">&lt;</span><span class="nx">start</span><span class="o">&gt;</span><span class="p">;</span> <span class="o">&lt;</span><span class="nx">stop</span><span class="o">&gt;</span><span class="p">;</span> <span class="o">&lt;</span><span class="nx">step</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
+  <span class="o">&lt;</span><span class="nx">code</span><span class="o">-</span><span class="nx">block</span><span class="o">&gt;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="functions">Functions</h2>
+<h3 id="syntax">Syntax</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">name</span><span class="p">(</span><span class="nx">params</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// code block
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="parameter-vs-argument">Parameter vs argument</h3>
+<ul>
+<li>Parameter: a variable name that appears in the function declaration.</li>
+<li>Argument: a value that appears in the code when the function is invoked.</li>
+<li>Parameters are always passed by value.</li>
+</ul>
+<h3 id="return-value">Return value</h3>
+<ul>
+<li>A function always returns some value back to the caller.</li>
+<li>When return value is not specified, the function will return <code>undefined</code>.
+<ul>
+<li>E.g. <code>console.log</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="scope">Scope</h3>
+<ul>
+<li>Global scope
+<ul>
+<li>Variables defined outside of an function</li>
+</ul>
+</li>
+<li>Function scope</li>
+</ul>
+<h3 id="shadowing">Shadowing</h3>
+<ul>
+<li>Global variable can be overriden inside a function.</li>
+<li>Preventable by redeclaring the same variable in the function.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// shadowing
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="s2">&#34;a&#34;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="s2">&#34;b&#34;</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">shadow</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">a</span> <span class="o">=</span> <span class="s2">&#34;c&#34;</span><span class="p">;</span>     <span class="c1">// shadowing
+</span><span class="c1"></span>  <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="s2">&#34;c&#34;</span><span class="p">;</span> <span class="c1">// no shadowing
+</span><span class="c1"></span><span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// a
+</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span> <span class="c1">// b
+</span><span class="c1"></span><span class="nx">shadow</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// c, shadowed
+</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span> <span class="c1">// b
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="hoisting">Hoisting</h3>
+<ul>
+<li>Before any JavaScript is executed, all function declarations are &ldquo;hoisted&rdquo; to the top of their current scope.</li>
+<li>Functions can be called before they are defined in a scope.</li>
+<li>Only declaration is hoisted. Assignment is not. So hoisted variables can still be undefined.</li>
+<li>The best practice is to define functions at the top of the scripts, and variables at the top of the functions.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// only declaration is hoisted
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">sayGreeting</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">greeting</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">greeting</span> <span class="o">=</span> <span class="s2">&#34;hello&#34;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">sayGreeting</span><span class="p">();</span> <span class="c1">// undefined
+</span><span class="c1"></span>
+<span class="c1">// equivalent function
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">sayGreeting</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">greeting</span><span class="p">;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">greeting</span><span class="p">);</span>
+  <span class="nx">greeting</span> <span class="o">=</span> <span class="s2">&#34;hello&#34;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// hoisting prevents access of global variable
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">greeting</span> <span class="o">=</span> <span class="s2">&#34;hello&#34;</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">sayGreeting</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">greeting</span><span class="p">);</span> <span class="c1">// undefined
+</span><span class="c1"></span>  <span class="kd">var</span> <span class="nx">greeting</span> <span class="o">=</span> <span class="s2">&#34;hello2&#34;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">sayGreeting</span><span class="p">();</span> <span class="c1">// undefined
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="function-as-parameters">Function as parameters</h3>
+<ul>
+<li>A function passed into another function is called a <strong>callback</strong>.</li>
+</ul>
+<h3 id="function-expressions">Function expressions</h3>
+<ul>
+<li>A function stored in a variable.</li>
+<li>Anonymous function.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">variable</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">params</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// anonymous function body
+</span><span class="c1"></span><span class="p">}</span>
+
+<span class="nx">variable</span><span class="p">();</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Use the variable name to call the function.</li>
+<li>Function expressions are not hoisted.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">sayGreeting</span><span class="p">();</span> <span class="c1">// sayGreetings is not a function
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">sayGreeting</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;hello&#34;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// equivalent code
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">sayGreeting</span><span class="p">;</span>
+<span class="nx">sayGreeting</span><span class="p">();</span>
+<span class="nx">sayGreeting</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;hello&#34;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="named-function-expressions">Named function expressions</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">variable</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">name</span><span class="p">(</span><span class="nx">params</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// function body
+</span><span class="c1"></span><span class="p">}</span>
+<span class="nx">variable</span><span class="p">();</span>
+<span class="c1">// call name() gives an error
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="inline-function-expressions">Inline function expressions</h3>
+<ul>
+<li>Using function expressions that pass a function into another function inline, is really common in JavaScript.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">movies</span><span class="p">(</span><span class="nx">messageFunction</span><span class="p">,</span> <span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">messageFunction</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">movies</span><span class="p">(</span><span class="kd">function</span> <span class="nx">displayFavorite</span><span class="p">(</span><span class="nx">movieName</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;My favorite movie is &#34;</span> <span class="o">+</span> <span class="nx">movieName</span><span class="p">);</span>
+<span class="p">},</span> <span class="s2">&#34;Finding Nemo&#34;</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Anonymous inline function expressions are often used for function callbacks that are not going to be reused elsewhere.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">movies</span><span class="p">(</span><span class="nx">messageFunction</span><span class="p">,</span> <span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">messageFunction</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">movies</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">movieName</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;My favorite movie is &#34;</span> <span class="o">+</span> <span class="nx">movieName</span><span class="p">);</span>
+<span class="p">},</span> <span class="s2">&#34;Finding Nemo&#34;</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="array-properties">Array properties</h2>
+<ul>
+<li><code>length</code></li>
+</ul>
+<h2 id="array-methods">Array methods</h2>
+<ul>
+<li><code>reverse()</code></li>
+<li><code>sort()</code></li>
+<li><code>push()</code>: return the length of the array after the push</li>
+<li><code>pop()</code></li>
+<li><code>shift()</code>: remove first element, and return the removed element</li>
+<li><code>join(delimiter)</code>: concatenate the elements into a string</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice" target="_blank" rel="noopener noreffer"><code>splice()</code></a>
+<ul>
+<li>Add or remove elements from anywhere in an array</li>
+<li>Return an arrary of removed elements</li>
+<li>Parameters
+<ul>
+<li>index</li>
+<li>number of elements to remove</li>
+<li>elements to add</li>
+</ul>
+</li>
+<li><code>push(item)</code> is equivalent to <code>splice(array.length, 0, item)</code></li>
+<li><code>pop()</code> is equivalent to <code>splice(-1, 1)</code> or <code>splice(array.length - 1, 1)</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="foreach"><code>forEach()</code></h2>
+<ul>
+<li>element</li>
+<li>index (optional)</li>
+<li>array (optional)</li>
+<li>Return <code>undefined</code></li>
+<li>Iterate through at most the number of elements before iteration
+<ul>
+<li>If new elements are added, they may be iterated as long as their index is wihtin the original iteration range.</li>
+<li>If some elements are deleted, the iteration will not run into overflow issue.</li>
+</ul>
+</li>
+<li>Iterate the next element according to index</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">array1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">];</span>
+
+<span class="nx">array1</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">element</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">element</span><span class="p">));</span>
+
+<span class="c1">// expected output: &#34;a&#34;
+</span><span class="c1">// expected output: &#34;b&#34;
+</span><span class="c1">// expected output: &#34;c&#34;
+</span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">];</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">array</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;index &#34;</span> <span class="o">+</span> <span class="nx">index</span> <span class="o">+</span> <span class="s2">&#34; before: &#34;</span> <span class="o">+</span> <span class="nx">element</span> <span class="o">+</span> <span class="s2">&#34;, &#34;</span> <span class="o">+</span> <span class="nx">array</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">index</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">array</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;index &#34;</span> <span class="o">+</span> <span class="nx">index</span> <span class="o">+</span> <span class="s2">&#34; after:  &#34;</span> <span class="o">+</span> <span class="nx">element</span> <span class="o">+</span> <span class="s2">&#34;, &#34;</span> <span class="o">+</span> <span class="nx">array</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">// index 0 before: 0, 0,1,2
+</span><span class="c1">// index 0 after:  0, 0,1,2
+</span><span class="c1">// index 1 before: 1, 0,1,2
+</span><span class="c1">// index 1 after:  1, 0,10,1,2
+</span><span class="c1">// index 2 before: 1, 0,10,1,2
+</span><span class="c1">// index 2 after:  1, 0,10,1,2
+</span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>In the example, an element is added to the array, but the iteration only goes through three elements.</p>
+</li>
+<li>
+<p>Element <code>1</code> is iterated through twice, because it is the second element before the change, and then pushed to the third position after the change, and the iteration goes from second to third position, regardless of the added element.</p>
+</li>
+<li>
+<p>Elemented are passed by value (<a href="https://stackoverflow.com/a/31298343" target="_blank" rel="noopener noreffer">reference</a>)</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[{</span> <span class="nx">num</span> <span class="o">:</span> <span class="mi">1</span> <span class="p">},</span> <span class="p">{</span> <span class="nx">num</span> <span class="o">:</span> <span class="mi">2</span> <span class="p">},</span> <span class="p">{</span> <span class="nx">num</span> <span class="o">:</span> <span class="mi">3</span> <span class="p">}];</span>
+<span class="nx">arr</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">part</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// part and arr[index] point to the same object, so
+</span><span class="c1"></span>  <span class="c1">// changing the object that part points to also changes
+</span><span class="c1"></span>  <span class="c1">// the object that arr[index] points to
+</span><span class="c1"></span>  <span class="nx">part</span><span class="p">.</span><span class="nx">num</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="p">});</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span>
+<span class="c1">// [{ num : 4 }, { num : 4 }, { num : 4 }]
+</span><span class="c1"></span>
+<span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[{</span> <span class="nx">num</span> <span class="o">:</span> <span class="mi">1</span> <span class="p">},</span> <span class="p">{</span> <span class="nx">num</span> <span class="o">:</span> <span class="mi">2</span> <span class="p">},</span> <span class="p">{</span> <span class="nx">num</span> <span class="o">:</span> <span class="mi">3</span> <span class="p">}];</span>
+
+<span class="nx">arr</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">part</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// change part to point to a new object will
+</span><span class="c1"></span>  <span class="c1">// not change the objects stored in arr
+</span><span class="c1"></span>  <span class="nx">part</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="p">});</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span>
+<span class="c1">// [{ num : 1 }, { num : 2 }, { num : 3 }]
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="map">map()</h2>
+<ul>
+<li>Return a new array from the original array</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">array1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">];</span>
+
+<span class="c1">// pass a function to map
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">map1</span> <span class="o">=</span> <span class="nx">array1</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">map1</span><span class="p">);</span>
+<span class="c1">// expected output: Array [2, 8, 18, 32]
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="object">Object</h2>
+<ul>
+<li>Objects are data structures that store data, and help track of that data by keys.</li>
+<li>Objects have properties and methods.</li>
+<li><code>typeof</code> operator: return name of the data type</li>
+<li>Object-literal notation</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">umbrella</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span>
+  <span class="nx">isOpen</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nx">open</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">umbrella</span><span class="p">.</span><span class="nx">isOpen</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Data retrieval
+<ul>
+<li>Bracket notation: <code>umbrella['color']</code></li>
+<li>Dot notation: <code>umbrella.color</code></li>
+</ul>
+</li>
+<li>Naming conventions
+<ul>
+<li>Don&rsquo;t wrap property names in quotes.</li>
+<li>Special propery names can be put inside quotes. But they are not compatible with dot notations.</li>
+<li>Don&rsquo;t use numbers as first character as property names.</li>
+<li>Don&rsquo;t include space or <code>-</code> in property names.</li>
+<li>Use camel case for multi-word property names.</li>
+</ul>
+</li>
+</ul>
+<h2 id="reference">Reference:</h2>
+<p><a href="https://www.freecodecamp.org/learn/">https://www.freecodecamp.org/learn/</a>
+<a href="https://github.com/tuliren/javascript-notes">https://github.com/tuliren/javascript-notes</a></p>
+</div></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Shihao Miao</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><div>
+                    <span id="timeDate">Loading Days...</span><span id="times">Loading Times...</span>
+                    <script>
+                        var now = new Date();
+                        function createtime() {
+                            var grt= new Date("03/20/2019 00:00:00");
+                            now.setTime(now.getTime()+250);
+                            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+                            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+                            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+                            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+                            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+                            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+                            document.getElementById("timeDate").innerHTML = "This website has struggled in this world for "+dnum+" day ";
+                            document.getElementById("times").innerHTML = hnum + " hour " + mnum + " min " + snum + " sec";
+                        }
+                    setInterval("createtime()",250);
+                    </script>
+                    </div></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-1":"Home","id-2":"Home"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":30000,"speed":500}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

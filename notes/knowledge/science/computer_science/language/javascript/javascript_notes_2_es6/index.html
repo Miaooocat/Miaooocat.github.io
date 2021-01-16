@@ -1,0 +1,1652 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Javascript Notes 2 ES6 - Hi, Shihao</title><meta name="Description" content="Javascript"><meta property="og:title" content="Javascript Notes 2 ES6" />
+<meta property="og:description" content="Javascript" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://miaoshihao.com/notes/knowledge/science/computer_science/language/javascript/javascript_notes_2_es6/" />
+<meta property="og:image" content="http://miaoshihao.com/logo.png"/>
+<meta property="article:published_time" content="2021-01-11T11:58:26+08:00" />
+<meta property="article:modified_time" content="2021-01-11T11:58:26+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://miaoshihao.com/logo.png"/>
+
+<meta name="twitter:title" content="Javascript Notes 2 ES6"/>
+<meta name="twitter:description" content="Javascript"/>
+<meta name="application-name" content="Hi, Shihao">
+<meta name="apple-mobile-web-app-title" content="Hi, Shihao"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://miaoshihao.com/notes/knowledge/science/computer_science/language/javascript/javascript_notes_2_es6/" /><link rel="prev" href="http://miaoshihao.com/notes/knowledge/science/computer_science/language/javascript/javascript_notes_3_objectoriented/" /><link rel="next" href="http://miaoshihao.com/notes/knowledge/science/computer_science/language/javascript/javascript_notes_1_intro/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Javascript Notes 2 ES6",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/miaoshihao.com\/notes\/knowledge\/science\/computer_science\/language\/javascript\/javascript_notes_2_es6\/"
+        },"image": ["http:\/\/miaoshihao.com\/images\/Apple-Devices-Preview.png"],"genre": "notes","keywords": "Javascript","wordcount":  3683 ,
+        "url": "http:\/\/miaoshihao.com\/notes\/knowledge\/science\/computer_science\/language\/javascript\/javascript_notes_2_es6\/","datePublished": "2021-01-11T11:58:26+08:00","dateModified": "2021-01-11T11:58:26+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "http:\/\/miaoshihao.com\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Shihao"
+            },"description": "Javascript"
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Hi, Shihao"><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/knowledgemap/"> Knowledge Map </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/notes/"> Archives </a><a class="menu-item" href="/music/"> Music </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/notes/knowledge/science/computer_science/language/javascript/javascript_notes_2_es6/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>                
+                <a href="./robot/" class="menu-item chat-bot" title="">
+                    <i class="fas fa-robot fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Hi, Shihao"><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/knowledgemap/" title="">Knowledge Map</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/notes/" title="">Archives</a><a class="menu-item" href="/music/" title="">Music</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/notes/knowledge/science/computer_science/language/javascript/javascript_notes_2_es6/" selected>English</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="page single special"><h1 class="single-title animated pulse faster">Javascript Notes 2 ES6</h1><div class="content" id="content"><h1 id="javascript-es6">JavaScript ES6</h1>
+<p>ECMAScript is a standardized version of JavaScript with the goal of unifying the language&rsquo;s specifications and features. The term <strong>ECMAScript</strong> is interchangeable with the term <strong>JavaScript</strong>.</p>
+<h2 id="basic-syntax">Basic Syntax</h2>
+<h3 id="let-and-const"><code>let</code> and <code>const</code></h3>
+<ul>
+<li>Variables declared with <code>let</code> and <code>const</code> are scoped to the block<code>{ }</code>, not to the function.</li>
+<li>Variables declared with <code>let</code> and <code>const</code> can only be accessed after they have been declared.</li>
+<li>They eliminate issues from hoisting.</li>
+<li>Variables declared with <code>let</code> can be reassigned, but can’t be redeclared in the same scope.</li>
+<li>Variables declared with <code>const</code> can’t be redeclared, or reassigned in the same scope.</li>
+</ul>
+<h3 id="mutateble-const-object">Mutateble <code>const</code> object</h3>
+<ul>
+<li>Using the const declaration only prevents reassignment of the variable identifier. Value from the object can still be changed in the following method.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">s</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">];</span>
+<span class="nx">s</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span> <span class="c1">// throws error, trying to assign a const
+</span><span class="c1"></span><span class="nx">s</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">45</span><span class="p">;</span> <span class="c1">// works just as it would with an array declared with var or let
+</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span> <span class="c1">// returns [5, 6, 45]
+</span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>JavaScript also provides a function Object.freeze to prevent data mutation.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">name</span><span class="o">:</span><span class="s2">&#34;FreeCodeCamp&#34;</span><span class="p">,</span>
+  <span class="nx">review</span><span class="o">:</span><span class="s2">&#34;Awesome&#34;</span>
+<span class="p">};</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">freeze</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
+<span class="nx">obj</span><span class="p">.</span><span class="nx">review</span> <span class="o">=</span> <span class="s2">&#34;bad&#34;</span><span class="p">;</span> <span class="c1">// will be ignored. Mutation not allowed
+</span><span class="c1"></span><span class="nx">obj</span><span class="p">.</span><span class="nx">newProp</span> <span class="o">=</span> <span class="s2">&#34;Test&#34;</span><span class="p">;</span> <span class="c1">// will be ignored. Mutation not allowed
+</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span> 
+<span class="c1">// { name: &#34;FreeCodeCamp&#34;, review:&#34;Awesome&#34;}
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="destructuring">Destructuring</h3>
+<ul>
+<li>Data can be extracted from arrays and objects into distinct variables using destructuring.</li>
+</ul>
+<h4 id="from-array">From array</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">point</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="o">-</span><span class="mi">34</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">9</span><span class="p">];</span>
+
+<span class="c1">// destructuring
+</span><span class="c1"></span><span class="kr">const</span> <span class="p">[</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">z</span><span class="p">]</span> <span class="o">=</span> <span class="nx">point</span><span class="p">;</span>
+<span class="c1">// x: 10
+</span><span class="c1">// y: 25
+</span><span class="c1">// z: -34
+</span><span class="c1"></span>
+<span class="c1">// ignore y
+</span><span class="c1"></span><span class="kr">const</span> <span class="p">[</span> <span class="nx">x</span><span class="p">,</span> <span class="p">,</span> <span class="nx">z</span> <span class="p">]</span> <span class="o">=</span> <span class="nx">point</span><span class="p">;</span>
+<span class="c1">// x: 10
+</span><span class="c1">// z: -34
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="from-object">From object</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">gemstone</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;quartz&#39;</span><span class="p">,</span>
+  <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;rose&#39;</span><span class="p">,</span>
+  <span class="nx">carat</span><span class="o">:</span> <span class="mf">21.29</span>
+<span class="p">};</span>
+
+<span class="kr">const</span> <span class="p">{</span> <span class="nx">type</span><span class="p">,</span> <span class="nx">carat</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">gemstone</span><span class="p">;</span>
+<span class="c1">// type: quartz
+</span><span class="c1">// carat: 21.29
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="template-literals">Template literals</h3>
+<ul>
+<li>Template literals are string literals that include embedded expressions.</li>
+<li>Template literals in JavaScript are denoted with <strong>backticks</strong> ( ` ), and can template literals can contain placeholders which are represented using <code>${expression}</code>.</li>
+<li>Template literals can <strong>preserve newlines</strong> as part of the string.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;Zodiac Hasbro&#34;</span><span class="p">,</span>
+  <span class="nx">age</span><span class="o">:</span> <span class="mi">56</span>
+<span class="p">};</span>
+
+<span class="c1">// Template literal with multi-line and string interpolation
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">greeting</span> <span class="o">=</span> <span class="sb">`Hello, my name is </span><span class="si">${</span><span class="nx">person</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb">!
+</span><span class="sb">I am </span><span class="si">${</span><span class="nx">person</span><span class="p">.</span><span class="nx">age</span><span class="si">}</span><span class="sb"> years old.`</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">greeting</span><span class="p">);</span> <span class="c1">// prints
+</span><span class="c1">// Hello, my name is Zodiac Hasbro!
+</span><span class="c1">// I am 56 years old.
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="object-literal-shorthand">Object literal shorthand</h3>
+<ul>
+<li>If the properties have the same name as the variables being assigned to them in an object literal, variable names can be removed.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">type</span> <span class="o">=</span> <span class="s1">&#39;quartz&#39;</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">color</span> <span class="o">=</span> <span class="s1">&#39;rose&#39;</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">carat</span> <span class="o">=</span> <span class="mf">21.29</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">gemstone</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">type</span><span class="o">:</span> <span class="nx">type</span><span class="p">,</span>
+  <span class="nx">color</span><span class="o">:</span> <span class="nx">color</span><span class="p">,</span>
+  <span class="nx">carat</span><span class="o">:</span> <span class="nx">carat</span><span class="p">,</span>
+  <span class="nx">calculateWorth</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// ...
+</span><span class="c1"></span>  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// it is equivalent to
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">gemstone</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">type</span><span class="p">,</span>
+  <span class="nx">color</span><span class="p">,</span>
+  <span class="nx">carat</span><span class="p">,</span>
+  <span class="c1">// shorthand method name
+</span><span class="c1"></span>  <span class="nx">calculateWorth</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// ...
+</span><span class="c1"></span>  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="iteration">Iteration</h3>
+<ul>
+<li>Iterable protocol
+<ul>
+<li>Allow JavaScript objects to define or customize their iteration behavior.</li>
+</ul>
+</li>
+<li><code>for...of</code> loop
+<ul>
+<li>A loop that iterates over iterable objects.</li>
+</ul>
+</li>
+</ul>
+<h4 id="family-of-for-loops">Family of <code>for</code> loops</h4>
+<ul>
+<li><code>for</code> loop
+<ul>
+<li>Need to keep track of the counter and exit condition.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">digits</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">];</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">digits</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">digits</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>for...in</code> loop
+<ul>
+<li>Iterate with index.</li>
+<li>Loop over all enumerable properties, including any additional properties of the array&rsquo;s prototype.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span><span class="nx">fname</span><span class="o">:</span><span class="s2">&#34;John&#34;</span><span class="p">,</span> <span class="nx">lname</span><span class="o">:</span><span class="s2">&#34;Doe&#34;</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span><span class="mi">25</span><span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">text</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">x</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="nx">x</span> <span class="k">in</span> <span class="nx">person</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">text</span> <span class="o">+=</span> <span class="nx">person</span><span class="p">[</span><span class="nx">x</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>for...of</code> loop
+<ul>
+<li>Loop over any type of data that is iterable.</li>
+<li>Only loop over the values in the object.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">digits</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">];</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kr">const</span> <span class="nx">digit</span> <span class="k">of</span> <span class="nx">digits</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">digit</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// custom function won&#39;t be included
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="the-iterable-protocol">The <code>iterable</code> protocol</h4>
+<ul>
+<li>The <code>iterable</code> protocol is used for defining and customizing the iteration behavior of objects.</li>
+<li>Any object that is iterable can use the new <code>for...of</code> loop.</li>
+<li>For an object to be iterable, it must implement the <code>iterable</code> interface.
+<ul>
+<li>The iterator method is available via the constant <code>[Symbol.iterator]</code>.</li>
+<li>The iterator method is a zero argument function that returns an iterator object.</li>
+<li>An iterator object is an object that conforms to the iterator protocol.</li>
+</ul>
+</li>
+</ul>
+<h4 id="the-iterator-protocol">the <code>iterator</code> protocol</h4>
+<ul>
+<li>The <code>iterator</code> protocol is used to define a standard way that an object produces a sequence of values.</li>
+<li>This is done through implementing the <code>next()</code> method, a zero argument function that returns an object with two properties.
+<ul>
+<li><code>value</code>: the data representing the next value in the sequence of values within the object.</li>
+<li><code>done</code>: a boolean representing if the iterator is done going through the sequence of values.
+<ul>
+<li>If <code>done</code> is <code>true</code>, then the iterator has reached the end of its sequence of values.</li>
+<li>If <code>done</code> is <code>false</code>, then the iterator is able to produce another value in its sequence of values.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">digits</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">];</span>
+<span class="kr">const</span> <span class="nx">arrayIterator</span> <span class="o">=</span> <span class="nx">digits</span><span class="p">[</span><span class="nx">Symbol</span><span class="p">.</span><span class="nx">iterator</span><span class="p">]();</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arrayIterator</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span>
+<span class="c1">// Object {value: 0, done: false}
+</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arrayIterator</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span>
+<span class="c1">// Object {value: 1, done: false}
+</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arrayIterator</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span>
+<span class="c1">// Object {value: 2, done: false}
+</span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">randint</span> <span class="o">=</span> <span class="p">(</span><span class="nx">min</span><span class="p">,</span> <span class="nx">max</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="p">(</span><span class="nx">max</span> <span class="o">-</span> <span class="nx">min</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="o">+</span> <span class="nx">min</span><span class="p">;</span>
+
+<span class="nx">create_random</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">min</span><span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+    <span class="nx">max</span><span class="o">:</span> <span class="mi">90</span><span class="p">,</span>
+    <span class="nx">lenght</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="nx">create_random</span><span class="p">[</span><span class="nx">Symbol</span><span class="p">.</span><span class="nx">iterator</span><span class="p">]</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="nx">start</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nx">min</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">min</span><span class="p">,</span>
+        <span class="nx">max</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">max</span><span class="p">,</span>
+        <span class="nx">lenght</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">lenght</span><span class="p">,</span>
+        <span class="nx">next</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">start</span><span class="o">++</span><span class="p">;</span>
+            <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">start</span> <span class="o">&lt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">lenght</span> <span class="o">?</span> <span class="p">{</span>
+                <span class="nx">done</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="nx">value</span><span class="o">:</span> <span class="nx">randint</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">min</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">max</span><span class="p">)</span>
+            <span class="p">}</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="nx">done</span><span class="o">:</span> <span class="kc">true</span>
+            <span class="p">};</span>
+        <span class="p">}</span>
+    <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="kd">let</span> <span class="nx">array</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">from</span><span class="p">(</span><span class="nx">create_random</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">array</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="spread-operator">Spread operator</h3>
+<ul>
+<li>The spread operator (<code>...</code>) expands, or spreads, iterable objects into multiple elements.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">primes</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Set</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(...</span><span class="nx">primes</span><span class="p">);</span>
+<span class="c1">// 2 3 5 7
+</span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>This operator is useful for combining arrays.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;apples&#34;</span><span class="p">,</span> <span class="s2">&#34;bananas&#34;</span><span class="p">,</span> <span class="s2">&#34;pears&#34;</span><span class="p">];</span>
+<span class="kr">const</span> <span class="nx">vegetables</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;corn&#34;</span><span class="p">,</span> <span class="s2">&#34;potatoes&#34;</span><span class="p">,</span> <span class="s2">&#34;carrots&#34;</span><span class="p">];</span>
+
+<span class="kr">const</span> <span class="nx">produce</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">fruits</span><span class="p">,</span> <span class="p">...</span><span class="nx">vegetables</span><span class="p">];</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">45</span><span class="p">];</span>
+<span class="kr">const</span> <span class="nx">maximus</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(...</span><span class="nx">arr</span><span class="p">);</span> <span class="c1">// returns 89
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="rest-parameter">Rest parameter</h3>
+<ul>
+<li>The rest parameter (<code>...</code>) can represent an indefinite number of elements as an array.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">order</span> <span class="o">=</span> <span class="p">[</span><span class="mf">20.17</span><span class="p">,</span> <span class="mf">18.67</span><span class="p">,</span> <span class="s2">&#34;cheese&#34;</span><span class="p">,</span> <span class="s2">&#34;eggs&#34;</span><span class="p">];</span>
+<span class="kr">const</span> <span class="p">[</span><span class="nx">total</span><span class="p">,</span> <span class="nx">subtotal</span><span class="p">,</span> <span class="p">...</span><span class="nx">items</span><span class="p">]</span> <span class="o">=</span> <span class="nx">order</span><span class="p">;</span>
+<span class="c1">// total: 20.17
+</span><span class="c1">// subtotal: 18.67
+</span><span class="c1">// items: [&#34;cheese&#34;, &#34;eggs&#34;]
+</span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">howMany</span><span class="p">(...</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="s2">&#34;You have passed &#34;</span> <span class="o">+</span> <span class="nx">args</span><span class="p">.</span><span class="nx">length</span> <span class="o">+</span> <span class="s2">&#34; arguments.&#34;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">howMany</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span> 
+<span class="c1">// You have passed 3 arguments.
+</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">howMany</span><span class="p">(</span><span class="s2">&#34;string&#34;</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">{</span> <span class="p">}));</span> 
+<span class="c1">// You have passed 4 arguments.
+</span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Useful for defining variadic functions
+<ul>
+<li>Variadic functions are functions that take an indefinite number of arguments.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// define variadic function with arguments object
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">sum</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">for</span><span class="p">(</span><span class="kr">const</span> <span class="nx">argument</span> <span class="k">of</span> <span class="nx">arguments</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">total</span> <span class="o">+=</span> <span class="nx">argument</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">total</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// define variadic function with rest parameter
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">sum</span><span class="p">(...</span><span class="nx">nums</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">for</span><span class="p">(</span><span class="kr">const</span> <span class="nx">num</span> <span class="k">of</span> <span class="nx">nums</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">total</span> <span class="o">+=</span> <span class="nx">num</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">total</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="functions">Functions</h2>
+<h3 id="arrow-functions">Arrow functions</h3>
+<ul>
+<li>The full name is arrow function expressions, because arrow functions are always expressions.</li>
+<li>Valid cases
+<ul>
+<li>Stored in a variable,</li>
+<li>Passed as an argument to a function,</li>
+<li>Stored in an object&rsquo;s property.</li>
+</ul>
+</li>
+<li>Parameters
+<ul>
+<li>When there is only one parameter, the parentheses can be omitted.</li>
+<li>When there is zero or multiple parameters, the parentheses cannot be omitted.</li>
+</ul>
+</li>
+<li>Function body
+<ul>
+<li>Concise body syntax: when there is only a single expression, curly braces, <code>return</code>, and semi-colons can all be omitted.</li>
+<li>Block body syntax: when there is more than a single expression.</li>
+</ul>
+</li>
+</ul>
+<p>Parentheses and return statement can be omitted when using arrow notation.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">fn0</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">result</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">fn1</span> <span class="o">=</span> <span class="nx">_</span> <span class="p">=&gt;</span> <span class="nx">result</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">fn2</span> <span class="o">=</span> <span class="nx">singleParam</span> <span class="p">=&gt;</span> <span class="nx">result</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">fn3</span> <span class="o">=</span> <span class="p">(</span><span class="nx">param1</span><span class="p">,</span> <span class="nx">param2</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">result</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">fn4</span> <span class="o">=</span> <span class="p">(</span><span class="nx">param1</span><span class="p">,</span> <span class="nx">param2</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">myConcat1</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">arr1</span><span class="p">,</span> <span class="nx">arr2</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">arr1</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">arr2</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">myConcat2</span> <span class="o">=</span> <span class="p">(</span><span class="nx">arr1</span><span class="p">,</span> <span class="nx">arr2</span><span class="p">)</span> <span class="p">=&gt;</span>  <span class="nx">arr1</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">arr2</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myConcat1</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myConcat2</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]));</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>When not to use arrow functions
+<ul>
+<li>Arrow functions are only expressions. There is no arrow function declaration.</li>
+<li>There is a gotcha with the <code>this</code> keyword in arrow functions.</li>
+</ul>
+</li>
+</ul>
+<h4 id="this-and-regular-functions"><code>this</code> and regular functions</h4>
+<table>
+<thead>
+<tr>
+<th>Function Call</th>
+<th><code>this</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>With the <code>new</code> operator</td>
+<td>The new object</td>
+</tr>
+<tr>
+<td>With <code>call</code> / <code>apply</code></td>
+<td>Specified by <code>call</code> / <code>apply</code></td>
+</tr>
+<tr>
+<td>Method of an object</td>
+<td>The object the method is called from</td>
+</tr>
+<tr>
+<td>With no context</td>
+<td>- In non-strict mode: the global object<br/>- In strict mode: <code>undefined</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="this-and-arrow-functions"><code>this</code> and arrow functions</h4>
+<ul>
+<li><code>this</code> is based on the function&rsquo;s surrounding context.</li>
+<li>The value of <code>this</code> inside an arrow function is the same as the value of <code>this</code> outside the function.</li>
+</ul>
+<h3 id="default-function-parameters">Default function parameters</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">fn1</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">param1</span> <span class="o">=</span> <span class="s1">&#39;defaultValue1&#39;</span><span class="p">,</span> <span class="nx">param2</span> <span class="o">=</span> <span class="s1">&#39;defaultValue2&#39;</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="defaults-and-destructuring-arrays">Defaults and destructuring arrays</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">createGrid</span><span class="p">([</span><span class="nx">width</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="nx">height</span> <span class="o">=</span> <span class="mi">5</span><span class="p">])</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="sb">`Generates a </span><span class="si">${</span><span class="nx">width</span><span class="si">}</span><span class="sb"> x </span><span class="si">${</span><span class="nx">height</span><span class="si">}</span><span class="sb"> grid`</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">createGrid</span><span class="p">([]);</span>             <span class="c1">// Generates a 5 x 5 grid
+</span><span class="c1"></span><span class="nx">createGrid</span><span class="p">([</span><span class="mi">2</span><span class="p">]);</span>            <span class="c1">// Generates a 2 x 5 grid
+</span><span class="c1"></span><span class="nx">createGrid</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>         <span class="c1">// Generates a 2 x 3 grid
+</span><span class="c1"></span><span class="nx">createGrid</span><span class="p">([</span><span class="kc">undefined</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span> <span class="c1">// Generates a 5 x 3 grid
+</span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>The <code>createGrid()</code> function expects an array to be passed to it.</li>
+<li>It uses destructuring to set the first and second items in the array.</li>
+<li>If the array is empty or if it has only one item in it, then the default parameters kick in.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">createGrid</span><span class="p">();</span>               <span class="c1">// throws an error
+</span><span class="c1"></span>
+<span class="kd">function</span> <span class="nx">createGrid</span><span class="p">([</span><span class="nx">width</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="nx">height</span> <span class="o">=</span> <span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">[])</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="sb">`Generates a </span><span class="si">${</span><span class="nx">width</span><span class="si">}</span><span class="sb"> x </span><span class="si">${</span><span class="nx">height</span><span class="si">}</span><span class="sb"> grid`</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">createGrid</span><span class="p">();</span>               <span class="c1">// Generates a 5 x 5 grid
+</span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>The function expects an array to be passed in for destructuring.
+<ul>
+<li>Pass in non-array arguments will result in error.</li>
+<li>Pass in an array, and then other arguments is fine.</li>
+</ul>
+</li>
+<li>When no parameter is passed in, it throws an error.</li>
+<li>With <code>= []</code>, if <code>createGrid()</code> is called without any argument, it will use this default empty array.</li>
+</ul>
+<h4 id="defaults-and-destructuring-objects">Defaults and destructuring objects</h4>
+<ul>
+<li>A function can have an object be a default parameter and use object destructuring.</li>
+<li>An advantage of object defaults over array defaults is that it is easier to skip a parameter.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">createSundae</span><span class="p">({</span><span class="nx">scoops</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">toppings</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Hot Fudge&#39;</span><span class="p">]})</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">scoopText</span> <span class="o">=</span> <span class="nx">scoops</span> <span class="o">===</span> <span class="mi">1</span> <span class="o">?</span> <span class="s1">&#39;scoop&#39;</span> <span class="o">:</span> <span class="s1">&#39;scoops&#39;</span><span class="p">;</span>
+  <span class="k">return</span> <span class="sb">`Your sundae has </span><span class="si">${</span><span class="nx">scoops</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">scoopText</span><span class="si">}</span><span class="sb"> with </span><span class="si">${</span><span class="nx">toppings</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39; and &#39;</span><span class="p">)</span><span class="si">}</span><span class="sb"> toppings.`</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">createSundae</span><span class="p">({});</span>
+<span class="c1">// Your sundae has 1 scoop with Hot Fudge toppings.
+</span><span class="c1"></span><span class="nx">createSundae</span><span class="p">({</span><span class="nx">scoops</span><span class="o">:</span> <span class="mi">2</span><span class="p">});</span>
+<span class="c1">// Your sundae has 2 scoops with Hot Fudge toppings.
+</span><span class="c1"></span><span class="nx">createSundae</span><span class="p">({</span><span class="nx">scoops</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">toppings</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;Sprinkles&#39;</span><span class="p">]});</span>
+<span class="c1">// Your sundae has 2 scoops with Sprinkles toppings.
+</span><span class="c1"></span><span class="nx">createSundae</span><span class="p">({</span><span class="nx">toppings</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;Cookie Dough&#39;</span><span class="p">]});</span>
+<span class="c1">// Your sundae has 1 scoop with Cookie Dough toppings.
+</span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>The same issue applies to calling <code>createSundae</code> without any argument.</li>
+<li>Use <code>{scoops = 1, toppings = ['Hot Fudge']} = {}</code> to specify a default object value.</li>
+</ul>
+<h3 id="javascript-class">JavaScript class</h3>
+<ul>
+<li>JavaScript classes are just a thin mirage over regular functions and prototypal inheritance.
+<ul>
+<li>The constructor function is called with the new keyword.</li>
+<li>The constructor function, by convention, starts with a capital letter.</li>
+<li>The constructor function controls the setting of data on the objects that will be created.</li>
+<li>&ldquo;Inherited&rdquo; methods are placed on the constructor function&rsquo;s prototype object.</li>
+</ul>
+</li>
+</ul>
+<h4 id="es5-classes">ES5 classes</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">Plane</span><span class="p">(</span><span class="nx">numEngines</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">numEngines</span> <span class="o">=</span> <span class="nx">numEngines</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">enginesActive</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">Plane</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">startEngines</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;starting engines...&#39;</span><span class="p">);</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">enginesActive</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="es6-classes">ES6 classes</h4>
+<ul>
+<li>ES6 provides a new <code>class</code> syntax.</li>
+<li>A <code>class</code> is just a function.</li>
+<li>When creating a new instance, the <code>new</code> keyword must be used. Otherwise, an error will be thrown.</li>
+<li>Use keyword <code>static</code> to mark a method as static.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">class</span> <span class="nx">Plane</span> <span class="p">{</span>
+  <span class="c1">// everything inside the constructor function
+</span><span class="c1"></span>  <span class="c1">// is inside the new constructor method
+</span><span class="c1"></span>  <span class="nx">constructor</span><span class="p">(</span><span class="nx">numEngines</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">numEngines</span> <span class="o">=</span> <span class="nx">numEngines</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">enginesActive</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="c1">// methods are placed inside the class
+</span><span class="c1"></span>  <span class="nx">startEngines</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;starting engines…&#39;</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">enginesActive</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">typeof</span> <span class="nx">Plane</span><span class="p">;</span> <span class="c1">// function
+</span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Benefits of classes
+<ul>
+<li>Less setup</li>
+<li>Clearly defined constructor function</li>
+<li>Everything is contained</li>
+</ul>
+</li>
+</ul>
+<h3 id="es6-subclasses">ES6 subclasses</h3>
+<ul>
+<li>Use <code>super</code> and <code>extends</code> to extend a class.</li>
+<li>In the constructor function, <code>super</code> must be called before <code>this</code> can be used.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// ES6 version
+</span><span class="c1"></span>
+<span class="kr">class</span> <span class="nx">Tree</span> <span class="p">{</span>
+  <span class="nx">constructor</span><span class="p">(</span><span class="nx">size</span> <span class="o">=</span> <span class="s1">&#39;10&#39;</span><span class="p">,</span> <span class="nx">leaves</span> <span class="o">=</span> <span class="p">{</span><span class="nx">spring</span><span class="o">:</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="nx">summer</span><span class="o">:</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="nx">fall</span><span class="o">:</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="nx">winter</span><span class="o">:</span> <span class="kc">null</span><span class="p">})</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">size</span> <span class="o">=</span> <span class="nx">size</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">leaves</span> <span class="o">=</span> <span class="nx">leaves</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">leafColor</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nx">changeSeason</span><span class="p">(</span><span class="nx">season</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">leafColor</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">leaves</span><span class="p">[</span><span class="nx">season</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">season</span> <span class="o">===</span> <span class="s1">&#39;spring&#39;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">size</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kr">class</span> <span class="nx">Maple</span> <span class="kr">extends</span> <span class="nx">Tree</span> <span class="p">{</span>
+  <span class="nx">constructor</span><span class="p">(</span><span class="nx">syrupQty</span> <span class="o">=</span> <span class="mi">15</span><span class="p">,</span> <span class="nx">size</span><span class="p">,</span> <span class="nx">leaves</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// super as a function
+</span><span class="c1"></span>    <span class="kr">super</span><span class="p">(</span><span class="nx">size</span><span class="p">,</span> <span class="nx">leaves</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">syrupQty</span> <span class="o">=</span> <span class="nx">syrupQty</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nx">changeSeason</span><span class="p">(</span><span class="nx">season</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// super as an object
+</span><span class="c1"></span>    <span class="kr">super</span><span class="p">.</span><span class="nx">changeSeason</span><span class="p">(</span><span class="nx">season</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">season</span> <span class="o">===</span> <span class="s1">&#39;spring&#39;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">syrupQty</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="nx">gatherSyrup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">syrupQty</span> <span class="o">-=</span> <span class="mi">3</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// ES5 version
+</span><span class="c1"></span>
+<span class="kd">function</span> <span class="nx">Tree</span><span class="p">(</span><span class="nx">size</span><span class="p">,</span> <span class="nx">leaves</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">size</span> <span class="o">=</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">size</span> <span class="o">===</span> <span class="s2">&#34;undefined&#34;</span><span class="p">)</span><span class="o">?</span> <span class="mi">10</span> <span class="o">:</span> <span class="nx">size</span><span class="p">;</span>
+  <span class="kr">const</span> <span class="nx">defaultLeaves</span> <span class="o">=</span> <span class="p">{</span><span class="nx">spring</span><span class="o">:</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="nx">summer</span><span class="o">:</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="nx">fall</span><span class="o">:</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="nx">winter</span><span class="o">:</span> <span class="kc">null</span><span class="p">};</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">leaves</span> <span class="o">=</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">leaves</span> <span class="o">===</span> <span class="s2">&#34;undefined&#34;</span><span class="p">)</span><span class="o">?</span>  <span class="nx">defaultLeaves</span> <span class="o">:</span> <span class="nx">leaves</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">leafColor</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">Tree</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">changeSeason</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">season</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">leafColor</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">leaves</span><span class="p">[</span><span class="nx">season</span><span class="p">];</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">season</span> <span class="o">===</span> <span class="s1">&#39;spring&#39;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">size</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">Maple</span> <span class="p">(</span><span class="nx">syrupQty</span><span class="p">,</span> <span class="nx">size</span><span class="p">,</span> <span class="nx">leaves</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">Tree</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">size</span><span class="p">,</span> <span class="nx">leaves</span><span class="p">);</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">syrupQty</span> <span class="o">=</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">syrupQty</span> <span class="o">===</span> <span class="s2">&#34;undefined&#34;</span><span class="p">)</span><span class="o">?</span> <span class="mi">15</span> <span class="o">:</span> <span class="nx">syrupQty</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">Maple</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">Tree</span><span class="p">.</span><span class="nx">prototype</span><span class="p">);</span>
+<span class="c1">// maple&#39;s prototype has been overwritten, so
+</span><span class="c1">// the constructor property and the original
+</span><span class="c1">// constructor function needs to be reconnected
+</span><span class="c1"></span><span class="nx">Maple</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">constructor</span> <span class="o">=</span> <span class="nx">Maple</span><span class="p">;</span>
+
+<span class="nx">Maple</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">changeSeason</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">season</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">Tree</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">changeSeason</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">season</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">season</span> <span class="o">===</span> <span class="s1">&#39;spring&#39;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">syrupQty</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">Maple</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">gatherSyrup</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">syrupQty</span> <span class="o">-=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="built-ins">Built-ins</h3>
+<h4 id="symbols">Symbols</h4>
+<ul>
+<li>A symbol is a unique and immutable data type that is often used to identify object properties.</li>
+<li>To create a symbol, write <code>Symbol()</code> with an optional string as its description.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">sym1</span> <span class="o">=</span> <span class="nx">Symbol</span><span class="p">(</span><span class="s1">&#39;apple&#39;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sym1</span><span class="p">);</span>
+<span class="c1">// Symbol(apple)
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="uniqueness">Uniqueness</h4>
+<ul>
+<li>Each time a new symbol is created, regardless of the description.</li>
+<li>The description is only used to describe the symbol. It’s not used as part of the symbol itself.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">sym2</span> <span class="o">=</span> <span class="nx">Symbol</span><span class="p">(</span><span class="s1">&#39;banana&#39;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">sym3</span> <span class="o">=</span> <span class="nx">Symbol</span><span class="p">(</span><span class="s1">&#39;banana&#39;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sym2</span> <span class="o">===</span> <span class="nx">sym3</span><span class="p">);</span>
+<span class="c1">// false
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="use-case">Use case</h4>
+<ul>
+<li>It is most often used to uniquely identify properties within an object.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// use string as property keys, and the
+</span><span class="c1">// second banana overwrites the first one
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">bowl</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">&#39;apple&#39;</span><span class="o">:</span> <span class="p">{</span> <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="nx">weight</span><span class="o">:</span> <span class="mf">136.078</span> <span class="p">},</span>
+  <span class="s1">&#39;banana&#39;</span><span class="o">:</span> <span class="p">{</span> <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="nx">weight</span><span class="o">:</span> <span class="mf">183.151</span> <span class="p">},</span>
+  <span class="s1">&#39;orange&#39;</span><span class="o">:</span> <span class="p">{</span> <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="nx">weight</span><span class="o">:</span> <span class="mf">170.097</span> <span class="p">},</span>
+  <span class="s1">&#39;banana&#39;</span><span class="o">:</span> <span class="p">{</span> <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="nx">weight</span><span class="o">:</span> <span class="mf">176.845</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// use symbol as property keys,
+</span><span class="c1">// and each symbol is unique
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">bowl</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="p">[</span><span class="nx">Symbol</span><span class="p">(</span><span class="s1">&#39;apple&#39;</span><span class="p">)]</span><span class="o">:</span> <span class="p">{</span> <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="nx">weight</span><span class="o">:</span> <span class="mf">136.078</span> <span class="p">},</span>
+  <span class="p">[</span><span class="nx">Symbol</span><span class="p">(</span><span class="s1">&#39;banana&#39;</span><span class="p">)]</span><span class="o">:</span> <span class="p">{</span> <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="nx">weight</span><span class="o">:</span> <span class="mf">183.15</span> <span class="p">},</span>
+  <span class="p">[</span><span class="nx">Symbol</span><span class="p">(</span><span class="s1">&#39;orange&#39;</span><span class="p">)]</span><span class="o">:</span> <span class="p">{</span> <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="nx">weight</span><span class="o">:</span> <span class="mf">170.097</span> <span class="p">},</span>
+  <span class="p">[</span><span class="nx">Symbol</span><span class="p">(</span><span class="s1">&#39;banana&#39;</span><span class="p">)]</span><span class="o">:</span> <span class="p">{</span> <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="nx">weight</span><span class="o">:</span> <span class="mf">176.845</span> <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="set"><code>Set</code></h3>
+<ul>
+<li>Sets are not indexed-based.</li>
+<li>Items in a <code>Set</code> cannot be accessed individually.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// create
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">set1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Set</span><span class="p">()</span>
+<span class="kr">const</span> <span class="nx">set2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Set</span><span class="p">(</span><span class="nx">array</span><span class="p">)</span>
+
+<span class="c1">// modify
+</span><span class="c1"></span><span class="nx">set1</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">element</span><span class="p">);</span>    <span class="c1">// return the set itself
+</span><span class="c1"></span><span class="nx">set2</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="nx">element</span><span class="p">);</span> <span class="c1">// return true or false
+</span><span class="c1"></span>
+<span class="c1">// delete
+</span><span class="c1"></span><span class="nx">set1</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
+
+<span class="c1">// check length
+</span><span class="c1"></span><span class="nx">set1</span><span class="p">.</span><span class="nx">size</span><span class="p">;</span>
+
+<span class="c1">// check element existence
+</span><span class="c1"></span><span class="nx">set2</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">element</span><span class="p">);</span>
+
+<span class="c1">// retrieve all values
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">iterator1</span> <span class="o">=</span> <span class="nx">set1</span><span class="p">.</span><span class="nx">keys</span><span class="p">();</span>   <span class="c1">// return a SetIterator
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">iterator2</span> <span class="o">=</span> <span class="nx">set1</span><span class="p">.</span><span class="nx">values</span><span class="p">();</span> <span class="c1">// return a SetIterator
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="weakset"><code>WeakSet</code></h4>
+<ul>
+<li>A normal <code>Set</code> with the following differences:
+<ul>
+<li><code>WeakSet</code> only contains objects.</li>
+<li>Not iterable and thus cannot be looped over.</li>
+<li>Does not have a <code>.clear()</code> method.</li>
+</ul>
+</li>
+<li>When an object is deleted, it will also be deleted from the <code>WeakSet</code>
+when garbage collection runs.</li>
+<li><code>WeakSet</code> is useful when there needs an efficient, lightweight solution for creating groups of objects.</li>
+</ul>
+<h3 id="map"><code>Map</code></h3>
+<ul>
+<li>Both the keys and the values can be objects, primitive values, or a combination of the two.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Map</span><span class="p">();</span>
+<span class="nx">map</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">);</span> <span class="c1">// return the map itself
+</span><span class="c1"></span><span class="nx">map</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span>
+<span class="nx">map</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span>     <span class="c1">// return true or false
+</span><span class="c1"></span><span class="nx">map</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
+<span class="nx">map</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="looping-through-map">Looping through <code>Map</code></h4>
+<ul>
+<li>Default <code>MapIterator</code></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">iterator1</span> <span class="o">=</span> <span class="nx">map</span><span class="p">.</span><span class="nx">keys</span><span class="p">();</span>
+<span class="nx">iterator1</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+
+<span class="kr">const</span> <span class="nx">iterator2</span> <span class="o">=</span> <span class="nx">map</span><span class="p">.</span><span class="nx">values</span><span class="p">();</span>
+<span class="nx">iterator2</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>for...of</code> loop</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="k">for</span> <span class="p">(</span><span class="kr">const</span> <span class="p">[</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">]</span> <span class="k">of</span> <span class="nx">map</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// ...
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>forEach</code> loop</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">map</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">value</span><span class="p">,</span> <span class="nx">key</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">fn</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">key</span><span class="p">));</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="weakmap"><code>WeakMap</code></h4>
+<ul>
+<li>A normal <code>Map</code> with the following differences:
+<ul>
+<li>Only contain objects as keys.</li>
+<li>Not iterable.</li>
+<li>Does not have a <code>.clear()</code> method.</li>
+</ul>
+</li>
+<li>When an object is deleted, the object key will also be deleted from the WeakMap when garbage collection runs.</li>
+</ul>
+<h3 id="promises">Promises</h3>
+<ul>
+<li>
+<p>A promise will start some work that will be done asynchronously.</p>
+</li>
+<li>
+<p>A Promise constructor takes a function with two functions.</p>
+<ul>
+<li>When the promise succeeds, the <code>resolve</code> function will be called.</li>
+<li>When the promise fails, the <code>reject</code> function will be called.</li>
+</ul>
+</li>
+<li>
+<p>A promise returns immediately.</p>
+</li>
+<li>
+<p>The promise object has a <code>.then()</code> method that takes in the <code>resolve</code> and <code>reject</code> functions.</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">promise</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">successful</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">resolve</span><span class="p">(</span><span class="nx">arguments</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">reject</span><span class="p">(</span><span class="s1">&#39;Promise failed&#39;</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">promise</span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">params</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Succeed: </span><span class="si">${</span><span class="nx">params</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="p">},</span> <span class="p">(</span><span class="nx">errorMessage</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">errorMessage</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="proxies">Proxies</h3>
+<ul>
+<li><code>Proxy</code> constructor takes in two items:
+<ul>
+<li>The object to be proxied.</li>
+<li>The proxy handler object.
+<ul>
+<li>It contains the list of methods it will handle for the proxied object.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Pass through proxy
+<ul>
+<li><code>new Proxy(object, {})</code></li>
+<li>It just passes the request directly to the source object.</li>
+</ul>
+</li>
+</ul>
+<h4 id="get-trap"><code>get</code> trap</h4>
+<ul>
+<li>Intercept calls to properties.</li>
+<li>Take over whenever any property on the proxy is accessed.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">richard</span> <span class="o">=</span> <span class="p">{</span><span class="nx">status</span><span class="o">:</span> <span class="s1">&#39;looking for work&#39;</span><span class="p">};</span>
+<span class="kr">const</span> <span class="nx">handler</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="cm">/**
+</span><span class="cm">   * @param target   the proxied object (richard)
+</span><span class="cm">   * @param propName the name of the property being accessed (status)
+</span><span class="cm">   */</span>
+  <span class="nx">get</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span> <span class="nx">propName</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">target</span><span class="p">[</span><span class="nx">propName</span><span class="p">];</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+<span class="kr">const</span> <span class="nx">agent</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Proxy</span><span class="p">(</span><span class="nx">richard</span><span class="p">,</span> <span class="nx">handler</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="set-trap"><code>set</code> trap</h4>
+<ul>
+<li>Intercepting code that will change a property.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">richard</span> <span class="o">=</span> <span class="p">{</span><span class="nx">status</span><span class="o">:</span> <span class="s1">&#39;looking for work&#39;</span><span class="p">};</span>
+<span class="kr">const</span> <span class="nx">handler</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="cm">/**
+</span><span class="cm">   * @param target   the proxied object (richard)
+</span><span class="cm">   * @param propName the name of the property being modified (payRate)
+</span><span class="cm">   * @param value    the new value to be set to propName (payRate)
+</span><span class="cm">   */</span>
+  <span class="nx">set</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span> <span class="nx">propName</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// if the pay is being set, take 15% as commission
+</span><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">propName</span> <span class="o">===</span> <span class="s1">&#39;payRate&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">value</span> <span class="o">=</span> <span class="nx">value</span> <span class="o">*</span> <span class="mf">0.85</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">target</span><span class="p">[</span><span class="nx">propName</span><span class="p">]</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+<span class="kr">const</span> <span class="nx">agent</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Proxy</span><span class="p">(</span><span class="nx">richard</span><span class="p">,</span> <span class="nx">handler</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="all-traps">All traps</h4>
+<ul>
+<li><code>get</code> trap: handle calls to property access.</li>
+<li><code>set</code> trap: handle setting the property to a new value.</li>
+<li><code>apply</code> trap: handle being invoked (the object being proxied is a function).</li>
+<li><code>has</code> trap: handle the using in operator.</li>
+<li><code>deleteProperty</code> trap: handle if a property is deleted.</li>
+<li><code>ownKeys</code> trap: handle when all keys are requested.</li>
+<li><code>construct</code> trap: handle when the proxy is used with the new keyword as a constructor.</li>
+<li><code>defineProperty</code> trap: handle when defineProperty is used to create a new property on the object.</li>
+<li><code>getOwnPropertyDescriptor</code> trap: handle getting the property&rsquo;s descriptors.</li>
+<li><code>preventExtenions</code> trap: handle calls to Object.preventExtensions() on the proxy object.</li>
+<li><code>isExtensible</code> trap: handle calls to Object.isExtensible on the proxy object.</li>
+<li><code>getPrototypeOf</code> trap: handle calls to Object.getPrototypeOf on the proxy object.</li>
+<li><code>setPrototypeOf</code> trap: handle calls to Object.setPrototypeOf on the proxy object.</li>
+</ul>
+<h4 id="proxies-vs-es5-getter--setter">Proxies vs ES5 getter / setter</h4>
+<ul>
+<li>With ES5&rsquo;s getter and setter methods, you need to know before hand the properties that are going to be get/set.</li>
+<li>With ES6 Proxies, we do not need to know the properties beforehand.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">_age</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+  <span class="nx">_height</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
+
+  <span class="nx">get</span> <span class="nx">age</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`getting the &#34;age&#34; property`</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_age</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="nx">get</span> <span class="nx">height</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`getting the &#34;height&#34; property`</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_height</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">obj</span><span class="p">.</span><span class="nx">age</span><span class="p">;</span>    <span class="c1">// logs &#39;getting the &#34;age&#34; property&#39; &amp; 5
+</span><span class="c1"></span><span class="nx">obj</span><span class="p">.</span><span class="nx">height</span><span class="p">;</span> <span class="c1">// logs &#39;getting the &#34;height&#34; property&#39; &amp; 4
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="generators">Generators</h3>
+<ul>
+<li>Use a generator to be able to pause a function mid-execution.
+<ul>
+<li><code>function* name() { ... }</code></li>
+</ul>
+</li>
+<li>The asterisk of the generator can be placed anywhere between the <code>function</code> keyword and the function name.</li>
+<li>The community has coalesced into having the asterisk appear right next to the <code>function</code> keyword.</li>
+<li>Generators cannot be defined with fat arrow functions.</li>
+<li>Every call to <code>next()</code> will
+<ul>
+<li>Fulfill the previous yield expression if there is any;</li>
+<li>Return the value following the next <code>yield</code>;</li>
+<li>Pause at the same next <code>yield</code> statement.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span><span class="o">*</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`function starts`</span><span class="p">);</span>
+  <span class="c1">// the first next() returns 123 and pause here
+</span><span class="c1"></span>  <span class="kr">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">(</span><span class="k">yield</span> <span class="mi">123</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`a: </span><span class="si">${</span><span class="nx">a</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+  <span class="c1">// the second next(456) replace (yield 123) with 456,
+</span><span class="c1"></span>  <span class="c1">// and assign it to a, print out a&#39;s value, and pause here
+</span><span class="c1"></span>  <span class="k">yield</span> <span class="nx">a</span><span class="p">;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`function ends`</span><span class="p">);</span>
+  <span class="c1">// the third next() will print out the statement,
+</span><span class="c1"></span>  <span class="c1">// and return undefined
+</span><span class="c1"></span><span class="p">}</span>
+
+<span class="kr">const</span> <span class="nx">iterator</span> <span class="o">=</span> <span class="nx">foo</span><span class="p">();</span>
+<span class="nx">iterator</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+<span class="c1">// function starts
+</span><span class="c1">// { value: 123, done: false }
+</span><span class="c1"></span>
+<span class="nx">iterator</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="mi">456</span><span class="p">);</span>
+<span class="c1">// a: 456
+</span><span class="c1">// { value: 456, done: false }
+</span><span class="c1"></span>
+<span class="nx">iterator</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+<span class="c1">// function ends
+</span><span class="c1">// { value: undefined, done: false }
+</span></code></pre></td></tr></table>
+</div>
+</div><p>Reference:
+<a href="https://www.freecodecamp.org/learn/">https://www.freecodecamp.org/learn/</a>
+<a href="https://github.com/tuliren/javascript-notes">https://github.com/tuliren/javascript-notes</a></p>
+</div></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Shihao Miao</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><div>
+                    <span id="timeDate">Loading Days...</span><span id="times">Loading Times...</span>
+                    <script>
+                        var now = new Date();
+                        function createtime() {
+                            var grt= new Date("03/20/2019 00:00:00");
+                            now.setTime(now.getTime()+250);
+                            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+                            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+                            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+                            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+                            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+                            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+                            document.getElementById("timeDate").innerHTML = "This website has struggled in this world for "+dnum+" day ";
+                            document.getElementById("times").innerHTML = hnum + " hour " + mnum + " min " + snum + " sec";
+                        }
+                    setInterval("createtime()",250);
+                    </script>
+                    </div></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-1":"Home","id-2":"Home"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":30000,"speed":500}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

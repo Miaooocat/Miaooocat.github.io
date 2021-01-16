@@ -118,13 +118,31 @@ The basic principle is that beans define their dependencies (i.e. the other obje
     </item>
     
     <item>
-      <title>Javascript Notes 2 ES6</title>
-      <link>http://miaoshihao.com/notes/knowledge/science/computer_science/language/javascript/javascript_notes_es6/</link>
+      <title>Javascript Notes 1 Intro</title>
+      <link>http://miaoshihao.com/notes/knowledge/science/computer_science/language/javascript/javascript_notes_1_intro/</link>
       <pubDate>Mon, 11 Jan 2021 11:58:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/language/javascript/javascript_notes_es6/</guid>
+      <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/language/javascript/javascript_notes_1_intro/</guid>
+      <description>History of JavaScript  LiveScript -&amp;gt; JavaScript ECMAScript (ES5, ES6)  ECMAScript (ES) is a scripting-language specification standardized by Ecma International. It was created to standardize JavaScript. JavaScript has remained the best-known implementation of ECMAScript.   ECMAScript (ES2016, ES2017)  HTML, CSS vs JavaScript  HTML and CSS  Markup language used to describe and define elements within a document.   JavaScript  Programming language used to communicate instructions to a machine.</description>
+    </item>
+    
+    <item>
+      <title>Javascript Notes 2 ES6</title>
+      <link>http://miaoshihao.com/notes/knowledge/science/computer_science/language/javascript/javascript_notes_2_es6/</link>
+      <pubDate>Mon, 11 Jan 2021 11:58:26 +0800</pubDate>
+      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
+      <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/language/javascript/javascript_notes_2_es6/</guid>
       <description>JavaScript ES6 ECMAScript is a standardized version of JavaScript with the goal of unifying the language&amp;rsquo;s specifications and features. The term ECMAScript is interchangeable with the term JavaScript.
 Basic Syntax let and const  Variables declared with let and const are scoped to the block{ }, not to the function. Variables declared with let and const can only be accessed after they have been declared. They eliminate issues from hoisting. Variables declared with let can be reassigned, but can’t be redeclared in the same scope.</description>
+    </item>
+    
+    <item>
+      <title>Javascript Notes 3 Object Oriented</title>
+      <link>http://miaoshihao.com/notes/knowledge/science/computer_science/language/javascript/javascript_notes_3_objectoriented/</link>
+      <pubDate>Mon, 11 Jan 2021 11:58:26 +0800</pubDate>
+      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
+      <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/language/javascript/javascript_notes_3_objectoriented/</guid>
+      <description>Object Oriented Programming Creating objects 1 2 3 4 5  // Using literal notation: const myObject = {}; // Using the Object() constructor function: const myObject = new Object();    Both methods return an object without properties. The Object() constructor function is a bit slower. The recommended way to create new objects in JavaScript is to use literal notation.  Modifying properties  Data within objects are mutable.</description>
     </item>
     
     <item>
