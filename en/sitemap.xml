@@ -39,15 +39,6 @@
             <loc>http://miaoshihao.com/notes/computerscience/language/java/java_notes_7_anonymouse_class/</loc><lastmod>2019-07-26T22:50:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/notes/computerscience/language/java/java_jdbc/</loc><lastmod>2019-08-27T20:58:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/notes/computerscience/language/java/java_notes_8_file_io/</loc><lastmod>2019-07-27T09:58:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://miaoshihao.com/notes/computerscience/mobiledevelopement/deeplink/</loc><lastmod>2019-10-02T20:50:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://miaoshihao.com/zh-cn/notes/computerscience/mobiledevelopement/deeplink/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="http://miaoshihao.com/notes/computerscience/mobiledevelopement/deeplink/"
-                    /></url><url>
             <loc>http://miaoshihao.com/notes/computerscience/language/java/java_maven/</loc><lastmod>2019-08-24T22:50:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
@@ -167,7 +158,6 @@
                     hreflang="en"
                     href="http://miaoshihao.com/music/"
                     /></url><url>
-            <loc>http://miaoshihao.com/categories/java-language/</loc><lastmod>2019-10-02T20:50:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/tags/database/</loc><lastmod>2019-08-27T20:58:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/tags/jdbc/</loc><lastmod>2019-08-27T20:58:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/notes/computerscience/language/java/java_notes_0_reference/</loc><lastmod>2019-06-12T15:58:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>
