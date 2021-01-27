@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Network - Hi, Shihao</title><meta name="Description" content="Computer Science"><meta property="og:title" content="Network" />
+<meta property="og:description" content="Computer Science" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://miaoshihao.com/notes/computerscience/middleware/network/network_overview/" />
+<meta property="og:image" content="http://miaoshihao.com/logo.png"/>
+<meta property="article:published_time" content="2020-12-11T19:32:26+08:00" />
+<meta property="article:modified_time" content="2020-12-11T19:32:26+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://miaoshihao.com/logo.png"/>
+
+<meta name="twitter:title" content="Network"/>
+<meta name="twitter:description" content="Computer Science"/>
+<meta name="application-name" content="Hi, Shihao">
+<meta name="apple-mobile-web-app-title" content="Hi, Shihao"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://miaoshihao.com/notes/computerscience/middleware/network/network_overview/" /><link rel="prev" href="http://miaoshihao.com/notes/computerscience/framework/spring/spring/spring_overview/" /><link rel="next" href="http://miaoshihao.com/notes/computerscience/language/javascript/javascript_notes_1_intro/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Network",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/miaoshihao.com\/notes\/computerscience\/middleware\/network\/network_overview\/"
+        },"image": ["http:\/\/miaoshihao.com\/images\/Apple-Devices-Preview.png"],"genre": "notes","keywords": "Network","wordcount":  376 ,
+        "url": "http:\/\/miaoshihao.com\/notes\/computerscience\/middleware\/network\/network_overview\/","datePublished": "2020-12-11T19:32:26+08:00","dateModified": "2020-12-11T19:32:26+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "http:\/\/miaoshihao.com\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Shihao"
+            },"description": "Computer Science"
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Hi, Shihao"><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/categories/"> Notes </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/notes/"> Archives </a><a class="menu-item" href="/music/"> Music </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/notes/computerscience/middleware/network/network_overview/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>                
+                
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Hi, Shihao"><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/categories/" title="">Notes</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/notes/" title="">Archives</a><a class="menu-item" href="/music/" title="">Music</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/notes/computerscience/middleware/network/network_overview/" selected>English</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Network</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Shihao</a></span>&nbsp;<span class="post-category">included in <a href="/categories/computer-science/"><i class="far fa-folder fa-fw"></i>Computer Science</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-12-11">2020-12-11</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;376 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#osi-model"><strong>OSI Model</strong></a></li>
+    <li><a href="#tcpip-model">TCP/IP Model</a></li>
+    <li><a href="#ip">IP</a></li>
+    <li><a href="#tcp-vs-udp-protocol">TCP vs UDP Protocol</a></li>
+    <li><a href="#socket">Socket</a></li>
+    <li><a href="#java-implementation">Java Implementation</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="osi-model"><strong>OSI Model</strong></h2>
+<p>The Open Systems Interconnection (OSI) model is a conceptual model created by the International Organization for Standardization which enables diverse communication systems to communicate using standard protocols.</p>
+<table class="alt"> 
+<tbody><tr> 
+  <th id="table_layer"><strong>Layer</strong></th> 
+  <th id="table_Protocol_data_unit"><strong>Protocol data unit (PDU)</strong></th> 
+  <th id="table_function"><strong>Function</strong></th> 
+</tr> 
+<tr> 
+<td headers="table_layer">Application (应用层)</td> 
+<td headers="table_Protocol_data_unit">Data</td> 
+<td headers="table_function">High-level APIs, including resource sharing, remote file access, ex: HTTP, HTTPS,FTP,SSH and etc..</td> 
+</tr> 
+<tr> 
+<td headers="table_layer">Presentation (表示层)</td> 
+<td headers="table_Protocol_data_unit">Data</td> 
+<td headers="table_function">Translation of data between a networking service and an application; including character encoding, data compression and encryption/decryption</td> 
+</tr> 
+<tr> 
+<td headers="table_layer">Session(会话层)</td> 
+<td headers="table_Protocol_data_unit">Data</td> 
+<td headers="table_function">Managing communication sessions, i.e., continuous exchange of information in the form of multiple back-and-forth transmissions between two nodes</td> 
+</tr> 
+<tr> 
+<td headers="table_layer">Transport(传输层)</td> 
+<td headers="table_Protocol_data_unit">Segment,Datagram</td> 
+<td headers="table_function">Reliable transmission of data segments between points on a network, including segmentation, acknowledgement and multiplexing, ex: TCP</td> 
+</tr> 
+<tr> 
+<td headers="table_layer">Network (网络层)</td> 
+<td headers="table_Protocol_data_unit">Packet</td> 
+<td headers="table_function">	Structuring and managing a multi-node network, including addressing, routing and traffic control, ex: IP</td> 
+</tr> 
+<tr> 
+<td headers="table_layer">Data link (数据链路层)</td> 
+<td headers="table_Protocol_data_unit">Frame</td> 
+<td headers="table_function">Reliable transmission of data frames between two nodes connected by a physical layer</td> 
+</tr> 
+<tr> 
+<td headers="table_layer">Physical (物理层)</td> 
+<td headers="table_Protocol_data_unit">Bit, Symbol</td> 
+<td headers="table_function">Transmission and reception of raw bit streams over a physical medium，ex: electricity</td> 
+</tr> 
+</tbody></table>
+<h2 id="tcpip-model">TCP/IP Model</h2>
+<p>The TCP/IP model is a concise version of the OSI model. It only contains four layers.</p>
+ <table class="alt"> 
+<tbody><tr> 
+  <th id="table_layer"><strong>Layer</strong></th> 
+  <th id="table_Protocol_data_unit"><strong>Protocol data unit (PDU)</strong></th> 
+  <th id="table_function"><strong>Function</strong></th> 
+</tr> 
+<tr> 
+<td headers="table_layer">Application (应用层)</td> 
+<td headers="table_Protocol_data_unit">Data</td> 
+<td headers="table_function">High-level APIs, including resource sharing, remote file access, ex: HTTP, HTTPS,FTP,SSH and etc..</td> 
+</tr> 
+<tr> 
+<td headers="table_layer">Transport (传输层)</td> 
+<td headers="table_Protocol_data_unit">Segment</td> 
+<td headers="table_function">Translation of data between a networking service and an application; including character encoding, data compression and encryption/decryption</td> 
+</tr> 
+<tr> 
+<td headers="table_layer">Internet Layer(网络互连层)</td> 
+<td headers="table_Protocol_data_unit"></td> 
+<td headers="table_function">Managing communication sessions, i.e., continuous exchange of information in the form of multiple back-and-forth transmissions between two nodes</td> 
+</tr> 
+<tr> 
+<td headers="table_layer">Network Access</td> 
+<td headers="table_Protocol_data_unit">Packet</td> 
+<td headers="table_function">WIFI</td> 
+</tr> 
+</tbody></table>
+<p>In both model, the upper layer only communicates with the one layer that below it. All the data from application layer is wrapped in each layer, and transmitted, and then unwrapped.</p>
+<h2 id="ip">IP</h2>
+<p>IP is a unique number assigned to a node of a network</p>
+<h2 id="tcp-vs-udp-protocol">TCP vs UDP Protocol</h2>
+<p>TCP is a connection-oriented protocol, once a connection is established, data is sent bidirectional.</p>
+<ul>
+<li>Bank Transcation is through TCP</li>
+</ul>
+<p>UDP is a connectionless protocol。 Data comes with no sequencing. UDP is faster, but information does not guarantee delivery.</p>
+<ul>
+<li>Game/Vido is with UDP connection</li>
+</ul>
+<h2 id="socket">Socket</h2>
+<p>Network programming often related to socket. A network socket is a software structure within a network node of a computer network that serves as an endpoint for sending and receiving data across the network.</p>
+<h2 id="java-implementation">Java Implementation</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[Java Network Implementation](http://miaoshihao.com/notes/computerscience/language/java/java_notes_13_networking/)
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2020-12-11</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/notes/computerscience/middleware/network/network_overview/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/network/">Network</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/notes/computerscience/framework/spring/spring/spring_overview/" class="prev" rel="prev" title="Spring Framework Notes - Overview"><i class="fas fa-angle-left fa-fw"></i>Spring Framework Notes - Overview</a>
+            <a href="/notes/computerscience/language/javascript/javascript_notes_1_intro/" class="next" rel="next" title="Javascript Notes 1 Intro">Javascript Notes 1 Intro<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Shihao Miao</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><div>
+                    <span id="timeDate">Loading Days...</span><span id="times">Loading Times...</span>
+                    <script>
+                        var now = new Date();
+                        function createtime() {
+                            var grt= new Date("03/20/2019 00:00:00");
+                            now.setTime(now.getTime()+250);
+                            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+                            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+                            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+                            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+                            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+                            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+                            document.getElementById("timeDate").innerHTML = "This website has struggled in this world for "+dnum+" day ";
+                            document.getElementById("times").innerHTML = hnum + " hour " + mnum + " min " + snum + " sec";
+                        }
+                    setInterval("createtime()",250);
+                    </script>
+                    </div></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-1":"\u003e$ cd /home/ ","id-2":"\u003e$ cd /home/ "},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":" |","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":500}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

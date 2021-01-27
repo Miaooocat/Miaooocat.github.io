@@ -6,10 +6,10 @@
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
             <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 27 Aug 2019 20:58:26 &#43;0800</lastBuildDate><atom:link href="http://miaoshihao.com/tags/database/" rel="self" type="application/rss+xml" /><item>
     <title>JDBC Notes</title>
-    <link>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_jdbc/</link>
+    <link>http://miaoshihao.com/notes/computerscience/language/java/java_jdbc/</link>
     <pubDate>Tue, 27 Aug 2019 20:58:26 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/knowledge/science/computer_science/language/java/java_jdbc/</guid>
+    <guid>http://miaoshihao.com/notes/computerscience/language/java/java_jdbc/</guid>
     <description><![CDATA[Common Database URL JDBC Database URL for MySQL Driver class name: com.mysql.jdbc.Driver
 Format of database URL:
 1 2 3 4 5  jdbc:mysql://<sup>host][,failoverhost...][:port</sup>/<sub>database</sub>[?propertyName1][=propertyValue1][&amp;propertyName2][=propertyValue2]... Examples: jdbc:mysql://localhost:3306/test jdbc:mysql://localhost:3306/test?user=root&amp;password=secret   JDBC Database URL for Oracle Driver class name: oracle.jdbc.OracleDriver Format of database URL:

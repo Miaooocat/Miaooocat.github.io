@@ -1,128 +1,80 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Notes on Hi, Shihao</title>
-    <link>http://miaoshihao.com/zh-cn/notes/</link>
-    <description>Recent content in Notes on Hi, Shihao</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
-    <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster>
-    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Tue, 19 Jan 2021 19:50:26 +0800</lastBuildDate>
-    
-	<atom:link href="http://miaoshihao.com/zh-cn/notes/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>洞穴奇案</title>
-      <link>http://miaoshihao.com/zh-cn/notes/wisdom/critical_thinking/%E6%B4%9E%E7%A9%B4%E5%A5%87%E6%A1%88/</link>
-      <pubDate>Tue, 19 Jan 2021 19:50:26 +0800</pubDate>
-      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/zh-cn/notes/wisdom/critical_thinking/%E6%B4%9E%E7%A9%B4%E5%A5%87%E6%A1%88/</guid>
-      <description>故事背景 五名探险家进入一个洞穴。然后发生山崩，挡住了他们所知的唯一洞口。一支营救队伍火速赶往出事地点，在拯救过程中，一次山崩更夺走了十名营救</description>
-    </item>
-    
-    <item>
-      <title>哲学家们都干了什么</title>
-      <link>http://miaoshihao.com/zh-cn/notes/knowledge/humanity/philosophy/%E5%93%B2%E5%AD%A6%E5%AE%B6%E9%83%BD%E5%B9%B2%E4%BA%86%E4%BB%80%E4%B9%88/</link>
-      <pubDate>Sat, 16 Jan 2021 15:31:26 +0800</pubDate>
-      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/zh-cn/notes/knowledge/humanity/philosophy/%E5%93%B2%E5%AD%A6%E5%AE%B6%E9%83%BD%E5%B9%B2%E4%BA%86%E4%BB%80%E4%B9%88/</guid>
-      <description>公元前4世纪，苏格拉底用自己的赴死开启了人类对万物质疑的理性之门。他与柏拉图还有亚里士多德为西方文明埋下了理性，批判还有科学的种子。这颗种子</description>
-    </item>
-    
-    <item>
-      <title>投资定位</title>
-      <link>http://miaoshihao.com/zh-cn/notes/knowledge/science/finance/investment/investor_positioning/</link>
-      <pubDate>Fri, 17 Jul 2020 19:32:26 +0800</pubDate>
-      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/zh-cn/notes/knowledge/science/finance/investment/investor_positioning/</guid>
-      <description>投资定位 MindMap 投资定位 价值投资 投资周期：数年 &amp;ndash; 养老基金 与公司共同成长 &amp;ndash; 具有成长性 有盈利能力及稳定回报 &amp;ndash; 股息收益分摊持有成本 价格投机 趋势交易(Tr</description>
-    </item>
-    
-    <item>
-      <title>财报学习--Beneish Model</title>
-      <link>http://miaoshihao.com/zh-cn/notes/knowledge/science/finance/investment/beneish_model/</link>
-      <pubDate>Fri, 17 Jul 2020 19:32:26 +0800</pubDate>
-      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/zh-cn/notes/knowledge/science/finance/investment/beneish_model/</guid>
-      <description>The Beneish model is a mathematical model that uses financial ratios and eight variables to identify whether a company has manipulated its earnings. It is used as a tool to uncover potential financial fraud. However, the result generated from beneish model can not be the evidence. The variables are constructed from the data in the company&amp;rsquo;s financial statements, and once calculated, create an M-Score to describe the degree to which</description>
-    </item>
-    
-    <item>
-      <title>Deep Linking</title>
-      <link>http://miaoshihao.com/zh-cn/notes/knowledge/science/computer_science/mobiledevelopement/deeplink/</link>
-      <pubDate>Fri, 10 Jul 2020 09:50:16 +0800</pubDate>
-      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/zh-cn/notes/knowledge/science/computer_science/mobiledevelopement/deeplink/</guid>
-      <description>Deeplink，简单讲，就是你在手机上点击一个链接之后，可以直接链接到app内部的某个页面，而不是app正常打开时显示的首页。不似web，</description>
-    </item>
-    
-    <item>
-      <title>HTTPS</title>
-      <link>http://miaoshihao.com/zh-cn/notes/knowledge/science/computer_science/web/https_principle/</link>
-      <pubDate>Thu, 02 Jul 2020 19:51:00 +0800</pubDate>
-      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/zh-cn/notes/knowledge/science/computer_science/web/https_principle/</guid>
-      <description>我们为什么需要HTTPS？ HTTPS是什么？SSL/TLS是什么？ SSL/TLS发展史 SSL/TLS的工作原理 什么是HTTP HTTP协议(H</description>
-    </item>
-    
-    <item>
-      <title>Spring Framework Notes - Beans, BeanFactory and the ApplicationContext</title>
-      <link>http://miaoshihao.com/zh-cn/notes/knowledge/science/computer_science/framework/spring/spring/spring_bean/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/zh-cn/notes/knowledge/science/computer_science/framework/spring/spring/spring_bean/</guid>
-      <description>Bean Bean represents as an objects in Java. Bean need to contain the following points:
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>所有notes - Hi, Shihao</title>
+        <link>http://miaoshihao.com/zh-cn/notes/</link>
+        <description>所有notes | Hi, Shihao</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
+            <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 19 Jan 2021 19:50:26 &#43;0800</lastBuildDate><atom:link href="http://miaoshihao.com/zh-cn/notes/" rel="self" type="application/rss+xml" /><item>
+    <title>洞穴奇案</title>
+    <link>http://miaoshihao.com/zh-cn/notes/bookreview/%E6%B4%9E%E7%A9%B4%E5%A5%87%E6%A1%88/</link>
+    <pubDate>Tue, 19 Jan 2021 19:50:26 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://miaoshihao.com/zh-cn/notes/bookreview/%E6%B4%9E%E7%A9%B4%E5%A5%87%E6%A1%88/</guid>
+    <description><![CDATA[故事背景 五名探险家进入一个洞穴。然后发生山崩，挡住了他们所知的唯一洞口。一支营救队伍火速赶往出事地点，在拯救过程中，一次山崩更夺走了十名营救]]></description>
+</item><item>
+    <title>哲学家们都干了什么</title>
+    <link>http://miaoshihao.com/zh-cn/notes/bookreview/%E5%93%B2%E5%AD%A6%E5%AE%B6%E9%83%BD%E5%B9%B2%E4%BA%86%E4%BB%80%E4%B9%88/</link>
+    <pubDate>Sat, 16 Jan 2021 15:31:26 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://miaoshihao.com/zh-cn/notes/bookreview/%E5%93%B2%E5%AD%A6%E5%AE%B6%E9%83%BD%E5%B9%B2%E4%BA%86%E4%BB%80%E4%B9%88/</guid>
+    <description><![CDATA[公元前4世纪，苏格拉底用自己的赴死开启了人类对万物质疑的理性之门。他与柏拉图还有亚里士多德为西方文明埋下了理性，批判还有科学的种子。这颗种子]]></description>
+</item><item>
+    <title>投资定位</title>
+    <link>http://miaoshihao.com/zh-cn/notes/finance/investment/investor_positioning/</link>
+    <pubDate>Fri, 17 Jul 2020 19:32:26 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://miaoshihao.com/zh-cn/notes/finance/investment/investor_positioning/</guid>
+    <description><![CDATA[投资定位 MindMap 投资定位 价值投资 投资周期：数年 &ndash; 养老基金 与公司共同成长 &ndash; 具有成长性 有盈利能力及稳定回报 &ndash; 股息收益分摊持有成本 价格投机 趋势交易(Tr]]></description>
+</item><item>
+    <title>财报学习--Beneish Model</title>
+    <link>http://miaoshihao.com/zh-cn/notes/finance/investment/beneish_model/</link>
+    <pubDate>Fri, 17 Jul 2020 19:32:26 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://miaoshihao.com/zh-cn/notes/finance/investment/beneish_model/</guid>
+    <description><![CDATA[The Beneish model is a mathematical model that uses financial ratios and eight variables to identify whether a company has manipulated its earnings. It is used as a tool to uncover potential financial fraud. However, the result generated from beneish model can not be the evidence. The variables are constructed from the data in the company&rsquo;s financial statements, and once calculated, create an M-Score to describe the degree to which]]></description>
+</item><item>
+    <title>Deep Linking</title>
+    <link>http://miaoshihao.com/zh-cn/notes/computerscience/mobiledevelopement/deeplink/</link>
+    <pubDate>Fri, 10 Jul 2020 09:50:16 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://miaoshihao.com/zh-cn/notes/computerscience/mobiledevelopement/deeplink/</guid>
+    <description><![CDATA[Deeplink，简单讲，就是你在手机上点击一个链接之后，可以直接链接到app内部的某个页面，而不是app正常打开时显示的首页。不似web，]]></description>
+</item><item>
+    <title>HTTPS</title>
+    <link>http://miaoshihao.com/zh-cn/notes/computerscience/web/https_principle/</link>
+    <pubDate>Thu, 02 Jul 2020 19:51:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://miaoshihao.com/zh-cn/notes/computerscience/web/https_principle/</guid>
+    <description><![CDATA[我们为什么需要HTTPS？ HTTPS是什么？SSL/TLS是什么？ SSL/TLS发展史 SSL/TLS的工作原理 什么是HTTP HTTP协议(H]]></description>
+</item><item>
+    <title>Spring Framework Notes - Beans, BeanFactory and the ApplicationContext</title>
+    <link>http://miaoshihao.com/zh-cn/notes/computerscience/framework/spring/spring/spring_bean/</link>
+    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>http://miaoshihao.com/zh-cn/notes/computerscience/framework/spring/spring/spring_bean/</guid>
+    <description><![CDATA[Bean Bean represents as an objects in Java. Bean need to contain the following points:
 The Bean class The class attribute in bean is normally mandatory. The creation of bean object is through BeanFactory. It has three approaches.
-The first approach is where the BeanFactory itself directly creates the bean by calling its constructor (equivalent to Java code calling new), the class attribute specifies the class of the bean to be constructed.</description>
-    </item>
-    
-    <item>
-      <title>财报基础理解</title>
-      <link>http://miaoshihao.com/zh-cn/notes/knowledge/science/finance/investment/financialreport/</link>
-      <pubDate>Thu, 17 Dec 2020 19:32:26 +0800</pubDate>
-      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/zh-cn/notes/knowledge/science/finance/investment/financialreport/</guid>
-      <description>财报的意义 对价值投资者来说，通过财报，通过财报能够部分得出一下结论 判断公司过去“画的饼”完成了多少，未来如何”画饼“！ 判断股价，现阶段，是否</description>
-    </item>
-    
-    <item>
-      <title>仓位控制</title>
-      <link>http://miaoshihao.com/zh-cn/notes/knowledge/science/finance/investment/positionsizing/</link>
-      <pubDate>Fri, 17 Jul 2020 19:32:26 +0800</pubDate>
-      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/zh-cn/notes/knowledge/science/finance/investment/positionsizing/</guid>
-      <description>仓位控制 仓位管理 为什么要管理仓位 提升容错空间 预留补救余地 正股仓位控制 仓位划分 轻仓 &amp;lt; 30% 重仓 &amp;gt; 60% 建仓方法 估值思维 价格接近合理估值 多仓位分配 大幅高</description>
-    </item>
-    
-    <item>
-      <title>标普的11个板块和ETF</title>
-      <link>http://miaoshihao.com/zh-cn/notes/knowledge/science/finance/investment/sp500_11sections/</link>
-      <pubDate>Sun, 27 Dec 2020 19:32:26 +0800</pubDate>
-      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/zh-cn/notes/knowledge/science/finance/investment/sp500_11sections/</guid>
-      <description>周期性的板块 容易受到货币政策，政府政策，季节性需求变化影响 行业发展和经济周期密切相关 Energy 能源：XLE Materials 材料：XLB Industrial 工业：XLI Financial 金融 ：XLF</description>
-    </item>
-    
-    <item>
-      <title>认识流行的ETF</title>
-      <link>http://miaoshihao.com/zh-cn/notes/knowledge/science/finance/investment/etf/</link>
-      <pubDate>Sun, 27 Dec 2020 19:32:26 +0800</pubDate>
-      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/zh-cn/notes/knowledge/science/finance/investment/etf/</guid>
-      <description>什么是ETF? 交易所交易基金，能在二级市场公开买卖的基金 ETF种类 &amp;ndash; 按投资标的划分 股票：比如SPY (标普500指数基金) 货币：比如UUP(美</description>
-    </item>
-    
-    <item>
-      <title>Maven</title>
-      <link>http://miaoshihao.com/zh-cn/notes/knowledge/science/computer_science/language/java/java_maven/</link>
-      <pubDate>Sat, 24 Aug 2019 22:50:26 +0800</pubDate>
-      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/zh-cn/notes/knowledge/science/computer_science/language/java/java_maven/</guid>
-      <description>Check English Version</description>
-    </item>
-    
-  </channel>
+The first approach is where the BeanFactory itself directly creates the bean by calling its constructor (equivalent to Java code calling new), the class attribute specifies the class of the bean to be constructed.]]></description>
+</item><item>
+    <title>财报基础理解</title>
+    <link>http://miaoshihao.com/zh-cn/notes/finance/investment/financialreport/</link>
+    <pubDate>Thu, 17 Dec 2020 19:32:26 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://miaoshihao.com/zh-cn/notes/finance/investment/financialreport/</guid>
+    <description><![CDATA[财报的意义 对价值投资者来说，通过财报，通过财报能够部分得出一下结论 判断公司过去“画的饼”完成了多少，未来如何”画饼“！ 判断股价，现阶段，是否]]></description>
+</item><item>
+    <title>仓位控制</title>
+    <link>http://miaoshihao.com/zh-cn/notes/finance/investment/positionsizing/</link>
+    <pubDate>Fri, 17 Jul 2020 19:32:26 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://miaoshihao.com/zh-cn/notes/finance/investment/positionsizing/</guid>
+    <description><![CDATA[仓位控制 仓位管理 为什么要管理仓位 提升容错空间 预留补救余地 正股仓位控制 仓位划分 轻仓 &lt; 30% 重仓 &gt; 60% 建仓方法 估值思维 价格接近合理估值 多仓位分配 大幅高]]></description>
+</item><item>
+    <title>标普的11个板块和ETF</title>
+    <link>http://miaoshihao.com/zh-cn/notes/finance/investment/sp500_11sections/</link>
+    <pubDate>Sun, 27 Dec 2020 19:32:26 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://miaoshihao.com/zh-cn/notes/finance/investment/sp500_11sections/</guid>
+    <description><![CDATA[周期性的板块 容易受到货币政策，政府政策，季节性需求变化影响 行业发展和经济周期密切相关 Energy 能源：XLE Materials 材料：XLB Industrial 工业：XLI Financial 金融 ：XLF]]></description>
+</item></channel>
 </rss>
