@@ -35,6 +35,14 @@
     <description><![CDATA[The Beneish model is a mathematical model that uses financial ratios and eight variables to identify whether a company has manipulated its earnings. It is used as a tool to uncover potential financial fraud. However, the result generated from beneish model can not be the evidence.
 The variables are constructed from the data in the company&rsquo;s financial statements, and once calculated, create an M-Score to describe the degree to which the earnings have been manipulated.]]></description>
 </item><item>
+    <title>Bootstrap</title>
+    <link>http://miaoshihao.com/notes/computerscience/web/bootstrap/</link>
+    <pubDate>Thu, 02 Jul 2020 19:51:00 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/computerscience/web/bootstrap/</guid>
+    <description><![CDATA[Introduction Bootstrap is a free front-end framework that provide designed template for typography, forms, buttons, tables, navigation, modals, image carousels and many other, as well as optional JavaScript plugins. Bootstrap gives the ability to easily create responsive designs.
+How to use Bootstrap 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  &lt;!DOCTYPE html&gt; &lt;html lang=&#34;en&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;utf-8&#34;&gt; &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1, shrink-to-fit=no&#34;&gt; &lt;title&gt;Basic Bootstrap Template&lt;/title&gt; &lt;!]]></description>
+</item><item>
     <title>Java8 Stream </title>
     <link>http://miaoshihao.com/notes/computerscience/language/java/java8_notes_stream/</link>
     <pubDate>Wed, 02 Oct 2019 20:50:26 &#43;0800</pubDate>
@@ -77,14 +85,5 @@ Optional class Declartion 1 2  public final class Optional&lt;T&gt; extends Obje
 Platform: Any hardware or software environment in which a program runs, is known as a platform. Since Java has its own runtime environment (JRE) and Application Programming Interface (API), it is called platform.
 Features of Java :   Simple:
  User friendly syntax based on C++ It has Automatic Garbage Collection It has Rich set of APIs Removed confusing features - explicit pointers, operator overloading, multiple inheritance, etc    Object-oriented:]]></description>
-</item><item>
-    <title>Spring Framework Notes - Beans, BeanFactory and the ApplicationContext</title>
-    <link>http://miaoshihao.com/notes/computerscience/framework/spring/spring/spring_bean/</link>
-    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>http://miaoshihao.com/notes/computerscience/framework/spring/spring/spring_bean/</guid>
-    <description><![CDATA[Bean Bean represents as an objects in Java. Bean need to contain the following points:
-The Bean class The class attribute in bean is normally mandatory. The creation of bean object is through BeanFactory. It has three approaches.
-The first approach is where the BeanFactory itself directly creates the bean by calling its constructor (equivalent to Java code calling new), the class attribute specifies the class of the bean to be constructed.]]></description>
 </item></channel>
 </rss>

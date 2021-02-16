@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Web - Tag - Hi, Shihao</title>
+        <link>http://miaoshihao.com/tags/web/</link>
+        <description>Web - Tag - Hi, Shihao</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
+            <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 02 Jul 2020 19:51:00 &#43;0800</lastBuildDate><atom:link href="http://miaoshihao.com/tags/web/" rel="self" type="application/rss+xml" /><item>
+    <title>Bootstrap</title>
+    <link>http://miaoshihao.com/notes/computerscience/web/bootstrap/</link>
+    <pubDate>Thu, 02 Jul 2020 19:51:00 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/computerscience/web/bootstrap/</guid>
+    <description><![CDATA[Introduction Bootstrap is a free front-end framework that provide designed template for typography, forms, buttons, tables, navigation, modals, image carousels and many other, as well as optional JavaScript plugins. Bootstrap gives the ability to easily create responsive designs.
+How to use Bootstrap 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  &lt;!DOCTYPE html&gt; &lt;html lang=&#34;en&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;utf-8&#34;&gt; &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1, shrink-to-fit=no&#34;&gt; &lt;title&gt;Basic Bootstrap Template&lt;/title&gt; &lt;!]]></description>
+</item></channel>
+</rss>
