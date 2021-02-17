@@ -2,8 +2,9 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
+            <loc>http://miaoshihao.com/zh-cn/blogs/bookreview/%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A/</loc><lastmod>2021-02-16T20:05:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>http://miaoshihao.com/zh-cn/blogs/bookreview/%E4%BA%B2%E5%AF%86%E5%85%B3%E7%B3%BB/</loc><lastmod>2021-02-15T19:05:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://miaoshihao.com/zh-cn/blogs/bookreview/%E6%B4%9E%E7%A9%B4%E5%A5%87%E6%A1%88/</loc><lastmod>2021-01-19T19:50:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>http://miaoshihao.com/zh-cn/blogs/bookreview/%E6%B4%9E%E7%A9%B4%E5%A5%87%E6%A1%88/</loc><lastmod>2021-01-19T19:50:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
             <loc>http://miaoshihao.com/zh-cn/blogs/bookreview/%E5%93%B2%E5%AD%A6%E5%AE%B6%E9%83%BD%E5%B9%B2%E4%BA%86%E4%BB%80%E4%B9%88/</loc><lastmod>2021-01-16T15:31:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
             <loc>http://miaoshihao.com/zh-cn/notes/finance/investment/investor_positioning/</loc><lastmod>2020-07-17T19:32:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/zh-cn/notes/finance/investment/beneish_model/</loc><lastmod>2020-07-17T19:32:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
@@ -39,8 +40,8 @@
                     hreflang="zh-cn"
                     href="http://miaoshihao.com/zh-cn/notes/computerscience/language/java/java_maven/"
                     /></url><url>
-            <loc>http://miaoshihao.com/zh-cn/blogs/</loc><lastmod>2021-02-15T19:05:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://miaoshihao.com/zh-cn/categories/</loc><lastmod>2021-02-15T19:05:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://miaoshihao.com/zh-cn/blogs/</loc><lastmod>2021-02-16T20:05:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://miaoshihao.com/zh-cn/categories/</loc><lastmod>2021-02-16T20:05:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://miaoshihao.com/categories/"
@@ -49,7 +50,7 @@
                     hreflang="zh-cn"
                     href="http://miaoshihao.com/zh-cn/categories/"
                     /></url><url>
-            <loc>http://miaoshihao.com/zh-cn/</loc><lastmod>2021-02-15T19:05:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://miaoshihao.com/zh-cn/</loc><lastmod>2021-02-16T20:05:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://miaoshihao.com/"
@@ -58,7 +59,7 @@
                     hreflang="zh-cn"
                     href="http://miaoshihao.com/zh-cn/"
                     /></url><url>
-            <loc>http://miaoshihao.com/zh-cn/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc><lastmod>2021-02-15T19:05:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://miaoshihao.com/zh-cn/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc><lastmod>2021-02-16T20:05:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>http://miaoshihao.com/zh-cn/tags/investment/</loc><lastmod>2020-12-27T19:32:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/zh-cn/categories/investment/</loc><lastmod>2020-12-27T19:32:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
