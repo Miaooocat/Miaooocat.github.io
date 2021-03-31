@@ -1,4 +1,4 @@
-# Spring Framework Notes - Beans, BeanFactory and the ApplicationContext
+# Spring Framework Notes 2 - Beans, BeanFactory and the ApplicationContext
 
 
 ## Bean
@@ -26,7 +26,7 @@ The class attribute in bean is normally **mandatory**. The creation of bean obje
       factory-method="createInstance"/>
 ```
 
-**The third approach** is to call an **instance factory method**. The xml file need specify the factory bean as well.
+**The third approach** is to call an **instance factory method**. This method combined above two approaches. The xml file need specify the factory bean as well.
 
 ```xml
 <!-- The factory bean, which contains a method called

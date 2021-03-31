@@ -20,12 +20,21 @@
     <description><![CDATA[OSI Model The Open Systems Interconnection (OSI) model is a conceptual model created by the International Organization for Standardization which enables diverse communication systems to communicate using standard protocols.
  Layer Protocol data unit (PDU) Function   Application (应用层) Data High-level APIs, including resource sharing, remote file access, ex: HTTP, HTTPS,FTP,SSH and etc..   Presentation (表示层) Data Translation of data between a networking service and an application; including character encoding, data compression and encryption/decryption   Session(会话层) Data Managing communication sessions, i.]]></description>
 </item><item>
+    <title>Difference in Spring and Spring Boot</title>
+    <link>http://miaoshihao.com/notes/computerscience/framework/spring/springboot/</link>
+    <pubDate>Thu, 20 Aug 2020 22:50:21 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/computerscience/framework/spring/springboot/</guid>
+    <description><![CDATA[Spring Boot is an extension of the Spring framework which eliminated the boilerplate configurations required for setting up a Spring application. This notes highlight the difference between Spring Boot and Spring.
+Maven Dependencies Spring looks minimum dependencies required to create an web application.
+1 2 3 4 5 6 7 8 9 10  &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-web&lt;/artifactId&gt; &lt;version&gt;5.2.9.RELEASE&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt; &lt;version&gt;5.2.9.RELEASE&lt;/version&gt; &lt;/dependency&gt;   Spring Boot requires only one dependency:]]></description>
+</item><item>
     <title>Spring Framework Notes - Overview</title>
     <link>http://miaoshihao.com/notes/computerscience/framework/spring/spring/spring_overview/</link>
     <pubDate>Mon, 20 Jul 2020 22:50:21 &#43;0800</pubDate>
     <author>Author</author>
     <guid>http://miaoshihao.com/notes/computerscience/framework/spring/spring/spring_overview/</guid>
-    <description><![CDATA[ Spring Core  IOC/DI Spring Bean   Spring Web 1.  ]]></description>
+    <description><![CDATA[Spring  Notes]]></description>
 </item><item>
     <title>Beneish Model</title>
     <link>http://miaoshihao.com/notes/finance/investment/beneish_model/</link>
@@ -34,14 +43,6 @@
     <guid>http://miaoshihao.com/notes/finance/investment/beneish_model/</guid>
     <description><![CDATA[The Beneish model is a mathematical model that uses financial ratios and eight variables to identify whether a company has manipulated its earnings. It is used as a tool to uncover potential financial fraud. However, the result generated from beneish model can not be the evidence.
 The variables are constructed from the data in the company&rsquo;s financial statements, and once calculated, create an M-Score to describe the degree to which the earnings have been manipulated.]]></description>
-</item><item>
-    <title>Bootstrap</title>
-    <link>http://miaoshihao.com/notes/computerscience/web/bootstrap/</link>
-    <pubDate>Thu, 02 Jul 2020 19:51:00 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>http://miaoshihao.com/notes/computerscience/web/bootstrap/</guid>
-    <description><![CDATA[Introduction Bootstrap is a free front-end framework that provide designed template for typography, forms, buttons, tables, navigation, modals, image carousels and many other, as well as optional JavaScript plugins. Bootstrap gives the ability to easily create responsive designs.
-How to use Bootstrap 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  &lt;!DOCTYPE html&gt; &lt;html lang=&#34;en&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;utf-8&#34;&gt; &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1, shrink-to-fit=no&#34;&gt; &lt;title&gt;Basic Bootstrap Template&lt;/title&gt; &lt;!]]></description>
 </item><item>
     <title>Java8 Stream </title>
     <link>http://miaoshihao.com/notes/computerscience/language/java/java8_notes_stream/</link>

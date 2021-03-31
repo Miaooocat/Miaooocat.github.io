@@ -5,6 +5,13 @@
         <description>所有notes | Hi, Shihao</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
             <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 27 Dec 2020 19:32:26 &#43;0800</lastBuildDate><atom:link href="http://miaoshihao.com/zh-cn/notes/" rel="self" type="application/rss+xml" /><item>
+    <title>BootStrap</title>
+    <link>http://miaoshihao.com/zh-cn/notes/computerscience/web/bootstrap/</link>
+    <pubDate>Fri, 27 Nov 2020 19:32:26 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://miaoshihao.com/zh-cn/notes/computerscience/web/bootstrap/</guid>
+    <description><![CDATA[Reference https://v3.bootcss.com/css/ 什么是Bootstrap？ Bootstrap是一个开源的基于HTML、CSS、JavaScript的前端框架。它统一了命名规范并且主要支]]></description>
+</item><item>
     <title>投资定位</title>
     <link>http://miaoshihao.com/zh-cn/notes/finance/investment/investor_positioning/</link>
     <pubDate>Fri, 17 Jul 2020 19:32:26 &#43;0800</pubDate>
@@ -25,6 +32,13 @@
     <author>作者</author>
     <guid>http://miaoshihao.com/zh-cn/notes/computerscience/mobiledevelopement/deeplink/</guid>
     <description><![CDATA[Deeplink，简单讲，就是你在手机上点击一个链接之后，可以直接链接到app内部的某个页面，而不是app正常打开时显示的首页。不似web，]]></description>
+</item><item>
+    <title>Java 调参</title>
+    <link>http://miaoshihao.com/zh-cn/notes/computerscience/middleware/jvm/jvm_tuning/</link>
+    <pubDate>Fri, 10 Jul 2020 09:50:16 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://miaoshihao.com/zh-cn/notes/computerscience/middleware/jvm/jvm_tuning/</guid>
+    <description><![CDATA[Java 应用性能的瓶颈点非常多，比如磁盘、内存、网络 I/O 等系统因素，Java 应用代码，JVM GC，数据库，缓存。一般来说，Java 性能优化分为 4 个层]]></description>
 </item><item>
     <title>HTTPS</title>
     <link>http://miaoshihao.com/zh-cn/notes/computerscience/web/https_principle/</link>
@@ -62,19 +76,5 @@ The first approach is where the BeanFactory itself directly creates the bean by 
     <author>作者</author>
     <guid>http://miaoshihao.com/zh-cn/notes/finance/investment/sp500_11sections/</guid>
     <description><![CDATA[周期性的板块 容易受到货币政策，政府政策，季节性需求变化影响 行业发展和经济周期密切相关 Energy 能源：XLE Materials 材料：XLB Industrial 工业：XLI Financial 金融 ：XLF]]></description>
-</item><item>
-    <title>认识流行的ETF</title>
-    <link>http://miaoshihao.com/zh-cn/notes/finance/investment/etf/</link>
-    <pubDate>Sun, 27 Dec 2020 19:32:26 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://miaoshihao.com/zh-cn/notes/finance/investment/etf/</guid>
-    <description><![CDATA[什么是ETF? 交易所交易基金，能在二级市场公开买卖的基金 ETF种类 &ndash; 按投资标的划分 股票：比如SPY (标普500指数基金) 货币：比如UUP(美]]></description>
-</item><item>
-    <title>Maven</title>
-    <link>http://miaoshihao.com/zh-cn/notes/computerscience/language/java/java_maven/</link>
-    <pubDate>Sat, 24 Aug 2019 22:50:26 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://miaoshihao.com/zh-cn/notes/computerscience/language/java/java_maven/</guid>
-    <description><![CDATA[Check English Version]]></description>
 </item></channel>
 </rss>

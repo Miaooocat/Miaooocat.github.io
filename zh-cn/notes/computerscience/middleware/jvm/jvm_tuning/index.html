@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Java 调参 - Hi, Shihao</title><meta name="Description" content="Hi, Shihao"><meta property="og:title" content="Java 调参" />
+<meta property="og:description" content="Java 应用性能的瓶颈点非常多，比如磁盘、内存、网络 I/O 等系统因素，Java 应用代码，JVM GC，数据库，缓存。一般来说，Java 性能优化分为 4 个层" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://miaoshihao.com/zh-cn/notes/computerscience/middleware/jvm/jvm_tuning/" />
+<meta property="og:image" content="http://miaoshihao.com/logo.png"/>
+<meta property="article:published_time" content="2020-07-10T09:50:16+08:00" />
+<meta property="article:modified_time" content="2020-07-10T09:50:16+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://miaoshihao.com/logo.png"/>
+
+<meta name="twitter:title" content="Java 调参"/>
+<meta name="twitter:description" content="Java 应用性能的瓶颈点非常多，比如磁盘、内存、网络 I/O 等系统因素，Java 应用代码，JVM GC，数据库，缓存。一般来说，Java 性能优化分为 4 个层"/>
+<meta name="application-name" content="Mousekedoer">
+<meta name="apple-mobile-web-app-title" content="Mousekedoer"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://miaoshihao.com/zh-cn/notes/computerscience/middleware/jvm/jvm_tuning/" /><link rel="prev" href="http://miaoshihao.com/zh-cn/notes/computerscience/web/https_principle/" /><link rel="next" href="http://miaoshihao.com/zh-cn/notes/computerscience/mobiledevelopement/deeplink/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Java 调参",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/miaoshihao.com\/zh-cn\/notes\/computerscience\/middleware\/jvm\/jvm_tuning\/"
+        },"image": ["http:\/\/miaoshihao.com\/images\/Apple-Devices-Preview.png"],"genre": "notes","keywords": "Java","wordcount":  2535 ,
+        "url": "http:\/\/miaoshihao.com\/zh-cn\/notes\/computerscience\/middleware\/jvm\/jvm_tuning\/","datePublished": "2020-07-10T09:50:16+08:00","dateModified": "2020-07-10T09:50:16+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "http:\/\/miaoshihao.com\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Shihao"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/zh-cn/" title="Hi, Shihao">首页</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/zh-cn/blogs/"> 博客 </a><a class="menu-item" href="/zh-cn/categories/"> 笔记 </a><a class="menu-item" href="/zh-cn/tags/"> 标签 </a><a class="menu-item" href="/zh-cn/notes/"> 归档 </a><a class="menu-item" href="/zh-cn/music/"> 音乐 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/zh-cn/notes/computerscience/middleware/jvm/jvm_tuning/" selected>简体中文</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>                
+                
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/zh-cn/" title="Hi, Shihao">首页</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/zh-cn/blogs/" title="">博客</a><a class="menu-item" href="/zh-cn/categories/" title="">笔记</a><a class="menu-item" href="/zh-cn/tags/" title="">标签</a><a class="menu-item" href="/zh-cn/notes/" title="">归档</a><a class="menu-item" href="/zh-cn/music/" title="">音乐</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/zh-cn/notes/computerscience/middleware/jvm/jvm_tuning/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Java 调参</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/zh-cn/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Shihao</a></span>&nbsp;<span class="post-category">收录于 <a href="/zh-cn/categories/jvm/"><i class="far fa-folder fa-fw"></i>JVM</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-07-10">2020-07-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2535 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#os-诊断">OS 诊断</a>
+      <ul>
+        <li><a href="#cpu-诊断">CPU 诊断</a>
+          <ul>
+            <li><a href="#平均负载load-average和cpu-使用率">平均负载(Load Average)和CPU 使用率</a></li>
+            <li><a href="#上下文切换-context-switch">上下文切换 Context Switch</a></li>
+            <li><a href="#memory">Memory</a></li>
+            <li><a href="#io">IO</a></li>
+          </ul>
+        </li>
+        <li><a href="#java应用层优化">Java应用层优化</a>
+          <ul>
+            <li><a href="#jstack">jstack</a></li>
+            <li><a href="#jprofiler">JProfiler</a></li>
+            <li><a href="#gc-诊断">GC 诊断</a></li>
+            <li><a href="#jstat">jstat</a></li>
+            <li><a href="#jmap">jmap</a></li>
+            <li><a href="#mat">MAT</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>Java 应用性能的瓶颈点非常多，比如磁盘、内存、网络 I/O 等系统因素，Java 应用代码，JVM GC，数据库，缓存。一般来说，Java 性能优化分为 4 个层级：应用层、数据库层、框架层、JVM 层。每一层的调参难度都是逐级增加，并且涉及的知识和解决的问题也会不同。</p>
+<ul>
+<li>应用层需要理解代码逻辑，通过 Java 线程栈定位有问题代码行等</li>
+<li>数据库层面需要分析 SQL、定位死锁等；</li>
+<li>框架层需要懂源代码，理解框架机制；</li>
+<li>JVM 层需要对 GC 的类型和工作机制有深入了解，对各种 JVM 参数作用了然于胸。</li>
+</ul>
+<h2 id="os-诊断">OS 诊断</h2>
+<p>OS 的诊断主要关注的是 CPU、Memory、I/O 三个方面。</p>
+<h3 id="cpu-诊断">CPU 诊断</h3>
+<p>对于 CPU 主要关注平均负载（Load Average），CPU 使用率，上下文切换次数（Context Switch）。</p>
+<h4 id="平均负载load-average和cpu-使用率">平均负载(Load Average)和CPU 使用率</h4>
+<p>通过 top 命令可以查看系统平均负载和 CPU 使用率。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="top_Command.png"
+        data-srcset="/zh-cn/notes/computerscience/middleware/jvm/jvm_tuning/top_Command.png, top_Command.png 1.5x, /zh-cn/notes/computerscience/middleware/jvm/jvm_tuning/top_Command.png 2x"
+        data-sizes="auto"
+        alt="/zh-cn/notes/computerscience/middleware/jvm/jvm_tuning/top_Command.png"
+        title="top_command" /></p>
+<p>2.12，2.23，2.53，分别表示过去 1 分钟、5 分钟、15 分钟机器的负载。<strong>若数值小于 0.7*CPU 个数, 则表示系统正常</strong>。若超过这个值，甚至达到 CPU 核数的四五倍，则系统的负载就明显偏高。这就需要定位具体原因了。</p>
+<h4 id="上下文切换-context-switch">上下文切换 Context Switch</h4>
+<p>上下文切换次数发生的场景主要有如下几种：</p>
+<p>1）时间片用完，CPU 正常调度下一个任务；
+2）被其它优先级更高的任务抢占；
+3）执行任务碰到 I/O 阻塞，挂起当前任务，切换到下一个任务；
+4）用户代码主动挂起当前任务让出 CPU；
+5）多任务抢占资源，由于没有抢到被挂起；
+6）硬件中断。</p>
+<p>Java 线程上下文切换主要来自共享资源的竞争。一般单个对象加锁很少成为系统瓶颈，除非锁粒度过大。但在一个访问频度高，对多个对象连续加锁的代码块中就可能出现大量上下文切换，成为系统瓶颈。比如在我们系统中就曾出现 log4j 1.x 在较大并发下大量打印日志，出现频繁上下文切换，大量线程阻塞，导致系统吞吐量大降的情况，其相关代码如下所示，升级到 log4j 2.x 才解决这个问题。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Java" data-lang="Java"><span class="k">for</span> <span class="o">(</span><span class="n">Category</span> <span class="n">c</span> <span class="o">=</span> <span class="k">this</span><span class="o">;</span> <span class="n">c</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">;</span> <span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="o">.</span><span class="na">parent</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// Protected against simultaneous call to addAppender, removeAppender,…
+</span><span class="c1"></span>    <span class="kd">synchronized</span><span class="o">(</span><span class="n">c</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">c</span><span class="o">.</span><span class="na">aai</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">write</span> <span class="o">+=</span> <span class="n">c</span><span class="o">.</span><span class="na">aai</span><span class="o">.</span><span class="na">appendLoopAppenders</span><span class="o">(</span><span class="n">event</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="err">…</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="memory">Memory</h4>
+<p>从操作系统角度，内存关注应用进程是否足够，可以使用 <code>free –m</code> 命令查看内存的使用情况。通过 <code>top</code> 命令可以查看进程使用的虚拟内存 VIRT 和物理内存 RES，根据公式 VIRT = SWAP + RES 可以推算出具体应用使用的交换分区（Swap）情况，使用交换分区过大会影响 Java 应用性能，可以将 swappiness 值调到尽可能小。因为对于 Java 应用来说，占用太多交换分区可能会影响性能，毕竟磁盘性能比内存慢太多。</p>
+<h4 id="io">IO</h4>
+<p>I/O 包括磁盘 I/O 和网络 I/O，一般情况下磁盘更容易出现 I/O 瓶颈。通过 iostat 可以查看磁盘的读写情况，通过 CPU 的 I/O wait 可以看出磁盘 I/O 是否正常。如果磁盘 I/O 一直处于很高的状态，说明磁盘太慢或故障，成为了性能瓶颈，需要进行应用优化或者磁盘更换。
+除了常用的 top、 ps、vmstat、iostat 等命令，还有其他 Linux 工具可以诊断系统问题，如 mpstat、tcpdump、netstat、pidstat、sar 等。</p>
+<h3 id="java应用层优化">Java应用层优化</h3>
+<p>应用代码性能问题是相对好解决的一类性能问题。通过一些应用层面监控报警，如果确定有问题的功能和代码，直接通过代码就可以定位；或者通过 top+jstack，找出有问题的线程栈，定位到问题线程的代码上，也可以发现问题。对于更复杂，逻辑更多的代码段，通过 Stopwatch 打印性能日志往往也可以定位大多数应用代码性能问题。</p>
+<p>常用的 Java 应用诊断包括线程、堆栈、GC 等方面的诊断。</p>
+<h4 id="jstack">jstack</h4>
+<p>jstack 命令通常配合 top 使用，通过 top -H -p pid 定位 Java 进程和线程，再利用 jstack -l pid 导出线程栈。由于线程栈是瞬态的，因此需要多次 dump，一般 3 次 dump，一般每次隔 5s 就行。将 top 定位的 Java 线程 pid 转成 16 进制，得到 Java 线程栈中的 nid，可以找到对应的问题线程栈。</p>
+<h4 id="jprofiler">JProfiler</h4>
+<p>JProfiler 可对 CPU、堆、内存进行分析。</p>
+<h4 id="gc-诊断">GC 诊断</h4>
+<p>Java GC 解决了程序员管理内存的风险，但 GC 引起的应用暂停成了另一个需要解决的问题。JDK 提供了一系列工具来定位 GC 问题，比较常用的有 jstat、jmap，还有第三方工具 MAT 等。</p>
+<h4 id="jstat">jstat</h4>
+<p>jstat 命令可打印 GC 详细信息，Young GC 和 Full GC 次数，堆信息等。其命令格式为
+jstat –gcxxx -t pid</p>
+<h4 id="jmap">jmap</h4>
+<p>jmap 打印 Java 进程堆信息 jmap –heap pid。通过 jmap –dump:file=xxx pid 可 dump 堆到文件，然后通过其它工具进一步分析其堆使用情况</p>
+<h4 id="mat">MAT</h4>
+<p>MAT 是 Java 堆的分析利器，提供了直观的诊断报告，内置的 OQL 允许对堆进行类 SQL 查询，功能强大，outgoing reference 和 incoming reference 可以对对象引用追根溯源。</p>
+<p>MAT 有两列显示对象大小，分别是 Shallow size 和 Retained size，前者表示对象本身占用内存的大小，不包含其引用的对象，后者是对象自己及其直接或间接引用的对象的 Shallow size 之和，即该对象被回收后 GC 释放的内存大小，一般说来关注后者大小即可。对于有些大堆 (几十 G) 的 Java 应用，需要较大内存才能打开 MAT。通常本地开发机内存过小，是无法打开的，建议在线下服务器端安装图形环境和 MAT，远程打开查看。或者执行 mat 命令生成堆索引，拷贝索引到本地</p>
+<p>为了诊断 GC 问题，建议在 JVM 参数中加上-XX:+PrintGCDateStamps。</p>
+<p>对于 Java 应用，通过 top+jstack+jmap+MAT 可以定位大多数应用和内存问题，可谓必备工具。有些时候，Java 应用诊断需要参考 OS 相关信息，可使用一些更全面的诊断工具，比如 Zabbix（整合了 OS 和 JVM 监控）等。在分布式环境中，分布式跟踪系统等基础设施也对应用性能诊断提供了有力支持。</p>
+<p>1）基础性能的调优
+这里的基础性能指的是硬件层级或者操作系统层级的升级优化，比如网络调优，操作系统版本升级，硬件设备优化等。比如 F5 的使用和 SDD 硬盘的引入，包括新版本 Linux 在 NIO 方面的升级，都可以极大的促进应用的性能提升；
+2）数据库性能优化
+包括常见的事务拆分，索引调优，SQL 优化，NoSQL 引入等，比如在事务拆分时引入异步化处理，最终达到一致性等做法的引入，包括在针对具体场景引入的各类 NoSQL 数据库，都可以大大缓解传统数据库在高并发下的不足；
+3）应用架构优化
+引入一些新的计算或者存储框架，利用新特性解决原有集群计算性能瓶颈等；或者引入分布式策略，在计算和存储进行水平化，包括提前计算预处理等，利用典型的空间换时间的做法等；都可以在一定程度上降低系统负载；
+4）业务层面的优化
+技术并不是提升系统性能的唯一手段，在很多出现性能问题的场景中，其实可以看到很大一部分都是因为特殊的业务场景引起的，如果能在业务上进行规避或者调整，其实往往是最有效的。</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-07-10</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/zh-cn/notes/computerscience/middleware/jvm/jvm_tuning/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/zh-cn/tags/java/">Java</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/zh-cn/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/zh-cn/notes/computerscience/web/https_principle/" class="prev" rel="prev" title="HTTPS"><i class="fas fa-angle-left fa-fw"></i>HTTPS</a>
+            <a href="/zh-cn/notes/computerscience/mobiledevelopement/deeplink/" class="next" rel="next" title="Deep Linking">Deep Linking<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/zh-cn/" target="_blank">Shihao Miao</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><div>
+                    <span id="timeDate">Loading Days...</span><span id="times">Loading Times...</span>
+                    <script>
+                        var now = new Date();
+                        function createtime() {
+                            var grt= new Date("03/20/2019 00:00:00");
+                            now.setTime(now.getTime()+250);
+                            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+                            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+                            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+                            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+                            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+                            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+                            document.getElementById("timeDate").innerHTML = "本站已不安全运行 "+dnum+" 天 ";
+                            document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分钟 " + snum + " 秒";
+                        }
+                    setInterval("createtime()",250);
+                    </script>
+                    </div></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.zh-cn","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
