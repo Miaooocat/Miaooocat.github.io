@@ -15,12 +15,15 @@
                     hreflang="en"
                     href="http://miaoshihao.com/notes/finance/investment/beneish_model/"
                     /></url><url>
+            <loc>http://miaoshihao.com/notes/computerscience/middleware/messagequeue/ibm_mq/</loc><lastmod>2020-07-10T09:50:16&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://miaoshihao.com/notes/computerscience/middleware/messagequeue/message_oriented-middleware/</loc><lastmod>2020-07-10T09:50:16&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/notes/computerscience/language/java/java8_notes_stream/</loc><lastmod>2019-10-02T20:50:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/notes/computerscience/framework/spring/spring_integration/</loc><lastmod>2019-10-01T22:50:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/notes/computerscience/language/java/java8_notes_option/</loc><lastmod>2019-09-28T20:50:46&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/notes/finance/investment/technicalindicator/</loc><lastmod>2019-06-29T19:32:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/notes/computerscience/language/java/java_notes_1_introduction/</loc><lastmod>2019-06-13T16:58:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/notes/computerscience/language/typescript/typescript_notes_2_function/</loc><lastmod>2021-01-15T11:53:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://miaoshihao.com/notes/computerscience/language/typescript/typescript_notes_3_objectoriented/</loc><lastmod>2021-01-15T11:53:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/notes/computerscience/language/javascript/javascript_notes_2_es6/</loc><lastmod>2021-01-11T11:58:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/notes/computerscience/language/java/java_notes_2_oop/</loc><lastmod>2019-06-17T15:58:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/notes/computerscience/framework/spring/spring/spring_bean/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
@@ -153,7 +156,8 @@
                     hreflang="en"
                     href="http://miaoshihao.com/categories/investment/"
                     /></url><url>
-            <loc>http://miaoshihao.com/danielsmusic/</loc><lastmod>2020-06-10T22:58:57-04:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://miaoshihao.com/tags/mq/</loc><lastmod>2020-07-10T09:50:16&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://miaoshihao.com/categories/mq/</loc><lastmod>2020-07-10T09:50:16&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/music/</loc><lastmod>2020-06-10T22:58:57-04:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"

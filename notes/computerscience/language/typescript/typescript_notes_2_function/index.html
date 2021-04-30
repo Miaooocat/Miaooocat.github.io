@@ -20,7 +20,7 @@
 <meta name="application-name" content="Hi, Shihao">
 <meta name="apple-mobile-web-app-title" content="Hi, Shihao"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://miaoshihao.com/notes/computerscience/language/typescript/typescript_notes_2_function/" /><link rel="prev" href="http://miaoshihao.com/notes/computerscience/language/javascript/javascript_notes_2_es6/" /><link rel="next" href="http://miaoshihao.com/notes/computerscience/language/java/java_notes_1_introduction/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://miaoshihao.com/notes/computerscience/language/typescript/typescript_notes_2_function/" /><link rel="prev" href="http://miaoshihao.com/notes/computerscience/language/typescript/typescript_notes_3_objectoriented/" /><link rel="next" href="http://miaoshihao.com/notes/computerscience/language/java/java_notes_1_introduction/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/miaoshihao.com\/notes\/computerscience\/language\/typescript\/typescript_notes_2_function\/"
-        },"image": ["http:\/\/miaoshihao.com\/images\/Apple-Devices-Preview.png"],"genre": "notes","keywords": "TypeScript","wordcount":  347 ,
+        },"image": ["http:\/\/miaoshihao.com\/images\/Apple-Devices-Preview.png"],"genre": "notes","keywords": "TypeScript","wordcount":  648 ,
         "url": "http:\/\/miaoshihao.com\/notes\/computerscience\/language\/typescript\/typescript_notes_2_function\/","datePublished": "2021-01-15T11:53:26+08:00","dateModified": "2021-01-15T11:53:26+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "http:\/\/miaoshihao.com\/images\/avatar.png"},"author": {
@@ -111,8 +111,8 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">TypeScript Notes 2 Function</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Shihao</a></span>&nbsp;<span class="post-category">included in <a href="/categories/typescript/"><i class="far fa-folder fa-fw"></i>TypeScript</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-01-15">2021-01-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;347 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-01-15">2021-01-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;648 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -126,6 +126,13 @@
         <li><a href="#anonymous-function">Anonymous Function</a></li>
         <li><a href="#optional-parameters">Optional Parameters</a></li>
         <li><a href="#default-parameters">Default Parameters</a></li>
+      </ul>
+    </li>
+    <li><a href="#arrow-function">Arrow Function</a>
+      <ul>
+        <li><a href="#arrow-function-as-property">Arrow Function as Property</a></li>
+        <li><a href="#function-overloading">Function Overloading</a></li>
+        <li><a href="#rest-parameters">Rest Parameters</a></li>
       </ul>
     </li>
   </ul>
@@ -268,6 +275,135 @@
 </span><span class="c1"></span><span class="nx">Greet</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span> <span class="s1">&#39;Bill&#39;</span><span class="p">);</span> <span class="c1">//returns &#34;Hello Bill!&#34;
 </span></code></pre></td></tr></table>
 </div>
+</div><h2 id="arrow-function">Arrow Function</h2>
+<p>Arrow =&gt; can replace the function keyword. Parameters are passed in the parenthesis (), and the function expression is enclosed within the curly brackets { }.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-TypeScript" data-lang="TypeScript"><span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="p">(</span><span class="nx">x</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">y</span>: <span class="kt">number</span><span class="p">)</span><span class="o">:</span> <span class="kt">number</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">sum</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span> <span class="c1">//returns 30
+</span></code></pre></td></tr></table>
+</div>
+</div><p>If there is no parameter in a function, we can use an empty bracket.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-TypeScript" data-lang="TypeScript"><span class="kd">let</span> <span class="nx">Print</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;Hello TypeScript&#34;</span><span class="p">);</span>
+
+<span class="nx">Print</span><span class="p">();</span> <span class="c1">//Output: Hello TypeScript
+</span></code></pre></td></tr></table>
+</div>
+</div><p>If the function body consists of only one statement then no need for the curly brackets and the return keyword, as shown below.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-TypeScript" data-lang="TypeScript"><span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="p">(</span><span class="nx">x</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">y</span>: <span class="kt">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">;</span>
+
+<span class="nx">sum</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="c1">//returns 7
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="arrow-function-as-property">Arrow Function as Property</h3>
+<p>A class can include an arrow function as a property, as shown below:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-TypeScript" data-lang="TypeScript"><span class="kr">class</span> <span class="nx">Employee</span> <span class="p">{</span>
+    <span class="nx">empCode</span>: <span class="kt">number</span><span class="p">;</span>
+    <span class="nx">empName</span>: <span class="kt">string</span><span class="p">;</span>
+
+    <span class="kr">constructor</span><span class="p">(</span><span class="nx">code</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">name</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">empName</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">empCode</span> <span class="o">=</span> <span class="nx">code</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nx">display</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">empCode</span> <span class="o">+</span><span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">empName</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="kd">let</span> <span class="nx">emp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Employee</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Ram&#39;</span><span class="p">);</span>
+<span class="nx">emp</span><span class="p">.</span><span class="nx">display</span><span class="p">();</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="function-overloading">Function Overloading</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-TypeScript" data-lang="TypeScript">
+<span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">a</span>:<span class="kt">string</span><span class="p">,</span> <span class="nx">b</span>:<span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="kt">string</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">a</span>:<span class="kt">number</span><span class="p">,</span> <span class="nx">b</span>:<span class="kt">number</span><span class="p">)</span><span class="o">:</span> <span class="kt">number</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">a</span>: <span class="kt">any</span><span class="p">,</span> <span class="nx">b</span>:<span class="kt">any</span><span class="p">)</span><span class="o">:</span> <span class="nx">any</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">add</span><span class="p">(</span><span class="s2">&#34;Hello &#34;</span><span class="p">,</span> <span class="s2">&#34;Steve&#34;</span><span class="p">);</span> <span class="c1">// returns &#34;Hello Steve&#34; 
+</span><span class="c1"></span><span class="nx">add</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span> <span class="c1">// returns 30 
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="rest-parameters">Rest Parameters</h3>
+<p>Rest parameters can be used to pass n number of parameters easily. The compiler will create an array of arguments with the rest parameter name provided by us. The below is the example:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-TypeScript" data-lang="TypeScript"><span class="kd">function</span> <span class="nx">Greet</span><span class="p">(</span><span class="nx">greeting</span>: <span class="kt">string</span><span class="p">,</span> <span class="p">...</span><span class="nx">names</span>: <span class="kt">string</span><span class="p">[])</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">greeting</span> <span class="o">+</span> <span class="s2">&#34; &#34;</span> <span class="o">+</span> <span class="nx">names</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&#34;, &#34;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&#34;!&#34;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">Greet</span><span class="p">(</span><span class="s2">&#34;Hello&#34;</span><span class="p">,</span> <span class="s2">&#34;Steve&#34;</span><span class="p">,</span> <span class="s2">&#34;Bill&#34;</span><span class="p">);</span> <span class="c1">// returns &#34;Hello Steve, Bill!&#34;
+</span><span class="c1"></span>
+<span class="nx">Greet</span><span class="p">(</span><span class="s2">&#34;Hello&#34;</span><span class="p">);</span><span class="c1">// returns &#34;Hello !&#34;
+</span></code></pre></td></tr></table>
+</div>
 </div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
@@ -293,7 +429,7 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/notes/computerscience/language/javascript/javascript_notes_2_es6/" class="prev" rel="prev" title="Javascript Notes 2 ES6"><i class="fas fa-angle-left fa-fw"></i>Javascript Notes 2 ES6</a>
+    <div class="post-nav"><a href="/notes/computerscience/language/typescript/typescript_notes_3_objectoriented/" class="prev" rel="prev" title="TypeScript Notes 3 Object Oriented"><i class="fas fa-angle-left fa-fw"></i>TypeScript Notes 3 Object Oriented</a>
             <a href="/notes/computerscience/language/java/java_notes_1_introduction/" class="next" rel="next" title="Java Notes(1) Introduction">Java Notes(1) Introduction<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 </article></div>

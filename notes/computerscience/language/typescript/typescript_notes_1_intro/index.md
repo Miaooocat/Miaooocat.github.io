@@ -28,6 +28,66 @@ npx tsc greeter.ts --out ../dist/greeter.js
 node greeter.js
 ```
 
+
+#### How to create configuration file
+
+```
+npx tsc --init
+```
+
+## Configuration
+
+The presence of a tsconfig.json file in a directory indicates that the directory is the root of a TypeScript project. The tsconfig.json file specifies the root files and the compiler options required to compile the project.
+
+Example tsconfig.json files:
+
+```json
+{
+"compilerOptions": {
+  "module": "commonjs",
+  "noImplicitAny": true,
+  "removeComments": true,
+  "preserveConstEnums": true,
+  "sourceMap": true
+},
+"files": [
+  "core.ts",
+  "sys.ts",
+  "types.ts",
+  "scanner.ts",
+  "parser.ts",
+  "utilities.ts",
+  "binder.ts",
+  "checker.ts",
+  "emitter.ts",
+  "program.ts",
+  "commandLineParser.ts",
+  "tsc.ts",
+  "diagnosticInformationMap.generated.ts"
+]
+}
+```
+
+Below is with include and exclude
+
+```json
+{
+"compilerOptions": {
+  "module": "system",
+  "noImplicitAny": true,
+  "removeComments": true,
+  "preserveConstEnums": true,
+  "outFile": "../../built/local/tsc.js",
+  "sourceMap": true
+},
+"include": ["src/**/*"],
+"exclude": ["node_modules", "**/*.spec.ts"]
+}
+```
+
+
+
+
 ## Variable
 
 Normally, in TypeScript, we use `let` keyword, as opposed to using traditional JavaScript `var` keywords to avoid issue with Scoping, capturing, and shadowing etc.

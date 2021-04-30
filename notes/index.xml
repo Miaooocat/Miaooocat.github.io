@@ -44,6 +44,24 @@ Maven Dependencies Spring looks minimum dependencies required to create an web a
     <description><![CDATA[The Beneish model is a mathematical model that uses financial ratios and eight variables to identify whether a company has manipulated its earnings. It is used as a tool to uncover potential financial fraud. However, the result generated from beneish model can not be the evidence.
 The variables are constructed from the data in the company&rsquo;s financial statements, and once calculated, create an M-Score to describe the degree to which the earnings have been manipulated.]]></description>
 </item><item>
+    <title>Message-Oriented Middleware</title>
+    <link>http://miaoshihao.com/notes/computerscience/middleware/messagequeue/ibm_mq/</link>
+    <pubDate>Fri, 10 Jul 2020 09:50:16 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/computerscience/middleware/messagequeue/ibm_mq/</guid>
+    <description><![CDATA[Message Middleware Intro Message Oriented Middleware is a concept that involves the passing of data between applications using a communication channel that carries self-contained units of information (messages).
+Message Middleware Option Information transfer between different application can be achieved in many different ways, but most efficient solution so far (2021) is with Message Queue.
+Message Queue A message queue provides an asynchronous communications protocol, which is a system that puts a message onto a message queue and does not require an immediate response to continuing processing.]]></description>
+</item><item>
+    <title>Message-Oriented Middleware</title>
+    <link>http://miaoshihao.com/notes/computerscience/middleware/messagequeue/message_oriented-middleware/</link>
+    <pubDate>Fri, 10 Jul 2020 09:50:16 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/computerscience/middleware/messagequeue/message_oriented-middleware/</guid>
+    <description><![CDATA[Message Middleware Intro Message Oriented Middleware is a concept that involves the passing of data between applications using a communication channel that carries self-contained units of information (messages).
+Message Middleware Option Information transfer between different application can be achieved in many different ways, but most efficient solution so far (2021) is with Message Queue.
+Message Queue A message queue provides an asynchronous communications protocol, which is a system that puts a message onto a message queue and does not require an immediate response to continuing processing.]]></description>
+</item><item>
     <title>Java8 Stream </title>
     <link>http://miaoshihao.com/notes/computerscience/language/java/java8_notes_stream/</link>
     <pubDate>Wed, 02 Oct 2019 20:50:26 &#43;0800</pubDate>
@@ -66,25 +84,6 @@ The variables are constructed from the data in the company&rsquo;s financial sta
     <pubDate>Sat, 28 Sep 2019 20:50:46 &#43;0800</pubDate>
     <author>Author</author>
     <guid>http://miaoshihao.com/notes/computerscience/language/java/java8_notes_option/</guid>
-    <description><![CDATA[Optional class is a container for null.
-Optional class Declartion 1 2  public final class Optional&lt;T&gt; extends Object   Optional class method  Return an empty option class  1  static &lt;T&gt; Optional&lt;T&gt; empty()   Example:
-1 2 3 4 5  @Test public void whenCreatesEmptyOptional_thenCorrect() { Optional&lt;String&gt; empty = Optional.empty(); assertFalse(empty.isPresent()); }   判断其他对象是否等于Optional  1  boolean equals(Object obj)   optionObject.filter()  Filter takes a predicate as an argument and returns an Optional object.]]></description>
-</item><item>
-    <title>Technical Indicator</title>
-    <link>http://miaoshihao.com/notes/finance/investment/technicalindicator/</link>
-    <pubDate>Sat, 29 Jun 2019 19:32:26 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>http://miaoshihao.com/notes/finance/investment/technicalindicator/</guid>
-    <description><![CDATA[Accumulation/Distribution Line (ADL)  The accumulation/distribution line gauges supply and demand by looking at where the price closed within the period&rsquo;s range, and then multiplying that by volume. The A/D indicator is cumulative, meaning one period&rsquo;s value is added or subtracted from the last. A rising A/D line helps confirm a rising price trend. A falling A/D line helps confirm a price downtrend. If the price is rising but A/D is falling, it signals underlying weakness and a potential decline in price.]]></description>
-</item><item>
-    <title>Java Notes(1) Introduction</title>
-    <link>http://miaoshihao.com/notes/computerscience/language/java/java_notes_1_introduction/</link>
-    <pubDate>Thu, 13 Jun 2019 16:58:26 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>http://miaoshihao.com/notes/computerscience/language/java/java_notes_1_introduction/</guid>
-    <description><![CDATA[Java Features and Program Execution Java is a programming language and a platform.
-Platform: Any hardware or software environment in which a program runs, is known as a platform. Since Java has its own runtime environment (JRE) and Application Programming Interface (API), it is called platform.
-Features of Java :   Simple:
- User friendly syntax based on C++ It has Automatic Garbage Collection It has Rich set of APIs Removed confusing features - explicit pointers, operator overloading, multiple inheritance, etc    Object-oriented:]]></description>
+    <description><![CDATA[Optional class is a container for null. The primary design goal for Optional is to be used as the return value of functions when a return value might be absent. The intent is that the caller immediately check the Optional and extract the actual value if it&rsquo;s present. If the value is absent, the caller can substitute a default value, throw an exception, or apply some other policy. This is typically done by chaining fluent method calls off the end of a stream pipeline (or other methods) that return Optional values.]]></description>
 </item></channel>
 </rss>

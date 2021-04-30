@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/miaoshihao.com\/notes\/computerscience\/language\/typescript\/typescript_notes_1_intro\/"
-        },"image": ["http:\/\/miaoshihao.com\/images\/Apple-Devices-Preview.png"],"genre": "notes","keywords": "TypeScript","wordcount":  584 ,
+        },"image": ["http:\/\/miaoshihao.com\/images\/Apple-Devices-Preview.png"],"genre": "notes","keywords": "TypeScript","wordcount":  728 ,
         "url": "http:\/\/miaoshihao.com\/notes\/computerscience\/language\/typescript\/typescript_notes_1_intro\/","datePublished": "2021-01-15T11:53:26+08:00","dateModified": "2021-01-15T11:53:26+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "http:\/\/miaoshihao.com\/images\/avatar.png"},"author": {
@@ -111,8 +111,8 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">TypeScript Notes 1 Intro</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Shihao</a></span>&nbsp;<span class="post-category">included in <a href="/categories/typescript/"><i class="far fa-folder fa-fw"></i>TypeScript</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-01-15">2021-01-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;584 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-01-15">2021-01-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;728 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -128,10 +128,12 @@
             <li><a href="#how-to-install-typescript">How to install TypeScript</a></li>
             <li><a href="#how-to-transfer-typescript-to-javascript">How to transfer TypeScript to JavaScript</a></li>
             <li><a href="#how-to-run-javascript-in-shell">How to run JavaScript in shell</a></li>
+            <li><a href="#how-to-create-configuration-file">How to create configuration file</a></li>
           </ul>
         </li>
       </ul>
     </li>
+    <li><a href="#configuration">Configuration</a></li>
     <li><a href="#variable">Variable</a></li>
     <li><a href="#condition">Condition</a>
       <ul>
@@ -184,6 +186,103 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-bash" data-lang="bash">node greeter.js
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="how-to-create-configuration-file">How to create configuration file</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">npx tsc --init
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="configuration">Configuration</h2>
+<p>The presence of a tsconfig.json file in a directory indicates that the directory is the root of a TypeScript project. The tsconfig.json file specifies the root files and the compiler options required to compile the project.</p>
+<p>Example tsconfig.json files:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<span class="nt">&#34;compilerOptions&#34;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="nt">&#34;module&#34;</span><span class="p">:</span> <span class="s2">&#34;commonjs&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;noImplicitAny&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nt">&#34;removeComments&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nt">&#34;preserveConstEnums&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nt">&#34;sourceMap&#34;</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">},</span>
+<span class="nt">&#34;files&#34;</span><span class="p">:</span> <span class="p">[</span>
+  <span class="s2">&#34;core.ts&#34;</span><span class="p">,</span>
+  <span class="s2">&#34;sys.ts&#34;</span><span class="p">,</span>
+  <span class="s2">&#34;types.ts&#34;</span><span class="p">,</span>
+  <span class="s2">&#34;scanner.ts&#34;</span><span class="p">,</span>
+  <span class="s2">&#34;parser.ts&#34;</span><span class="p">,</span>
+  <span class="s2">&#34;utilities.ts&#34;</span><span class="p">,</span>
+  <span class="s2">&#34;binder.ts&#34;</span><span class="p">,</span>
+  <span class="s2">&#34;checker.ts&#34;</span><span class="p">,</span>
+  <span class="s2">&#34;emitter.ts&#34;</span><span class="p">,</span>
+  <span class="s2">&#34;program.ts&#34;</span><span class="p">,</span>
+  <span class="s2">&#34;commandLineParser.ts&#34;</span><span class="p">,</span>
+  <span class="s2">&#34;tsc.ts&#34;</span><span class="p">,</span>
+  <span class="s2">&#34;diagnosticInformationMap.generated.ts&#34;</span>
+<span class="p">]</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Below is with include and exclude</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<span class="nt">&#34;compilerOptions&#34;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="nt">&#34;module&#34;</span><span class="p">:</span> <span class="s2">&#34;system&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;noImplicitAny&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nt">&#34;removeComments&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nt">&#34;preserveConstEnums&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nt">&#34;outFile&#34;</span><span class="p">:</span> <span class="s2">&#34;../../built/local/tsc.js&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;sourceMap&#34;</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">},</span>
+<span class="nt">&#34;include&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;src/**/*&#34;</span><span class="p">],</span>
+<span class="nt">&#34;exclude&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;node_modules&#34;</span><span class="p">,</span> <span class="s2">&#34;**/*.spec.ts&#34;</span><span class="p">]</span>
+<span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="variable">Variable</h2>

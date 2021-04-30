@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/miaoshihao.com\/notes\/computerscience\/language\/java\/java8_notes_option\/"
-        },"image": ["http:\/\/miaoshihao.com\/images\/Apple-Devices-Preview.png"],"genre": "notes","keywords": "Java","wordcount":  1088 ,
+        },"image": ["http:\/\/miaoshihao.com\/images\/Apple-Devices-Preview.png"],"genre": "notes","keywords": "Java","wordcount":  1171 ,
         "url": "http:\/\/miaoshihao.com\/notes\/computerscience\/language\/java\/java8_notes_option\/","datePublished": "2019-09-28T20:50:46+08:00","dateModified": "2019-09-28T20:50:46+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "http:\/\/miaoshihao.com\/images\/avatar.png"},"author": {
@@ -111,7 +111,7 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Java8 Optional class</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Shihao</a></span>&nbsp;<span class="post-category">included in <a href="/categories/java/"><i class="far fa-folder fa-fw"></i>Java</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-09-28">2019-09-28</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1088 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-09-28">2019-09-28</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1171 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -128,16 +128,14 @@
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p>Optional class is a container for null.</p>
+            </div><div class="content" id="content"><p>Optional class is a container for null. The primary design goal for Optional is to be used <strong>as the return value of functions when a return value might be absent</strong>. The intent is that the <strong>caller immediately check the Optional and extract the actual value if it&rsquo;s present</strong>. If the value is absent, <strong>the caller can substitute a default value, throw an exception, or apply some other policy</strong>. This is typically done by chaining fluent method calls off the end of a stream pipeline (or other methods) that return Optional values.</p>
 <h3 id="optional-class-declartion">Optional class Declartion</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="nc">Optional</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span>
-<span class="kd">extends</span> <span class="n">Object</span>
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="nc">Optional</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="kd">extends</span> <span class="n">Object</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="optional-class-method">Optional class method</h3>
@@ -180,7 +178,7 @@
 <pre class="chroma"><code class="language-java" data-lang="java"><span class="kt">boolean</span> <span class="nf">equals</span><span class="o">(</span><span class="n">Object</span> <span class="n">obj</span><span class="o">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><ol start="3">
+</div><ol>
 <li>optionObject.filter()</li>
 </ol>
 <p>Filter takes a predicate as an argument and returns an Optional object. If the wrapped value passes testing by the predicate, then the Optional is returned as-is. if the predicate returns false, then it will return an empty Optional:</p>

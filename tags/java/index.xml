@@ -43,9 +43,7 @@ Maven Dependencies Spring looks minimum dependencies required to create an web a
     <pubDate>Sat, 28 Sep 2019 20:50:46 &#43;0800</pubDate>
     <author>Author</author>
     <guid>http://miaoshihao.com/notes/computerscience/language/java/java8_notes_option/</guid>
-    <description><![CDATA[Optional class is a container for null.
-Optional class Declartion 1 2  public final class Optional&lt;T&gt; extends Object   Optional class method  Return an empty option class  1  static &lt;T&gt; Optional&lt;T&gt; empty()   Example:
-1 2 3 4 5  @Test public void whenCreatesEmptyOptional_thenCorrect() { Optional&lt;String&gt; empty = Optional.empty(); assertFalse(empty.isPresent()); }   判断其他对象是否等于Optional  1  boolean equals(Object obj)   optionObject.filter()  Filter takes a predicate as an argument and returns an Optional object.]]></description>
+    <description><![CDATA[Optional class is a container for null. The primary design goal for Optional is to be used as the return value of functions when a return value might be absent. The intent is that the caller immediately check the Optional and extract the actual value if it&rsquo;s present. If the value is absent, the caller can substitute a default value, throw an exception, or apply some other policy. This is typically done by chaining fluent method calls off the end of a stream pipeline (or other methods) that return Optional values.]]></description>
 </item><item>
     <title>Java Notes(1) Introduction</title>
     <link>http://miaoshihao.com/notes/computerscience/language/java/java_notes_1_introduction/</link>

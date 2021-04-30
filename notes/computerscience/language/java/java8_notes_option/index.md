@@ -1,13 +1,14 @@
 # Java8 Optional class
 
 
-Optional class is a container for null.
+Optional class is a container for null. The primary design goal for Optional is to be used **as the return value of functions when a return value might be absent**. The intent is that the **caller immediately check the Optional and extract the actual value if it's present**. If the value is absent, **the caller can substitute a default value, throw an exception, or apply some other policy**. This is typically done by chaining fluent method calls off the end of a stream pipeline (or other methods) that return Optional values.
+
+
 
 ### Optional class Declartion
 
 ```java
-public final class Optional<T>
-extends Object
+public final class Optional<T> extends Object
 ```
 
 
@@ -19,6 +20,7 @@ static <T> Optional<T> empty()
 ```
 
 **Example:**
+
 ```java
 @Test
 public void whenCreatesEmptyOptional_thenCorrect() {
@@ -28,11 +30,12 @@ public void whenCreatesEmptyOptional_thenCorrect() {
 ```
 
 2. 判断其他对象是否等于Optional
+   
 ```java
 boolean equals(Object obj)
 ```
 
-3. optionObject.filter()
+1. optionObject.filter()
   
 Filter takes a predicate as an argument and returns an Optional object. If the wrapped value passes testing by the predicate, then the Optional is returned as-is. if the predicate returns false, then it will return an empty Optional:
 

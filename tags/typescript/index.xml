@@ -14,12 +14,21 @@
 1 2 3 4 5  function display() { console.log(&#34;Hello TypeScript!&#34;); } display(); //Output: Hello TypeScript   Functions can also include parameter types and return type.
 1 2 3 4 5  function Sum(x: number, y: number) : number { return x + y; } Sum(2,3); // returns 5   Anonymous Function An anonymous function are stored in a variable.]]></description>
 </item><item>
+    <title>TypeScript Notes 3 Object Oriented</title>
+    <link>http://miaoshihao.com/notes/computerscience/language/typescript/typescript_notes_3_objectoriented/</link>
+    <pubDate>Fri, 15 Jan 2021 11:53:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/computerscience/language/typescript/typescript_notes_3_objectoriented/</guid>
+    <description><![CDATA[Class in TypeScript A class can include the following:
+Constructor Properties Methods
+1 2 3 4 5 6 7 8 9 10 11 12 13  class Employee { empCode: number; empName: string; constructor(code: number, name: string) { this.empName = name; this.empCode = code; } getSalary() : number { return 10000; } }   Inheritance in TypeScript 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  class Person { name: string; constructor(name: string) { this.]]></description>
+</item><item>
     <title>TypeScript Notes 1 Intro</title>
     <link>http://miaoshihao.com/notes/computerscience/language/typescript/typescript_notes_1_intro/</link>
     <pubDate>Fri, 15 Jan 2021 11:53:26 &#43;0800</pubDate>
     <author>Author</author>
     <guid>http://miaoshihao.com/notes/computerscience/language/typescript/typescript_notes_1_intro/</guid>
     <description><![CDATA[Introduction TypeScript is a statically-typed superset of JavaScript. TypeScript can be transferred to JavaScript.
-Environmental Setup How to install TypeScript 1  npm install -g typescript   How to transfer TypeScript to JavaScript 1  npx tsc greeter.ts   1  npx tsc greeter.ts --out ../dist/greeter.js   How to run JavaScript in shell 1  node greeter.js   Variable Normally, in TypeScript, we use let keyword, as opposed to using traditional JavaScript var keywords to avoid issue with Scoping, capturing, and shadowing etc.]]></description>
+Environmental Setup How to install TypeScript 1  npm install -g typescript   How to transfer TypeScript to JavaScript 1  npx tsc greeter.ts   1  npx tsc greeter.ts --out ../dist/greeter.js   How to run JavaScript in shell 1  node greeter.js   How to create configuration file 1  npx tsc --init   Configuration The presence of a tsconfig.]]></description>
 </item></channel>
 </rss>
