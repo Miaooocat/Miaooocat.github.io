@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Data Structure - Category - Hi, Shihao</title>
+        <link>http://miaoshihao.com/categories/data-structure/</link>
+        <description>Data Structure - Category - Hi, Shihao</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
+            <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 27 May 2021 22:50:26 &#43;0800</lastBuildDate><atom:link href="http://miaoshihao.com/categories/data-structure/" rel="self" type="application/rss+xml" /><item>
+    <title>Tree Notes </title>
+    <link>http://miaoshihao.com/notes/computerscience/algorithm_datastructure/tree/</link>
+    <pubDate>Thu, 27 May 2021 22:50:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/computerscience/algorithm_datastructure/tree/</guid>
+    <description><![CDATA[Tree Introduction Trees consist of vertices (nodes) and edges that connect them. It has no cycle, and is hierarchical.
+Binary Tree 1 2 3 4 5 6 7 8 9 10 11 12  public class BinaryTreeNode { int val; BinaryTreeNode left; BinaryTreeNode right; BinaryTreeNode() {} BinaryTreeNode(int val) { this.val = val; } BinaryTreeNode(int val, BinaryTreeNode left, BinaryTreeNode right) { this.val = val; this.left = left; this.right = right; } }   Check if is same tree Leetcode 100 https://leetcode.]]></description>
+</item></channel>
+</rss>

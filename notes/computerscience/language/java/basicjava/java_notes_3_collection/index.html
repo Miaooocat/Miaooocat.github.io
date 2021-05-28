@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Java Notes(3) Collection Framework - Hi, Shihao</title><meta name="Description" content="Java Fundamental"><meta property="og:title" content="Java Notes(3) Collection Framework" />
+<meta property="og:description" content="Java Fundamental" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://miaoshihao.com/notes/computerscience/language/java/basicjava/java_notes_3_collection/" />
+<meta property="og:image" content="http://miaoshihao.com/logo.png"/>
+<meta property="article:published_time" content="2019-07-16T15:58:26+08:00" />
+<meta property="article:modified_time" content="2019-07-16T15:58:26+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://miaoshihao.com/logo.png"/>
+
+<meta name="twitter:title" content="Java Notes(3) Collection Framework"/>
+<meta name="twitter:description" content="Java Fundamental"/>
+<meta name="application-name" content="Hi, Shihao">
+<meta name="apple-mobile-web-app-title" content="Hi, Shihao"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://miaoshihao.com/notes/computerscience/language/java/basicjava/java_notes_3_collection/" /><link rel="prev" href="http://miaoshihao.com/notes/computerscience/backend/spring/spring/object_instantiation_with_iocdi/" /><link rel="next" href="http://miaoshihao.com/notes/computerscience/language/javascript/javascript_notes_3_objectoriented/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Java Notes(3) Collection Framework",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/miaoshihao.com\/notes\/computerscience\/language\/java\/basicjava\/java_notes_3_collection\/"
+        },"image": ["http:\/\/miaoshihao.com\/images\/Apple-Devices-Preview.png"],"genre": "notes","keywords": "Java","wordcount":  1127 ,
+        "url": "http:\/\/miaoshihao.com\/notes\/computerscience\/language\/java\/basicjava\/java_notes_3_collection\/","datePublished": "2019-07-16T15:58:26+08:00","dateModified": "2019-07-16T15:58:26+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "http:\/\/miaoshihao.com\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Shihao"
+            },"description": "Java Fundamental"
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Hi, Shihao"><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/categories/"> Notes </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/notes/"> Archives </a><a class="menu-item" href="/music/"> Music </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/notes/computerscience/language/java/basicjava/java_notes_3_collection/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>                
+                
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Hi, Shihao"><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/categories/" title="">Notes</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/notes/" title="">Archives</a><a class="menu-item" href="/music/" title="">Music</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/notes/computerscience/language/java/basicjava/java_notes_3_collection/" selected>English</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Java Notes(3) Collection Framework</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Shihao</a></span>&nbsp;<span class="post-category">included in <a href="/categories/java/"><i class="far fa-folder fa-fw"></i>Java</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-07-16">2019-07-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1127 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#hierarchy-of-collection-interface-">Hierarchy of Collection Interface :</a></li>
+    <li><a href="#methods-of-collection-interface-">Methods of Collection Interface :</a></li>
+    <li><a href="#methods-of-iterator-interface-">Methods of Iterator Interface :</a></li>
+    <li><a href="#arraylist-vs-linkedlist-">ArrayList vs LinkedList :</a></li>
+    <li><a href="#arraylist-vs-vector-">ArrayList vs Vector :</a></li>
+    <li><a href="#hierarchy-of-map-interface-">Hierarchy of Map Interface :</a></li>
+    <li><a href="#useful-methods-of-map-interface-">Useful Methods of Map Interface :</a></li>
+    <li><a href="#methods-of-mapentry-interface-">Methods of Map.Entry Interface :</a></li>
+    <li><a href="#hashmap-vs-hashtable-">HashMap vs HashTable :</a></li>
+    <li><a href="#collections-framework-implementation-classes-summary-">Collections Framework Implementation Classes Summary :</a></li>
+    <li><a href="#comparable-vs-comparator-interfaces-">Comparable vs Comparator Interfaces :</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>The java.util package contains all the classes and interfaces for Collection framework.</p>
+<p><strong>Map :</strong>
+An object that maps keys to values. A map is not ordered and cannot contain duplicate keys (but can contain duplicate values). Each key can map to at most one value.</p>
+<p><strong>Collection :</strong>
+A collection represents a group of objects, known as its elements. The JDK provides implementations of more specific subinterfaces like Set and List.</p>
+<p><strong>List :</strong>
+A list is an ordered list of objects, where the same object may well appear more than once. For example: [1, 7, 1, 3, 1, 1, 1, 5]. It makes sense to talk about the &ldquo;third element&rdquo; in a list. You can add an element anywhere in the list, change an element anywhere in the list, or remove an element from any position in the list.</p>
+<p><strong>Queue :</strong>
+A queue is also ordered, but you&rsquo;ll only ever touch elements at one end. All elements get inserted at the &ldquo;end&rdquo; and removed from the &ldquo;beginning&rdquo; (or head) of the queue. You can find out how many elements are in the queue, but you can&rsquo;t find out what, say, the &ldquo;third&rdquo; element is. You&rsquo;ll see it when you get there.</p>
+<p><strong>Set :</strong>
+A set is not ordered and cannot contain duplicates. Any given object either is or isn&rsquo;t in the set. {7, 5, 3, 1} is the exact same set as {1, 7, 3, 5}. You again can&rsquo;t ask for the &ldquo;third&rdquo; element or even the &ldquo;first&rdquo; element, since they are not in any particular order. You can add or remove elements, and you can find out if a certain element exists.</p>
+<table class="alt">
+<tbody>
+<tr><th> </th><th>List</th><th>Set</th><th>Queue</th><th>Map</th></tr>
+<tr><th>Order</th><th>Yes</th><th>No</th><th>Yes</th><th>No</th></tr>
+<tr><th>Duplicates</th><th>Yes</th><th>No</th><th>Yes</th><th>No (Allow duplicate values not keys)</th></tr>
+<tr><th>Null Values</th><th>Yes</th><th>Single Null</th><th>Yes (LinkedList Queue). No (Priority Queue).</th><th>Single null key and many null values</th></tr>
+</tbody></table>
+<h2 id="hierarchy-of-collection-interface-">Hierarchy of Collection Interface :</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="collection-hierarchy.png"
+        data-srcset="/notes/computerscience/language/java/basicjava/java_notes_3_collection/collection-hierarchy.png, collection-hierarchy.png 1.5x, /notes/computerscience/language/java/basicjava/java_notes_3_collection/collection-hierarchy.png 2x"
+        data-sizes="auto"
+        alt="/notes/computerscience/language/java/basicjava/java_notes_3_collection/collection-hierarchy.png"
+        title="collection-hierarchy" /></p>
+<h2 id="methods-of-collection-interface-">Methods of Collection Interface :</h2>
+<table class="alt">
+<tbody><tr><th>No.</th><th>Method</th><th>Description</th></tr>
+<tr><td>1</td><td>public boolean add(Object element)</td><td> is used to insert an element in this collection.</td></tr>
+<tr><td>2</td><td>public boolean addAll(Collection c)</td><td>is used to insert the specified collection elements in the invoking collection.</td></tr>
+<tr><td>3</td><td>public boolean remove(Object element)</td><td>is used to delete an element from this collection.</td></tr>
+<tr><td>4</td><td>public boolean removeAll(Collection c)</td><td>is used to delete all the elements of specified collection from the invoking collection.</td></tr>
+<tr><td>5</td><td>public boolean retainAll(Collection c)</td><td>is used to delete all the elements of invoking collection except the specified collection.</td></tr>
+<tr><td>6</td><td>public int size()</td><td>return the total number of elements in the collection.</td></tr>
+<tr><td>7</td><td>public void clear()</td><td>removes the total no of element from the collection.</td></tr>
+<tr><td>8</td><td>public boolean contains(Object element)</td><td>is used to search an element.</td></tr>
+<tr><td>9</td><td>public boolean containsAll(Collection c)</td><td>is used to search the specified collection in this collection.</td></tr>
+<tr><td>10</td><td>public Iterator iterator()</td><td>returns an iterator.</td></tr>
+<tr><td>11</td><td>public Object[] toArray()</td><td>converts collection into array.</td></tr>
+<tr><td>12</td><td>public boolean isEmpty()</td><td>checks if collection is empty.</td></tr>
+<tr><td>13</td><td>public boolean equals(Object element)</td><td>matches two collection.</td></tr>
+<tr><td>14</td><td>public int hashCode()</td><td>returns the hashcode number for collection.</td></tr>
+</tbody></table>
+<h2 id="methods-of-iterator-interface-">Methods of Iterator Interface :</h2>
+<table class="alt">
+<tbody><tr><th>No.</th><th>Method</th><th>Description</th></tr>
+<tr><td>1</td><td>public boolean hasNext()</td><td>It returns true if iterator has more elements.</td></tr>
+<tr><td>2</td><td>public Object next()</td><td>It returns the element and moves the cursor pointer to the next element.</td></tr>
+<tr><td>3</td><td>public void remove()</td><td>It removes the last elements returned by the iterator. It is rarely used.</td></tr>
+</tbody></table>
+<h2 id="arraylist-vs-linkedlist-">ArrayList vs LinkedList :</h2>
+<table class="alt">
+<tbody><tr><th>ArrayList</th><th>LinkedList</th></tr>
+<tr><td>1) ArrayList internally uses <strong>dynamic array</strong> to store the elements.</td><td>LinkedList internally uses <strong>doubly linked list</strong> to store the elements.</td></tr>
+<tr><td>2) Manipulation with ArrayList is <strong>slow</strong> because it internally uses array. If any element is removed from the array, all the bits are shifted in memory.</td><td>Manipulation with LinkedList is <strong>faster</strong> than ArrayList because it uses doubly linked list so no bit shifting is required in memory.</td></tr>
+<tr><td>3) ArrayList class can <strong>act as a list</strong> only because it implements List only.</td><td>LinkedList class can <strong>act as a list and queue</strong> both because it implements List and Deque interfaces.</td></tr>
+<tr><td>4) ArrayList is <strong>better for storing and accessing</strong> data.</td><td>LinkedList is <strong>better for manipulating</strong> data.</td></tr>
+</tbody></table>
+<h2 id="arraylist-vs-vector-">ArrayList vs Vector :</h2>
+<table class="alt">
+<tbody><tr><th>ArrayList</th><th>Vector</th></tr>
+<tr><td>1) ArrayList is <strong>not synchronized</strong>.</td><td>Vector is <strong>synchronized</strong>.</td></tr>
+<tr><td>2) ArrayList <strong>increments 50%</strong> of current array size if number of element exceeds from its capacity.</td><td>Vector <strong>increments 100%</strong> means doubles the array size if total number of element exceeds than its capacity.</td></tr>
+<tr><td>3) ArrayList is <strong>not a legacy</strong> class, it is introduced in JDK 1.2.</td><td>Vector is a <strong>legacy</strong> class.</td></tr>
+<tr><td>4) ArrayList is <strong>fast</strong> because it is non-synchronized.</td><td>Vector is <strong>slow</strong> because it is synchronized i.e. in multithreading environment, it will hold the other threads in runnable or non-runnable state until current thread releases the lock of object.</td></tr>
+<tr><td>5) ArrayList uses <strong>Iterator</strong> interface to traverse the elements.</td><td>Vector uses <strong>Enumeration</strong> interface to traverse the elements. But it can use Iterator also.</td></tr>
+</tbody></table>
+<h2 id="hierarchy-of-map-interface-">Hierarchy of Map Interface :</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="hierarchy-of-maps-in-java.png"
+        data-srcset="/notes/computerscience/language/java/basicjava/java_notes_3_collection/hierarchy-of-maps-in-java.png, hierarchy-of-maps-in-java.png 1.5x, /notes/computerscience/language/java/basicjava/java_notes_3_collection/hierarchy-of-maps-in-java.png 2x"
+        data-sizes="auto"
+        alt="/notes/computerscience/language/java/basicjava/java_notes_3_collection/hierarchy-of-maps-in-java.png"
+        title="hierarchy-of-maps-in-java" /></p>
+<h2 id="useful-methods-of-map-interface-">Useful Methods of Map Interface :</h2>
+<table class="alt">
+<tbody><tr><th>Method</th><th>Description</th></tr>
+<tr><td> Object put(Object key, Object value)</td><td>It is used to insert an entry in this map.</td></tr>
+<tr><td>void putAll(Map map)</td><td>It is used to insert the specified map in this map.</td></tr>
+<tr><td>Object remove(Object key)</td><td>It is used to delete an entry for the specified key.</td></tr>
+<tr><td>Object get(Object key)</td><td>It is used to return the value for the specified key.</td></tr>
+<tr><td>boolean containsKey(Object key)</td><td>It is used to search the specified key from this map.</td></tr>
+<tr><td>Set keySet()</td><td>It is used to return the Set view containing all the keys.</td></tr>
+<tr><td>Set entrySet()</td><td>It is used to return the Set view containing all the keys and values.</td></tr>
+</tbody></table>
+<h2 id="methods-of-mapentry-interface-">Methods of Map.Entry Interface :</h2>
+<table class="alt">
+<tbody><tr><th>Method</th><th>Description</th></tr>
+<tr><td> Object getKey()</td><td>It is used to obtain key.</td></tr>
+<tr><td>Object getValue()</td><td>It is used to obtain value.</td></tr>
+</tbody></table>
+<h2 id="hashmap-vs-hashtable-">HashMap vs HashTable :</h2>
+<table class="alt">
+<tbody><tr><th>HashMap</th><th>Hashtable</th></tr>
+<tr><td>1) HashMap is <strong>non synchronized</strong>. It is not-thread safe and can't be shared between many threads without proper synchronization code.</td><td>Hashtable is <strong>synchronized</strong>. It is thread-safe and can be shared with many threads.</td></tr>
+<tr><td>2) HashMap <strong>allows one null key and multiple null values</strong>.</td><td>Hashtable <strong>doesn't allow any null key or value</strong>.</td></tr>
+<tr><td>3) HashMap is a <strong>new class introduced in JDK 1.2</strong>.</td><td>Hashtable is a <strong>legacy class</strong>.</td></tr>
+<tr><td>4) HashMap is <strong>fast</strong>.</td><td>Hashtable is <strong>slow</strong>.</td></tr>
+<tr><td>5) We can make the HashMap as synchronized by calling this code<br> Map m = Collections.synchronizedMap(hashMap);</td><td>Hashtable is internally synchronized and can't be unsynchronized.</td></tr>
+<tr><td>6) HashMap is <strong>traversed by Iterator</strong>.</td><td>Hashtable is <strong>traversed by Enumerator and Iterator</strong>.</td></tr>
+<tr><td>7) Iterator in HashMap is <strong>fail-fast</strong>.</td><td>Enumerator in Hashtable is <strong>not fail-fast</strong>.</td></tr>
+<tr><td>8) HashMap inherits <strong>AbstractMap</strong> class.</td><td>Hashtable inherits <strong>Dictionary</strong> class.</td></tr>
+</tbody></table>
+<h2 id="collections-framework-implementation-classes-summary-">Collections Framework Implementation Classes Summary :</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="collectionjava.png"
+        data-srcset="/notes/computerscience/language/java/basicjava/java_notes_3_collection/collectionjava.png, collectionjava.png 1.5x, /notes/computerscience/language/java/basicjava/java_notes_3_collection/collectionjava.png 2x"
+        data-sizes="auto"
+        alt="/notes/computerscience/language/java/basicjava/java_notes_3_collection/collectionjava.png"
+        title="collectionjava" /></p>
+<h2 id="comparable-vs-comparator-interfaces-">Comparable vs Comparator Interfaces :</h2>
+<table class="alt">
+<tbody><tr><th>Comparable</th><th>Comparator</th></tr>
+<tr><td>1) Comparable provides <strong>single sorting sequence</strong>. In other words, we can sort the collection on the basis of single element such as id or name or price etc.</td><td> Comparator provides <strong>multiple sorting sequence</strong>. In other words, we can sort the collection on the basis of multiple elements such as id, name and price etc.</td></tr>
+<tr><td>2) Comparable <strong>affects the original class</strong> i.e. actual class is modified.</td><td>Comparator <strong>doesn't affect the original class</strong> i.e. actual class is not modified.</td></tr>
+<tr><td>3) Comparable provides <strong>compareTo() method</strong> to sort elements.</td><td>Comparator provides <strong>compare() method</strong> to sort elements.</td></tr>
+<tr><td>4) Comparable is found in <strong>java.lang</strong> package.</td><td>Comparator is found in <strong>java.util</strong> package.</td></tr>
+<tr><td>5) We can sort the list elements of Comparable type by <strong>Collections.sort(List)</strong> method.</td><td>We can sort the list elements of Comparator type by <strong>Collections.sort(List,Comparator)</strong> method.</td></tr>
+</tbody></table>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2019-07-16</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/notes/computerscience/language/java/basicjava/java_notes_3_collection/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/java/">Java</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/notes/computerscience/backend/spring/spring/object_instantiation_with_iocdi/" class="prev" rel="prev" title="Spring Framework Notes 3 - Object Instantiation with IOC/DI"><i class="fas fa-angle-left fa-fw"></i>Spring Framework Notes 3 - Object Instantiation with IOC/DI</a>
+            <a href="/notes/computerscience/language/javascript/javascript_notes_3_objectoriented/" class="next" rel="next" title="Javascript Notes 3 Object Oriented">Javascript Notes 3 Object Oriented<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Shihao Miao</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><div>
+                    <span id="timeDate">Loading Days...</span><span id="times">Loading Times...</span>
+                    <script>
+                        var now = new Date();
+                        function createtime() {
+                            var grt= new Date("03/20/2019 00:00:00");
+                            now.setTime(now.getTime()+250);
+                            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+                            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+                            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+                            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+                            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+                            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+                            document.getElementById("timeDate").innerHTML = "This website has struggled in this world for "+dnum+" day ";
+                            document.getElementById("times").innerHTML = hnum + " hour " + mnum + " min " + snum + " sec";
+                        }
+                    setInterval("createtime()",250);
+                    </script>
+                    </div></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-1":"\u003e$ cd /home/ ","id-2":"\u003e$ cd /home/ "},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":" |","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":500}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

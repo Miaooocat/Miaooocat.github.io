@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Spring Framework Notes 3 - Object Instantiation with IOC/DI - Hi, Shihao</title><meta name="Description" content="Spring Notes"><meta property="og:title" content="Spring Framework Notes 3 - Object Instantiation with IOC/DI" />
+<meta property="og:description" content="Spring Notes" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://miaoshihao.com/notes/computerscience/backend/spring/spring/object_instantiation_with_iocdi/" />
+<meta property="og:image" content="http://miaoshihao.com/logo.png"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://miaoshihao.com/logo.png"/>
+
+<meta name="twitter:title" content="Spring Framework Notes 3 - Object Instantiation with IOC/DI"/>
+<meta name="twitter:description" content="Spring Notes"/>
+<meta name="application-name" content="Hi, Shihao">
+<meta name="apple-mobile-web-app-title" content="Hi, Shihao"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://miaoshihao.com/notes/computerscience/backend/spring/spring/object_instantiation_with_iocdi/" /><link rel="prev" href="http://miaoshihao.com/notes/computerscience/language/typescript/typescript_notes_1_intro/" /><link rel="next" href="http://miaoshihao.com/notes/computerscience/language/java/basicjava/java_notes_3_collection/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Spring Framework Notes 3 - Object Instantiation with IOC/DI",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/miaoshihao.com\/notes\/computerscience\/backend\/spring\/spring\/object_instantiation_with_iocdi\/"
+        },"image": ["http:\/\/miaoshihao.com\/images\/Apple-Devices-Preview.png"],"genre": "notes","keywords": "Java","wordcount":  1532 ,
+        "url": "http:\/\/miaoshihao.com\/notes\/computerscience\/backend\/spring\/spring\/object_instantiation_with_iocdi\/","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "http:\/\/miaoshihao.com\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Shihao"
+            },"description": "Spring Notes"
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Hi, Shihao"><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/categories/"> Notes </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/notes/"> Archives </a><a class="menu-item" href="/music/"> Music </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/notes/computerscience/backend/spring/spring/object_instantiation_with_iocdi/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>                
+                
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Hi, Shihao"><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/categories/" title="">Notes</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/notes/" title="">Archives</a><a class="menu-item" href="/music/" title="">Music</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/notes/computerscience/backend/spring/spring/object_instantiation_with_iocdi/" selected>English</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Spring Framework Notes 3 - Object Instantiation with IOC/DI</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Shihao</a></span>&nbsp;<span class="post-category">included in <a href="/categories/spring/"><i class="far fa-folder fa-fw"></i>Spring</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="0001-01-01">0001-01-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1532 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;8 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#inverse-of-control-ioc-and-dependency-injection">Inverse of Control (IOC) and Dependency Injection</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#example">Example</a></li>
+            <li><a href="#xml-implementation">XML Implementation</a></li>
+            <li><a href="#java-implementation">Java Implementation</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#dependency-injection-inner-bean">Dependency Injection Inner Bean</a>
+      <ul>
+        <li><a href="#type-1-setter-based-dependency-injection">Type 1 Setter-based dependency injection</a></li>
+        <li><a href="#type-2-constructor-based-dependency-injection">Type 2 Constructor-based dependency injection</a>
+          <ul>
+            <li><a href="#constructor-arguments-resolution">Constructor arguments resolution</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#spring-injecting-collection">Spring Injecting Collection</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="inverse-of-control-ioc-and-dependency-injection">Inverse of Control (IOC) and Dependency Injection</h2>
+<p><strong>Inversion of Control (IoC)</strong>: Application get the objects that they need from an outside source.</p>
+<p><strong>Dependency Injection (DI)</strong>: Dependency Injection is one type of Inversion of Control. It allows the creation of dependent objects outside of a class and provides those objects to a class through constructor or through factory method.</p>
+<h4 id="example">Example</h4>
+<p>For example, a text editor want to have spell checking.</p>
+<p>The standard code would look something like below:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TextEditor</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="n">SpellChecker</span> <span class="n">checker</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="nf">TextEditor</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">checker</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SpellChecker</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>The inverse controller code would look like below:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TextEditor</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="n">IocSpellChecker</span> <span class="n">checker</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">TextEditor</span><span class="o">(</span><span class="n">IocSpellChecker</span> <span class="n">checker</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">checker</span> <span class="o">=</span> <span class="n">checker</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>In the first code example we are instantiating SpellChecker <code>this.checker = new SpellChecker();</code>, which means the TextEditor class directly depends on the SpellChecker class.</p>
+<p>In the second code example we are creating an abstraction by having the SpellChecker dependency class in TextEditor&rsquo;s constructor signature (not initializing dependency in class). This allows us to call the dependency then pass it to the TextEditor class like so:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kt">void</span> <span class="nf">main</span><span class="o">(){</span>
+   <span class="n">EnglishSpellChecker</span> <span class="n">englishSpellChecker</span> <span class="o">=</span> <span class="k">new</span> <span class="n">EnglishSpellChecker</span><span class="o">;</span> <span class="c1">// dependency
+</span><span class="c1"></span>   <span class="n">FrenchSpellChecker</span> <span class="n">frenchSpellChecker</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FrenchSpellChecker</span><span class="o">;</span>
+
+   <span class="c1">// We can decide which spell checker being used
+</span><span class="c1"></span>   <span class="n">TextEditor</span> <span class="n">textEditor</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TextEditor</span><span class="o">(</span><span class="n">englishSpellChecker</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>The client who create the TextEditor class has control over which SpellChecker implementation to use as this is injected into TextEditor signature</p>
+<p>Spring uses dependency injection. The following is the implementation by both xml or java.</p>
+<h4 id="xml-implementation">XML Implementation</h4>
+<p>The following XML declares two beans, an InventoryService bean and a ProductService bean, and wires the InventoryService bean into ProductService via a constructor argument:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&#34;inventoryService&#34;</span> <span class="na">class=</span><span class="s">&#34;com.example.InventoryService&#34;</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&#34;productService&#34;</span> <span class="na">class=</span><span class="s">&#34;com.example.ProductService&#34;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;constructor-arg</span> <span class="na">ref=</span><span class="s">&#34;inventoryService&#34;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/bean&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="java-implementation">Java Implementation</h4>
+<p>The @Configuration annotation indicates to Spring that this is a configuration class that will provide beans to the Spring application context. The configuration’s class methods are annotated with @Bean, indicating that the objects they return should be added as beans in the application context.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Configuration</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ServiceConfiguration</span> <span class="o">{</span>
+  <span class="nd">@Bean</span>
+  <span class="kd">public</span> <span class="n">InventoryService</span> <span class="nf">inventoryService</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="n">InventoryService</span><span class="o">();</span>
+  <span class="o">}</span>
+  <span class="nd">@Bean</span>
+  <span class="kd">public</span> <span class="n">ProductService</span> <span class="nf">productService</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="n">ProductService</span><span class="o">(</span><span class="n">inventoryService</span><span class="o">());</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="dependency-injection-inner-bean">Dependency Injection Inner Bean</h2>
+<p>There are two types of dependency injection in Spring.</p>
+<h3 id="type-1-setter-based-dependency-injection">Type 1 Setter-based dependency injection</h3>
+<p><strong>Setter-based dependency injection</strong> is accomplished by the container calling setter methods on your beans after invoking a no-argument constructor or no-argument static factory method to instantiate your bean.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TextEditor</span> <span class="o">{</span>
+   <span class="kd">private</span> <span class="n">SpellChecker</span> <span class="n">spellChecker</span><span class="o">;</span>
+
+   <span class="c1">// a setter method to inject the dependency.
+</span><span class="c1"></span>   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setSpellChecker</span><span class="o">(</span><span class="n">SpellChecker</span> <span class="n">spellChecker</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Inside setSpellChecker.&#34;</span> <span class="o">);</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">spellChecker</span> <span class="o">=</span> <span class="n">spellChecker</span><span class="o">;</span>
+   <span class="o">}</span>
+   <span class="c1">// a getter method to return spellChecker
+</span><span class="c1"></span>   <span class="kd">public</span> <span class="n">SpellChecker</span> <span class="nf">getSpellChecker</span><span class="o">()</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="n">spellChecker</span><span class="o">;</span>
+   <span class="o">}</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">spellCheck</span><span class="o">()</span> <span class="o">{</span>
+      <span class="n">spellChecker</span><span class="o">.</span><span class="na">checkSpelling</span><span class="o">();</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SpellChecker</span> <span class="o">{</span>
+   <span class="kd">public</span> <span class="nf">SpellChecker</span><span class="o">(){</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Inside SpellChecker constructor.&#34;</span> <span class="o">);</span>
+   <span class="o">}</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">checkSpelling</span><span class="o">()</span> <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Inside checkSpelling.&#34;</span> <span class="o">);</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">org.springframework.context.ApplicationContext</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.support.ClassPathXmlApplicationContext</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainApp</span> <span class="o">{</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">ApplicationContext</span> <span class="n">context</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ClassPathXmlApplicationContext</span><span class="o">(</span><span class="s">&#34;Beans.xml&#34;</span><span class="o">);</span>
+      <span class="n">TextEditor</span> <span class="n">te</span> <span class="o">=</span> <span class="o">(</span><span class="n">TextEditor</span><span class="o">)</span> <span class="n">context</span><span class="o">.</span><span class="na">getBean</span><span class="o">(</span><span class="s">&#34;textEditor&#34;</span><span class="o">);</span>
+      <span class="n">te</span><span class="o">.</span><span class="na">spellCheck</span><span class="o">();</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version = &#34;1.0&#34; encoding = &#34;UTF-8&#34;?&gt;</span>
+
+<span class="nt">&lt;beans</span> <span class="na">xmlns =</span> <span class="s">&#34;http://www.springframework.org/schema/beans&#34;</span>
+   <span class="na">xmlns:xsi =</span> <span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+   <span class="na">xsi:schemaLocation =</span> <span class="s">&#34;http://www.springframework.org/schema/beans
+</span><span class="s">   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd&#34;</span><span class="nt">&gt;</span>
+   
+   <span class="c">&lt;!-- Definition for textEditor bean --&gt;</span>
+   <span class="nt">&lt;bean</span> <span class="na">id =</span> <span class="s">&#34;textEditor&#34;</span> <span class="na">class =</span> <span class="s">&#34;com.TextEditor&#34;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;property</span> <span class="na">name =</span> <span class="s">&#34;spellChecker&#34;</span> <span class="na">ref =</span> <span class="s">&#34;spellChecker&#34;</span><span class="nt">/&gt;</span>
+   <span class="nt">&lt;/bean&gt;</span>
+
+   <span class="c">&lt;!-- Definition for spellChecker bean --&gt;</span>
+   <span class="nt">&lt;bean</span> <span class="na">id =</span> <span class="s">&#34;spellChecker&#34;</span> <span class="na">class =</span> <span class="s">&#34;com.SpellChecker&#34;</span><span class="nt">&gt;&lt;/bean&gt;</span>
+<span class="nt">&lt;/beans&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="type-2-constructor-based-dependency-injection">Type 2 Constructor-based dependency injection</h3>
+<p><strong>Constructor-based dependency injection</strong> is accomplished when the container invokes a class constructor with a number of arguments, each representing a dependency on the other class.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TextEditor</span> <span class="o">{</span>
+   <span class="kd">private</span> <span class="n">SpellChecker</span> <span class="n">spellChecker</span><span class="o">;</span>
+   <span class="kd">public</span> <span class="nf">TextEditor</span><span class="o">(</span><span class="n">SpellChecker</span> <span class="n">spellChecker</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Inside TextEditor constructor.&#34;</span> <span class="o">);</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">spellChecker</span> <span class="o">=</span> <span class="n">spellChecker</span><span class="o">;</span>
+   <span class="o">}</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">spellCheck</span><span class="o">()</span> <span class="o">{</span>
+      <span class="n">spellChecker</span><span class="o">.</span><span class="na">checkSpelling</span><span class="o">();</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SpellChecker</span> <span class="o">{</span>
+   <span class="kd">public</span> <span class="nf">SpellChecker</span><span class="o">(){</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Inside SpellChecker constructor.&#34;</span> <span class="o">);</span>
+   <span class="o">}</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">checkSpelling</span><span class="o">()</span> <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Inside checkSpelling.&#34;</span> <span class="o">);</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">org.springframework.context.ApplicationContext</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.support.ClassPathXmlApplicationContext</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainApp</span> <span class="o">{</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">ApplicationContext</span> <span class="n">context</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ClassPathXmlApplicationContext</span><span class="o">(</span><span class="s">&#34;Beans.xml&#34;</span><span class="o">);</span>
+
+      <span class="n">TextEditor</span> <span class="n">te</span> <span class="o">=</span> <span class="o">(</span><span class="n">TextEditor</span><span class="o">)</span> <span class="n">context</span><span class="o">.</span><span class="na">getBean</span><span class="o">(</span><span class="s">&#34;textEditor&#34;</span><span class="o">);</span>
+      <span class="n">te</span><span class="o">.</span><span class="na">spellCheck</span><span class="o">();</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version = &#34;1.0&#34; encoding = &#34;UTF-8&#34;?&gt;</span>
+
+<span class="nt">&lt;beans</span> <span class="na">xmlns =</span> <span class="s">&#34;http://www.springframework.org/schema/beans&#34;</span>
+   <span class="na">xmlns:xsi =</span> <span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+   <span class="na">xsi:schemaLocation =</span> <span class="s">&#34;http://www.springframework.org/schema/beans
+</span><span class="s">   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd&#34;</span><span class="nt">&gt;</span>
+
+   <span class="c">&lt;!-- Definition for textEditor bean --&gt;</span>
+   <span class="nt">&lt;bean</span> <span class="na">id =</span> <span class="s">&#34;textEditor&#34;</span> <span class="na">class =</span> <span class="s">&#34;com.TextEditor&#34;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;constructor-arg</span> <span class="na">ref =</span> <span class="s">&#34;spellChecker&#34;</span><span class="nt">/&gt;</span>
+   <span class="nt">&lt;/bean&gt;</span>
+   <span class="c">&lt;!-- Definition for spellChecker bean --&gt;</span>
+   <span class="nt">&lt;bean</span> <span class="na">id =</span> <span class="s">&#34;spellChecker&#34;</span> <span class="na">class =</span> <span class="s">&#34;com.SpellChecker&#34;</span><span class="nt">&gt;&lt;/bean&gt;</span>
+<span class="nt">&lt;/beans&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="constructor-arguments-resolution">Constructor arguments resolution</h4>
+<p>The order in which the constructor arguments are defined in a bean definition is the order in which those arguments are supplied to the appropriate constructor.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Foo</span> <span class="o">{</span>
+   <span class="kd">public</span> <span class="nf">Foo</span><span class="o">(</span><span class="n">Bar</span> <span class="n">bar</span><span class="o">,</span> <span class="n">Baz</span> <span class="n">baz</span><span class="o">)</span> <span class="o">{</span>
+      <span class="c1">// ...
+</span><span class="c1"></span>   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;beans&gt;</span>
+   <span class="nt">&lt;bean</span> <span class="na">id =</span> <span class="s">&#34;foo&#34;</span> <span class="na">class =</span> <span class="s">&#34;x.y.Foo&#34;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;constructor-arg</span> <span class="na">ref =</span> <span class="s">&#34;bar&#34;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;constructor-arg</span> <span class="na">ref =</span> <span class="s">&#34;baz&#34;</span><span class="nt">/&gt;</span>
+   <span class="nt">&lt;/bean&gt;</span>
+
+   <span class="nt">&lt;bean</span> <span class="na">id =</span> <span class="s">&#34;bar&#34;</span> <span class="na">class =</span> <span class="s">&#34;x.y.Bar&#34;</span><span class="nt">/&gt;</span>
+   <span class="nt">&lt;bean</span> <span class="na">id =</span> <span class="s">&#34;baz&#34;</span> <span class="na">class =</span> <span class="s">&#34;x.y.Baz&#34;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/beans&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Foo</span> <span class="o">{</span>
+   <span class="kd">public</span> <span class="nf">Foo</span><span class="o">(</span><span class="kt">int</span> <span class="n">year</span><span class="o">,</span> <span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+      <span class="c1">// ...
+</span><span class="c1"></span>   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>The container can also use <strong>type matching with types</strong>, if you explicitly specify the type of the constructor argument using the type attribute.</p>
+<p>For example −</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;beans&gt;</span>
+
+   <span class="nt">&lt;bean</span> <span class="na">id =</span> <span class="s">&#34;exampleBean&#34;</span> <span class="na">class =</span> <span class="s">&#34;examples.ExampleBean&#34;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;constructor-arg</span> <span class="na">type =</span> <span class="s">&#34;int&#34;</span> <span class="na">value =</span> <span class="s">&#34;2001&#34;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;constructor-arg</span> <span class="na">type =</span> <span class="s">&#34;java.lang.String&#34;</span> <span class="na">value =</span> <span class="s">&#34;Zara&#34;</span><span class="nt">/&gt;</span>
+   <span class="nt">&lt;/bean&gt;</span>
+
+<span class="nt">&lt;/beans&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Finally, <strong>the best way</strong> to pass constructor arguments, use the index attribute to specify explicitly the <strong>index</strong> of constructor arguments. Here, the index is 0 based. For example −</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;beans&gt;</span>
+   <span class="nt">&lt;bean</span> <span class="na">id =</span> <span class="s">&#34;exampleBean&#34;</span> <span class="na">class =</span> <span class="s">&#34;examples.ExampleBean&#34;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;constructor-arg</span> <span class="na">index =</span> <span class="s">&#34;0&#34;</span> <span class="na">value =</span> <span class="s">&#34;2001&#34;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;constructor-arg</span> <span class="na">index =</span> <span class="s">&#34;1&#34;</span> <span class="na">value =</span> <span class="s">&#34;Zara&#34;</span><span class="nt">/&gt;</span>
+   <span class="nt">&lt;/bean&gt;</span>
+<span class="nt">&lt;/beans&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="spring-injecting-collection">Spring Injecting Collection</h2>
+<p>Java Collection class object can also be injected by using Spring Framework, see example below</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">JavaCollection</span> <span class="o">{</span>
+   <span class="n">List</span> <span class="n">addressList</span><span class="o">;</span>
+   <span class="n">Set</span>  <span class="n">addressSet</span><span class="o">;</span>
+   <span class="n">Map</span>  <span class="n">addressMap</span><span class="o">;</span>
+   <span class="n">Properties</span> <span class="n">addressProp</span><span class="o">;</span>
+
+   <span class="c1">// a setter method to set List
+</span><span class="c1"></span>   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setAddressList</span><span class="o">(</span><span class="n">List</span> <span class="n">addressList</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">addressList</span> <span class="o">=</span> <span class="n">addressList</span><span class="o">;</span>
+   <span class="o">}</span>
+   
+   <span class="c1">// prints and returns all the elements of the list.
+</span><span class="c1"></span>   <span class="kd">public</span> <span class="n">List</span> <span class="nf">getAddressList</span><span class="o">()</span> <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;List Elements :&#34;</span>  <span class="o">+</span> <span class="n">addressList</span><span class="o">);</span>
+      <span class="k">return</span> <span class="n">addressList</span><span class="o">;</span>
+   <span class="o">}</span>
+   
+   <span class="c1">// a setter method to set Set
+</span><span class="c1"></span>   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setAddressSet</span><span class="o">(</span><span class="n">Set</span> <span class="n">addressSet</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">addressSet</span> <span class="o">=</span> <span class="n">addressSet</span><span class="o">;</span>
+   <span class="o">}</span>
+   
+   <span class="c1">// prints and returns all the elements of the Set.
+</span><span class="c1"></span>   <span class="kd">public</span> <span class="n">Set</span> <span class="nf">getAddressSet</span><span class="o">()</span> <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Set Elements :&#34;</span>  <span class="o">+</span> <span class="n">addressSet</span><span class="o">);</span>
+      <span class="k">return</span> <span class="n">addressSet</span><span class="o">;</span>
+   <span class="o">}</span>
+   
+   <span class="c1">// a setter method to set Map
+</span><span class="c1"></span>   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setAddressMap</span><span class="o">(</span><span class="n">Map</span> <span class="n">addressMap</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">addressMap</span> <span class="o">=</span> <span class="n">addressMap</span><span class="o">;</span>
+   <span class="o">}</span>
+   
+   <span class="c1">// prints and returns all the elements of the Map.
+</span><span class="c1"></span>   <span class="kd">public</span> <span class="n">Map</span> <span class="nf">getAddressMap</span><span class="o">()</span> <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Map Elements :&#34;</span>  <span class="o">+</span> <span class="n">addressMap</span><span class="o">);</span>
+      <span class="k">return</span> <span class="n">addressMap</span><span class="o">;</span>
+   <span class="o">}</span>
+   
+   <span class="c1">// a setter method to set Property
+</span><span class="c1"></span>   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setAddressProp</span><span class="o">(</span><span class="n">Properties</span> <span class="n">addressProp</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">addressProp</span> <span class="o">=</span> <span class="n">addressProp</span><span class="o">;</span>
+   <span class="o">}</span>
+   
+   <span class="c1">// prints and returns all the elements of the Property.
+</span><span class="c1"></span>   <span class="kd">public</span> <span class="n">Properties</span> <span class="nf">getAddressProp</span><span class="o">()</span> <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Property Elements :&#34;</span>  <span class="o">+</span> <span class="n">addressProp</span><span class="o">);</span>
+      <span class="k">return</span> <span class="n">addressProp</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">
+<span class="kn">import</span> <span class="nn">org.springframework.context.ApplicationContext</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.support.ClassPathXmlApplicationContext</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainApp</span> <span class="o">{</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">ApplicationContext</span> <span class="n">context</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ClassPathXmlApplicationContext</span><span class="o">(</span><span class="s">&#34;Beans.xml&#34;</span><span class="o">);</span>
+      <span class="n">JavaCollection</span> <span class="n">jc</span><span class="o">=(</span><span class="n">JavaCollection</span><span class="o">)</span><span class="n">context</span><span class="o">.</span><span class="na">getBean</span><span class="o">(</span><span class="s">&#34;javaCollection&#34;</span><span class="o">);</span>
+
+      <span class="n">jc</span><span class="o">.</span><span class="na">getAddressList</span><span class="o">();</span>
+      <span class="n">jc</span><span class="o">.</span><span class="na">getAddressSet</span><span class="o">();</span>
+      <span class="n">jc</span><span class="o">.</span><span class="na">getAddressMap</span><span class="o">();</span>
+      <span class="n">jc</span><span class="o">.</span><span class="na">getAddressProp</span><span class="o">();</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version = &#34;1.0&#34; encoding = &#34;UTF-8&#34;?&gt;</span>
+
+<span class="nt">&lt;beans</span> <span class="na">xmlns =</span> <span class="s">&#34;http://www.springframework.org/schema/beans&#34;</span>
+   <span class="na">xmlns:xsi =</span> <span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+   <span class="na">xsi:schemaLocation =</span> <span class="s">&#34;http://www.springframework.org/schema/beans
+</span><span class="s">   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd&#34;</span><span class="nt">&gt;</span>
+
+   <span class="c">&lt;!-- Definition for javaCollection --&gt;</span>
+   <span class="nt">&lt;bean</span> <span class="na">id =</span> <span class="s">&#34;javaCollection&#34;</span> <span class="na">class =</span> <span class="s">&#34;com.JavaCollection&#34;</span><span class="nt">&gt;</span>
+      
+      <span class="c">&lt;!-- results in a setAddressList(java.util.List) call --&gt;</span>
+      <span class="nt">&lt;property</span> <span class="na">name =</span> <span class="s">&#34;addressList&#34;</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;list&gt;</span>
+            <span class="nt">&lt;value&gt;</span>INDIA<span class="nt">&lt;/value&gt;</span>
+            <span class="nt">&lt;value&gt;</span>Pakistan<span class="nt">&lt;/value&gt;</span>
+            <span class="nt">&lt;value&gt;</span>USA<span class="nt">&lt;/value&gt;</span>
+            <span class="nt">&lt;value&gt;</span>USA<span class="nt">&lt;/value&gt;</span>
+         <span class="nt">&lt;/list&gt;</span>
+      <span class="nt">&lt;/property&gt;</span>
+
+      <span class="c">&lt;!-- results in a setAddressSet(java.util.Set) call --&gt;</span>
+      <span class="nt">&lt;property</span> <span class="na">name =</span> <span class="s">&#34;addressSet&#34;</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;set&gt;</span>
+            <span class="nt">&lt;value&gt;</span>INDIA<span class="nt">&lt;/value&gt;</span>
+            <span class="nt">&lt;value&gt;</span>Pakistan<span class="nt">&lt;/value&gt;</span>
+            <span class="nt">&lt;value&gt;</span>USA<span class="nt">&lt;/value&gt;</span>
+            <span class="nt">&lt;value&gt;</span>USA<span class="nt">&lt;/value&gt;</span>
+         <span class="nt">&lt;/set&gt;</span>
+      <span class="nt">&lt;/property&gt;</span>
+
+      <span class="c">&lt;!-- results in a setAddressMap(java.util.Map) call --&gt;</span>
+      <span class="nt">&lt;property</span> <span class="na">name =</span> <span class="s">&#34;addressMap&#34;</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;map&gt;</span>
+            <span class="nt">&lt;entry</span> <span class="na">key =</span> <span class="s">&#34;1&#34;</span> <span class="na">value =</span> <span class="s">&#34;INDIA&#34;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;entry</span> <span class="na">key =</span> <span class="s">&#34;2&#34;</span> <span class="na">value =</span> <span class="s">&#34;Pakistan&#34;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;entry</span> <span class="na">key =</span> <span class="s">&#34;3&#34;</span> <span class="na">value =</span> <span class="s">&#34;USA&#34;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;entry</span> <span class="na">key =</span> <span class="s">&#34;4&#34;</span> <span class="na">value =</span> <span class="s">&#34;USA&#34;</span><span class="nt">/&gt;</span>
+         <span class="nt">&lt;/map&gt;</span>
+      <span class="nt">&lt;/property&gt;</span>
+      
+      <span class="c">&lt;!-- results in a setAddressProp(java.util.Properties) call --&gt;</span>
+      <span class="nt">&lt;property</span> <span class="na">name =</span> <span class="s">&#34;addressProp&#34;</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;props&gt;</span>
+            <span class="nt">&lt;prop</span> <span class="na">key =</span> <span class="s">&#34;one&#34;</span><span class="nt">&gt;</span>INDIA<span class="nt">&lt;/prop&gt;</span>
+            <span class="nt">&lt;prop</span> <span class="na">key =</span> <span class="s">&#34;one&#34;</span><span class="nt">&gt;</span>INDIA<span class="nt">&lt;/prop&gt;</span>
+            <span class="nt">&lt;prop</span> <span class="na">key =</span> <span class="s">&#34;two&#34;</span><span class="nt">&gt;</span>Pakistan<span class="nt">&lt;/prop&gt;</span>
+            <span class="nt">&lt;prop</span> <span class="na">key =</span> <span class="s">&#34;three&#34;</span><span class="nt">&gt;</span>USA<span class="nt">&lt;/prop&gt;</span>
+            <span class="nt">&lt;prop</span> <span class="na">key =</span> <span class="s">&#34;four&#34;</span><span class="nt">&gt;</span>USA<span class="nt">&lt;/prop&gt;</span>
+         <span class="nt">&lt;/props&gt;</span>
+      <span class="nt">&lt;/property&gt;</span>
+   <span class="nt">&lt;/bean&gt;</span>
+
+<span class="nt">&lt;/beans&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 0001-01-01</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/notes/computerscience/backend/spring/spring/object_instantiation_with_iocdi/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/java/">Java</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/notes/computerscience/language/typescript/typescript_notes_1_intro/" class="prev" rel="prev" title="TypeScript Notes 1 Intro"><i class="fas fa-angle-left fa-fw"></i>TypeScript Notes 1 Intro</a>
+            <a href="/notes/computerscience/language/java/basicjava/java_notes_3_collection/" class="next" rel="next" title="Java Notes(3) Collection Framework">Java Notes(3) Collection Framework<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Shihao Miao</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><div>
+                    <span id="timeDate">Loading Days...</span><span id="times">Loading Times...</span>
+                    <script>
+                        var now = new Date();
+                        function createtime() {
+                            var grt= new Date("03/20/2019 00:00:00");
+                            now.setTime(now.getTime()+250);
+                            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+                            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+                            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+                            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+                            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+                            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+                            document.getElementById("timeDate").innerHTML = "This website has struggled in this world for "+dnum+" day ";
+                            document.getElementById("times").innerHTML = hnum + " hour " + mnum + " min " + snum + " sec";
+                        }
+                    setInterval("createtime()",250);
+                    </script>
+                    </div></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-1":"\u003e$ cd /home/ ","id-2":"\u003e$ cd /home/ "},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":" |","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":500}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

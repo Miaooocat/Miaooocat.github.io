@@ -6,10 +6,10 @@
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
             <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 11 Dec 2020 19:32:26 &#43;0800</lastBuildDate><atom:link href="http://miaoshihao.com/tags/network/" rel="self" type="application/rss+xml" /><item>
     <title>Network</title>
-    <link>http://miaoshihao.com/notes/computerscience/middleware/network/network_overview/</link>
+    <link>http://miaoshihao.com/notes/computerscience/internet/network/network_overview/</link>
     <pubDate>Fri, 11 Dec 2020 19:32:26 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/computerscience/middleware/network/network_overview/</guid>
+    <guid>http://miaoshihao.com/notes/computerscience/internet/network/network_overview/</guid>
     <description><![CDATA[OSI Model The Open Systems Interconnection (OSI) model is a conceptual model created by the International Organization for Standardization which enables diverse communication systems to communicate using standard protocols.
  Layer Protocol data unit (PDU) Function   Application (应用层) Data High-level APIs, including resource sharing, remote file access, ex: HTTP, HTTPS,FTP,SSH and etc..   Presentation (表示层) Data Translation of data between a networking service and an application; including character encoding, data compression and encryption/decryption   Session(会话层) Data Managing communication sessions, i.]]></description>
 </item></channel>

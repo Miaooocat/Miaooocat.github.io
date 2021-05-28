@@ -6,43 +6,43 @@
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
             <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 20 Aug 2020 22:50:21 &#43;0800</lastBuildDate><atom:link href="http://miaoshihao.com/categories/spring/" rel="self" type="application/rss+xml" /><item>
     <title>Difference in Spring and Spring Boot</title>
-    <link>http://miaoshihao.com/notes/computerscience/framework/spring/springboot/</link>
+    <link>http://miaoshihao.com/notes/computerscience/backend/spring/springboot/</link>
     <pubDate>Thu, 20 Aug 2020 22:50:21 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/computerscience/framework/spring/springboot/</guid>
+    <guid>http://miaoshihao.com/notes/computerscience/backend/spring/springboot/</guid>
     <description><![CDATA[Spring Boot is an extension of the Spring framework which eliminated the boilerplate configurations required for setting up a Spring application. This notes highlight the difference between Spring Boot and Spring.
 Maven Dependencies Spring looks minimum dependencies required to create an web application.
 1 2 3 4 5 6 7 8 9 10  &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-web&lt;/artifactId&gt; &lt;version&gt;5.2.9.RELEASE&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt; &lt;version&gt;5.2.9.RELEASE&lt;/version&gt; &lt;/dependency&gt;   Spring Boot requires only one dependency:]]></description>
 </item><item>
     <title>Spring Framework Notes - Overview</title>
-    <link>http://miaoshihao.com/notes/computerscience/framework/spring/spring/spring_overview/</link>
+    <link>http://miaoshihao.com/notes/computerscience/backend/spring/spring/spring_overview/</link>
     <pubDate>Mon, 20 Jul 2020 22:50:21 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/computerscience/framework/spring/spring/spring_overview/</guid>
+    <guid>http://miaoshihao.com/notes/computerscience/backend/spring/spring/spring_overview/</guid>
     <description><![CDATA[Spring  Notes]]></description>
 </item><item>
     <title>Spring Integration Notes(1) Overview </title>
-    <link>http://miaoshihao.com/notes/computerscience/framework/spring/spring_integration/</link>
+    <link>http://miaoshihao.com/notes/computerscience/backend/spring/spring_integration/</link>
     <pubDate>Tue, 01 Oct 2019 22:50:26 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/computerscience/framework/spring/spring_integration/</guid>
+    <guid>http://miaoshihao.com/notes/computerscience/backend/spring/spring_integration/</guid>
     <description><![CDATA[Spring Integration Basic Overview Spring Integration is an open source framework that designed to enable the development of integration solutions typical of event-driven architectures and messaging-centric architectures. It requires dependency spring intergration core, which could be downloaded from Maven Central.
 1 2 3 4 5  &lt;dependency&gt; &lt;groupId&gt;org.springframework.integration&lt;/groupId&gt; &lt;artifactId&gt;spring-integration-core&lt;/artifactId&gt; &lt;version&gt;5.3.1.RELEASE&lt;/version&gt; &lt;/dependency&gt;   Spring integration framework consists three parts, namely message, message channel, and message endpoint. In general. a message is a unit of information that can be passed between different message endpoint through message channels.]]></description>
 </item><item>
     <title>Spring Framework Notes 2 - Beans, BeanFactory and the ApplicationContext</title>
-    <link>http://miaoshihao.com/notes/computerscience/framework/spring/spring/spring_bean/</link>
+    <link>http://miaoshihao.com/notes/computerscience/backend/spring/spring/spring_bean/</link>
     <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/computerscience/framework/spring/spring/spring_bean/</guid>
+    <guid>http://miaoshihao.com/notes/computerscience/backend/spring/spring/spring_bean/</guid>
     <description><![CDATA[Bean Bean represents as an objects in Java. Bean need to contain the following points:
 The Bean class The class attribute in bean is normally mandatory. The creation of bean object is through BeanFactory. It has three approaches.
 The first approach is where the BeanFactory itself directly creates the bean by calling its constructor (equivalent to Java code calling new), the class attribute specifies the class of the bean to be constructed.]]></description>
 </item><item>
     <title>Spring Framework Notes 3 - Object Instantiation with IOC/DI</title>
-    <link>http://miaoshihao.com/notes/computerscience/framework/spring/spring/object_instantiation_with_iocdi/</link>
+    <link>http://miaoshihao.com/notes/computerscience/backend/spring/spring/object_instantiation_with_iocdi/</link>
     <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/computerscience/framework/spring/spring/object_instantiation_with_iocdi/</guid>
+    <guid>http://miaoshihao.com/notes/computerscience/backend/spring/spring/object_instantiation_with_iocdi/</guid>
     <description><![CDATA[Inverse of Control (IOC) and Dependency Injection Inversion of Control (IoC): Application get the objects that they need from an outside source.
 Dependency Injection (DI): Dependency Injection is one type of Inversion of Control. It allows the creation of dependent objects outside of a class and provides those objects to a class through constructor or through factory method.
 Example For example, a text editor want to have spell checking.

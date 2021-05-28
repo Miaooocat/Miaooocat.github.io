@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Deep Linking - Hi, Shihao</title><meta name="Description" content="Hi, Shihao"><meta property="og:title" content="Deep Linking" />
+<meta property="og:description" content="Deeplink，简单讲，就是你在手机上点击一个链接之后，可以直接链接到app内部的某个页面，而不是app正常打开时显示的首页。不似web，" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://miaoshihao.com/zh-cn/notes/computerscience/mobile/deeplink/" />
+<meta property="og:image" content="http://miaoshihao.com/logo.png"/>
+<meta property="article:published_time" content="2020-07-10T09:50:16+08:00" />
+<meta property="article:modified_time" content="2020-07-10T09:50:16+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://miaoshihao.com/logo.png"/>
+
+<meta name="twitter:title" content="Deep Linking"/>
+<meta name="twitter:description" content="Deeplink，简单讲，就是你在手机上点击一个链接之后，可以直接链接到app内部的某个页面，而不是app正常打开时显示的首页。不似web，"/>
+<meta name="application-name" content="Mousekedoer">
+<meta name="apple-mobile-web-app-title" content="Mousekedoer"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://miaoshihao.com/zh-cn/notes/computerscience/mobile/deeplink/" /><link rel="prev" href="http://miaoshihao.com/zh-cn/notes/computerscience/language/java/advancejava/jvm/jvm_tuning/" /><link rel="next" href="http://miaoshihao.com/zh-cn/notes/finance/investment/beneish_model/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Deep Linking",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/miaoshihao.com\/zh-cn\/notes\/computerscience\/mobile\/deeplink\/"
+        },"image": ["http:\/\/miaoshihao.com\/images\/Apple-Devices-Preview.png"],"genre": "notes","keywords": "Mobile Push","wordcount":  2676 ,
+        "url": "http:\/\/miaoshihao.com\/zh-cn\/notes\/computerscience\/mobile\/deeplink\/","datePublished": "2020-07-10T09:50:16+08:00","dateModified": "2020-07-10T09:50:16+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "http:\/\/miaoshihao.com\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Shihao"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/zh-cn/" title="Hi, Shihao">首页</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/zh-cn/blogs/"> 博客 </a><a class="menu-item" href="/zh-cn/categories/"> 笔记 </a><a class="menu-item" href="/zh-cn/tags/"> 标签 </a><a class="menu-item" href="/zh-cn/notes/"> 归档 </a><a class="menu-item" href="/zh-cn/music/"> 音乐 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/zh-cn/notes/computerscience/mobile/deeplink/" selected>简体中文</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>                
+                
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/zh-cn/" title="Hi, Shihao">首页</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/zh-cn/blogs/" title="">博客</a><a class="menu-item" href="/zh-cn/categories/" title="">笔记</a><a class="menu-item" href="/zh-cn/tags/" title="">标签</a><a class="menu-item" href="/zh-cn/notes/" title="">归档</a><a class="menu-item" href="/zh-cn/music/" title="">音乐</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/zh-cn/notes/computerscience/mobile/deeplink/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Deep Linking</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/zh-cn/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Shihao</a></span>&nbsp;<span class="post-category">收录于 <a href="/zh-cn/categories/mobile-development/"><i class="far fa-folder fa-fw"></i>Mobile Development</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-07-10">2020-07-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2676 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#deferred-deeplink">Deferred deeplink</a></li>
+    <li><a href="#android-deeplink">Android DeepLink</a>
+      <ul>
+        <li><a href="#implementation">Implementation</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>Deeplink，简单讲，就是你在手机上点击一个链接之后，可以直接链接到app内部的某个页面，而不是app正常打开时显示的首页。不似web，一个链接就可以直接打开web的内页，app的内页打开，必须用到deeplink技术。那什么是deeplink技术？如何实现的？</p>
+<p>Deepling的核心在URL SCHEMES。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="APP%e8%b0%83%e7%94%a8.png"
+        data-srcset="/zh-cn/notes/computerscience/mobile/deeplink/APP%E8%B0%83%E7%94%A8.png, APP%e8%b0%83%e7%94%a8.png 1.5x, /zh-cn/notes/computerscience/mobile/deeplink/APP%E8%B0%83%E7%94%A8.png 2x"
+        data-sizes="auto"
+        alt="/zh-cn/notes/computerscience/mobile/deeplink/APP%E8%B0%83%E7%94%A8.png"
+        title="APP调用" /></p>
+<ul>
+<li>
+<ol>
+<li>APP-T要进行自定义scheme的配置（iOS是info文件，Android是activity），并进行参数处理的coding。</li>
+</ol>
+</li>
+<li>
+<p>2）APP-F进行调用，首先判断设备是否安装APP-T。</p>
+</li>
+<li>
+<p>3）如果未安装，则跳转到APP-T的web版应用（假设他提供web版）或者是跳转到AppStore等应用市场进行下载。</p>
+</li>
+<li>
+<p>4）如果已安装，则调用APP-T配置好的URL SCHEME，直接打开APP-T的相关界面。</p>
+</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="Deeplink_Flow.png"
+        data-srcset="/zh-cn/notes/computerscience/mobile/deeplink/Deeplink_Flow.png, Deeplink_Flow.png 1.5x, /zh-cn/notes/computerscience/mobile/deeplink/Deeplink_Flow.png 2x"
+        data-sizes="auto"
+        alt="/zh-cn/notes/computerscience/mobile/deeplink/Deeplink_Flow.png"
+        title="Deeplink_Flow" /></p>
+<p>什么是URL Schemes：</p>
+<p>URL，我们都很清楚，http://www.apple.com 就是个 URL，也叫它链接或网址；Schemes，表示的是一个 URL 中的一个位置——最初始的位置，即 ://之前的那段字符。比如 <a href="http://www.apple.com">http://www.apple.com</a> 这个网址的 Schemes 是 http。</p>
+<p>我们可以像定位一个网页一样，用一种特殊的 URL 来定位一个应用甚至应用里某个具体的功能。而定位这个应用的，就应该这个应用的 URL 的 Schemes 部分，也就是开头儿那部分。但是需要注意的是应用的URL Schemes 并不唯一，也就是说一个应用可以“起多个名“，不同应用的URL Schemes也可能因为名字一样发生冲突。</p>
+<p>iOS系统级应用，有一些已经定义了URL Schemes，比如短信是 sms:、</p>
+<p>通话是tel:、iBooks是ibooks:，在定义自己APP的URL Schemes的时候要避免跟系统应用名称一样。</p>
+<p>与URL一样，URL Schemes也可以通过传参打开特定的APP界面。</p>
+<p>URL：http://images.google.com/images?q=关键字</p>
+<p>URL Schemes：weixin://dl/moments（打开微信朋友圈）</p>
+<p>所以，这一段总结一下。</p>
+<p>1） APP要想被其他APP直接打开，自身得支持，让自己具备被人打开的能力。（URL Schemes）</p>
+<p>2） APP要想打开其他的APP，自身也得支持。（判断设备是否安装、各种跳转的处理）</p>
+<h2 id="deferred-deeplink">Deferred deeplink</h2>
+<p>相比deeplink，它增加了判断APP是否被安装，用户匹配的2个功能；</p>
+<p>1.当用户点击链接的时候判断APP是否安装，如果用户没有安装时，引导用户跳转到应用商店下载应用。
+2.用户匹配功能，当用户点击链接时和用户启动APP时，分别将这两次用户Device Fingerprint（设备指纹信息）传到服务器进行模糊匹配，使用户下载且启动APP时，直接打开相应的指定页面。</p>
+<p>通过上面的2个技术方案，不仅：①可以让被分享者更快更便捷的回到APP，且回到指定的活动页面，而且：②可以引导未安装APP的用户下载APP、③分享者和被分享者的关系链会通过设备指纹信息记录下来，在业务场景中给出相应的奖励。</p>
+<p>1、 标准&amp;生态</p>
+<p>URL Schemes从技术虽然可以解决这个问题，但是，仍有诸多问题，以下列举几个</p>
+<p>1） 跨平台，不同系统间的无缝链接</p>
+<p>2） 数据传输标准</p>
+<p>3） URL Schemes命名规范</p>
+<p>4） 传参与解析标准</p>
+<p>举几个例子，比如跨平台，假如手机里收到好友分享的一些URL Schemes链接，但是你们俩不是一个平台，那就会出现一些想不到的问题。如下图：短信形式发送的APP的链接，但是Android和IOS系统的隔阂会导致链接的失败。</p>
+<h2 id="android-deeplink">Android DeepLink</h2>
+<p>当单击链接或编程请求调用Web URI意图时，Android系统按顺序依次尝试以下每一个操作，直到请求成功为止：</p>
+<p>打开用户首选的应用程序，它可以处理URI，如果指定的话。
+打开可以处理URI的惟一可用应用程序。
+允许用户从对话框中选择应用程序。</p>
+<p>意思也就是用户可以自己写一串字符串，系统会对该字符串进行解析，然后调起注册过相应scheme的应用，如果有多个注册了，那么就会弹出对话框让用户选择。</p>
+<h3 id="implementation">Implementation</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;activity</span>
+    <span class="na">android:name=</span><span class="s">&#34;com.example.android.GizmosActivity&#34;</span>
+    <span class="na">android:label=</span><span class="s">&#34;@string/title_gizmos&#34;</span> <span class="nt">&gt;</span>
+    <span class="nt">&lt;intent-filter</span> <span class="na">android:label=</span><span class="s">&#34;@string/filter_view_http_gizmos&#34;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&#34;android.intent.action.VIEW&#34;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">&#34;android.intent.category.DEFAULT&#34;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">&#34;android.intent.category.BROWSABLE&#34;</span> <span class="nt">/&gt;</span>
+        <span class="c">&lt;!-- Accepts URIs that begin with &#34;http://www.example.com/gizmos” --&gt;</span>
+        <span class="nt">&lt;data</span> <span class="na">android:scheme=</span><span class="s">&#34;http&#34;</span>
+              <span class="na">android:host=</span><span class="s">&#34;www.example.com&#34;</span>
+              <span class="na">android:pathPrefix=</span><span class="s">&#34;/gizmos&#34;</span> <span class="nt">/&gt;</span>
+        <span class="c">&lt;!-- note that the leading &#34;/&#34; is required for pathPrefix--&gt;</span>
+    <span class="nt">&lt;/intent-filter&gt;</span>
+    <span class="nt">&lt;intent-filter</span> <span class="na">android:label=</span><span class="s">&#34;@string/filter_view_example_gizmos&#34;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&#34;android.intent.action.VIEW&#34;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">&#34;android.intent.category.DEFAULT&#34;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">&#34;android.intent.category.BROWSABLE&#34;</span> <span class="nt">/&gt;</span>
+        <span class="c">&lt;!-- Accepts URIs that begin with &#34;example://gizmos” --&gt;</span>
+        <span class="nt">&lt;data</span> <span class="na">android:scheme=</span><span class="s">&#34;example&#34;</span>
+              <span class="na">android:host=</span><span class="s">&#34;gizmos&#34;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/intent-filter&gt;</span>
+<span class="nt">&lt;/activity&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>或者</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;intent-filter&gt;</span>
+  ...
+  <span class="nt">&lt;data</span> <span class="na">android:scheme=</span><span class="s">&#34;https&#34;</span> <span class="na">android:host=</span><span class="s">&#34;www.example.com&#34;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;data</span> <span class="na">android:scheme=</span><span class="s">&#34;app&#34;</span> <span class="na">android:host=</span><span class="s">&#34;open.my.app&#34;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/intent-filter&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>但是后者的缺陷在于 除了组合https://www.example.com和app://open.my.app外app://www.example.com和 <a href="https://open.my.app">https://open.my.app</a>也是满足上面的 <code>&lt;intent-filter ..&gt;</code> 而分开写的时候，不存在上面的问题。</p>
+<p>当注册了<code>&lt;intent-filter..&gt;</code>后，便可以在Activity的中获取其他应用传过来的intent值，具体调用如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+    <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">main</span><span class="o">);</span>
+
+    <span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="n">getIntent</span><span class="o">();</span>
+    <span class="n">String</span> <span class="n">action</span> <span class="o">=</span> <span class="n">intent</span><span class="o">.</span><span class="na">getAction</span><span class="o">();</span>
+    <span class="n">Uri</span> <span class="n">data</span> <span class="o">=</span> <span class="n">intent</span><span class="o">.</span><span class="na">getData</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>getIntent可以在Activity的生命周期的任何时段进行获取，不过一般别人应用要调你应用，肯定都是希望进入你的应用某个界面，或实现某个功能。其他应用会把该传的信息都传给你，最好的解析地方肯定是onCreate（或onStart但onStart还是会晚一些）。对于这个官方给了以下建议：</p>
+<p>打开应用后应该直接到内容，不要有任何提示，间接的页面，或登录。确保用户可以看到应用程序的内容，即使他们以前从未打开过应用程序。可以在随后的交互中提示用户，或者在启动程序中打开应用程序。这与网站第一次点击免费体验的原理是相同的。
+遵循导航与后退和向上描述的设计指南，使您的应用程序与用户通过向后链接进入您的应用程序的深度导航的期望相符。</p>
+<p>实现上面代码后就可以进行测试了。在测试时可以使用adb的shell命令进行测试，语法格式如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ adb shell am start
+        -W -a android.intent.action.VIEW
+        -d &lt;URI&gt; &lt;PACKAGE&gt;
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ adb shell am start
+        -W -a android.intent.action.VIEW
+        -d &#34;example://gizmos&#34; com.example.android
+</code></pre></td></tr></table>
+</div>
+</div><p>上面的intent也可以通过浏览器里面的网页进行设置，现在浏览器都会解析这个intent然后调起对应的应用，即可以直接在网页中调起应用。</p>
+<p>DeepLink使得开发网站和自己的App能很好的相互交互。而且一个intent字符串也好发送，比如你想推广你的App，你就可以把这个intent发给广告商，然后点击的时候就把这个intent给手机浏览器，通过浏览器调起你自己的应用。这个最好的应用还在搜索上，在搜索的时候，当用户搜到对应内容的时候，现在一般都是跳网站。但是如果有DeepLink，那么就可以直接通过DeepLink的intent直接跳转到你自己的App，这既方便了用户，也方便了开发者。</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-07-10</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/zh-cn/notes/computerscience/mobile/deeplink/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/zh-cn/tags/mobile-push/">Mobile Push</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/zh-cn/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/zh-cn/notes/computerscience/language/java/advancejava/jvm/jvm_tuning/" class="prev" rel="prev" title="Java 调参"><i class="fas fa-angle-left fa-fw"></i>Java 调参</a>
+            <a href="/zh-cn/notes/finance/investment/beneish_model/" class="next" rel="next" title="财报学习--Beneish Model">财报学习--Beneish Model<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/zh-cn/" target="_blank">Shihao Miao</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><div>
+                    <span id="timeDate">Loading Days...</span><span id="times">Loading Times...</span>
+                    <script>
+                        var now = new Date();
+                        function createtime() {
+                            var grt= new Date("03/20/2019 00:00:00");
+                            now.setTime(now.getTime()+250);
+                            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+                            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+                            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+                            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+                            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+                            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+                            document.getElementById("timeDate").innerHTML = "本站已不安全运行 "+dnum+" 天 ";
+                            document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分钟 " + snum + " 秒";
+                        }
+                    setInterval("createtime()",250);
+                    </script>
+                    </div></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.zh-cn","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

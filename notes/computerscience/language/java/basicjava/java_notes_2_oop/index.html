@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Java Notes(2) Object Oriented Language - Hi, Shihao</title><meta name="Description" content="Java Fundamental"><meta property="og:title" content="Java Notes(2) Object Oriented Language" />
+<meta property="og:description" content="Java Fundamental" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://miaoshihao.com/notes/computerscience/language/java/basicjava/java_notes_2_oop/" />
+<meta property="og:image" content="http://miaoshihao.com/logo.png"/>
+<meta property="article:published_time" content="2019-06-17T15:58:26+08:00" />
+<meta property="article:modified_time" content="2019-06-17T15:58:26+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://miaoshihao.com/logo.png"/>
+
+<meta name="twitter:title" content="Java Notes(2) Object Oriented Language"/>
+<meta name="twitter:description" content="Java Fundamental"/>
+<meta name="application-name" content="Hi, Shihao">
+<meta name="apple-mobile-web-app-title" content="Hi, Shihao"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://miaoshihao.com/notes/computerscience/language/java/basicjava/java_notes_2_oop/" /><link rel="prev" href="http://miaoshihao.com/notes/computerscience/backend/spring/spring/spring_bean/" /><link rel="next" href="http://miaoshihao.com/notes/computerscience/language/javascript/javascript_notes_2_es6/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Java Notes(2) Object Oriented Language",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/miaoshihao.com\/notes\/computerscience\/language\/java\/basicjava\/java_notes_2_oop\/"
+        },"image": ["http:\/\/miaoshihao.com\/images\/Apple-Devices-Preview.png"],"genre": "notes","keywords": "Java","wordcount":  1217 ,
+        "url": "http:\/\/miaoshihao.com\/notes\/computerscience\/language\/java\/basicjava\/java_notes_2_oop\/","datePublished": "2019-06-17T15:58:26+08:00","dateModified": "2019-06-17T15:58:26+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "http:\/\/miaoshihao.com\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Shihao"
+            },"description": "Java Fundamental"
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Hi, Shihao"><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/categories/"> Notes </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/notes/"> Archives </a><a class="menu-item" href="/music/"> Music </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/notes/computerscience/language/java/basicjava/java_notes_2_oop/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>                
+                
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Hi, Shihao"><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/categories/" title="">Notes</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/notes/" title="">Archives</a><a class="menu-item" href="/music/" title="">Music</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/notes/computerscience/language/java/basicjava/java_notes_2_oop/" selected>English</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Java Notes(2) Object Oriented Language</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Shihao</a></span>&nbsp;<span class="post-category">included in <a href="/categories/java/"><i class="far fa-folder fa-fw"></i>Java</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-06-17">2019-06-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1217 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#object-oriented">Object Oriented</a>
+      <ul>
+        <li><a href="#class">Class</a></li>
+        <li><a href="#constructor">Constructor</a></li>
+        <li><a href="#instance-initializer-block">Instance initializer block</a></li>
+      </ul>
+    </li>
+    <li><a href="#four-pillars-of-oop">Four Pillars of OOP</a>
+      <ul>
+        <li><a href="#inheritance">Inheritance</a></li>
+        <li><a href="#polymorphism">Polymorphism</a>
+          <ul>
+            <li><a href="#method-overloading-compile-time-polymorphism">Method Overloading (compile time polymorphism)</a></li>
+            <li><a href="#method-overriding-runtime-polymorphism">Method Overriding (runtime polymorphism)</a></li>
+          </ul>
+        </li>
+        <li><a href="#abstraction">Abstraction</a>
+          <ul>
+            <li><a href="#abstract-class">Abstract class</a></li>
+            <li><a href="#interface">Interface</a></li>
+          </ul>
+        </li>
+        <li><a href="#encapsulation">Encapsulation</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="object-oriented">Object Oriented</h2>
+<p>Object-Oriented Programming is a methodology or paradigm to design a program using classes and objects. It simplifies the software development and maintenance.</p>
+<h3 id="class">Class</h3>
+<ul>
+<li>A class in Java can contain: <strong>field(variable, attribute)</strong>, <strong>methods</strong>, <strong>constructors</strong>, <strong>blocks</strong>, <strong>nested class</strong> and <strong>interface</strong>.</li>
+<li>Object is an instance of a class.</li>
+<li>There is only one way to define class in java using class keyword.</li>
+<li>The Object class is the parent class of all the classes in java by default.</li>
+</ul>
+<h3 id="constructor">Constructor</h3>
+<ul>
+<li>Constructor in java is a special type of method that is used to initialize the object.</li>
+<li>If there is no constructor in a class, compiler automatically creates a default constructor.</li>
+<li>There is no copy constructor in java. But, we can copy the values of one object to another like copy constructor in C++.</li>
+<li>A constructor can perform other tasks instead of initialization like object creation, starting a thread, calling method etc.</li>
+<li>You can perform any operation in the constructor as you perform in the method.</li>
+<li>Constructor must not have return type.</li>
+<li>Constructor name must be same as the class name.</li>
+<li>super() is added in each class constructor automatically by compiler if there is no super() or this()</li>
+</ul>
+<h3 id="instance-initializer-block">Instance initializer block</h3>
+<ul>
+<li>Instance Initializer block is used to initialize the instance data member.</li>
+<li>It is created when instance of the class is created.</li>
+<li>It runs each time when object of the class is created.</li>
+<li>It is invoked after the parent class constructor is invoked (i.e. after super() constructor call).</li>
+<li>The instance Initializer block comes in the order in which they appear.</li>
+</ul>
+<h2 id="four-pillars-of-oop">Four Pillars of OOP</h2>
+<p>The main concepts in object oriented programming are <strong>Inheritance</strong>, <strong>Polymorphism</strong>, <strong>Abstraction</strong>, <strong>Encapsulation</strong>.</p>
+<h3 id="inheritance">Inheritance</h3>
+<ul>
+<li>Inheritance (IS-A) is a mechanism in which one object acquires all the properties and behaviors of parent object.</li>
+<li>The extends keyword indicates that you are making a new class that derives from an existing class.</li>
+<li>Multiple inheritance is not supported in Java through class. We can use Interface to perform it.</li>
+<li>To reduce the complexity and simplify the language, multiple inheritance is not supported in java.</li>
+<li>If a class have an entity reference, it is known as Aggregation (HAS-A relationship).</li>
+<li>Inheritance should be used only if the relationship is-a is maintained throughout the lifetime of the objects involved; otherwise, aggregation is the best choice.</li>
+</ul>
+<h3 id="polymorphism">Polymorphism</h3>
+<ul>
+<li>Polymorphism is a concept by which we can perform a single action by different ways.</li>
+<li>There are two types of polymorphism in java: <strong>compile time polymorphism</strong> and <strong>runtime polymorphism</strong>.</li>
+<li>We can perform polymorphism in java by method overloading and method overriding.</li>
+<li>If you overload static method in java, it is the example of compile time polymorphism.</li>
+<li>In Runtime polymorphism (Dynamic Method Dispatch), an overridden method is resolved at runtime rather than compile-time.</li>
+<li>A Virtual Method is an inheritable and overridable method for which dynamic dispatch is facilitated.</li>
+<li>All non-static, non-final and non-private methods are Virtual Methods by default.</li>
+<li>When reference variable of Parent class refers to the object of Child class, it is known as upcasting.</li>
+<li>Method is overridden not the data members, so runtime polymorphism can&rsquo;t be achieved by data members.</li>
+<li>Connecting a method call to the method body is known as binding.</li>
+<li>There are two types of binding : Static binding (early binding) and Dynamic binding (late binding).</li>
+</ul>
+<h4 id="method-overloading-compile-time-polymorphism">Method Overloading (compile time polymorphism)</h4>
+<ul>
+<li>If a class has multiple methods having same name but different in parameters, it is known as Method Overloading.</li>
+<li>There are two ways to overload the method in java : by changing number of arguments, by changing the data type.</li>
+<li>In Java, Method Overloading is not possible by changing the return type of the method only because of ambiguity.</li>
+<li>Compile Time Error is better than Run Time Error. So, java compiler renders compiler time error if you declare the same method having same parameters.</li>
+<li>We can also overload Java main() method, but JVM calls main() method which receives string array as arguments only.</li>
+<li>One type is promoted to another implicitly if no matching datatype is found. eg. byte can be promoted to short, int, etc.</li>
+<li>If there are no matching type arguments method, and each method promotes similar number of arguments, there will be ambiguity.</li>
+<li>One type is not de-promoted implicitly for example double cannot be depromoted to any type implicitly.</li>
+</ul>
+<h4 id="method-overriding-runtime-polymorphism">Method Overriding (runtime polymorphism)</h4>
+<ul>
+<li>If subclass (child class) has the same method as declared in the parent class, it is known as method overriding.</li>
+<li>Method must have same name and parameters as in the parent class for overriding.</li>
+<li>Method overriding is used to provide specific implementation of a method that is already provided by its super class. Also used for runtime polymorphism.</li>
+<li>We cannot override static method (not also main method) because static method is bound with class whereas instance method is bound with object. Static belongs to class area and instance belongs to heap area.</li>
+<li>Method Overriding with Access Modifier: if you are overriding a method, overridden method (i.e. declared in subclass) must not be more restrictive.</li>
+<li>Covariant Return Type: It is possible to override method by changing the return type if subclass overrides any method whose return type is Non-Primitive but it changes its return type to subclass type.</li>
+</ul>
+<h3 id="abstraction">Abstraction</h3>
+<ul>
+<li>Abstraction is a process of hiding the implementation details and showing only functionality to the user.</li>
+<li>There are two ways to achieve abstraction in java : Abstract class and Interface.</li>
+</ul>
+<h4 id="abstract-class">Abstract class</h4>
+<ul>
+<li>A class that is declared as abstract (keyword) is abstract class. It can have abstract and non-abstract methods.</li>
+<li>A method that is declared as abstract and does not have implementation is abstract method.</li>
+<li>Any method with a body is non-abstract method.</li>
+<li>An abstract class can have data member, abstract method, method body, constructor and even main() method.</li>
+<li>If there is any abstract method in a class, that class must be abstract.</li>
+<li>If extending any abstract class that have abstract method, we must either provide the implementation of the method or make this class abstract.</li>
+</ul>
+<h4 id="interface">Interface</h4>
+<ul>
+<li>An interface in java is a blueprint of a class. It has static constants and abstract methods.</li>
+<li>Since Java 8, we can have method body in interface. But we need to make it default or static method.</li>
+<li>The interface is a mechanism to achieve abstraction. It represents IS-A relationship.</li>
+<li>By using interface, we can support multiple inheritance.</li>
+<li>It can be also used to achieve loose coupling (coupling is degree of direct knowledge that one element has of another).</li>
+<li>The Java compiler adds public &amp; abstract before the interface method. Adds public, static &amp; final before data members.</li>
+<li>A class extends another class, an interface extends another interface but a class implements an interface.</li>
+<li>Multiple inheritance is not supported by class because of ambiguity. But, supported by interface because there is no ambiguity as implementation is provided by the implementation class.</li>
+<li>An interface with no member is called marker/tagged interface. For example: Serializable, Cloneable, Remote etc.</li>
+<li>Marker interface are used to provide essential information to JVM, so that JVM may perform some useful operation.</li>
+<li>An interface can have another interface i.e. known as nested interface.</li>
+</ul>
+<h3 id="encapsulation">Encapsulation</h3>
+<ul>
+<li>Encapsulation is a process of wrapping code and data together into a single unit.</li>
+<li>To create a fully encapsulated class, make all data members of the class private, &amp; use setter/getter methods to access data.</li>
+<li>By providing only setter or getter method, you can make the class read-only or write-only.</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2019-06-17</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/notes/computerscience/language/java/basicjava/java_notes_2_oop/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/java/">Java</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/notes/computerscience/backend/spring/spring/spring_bean/" class="prev" rel="prev" title="Spring Framework Notes 2 - Beans, BeanFactory and the ApplicationContext"><i class="fas fa-angle-left fa-fw"></i>Spring Framework Notes 2 - Beans, BeanFactory and the ApplicationContext</a>
+            <a href="/notes/computerscience/language/javascript/javascript_notes_2_es6/" class="next" rel="next" title="Javascript Notes 2 ES6">Javascript Notes 2 ES6<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Shihao Miao</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><div>
+                    <span id="timeDate">Loading Days...</span><span id="times">Loading Times...</span>
+                    <script>
+                        var now = new Date();
+                        function createtime() {
+                            var grt= new Date("03/20/2019 00:00:00");
+                            now.setTime(now.getTime()+250);
+                            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+                            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+                            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+                            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+                            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+                            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+                            document.getElementById("timeDate").innerHTML = "This website has struggled in this world for "+dnum+" day ";
+                            document.getElementById("times").innerHTML = hnum + " hour " + mnum + " min " + snum + " sec";
+                        }
+                    setInterval("createtime()",250);
+                    </script>
+                    </div></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-1":"\u003e$ cd /home/ ","id-2":"\u003e$ cd /home/ "},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":" |","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":500}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

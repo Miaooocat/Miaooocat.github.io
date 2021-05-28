@@ -4,91 +4,90 @@
         <link>http://miaoshihao.com/tags/java/</link>
         <description>Java - Tag - Hi, Shihao</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
-            <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 11 Sep 2020 22:50:26 &#43;0800</lastBuildDate><atom:link href="http://miaoshihao.com/tags/java/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 27 May 2021 22:50:26 &#43;0800</lastBuildDate><atom:link href="http://miaoshihao.com/tags/java/" rel="self" type="application/rss+xml" /><item>
+    <title>Tree Notes </title>
+    <link>http://miaoshihao.com/notes/computerscience/algorithm_datastructure/tree/</link>
+    <pubDate>Thu, 27 May 2021 22:50:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/computerscience/algorithm_datastructure/tree/</guid>
+    <description><![CDATA[Tree Introduction Trees consist of vertices (nodes) and edges that connect them. It has no cycle, and is hierarchical.
+Binary Tree 1 2 3 4 5 6 7 8 9 10 11 12  public class BinaryTreeNode { int val; BinaryTreeNode left; BinaryTreeNode right; BinaryTreeNode() {} BinaryTreeNode(int val) { this.val = val; } BinaryTreeNode(int val, BinaryTreeNode left, BinaryTreeNode right) { this.val = val; this.left = left; this.right = right; } }   Check if is same tree Leetcode 100 https://leetcode.]]></description>
+</item><item>
+    <title>JVM Object Initializaton</title>
+    <link>http://miaoshihao.com/notes/computerscience/language/java/advancejava/jvm/jvm_intro/</link>
+    <pubDate>Mon, 03 May 2021 20:51:21 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/computerscience/language/java/advancejava/jvm/jvm_intro/</guid>
+    <description><![CDATA[Lifetime of a Type This note discusses how JVM create a object type from class file. It has three stages, namely, loading, linking and Initialization.
+Loading Class loading is a process to create java.lang.Class, which stores the corresponding class information of a type.
+java.lang.Class java.lang.Class class instance represent classes, interfaces, primitives, void, and arrays in a running Java application. It has no public constructor.
+Class object contains meta-information about class.]]></description>
+</item><item>
     <title>Difference in Spring and Spring Boot</title>
-    <link>http://miaoshihao.com/notes/computerscience/framework/spring/springboot/</link>
+    <link>http://miaoshihao.com/notes/computerscience/backend/spring/springboot/</link>
     <pubDate>Thu, 20 Aug 2020 22:50:21 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/computerscience/framework/spring/springboot/</guid>
+    <guid>http://miaoshihao.com/notes/computerscience/backend/spring/springboot/</guid>
     <description><![CDATA[Spring Boot is an extension of the Spring framework which eliminated the boilerplate configurations required for setting up a Spring application. This notes highlight the difference between Spring Boot and Spring.
 Maven Dependencies Spring looks minimum dependencies required to create an web application.
 1 2 3 4 5 6 7 8 9 10  &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-web&lt;/artifactId&gt; &lt;version&gt;5.2.9.RELEASE&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt; &lt;version&gt;5.2.9.RELEASE&lt;/version&gt; &lt;/dependency&gt;   Spring Boot requires only one dependency:]]></description>
 </item><item>
     <title>Spring Framework Notes - Overview</title>
-    <link>http://miaoshihao.com/notes/computerscience/framework/spring/spring/spring_overview/</link>
+    <link>http://miaoshihao.com/notes/computerscience/backend/spring/spring/spring_overview/</link>
     <pubDate>Mon, 20 Jul 2020 22:50:21 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/computerscience/framework/spring/spring/spring_overview/</guid>
+    <guid>http://miaoshihao.com/notes/computerscience/backend/spring/spring/spring_overview/</guid>
     <description><![CDATA[Spring  Notes]]></description>
 </item><item>
     <title>Java8 Stream </title>
-    <link>http://miaoshihao.com/notes/computerscience/language/java/java8_notes_stream/</link>
+    <link>http://miaoshihao.com/notes/computerscience/language/java/basicjava/java8_notes_stream/</link>
     <pubDate>Wed, 02 Oct 2019 20:50:26 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/computerscience/language/java/java8_notes_stream/</guid>
+    <guid>http://miaoshihao.com/notes/computerscience/language/java/basicjava/java8_notes_stream/</guid>
     <description><![CDATA[A stream represents a sequence of elements and supports different kind of operations to perform computations upon those elements:
 1 2 3 4 5 6 7 8 9  List&lt;String&gt; myList = Arrays.asList(&#34;a1&#34;, &#34;a2&#34;, &#34;b1&#34;, &#34;c2&#34;, &#34;c1&#34;); myList .stream() .filter(s -&gt; s.startsWith(&#34;c&#34;)) .map(String::toUpperCase) .sorted() .forEach(System.out::println);   Stream Creation Calling the method stream() on a list of objects returns a regular object stream.
 1 2 3 4  Arrays.asList(&#34;a1&#34;, &#34;a2&#34;, &#34;a3&#34;) .]]></description>
 </item><item>
     <title>Spring Integration Notes(1) Overview </title>
-    <link>http://miaoshihao.com/notes/computerscience/framework/spring/spring_integration/</link>
+    <link>http://miaoshihao.com/notes/computerscience/backend/spring/spring_integration/</link>
     <pubDate>Tue, 01 Oct 2019 22:50:26 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/computerscience/framework/spring/spring_integration/</guid>
+    <guid>http://miaoshihao.com/notes/computerscience/backend/spring/spring_integration/</guid>
     <description><![CDATA[Spring Integration Basic Overview Spring Integration is an open source framework that designed to enable the development of integration solutions typical of event-driven architectures and messaging-centric architectures. It requires dependency spring intergration core, which could be downloaded from Maven Central.
 1 2 3 4 5  &lt;dependency&gt; &lt;groupId&gt;org.springframework.integration&lt;/groupId&gt; &lt;artifactId&gt;spring-integration-core&lt;/artifactId&gt; &lt;version&gt;5.3.1.RELEASE&lt;/version&gt; &lt;/dependency&gt;   Spring integration framework consists three parts, namely message, message channel, and message endpoint. In general. a message is a unit of information that can be passed between different message endpoint through message channels.]]></description>
 </item><item>
     <title>Java8 Optional class</title>
-    <link>http://miaoshihao.com/notes/computerscience/language/java/java8_notes_option/</link>
+    <link>http://miaoshihao.com/notes/computerscience/language/java/basicjava/java8_notes_option/</link>
     <pubDate>Sat, 28 Sep 2019 20:50:46 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/computerscience/language/java/java8_notes_option/</guid>
+    <guid>http://miaoshihao.com/notes/computerscience/language/java/basicjava/java8_notes_option/</guid>
     <description><![CDATA[Optional class is a container for null. The primary design goal for Optional is to be used as the return value of functions when a return value might be absent. The intent is that the caller immediately check the Optional and extract the actual value if it&rsquo;s present. If the value is absent, the caller can substitute a default value, throw an exception, or apply some other policy. This is typically done by chaining fluent method calls off the end of a stream pipeline (or other methods) that return Optional values.]]></description>
 </item><item>
     <title>Java Notes(1) Introduction</title>
-    <link>http://miaoshihao.com/notes/computerscience/language/java/java_notes_1_introduction/</link>
+    <link>http://miaoshihao.com/notes/computerscience/language/java/basicjava/java_notes_1_introduction/</link>
     <pubDate>Thu, 13 Jun 2019 16:58:26 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/computerscience/language/java/java_notes_1_introduction/</guid>
+    <guid>http://miaoshihao.com/notes/computerscience/language/java/basicjava/java_notes_1_introduction/</guid>
     <description><![CDATA[Java Features and Program Execution Java is a programming language and a platform.
 Platform: Any hardware or software environment in which a program runs, is known as a platform. Since Java has its own runtime environment (JRE) and Application Programming Interface (API), it is called platform.
 Features of Java :   Simple:
  User friendly syntax based on C++ It has Automatic Garbage Collection It has Rich set of APIs Removed confusing features - explicit pointers, operator overloading, multiple inheritance, etc    Object-oriented:]]></description>
 </item><item>
     <title>Java Notes(2) Object Oriented Language</title>
-    <link>http://miaoshihao.com/notes/computerscience/language/java/java_notes_2_oop/</link>
+    <link>http://miaoshihao.com/notes/computerscience/language/java/basicjava/java_notes_2_oop/</link>
     <pubDate>Mon, 17 Jun 2019 15:58:26 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/computerscience/language/java/java_notes_2_oop/</guid>
+    <guid>http://miaoshihao.com/notes/computerscience/language/java/basicjava/java_notes_2_oop/</guid>
     <description><![CDATA[Object Oriented Object-Oriented Programming is a methodology or paradigm to design a program using classes and objects. It simplifies the software development and maintenance.
 Class  A class in Java can contain: field(variable, attribute), methods, constructors, blocks, nested class and interface. Object is an instance of a class. There is only one way to define class in java using class keyword. The Object class is the parent class of all the classes in java by default.]]></description>
 </item><item>
     <title>Spring Framework Notes 2 - Beans, BeanFactory and the ApplicationContext</title>
-    <link>http://miaoshihao.com/notes/computerscience/framework/spring/spring/spring_bean/</link>
+    <link>http://miaoshihao.com/notes/computerscience/backend/spring/spring/spring_bean/</link>
     <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/computerscience/framework/spring/spring/spring_bean/</guid>
+    <guid>http://miaoshihao.com/notes/computerscience/backend/spring/spring/spring_bean/</guid>
     <description><![CDATA[Bean Bean represents as an objects in Java. Bean need to contain the following points:
 The Bean class The class attribute in bean is normally mandatory. The creation of bean object is through BeanFactory. It has three approaches.
 The first approach is where the BeanFactory itself directly creates the bean by calling its constructor (equivalent to Java code calling new), the class attribute specifies the class of the bean to be constructed.]]></description>
-</item><item>
-    <title>Java Notes(3) Collection Framework</title>
-    <link>http://miaoshihao.com/notes/computerscience/language/java/java_notes_3_collection/</link>
-    <pubDate>Tue, 16 Jul 2019 15:58:26 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>http://miaoshihao.com/notes/computerscience/language/java/java_notes_3_collection/</guid>
-    <description><![CDATA[The java.util package contains all the classes and interfaces for Collection framework.
-Map : An object that maps keys to values. A map is not ordered and cannot contain duplicate keys (but can contain duplicate values). Each key can map to at most one value.
-Collection : A collection represents a group of objects, known as its elements. The JDK provides implementations of more specific subinterfaces like Set and List.]]></description>
-</item><item>
-    <title>Spring Framework Notes 3 - Object Instantiation with IOC/DI</title>
-    <link>http://miaoshihao.com/notes/computerscience/framework/spring/spring/object_instantiation_with_iocdi/</link>
-    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>http://miaoshihao.com/notes/computerscience/framework/spring/spring/object_instantiation_with_iocdi/</guid>
-    <description><![CDATA[Inverse of Control (IOC) and Dependency Injection Inversion of Control (IoC): Application get the objects that they need from an outside source.
-Dependency Injection (DI): Dependency Injection is one type of Inversion of Control. It allows the creation of dependent objects outside of a class and provides those objects to a class through constructor or through factory method.
-Example For example, a text editor want to have spell checking.
-The standard code would look something like below:]]></description>
 </item></channel>
 </rss>

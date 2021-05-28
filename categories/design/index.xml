@@ -1,0 +1,35 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Design - Category - Hi, Shihao</title>
+        <link>http://miaoshihao.com/categories/design/</link>
+        <description>Design - Category - Hi, Shihao</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
+            <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 01 Oct 2019 22:50:26 &#43;0800</lastBuildDate><atom:link href="http://miaoshihao.com/categories/design/" rel="self" type="application/rss+xml" /><item>
+    <title>Caching</title>
+    <link>http://miaoshihao.com/notes/computerscience/system/caching/</link>
+    <pubDate>Tue, 01 Oct 2019 22:50:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/computerscience/system/caching/</guid>
+    <description><![CDATA[What is Caching? A cache is a short-term memory with limited amount of space. Implementation of caching give quick return of the data without taxing downstream levels. Caches can exist at all levels in software architecture, but are often found in the level nearest to the front end.
+Distributed Application Server Cache What happens when there any multiple nodes that requires caches? It&rsquo;s still possible to have each node host to have its own caches.]]></description>
+</item><item>
+    <title>Load Balancer</title>
+    <link>http://miaoshihao.com/notes/computerscience/system/load_balancer/</link>
+    <pubDate>Tue, 01 Oct 2019 22:50:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/computerscience/system/load_balancer/</guid>
+    <description><![CDATA[Load Balancer Load Balancer helps spread the traffic across a cluster of servers. Load Balancer also keeps track of the health status of all the resources while distributing requests. It will stop sending any traffic to a server that is not responding or has elevated error. To utilize full potential of load balancer, we can applies load balancer at three places:
+ Between the user and the web server Between web servers and an internal platform layer, like application servers or cache servers Between internal platform layer and database.]]></description>
+</item><item>
+    <title>System Design</title>
+    <link>http://miaoshihao.com/notes/computerscience/system/system_design_intro/</link>
+    <pubDate>Tue, 01 Oct 2019 22:50:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/computerscience/system/system_design_intro/</guid>
+    <description><![CDATA[System Design Question When design a system, we need to consider following three questions in mind?
+  What are the different architectural pieces that can be used?
+  How do these pieces work with each other?
+  How can we best utilize these pieces: what are the right tradeoffs?
+  Key Characteristics of Distributed Systems Scalability Horizontal Scaling Horizontal scaling means to scale up by adding more servers.]]></description>
+</item></channel>
+</rss>
