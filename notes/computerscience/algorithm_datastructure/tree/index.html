@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/miaoshihao.com\/notes\/computerscience\/algorithm_datastructure\/tree\/"
-        },"image": ["http:\/\/miaoshihao.com\/images\/Apple-Devices-Preview.png"],"genre": "notes","keywords": "Java","wordcount":  124 ,
+        },"image": ["http:\/\/miaoshihao.com\/images\/Apple-Devices-Preview.png"],"genre": "notes","keywords": "Java","wordcount":  302 ,
         "url": "http:\/\/miaoshihao.com\/notes\/computerscience\/algorithm_datastructure\/tree\/","datePublished": "2021-05-27T22:50:26+08:00","dateModified": "2021-05-27T22:50:26+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "http:\/\/miaoshihao.com\/images\/avatar.png"},"author": {
@@ -111,8 +111,8 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Tree Notes </h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Shihao</a></span>&nbsp;<span class="post-category">included in <a href="/categories/data-structure/"><i class="far fa-folder fa-fw"></i>Data Structure</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-05-27">2021-05-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;124 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-05-27">2021-05-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;302 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -120,12 +120,23 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
+    <li><a href="#preorder-traversal">Preorder traversal</a>
+      <ul>
+        <li><a href="#non-recursive">Non-Recursive</a></li>
+      </ul>
+    </li>
+    <li><a href="#in-order-traversal">In Order traversal</a>
+      <ul>
+        <li><a href="#recursive">Recursive</a></li>
+        <li><a href="#non-recursive-1">Non-Recursive</a></li>
+      </ul>
+    </li>
     <li><a href="#check-if-is-same-tree">Check if is same tree</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h1 id="tree-introduction">Tree Introduction</h1>
 <p>Trees consist of vertices (nodes) and edges that connect them. It has no cycle, and is hierarchical.</p>
-<h1 id="binary-tree">Binary Tree</h1>
+<h1 id="binary-tree-structure">Binary Tree Structure</h1>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -154,6 +165,134 @@
         <span class="k">this</span><span class="o">.</span><span class="na">right</span> <span class="o">=</span> <span class="n">right</span><span class="o">;</span>
     <span class="o">}</span>
  <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="preorder-traversal">Preorder traversal</h2>
+<p><a href="https://leetcode.com/problems/binary-tree-preorder-traversal/submissions/">https://leetcode.com/problems/binary-tree-preorder-traversal/submissions/</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="nf">preorderTraversal</span><span class="o">(</span><span class="n">TreeNode</span> <span class="n">root</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">res</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
+        <span class="n">preorderTraversalHelper</span><span class="o">(</span><span class="n">root</span><span class="o">,</span><span class="n">res</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">;</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">preorderTraversalHelper</span><span class="o">(</span><span class="n">TreeNode</span> <span class="n">root</span><span class="o">,</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">res</span><span class="o">){</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">root</span><span class="o">!=</span><span class="kc">null</span><span class="o">){</span>
+            <span class="n">res</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">val</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">left</span> <span class="o">!=</span><span class="kc">null</span><span class="o">)</span> <span class="n">preorderTraversalHelper</span><span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">left</span><span class="o">,</span> <span class="n">res</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">right</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span><span class="n">preorderTraversalHelper</span><span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">right</span><span class="o">,</span> <span class="n">res</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="non-recursive">Non-Recursive</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"></code></pre></td></tr></table>
+</div>
+</div><h2 id="in-order-traversal">In Order traversal</h2>
+<p>Leetcode 94
+<a href="https://leetcode.com/problems/binary-tree-inorder-traversal/">https://leetcode.com/problems/binary-tree-inorder-traversal/</a></p>
+<h3 id="recursive">Recursive</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="nf">inorderTraversal</span><span class="o">(</span><span class="n">TreeNode</span> <span class="n">root</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">res</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
+        <span class="n">inorderTraversalHelper</span><span class="o">(</span><span class="n">root</span><span class="o">,</span><span class="n">res</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">;</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">inorderTraversalHelper</span><span class="o">(</span><span class="n">TreeNode</span> <span class="n">root</span><span class="o">,</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">res</span><span class="o">){</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">root</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">left</span><span class="o">!=</span><span class="kc">null</span><span class="o">){</span><span class="n">inorderTraversalHelper</span><span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">left</span><span class="o">,</span><span class="n">res</span><span class="o">);}</span>
+            <span class="n">res</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">val</span><span class="o">);</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">right</span><span class="o">!=</span><span class="kc">null</span><span class="o">){</span><span class="n">inorderTraversalHelper</span><span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">right</span><span class="o">,</span><span class="n">res</span><span class="o">);}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="non-recursive-1">Non-Recursive</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="nf">inorderTraversal</span><span class="o">(</span><span class="n">TreeNode</span> <span class="n">root</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">res</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
+        <span class="n">Stack</span><span class="o">&lt;</span><span class="n">TreeNode</span><span class="o">&gt;</span> <span class="n">stack</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;</span><span class="n">TreeNode</span><span class="o">&gt;();</span>
+        <span class="n">TreeNode</span> <span class="n">cur</span> <span class="o">=</span> <span class="n">root</span><span class="o">;</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">cur</span><span class="o">!=</span><span class="kc">null</span> <span class="o">||</span> <span class="o">!</span><span class="n">stack</span><span class="o">.</span><span class="na">empty</span><span class="o">()){</span>
+            <span class="k">while</span><span class="o">(</span><span class="n">cur</span><span class="o">!=</span><span class="kc">null</span><span class="o">){</span>
+                <span class="n">stack</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">cur</span><span class="o">);</span>
+                <span class="n">cur</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="na">left</span><span class="o">;</span>
+            <span class="o">}</span>
+            <span class="n">cur</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="na">pop</span><span class="o">();</span>
+            <span class="n">res</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">cur</span><span class="o">.</span><span class="na">val</span><span class="o">);</span>
+            <span class="n">cur</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="na">right</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="check-if-is-same-tree">Check if is same tree</h2>

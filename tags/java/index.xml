@@ -11,7 +11,7 @@
     <author>Author</author>
     <guid>http://miaoshihao.com/notes/computerscience/algorithm_datastructure/tree/</guid>
     <description><![CDATA[Tree Introduction Trees consist of vertices (nodes) and edges that connect them. It has no cycle, and is hierarchical.
-Binary Tree 1 2 3 4 5 6 7 8 9 10 11 12  public class BinaryTreeNode { int val; BinaryTreeNode left; BinaryTreeNode right; BinaryTreeNode() {} BinaryTreeNode(int val) { this.val = val; } BinaryTreeNode(int val, BinaryTreeNode left, BinaryTreeNode right) { this.val = val; this.left = left; this.right = right; } }   Check if is same tree Leetcode 100 https://leetcode.]]></description>
+Binary Tree Structure 1 2 3 4 5 6 7 8 9 10 11 12  public class BinaryTreeNode { int val; BinaryTreeNode left; BinaryTreeNode right; BinaryTreeNode() {} BinaryTreeNode(int val) { this.val = val; } BinaryTreeNode(int val, BinaryTreeNode left, BinaryTreeNode right) { this.val = val; this.left = left; this.right = right; } }   Preorder traversal https://leetcode.]]></description>
 </item><item>
     <title>JVM Object Initializaton</title>
     <link>http://miaoshihao.com/notes/computerscience/language/java/advancejava/jvm/jvm_intro/</link>
