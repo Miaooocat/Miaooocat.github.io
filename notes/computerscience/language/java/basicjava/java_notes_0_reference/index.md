@@ -1,4 +1,4 @@
-# Java Notes(0) Reference
+# Java Notes(0) Keyword Reference
 
 
 
@@ -1027,7 +1027,7 @@ In Java, there is a wrapper class. This is supported by autoboxing/unboxing feat
 </tr> 
 </tbody></table>
 
-# Java Naming Conventions :
+# Java Naming Conventions:
 
 <table class="alt">
 <tbody><tr><th>Name</th><th>Convention</th></tr>

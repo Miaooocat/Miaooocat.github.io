@@ -8,7 +8,6 @@
             <loc>http://miaoshihao.com/notes/computerscience/language/javascript/javascript_notes_1_intro/</loc><lastmod>2021-01-15T11:58:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/notes/computerscience/internet/network/network_overview/</loc><lastmod>2020-12-11T19:32:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/notes/computerscience/backend/spring/springboot/</loc><lastmod>2020-08-20T22:50:21&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://miaoshihao.com/notes/computerscience/backend/spring/spring/spring_overview/</loc><lastmod>2020-07-20T22:50:21&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/notes/finance/investment/beneish_model/</loc><lastmod>2020-07-17T19:32:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
@@ -20,21 +19,16 @@
                     /></url><url>
             <loc>http://miaoshihao.com/notes/computerscience/backend/messagequeue/message_oriented-middleware/</loc><lastmod>2020-07-10T09:50:16&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/notes/computerscience/language/java/basicjava/java8_notes_stream/</loc><lastmod>2019-10-02T20:50:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://miaoshihao.com/notes/computerscience/system_design/principle/caching/</loc><lastmod>2019-10-01T22:50:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://miaoshihao.com/notes/computerscience/system_design/principle/data_partitioning/</loc><lastmod>2019-10-01T22:50:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://miaoshihao.com/notes/computerscience/system_design/principle/sql_nosql/</loc><lastmod>2019-10-01T22:50:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://miaoshihao.com/notes/computerscience/system_design/principle/load_balancer/</loc><lastmod>2019-10-01T22:50:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/notes/computerscience/backend/spring/spring_integration/</loc><lastmod>2019-10-01T22:50:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/notes/computerscience/system/sql_nosql/</loc><lastmod>2019-10-01T22:50:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://miaoshihao.com/notes/computerscience/system_design/principle/system_design_intro/</loc><lastmod>2019-10-01T22:50:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/notes/computerscience/system_design/example/url_shorten/</loc><lastmod>2019-10-01T22:50:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/notes/computerscience/language/java/basicjava/java8_notes_option/</loc><lastmod>2019-09-28T20:50:46&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/notes/finance/investment/technicalindicator/</loc><lastmod>2019-06-29T19:32:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://miaoshihao.com/notes/computerscience/language/java/basicjava/java_notes_1_introduction/</loc><lastmod>2019-06-13T16:58:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://miaoshihao.com/notes/computerscience/language/java/basicjava/java_notes_1_introduction/</loc><lastmod>2019-06-13T16:58:28&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/notes/computerscience/language/typescript/typescript_notes_2_function/</loc><lastmod>2021-01-15T11:53:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/notes/computerscience/language/typescript/typescript_notes_3_objectoriented/</loc><lastmod>2021-01-15T11:53:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/notes/computerscience/language/javascript/javascript_notes_2_es6/</loc><lastmod>2021-01-11T11:58:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://miaoshihao.com/notes/computerscience/language/java/basicjava/java_notes_2_oop/</loc><lastmod>2019-06-17T15:58:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://miaoshihao.com/notes/computerscience/language/java/basicjava/java_notes_2_oop/</loc><lastmod>2019-06-17T11:01:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/notes/computerscience/backend/spring/spring/spring_bean/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
@@ -68,7 +62,7 @@
             <loc>http://miaoshihao.com/notes/computerscience/language/java/basicjava/java_notes_11_synchronization/</loc><lastmod>2019-08-06T20:58:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/notes/computerscience/language/java/basicjava/java_notes_12_java_doc/</loc><lastmod>2019-09-10T22:50:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/notes/computerscience/language/java/basicjava/java_notes_13_networking/</loc><lastmod>2019-08-02T22:00:16&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://miaoshihao.com/notes/computerscience/language/java/basicjava/java_notes_14_memory/</loc><lastmod>2020-09-11T22:50:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://miaoshihao.com/notes/computerscience/language/java/basicjava/java_notes_14_memory/</loc><lastmod>2019-09-11T22:50:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://miaoshihao.com/categories/</loc><lastmod>2021-05-27T22:50:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"

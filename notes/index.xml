@@ -54,13 +54,6 @@ Class object contains meta-information about class.]]></description>
 Maven Dependencies Spring looks minimum dependencies required to create an web application.
 1 2 3 4 5 6 7 8 9 10  &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-web&lt;/artifactId&gt; &lt;version&gt;5.2.9.RELEASE&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt; &lt;version&gt;5.2.9.RELEASE&lt;/version&gt; &lt;/dependency&gt;   Spring Boot requires only one dependency:]]></description>
 </item><item>
-    <title>Spring Framework Notes - Overview</title>
-    <link>http://miaoshihao.com/notes/computerscience/backend/spring/spring/spring_overview/</link>
-    <pubDate>Mon, 20 Jul 2020 22:50:21 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>http://miaoshihao.com/notes/computerscience/backend/spring/spring/spring_overview/</guid>
-    <description><![CDATA[Spring  Notes]]></description>
-</item><item>
     <title>Beneish Model</title>
     <link>http://miaoshihao.com/notes/finance/investment/beneish_model/</link>
     <pubDate>Fri, 17 Jul 2020 19:32:26 &#43;0800</pubDate>
@@ -86,5 +79,13 @@ Message Queue A message queue provides an asynchronous communications protocol, 
     <description><![CDATA[A stream represents a sequence of elements and supports different kind of operations to perform computations upon those elements:
 1 2 3 4 5 6 7 8 9  List&lt;String&gt; myList = Arrays.asList(&#34;a1&#34;, &#34;a2&#34;, &#34;b1&#34;, &#34;c2&#34;, &#34;c1&#34;); myList .stream() .filter(s -&gt; s.startsWith(&#34;c&#34;)) .map(String::toUpperCase) .sorted() .forEach(System.out::println);   Stream Creation Calling the method stream() on a list of objects returns a regular object stream.
 1 2 3 4  Arrays.asList(&#34;a1&#34;, &#34;a2&#34;, &#34;a3&#34;) .]]></description>
+</item><item>
+    <title>Spring Integration Notes(1) Overview </title>
+    <link>http://miaoshihao.com/notes/computerscience/backend/spring/spring_integration/</link>
+    <pubDate>Tue, 01 Oct 2019 22:50:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/computerscience/backend/spring/spring_integration/</guid>
+    <description><![CDATA[Spring Integration Basic Overview Spring Integration is an open source framework that designed to enable the development of integration solutions typical of event-driven architectures and messaging-centric architectures. It requires dependency spring intergration core, which could be downloaded from Maven Central.
+1 2 3 4 5  &lt;dependency&gt; &lt;groupId&gt;org.springframework.integration&lt;/groupId&gt; &lt;artifactId&gt;spring-integration-core&lt;/artifactId&gt; &lt;version&gt;5.3.1.RELEASE&lt;/version&gt; &lt;/dependency&gt;   Spring integration framework consists three parts, namely message, message channel, and message endpoint. In general. a message is a unit of information that can be passed between different message endpoint through message channels.]]></description>
 </item></channel>
 </rss>
