@@ -6,30 +6,63 @@
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
             <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 01 Oct 2019 22:50:26 &#43;0800</lastBuildDate><atom:link href="http://miaoshihao.com/tags/system-design/" rel="self" type="application/rss+xml" /><item>
     <title>Caching</title>
-    <link>http://miaoshihao.com/notes/computerscience/system/caching/</link>
+    <link>http://miaoshihao.com/notes/computerscience/system_design/principle/caching/</link>
     <pubDate>Tue, 01 Oct 2019 22:50:26 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/computerscience/system/caching/</guid>
+    <guid>http://miaoshihao.com/notes/computerscience/system_design/principle/caching/</guid>
     <description><![CDATA[What is Caching? A cache is a short-term memory with limited amount of space. Implementation of caching give quick return of the data without taxing downstream levels. Caches can exist at all levels in software architecture, but are often found in the level nearest to the front end.
 Distributed Application Server Cache What happens when there any multiple nodes that requires caches? It&rsquo;s still possible to have each node host to have its own caches.]]></description>
 </item><item>
-    <title>Load Balancer</title>
-    <link>http://miaoshihao.com/notes/computerscience/system/load_balancer/</link>
+    <title>Data Partition</title>
+    <link>http://miaoshihao.com/notes/computerscience/system_design/principle/data_partitioning/</link>
     <pubDate>Tue, 01 Oct 2019 22:50:26 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/computerscience/system/load_balancer/</guid>
+    <guid>http://miaoshihao.com/notes/computerscience/system_design/principle/data_partitioning/</guid>
+    <description><![CDATA[Introduction Data partitioning is a technique to break up a big database (DB) into many smaller parts. It is the process of splitting up a DB/table across multiple machines to improve the manageability, performance, availability, and load balancing of an application. The justification for data partitioning is that, after a certain scale point, it is cheaper and more feasible to scale horizontally by adding more machines than to grow it vertically by adding beefier servers.]]></description>
+</item><item>
+    <title>Data Partition</title>
+    <link>http://miaoshihao.com/notes/computerscience/system_design/principle/sql_nosql/</link>
+    <pubDate>Tue, 01 Oct 2019 22:50:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/computerscience/system_design/principle/sql_nosql/</guid>
+    <description><![CDATA[Introduction Data partitioning is a technique to break up a big database (DB) into many smaller parts. It is the process of splitting up a DB/table across multiple machines to improve the manageability, performance, availability, and load balancing of an application. The justification for data partitioning is that, after a certain scale point, it is cheaper and more feasible to scale horizontally by adding more machines than to grow it vertically by adding beefier servers.]]></description>
+</item><item>
+    <title>Load Balancer</title>
+    <link>http://miaoshihao.com/notes/computerscience/system_design/principle/load_balancer/</link>
+    <pubDate>Tue, 01 Oct 2019 22:50:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/computerscience/system_design/principle/load_balancer/</guid>
     <description><![CDATA[Load Balancer Load Balancer helps spread the traffic across a cluster of servers. Load Balancer also keeps track of the health status of all the resources while distributing requests. It will stop sending any traffic to a server that is not responding or has elevated error. To utilize full potential of load balancer, we can applies load balancer at three places:
  Between the user and the web server Between web servers and an internal platform layer, like application servers or cache servers Between internal platform layer and database.]]></description>
 </item><item>
-    <title>System Design</title>
-    <link>http://miaoshihao.com/notes/computerscience/system/system_design_intro/</link>
+    <title>SQL vs. Non SQL</title>
+    <link>http://miaoshihao.com/notes/computerscience/system/sql_nosql/</link>
     <pubDate>Tue, 01 Oct 2019 22:50:26 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/computerscience/system/system_design_intro/</guid>
+    <guid>http://miaoshihao.com/notes/computerscience/system/sql_nosql/</guid>
+    <description><![CDATA[Intro There are two main types of solutions: SQL (relational databases) and NoSQL(non-relational databases.
+SQL Relational databases store data in rows and columns. Each row contains all the information about one entity and each column contains all the separate data points.
+NoSQL Following are most common type of NoSQL DB:
+Key-Value Stores: Data is stored in an array of key-value pairs. The ‘key’ is an attribute name which is linked to a ‘value’.]]></description>
+</item><item>
+    <title>System Design</title>
+    <link>http://miaoshihao.com/notes/computerscience/system_design/principle/system_design_intro/</link>
+    <pubDate>Tue, 01 Oct 2019 22:50:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/computerscience/system_design/principle/system_design_intro/</guid>
     <description><![CDATA[System Design Question When design a system, we need to consider following three questions in mind?
   What are the different architectural pieces that can be used?
   How do these pieces work with each other?
   How can we best utilize these pieces: what are the right tradeoffs?
   Key Characteristics of Distributed Systems Scalability Horizontal Scaling Horizontal scaling means to scale up by adding more servers.]]></description>
+</item><item>
+    <title>URL Shortening service</title>
+    <link>http://miaoshihao.com/notes/computerscience/system_design/example/url_shorten/</link>
+    <pubDate>Tue, 01 Oct 2019 22:50:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/computerscience/system_design/example/url_shorten/</guid>
+    <description><![CDATA[Requirement Functional Requirements:   Given a URL, the service should generate a shorter and unique alias of it. This is called a short link. This link should be short enough to be easily copied and pasted into applications.
+  When users access a short link, service should redirect them to the original link.
+  Users should optionally be able to pick a custom short link for their URL.]]></description>
 </item></channel>
 </rss>

@@ -9,10 +9,19 @@
     <managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
     <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Tue, 06 Apr 2021 16:05:26 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 31 May 2021 11:20:26 +0800</lastBuildDate>
     
 	<atom:link href="http://miaoshihao.com/zh-cn/blogs/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2021年的五月</title>
+      <link>http://miaoshihao.com/zh-cn/blogs/monthlyreview/</link>
+      <pubDate>Mon, 31 May 2021 11:20:26 +0800</pubDate>
+      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
+      <guid>http://miaoshihao.com/zh-cn/blogs/monthlyreview/</guid>
+      <description>五月开始刷LeetCode和system design了。周围的小伙伴都陆陆续续开始跳槽。在去年疫情开始的3月，感觉人也懒散了许多。从这个月开</description>
+    </item>
     
     <item>
       <title>影响力</title>
@@ -96,12 +105,12 @@
     </item>
     
     <item>
-      <title>三观</title>
+      <title>概念</title>
       <link>http://miaoshihao.com/zh-cn/blogs/%E4%B8%89%E8%A7%82/</link>
       <pubDate>Fri, 29 May 2020 11:01:01 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
       <guid>http://miaoshihao.com/zh-cn/blogs/%E4%B8%89%E8%A7%82/</guid>
-      <description>人生观： 我想成为什么样的人？ 荒诞主义偏生存主义：人生或许可能是有意义的，但是以人类现在的智慧还不能明白其意义的所在。所以在这之前，人应该始终</description>
+      <description>时间 不念过去，不畏将来 - 2017 记录过去 规划未来 - 2021 根据《时间心理学》的概念，我将自己归纳为宿命论视角和未来视角。我个人敬畏且相信命运，顺从且习惯</description>
     </item>
     
     <item>
@@ -129,6 +138,15 @@
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
       <guid>http://miaoshihao.com/zh-cn/blogs/myuniversity/</guid>
       <description>2013-2018，大学也读了整整五年。18岁进去，23岁出来。中间哭了，笑过，失落过，惊喜过，刷过夜，醉过酒&amp;hellip;.总体来说还算</description>
+    </item>
+    
+    <item>
+      <title>什么是传销</title>
+      <link>http://miaoshihao.com/zh-cn/blogs/%E4%BC%A0%E9%94%80/</link>
+      <pubDate>Thu, 14 Aug 2014 11:01:01 +0800</pubDate>
+      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
+      <guid>http://miaoshihao.com/zh-cn/blogs/%E4%BC%A0%E9%94%80/</guid>
+      <description>一直都以为传销离我很远。但是2014年的夏令营，第一次见识了传销的宣传演讲却也没能识别出来。只是觉得对方的项目特别吸引人。还好那人演讲完，边</description>
     </item>
     
   </channel>

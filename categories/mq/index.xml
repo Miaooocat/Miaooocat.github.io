@@ -6,15 +6,6 @@
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
             <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 10 Jul 2020 09:50:16 &#43;0800</lastBuildDate><atom:link href="http://miaoshihao.com/categories/mq/" rel="self" type="application/rss+xml" /><item>
     <title>Message-Oriented Middleware</title>
-    <link>http://miaoshihao.com/notes/computerscience/backend/messagequeue/ibm_mq/</link>
-    <pubDate>Fri, 10 Jul 2020 09:50:16 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>http://miaoshihao.com/notes/computerscience/backend/messagequeue/ibm_mq/</guid>
-    <description><![CDATA[Message Middleware Intro Message Oriented Middleware is a concept that involves the passing of data between applications using a communication channel that carries self-contained units of information (messages).
-Message Middleware Option Information transfer between different application can be achieved in many different ways, but most efficient solution so far (2021) is with Message Queue.
-Message Queue A message queue provides an asynchronous communications protocol, which is a system that puts a message onto a message queue and does not require an immediate response to continuing processing.]]></description>
-</item><item>
-    <title>Message-Oriented Middleware</title>
     <link>http://miaoshihao.com/notes/computerscience/backend/messagequeue/message_oriented-middleware/</link>
     <pubDate>Fri, 10 Jul 2020 09:50:16 &#43;0800</pubDate>
     <author>Author</author>

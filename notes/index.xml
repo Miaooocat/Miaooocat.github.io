@@ -5,11 +5,18 @@
         <description>All notes | Hi, Shihao</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
             <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 27 May 2021 22:50:26 &#43;0800</lastBuildDate><atom:link href="http://miaoshihao.com/notes/" rel="self" type="application/rss+xml" /><item>
-    <title>Tree Notes </title>
-    <link>http://miaoshihao.com/notes/computerscience/algorithm_datastructure/tree/</link>
+    <title>Linkedlist Notes </title>
+    <link>http://miaoshihao.com/notes/computerscience/datastructure/linkedlist/</link>
     <pubDate>Thu, 27 May 2021 22:50:26 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/computerscience/algorithm_datastructure/tree/</guid>
+    <guid>http://miaoshihao.com/notes/computerscience/datastructure/linkedlist/</guid>
+    <description><![CDATA[Linkedlist Data Structure]]></description>
+</item><item>
+    <title>Tree Notes </title>
+    <link>http://miaoshihao.com/notes/computerscience/datastructure/tree/</link>
+    <pubDate>Thu, 27 May 2021 22:50:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/computerscience/datastructure/tree/</guid>
     <description><![CDATA[Tree Introduction Trees consist of vertices (nodes) and edges that connect them. It has no cycle, and is hierarchical.
 Binary Tree Structure 1 2 3 4 5 6 7 8 9 10 11 12  public class BinaryTreeNode { int val; BinaryTreeNode left; BinaryTreeNode right; BinaryTreeNode() {} BinaryTreeNode(int val) { this.val = val; } BinaryTreeNode(int val, BinaryTreeNode left, BinaryTreeNode right) { this.val = val; this.left = left; this.right = right; } }   Preorder traversal https://leetcode.]]></description>
 </item><item>
@@ -61,15 +68,6 @@ Maven Dependencies Spring looks minimum dependencies required to create an web a
     <guid>http://miaoshihao.com/notes/finance/investment/beneish_model/</guid>
     <description><![CDATA[The Beneish model is a mathematical model that uses financial ratios and eight variables to identify whether a company has manipulated its earnings. It is used as a tool to uncover potential financial fraud. However, the result generated from beneish model can not be the evidence.
 The variables are constructed from the data in the company&rsquo;s financial statements, and once calculated, create an M-Score to describe the degree to which the earnings have been manipulated.]]></description>
-</item><item>
-    <title>Message-Oriented Middleware</title>
-    <link>http://miaoshihao.com/notes/computerscience/backend/messagequeue/ibm_mq/</link>
-    <pubDate>Fri, 10 Jul 2020 09:50:16 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>http://miaoshihao.com/notes/computerscience/backend/messagequeue/ibm_mq/</guid>
-    <description><![CDATA[Message Middleware Intro Message Oriented Middleware is a concept that involves the passing of data between applications using a communication channel that carries self-contained units of information (messages).
-Message Middleware Option Information transfer between different application can be achieved in many different ways, but most efficient solution so far (2021) is with Message Queue.
-Message Queue A message queue provides an asynchronous communications protocol, which is a system that puts a message onto a message queue and does not require an immediate response to continuing processing.]]></description>
 </item><item>
     <title>Message-Oriented Middleware</title>
     <link>http://miaoshihao.com/notes/computerscience/backend/messagequeue/message_oriented-middleware/</link>
