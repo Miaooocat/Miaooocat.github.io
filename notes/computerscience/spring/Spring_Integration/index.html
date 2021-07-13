@@ -5,37 +5,37 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>SQL vs. Non SQL - Hi, Shihao</title><meta name="Description" content="Notes on Database"><meta property="og:title" content="SQL vs. Non SQL" />
-<meta property="og:description" content="Notes on Database" />
+        <title>Spring Integration Notes(1) Overview  - Hi, Shihao</title><meta name="Description" content="Spring Integration Notes"><meta property="og:title" content="Spring Integration Notes(1) Overview " />
+<meta property="og:description" content="Spring Integration Notes" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://miaoshihao.com/notes/computerscience/system/sql_nosql/" />
+<meta property="og:url" content="http://miaoshihao.com/notes/computerscience/spring/spring_integration/" />
 <meta property="og:image" content="http://miaoshihao.com/logo.png"/>
 <meta property="article:published_time" content="2019-10-01T22:50:26+08:00" />
 <meta property="article:modified_time" content="2019-10-01T22:50:26+08:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://miaoshihao.com/logo.png"/>
 
-<meta name="twitter:title" content="SQL vs. Non SQL"/>
-<meta name="twitter:description" content="Notes on Database"/>
+<meta name="twitter:title" content="Spring Integration Notes(1) Overview "/>
+<meta name="twitter:description" content="Spring Integration Notes"/>
 <meta name="application-name" content="Hi, Shihao">
 <meta name="apple-mobile-web-app-title" content="Hi, Shihao"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://miaoshihao.com/notes/computerscience/system/sql_nosql/" /><link rel="prev" href="http://miaoshihao.com/notes/computerscience/system_design/example/url_shorten/" /><link rel="next" href="http://miaoshihao.com/notes/computerscience/spring/spring_integration/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://miaoshihao.com/notes/computerscience/spring/spring_integration/" /><link rel="prev" href="http://miaoshihao.com/notes/computerscience/system/sql_nosql/" /><link rel="next" href="http://miaoshihao.com/notes/computerscience/language/java/basicjava/java8_notes_stream/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "SQL vs. Non SQL",
+        "headline": "Spring Integration Notes(1) Overview ",
         "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http:\/\/miaoshihao.com\/notes\/computerscience\/system\/sql_nosql\/"
-        },"image": ["http:\/\/miaoshihao.com\/images\/Apple-Devices-Preview.png"],"genre": "notes","keywords": "System Design","wordcount":  552 ,
-        "url": "http:\/\/miaoshihao.com\/notes\/computerscience\/system\/sql_nosql\/","datePublished": "2019-10-01T22:50:26+08:00","dateModified": "2019-10-01T22:50:26+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@id": "http:\/\/miaoshihao.com\/notes\/computerscience\/spring\/spring_integration\/"
+        },"image": ["http:\/\/miaoshihao.com\/images\/Apple-Devices-Preview.png"],"genre": "notes","keywords": "Java","wordcount":  160 ,
+        "url": "http:\/\/miaoshihao.com\/notes\/computerscience\/spring\/spring_integration\/","datePublished": "2019-10-01T22:50:26+08:00","dateModified": "2019-10-01T22:50:26+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "http:\/\/miaoshihao.com\/images\/avatar.png"},"author": {
                 "@type": "Person",
                 "name": "Shihao"
-            },"description": "Notes on Database"
+            },"description": "Spring Integration Notes"
     }
     </script></head>
     <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
@@ -47,7 +47,7 @@
         </div>
         <div class="menu">
             <div class="menu-inner"><a class="menu-item" href="/notes/"> Notes </a><a class="menu-item" href="/categories/"> Category </a><a class="menu-item" href="/tags/"> Tags </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
-                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/notes/computerscience/system/sql_nosql/" selected>English</option></select>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/notes/computerscience/spring/spring_integration/" selected>English</option></select>
                     </a><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
@@ -95,7 +95,7 @@
                 </div><a class="menu-item" href="/notes/" title="">Notes</a><a class="menu-item" href="/categories/" title="">Category</a><a class="menu-item" href="/tags/" title="">Tags</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                 <i class="fas fa-adjust fa-fw"></i>
             </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
-                    <select class="language-select" onchange="location = this.value;"><option value="/notes/computerscience/system/sql_nosql/" selected>English</option></select>
+                    <select class="language-select" onchange="location = this.value;"><option value="/notes/computerscience/spring/spring_integration/" selected>English</option></select>
                 </a></div>
     </div>
 </header>
@@ -109,10 +109,10 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content always-active" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">SQL vs. Non SQL</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Shihao</a></span>&nbsp;<span class="post-category">included in <a href="/categories/design/"><i class="far fa-folder fa-fw"></i>Design</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-10-01">2019-10-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;552 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Spring Integration Notes(1) Overview </h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Shihao</a></span>&nbsp;<span class="post-category">included in <a href="/categories/spring/"><i class="far fa-folder fa-fw"></i>Spring</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-10-01">2019-10-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;160 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -120,40 +120,46 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#intro">Intro</a>
+    <li><a href="#spring-integration-basic-overview">Spring Integration Basic Overview</a></li>
+    <li><a href="#spring-integration-design-concept">Spring Integration Design Concept</a>
       <ul>
-        <li><a href="#sql">SQL</a></li>
-        <li><a href="#nosql">NoSQL</a></li>
-        <li><a href="#high-level-differences-between-sql-and-nosql">High level differences between SQL and NoSQL</a></li>
+        <li><a href="#loose-coupling-and-event-driven-architecture">Loose coupling and event-driven architecture</a></li>
       </ul>
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h2 id="intro">Intro</h2>
-<p>There are two main types of solutions: SQL (relational databases) and NoSQL(non-relational databases.</p>
-<h3 id="sql">SQL</h3>
-<p>Relational databases store data in rows and columns. Each row contains all the information about one entity and each column contains all the separate data points.</p>
-<h3 id="nosql">NoSQL</h3>
-<p>Following are most common type of NoSQL DB:</p>
-<p><strong>Key-Value Stores</strong>: Data is stored in an array of key-value pairs. The ‘key’ is an attribute name which is linked to a ‘value’.</p>
-<p><strong>Document Databases</strong>: In these databases, data is stored in documents (instead of rows and columns in a table) and these documents are grouped together in collections. Each document can have an entirely different structure. Document databases include the CouchDB and MongoDB.</p>
-<p><strong>Wide-Column Databases</strong>: Instead of ‘tables,’ in columnar databases we have column families, which are containers for rows. Unlike relational databases, we don’t need to know all the columns up front and each row doesn’t have to have the same number of columns. Columnar databases are best suited for analyzing large datasets - big names include Cassandra and HBase.</p>
-<p><strong>Graph Databases</strong>: These databases are used to store data whose relations are best represented in a graph. Data is saved in graph structures with nodes (entities), properties (information about the entities), and lines (connections between the entities). Examples of graph database include Neo4J and InfiniteGraph.</p>
-<h3 id="high-level-differences-between-sql-and-nosql">High level differences between SQL and NoSQL</h3>
-<p><strong>Storage</strong>:</p>
-<p>SQL stores data in tables where each row represents an entity and each column represents a data point about that entity; for example, if we are storing a car entity in a table, different columns could be ‘Color’, ‘Make’, ‘Model’, and so on.</p>
-<p>NoSQL databases have different data storage models. The main ones are key-value, document, graph, and columnar. We will discuss differences between these databases below.</p>
-<p><strong>Schema</strong>:</p>
-<p>In SQL, each record conforms to a fixed schema, meaning the columns must be decided and chosen before data entry and each row must have data for each column. The schema can be altered later, but it involves modifying the whole database and going offline.</p>
-<p>In NoSQL, schemas are dynamic. Columns can be added on the fly and each ‘row’ (or equivalent) doesn’t have to contain data for each ‘column.’</p>
-<p><strong>Querying</strong>:
-SQL databases use SQL (structured query language) for defining and manipulating the data, which is very powerful.
-In a NoSQL database(Unstructured Query Language), queries are focused on a collection of documents. Sometimes it is also called UnQL. Different databases have different syntax for using UnQL.</p>
-<p><strong>Scalability</strong>
-In most common situations, SQL databases are vertically scalable, i.e., by increasing the horsepower (higher Memory, CPU, etc.) of the hardware, which can get very expensive. It is possible to scale a relational database across multiple servers, but this is a challenging and time-consuming process.</p>
-<p>On the other hand, NoSQL databases are horizontally scalable, meaning we can add more servers easily in our NoSQL database infrastructure to handle a lot of traffic. Any cheap commodity hardware or cloud instances can host NoSQL databases, thus making it a lot more cost-effective than vertical scaling. A lot of NoSQL technologies also distribute data across servers automatically.</p>
-<p><strong>Reliability</strong>
-Reliability or ACID Compliancy (Atomicity, Consistency, Isolation, Durability): The vast majority of relational databases are ACID compliant. So, when it comes to data reliability and safe guarantee of performing transactions, SQL databases are still the better bet.</p>
+            </div><div class="content" id="content"><h2 id="spring-integration-basic-overview">Spring Integration Basic Overview</h2>
+<p>Spring Integration is an open source framework that designed to enable the development of integration solutions typical of <strong>event-driven architectures</strong> and <strong>messaging-centric architectures</strong>. It requires dependency <strong>spring intergration core</strong>, which could be downloaded from Maven Central.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>org.springframework.integration<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>spring-integration-core<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>5.3.1.RELEASE<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Spring integration framework consists three parts, namely <strong>message</strong>, <strong>message channel</strong>, and <strong>message endpoint</strong>. In general. a <strong>message</strong> is a unit of information that can be passed between different <strong>message endpoint</strong> through <strong>message channels</strong>.</p>
+<ul>
+<li>
+<p>Message: A message is a unit of information that can be passed between different components, called message endpoints.</p>
+</li>
+<li>
+<p>Message Channel: The message channel is the connection between multiple endpoints. The channel implementation manages the details of how and where a message is delivered but shouldn’t need to interact with the payload of a message.</p>
+</li>
+<li>
+<p>Message Endpoint: Message endpoints are the components that actually do something with the message.</p>
+</li>
+</ul>
+<h2 id="spring-integration-design-concept">Spring Integration Design Concept</h2>
+<h3 id="loose-coupling-and-event-driven-architecture">Loose coupling and event-driven architecture</h3>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
@@ -164,7 +170,7 @@ Reliability or ACID Compliancy (Atomicity, Consistency, Isolation, Durability): 
         </div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/notes/computerscience/system/sql_nosql/index.md" target="_blank">Read Markdown</a>
+                            <a class="link-to-markdown" href="/notes/computerscience/spring/spring_integration/index.md" target="_blank">Read Markdown</a>
                         </span></div>
             <div class="post-info-share">
                 <span></span>
@@ -173,14 +179,14 @@ Reliability or ACID Compliancy (Atomicity, Consistency, Isolation, Durability): 
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/system-design/">System Design</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/java/">Java</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/notes/computerscience/system_design/example/url_shorten/" class="prev" rel="prev" title="URL Shortening service"><i class="fas fa-angle-left fa-fw"></i>URL Shortening service</a>
-            <a href="/notes/computerscience/spring/spring_integration/" class="next" rel="next" title="Spring Integration Notes(1) Overview ">Spring Integration Notes(1) Overview <i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/notes/computerscience/system/sql_nosql/" class="prev" rel="prev" title="SQL vs. Non SQL"><i class="fas fa-angle-left fa-fw"></i>SQL vs. Non SQL</a>
+            <a href="/notes/computerscience/language/java/basicjava/java8_notes_stream/" class="next" rel="next" title="Java8 Stream ">Java8 Stream <i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 </article></div>
             </main><footer class="footer">

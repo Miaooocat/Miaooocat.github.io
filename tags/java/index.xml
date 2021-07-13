@@ -4,7 +4,17 @@
         <link>http://miaoshihao.com/tags/java/</link>
         <description>Java - Tag - Hi, Shihao</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
-            <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 27 May 2021 22:50:26 &#43;0800</lastBuildDate><atom:link href="http://miaoshihao.com/tags/java/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 12 Jul 2021 21:30:26 &#43;0800</lastBuildDate><atom:link href="http://miaoshihao.com/tags/java/" rel="self" type="application/rss+xml" /><item>
+    <title>Spring</title>
+    <link>http://miaoshihao.com/notes/computerscience/spring/spring_overview/</link>
+    <pubDate>Sun, 11 Jul 2021 22:50:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/computerscience/spring/spring_overview/</guid>
+    <description><![CDATA[Spring Spring Initializr The basic configuration of a ready-to-go spring project can be generated from below link.
+https://start.spring.io
+Spring and Spring boot Spring reduces the boilerplate code, and let developer focused on the code logic. Springboot is an extension of Spring that further eliminates the boilerplate configurations required for setting up a Spring application.
+Spring Bean and Inversion of Control Spring bean represents objects which its dependencies is defined without actually creating them (Inversion of Control (IoC)).]]></description>
+</item><item>
     <title>Linkedlist Notes </title>
     <link>http://miaoshihao.com/notes/computerscience/datastructure/linkedlist/</link>
     <pubDate>Thu, 27 May 2021 22:50:26 &#43;0800</pubDate>
@@ -31,10 +41,10 @@ java.lang.Class java.lang.Class class instance represent classes, interfaces, pr
 Class object contains meta-information about class.]]></description>
 </item><item>
     <title>Difference in Spring and Spring Boot</title>
-    <link>http://miaoshihao.com/notes/computerscience/backend/spring/springboot/</link>
+    <link>http://miaoshihao.com/notes/computerscience/spring/springboot/</link>
     <pubDate>Thu, 20 Aug 2020 22:50:21 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/computerscience/backend/spring/springboot/</guid>
+    <guid>http://miaoshihao.com/notes/computerscience/spring/springboot/</guid>
     <description><![CDATA[Spring Boot is an extension of the Spring framework which eliminated the boilerplate configurations required for setting up a Spring application. This notes highlight the difference between Spring Boot and Spring.
 Maven Dependencies Spring looks minimum dependencies required to create an web application.
 1 2 3 4 5 6 7 8 9 10  &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-web&lt;/artifactId&gt; &lt;version&gt;5.2.9.RELEASE&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt; &lt;version&gt;5.2.9.RELEASE&lt;/version&gt; &lt;/dependency&gt;   Spring Boot requires only one dependency:]]></description>
@@ -49,10 +59,10 @@ Maven Dependencies Spring looks minimum dependencies required to create an web a
 1 2 3 4  Arrays.asList(&#34;a1&#34;, &#34;a2&#34;, &#34;a3&#34;) .]]></description>
 </item><item>
     <title>Spring Integration Notes(1) Overview </title>
-    <link>http://miaoshihao.com/notes/computerscience/backend/spring/spring_integration/</link>
+    <link>http://miaoshihao.com/notes/computerscience/spring/spring_integration/</link>
     <pubDate>Tue, 01 Oct 2019 22:50:26 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/computerscience/backend/spring/spring_integration/</guid>
+    <guid>http://miaoshihao.com/notes/computerscience/spring/spring_integration/</guid>
     <description><![CDATA[Spring Integration Basic Overview Spring Integration is an open source framework that designed to enable the development of integration solutions typical of event-driven architectures and messaging-centric architectures. It requires dependency spring intergration core, which could be downloaded from Maven Central.
 1 2 3 4 5  &lt;dependency&gt; &lt;groupId&gt;org.springframework.integration&lt;/groupId&gt; &lt;artifactId&gt;spring-integration-core&lt;/artifactId&gt; &lt;version&gt;5.3.1.RELEASE&lt;/version&gt; &lt;/dependency&gt;   Spring integration framework consists three parts, namely message, message channel, and message endpoint. In general. a message is a unit of information that can be passed between different message endpoint through message channels.]]></description>
 </item><item>
@@ -73,21 +83,13 @@ Platform: Any hardware or software environment in which a program runs, is known
 Features of Java :   Simple:
  User friendly syntax based on C++ It has Automatic Garbage Collection It has Rich set of APIs Removed confusing features - explicit pointers, operator overloading, multiple inheritance, etc    Object-oriented:]]></description>
 </item><item>
-    <title>Java Notes(2) Object Oriented Language</title>
-    <link>http://miaoshihao.com/notes/computerscience/language/java/basicjava/java_notes_2_oop/</link>
-    <pubDate>Mon, 17 Jun 2019 11:01:26 &#43;0800</pubDate>
+    <title>Spring Notes 1: Spring Bean and IoC</title>
+    <link>http://miaoshihao.com/notes/computerscience/spring/bean_ioc/</link>
+    <pubDate>Mon, 12 Jul 2021 21:30:26 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/computerscience/language/java/basicjava/java_notes_2_oop/</guid>
-    <description><![CDATA[Object Oriented Object-Oriented Programming is a methodology or paradigm to design a program using classes and objects. It simplifies the software development and maintenance.
-Class  A class in Java can contain: field(variable, attribute), methods, constructors, blocks, nested class and interface. Object is an instance of a class. There is only one way to define class in java using class keyword. The Object class is the parent class of all the classes in java by default.]]></description>
-</item><item>
-    <title>Spring Framework Notes 2 - Beans, BeanFactory and the ApplicationContext</title>
-    <link>http://miaoshihao.com/notes/computerscience/backend/spring/spring/spring_bean/</link>
-    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>http://miaoshihao.com/notes/computerscience/backend/spring/spring/spring_bean/</guid>
-    <description><![CDATA[Bean Bean represents as an objects in Java. Bean need to contain the following points:
-The Bean class The class attribute in bean is normally mandatory. The creation of bean object is through BeanFactory. It has three approaches.
-The first approach is where the BeanFactory itself directly creates the bean by calling its constructor (equivalent to Java code calling new), the class attribute specifies the class of the bean to be constructed.]]></description>
+    <guid>http://miaoshihao.com/notes/computerscience/spring/bean_ioc/</guid>
+    <description><![CDATA[IoC container and Spring Bean IoC container and Spring bean can be treated as object factory and object respectively.
+IoC Container IoC can be instantiated through below method.
+1 2 3 4 5 6 7 8  ApplicationContext context = new ClassPathXmlApplicationContext(new String[] {&#34;services.xml&#34;, &#34;daos.xml&#34;}); // an ApplicationContext is also a BeanFactory (via inheritance) BeanFactory factory = context; // getBean() method can be used to test if context get required object Company company = context.]]></description>
 </item></channel>
 </rss>

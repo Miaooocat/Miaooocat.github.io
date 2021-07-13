@@ -4,7 +4,17 @@
         <link>http://miaoshihao.com/notes/</link>
         <description>All notes | Hi, Shihao</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
-            <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 27 May 2021 22:50:26 &#43;0800</lastBuildDate><atom:link href="http://miaoshihao.com/notes/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 12 Jul 2021 21:30:26 &#43;0800</lastBuildDate><atom:link href="http://miaoshihao.com/notes/" rel="self" type="application/rss+xml" /><item>
+    <title>Spring</title>
+    <link>http://miaoshihao.com/notes/computerscience/spring/spring_overview/</link>
+    <pubDate>Sun, 11 Jul 2021 22:50:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/computerscience/spring/spring_overview/</guid>
+    <description><![CDATA[Spring Spring Initializr The basic configuration of a ready-to-go spring project can be generated from below link.
+https://start.spring.io
+Spring and Spring boot Spring reduces the boilerplate code, and let developer focused on the code logic. Springboot is an extension of Spring that further eliminates the boilerplate configurations required for setting up a Spring application.
+Spring Bean and Inversion of Control Spring bean represents objects which its dependencies is defined without actually creating them (Inversion of Control (IoC)).]]></description>
+</item><item>
     <title>Linkedlist Notes </title>
     <link>http://miaoshihao.com/notes/computerscience/datastructure/linkedlist/</link>
     <pubDate>Thu, 27 May 2021 22:50:26 &#43;0800</pubDate>
@@ -46,10 +56,10 @@ Class object contains meta-information about class.]]></description>
  Layer Protocol data unit (PDU) Function   Application (应用层) Data High-level APIs, including resource sharing, remote file access, ex: HTTP, HTTPS,FTP,SSH and etc..   Presentation (表示层) Data Translation of data between a networking service and an application; including character encoding, data compression and encryption/decryption   Session(会话层) Data Managing communication sessions, i.]]></description>
 </item><item>
     <title>Difference in Spring and Spring Boot</title>
-    <link>http://miaoshihao.com/notes/computerscience/backend/spring/springboot/</link>
+    <link>http://miaoshihao.com/notes/computerscience/spring/springboot/</link>
     <pubDate>Thu, 20 Aug 2020 22:50:21 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://miaoshihao.com/notes/computerscience/backend/spring/springboot/</guid>
+    <guid>http://miaoshihao.com/notes/computerscience/spring/springboot/</guid>
     <description><![CDATA[Spring Boot is an extension of the Spring framework which eliminated the boilerplate configurations required for setting up a Spring application. This notes highlight the difference between Spring Boot and Spring.
 Maven Dependencies Spring looks minimum dependencies required to create an web application.
 1 2 3 4 5 6 7 8 9 10  &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-web&lt;/artifactId&gt; &lt;version&gt;5.2.9.RELEASE&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt; &lt;version&gt;5.2.9.RELEASE&lt;/version&gt; &lt;/dependency&gt;   Spring Boot requires only one dependency:]]></description>
@@ -79,13 +89,5 @@ Message Queue A message queue provides an asynchronous communications protocol, 
     <description><![CDATA[A stream represents a sequence of elements and supports different kind of operations to perform computations upon those elements:
 1 2 3 4 5 6 7 8 9  List&lt;String&gt; myList = Arrays.asList(&#34;a1&#34;, &#34;a2&#34;, &#34;b1&#34;, &#34;c2&#34;, &#34;c1&#34;); myList .stream() .filter(s -&gt; s.startsWith(&#34;c&#34;)) .map(String::toUpperCase) .sorted() .forEach(System.out::println);   Stream Creation Calling the method stream() on a list of objects returns a regular object stream.
 1 2 3 4  Arrays.asList(&#34;a1&#34;, &#34;a2&#34;, &#34;a3&#34;) .]]></description>
-</item><item>
-    <title>Spring Integration Notes(1) Overview </title>
-    <link>http://miaoshihao.com/notes/computerscience/backend/spring/spring_integration/</link>
-    <pubDate>Tue, 01 Oct 2019 22:50:26 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>http://miaoshihao.com/notes/computerscience/backend/spring/spring_integration/</guid>
-    <description><![CDATA[Spring Integration Basic Overview Spring Integration is an open source framework that designed to enable the development of integration solutions typical of event-driven architectures and messaging-centric architectures. It requires dependency spring intergration core, which could be downloaded from Maven Central.
-1 2 3 4 5  &lt;dependency&gt; &lt;groupId&gt;org.springframework.integration&lt;/groupId&gt; &lt;artifactId&gt;spring-integration-core&lt;/artifactId&gt; &lt;version&gt;5.3.1.RELEASE&lt;/version&gt; &lt;/dependency&gt;   Spring integration framework consists three parts, namely message, message channel, and message endpoint. In general. a message is a unit of information that can be passed between different message endpoint through message channels.]]></description>
 </item></channel>
 </rss>

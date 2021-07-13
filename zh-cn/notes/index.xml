@@ -61,20 +61,18 @@
     <guid>http://miaoshihao.com/zh-cn/notes/computerscience/internet/https_principle/</guid>
     <description><![CDATA[我们为什么需要HTTPS？ HTTPS是什么？SSL/TLS是什么？ SSL/TLS发展史 SSL/TLS的工作原理 什么是HTTP HTTP协议(H]]></description>
 </item><item>
-    <title>Spring Framework Notes - Beans, BeanFactory and the ApplicationContext</title>
-    <link>http://miaoshihao.com/zh-cn/notes/computerscience/backend/spring/spring/spring_bean/</link>
-    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>http://miaoshihao.com/zh-cn/notes/computerscience/backend/spring/spring/spring_bean/</guid>
-    <description><![CDATA[Bean Bean represents as an objects in Java. Bean need to contain the following points:
-The Bean class The class attribute in bean is normally mandatory. The creation of bean object is through BeanFactory. It has three approaches.
-The first approach is where the BeanFactory itself directly creates the bean by calling its constructor (equivalent to Java code calling new), the class attribute specifies the class of the bean to be constructed.]]></description>
-</item><item>
     <title>财报基础理解</title>
     <link>http://miaoshihao.com/zh-cn/notes/finance/investment/financialreport/</link>
     <pubDate>Thu, 17 Dec 2020 19:32:26 &#43;0800</pubDate>
     <author>作者</author>
     <guid>http://miaoshihao.com/zh-cn/notes/finance/investment/financialreport/</guid>
     <description><![CDATA[财报的意义 对价值投资者来说，通过财报，通过财报能够部分得出一下结论 判断公司过去“画的饼”完成了多少，未来如何”画饼“！ 判断股价，现阶段，是否]]></description>
+</item><item>
+    <title>仓位控制</title>
+    <link>http://miaoshihao.com/zh-cn/notes/finance/investment/positionsizing/</link>
+    <pubDate>Fri, 17 Jul 2020 19:32:26 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://miaoshihao.com/zh-cn/notes/finance/investment/positionsizing/</guid>
+    <description><![CDATA[仓位控制 仓位管理 为什么要管理仓位 提升容错空间 预留补救余地 正股仓位控制 仓位划分 轻仓 &lt; 30% 重仓 &gt; 60% 建仓方法 估值思维 价格接近合理估值 多仓位分配 大幅高]]></description>
 </item></channel>
 </rss>
