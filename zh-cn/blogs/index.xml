@@ -9,18 +9,18 @@
     <managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
     <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Mon, 31 May 2021 11:20:26 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 14 Jul 2021 22:01:26 +0800</lastBuildDate>
     
 	<atom:link href="http://miaoshihao.com/zh-cn/blogs/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>2021年的五月</title>
-      <link>http://miaoshihao.com/zh-cn/blogs/monthlyreview/</link>
-      <pubDate>Mon, 31 May 2021 11:20:26 +0800</pubDate>
+      <title>娱乐至死</title>
+      <link>http://miaoshihao.com/zh-cn/blogs/bookreview/%E5%A8%B1%E4%B9%90%E8%87%B3%E6%AD%BB/</link>
+      <pubDate>Wed, 14 Jul 2021 22:01:26 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/zh-cn/blogs/monthlyreview/</guid>
-      <description>五月开始刷LeetCode和system design了。周围的小伙伴都陆陆续续开始跳槽。在去年疫情开始的3月，感觉人也懒散了许多。从这个月开</description>
+      <guid>http://miaoshihao.com/zh-cn/blogs/bookreview/%E5%A8%B1%E4%B9%90%E8%87%B3%E6%AD%BB/</guid>
+      <description>很早就听过初中的科学老师说过看电视会导致儿童的注意力难以集中。那时候考虑的是，反正我也不看电视。但是并没有追究这背后原理。近些年，在静心想读</description>
     </item>
     
     <item>
@@ -39,15 +39,6 @@
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
       <guid>http://miaoshihao.com/zh-cn/blogs/bookreview/%E5%85%B3%E9%94%AE%E5%AF%B9%E8%AF%9D/</guid>
       <description>何谓关键对话 关键对话有三个特征： 高风险：对话的结果会对生活的质量造成巨大的影响 不同的观点：双方的观点不同 情绪激烈：双方的情绪会变化很大 如何应</description>
-    </item>
-    
-    <item>
-      <title>命运石之门 Steins；Gate</title>
-      <link>http://miaoshihao.com/zh-cn/blogs/moviereview/%E5%91%BD%E8%BF%90%E7%9F%B3%E4%B9%8B%E9%97%A8/</link>
-      <pubDate>Fri, 19 Feb 2021 11:20:26 +0800</pubDate>
-      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/zh-cn/blogs/moviereview/%E5%91%BD%E8%BF%90%E7%9F%B3%E4%B9%8B%E9%97%A8/</guid>
-      <description>命运石之门是在我心中排名第二名的动漫神作。时隔四年重新刷了第三次，在这里记录下刷剧的感想。 掌管过去的女神 故事的起因是男主在偶然间发现了可以发</description>
     </item>
     
     <item>
@@ -106,11 +97,11 @@
     
     <item>
       <title>概念</title>
-      <link>http://miaoshihao.com/zh-cn/blogs/%E4%B8%89%E8%A7%82/</link>
+      <link>http://miaoshihao.com/zh-cn/blogs/%E6%A6%82%E5%BF%B5/</link>
       <pubDate>Fri, 29 May 2020 11:01:01 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/zh-cn/blogs/%E4%B8%89%E8%A7%82/</guid>
-      <description>时间 不念过去，不畏将来 - 2017 记录过去 规划未来 - 2021 根据《时间心理学》的概念，我将自己归纳为宿命论视角和未来视角。我个人敬畏且相信命运，顺从且习惯</description>
+      <guid>http://miaoshihao.com/zh-cn/blogs/%E6%A6%82%E5%BF%B5/</guid>
+      <description>时间 不念过去，不畏将来 - 2017 根据《时间心理学》的概念，我将自己归纳为宿命论视角和未来视角。我个人敬畏且相信命运，顺从且习惯忍受外界的安排，但是</description>
     </item>
     
     <item>
@@ -124,11 +115,11 @@
     
     <item>
       <title>那些年玩过的游戏</title>
-      <link>http://miaoshihao.com/zh-cn/blogs/playedgame/playedgame/</link>
+      <link>http://miaoshihao.com/zh-cn/blogs/gameplayed/</link>
       <pubDate>Tue, 30 Apr 2019 21:29:01 +0800</pubDate>
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/zh-cn/blogs/playedgame/playedgame/</guid>
-      <description>PC单机类 Flag: hmmm，用了这么多年的Macbook，还立个啥flag&amp;hellip;.如果未来再次买主机的话，那应该还是会玩的吧。 感想: 单机</description>
+      <guid>http://miaoshihao.com/zh-cn/blogs/gameplayed/</guid>
+      <description>玩真正害怕的不是游戏，而是在游戏结束现实开始时迷失了方向。 PC单机类 Flag: hmmm，用了这么多年的Macbook，还立个啥flag&amp;hellip</description>
     </item>
     
     <item>
@@ -138,15 +129,6 @@
       <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
       <guid>http://miaoshihao.com/zh-cn/blogs/myuniversity/</guid>
       <description>2013-2018，大学也读了整整五年。18岁进去，23岁出来。中间哭了，笑过，失落过，惊喜过，刷过夜，醉过酒&amp;hellip;.总体来说还算</description>
-    </item>
-    
-    <item>
-      <title>什么是传销</title>
-      <link>http://miaoshihao.com/zh-cn/blogs/%E4%BC%A0%E9%94%80/</link>
-      <pubDate>Thu, 14 Aug 2014 11:01:01 +0800</pubDate>
-      <author>miao.shihaoo@gmail.com (Shihao Miao)</author>
-      <guid>http://miaoshihao.com/zh-cn/blogs/%E4%BC%A0%E9%94%80/</guid>
-      <description>一直都以为传销离我很远。但是2014年的夏令营，第一次见识了传销的宣传演讲却也没能识别出来。只是觉得对方的项目特别吸引人。还好那人演讲完，边</description>
     </item>
     
   </channel>

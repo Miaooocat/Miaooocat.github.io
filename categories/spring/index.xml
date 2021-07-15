@@ -4,7 +4,15 @@
         <link>http://miaoshihao.com/categories/spring/</link>
         <description>Spring - Category - Hi, Shihao</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
-            <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 12 Jul 2021 21:30:26 &#43;0800</lastBuildDate><atom:link href="http://miaoshihao.com/categories/spring/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 13 Jul 2021 22:50:26 &#43;0800</lastBuildDate><atom:link href="http://miaoshihao.com/categories/spring/" rel="self" type="application/rss+xml" /><item>
+    <title>Spring MVC</title>
+    <link>http://miaoshihao.com/notes/computerscience/spring/spring_mvc/</link>
+    <pubDate>Tue, 13 Jul 2021 22:50:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/computerscience/spring/spring_mvc/</guid>
+    <description><![CDATA[Spring MVC Overview A Spring MVC is a Java framework used to build web applications by following the Model-View-Controller design pattern with the help of DispatcherServlet.
+Model: A model contains object of the application. Controller: A controller contains the business logic of an application. View: A view is a webpage rendered by template engine like JSP, FreeMarker, Thymelead and etc. Front Controller: In Spring Web MVC, the Front Controller is DispatcherServlet, which manage the flow of the Spring MVC application.]]></description>
+</item><item>
     <title>Spring</title>
     <link>http://miaoshihao.com/notes/computerscience/spring/spring_overview/</link>
     <pubDate>Sun, 11 Jul 2021 22:50:26 &#43;0800</pubDate>

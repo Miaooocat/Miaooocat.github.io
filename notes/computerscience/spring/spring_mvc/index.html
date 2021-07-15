@@ -5,37 +5,37 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>Spring - Hi, Shihao</title><meta name="Description" content="Spring Category"><meta property="og:title" content="Spring" />
-<meta property="og:description" content="Spring Category" />
+        <title>Spring MVC - Hi, Shihao</title><meta name="Description" content="Spring Web Notes"><meta property="og:title" content="Spring MVC" />
+<meta property="og:description" content="Spring Web Notes" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://miaoshihao.com/notes/computerscience/spring/spring_overview/" />
+<meta property="og:url" content="http://miaoshihao.com/notes/computerscience/spring/spring_mvc/" />
 <meta property="og:image" content="http://miaoshihao.com/logo.png"/>
-<meta property="article:published_time" content="2021-07-11T22:50:26+08:00" />
-<meta property="article:modified_time" content="2021-07-11T22:50:26+08:00" />
+<meta property="article:published_time" content="2021-07-13T22:50:26+08:00" />
+<meta property="article:modified_time" content="2021-07-13T22:50:26+08:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://miaoshihao.com/logo.png"/>
 
-<meta name="twitter:title" content="Spring"/>
-<meta name="twitter:description" content="Spring Category"/>
+<meta name="twitter:title" content="Spring MVC"/>
+<meta name="twitter:description" content="Spring Web Notes"/>
 <meta name="application-name" content="Hi, Shihao">
 <meta name="apple-mobile-web-app-title" content="Hi, Shihao"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://miaoshihao.com/notes/computerscience/spring/spring_overview/" /><link rel="prev" href="http://miaoshihao.com/notes/computerscience/datastructure/linkedlist/" /><link rel="next" href="http://miaoshihao.com/notes/computerscience/spring/spring_mvc/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://miaoshihao.com/notes/computerscience/spring/spring_mvc/" /><link rel="prev" href="http://miaoshihao.com/notes/computerscience/spring/spring_overview/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "Spring",
+        "headline": "Spring MVC",
         "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http:\/\/miaoshihao.com\/notes\/computerscience\/spring\/spring_overview\/"
-        },"image": ["http:\/\/miaoshihao.com\/images\/Apple-Devices-Preview.png"],"genre": "notes","keywords": "Java","wordcount":  122 ,
-        "url": "http:\/\/miaoshihao.com\/notes\/computerscience\/spring\/spring_overview\/","datePublished": "2021-07-11T22:50:26+08:00","dateModified": "2021-07-11T22:50:26+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@id": "http:\/\/miaoshihao.com\/notes\/computerscience\/spring\/spring_mvc\/"
+        },"image": ["http:\/\/miaoshihao.com\/images\/Apple-Devices-Preview.png"],"genre": "notes","keywords": "Java","wordcount":  139 ,
+        "url": "http:\/\/miaoshihao.com\/notes\/computerscience\/spring\/spring_mvc\/","datePublished": "2021-07-13T22:50:26+08:00","dateModified": "2021-07-13T22:50:26+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "http:\/\/miaoshihao.com\/images\/avatar.png"},"author": {
                 "@type": "Person",
                 "name": "Shihao"
-            },"description": "Spring Category"
+            },"description": "Spring Web Notes"
     }
     </script></head>
     <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
@@ -47,7 +47,7 @@
         </div>
         <div class="menu">
             <div class="menu-inner"><a class="menu-item" href="/notes/"> Notes </a><a class="menu-item" href="/categories/"> Category </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/music/"> Music </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
-                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/notes/computerscience/spring/spring_overview/" selected>English</option></select>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/notes/computerscience/spring/spring_mvc/" selected>English</option></select>
                     </a><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
@@ -95,7 +95,7 @@
                 </div><a class="menu-item" href="/notes/" title="">Notes</a><a class="menu-item" href="/categories/" title="">Category</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/music/" title="">Music</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                 <i class="fas fa-adjust fa-fw"></i>
             </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
-                    <select class="language-select" onchange="location = this.value;"><option value="/notes/computerscience/spring/spring_overview/" selected>English</option></select>
+                    <select class="language-select" onchange="location = this.value;"><option value="/notes/computerscience/spring/spring_mvc/" selected>English</option></select>
                 </a></div>
     </div>
 </header>
@@ -109,9 +109,9 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content always-active" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">Spring</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">Spring MVC</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Shihao</a></span>&nbsp;<span class="post-category">included in <a href="/categories/spring/"><i class="far fa-folder fa-fw"></i>Spring</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-07-11">2021-07-11</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;122 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-07-13">2021-07-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;139 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -120,43 +120,55 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#spring-initializr">Spring Initializr</a></li>
-    <li><a href="#spring-and-spring-boot">Spring and Spring boot</a></li>
-    <li><a href="#spring-bean-and-inversion-of-control">Spring Bean and Inversion of Control</a></li>
-    <li><a href="#spring-aspect-oriented-programming">Spring Aspect Oriented Programming</a></li>
-    <li><a href="#spring-mvc">Spring MVC</a></li>
-    <li><a href="#spring-integration">Spring Integration</a></li>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#request-mapping">Request Mapping</a></li>
+    <li><a href="#model">Model</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h1 id="spring">Spring</h1>
-<h2 id="spring-initializr">Spring Initializr</h2>
-<p>The basic configuration of a ready-to-go spring project can be generated from below link.</p>
-<p><a href="https://start.spring.io">https://start.spring.io</a></p>
-<h2 id="spring-and-spring-boot">Spring and Spring boot</h2>
-<p><strong>Spring</strong> reduces the boilerplate code, and let developer <strong>focused on the code logic</strong>. <strong>Springboot</strong> is <strong>an extension of Spring</strong> that further <strong>eliminates the boilerplate configurations</strong> required for setting up a Spring application.</p>
-<h2 id="spring-bean-and-inversion-of-control">Spring Bean and Inversion of Control</h2>
-<p><strong>Spring bean</strong> represents <strong>objects</strong> which its dependencies is defined without actually creating them (Inversion of Control (IoC)).</p>
-<p><strong>IoC and Spring Bean Notes</strong>
-<a href="http://miaoshihao.com/notes/computerscience/spring/bean_ioc/" rel="">Spring Notes 1: Spring Bean and IoC</a></p>
-<h2 id="spring-aspect-oriented-programming">Spring Aspect Oriented Programming</h2>
-<p>Spring AOP allows method execution between different class.</p>
-<p>How to use aspect of programming in Spring:
-Link:</p>
-<p>Source Code Analysis of Aspect of Programming:
-Link:</p>
-<h2 id="spring-mvc">Spring MVC</h2>
-<h2 id="spring-integration">Spring Integration</h2>
+            </div><div class="content" id="content"><h1 id="spring-mvc">Spring MVC</h1>
+<h2 id="overview">Overview</h2>
+<p>A <strong>Spring MVC</strong> is a Java framework used to <strong>build web applications</strong> by following the <strong>Model-View-Controller</strong> design pattern with the help of <strong>DispatcherServlet</strong>.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="MVC.png"
+        data-srcset="/notes/computerscience/spring/spring_mvc/MVC.png, MVC.png 1.5x, /notes/computerscience/spring/spring_mvc/MVC.png 2x"
+        data-sizes="auto"
+        alt="/notes/computerscience/spring/spring_mvc/MVC.png"
+        title="MVC" /></p>
+<p><strong>Model</strong>: A model contains object of the application.
+<strong>Controller</strong>: A controller contains the business logic of an application.
+<strong>View</strong>: A view is a webpage rendered by template engine like JSP, FreeMarker, Thymelead and etc.
+<strong>Front Controller</strong>: In Spring Web MVC, the Front Controller is DispatcherServlet, which manage the flow of the Spring MVC application.</p>
+<h2 id="request-mapping">Request Mapping</h2>
+<p>Request mapping is to map http request with corresponding controller.</p>
+<p>Detail of this can be found:
+<a href="https://www.baeldung.com/spring-requestmapping">https://www.baeldung.com/spring-requestmapping</a></p>
+<p>The @Requestmapping code can be simplified by following annotations.</p>
+<ul>
+<li>@GetMapping</li>
+<li>@PostMapping</li>
+<li>@PutMapping</li>
+<li>@DeleteMapping</li>
+<li>@PatchMapping</li>
+</ul>
+<p>Detail of this can be found:
+<a href="https://www.baeldung.com/spring-response-entity">https://www.baeldung.com/spring-response-entity</a></p>
+<h2 id="model">Model</h2>
+<p>We can use model to supply attributes used for rendering views.</p>
+<p>Detail of this can be found:
+<a href="https://www.baeldung.com/spring-mvc-model-model-map-model-view">https://www.baeldung.com/spring-mvc-model-model-map-model-view</a></p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2021-07-11</span>
+                <span>Updated on 2021-07-13</span>
             </div>
             <div class="post-info-license"></div>
         </div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/notes/computerscience/spring/spring_overview/index.md" target="_blank">Read Markdown</a>
+                            <a class="link-to-markdown" href="/notes/computerscience/spring/spring_mvc/index.md" target="_blank">Read Markdown</a>
                         </span></div>
             <div class="post-info-share">
                 <span></span>
@@ -171,8 +183,7 @@ Link:</p>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/notes/computerscience/datastructure/linkedlist/" class="prev" rel="prev" title="Linkedlist Notes "><i class="fas fa-angle-left fa-fw"></i>Linkedlist Notes </a>
-            <a href="/notes/computerscience/spring/spring_mvc/" class="next" rel="next" title="Spring MVC">Spring MVC<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/notes/computerscience/spring/spring_overview/" class="prev" rel="prev" title="Spring"><i class="fas fa-angle-left fa-fw"></i>Spring</a></div>
 </div>
 </article></div>
             </main><footer class="footer">

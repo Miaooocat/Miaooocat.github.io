@@ -4,7 +4,15 @@
         <link>http://miaoshihao.com/notes/</link>
         <description>All notes | Hi, Shihao</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>miao.shihaoo@gmail.com (Shihao Miao)</managingEditor>
-            <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 12 Jul 2021 21:30:26 &#43;0800</lastBuildDate><atom:link href="http://miaoshihao.com/notes/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>miao.shihaoo@gmail.com (Shihao Miao)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 13 Jul 2021 22:50:26 &#43;0800</lastBuildDate><atom:link href="http://miaoshihao.com/notes/" rel="self" type="application/rss+xml" /><item>
+    <title>Spring MVC</title>
+    <link>http://miaoshihao.com/notes/computerscience/spring/spring_mvc/</link>
+    <pubDate>Tue, 13 Jul 2021 22:50:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://miaoshihao.com/notes/computerscience/spring/spring_mvc/</guid>
+    <description><![CDATA[Spring MVC Overview A Spring MVC is a Java framework used to build web applications by following the Model-View-Controller design pattern with the help of DispatcherServlet.
+Model: A model contains object of the application. Controller: A controller contains the business logic of an application. View: A view is a webpage rendered by template engine like JSP, FreeMarker, Thymelead and etc. Front Controller: In Spring Web MVC, the Front Controller is DispatcherServlet, which manage the flow of the Spring MVC application.]]></description>
+</item><item>
     <title>Spring</title>
     <link>http://miaoshihao.com/notes/computerscience/spring/spring_overview/</link>
     <pubDate>Sun, 11 Jul 2021 22:50:26 &#43;0800</pubDate>
@@ -80,14 +88,5 @@ The variables are constructed from the data in the company&rsquo;s financial sta
     <description><![CDATA[Message Middleware Intro Message Oriented Middleware is a concept that involves the passing of data between applications using a communication channel that carries self-contained units of information (messages).
 Message Middleware Option Information transfer between different application can be achieved in many different ways, but most efficient solution so far (2021) is with Message Queue.
 Message Queue A message queue provides an asynchronous communications protocol, which is a system that puts a message onto a message queue and does not require an immediate response to continuing processing.]]></description>
-</item><item>
-    <title>Java8 Stream </title>
-    <link>http://miaoshihao.com/notes/computerscience/language/java/basicjava/java8_notes_stream/</link>
-    <pubDate>Wed, 02 Oct 2019 20:50:26 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>http://miaoshihao.com/notes/computerscience/language/java/basicjava/java8_notes_stream/</guid>
-    <description><![CDATA[A stream represents a sequence of elements and supports different kind of operations to perform computations upon those elements:
-1 2 3 4 5 6 7 8 9  List&lt;String&gt; myList = Arrays.asList(&#34;a1&#34;, &#34;a2&#34;, &#34;b1&#34;, &#34;c2&#34;, &#34;c1&#34;); myList .stream() .filter(s -&gt; s.startsWith(&#34;c&#34;)) .map(String::toUpperCase) .sorted() .forEach(System.out::println);   Stream Creation Calling the method stream() on a list of objects returns a regular object stream.
-1 2 3 4  Arrays.asList(&#34;a1&#34;, &#34;a2&#34;, &#34;a3&#34;) .]]></description>
 </item></channel>
 </rss>
